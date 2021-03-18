@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>jenkins结合rsync同步代码 | BLOG</title>
-  <meta name="keywords" content=" jenkins ">
-  <meta name="description" content="jenkins结合rsync同步代码 | BLOG">
+  <title>ngx缓冲区结构.md | BLOG</title>
+  <meta name="keywords" content=" nginx ">
+  <meta name="description" content="ngx缓冲区结构.md | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="nginx数据类型：数组  typedef struct {     void        *elts;      &#x2F;&#x2F; 指向第一个元素的指针     ngx_uint_t   nelts;     &#x2F;&#x2F; 未使用的元素的索引     size_t       size;      &#x2F;&#x2F; 每个元素大小     ngx_uint_t   nalloc;    &#x2F;&#x2F;  元素个数     ngx_poo">
 <meta property="og:type" content="article">
@@ -619,9 +619,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-jenkins结合rsync同步代码" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-ngx缓冲区结构-md" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">jenkins结合rsync同步代码</h1>
+        <h1 class="article-title">ngx缓冲区结构.md</h1>
     
     <div class="article-meta">
         
@@ -629,21 +629,21 @@
         
         <span class="book">
             
-                <a  data-rel="运维">运维</a>
+                <a  data-rel="C语言">C语言</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a class="color3">jenkins</a>
+            <a class="color1">nginx</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-03-18 11:09:52'>2021-03-18 11:09</time>
+        创建时间:<time class="date" title='更新时间: 2021-03-18 16:17:15'>2021-03-18 15:14</time>
         
     </div>
     <div class="article-meta">
@@ -665,7 +665,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#web机器："><span class="toc-text">web机器：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#jenkins机器："><span class="toc-text">jenkins机器：</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -681,61 +681,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>背景：之前发布代码一直使用的一个jenkins插件 Publish over SSH，如果是java语言不存在问题，每次只拷贝一个jar包，但是如果是前端或者php这种类型的代码会存在问题：假如在gitlab仓库删除一个文件，jenkins拉取更新再通过Publish over SSH推送到服务器。这个过程中在gitlab仓库被删除的文件在远端服务器上是不会被删除的，因为Publish over SSH只会做增量更新。如果代码经常添加删除文件，那么远程机器上的代码文件就会越堆越多。</p>
-</blockquote>
-<h6 id="web机器："><a href="#web机器：" class="headerlink" title="web机器："></a>web机器：</h6><p>安装rsync</p>
-<pre><code class="shell">[root@yanxiang_test webapp]# cat /etc/rsyncd.conf
-# /etc/rsyncd: configuration file for rsync daemon mode
-
-#同步过来后文件的主组
-uid = nginx 
-gid = nginx
-
-use chroot = yes
-max connections = 200
-timeout = 300
-pid file = /var/run/rsyncd.pid
-lock file = /var/run/rsync.lock
-log file = /var/log/rsyncd.log
-ignore errors
-read only = false
-list = false
-hosts allow = *
-hosts deny =10.0.8.9
-
-#要在本机创建的用户
-auth users = ysg
-
-#内容格式为 user:passwd
-#文件权限600
-secrets file = /etc/rsync.password
-
-#同步到本机的目录
-[webapp]
-path = /var/webapp/
-[root@yanxiang_test webapp]# cat /etc/rsync.password
-ysg:123456xxx
-[root@yanxiang_test webapp]#</code></pre>
-<h6 id="jenkins机器："><a href="#jenkins机器：" class="headerlink" title="jenkins机器："></a>jenkins机器：</h6><p>安装rsync</p>
-<pre><code class="shell">[root@izbp1gldj1nzq5934tk5czz ~]# cat /etc/rsync.password
-#文件权限600
-#只需要存储密码就行了，和web机器的密码一样
-123456xxx
-[root@izbp1gldj1nzq5934tk5czz ~]# rsync -rltDqzp --no-o --no-g  --delete /root/.jenkins/workspace/go_script ysg@172.16.72.173::webapp --exclude &quot;.git&quot;    --password-file=/etc/rsync.password
-
-#参数解释
-# -r 递归
-# -l 复制符号链接为符号链接
-# -t 保留修改时间
-# --no-o --no-g 不改变主组
-# --delete 删除差异文件
-# /root/.jenkins/workspace/go_script 同步目录
-# --exclude &quot;.git&quot; 需要排除的目录或者文件，多个--exclude指定多个目录或文件
-# --password-file ysg用户和远程机器认证的密码</code></pre>
-<p>jenkins上的配置：</p>
-<p><img src="/image/image-20201110131652289.png" alt=""></p>
-
+        
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
     </div>
@@ -744,12 +690,12 @@ ysg:123456xxx
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>jenkins结合rsync同步代码</p>
+    <p><span class="copy-title">文章标题:</span>ngx缓冲区结构.md</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
-    <p><span class="copy-title">发布时间:</span>2021-03-18, 11:09:52</p>
-    <p><span class="copy-title">最后更新:</span>2021-03-18, 11:09:52</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/18/jenkins%E7%BB%93%E5%90%88rsync%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81/" title="jenkins结合rsync同步代码">http://blog.3amupupup.online/2021/03/18/jenkins%E7%BB%93%E5%90%88rsync%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81/</a>
+    <p><span class="copy-title">发布时间:</span>2021-03-18, 15:14:01</p>
+    <p><span class="copy-title">最后更新:</span>2021-03-18, 16:17:15</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/18/ngx%E7%BC%93%E5%86%B2%E5%8C%BA%E7%BB%93%E6%9E%84-md/" title="ngx缓冲区结构.md">http://blog.3amupupup.online/2021/03/18/ngx%E7%BC%93%E5%86%B2%E5%8C%BA%E7%BB%93%E6%9E%84-md/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

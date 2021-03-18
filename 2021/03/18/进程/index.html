@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>进程 | BLOG</title>
+  <meta name="keywords" content=" 进程 ">
+  <meta name="description" content="进程 | BLOG">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="1、jenkins所需插件Pipeline、Sonar Quality Gates Plugin、SonarQube Scanner、Generic Webhook Trigger Plugin 2、jenkins配置 Dashboard &#x3D;&gt; 系统管理 &#x3D;&gt; 全局工具配置   Dashboard &#x3D;&gt; 系统管理 &#x3D;&gt; 系统配置         这个token是在sonar">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jenkins结合sonar代码检测流水线">
+<meta property="og:url" content="http://blog.3amupupup.online/2021/03/18/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/index.html">
+<meta property="og:site_name" content="BLOG">
+<meta property="og:description" content="1、jenkins所需插件Pipeline、Sonar Quality Gates Plugin、SonarQube Scanner、Generic Webhook Trigger Plugin 2、jenkins配置 Dashboard &#x3D;&gt; 系统管理 &#x3D;&gt; 全局工具配置   Dashboard &#x3D;&gt; 系统管理 &#x3D;&gt; 系统配置         这个token是在sonar">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://blog.3amupupup.online/image/image-20201227165338711.png">
+<meta property="og:image" content="http://blog.3amupupup.online/image/image-20201227165501679.png">
+<meta property="og:image" content="http://blog.3amupupup.online/image/image-20201227165627390.png">
+<meta property="og:image" content="http://blog.3amupupup.online/image/image-20201227165828644.png">
+<meta property="og:image" content="http://blog.3amupupup.online/image/image-20201227165956042.png">
+<meta property="og:image" content="http://blog.3amupupup.online/image/image-20201227170513752.png">
+<meta property="og:image" content="http://blog.3amupupup.online/image/image-20201227170841973.png">
+<meta property="article:published_time" content="2021-03-18T03:09:52.078Z">
+<meta property="article:modified_time" content="2021-03-18T03:09:52.078Z">
+<meta property="article:author" content="拦云">
+<meta property="article:tag" content="sonar">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.3amupupup.online/image/image-20201227165338711.png">
+
+
+<link rel="icon" href="/img/favicon.ico">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/darcula.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/docker.png" />
+</a>
+<div class="author">
+    <span>拦云</span>
+</div>
+
+<div class="icon">
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(42)</small></div></li>
+    
+        
+            
+            <li><div data-rel="C语言">C语言<small>(15)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="运维">运维<small>(10)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="k8s">k8s<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="深入理解计算机系统">深入理解计算机系统<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Docker">Docker<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="mysql">mysql<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="42">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color2">c</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Jenkinsfile</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">ecs</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Nginx</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">sonar</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">jenkins</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">kubectl</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">nginx</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">mongodb</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">linux性能优化实战笔记</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">zabbix</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">cicd</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">数据结构</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">c语言基础</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">虚拟内存</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">book</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Dockerfile</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">排序</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">操作系统</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">进程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">c primer plus</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">sql_base</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class=""
+           href="/2021/03/18/CppPrimer/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CppPrimer">CppPrimer</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0linux%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C语言实现linux命令">C语言实现linux命令</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E9%A2%84%E5%A4%84%E7%90%86/"
+           data-tag="c"
+           data-author="" >
+            <span class="post-title" title="C语言预处理">C语言预处理</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/18/Jenkinsfile/"
+           data-tag="Jenkinsfile"
+           data-author="" >
+            <span class="post-title" title="Jenkinsfile">Jenkinsfile</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/18/ECS%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9/"
+           data-tag="ecs"
+           data-author="" >
+            <span class="post-title" title="ECS磁盘扩容">ECS磁盘扩容</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/18/Nginx%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96header/"
+           data-tag="Nginx"
+           data-author="" >
+            <span class="post-title" title="Nginx日志获取header">Nginx日志获取header</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/18/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/"
+           data-tag="sonar"
+           data-author="" >
+            <span class="post-title" title="Jenkins结合sonar代码检测流水线">Jenkins结合sonar代码检测流水线</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/18/Nginx/"
+           data-tag="Nginx"
+           data-author="" >
+            <span class="post-title" title="Nginx">Nginx</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/18/c++%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="c++构造函数">c++构造函数</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/18/jenkins%E7%BB%93%E5%90%88rsync%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81/"
+           data-tag="jenkins"
+           data-author="" >
+            <span class="post-title" title="jenkins结合rsync同步代码">jenkins结合rsync同步代码</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/18/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="c陷阱与缺陷">c陷阱与缺陷</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="k8s "
+           href="/2021/03/18/kubectl/"
+           data-tag="kubectl"
+           data-author="" >
+            <span class="post-title" title="kubectl">kubectl</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/make/"
+           data-tag="c"
+           data-author="" >
+            <span class="post-title" title="make">make</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/ngx_array/"
+           data-tag="nginx"
+           data-author="" >
+            <span class="post-title" title="nginx数组">nginx数组</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/18/mongo/"
+           data-tag="mongodb"
+           data-author="" >
+            <span class="post-title" title="mongo">mongo</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/18/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"
+           data-tag="linux性能优化实战笔记"
+           data-author="" >
+            <span class="post-title" title="linux性能优化实战笔记">linux性能优化实战笔记</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/18/sonar/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="sonar">sonar</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/18/sql/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="sql">sql</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/18/zabbix_dingdingAlert/"
+           data-tag="zabbix"
+           data-author="" >
+            <span class="post-title" title="zabbix_dingdingAlert">zabbix_dingdingAlert</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="k8s "
+           href="/2021/03/18/%E4%B8%80%E6%AC%A1%E6%B5%B7%E5%A4%96k8s%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5/"
+           data-tag="cicd"
+           data-author="" >
+            <span class="post-title" title="一次海外k8s集群代码发布实践">一次海外k8s集群代码发布实践</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/18/zabbix_key/"
+           data-tag="zabbix"
+           data-author="" >
+            <span class="post-title" title="zabbix_key">zabbix_key</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/18/%E4%BA%8C%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="二级计算机">二级计算机</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/18/%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="二叉树">二叉树</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/%E5%B8%A6%E7%8E%AF%E9%93%BE%E8%A1%A8/"
+           data-tag="数据结构"
+           data-author="" >
+            <span class="post-title" title="带环链表">带环链表</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/18/%E6%B1%87%E7%BC%96%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="汇编笔记">汇编笔记</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/"
+           data-tag="c语言基础"
+           data-author="" >
+            <span class="post-title" title="数据的存储">数据的存储</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"
+           data-tag="虚拟内存"
+           data-author="" >
+            <span class="post-title" title="深入理解计算机系统">深入理解计算机系统</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="深入理解计算机系统 "
+           href="/2021/03/18/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%A4%84%E7%90%86/"
+           data-tag="c"
+           data-author="" >
+            <span class="post-title" title="第二章 信息的表示和处理">第二章 信息的表示和处理</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算机网络">计算机网络</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/C%E4%B8%93%E5%AE%B6%E7%BC%96%E7%A8%8B/"
+           data-tag="book"
+           data-author="" >
+            <span class="post-title" title="C专家编程">C专家编程</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/C%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90/"
+           data-tag="book"
+           data-author="" >
+            <span class="post-title" title="C深入剖析">C深入剖析</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/C%E5%92%8C%E6%8C%87%E9%92%88/"
+           data-tag="book"
+           data-author="" >
+            <span class="post-title" title="C和指针">C和指针</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="Docker "
+           href="/2021/03/18/Dockerfile/"
+           data-tag="Dockerfile"
+           data-author="" >
+            <span class="post-title" title="Dockerfile">Dockerfile</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag="c"
+           data-author="" >
+            <span class="post-title" title="c学习笔记">c学习笔记</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/ngx_mem_pool/"
+           data-tag="nginx"
+           data-author="" >
+            <span class="post-title" title="nginx内存池">nginx内存池</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/%E6%8C%87%E9%92%88/"
+           data-tag="c语言基础"
+           data-author="" >
+            <span class="post-title" title="指针">指针</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/%E6%8E%92%E5%BA%8F/"
+           data-tag="排序"
+           data-author="" >
+            <span class="post-title" title="排序">排序</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="深入理解计算机系统 "
+           href="/2021/03/18/%E7%AC%AC%E4%B9%9D%E7%AB%A0%20%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/"
+           data-tag="操作系统"
+           data-author="" >
+            <span class="post-title" title="第九章 虚拟内存">第九章 虚拟内存</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/%E8%BF%9B%E7%A8%8B/"
+           data-tag="进程"
+           data-author="" >
+            <span class="post-title" title="进程">进程</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/C%20Primer%20Plus/"
+           data-tag="c primer plus"
+           data-author="" >
+            <span class="post-title" title="C Primer Plus">C Primer Plus</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/18/tcp:ip/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcp:ip">tcp:ip</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="mysql "
+           href="/2021/03/18/PracticeSql/"
+           data-tag="sql_base"
+           data-author="" >
+            <span class="post-title" title="PracticeSql">PracticeSql</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-进程" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">进程</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="C语言">C语言</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color3">进程</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2021-03-18 11:09:52'>2021-03-18 11:09</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#fork"><span class="toc-text">fork:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#wait"><span class="toc-text">wait</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#waitpid"><span class="toc-text">waitpid</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IPC"><span class="toc-text">IPC</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#pipe"><span class="toc-text">pipe</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#FIFO"><span class="toc-text">FIFO</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#nmap"><span class="toc-text">nmap</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="fork"><a href="#fork" class="headerlink" title="fork:"></a>fork:</h4><p>fork()函数man手册：</p>
+<ul>
+<li>fork函数通过调用它的进程复制出一个新的进程(谁调用它复制谁，准确说是共享（比如代码段），对于私有数据采用写时复制机制)。</li>
+<li>子进程的父进程id与父进程相同</li>
+<li>子进程不继承父进程的内存锁</li>
+<li>子进程的资源利用率和cpu使用时间计数会被置0。</li>
+<li>子进程信号集为空(进程运行过程中收到的信号都会保存在一个集合中)。</li>
+<li>子进程不继承父进程的信号量(引自百度百科：<a href="https://baike.baidu.com/item/信号量/9807501" target="_blank" rel="noopener">信号量</a>的值与相应资源的使用情况有关，当它的值大于 0 时，表示当前可用的资源数的数量；当它的值小于 0 时，其绝对值表示等待使用该资源的进程个数。信号量的值仅能由 PV 操作来改变。)</li>
+<li>子进程不继承父进程的记录锁(The child does not inherit record locks from its parent (fcntl(2)))</li>
+<li>子进程不继承父进程的计时器。</li>
+</ul>
+<p>fork调用的一个奇妙之处就是它仅仅被调用一次但是返回两次：</p>
+<p><img src="http://img.3amupupup.online/do_fork.png" alt="do_fork"></p>
+<p>为什么能返回两次：父进程创建子进程时，子进程共享父进程上下文，其中上下文包含程序计数器，它里面存储的是程序要执行的下一条cpu指令。程序执行到return之前，子进程已完成创建，并且通过wake_up_new_task函数将子进程添加到可调度队列中去了，此时子进程共享父进程的程序计数器，它们的程序计数器里的指令都指向tracehook_report_clone_complete函数，因此当子进程拿到cpu时，会从tracehook_report_clone_complete开始执行直至return。因此调用fork函数会有两次返回，一次是父进程中另一次是在子进程中。</p>
+<p>函数，当子进程拿到cpu时，会执行程序计数器中的指令即return，所以fork函数会返回两次，一次是在父进程中，一次是在子进程中)。</p>
+<p>它可能有三种不同的返回值：</p>
+<ol>
+<li>在父进程中，fork()返回新创建的子进程的pid。</li>
+<li>在子进程中，fork()返回0。</li>
+<li>如果fork()出现错误，返回一个负值。</li>
+</ol>
+<p>在fork函数执行完毕之后，如果创建进程成功，则出现两个进程，一个是子进程一个是父进程。在父进程中返回新创建子进程的pid，在子进程中返回0，可以通过fork返回值判断当前进程是父进程还是子进程。</p>
+<p>另外根据程序的输出信息：父进程中的age结果为-1，子进程中的age为1，但是age的地址在父子进程中相同。父进程和子进程共享内存，但是不共享私有数据，使用了写时复制的机制。但是pid不同(现阶段认知)。内存地址相同但是值却不相同，这里需要学习一下操作系统-虚拟内存。这里解释下：虽然父子进程中的age的内存地址相同，但是他们彼此独立不可见，虚拟内存地址相同但是它们各自对应的物理地址不相同。</p>
+<pre><code class="c">#include &lt;unistd.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+int main()
+{
+    int age = 0;
+    int pid;
+    pid = fork();
+    if(pid &lt; 0)
+    {
+        printf(&quot;fork() error.\n)&quot;);
+        exit(-1);
+    }
+    else if (pid == 0)
+    {
+        age++;
+        printf(&quot;I am child and my pid = %d, age = %d, addr = %p\n&quot;,getpid(),age,&amp;age);
+    }
+    else if (pid &gt; 0)
+    {
+        age--;
+        printf(&quot;I am parent and my Pid=%d, age = %d, addr = %p\n&quot;,getpid(),age,&amp;age);
+    }
+    return 0;
+}
+
+// 编译执行结果：
+// I am parent and my Pid=13086, age = -1, addr = 0x7fffc4e4dc98
+// I am child and my pid = 13087, age = 1, addr = 0x7fffc4e4dc98</code></pre>
+<h4 id="wait"><a href="#wait" class="headerlink" title="wait"></a>wait</h4><h4 id="waitpid"><a href="#waitpid" class="headerlink" title="waitpid"></a>waitpid</h4><p>pid_t waitpid(pid_t pid, int *statusp, int options);</p>
+<p>当options=0时，waitpid挂起调用进程的执行，直到它的等待集合中的一个进程终止；如果这个集合中的一个进程在刚调用的时刻就已经终止，那么waitpid立即返回。</p>
+<ol>
+<li><p>判定等待集合的成员</p>
+<p>等待集合的成员是由 pid 参数决定的：</p>
+<ol>
+<li>pid &gt; 0 ，等待的集合就是一个单独的子进程，它的进程id等于pid。</li>
+<li>pid = -1，那么等待就是父进程的所有子进程组成的集合中的任意子进程。</li>
+<li>pid &lt; -1，回收进程组id为abs(pid)的一组进程，也就是所有子进程。</li>
+<li>pid = 0，回收 与调用进程组id相同组内的子进程。</li>
+</ol>
+</li>
+<li><p>修改默认行为</p>
+<ul>
+<li><p>0</p>
+<p>与wait基本没有区别。</p>
+</li>
+<li><p>WNOHANG</p>
+<p>如果等待集合中的任何子进程都没有终止，那么立即返回(返回值为0)，如果有子进程退出返回退出子进程的pid，失败返回-1(没有子进程或者子进程死光了)。在等待子进程终止的同时如果想做其它事情，这个选项很有用。</p>
+<pre><code class="c">#include &lt;unistd.h&gt;
+#include &lt;sys/wait.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int status;
+    int pid;
+    pid = fork();
+    if(pid == 0)
+    {
+        printf(&quot;I&#39;m child.\n&quot;);
+        sleep(3);
+        exit(0);
+    }
+
+    while((pid = waitpid(-1,&amp;status,WNOHANG)) &gt; 0)
+    {
+        printf(&quot;child exit.\n&quot;);
+    }
+
+    printf(&quot;I&#39;m parent.\n&quot;);
+
+    return 0;
+}
+
+// 使用 WNOHANG 父进程不会等待自己成退出，所以执行效果是: 父进程、子进程执行各自的代码，父进程执行完毕之后退出，因为子进程sleep(3)，所以子进程在输出打印之后三秒钟退出。</code></pre>
+</li>
+<li><p>WUNTRACED</p>
+<p>挂起调动进程的执行，直到等待集合中的一个进程变成已终止或者停止。返回的pid为导致返回的已终止或被停止子进程的pid。默认的行为是只返回已终止子进程。在想要检查已终止或已停止的子进程时，这个选项比较有用。</p>
+<pre><code class="c">#include &lt;unistd.h&gt;
+#include &lt;sys/wait.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int status;
+    int pid;
+    pid = fork();
+    if(pid == 0)
+    {
+        printf(&quot;child run and pid = %d\n&quot;,getpid());
+        printf(&quot;I&#39;m child.\n&quot;);
+        sleep(3);
+        exit(0);
+    }
+
+    while((pid = waitpid(-1,&amp;status,WUNTRACED)) &gt; 0)
+    {
+        printf(&quot;child exit who pid = %d.\n&quot;,pid);
+    }
+
+    printf(&quot;I&#39;m parent.\n&quot;);
+
+    return 0;
+}
+
+// root$ ./a.out
+// child run and pid = 26334
+// I&#39;m child.
+// child exit who pid = 26334.
+// I&#39;m parent.</code></pre>
+</li>
+<li><p>WCONTINUED</p>
+<p>挂起调用进程的执行，直到等待集合中一个正在运行的进程终止或者等待集合中一个被停止的进程收到SIGCONT信号重新开始执行。</p>
+</li>
+<li><p>组合使用：WNOHANG | WUNTRACED</p>
+<p>立即返回，如果等待集合中的子进程都没有停止或者终止则返回0，如果有一个停止或者终止则返回该子进程的pid。</p>
+</li>
+</ul>
+</li>
+<li><p>检查已回收子进程的退出状态</p>
+<p><img src="http://img.3amupupup.online/childProcessStatus.png" alt="waitpid() status参数"></p>
+<p>如果statusp参数是非空的，那么操作系统就会读取进程的PCB，保存在status指向的变量中。</p>
+<p>status中保存的就是进程退出的信息，int是32bit，是否正常运行，退出码是多少，退出信号是多少。</p>
+<pre><code class="c">#include &lt;unistd.h&gt;
+#include &lt;sys/wait.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main()
+{
+    int status = 0;
+    pid_t id = fork();
+    if(id &lt; 0)
+    {
+        perror(&quot;fork error!\n&quot;);
+    }
+    else if(id == 0) // child
+    {
+        printf(&quot;i am child process\n&quot;);
+        int count = 0;
+        while (count &lt; 5)
+        {
+            sleep(1);
+            count++;
+            printf(&quot;sleep 1\n&quot;);
+        }
+//        int ret = 1/0;
+//        exit(99);
+        exit(0);
+    }
+
+    // parent
+    printf(&quot;father wait before.\n&quot;);
+    pid_t ret = waitpid(id,&amp;status,0);
+    printf(&quot;status = %d\n&quot;,status); // 保存子进程的返回状态
+    if(ret &gt; 0)
+    {
+        printf(&quot;子进程终止信号: %d\n&quot;, status &amp; 0x7f); // 0 表示是正常退出
+        printf(&quot;子进程退出码: %d\n&quot;,(status &gt;&gt; 8) &amp; 0xff);
+        printf(&quot;wait success!\n&quot;);
+        if(status &amp; 0x7f) // 非0则说明子进程不是正常退出的
+        {
+            printf(&quot;child run error!\n&quot;);
+        }
+        else
+        {
+            if((status&gt;&gt;8) &amp; 0xff) // 运行成功但是结果不正确
+            {
+                printf(&quot;child run success, but result is not right, exit code: %d\n&quot;,(status&gt;&gt;8)&amp;0xff);
+            }
+            else
+            {
+                printf(&quot;child run success and result is right,exit code: %d\n&quot;,(status&gt;&gt;8)&amp;0xff);
+            }
+        }
+    }
+    else
+    {
+        printf(&quot;wait failed!\n&quot;);
+    }
+    printf(&quot;father wait after.\n&quot;);
+
+    return 0;
+}</code></pre>
+<p><img src="http://img.3amupupup.online/WaitpidStatus.png" alt="image-20210202163458393"></p>
+<p>图中在子进程sleep的时候给其发送了一个SIGSTOP信号导致子进程退出，status中保存的是子进程终止的状态信息。</p>
+<p>标准库中也提供一些宏函数来检测进程的退出状态：</p>
+<ol>
+<li><p>WIFEXITED(status): 如果为正常子进程终止子进程的返回状态，则为真。(查看子进程是否正常退出：! (status &amp; 0x7f))</p>
+</li>
+<li><p>WEXITSTATUS(status): 如果WIFEXITED(status)为非零，提取子进程退出码。(查看子进程退出码: (status&gt;&gt;8)&amp;0xff))</p>
+<pre><code class="c">#include &lt;unistd.h&gt;
+#include &lt;sys/wait.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main()
+{
+    int status = 0;
+    pid_t id = fork();
+    if(id &lt; 0)
+    {
+        perror(&quot;fork error!\n&quot;);
+    }
+    else if(id == 0) // child
+    {
+        printf(&quot;i am child process\n&quot;);
+        int count = 0;
+        while (count &lt; 3)
+        {
+            sleep(1);
+            count++;
+            printf(&quot;sleep 1\n&quot;);
+        }
+        int ret = 1/0;
+        exit(10);
+    }
+
+    // parent
+    printf(&quot;father wait before.\n&quot;);
+    pid_t ret = waitpid(id,&amp;status,0);
+    printf(&quot;status = %d\n&quot;,status); // 保存子进程的返回状态
+
+    if(WIFEXITED(status)) // 为真说明是正常退出的
+    {
+        printf(&quot;child exit code: %d\n&quot;,WEXITSTATUS(status));
+    }
+    else
+    {
+        printf(&quot;child exit error!\n&quot;);
+    }
+
+    printf(&quot;father wait after.\n&quot;);
+
+    return 0; 
+}</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+<h4 id="IPC"><a href="#IPC" class="headerlink" title="IPC"></a>IPC</h4><h5 id="pipe"><a href="#pipe" class="headerlink" title="pipe"></a>pipe</h5><pre><code class="c">#include &lt;unistd.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;sys/wait.h&gt;
+int main()
+{
+    int fd[2]; 
+    pipe(fd); // fd[1]是写端，fd[0]是读端
+    int pid = fork();
+    if(pid == 0)
+    {
+        sleep(3);
+        write(fd[1],&quot;hello world\n&quot;,13);
+    }
+    else if(pid &gt; 0)
+    {
+        waitpid(-1,NULL,0);
+        char buf[20]={0};
+        int ret = read(fd[0],buf,sizeof(buf)); // read会阻塞等待
+        if(ret&gt;0)
+            write(STDOUT_FILENO,buf,ret);
+
+    }
+    return 0;
+}</code></pre>
+<p>管道大小</p>
+<ul>
+<li><pre><code class="shell">[root@iZbp11u8qxiwepq15dm1liZ ComputerSystem]# ulimit -a
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 6946
+max locked memory       (kbytes, -l) 64
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 65535
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 6946
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited</code></pre>
+<p>可以看到在linux系统上pipe size 为512bytes * 8 = 4096bytes。</p>
+</li>
+</ul>
+<p>优点：简单</p>
+<p>缺点：</p>
+<ul>
+<li>只能有血缘关系的进程之间才能使用</li>
+<li>只能单向通信(半双工通信)，如果需要双向通信需要创建两个管道</li>
+</ul>
+<h5 id="FIFO"><a href="#FIFO" class="headerlink" title="FIFO"></a>FIFO</h5><p>有名管道，实现无血缘关系进程通信。</p>
+<ul>
+<li><p>创建一个管道的伪文件</p>
+<ul>
+<li>int mkfifo(const char *pathname, mode_t mode);</li>
+<li>mkfifo fifoName 命令创建</li>
+</ul>
+</li>
+<li><p>内核会给fifo文件开辟一个缓冲区，操作fifo文件，可以操作缓冲区，实现进程通信–实际上就是文件读写</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/stat.h&gt;
+#include &lt;fcntl.h&gt;
+#include &lt;string.h&gt;
+#define FIFO &quot;/root/ComputerSystem/myfifo&quot; // shell: mkfifo myfifo
+
+int main()
+{
+    int fd = open(FIFO,O_WRONLY); // 如果没有程序 read，open会阻塞
+    char buf[256];
+    int num = 1;
+    while(1)
+       {
+        memset(buf,0x00,sizeof(buf));
+        sprintf(buf,&quot;hello%d&quot;,num++);
+        write(fd,buf,strlen(buf));
+        sleep(1);
+    }
+    close(fd);
+    return 0;
+}
+
+//  若无读端写端open阻塞</code></pre>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/stat.h&gt;
+#include &lt;fcntl.h&gt;
+
+int main()
+{
+    int fd = open(&quot;myfifo&quot;,O_RDONLY);
+    char buf[256];
+    int num = 1;
+    while(1)
+       {
+        int ret = read(fd,buf,sizeof(buf));
+        if(ret &gt; 0)
+        {
+            printf(&quot;read:%s\n&quot;,buf);
+        }
+    }
+    close(fd);
+    return 0;
+}
+
+//  若无写端读端阻塞，有点类似golang里的无缓冲channel</code></pre>
+<p>linux系统上通过命令：man 7 signal 查看信号的手册</p>
+<p><img src="http://img.3amupupup.online/SignalAction.png" alt="signal"></p>
+<p><img src="http://img.3amupupup.online/fifo.png" alt="fifo"></p>
+<p>若读端关闭，写端也会终止。至于为什么会关闭，如下解释：</p>
+<p>执行写端程序时，open函数打开管道文件 myfifo，由于没有读端，所以写端会阻塞住。当执行读端程序之后 open停止阻塞 继续向下执行开始往管道里写数据。当关闭读端时，操作系统发送 sigpipe 信号给写端。由图可知 sigpipe 是一个Term(terminate)信号，所以写端程序终止退出。</p>
+</li>
+</ul>
+<h5 id="nmap"><a href="#nmap" class="headerlink" title="nmap"></a>nmap</h5>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>进程</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
+    <p><span class="copy-title">发布时间:</span>2021-03-18, 11:09:52</p>
+    <p><span class="copy-title">最后更新:</span>2021-03-18, 11:09:52</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/18/%E8%BF%9B%E7%A8%8B/" title="进程">http://blog.3amupupup.online/2021/03/18/%E8%BF%9B%E7%A8%8B/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 Yelog</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#c','#Jenkinsfile','#ecs','#Nginx','#sonar','#jenkins','#kubectl','#nginx','#mongodb','#linux性能优化实战笔记','#zabbix','#cicd','#数据结构','#c语言基础','#虚拟内存','#book','#Dockerfile','#排序','#操作系统','#进程','#c primer plus','#sql_base',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

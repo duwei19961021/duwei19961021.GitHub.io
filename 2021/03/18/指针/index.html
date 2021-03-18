@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>指针 | BLOG</title>
+  <meta name="keywords" content=" c语言基础 ">
+  <meta name="description" content="指针 | BLOG">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="1、jenkins所需插件Pipeline、Sonar Quality Gates Plugin、SonarQube Scanner、Generic Webhook Trigger Plugin 2、jenkins配置 Dashboard &#x3D;&gt; 系统管理 &#x3D;&gt; 全局工具配置   Dashboard &#x3D;&gt; 系统管理 &#x3D;&gt; 系统配置         这个token是在sonar">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jenkins结合sonar代码检测流水线">
+<meta property="og:url" content="http://blog.3amupupup.online/2021/03/18/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/index.html">
+<meta property="og:site_name" content="BLOG">
+<meta property="og:description" content="1、jenkins所需插件Pipeline、Sonar Quality Gates Plugin、SonarQube Scanner、Generic Webhook Trigger Plugin 2、jenkins配置 Dashboard &#x3D;&gt; 系统管理 &#x3D;&gt; 全局工具配置   Dashboard &#x3D;&gt; 系统管理 &#x3D;&gt; 系统配置         这个token是在sonar">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://blog.3amupupup.online/image/image-20201227165338711.png">
+<meta property="og:image" content="http://blog.3amupupup.online/image/image-20201227165501679.png">
+<meta property="og:image" content="http://blog.3amupupup.online/image/image-20201227165627390.png">
+<meta property="og:image" content="http://blog.3amupupup.online/image/image-20201227165828644.png">
+<meta property="og:image" content="http://blog.3amupupup.online/image/image-20201227165956042.png">
+<meta property="og:image" content="http://blog.3amupupup.online/image/image-20201227170513752.png">
+<meta property="og:image" content="http://blog.3amupupup.online/image/image-20201227170841973.png">
+<meta property="article:published_time" content="2021-03-18T03:09:52.078Z">
+<meta property="article:modified_time" content="2021-03-18T03:09:52.078Z">
+<meta property="article:author" content="拦云">
+<meta property="article:tag" content="sonar">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.3amupupup.online/image/image-20201227165338711.png">
+
+
+<link rel="icon" href="/img/favicon.ico">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/darcula.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/docker.png" />
+</a>
+<div class="author">
+    <span>拦云</span>
+</div>
+
+<div class="icon">
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(42)</small></div></li>
+    
+        
+            
+            <li><div data-rel="C语言">C语言<small>(15)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="运维">运维<small>(10)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="k8s">k8s<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="深入理解计算机系统">深入理解计算机系统<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Docker">Docker<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="mysql">mysql<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="42">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color2">c</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Jenkinsfile</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">ecs</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Nginx</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">sonar</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">jenkins</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">kubectl</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">nginx</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">mongodb</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">linux性能优化实战笔记</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">zabbix</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">cicd</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">数据结构</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">c语言基础</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">虚拟内存</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">book</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Dockerfile</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">排序</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">操作系统</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">进程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">c primer plus</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">sql_base</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class=""
+           href="/2021/03/18/CppPrimer/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CppPrimer">CppPrimer</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0linux%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C语言实现linux命令">C语言实现linux命令</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E9%A2%84%E5%A4%84%E7%90%86/"
+           data-tag="c"
+           data-author="" >
+            <span class="post-title" title="C语言预处理">C语言预处理</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/18/Jenkinsfile/"
+           data-tag="Jenkinsfile"
+           data-author="" >
+            <span class="post-title" title="Jenkinsfile">Jenkinsfile</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/18/ECS%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9/"
+           data-tag="ecs"
+           data-author="" >
+            <span class="post-title" title="ECS磁盘扩容">ECS磁盘扩容</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/18/Nginx%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96header/"
+           data-tag="Nginx"
+           data-author="" >
+            <span class="post-title" title="Nginx日志获取header">Nginx日志获取header</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/18/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/"
+           data-tag="sonar"
+           data-author="" >
+            <span class="post-title" title="Jenkins结合sonar代码检测流水线">Jenkins结合sonar代码检测流水线</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/18/Nginx/"
+           data-tag="Nginx"
+           data-author="" >
+            <span class="post-title" title="Nginx">Nginx</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/18/c++%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="c++构造函数">c++构造函数</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/18/jenkins%E7%BB%93%E5%90%88rsync%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81/"
+           data-tag="jenkins"
+           data-author="" >
+            <span class="post-title" title="jenkins结合rsync同步代码">jenkins结合rsync同步代码</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/18/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="c陷阱与缺陷">c陷阱与缺陷</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="k8s "
+           href="/2021/03/18/kubectl/"
+           data-tag="kubectl"
+           data-author="" >
+            <span class="post-title" title="kubectl">kubectl</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/make/"
+           data-tag="c"
+           data-author="" >
+            <span class="post-title" title="make">make</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/ngx_array/"
+           data-tag="nginx"
+           data-author="" >
+            <span class="post-title" title="nginx数组">nginx数组</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/18/mongo/"
+           data-tag="mongodb"
+           data-author="" >
+            <span class="post-title" title="mongo">mongo</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/18/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"
+           data-tag="linux性能优化实战笔记"
+           data-author="" >
+            <span class="post-title" title="linux性能优化实战笔记">linux性能优化实战笔记</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/18/sonar/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="sonar">sonar</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/18/sql/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="sql">sql</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/18/zabbix_dingdingAlert/"
+           data-tag="zabbix"
+           data-author="" >
+            <span class="post-title" title="zabbix_dingdingAlert">zabbix_dingdingAlert</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="k8s "
+           href="/2021/03/18/%E4%B8%80%E6%AC%A1%E6%B5%B7%E5%A4%96k8s%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5/"
+           data-tag="cicd"
+           data-author="" >
+            <span class="post-title" title="一次海外k8s集群代码发布实践">一次海外k8s集群代码发布实践</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/18/zabbix_key/"
+           data-tag="zabbix"
+           data-author="" >
+            <span class="post-title" title="zabbix_key">zabbix_key</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/18/%E4%BA%8C%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="二级计算机">二级计算机</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/18/%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="二叉树">二叉树</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/%E5%B8%A6%E7%8E%AF%E9%93%BE%E8%A1%A8/"
+           data-tag="数据结构"
+           data-author="" >
+            <span class="post-title" title="带环链表">带环链表</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/18/%E6%B1%87%E7%BC%96%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="汇编笔记">汇编笔记</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/"
+           data-tag="c语言基础"
+           data-author="" >
+            <span class="post-title" title="数据的存储">数据的存储</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"
+           data-tag="虚拟内存"
+           data-author="" >
+            <span class="post-title" title="深入理解计算机系统">深入理解计算机系统</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="深入理解计算机系统 "
+           href="/2021/03/18/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%A4%84%E7%90%86/"
+           data-tag="c"
+           data-author="" >
+            <span class="post-title" title="第二章 信息的表示和处理">第二章 信息的表示和处理</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算机网络">计算机网络</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/C%E4%B8%93%E5%AE%B6%E7%BC%96%E7%A8%8B/"
+           data-tag="book"
+           data-author="" >
+            <span class="post-title" title="C专家编程">C专家编程</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/C%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90/"
+           data-tag="book"
+           data-author="" >
+            <span class="post-title" title="C深入剖析">C深入剖析</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/C%E5%92%8C%E6%8C%87%E9%92%88/"
+           data-tag="book"
+           data-author="" >
+            <span class="post-title" title="C和指针">C和指针</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="Docker "
+           href="/2021/03/18/Dockerfile/"
+           data-tag="Dockerfile"
+           data-author="" >
+            <span class="post-title" title="Dockerfile">Dockerfile</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag="c"
+           data-author="" >
+            <span class="post-title" title="c学习笔记">c学习笔记</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/ngx_mem_pool/"
+           data-tag="nginx"
+           data-author="" >
+            <span class="post-title" title="nginx内存池">nginx内存池</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/%E6%8C%87%E9%92%88/"
+           data-tag="c语言基础"
+           data-author="" >
+            <span class="post-title" title="指针">指针</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/%E6%8E%92%E5%BA%8F/"
+           data-tag="排序"
+           data-author="" >
+            <span class="post-title" title="排序">排序</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="深入理解计算机系统 "
+           href="/2021/03/18/%E7%AC%AC%E4%B9%9D%E7%AB%A0%20%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/"
+           data-tag="操作系统"
+           data-author="" >
+            <span class="post-title" title="第九章 虚拟内存">第九章 虚拟内存</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/%E8%BF%9B%E7%A8%8B/"
+           data-tag="进程"
+           data-author="" >
+            <span class="post-title" title="进程">进程</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/C%20Primer%20Plus/"
+           data-tag="c primer plus"
+           data-author="" >
+            <span class="post-title" title="C Primer Plus">C Primer Plus</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/18/tcp:ip/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcp:ip">tcp:ip</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="mysql "
+           href="/2021/03/18/PracticeSql/"
+           data-tag="sql_base"
+           data-author="" >
+            <span class="post-title" title="PracticeSql">PracticeSql</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-指针" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">指针</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="C语言">C语言</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color1">c语言基础</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2021-03-18 11:09:52'>2021-03-18 11:09</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、函数指针"><span class="toc-text">1、函数指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、qsort-demo"><span class="toc-text">2、qsort demo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、简单实现qsort-，冒泡排序版。"><span class="toc-text">3、简单实现qsort()，冒泡排序版。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、练习题"><span class="toc-text">4、练习题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、易错题"><span class="toc-text">5、易错题</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、函数指针"><a href="#1、函数指针" class="headerlink" title="1、函数指针"></a>1、函数指针</h3><pre><code class="c">void(* signal( int, void(*)(int)) )(int);
+// signal是一个函数声明
+// signal函数的参数有2个，第一个是int，第二个是函数指针，改函数指针的参数是int，返回类型是void
+// signal函数的返回类型也是一个函数指针：该函数指针指向的函数的参数是int，返回类型是void
+
+//简化
+typedef void(*pfun_t)(int);
+pfun_t signal(int, pfun_t);
+
+char* my_strcpy(char* dest, const char* src);
+char* (*pf)(char *, const char*)();
+char* (*pfArr[4])(char *,const char *);</code></pre>
+<h3 id="2、qsort-demo"><a href="#2、qsort-demo" class="headerlink" title="2、qsort demo"></a>2、qsort demo</h3><pre><code class="c">#include &quot;stdlib.h&quot;
+#include &quot;string.h&quot;
+
+struct student{
+    char name[10];
+    int age;
+};
+
+int CmpStudentAge(const void * e1, const void * e2){
+    return ((struct student*)e1)-&gt;age-((struct student*)e2)-&gt;age;
+}
+
+int CmpStudentName(const void * e1, const void * e2){
+    return strcmp(((struct student*)e1)-&gt;name, ((struct student*)e2)-&gt;name);
+}
+
+int main(){
+    struct student s[3] = {{"zhangsan",14}, {"lisi", 5}, {"duwei", 8}};
+    int len = sizeof(s) / sizeof(struct student);
+    int sz = sizeof(struct student);
+
+    qsort(s, len, sz, CmpStudentName);
+    /*
+     * 第一个参数：待排序数组的首元素地址
+     * 第二个参数：待排序数组的元素个数
+     * 第三个参数：待排序数组的每个元素的大小，单位是字节
+     * 第四个参数：是函数指针，比较两个元素的函数的地址，需要自己实现
+     *           函数指针的两个参数是：待比较的两个元素的地址
+     * */
+
+    for (int i = 0; i &lt; 3; ++i) {
+        printf(&quot;%s &quot;,s[i].name);
+    }
+    return 0;
+}
+</code></pre>
+<h3 id="3、简单实现qsort-，冒泡排序版。"><a href="#3、简单实现qsort-，冒泡排序版。" class="headerlink" title="3、简单实现qsort()，冒泡排序版。"></a>3、简单实现qsort()，冒泡排序版。</h3><pre><code class="c">struct person{
+    char name[10];
+    int age;
+};
+
+void Swap(char* buf1, char* buf2, int width){
+    for (int i = 0; i &lt; width; ++i) {
+        char tmp = *buf1;
+        *buf1 = *buf2;
+        *buf2 = tmp;
+        buf1++;
+        buf2++;
+    }
+}
+
+void bubble_sort(void*base, int sz, int width,int (*cmp)(const void * e1, const void * e2)){
+    for (int i = 0; i &lt; sz -1; ++i) {
+        for (int j = 0; j &lt; sz - 1 - i; ++j) {
+            if (cmp((char*)base+j*width, (char*)base+(j+1)*width) &gt; 0){
+                /*
+                 * 冒泡排序此处省略。
+                 * void类型的指针无法进行指针加减操作，所以先将其转换成char*类型，然后通过函数传参传入待排序数组中元素的size(即width，单位字节)，
+                 * 然后通过 base + j*width 进行地址操作，保证每次操作都能够跳跃一个元素。
+                 * */
+                Swap((char*)base+j*width, (char*)base+(j+1)*width, width);
+            }
+        }
+    }
+}
+
+int CmpPersonAge(const void * e1, const void * e2){
+    return ((struct person*)e1)-&gt;age-((struct person*)e2)-&gt;age;
+}
+
+int CmpPersonName(const void * e1, const void * e2){
+    return strcmp(((struct person*)e1)-&gt;name, ((struct person*)e2)-&gt;name);
+}
+
+int cmp_int(const void * e1, const void * e2){
+    return *(int *)e1 - *(int *)e2;
+}
+
+int main(){
+    struct person p[3] = {{"zhangsan",14}, {"lisi", 5}, {"duwei", 8}};
+    int sz = sizeof(p) / sizeof(struct person);
+    int width = sizeof(struct person);
+    bubble_sort(p,sz,width,CmpPersonAge);
+    for (int i = 0; i &lt; 3; ++i) {
+        printf(&quot;%s &quot;,p[i].name);
+    }
+    printf(&quot;\n&quot;);
+
+
+    int num[10] = {1,5,2,6,3,9,0,8,7,4};
+    bubble_sort(num,10,sizeof(int), cmp_int);
+    for (int i = 0; i &lt; 10; ++i) {
+        printf(&quot;%d &quot;,num[i]);
+    }
+    printf(&quot;\n&quot;);
+}</code></pre>
+<h3 id="4、练习题"><a href="#4、练习题" class="headerlink" title="4、练习题"></a>4、练习题</h3><pre><code class="c">int main(){
+    /*
+     * 针对64位操作系统
+     * 1. sizeof(数组名) - 数组名表示整个数组
+     * 2. &amp;数组名 - 数组名表示整个数组
+     * */
+    int a[] = {1,2,3,4};
+    printf(&quot;%d\n&quot;,sizeof(a)); // 16 表示计算数组的大小(特殊)
+    printf(&quot;%d\n&quot;,sizeof(a+0)); // 8 表示数组a中第一个元素的地址
+    printf(&quot;%d\n&quot;,sizeof(*a)); // 4 表示数组中的第一个元素的值
+    printf(&quot;%d\n&quot;,sizeof(a+1)); // 8 表示数组a中第二个元素的地址
+    printf(&quot;%d\n&quot;,sizeof(a[1])); // 4 表示数组中第二个元素的值
+    printf(&quot;%d\n&quot;,sizeof(&amp;a)); // 8 表示数组的地址
+    printf(&quot;%d\n&quot;,sizeof(*&amp;a)); // 16 *和&amp;抵消，a表示数组，在此表示计算数组的大小
+    printf(&quot;%d\n&quot;,sizeof(&amp;a+1)); // 8 &amp;a是地址，地址加一还是地址且步长为被加地址的长度
+    printf(&quot;%d\n&quot;,sizeof(&amp;a[0])); // 8 []的优先级比&amp;高，因此表示数组a第一个元素的地址
+    printf(&quot;%d\n&quot;,sizeof(&amp;a[0]+1)); // 8 地址加1还是地址
+    printf(&quot;-------\n&quot;);
+
+    char arr[] = {&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;}; //这种方式创建一个字符串，需要手动加上&#39;\0&#39;作为字符串结束符
+    printf(&quot;%d\n&quot;,sizeof(arr)); // 6 计算数组的大小，而非字符串的长度
+    printf(&quot;%d\n&quot;,sizeof(arr+0)); // 1 第一个字符的地址
+    printf(&quot;%d\n&quot;,sizeof(*arr)); // 1 第一个字符的长度
+    printf(&quot;%d\n&quot;,sizeof(arr[1])); // 1 第二个字符的长度
+    printf(&quot;%d\n&quot;,sizeof(&amp;arr)); // 8 表示数组的地址
+    printf(&quot;%d\n&quot;,sizeof(&amp;arr+1)); // 8 跳过整个数组之后的地址
+    printf(&quot;%d\n&quot;,sizeof(&amp;arr[0]+1)); // 8 跳过第一个元素之后的地址
+    printf(&quot;-------\n&quot;);
+    printf(&quot;strlen(arr)=%d\n&quot;,strlen(arr)); // 随机值，因为没有&#39;\0&#39;的位置不确定
+    printf(&quot;strlen(arr+0)=%d\n&quot;,strlen(arr+0)); // 随机值
+    printf(&quot;strlen(&amp;arr)=%d\n&quot;,strlen(&amp;arr)); // 随机值
+    printf(&quot;strlen(&amp;arr+1)=%d\n&quot;,strlen(&amp;arr+1)); // 随机值
+    printf(&quot;strlen(&amp;arr[0]+1)=%d\n&quot;,strlen(&amp;arr[0]+1)); // 随机值
+    // printf(&quot;strlen(*arr)=%d\n&quot;,strlen(*arr)); // error
+    // printf(&quot;strlen(arr[1])=%d\n&quot;,strlen(arr[1])); // err
+    printf(&quot;\n&quot;);
+
+    char arr2[] = &quot;abcdef&quot;; //这种方式会自动在字符串末尾加上&#39;\0&#39;
+    printf(&quot;%d\n&quot;,sizeof(arr2)); // 7 还有个字符结束符 &#39;\0&#39;，所以数组实际长度为7
+    printf(&quot;%d\n&quot;,sizeof(arr2+0)); // 8
+    printf(&quot;%d\n&quot;,sizeof(*arr2)); // 1
+    printf(&quot;%d\n&quot;,sizeof(arr2[1])); // 1
+    printf(&quot;%d\n&quot;,sizeof(&amp;arr2)); // 8
+    printf(&quot;%d\n&quot;,sizeof(&amp;arr2+1)); // 8
+    printf(&quot;%d\n&quot;,sizeof(&amp;arr2[0]+1)); // 8
+    printf(&quot;-------\n&quot;);
+    printf(&quot;%d\n&quot;,strlen(arr2)); // 6
+    printf(&quot;%d\n&quot;,strlen(arr2+0)); //6
+    printf(&quot;%d\n&quot;,strlen(&amp;arr2)); //6
+    printf(&quot;%d\n&quot;,strlen(&amp;arr2+1)); // 随机值
+    printf(&quot;%d\n&quot;,strlen(&amp;arr2[0]+1)); // 5
+    // printf(&quot;%d\n&quot;,strlen(*arr2)); // error,a[0]为a,a的阿斯卡码为97，strlen(97)报错
+    // printf(&quot;%d\n&quot;,strlen(arr2[1])); // error,arr2[1]为b，b的阿斯卡码值为98，strlen(98)报错
+    printf(&quot;-------\n&quot;);
+
+    char *p = &quot;abcdef&quot;; // char p[] = &quot;abcdef&quot;;
+    printf(&quot;%d\n&quot;,sizeof(p)); // 8 p是指针
+    printf(&quot;%d\n&quot;,sizeof(p+1)); // 8
+    printf(&quot;%d\n&quot;,sizeof(*p)); // 1 字符串的第一个字符
+    printf(&quot;%d\n&quot;,sizeof(p[0])); // 1 等价于 *(p+0)
+    printf(&quot;%d\n&quot;,sizeof(&amp;p)); // 8
+    printf(&quot;%d\n&quot;,sizeof(&amp;p+1)); // 8
+    printf(&quot;%d\n&quot;,sizeof(&amp;p[0]+1)); // 8
+    printf(&quot;-------\n&quot;);
+    printf(&quot;%d\n&quot;,strlen(p)); // 6
+    printf(&quot;%d\n&quot;,strlen(p+1)); // 5
+    printf(&quot;%d\n&quot;,strlen(&amp;p)); // 随机值
+    printf(&quot;%d\n&quot;,strlen(&amp;p+1)); // 随机值
+    printf(&quot;%d\n&quot;,strlen(&amp;p[0]+1)); // 5
+    // printf(&quot;%d\n&quot;,strlen(*p)); // error
+    // printf(&quot;%d\n&quot;,strlen(p[0])); // error
+    printf(&quot;-------\n&quot;);
+
+    int a2[3][4] = {0};
+    printf(&quot;sizeof(a2)=%d\n&quot;,sizeof(a2)); // 48
+    printf(&quot;sizeof(a2[0][0])=%d\n&quot;,sizeof(a2[0][0])); // 4
+    printf(&quot;sizeof(a2[0]=%d\n&quot;,sizeof(a2[0])); // *(a2+0) = 16
+    printf(&quot;sizeof(a2[0]+1)=%d\n&quot;,sizeof(a2[0]+1)); // 8
+    printf(&quot;sizeof(*(a2[0]+1))=%d\n&quot;,sizeof(*(a2[0]+1))); // a2[0]表示第一个数组(元素个数为3的)，地址+1表示跳跃到下一个元素，所以表示a[0][1]=4
+    printf(&quot;sizeof(a2+1)=%d\n&quot;,sizeof(a2+1)); // 8
+    printf(&quot;sizeof(*(a2+1)=%d\n&quot;,sizeof(*(a2+1))); // 表示第二个数组(元素个数为3的) 所以为16
+    printf(&quot;sizeof(&amp;a2[0]+1)=%d\n&quot;,sizeof(&amp;a2[0]+1)); // 8
+    printf(&quot;sizeof(*(&amp;a2[0]+1))=%d\n&quot;,sizeof(*(&amp;a2[0]+1))); // 16
+    printf(&quot;sizeof(*a2)=%d\n&quot;,sizeof(*a2)); // 16
+    printf(&quot;sizeof(a2[3])=%d\n&quot;,sizeof(a2[3])); // 16
+    return 0;
+}</code></pre>
+<h3 id="5、易错题"><a href="#5、易错题" class="headerlink" title="5、易错题"></a>5、易错题</h3><pre><code class="c">int main(){
+    int a[5] = {1,2,3,4,5};
+    int *ptr = (int *)(&amp;a+1);
+    printf(&quot;%d,%d\n&quot;,*(a+1),*(ptr-1));
+    return 0;
+    /*
+    (&amp;a+1)表示跳跃一个数组的长度，也就是元素5后的第一个内存地址，再将其转换成int*指针。
+     *(a+1)等价于a[1]，结果为2；*(ptr-1)，ptr是元素5后的地址，其类型为int*，在对其进行指针操作的时候其步长为4，所以在-1时会将其内存地址往前移四个字节也就是元素5的地址，所以结果为5.
+     _______________________
+    | 1 | 2 | 3 | 4 | 5 |ptr|
+     */
+}</code></pre>
+<pre><code class="c">struct Test{
+    int Num;
+    char *pcName;
+    short sDate;
+    char cha[2];
+    short sBa[4];
+}*p;
+/*
+ * 假设p的值为0x100000
+ * 已知，结构体Test类型的变量大小是20字节
+ * */
+
+int main(){
+    p = (struct Test*)0x100000;
+    printf(&quot;%p\n&quot;,p+0x1); // 0x100014
+    printf(&quot;%p\n&quot;,(unsigned long)p + 0x1); // 0x100001, 0x100000转换成10进制为1048576，再+1位1048577，因为打印的是%p，所有会将其显示为16进制，结果为0x100001
+    printf(&quot;%p\n&quot;,(unsigned int*)p + 0x1); // 0x100004
+    return 0;
+}
+</code></pre>
+<pre><code class="c">int main(){
+    /*
+     * 小端存储
+     * */
+    int a[4] = {1,2,3,4};
+    int *ptr1 = (int *)(&amp;a+1);
+    int *ptr2 = (int *)((int)a +1);
+    printf(&quot;%x\n&quot;,ptr1[-1]); // 0x4
+    printf(&quot;%x\n&quot;,*ptr2); // 2000000
+    return 0;
+    /*
+     * a数组的内存分部如下：
+     * |01 00 00 00|02 00 00 00|03 00 00 00|04 00 00 00|
+     * int(a)+1表示指向a地址的后一个字节(01后的那个位置也就是00)，然后再转换成int*类型，解引用ptr2时会往后读取四个字节即：00 00 00 02
+     * 因为是小端存储，所以结果为 02000000
+     * */
+}</code></pre>
+<pre><code class="c">int main(){
+    int a[5][5];
+    int(*p)[4];
+    p = a;
+    printf(&quot;%p,%d\n&quot;,&amp;p[4][2] - &amp;a[4][2],&amp;p[4][2] - &amp;a[4][2]);
+}</code></pre>
+<p><img src="/image/image-20201017173549428.png" alt="image-20201017173549428"></p>
+<pre><code class="c">int main(){
+    int aa[2][5] = {1,2,3,4,5,6,7,8,9,10};
+    int *ptr = (int *)(&amp;aa+1);
+    int *ptr2 = (int *)(*(aa+1)); // *(aa+1) 等价于 aa[1]也就是第二个数组的数组名
+    printf(&quot;%d,%d\n&quot;, *(ptr-1), *(ptr2-1)); // 10,5
+    return 0;
+}</code></pre>
+<pre><code class="c">int main(){
+    char *a[] = {&quot;work&quot;,&quot;at&quot;,&quot;alibaba&quot;};
+    char**pa = a;
+    pa++;
+    printf(&quot;%s\n&quot;,*pa);
+    return 0;
+    /*
+     * a是一个指针数组，数组有三个char*类型的指针，将a赋值给char**pa，pa还是一个指针
+     * 指针+1会根据自己的类型来决定步长，而pa的类型就是一个指针，所以步长为8字节(64位操作系统)，
+     * pa也就是a，再加上八个字节，指向了a数组中的第二个元素。所以打印结果为at
+     * */
+}</code></pre>
+<pre><code class="c">int main(){
+    char *c[] = {&quot;ENTER&quot;, &quot;NEW&quot;, &quot;POINT&quot;, &quot;FIRST&quot;};
+    char**cp[] = {c+3,c+2,c+1,c};
+    char***cpp = cp;
+
+    printf(&quot;%s\n&quot;,**++cpp); // POINT
+    printf(&quot;%s\n&quot;,*--*++cpp + 3); // ER
+    printf(&quot;%s\n&quot;,*cpp[-2]+3); // cpp[-2] 等价于 *(cpp-2),所以得到 **(cpp-2) + 3 ,结果ST
+    printf(&quot;%s\n&quot;,cpp[-1][-1]+1); // *(*(cpp-1)-1) + 1  ,结果EW
+}</code></pre>
+<p><img src="/image/image-20201019170726316.png" alt="image-20201019170726316"></p>
+<pre><code class="c">#include &quot;stdio.h&quot;
+#define OFFSETOF(struct_name, member_name) (int)&amp;(((struct_name*)0)-&gt;member_name)
+struct S{
+    char c1;
+    int a;
+    char c2;
+};
+
+int main(){
+    printf(&quot;%d\n&quot;,sizeof(struct S));
+    printf(&quot;%d\n&quot;,OFFSETOF(struct S,c1));
+    printf(&quot;%d\n&quot;,OFFSETOF(struct S,a));
+    printf(&quot;%d\n&quot;,OFFSETOF(struct S,c2));
+    return 0;
+}
+
+//预处理之后:
+/*
+struct S{
+ char c1;
+ int a;
+ char c2;
+};
+
+int main(){
+ printf(&quot;%d\n&quot;,sizeof(struct S));
+ printf(&quot;%d\n&quot;,(int)&amp;(((struct S*)0)-&gt;c1));
+ printf(&quot;%d\n&quot;,(int)&amp;(((struct S*)0)-&gt;a));
+ printf(&quot;%d\n&quot;,(int)&amp;(((struct S*)0)-&gt;c2));
+ return 0;
+}
+*/</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>指针</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
+    <p><span class="copy-title">发布时间:</span>2021-03-18, 11:09:52</p>
+    <p><span class="copy-title">最后更新:</span>2021-03-18, 11:09:52</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/18/%E6%8C%87%E9%92%88/" title="指针">http://blog.3amupupup.online/2021/03/18/%E6%8C%87%E9%92%88/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 Yelog</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#c','#Jenkinsfile','#ecs','#Nginx','#sonar','#jenkins','#kubectl','#nginx','#mongodb','#linux性能优化实战笔记','#zabbix','#cicd','#数据结构','#c语言基础','#虚拟内存','#book','#Dockerfile','#排序','#操作系统','#进程','#c primer plus','#sql_base',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

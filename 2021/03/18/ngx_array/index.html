@@ -6,22 +6,16 @@
   <meta name="keywords" content=" nginx ">
   <meta name="description" content="nginx数组 | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="nginx数据类型：数组  typedef struct {     void        *elts;      &#x2F;&#x2F; 指向第一个元素的指针     ngx_uint_t   nelts;     &#x2F;&#x2F; 未使用的元素的索引     size_t       size;      &#x2F;&#x2F; 每个元素大小     ngx_uint_t   nalloc;    &#x2F;&#x2F;  元素个数     ngx_poo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nginx数组">
-<meta property="og:url" content="http://blog.3amupupup.online/2021/03/18/ngx_array/index.html">
+<meta property="og:title" content="ngx缓冲区结构.md">
+<meta property="og:url" content="http://blog.3amupupup.online/2021/03/18/ngx%E7%BC%93%E5%86%B2%E5%8C%BA%E7%BB%93%E6%9E%84-md/index.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="nginx数据类型：数组  typedef struct {     void        *elts;      &#x2F;&#x2F; 指向第一个元素的指针     ngx_uint_t   nelts;     &#x2F;&#x2F; 未使用的元素的索引     size_t       size;      &#x2F;&#x2F; 每个元素大小     ngx_uint_t   nalloc;    &#x2F;&#x2F;  元素个数     ngx_poo">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img.3amupupup.online/ngx_array.png">
-<meta property="og:image" content="https://img.3amupupup.online/ngx_array_t.png">
-<meta property="og:image" content="http://img.3amupupup.online/ngx_array_destroy-.png">
-<meta property="article:published_time" content="2021-03-18T05:25:40.825Z">
-<meta property="article:modified_time" content="2021-03-18T08:18:13.069Z">
+<meta property="article:published_time" content="2021-03-18T07:14:01.000Z">
+<meta property="article:modified_time" content="2021-03-18T08:17:15.264Z">
 <meta property="article:author" content="拦云">
 <meta property="article:tag" content="nginx">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img.3amupupup.online/ngx_array.png">
 
 
 <link rel="icon" href="/img/favicon.ico">
@@ -643,7 +637,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-03-18 16:18:13'>2021-03-18 13:25</time>
+        创建时间:<time class="date" title='更新时间: 2021-03-18 16:31:01'>2021-03-18 13:25</time>
         
     </div>
     <div class="article-meta">
@@ -681,8 +675,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="nginx数据类型：数组"><a href="#nginx数据类型：数组" class="headerlink" title="nginx数据类型：数组"></a>nginx数据类型：数组</h5><p><img src="https://img.3amupupup.online/ngx_array.png" alt="ngx_array"></p>
-<p><img src="https://img.3amupupup.online/ngx_array_t.png" alt="ngx_array"></p>
+        <h5 id="nginx数据类型：数组"><a href="#nginx数据类型：数组" class="headerlink" title="nginx数据类型：数组"></a>nginx数据类型：数组</h5><p><img src="https://img.3amupupup.online/ngx_array-.png" alt="ngx_array"></p>
 <pre><code class="c">typedef struct {
     void        *elts;      // 指向第一个元素的指针
     ngx_uint_t   nelts;     // 未使用的元素的索引
@@ -886,7 +879,7 @@ ngx_array_push_n(ngx_array_t *a, ngx_uint_t n)
     
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-03-18, 13:25:40</p>
-    <p><span class="copy-title">最后更新:</span>2021-03-18, 16:18:13</p>
+    <p><span class="copy-title">最后更新:</span>2021-03-18, 16:31:01</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/18/ngx_array/" title="nginx数组">http://blog.3amupupup.online/2021/03/18/ngx_array/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

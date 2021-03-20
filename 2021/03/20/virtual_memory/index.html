@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>ngx缓冲区结构.md | BLOG</title>
-  <meta name="keywords" content=" nginx ">
-  <meta name="description" content="ngx缓冲区结构.md | BLOG">
+  <title>虚拟内存 | BLOG</title>
+  <meta name="keywords" content=" 内存 ">
+  <meta name="description" content="虚拟内存 | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="nginx数据类型：数组 typedef struct {     void        *elts;      &#x2F;&#x2F; 指向第一个元素的指针     ngx_uint_t   nelts;     &#x2F;&#x2F; 未使用的元素的索引     size_t       size;      &#x2F;&#x2F; 每个元素大小     ngx_uint_t   nalloc;    &#x2F;&#x2F;  元素个数     ngx_pool">
 <meta property="og:type" content="article">
@@ -78,7 +78,7 @@
     
         
             
-            <li><div data-rel="C语言">C语言<small>(14)</small></div>
+            <li><div data-rel="C语言">C语言<small>(12)</small></div>
                 
             </li>
             
@@ -102,14 +102,6 @@
     
         
             
-            <li><div data-rel="深入理解计算机系统">深入理解计算机系统<small>(2)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
             <li><div data-rel="Docker">Docker<small>(1)</small></div>
                 
             </li>
@@ -126,7 +118,15 @@
     
         
             
-            <li><div data-rel="Nginx">Nginx<small>(2)</small></div>
+            <li><div data-rel="Nginx">Nginx<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="操作系统">操作系统<small>(3)</small></div>
                 
             </li>
             
@@ -213,10 +213,6 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">nginx</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a class="color2">zabbix</a>
     </li>
     
@@ -226,10 +222,6 @@
     
     <li class="article-tag-list-item">
         <a class="color5">数据结构</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color5">虚拟内存</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -246,10 +238,6 @@
     
     <li class="article-tag-list-item">
         <a class="color3">排序</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color5">操作系统</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -270,6 +258,14 @@
     
     <li class="article-tag-list-item">
         <a class="color4">mem_pool</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">buf</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">内存</a>
     </li>
     
     <div class="clearfix"></div>
@@ -446,14 +442,6 @@
             <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
         </a>
         
-        <a  class="C语言 "
-           href="/2021/03/18/ngx%E7%BC%93%E5%86%B2%E5%8C%BA%E7%BB%93%E6%9E%84-md/"
-           data-tag="nginx"
-           data-author="" >
-            <span class="post-title" title="ngx缓冲区结构.md">ngx缓冲区结构.md</span>
-            <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
-        </a>
-        
         <a  class="运维 "
            href="/2021/03/18/zabbix_key/"
            data-tag="zabbix"
@@ -486,20 +474,12 @@
             <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
         </a>
         
-        <a  class="C语言 "
-           href="/2021/03/18/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"
-           data-tag="虚拟内存"
+        <a  class="操作系统 "
+           href="/2021/03/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"
+           data-tag=""
            data-author="" >
-            <span class="post-title" title="深入理解计算机系统">深入理解计算机系统</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="深入理解计算机系统 "
-           href="/2021/03/18/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%A4%84%E7%90%86/"
-           data-tag="c"
-           data-author="" >
-            <span class="post-title" title="第二章 信息的表示和处理">第二章 信息的表示和处理</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-title" title="操作系统">操作系统</span>
+            <span class="post-date" title="2021-03-20 11:54:29">2021/03/20</span>
         </a>
         
         <a  class="C语言 "
@@ -582,14 +562,6 @@
             <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
         </a>
         
-        <a  class="深入理解计算机系统 "
-           href="/2021/03/18/%E7%AC%AC%E4%B9%9D%E7%AB%A0%20%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/"
-           data-tag="操作系统"
-           data-author="" >
-            <span class="post-title" title="第九章 虚拟内存">第九章 虚拟内存</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
         <a  class="C语言 "
            href="/2021/03/18/%E8%BF%9B%E7%A8%8B/"
            data-tag="进程"
@@ -622,6 +594,30 @@
             <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
         </a>
         
+        <a  class="操作系统 "
+           href="/2021/03/20/information_representation_and_processing/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="信息的表示和处理">信息的表示和处理</span>
+            <span class="post-date" title="2021-03-20 11:55:12">2021/03/20</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/18/ngx_buf/"
+           data-tag="buf"
+           data-author="" >
+            <span class="post-title" title="ngx缓冲区">ngx缓冲区</span>
+            <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/03/20/virtual_memory/"
+           data-tag="内存"
+           data-author="" >
+            <span class="post-title" title="虚拟内存">虚拟内存</span>
+            <span class="post-date" title="2021-03-20 11:51:57">2021/03/20</span>
+        </a>
+        
     </nav>
 </div>
     </div>
@@ -634,9 +630,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-ngx缓冲区结构-md" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-virtual_memory" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">ngx缓冲区结构.md</h1>
+        <h1 class="article-title">虚拟内存</h1>
     
     <div class="article-meta">
         
@@ -644,21 +640,21 @@
         
         <span class="book">
             
-                <a  data-rel="C语言">C语言</a>
+                <a  data-rel="操作系统">操作系统</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a class="color1">nginx</a>
+            <a class="color3">内存</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-03-18 16:17:15'>2021-03-18 15:14</time>
+        创建时间:<time class="date" title='更新时间: 2021-03-20 11:51:57'>2021-03-20 11:51</time>
         
     </div>
     <div class="article-meta">
@@ -680,7 +676,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#第九章：虚拟内存"><span class="toc-text">第九章：虚拟内存</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#9-1-物理和虚拟寻址"><span class="toc-text">9.1 物理和虚拟寻址</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9-2-地址空间"><span class="toc-text">9.2 地址空间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9-3-虚拟内存作为缓存工具"><span class="toc-text">9.3 虚拟内存作为缓存工具</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1、什么是虚拟内存？"><span class="toc-text">1、什么是虚拟内存？</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2、DRAM缓存组织结构"><span class="toc-text">2、DRAM缓存组织结构</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3、页表-将虚拟页映射到物理页"><span class="toc-text">3、页表(将虚拟页映射到物理页)</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4、缺页"><span class="toc-text">4、缺页</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9-6-地址翻译"><span class="toc-text">9.6 地址翻译</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1、多级页表"><span class="toc-text">1、多级页表</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#计算机中的字，双字以及存储"><span class="toc-text">计算机中的字，双字以及存储</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -696,7 +692,203 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="第九章：虚拟内存"><a href="#第九章：虚拟内存" class="headerlink" title="第九章：虚拟内存"></a>第九章：虚拟内存</h3><h5 id="9-1-物理和虚拟寻址"><a href="#9-1-物理和虚拟寻址" class="headerlink" title="9.1 物理和虚拟寻址"></a>9.1 物理和虚拟寻址</h5><p>物理寻址：</p>
+<p><img src="/image/image-20201023182237165.png" alt="image-20201023182237165"></p>
+<p>该示例的上下文是一条加载指令。当cpu加载这条指令时，会生成一个有效物理地址，通过内存总线，把它传递给主存。主存取出从物理地址4开始的四个字节，并将它返回给cpu，cpu会将它存放在一个寄存器里。</p>
+<p>虚拟寻址：</p>
+<p><img src="/image/image-20201023182622615.png" alt="image-20201023182622615"></p>
+<p>使用虚拟地址，cpu通过生成一个虚拟地址(Virtual Address,VA)来访问主存，这个虚拟地址在被送到主存之前先转换成适当的虚拟地址(Memory Manager Unit简称MMU：内存管理单元，利用存放在主存中的查询表来动态翻译虚拟地址)，主存收到翻译过的地址(物理地址)之后从物理内存上取出数据并返回给cpu。</p>
+<h5 id="9-2-地址空间"><a href="#9-2-地址空间" class="headerlink" title="9.2 地址空间"></a>9.2 地址空间</h5><p>地址空间：一个非负整数地址的有序集合。为了简化讨论，总是假设使用的是线性地址空间。</p>
+<p>在一个带虚拟内存的系统，CPU从一个有N=2^n个地址的空间中生成虚拟地址，称为虚拟地址空间。</p>
+<p>{0, 1, 2, 3,…,N-1}</p>
+<p>一个包含N=2^n个地址的虚拟地址空间叫做一个n位地址空间。例如32位操作系统(2^32)、64位操作系统(2^64)。</p>
+<p>主存中的每个字节都有一个选自虚拟空间的地址和一个选自物理空间的地址。</p>
+<table>
+<thead>
+<tr>
+<th align="center">虚拟地址位数(n)</th>
+<th align="center">虚拟地址数(N)</th>
+<th align="center">最大的可能虚拟地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">8</td>
+<td align="center">2^8=256 byte</td>
+<td align="center">2^8-1=255</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">2^16=64 K</td>
+<td align="center">2^16-1</td>
+</tr>
+<tr>
+<td align="center">32</td>
+<td align="center">2^32 = 4096M = 4G</td>
+<td align="center">2^32-1</td>
+</tr>
+<tr>
+<td align="center">48</td>
+<td align="center">2^48 = 256T</td>
+<td align="center">2^48-1</td>
+</tr>
+<tr>
+<td align="center">64</td>
+<td align="center">2^64 = 16E</td>
+<td align="center">2^64-1</td>
+</tr>
+</tbody></table>
+<h5 id="9-3-虚拟内存作为缓存工具"><a href="#9-3-虚拟内存作为缓存工具" class="headerlink" title="9.3 虚拟内存作为缓存工具"></a>9.3 虚拟内存作为缓存工具</h5><h6 id="1、什么是虚拟内存？"><a href="#1、什么是虚拟内存？" class="headerlink" title="1、什么是虚拟内存？"></a>1、什么是虚拟内存？</h6><p>虚拟内存是磁盘上(较低层)连续N个字节组成的数组，每个字节都有唯一的虚拟地址作为数组的索引，磁盘上数组的内容(指的是数据)被缓存在主存中。(虚拟页存在于磁盘上)</p>
+<p>物理内存被分隔成物理页(Physical Page,PP)。</p>
+<p>VM系统将虚拟内存分隔成虚拟页(Virtual Page,VP)。</p>
+<p>虚拟页面的集合分为三个不相交的子集：</p>
+<ol>
+<li><p>未分配的(VM系统还未分配或者未创建的页，未分配的块没有任何数据和他们相关联，所以不占用任何磁盘空间，linux命令free在计算内存使用量时，未分配的 不会被记入)。</p>
+</li>
+<li><p>缓存的(已缓存在物理内存中的已分配页)。</p>
+</li>
+<li><p>未缓存的(未缓存在物理内存中的已分配页)。</p>
+<p><img src="/image/image-20201026121811373.png" alt="image-20201026121811373"></p>
+</li>
+</ol>
+<h6 id="2、DRAM缓存组织结构"><a href="#2、DRAM缓存组织结构" class="headerlink" title="2、DRAM缓存组织结构"></a>2、DRAM缓存组织结构</h6><ul>
+<li>SRAM：表示位于cpu和主存之间的L1、L2、L3高速缓存。</li>
+<li>DRAM：表示虚拟内存系统的缓存，它在主存中缓存虚拟页。</li>
+<li>直   写：当 CPU 要将数据写入内存时 除了更新缓冲内存(高速缓存L1、L2、L3)上的数据外也将数据写在 DRAM 中 以维持主存与缓冲内存的一致性 当要写入内存的数据一多 速度自然就慢了下来 </li>
+<li>回   写：每当 CPU 要将数据写入内存时 只会先更新缓冲内存(高速缓存L1、L2、L3)上的数据 随后再让缓冲内存在总线不塞车的时候 才把数据写回 DRAM 所以速度自然快得多</li>
+</ul>
+<h6 id="3、页表-将虚拟页映射到物理页"><a href="#3、页表-将虚拟页映射到物理页" class="headerlink" title="3、页表(将虚拟页映射到物理页)"></a>3、页表(将虚拟页映射到物理页)</h6><p>虚拟内存必须有某种方法来判定一个虚拟页是否缓存在DRAM中的某个地方。如果是，系统还必须确定这个虚拟页存放在哪个物理页(主存)。如果不命中还必须判断这个虚拟页存放在磁盘的哪个位置上，在物理页中选择一个牺牲页，并将虚拟页从磁盘复制到DRAM中，替换这个牺牲页。(操作系统为每个进程都维护一个独立的页表)</p>
+<p>页表：将虚拟页映射到物理页。每次地址翻译硬件将一个虚拟地址转换为物理地址时，都会读取页表，操作系统负责维护页表的内容，以及在磁盘与DRAM之间来回传送页。</p>
+<p><img src="/image/image-20201020134441586.png" alt="image-20201020134441586"></p>
+<p>我们将假设每个PTE是由一个有效位(valid bit)和一个n位地址字段组成，有效位表明了该虚拟页当前是否被缓存在DRAM中。如果设置了有效位，那么地址字段就表示DRAM中相应的物理页的起始位置，这个物理页中缓存了该虚拟页。 如果没有设置有效位，那么一个空地址表示这个虚拟页还未被分配。否则，这个地址就指向该虚拟页在磁盘上的起始位置。</p>
+<ul>
+<li><p>确定虚拟地址大小(n)和页大小(P)的组合需要的PTE数量。</p>
+<table>
+<thead>
+<tr>
+<th align="center">n(位)</th>
+<th align="center">P=2^p</th>
+<th align="center">PTE数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">16</td>
+<td align="center">4K</td>
+<td align="center">2^16 / 2^12  = 16</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">8K</td>
+<td align="center">2^16 / 2^13 = 8</td>
+</tr>
+<tr>
+<td align="center">32</td>
+<td align="center">4K</td>
+<td align="center">2^32 / 2^12 = 2^20</td>
+</tr>
+<tr>
+<td align="center">32</td>
+<td align="center">8K</td>
+<td align="center">2^32 / 2^13 = 2^19</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h6 id="4、缺页"><a href="#4、缺页" class="headerlink" title="4、缺页"></a>4、缺页</h6><p>DRAM缓存不命中称为缺页。</p>
+<p>自己的理解：在cpu获取虚拟页中的数据时，地址翻译硬件去读页表的页表记录的有效位，如果有效位为0则推断出该虚拟页未被缓存，并且触发一个缺页异常。缺页异常调用内核中的缺页异常处理程序，该程序会在主存的PP(物理页)中选择一个被缓存的VP作为牺牲页(如果牺牲页中的数据被修改过那么就会将数据写会磁盘)，接下来将要被缓存的vp从磁盘中加载出来缓存到主存上去(替换牺牲页)。</p>
+<ul>
+<li><p>CPU引用VP3中的一个字，地址翻译硬件将虚拟地址作为一个索引(虚拟地址分为两部分：虚拟页号[VPN:virtual page number]和虚拟页偏移量[VPO:virtual page offset]，使用虚拟页号作为索引)来定位PTE3，通过读取PTE3：有效为为0且地址不为null，所以得出VP3没有被缓存在物理内存中且得到了VP3的磁盘地址，此时触发缺页异常，缺页异常调用内核中的缺页异常处理程序，该程序会选择一个牺牲页(PP3中的VP4，如果VP4的内容被修改了，那么内核就会将VP4的数据复制回磁盘)，无论哪种情况，内核都会修改VP4的页表条目，反映VP4不在缓存在主存中的事实。</p>
+<p><img src="/image/image-20201020140133328.png" alt="image-20201020140133328"></p>
+</li>
+<li><p>随后，内核从磁盘复制VP3到内存PP3，并更新PTE3(将有效为设置为1，地址位设置为物理页号)，随后返回，当异常处理程序返回的时候，它会重启导致缺页的指令，该指令会把缺页的虚拟地址重新发送给地址翻译硬件，但是此时VP3已经缓存在物理内存中了，那么页命中就能由地址翻译硬件正常处理了。</p>
+<p><img src="/image/image-20201026140413910.png" alt="image-20201026140413910"></p>
+</li>
+</ul>
+<p>5、分配页面</p>
+<ul>
+<li><p>操作系统分配一个新的虚拟内存页时对页表的影响，例如：调用mallooc，在这个实例中，VP5的分配过程是在磁盘创建空间并更新PTE5，并使它指向磁盘上这个新创建的页面。此过程中并没有分配物理内存哦。</p>
+<p><img src="/image/image-20201026141028175.png" alt="image-20201026141028175"></p>
+</li>
+</ul>
+<hr>
+<h5 id="9-6-地址翻译"><a href="#9-6-地址翻译" class="headerlink" title="9.6 地址翻译"></a>9.6 地址翻译</h5><ul>
+<li><p>地址翻译符号</p>
+<p><img src="/image/image-20201026153155106.png" alt="image-20201026153155106"></p>
+</li>
+<li><p>MMU利用虚拟地址包含的VPN寻找PTE，将页表条目中的PPN和VPO串联起来就得到响应的物理地址(因为vp和pp都是P字节，所以物理页和虚拟页的偏移量相同)</p>
+<p><img src="/image/image-20201026153233283.png" alt="image-20201026153233283"></p>
+</li>
+</ul>
+<p>当页面命中时，CPU硬件执行的步骤：</p>
+<ol>
+<li>处理器生成一个虚拟地址，并把它传送给MMU。</li>
+<li>MMU生成PTE地址，并从高速缓存/主存请求得到它。</li>
+<li>高速缓存/主存向MMU返回PTE。</li>
+<li>MMU构造物理地址，并把它传给告诉缓存/主存。</li>
+<li>高速缓存/主存返回所请求的数据字给处理器。</li>
+</ol>
+<p><img src="/image/image-20201020145055727.png" alt="image-20201020145055727"></p>
+<p>缺页，CPU硬件执行步骤：</p>
+<ol>
+<li>处理器生成一个虚拟地址，并把它传送给MMU。</li>
+<li>MMU生成PTE地址，并从高速缓存/主存请求得到它。</li>
+<li>高速缓存/主存向MMU返回PTE。</li>
+<li>PTE中的有效为是0，所以MMU触发了一次异常，传递CPU中的控制到操作系统内核中的缺页异常处理程序。</li>
+<li>缺页处理程序确定出物理内存中的牺牲页，如果这个页面修改了则把它换出到磁盘。</li>
+<li>缺页处理程序页面调入新的页面，并更新内存中的PTE。</li>
+<li>缺页处理程序返回到原来的进程，再次执行导致缺页的指令，CPU将引起缺页的虚拟地址重新发送给MMU。</li>
+</ol>
+<p><img src="/image/image-20201020145822292.png" alt="image-20201020145822292"></p>
+<ul>
+<li><p>给定一个32位的虚拟地址空间和一个24位的物理地址，对于下列页面大小P。</p>
+<table>
+<thead>
+<tr>
+<th align="center">P</th>
+<th align="center">VPN位数</th>
+<th align="center">VPO位数</th>
+<th align="center">PPN位数</th>
+<th align="center">PPO位数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1KB (2^p=1024,p=10)</td>
+<td align="center">22</td>
+<td align="center">10</td>
+<td align="center">14</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="center">2KB(2^p=2048,p=11)</td>
+<td align="center">21</td>
+<td align="center">11</td>
+<td align="center">13</td>
+<td align="center">11</td>
+</tr>
+<tr>
+<td align="center">4KB(2^p=4096,p=12)</td>
+<td align="center">20</td>
+<td align="center">12</td>
+<td align="center">12</td>
+<td align="center">12</td>
+</tr>
+<tr>
+<td align="center">8KB(2^p=8192,p=13)</td>
+<td align="center">19</td>
+<td align="center">13</td>
+<td align="center">11</td>
+<td align="center">13</td>
+</tr>
+</tbody></table>
+<p>(常说的32位和64位操作系统，指的就是页表条目PTE的长度。)</p>
+</li>
+</ul>
+<h6 id="1、多级页表"><a href="#1、多级页表" class="headerlink" title="1、多级页表"></a>1、多级页表</h6><p>到目前为止，一直假设系统只用一个单独的页表进行地址翻译。但是如果我们有一个32位地址空间、4kb的页和一个4字节的PTE，那么即使应用所引用的只是虚拟空间中很小的一部分，也总是需要4MB的页表驻留内存。(32位地址空间，总共有2^32个内存地址，一个虚拟页的大小是4KB，那么总共有 2^32/2^12=2^20 个内存页，一个内存页需要一个PTE，一个PTE是4字节，那么页表总共大小是：2^20 * 2^12 = 2^32字节 = 2^32 / 2^10 KB = 2^12 / 2^10 MB = 4MB。在没有优化的情况下，一张独立页表在内存中要占用4M物理内存)</p>
+<hr>
+<h6 id="计算机中的字，双字以及存储"><a href="#计算机中的字，双字以及存储" class="headerlink" title="计算机中的字，双字以及存储"></a>计算机中的字，双字以及存储</h6><ul>
+<li>字节(byte)：一个字节由8位二进制数组成</li>
+<li>字(word)：</li>
+</ul>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
     </div>
@@ -705,12 +897,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>ngx缓冲区结构.md</p>
+    <p><span class="copy-title">文章标题:</span>虚拟内存</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
-    <p><span class="copy-title">发布时间:</span>2021-03-18, 15:14:01</p>
-    <p><span class="copy-title">最后更新:</span>2021-03-18, 16:17:15</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/18/ngx%E7%BC%93%E5%86%B2%E5%8C%BA%E7%BB%93%E6%9E%84-md/" title="ngx缓冲区结构.md">http://blog.3amupupup.online/2021/03/18/ngx%E7%BC%93%E5%86%B2%E5%8C%BA%E7%BB%93%E6%9E%84-md/</a>
+    <p><span class="copy-title">发布时间:</span>2021-03-20, 11:51:57</p>
+    <p><span class="copy-title">最后更新:</span>2021-03-20, 11:51:57</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/20/virtual_memory/" title="虚拟内存">http://blog.3amupupup.online/2021/03/20/virtual_memory/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
@@ -754,7 +946,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#nginx','#zabbix','#cicd','#数据结构','#虚拟内存','#c语言基础','#book','#Dockerfile','#排序','#操作系统','#进程','#c primer plus','#sql_base','#array','#mem_pool',],
+            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#buf','#内存',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

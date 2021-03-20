@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>一次海外k8s集群代码发布实践 | BLOG</title>
-  <meta name="keywords" content=" cicd ">
-  <meta name="description" content="一次海外k8s集群代码发布实践 | BLOG">
+  <title>nginx数组 | BLOG</title>
+  <meta name="keywords" content=" array ">
+  <meta name="description" content="nginx数组 | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ngx缓冲区结构.md">
@@ -637,9 +637,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-一次海外k8s集群代码发布实践" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-ngx_array" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">一次海外k8s集群代码发布实践</h1>
+        <h1 class="article-title">nginx数组</h1>
     
     <div class="article-meta">
         
@@ -647,21 +647,21 @@
         
         <span class="book">
             
-                <a  data-rel="k8s">k8s</a>
+                <a  data-rel="nginx">nginx</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a class="color5">cicd</a>
+            <a class="color1">array</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-03-18 11:09:52'>2021-03-18 11:09</time>
+        创建时间:<time class="date" title='更新时间: 2021-03-20 11:43:30'>2021-03-20 11:43</time>
         
     </div>
     <div class="article-meta">
@@ -683,7 +683,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一阶段："><span class="toc-text">第一阶段：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二阶段："><span class="toc-text">第二阶段：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三阶段："><span class="toc-text">第三阶段：</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#nginx数据类型：数组"><span class="toc-text">nginx数据类型：数组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#数组提供的接口"><span class="toc-text">数组提供的接口</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#ngx-array-t-ngx-array-create-ngx-pool-t-p-ngx-uint-t-n-size-t-size"><span class="toc-text">ngx_array_t *ngx_array_create(ngx_pool_t *p, ngx_uint_t n, size_t size);</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#static-ngx-inline-ngx-int-t-ngx-array-init-ngx-array-t-array-ngx-pool-t-pool-ngx-uint-t-n-size-t-size"><span class="toc-text">static ngx_inline ngx_int_t ngx_array_init(ngx_array_t *array, ngx_pool_t *pool, ngx_uint_t n, size_t size)</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#void-ngx-array-destroy-ngx-array-t-a"><span class="toc-text">void ngx_array_destroy(ngx_array_t *a)</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#void-ngx-array-push-ngx-array-t-a"><span class="toc-text">void *ngx_array_push(ngx_array_t *a)</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#void-ngx-array-push-n-ngx-array-t-a-ngx-uint-t-n"><span class="toc-text">void *ngx_array_push_n(ngx_array_t *a, ngx_uint_t n)</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#总结："><span class="toc-text">总结：</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -699,179 +699,200 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>项目背景：要上一个海外版的小说平台，gitlab在国内，当前是要求在海外搭建一个测试环境(php代码)</p>
-<h3 id="第一阶段："><a href="#第一阶段：" class="headerlink" title="第一阶段："></a>第一阶段：</h3><p>话不多说，在香港买了台机器，down了个oneinstack脚本装环境，环境具体为mysql+redis+php-fpm7.1.3+nginx。</p>
-<p>jenkins+gitlab都是在国内，也没多想直接在jenkins创建了一个工程，使用ssh-server插件将构建好的代码push到香港机器。问题来了，因为机器是在香港，在jenkins push代码的时候巨慢无比，每一次发布起码花费十分钟以上的时间，严重影响开发效率。</p>
-<h3 id="第二阶段："><a href="#第二阶段：" class="headerlink" title="第二阶段："></a>第二阶段：</h3><p>想到了用容器的方式发布，思路是这样：在杭州机器上将镜像构建好，然后push到香港仓库去，因为镜像push的时候会进行压缩，另外push到香港仓库之后那边机器拉取代码的速度会大大提升，缩短了发布时间（这是为以后生产发布做考虑，代码同步慢，有些文件更新有些文件没更新可能会造成线上报错的）。于是开始构建基础镜像，编写<a href="http://127.0.0.1:4000/2020/07/28/Dockerfile/" target="_blank" rel="noopener">Dockerfile</a>。</p>
-<p>编写dockerfile：①保证镜像精简 ②尽量减少镜像的层数，将底层环境固定。</p>
-<p>nginx和php-fpm基础镜像构建完成后使用jenkins进行打包代码到镜像里，使用的pipeline脚本。</p>
-<p>第二阶段使用的是docker compose，因此每一次更新都需要登录香港机器手动拉取并更新镜像，比较麻烦，所以很快就放弃了这种方式</p>
-<h3 id="第三阶段："><a href="#第三阶段：" class="headerlink" title="第三阶段："></a>第三阶段：</h3><p>考虑使用k8s，于是在香港买了个k8s集群，两个2c4g的节点，外加一台2c4g的机器作为数据库机器（redis+mysql），后续正式上线之后再考虑扩容。</p>
-<p>问题：</p>
-<p>​    1、nginx容器和php-fpm容器需要共享代码才能正常提供服务。</p>
-<p>​    解决：首先想到的是每次发布构建两个镜像，即将代码分别拷贝进nginx和php容器，然后通过deployment去运行，但是这种方法太麻烦，因为没次都需要重新更新php和nginx容器，这两个镜像的体积加起来差不多有800M了，所以不考虑这种方式。</p>
-<p>​                于是使用了deployment控制器中的volume —- emptydir共享卷，代码使用一个initcontainer拷贝进去。这样的话我每次只需要更新initcontainer(initcontainer不需要什么环境，使用的busybox，基础镜像才几M，加上代码也就30M左右，这样的话大大提高了镜像构建、推送、拉取的速度)。</p>
-<p>使用pipeline构建代码容器：</p>
-<pre><code class="yaml">pipeline {
-   agent any
-   stages {
-      stage(&#39;pull code&#39;) {
-         steps {
-            checkout([$class: &#39;GitSCM&#39;, branches: [[name: &#39;*/test&#39;]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: &#39;11&#39;, url: &#39;http://xxxxx.xxxxxxx.com/xxxxx/xxxxxxx_api.git&#39;]]])
-         }
-      }
-      stage(&#39;build image&#39;){
-          steps {
-              sh &#39;wget http://172.16.72.173/leshuapi/.dockerignore -O .dockerignore&#39;
-              sh &#39;wget http://172.16.72.173/leshuapi/Dockerfile -O Dockerfile&#39;
-              sh &#39;sudo docker build -t registry.cn-hongkong.aliyuncs.com/ysg_codebox/$JOB_BASE_NAME:latest .&#39;
-          }
-      }
-      stage(&#39;push image&#39;){
-          steps {
-              timeout(time: 3, unit: &#39;MINUTES&#39;){
-                  retry(5) {
-                      sh &#39;docker push registry.cn-hongkong.aliyuncs.com/ysg_codebox/$JOB_BASE_NAME:latest&#39;
-                  }
-              }
-          }
-      }
-   }
+        <h5 id="nginx数据类型：数组"><a href="#nginx数据类型：数组" class="headerlink" title="nginx数据类型：数组"></a>nginx数据类型：数组</h5><p><img src="https://img.3amupupup.online/ngx_array-.png" alt="ngx_array"></p>
+<pre><code class="c">typedef struct {
+    void        *elts;      // 指向第一个元素的指针
+    ngx_uint_t   nelts;     // 未使用的元素的索引
+    size_t       size;      // 每个元素大小
+    ngx_uint_t   nalloc;    //  元素个数
+    ngx_pool_t  *pool;      //  内存池
+} ngx_array_t;</code></pre>
+<h5 id="数组提供的接口"><a href="#数组提供的接口" class="headerlink" title="数组提供的接口"></a>数组提供的接口</h5><pre><code class="c">ngx_array_t *ngx_array_create(ngx_pool_t *p, ngx_uint_t n, size_t size);    // 创建数组的数据结构
+void ngx_array_destroy(ngx_array_t *a); // 销毁数组
+void *ngx_array_push(ngx_array_t *a);   // push单个元素
+void *ngx_array_push_n(ngx_array_t *a, ngx_uint_t n);    // push n个元素
+static ngx_inline ngx_int_t ngx_array_init(ngx_array_t *array, ngx_pool_t *pool, ngx_uint_t n, size_t size)    //  // ngx_array_create会调用此函数，申请之后调用这个函数进行初始化操作</code></pre>
+<h6 id="ngx-array-t-ngx-array-create-ngx-pool-t-p-ngx-uint-t-n-size-t-size"><a href="#ngx-array-t-ngx-array-create-ngx-pool-t-p-ngx-uint-t-n-size-t-size" class="headerlink" title="ngx_array_t *ngx_array_create(ngx_pool_t *p, ngx_uint_t n, size_t size);"></a>ngx_array_t *ngx_array_create(ngx_pool_t *p, ngx_uint_t n, size_t size);</h6><pre><code class="c">ngx_array_t *
+ngx_array_create(ngx_pool_t *p, ngx_uint_t n, size_t size)
+{
+    ngx_array_t *a;
+
+      // 在内存池上为ngx_array_t结构体申请内存,具体分配到小数据块链表还是大数据块链表取决于size,不再作解释
+    a = ngx_palloc(p, sizeof(ngx_array_t));
+    if (a == NULL) {
+        return NULL;
+    }
+
+    if (ngx_array_init(a, p, n, size) != NGX_OK) {  // 再次申请内存(给数组分配的)
+        return NULL;
+    }
+
+    return a;
 }</code></pre>
-<p>deployment.yaml内容如下：</p>
-<pre><code class="yaml">---
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  name: leshuapi
-spec:
-  replicas: 2
-  template:
-    metadata:
-      labels:
-        app: leshuapp
-    spec:
-      dnsPolicy: Default
-      shareProcessNamespace: true
-      imagePullSecrets:
-        - name: regsecret
-      initContainers:
-      - name: copycode
-        #代码容器
-        image: registry.cn-hongkong.aliyuncs.com/ysg_codebox/xxxxxxxxx:latest
-        imagePullPolicy: Always
-        command: [&quot;mv&quot;,&quot;/data/wwwroot/&quot;,&quot;/data/www/&quot;]
-        volumeMounts:
-        - name: www
-          mountPath: /data/www
-      - name: chown
-        image: registry.cn-hongkong.aliyuncs.com/ysg_baseimage/xxxxbox:v2
-        imagePullPolicy: IfNotPresent
-        command: [&quot;chown&quot;,&quot;-R&quot;,&quot;www.www&quot;,&quot;/data/www/&quot;]
-        volumeMounts:
-        - name: www
-          mountPath: /data/www
-      containers:
-        - name: nginx
-          image: registry.cn-hongkong.aliyuncs.com/ysg_baseimage/nginx:v3
-          imagePullPolicy: IfNotPresent
-          securityContext:
-            capabilities:
-              add:
-              - SYS_PTRACE
-          stdin: true
-          tty: true
-          resources:
-            requests:
-              memory: 200Mi
-              cpu: 100m
-            limits:
-              memory: 300Mi
-              cpu: 200m
-          ports:
-            - containerPort: 80
-          livenessProbe:
-            tcpSocket:
-              port: 80
-          command: [&quot;nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]
-          volumeMounts:
-            - name: www
-              mountPath: /data/www
-            - name: logs
-              mountPath: /data/logs/
-            - name: nginx-conf
-              mountPath: /etc/nginx/conf.d/
-            - name: env
-              mountPath: /data/www/wwwroot/env/
-        - name: php-fpm
-          image: registry.cn-hongkong.aliyuncs.com/ysg_baseimage/php-fpm:v2
-          imagePullPolicy: IfNotPresent
-          securityContext:
-            capabilities:
-              add:
-              - SYS_PTRACE
-          stdin: true
-          tty: true
-          resources:
-            requests:
-              memory: 200Mi
-              cpu: 100m
-            limits:
-            memory: 300Mi
-              cpu: 200m
-          ports:
-            - containerPort: 9000
-          livenessProbe:
-            tcpSocket:
-              port: 9000
-          command: [&quot;/usr/local/php/sbin/php-fpm&quot;,&quot;-F&quot;]
-          volumeMounts:
-            - name: www
-              mountPath: /data/www
-            - name: logs
-              mountPath: /data/logs/
-            - name: phpfpm-conf
-              mountPath: /usr/local/php/etc/php-fpm.d/
-            - name: env
-              mountPath: /data/www/wwwroot/env/
-      volumes:
-      - name: www
-        emptyDir: {}
-      - name: logs
-        emptyDir: {}
-      - name: nginx-conf
-        configMap:
-          name: leshuapi-nginx-conf
-          items:
-           - key: server.conf
-             path: server.conf
-      - name: phpfpm-conf
-        configMap:
-          name: leshuapi-phpfpm-conf
-          items:
-           - key: www.conf
-             path: www.conf
-      - name: env
-        configMap:
-          name: leshuapi-env
-          items:
-           - key: .env
-             path: .env
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: leshuapiservice
-spec:
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
-  selector:
-    app: leshuapp</code></pre>
-<p>镜像里的项目配置文件、nginx配置文件、php-fpm的配置文件全部通过configmap挂载出来方便修改，具体yaml省略。</p>
-<p>配置文件结构：</p>
-<p><img src="/image/image-20201016181209870.png" alt="image-20201016181209870"></p>
+<h6 id="static-ngx-inline-ngx-int-t-ngx-array-init-ngx-array-t-array-ngx-pool-t-pool-ngx-uint-t-n-size-t-size"><a href="#static-ngx-inline-ngx-int-t-ngx-array-init-ngx-array-t-array-ngx-pool-t-pool-ngx-uint-t-n-size-t-size" class="headerlink" title="static ngx_inline ngx_int_t ngx_array_init(ngx_array_t *array, ngx_pool_t *pool, ngx_uint_t n, size_t size)"></a>static ngx_inline ngx_int_t ngx_array_init(ngx_array_t *array, ngx_pool_t *pool, ngx_uint_t n, size_t size)</h6><pre><code class="c">// ngx_array_create会调用此函数，申请之后进行初始化操作
+static ngx_inline ngx_int_t
+ngx_array_init(ngx_array_t *array, ngx_pool_t *pool, ngx_uint_t n, size_t size)
+{
+    /*
+     * set &quot;array-&gt;nelts&quot; before &quot;array-&gt;elts&quot;, otherwise MSVC thinks
+     * that &quot;array-&gt;nelts&quot; may be used without having been initialized
+     */
+
+    array-&gt;nelts = 0;
+    array-&gt;size = size;
+    array-&gt;nalloc = n;
+    array-&gt;pool = pool;
+
+    array-&gt;elts = ngx_palloc(pool, n * size);   // 去内存池上分配内存
+    if (array-&gt;elts == NULL) {
+        return NGX_ERROR;
+    }
+
+    return NGX_OK;
+}</code></pre>
+<h6 id="void-ngx-array-destroy-ngx-array-t-a"><a href="#void-ngx-array-destroy-ngx-array-t-a" class="headerlink" title="void ngx_array_destroy(ngx_array_t *a)"></a>void ngx_array_destroy(ngx_array_t *a)</h6><ul>
+<li><pre><code class="c">/*
+ * 在 ngx_array_create() 函数中 ngx_array_t结构的内存和数组的内存是分开申请的，不一定连续，
+ * 所以在将内存归还给内存池的时候也得分开归还
+ */
+void
+ngx_array_destroy(ngx_array_t *a)
+{
+    ngx_pool_t  *p;
+
+    p = a-&gt;pool;    // 内存池的地址是被保存在ngx数组数据结构中的
+
+    /*
+     * 如果 数组首元素地址 + 元素大小*元素个数 == last的指向位置，
+     * 则说明这个数组的内存段是在used区域的尾部的，last直接减去 元素大小*元素个数 就代表销毁了这个数组的内存
+     */
+    if ((u_char *) a-&gt;elts + a-&gt;size * a-&gt;nalloc == p-&gt;d.last) {
+        p-&gt;d.last -= a-&gt;size * a-&gt;nalloc;
+    }
+
+    /*
+     *  道理和上面类似
+     */
+    if ((u_char *) a + sizeof(ngx_array_t) == p-&gt;d.last) {
+        p-&gt;d.last = (u_char *) a;
+    }
+
+    // 否则就不能移动last
+}</code></pre>
+</li>
+<li><p><img src="http://img.3amupupup.online/ngx_array_destroy-.png" alt="ngx_array"></p>
+<p>1、3是可以修改last指向的，2、4不行。</p>
+<p>这里有疑问：2、4这两种情况内存岂不是无法释放(归还给内存池)，内存池会越来越大。</p>
+</li>
+</ul>
+<h6 id="void-ngx-array-push-ngx-array-t-a"><a href="#void-ngx-array-push-ngx-array-t-a" class="headerlink" title="void *ngx_array_push(ngx_array_t *a)"></a>void *ngx_array_push(ngx_array_t *a)</h6><pre><code class="c">void *
+ngx_array_push(ngx_array_t *a)  // 添加1个元素
+{
+    void        *elt, *new;
+    size_t       size;
+    ngx_pool_t  *p;
+
+    if (a-&gt;nelts == a-&gt;nalloc) {
+
+        /* the array is full */
+
+        size = a-&gt;size * a-&gt;nalloc; // 计算当前数组的大小
+
+        p = a-&gt;pool;
+
+        if ((u_char *) a-&gt;elts + size == p-&gt;d.last
+            &amp;&amp; p-&gt;d.last + a-&gt;size &lt;= p-&gt;d.end)
+        /*
+         * 如果elts指向的位置加上当前数组的大小等于last且last到end之间有足够的空间去容纳一个元素则直接在这个内存池上添加元素
+         * 这个判定是要保证添加的元素所在的内存与之前数组的内存是连续的
+         */
+        {
+            /*
+             * the array allocation is the last in the pool
+             * and there is space for new allocation
+             */
+
+            p-&gt;d.last += a-&gt;size;
+            a-&gt;nalloc++;
+
+        } else {
+            // 否则就是不能保证内存连续或者空间不足
+            /* allocate a new array */
+
+            // 申请一个两倍的空间，new是首地址
+            new = ngx_palloc(p, 2 * size);
+            if (new == NULL) {
+                return NULL;
+            }
+
+            // #define ngx_memcpy(dst, src, n)   (void) memcpy(dst, src, n) 看到这个👴🏻想笑
+            ngx_memcpy(new, a-&gt;elts, size); // 将原来的内存地址上的数组部分的内容拷贝到新内存池上
+            a-&gt;elts = new;  // 指向新内存的位置
+            a-&gt;nalloc *= 2; // 元素个数翻倍
+        }
+    }
+
+    // 未使用的索引
+    elt = (u_char *) a-&gt;elts + a-&gt;size * a-&gt;nelts;
+    a-&gt;nelts++;
+
+    return elt;
+}</code></pre>
+<h6 id="void-ngx-array-push-n-ngx-array-t-a-ngx-uint-t-n"><a href="#void-ngx-array-push-n-ngx-array-t-a-ngx-uint-t-n" class="headerlink" title="void *ngx_array_push_n(ngx_array_t *a, ngx_uint_t n)"></a>void *ngx_array_push_n(ngx_array_t *a, ngx_uint_t n)</h6><pre><code class="c">void *
+ngx_array_push_n(ngx_array_t *a, ngx_uint_t n)
+{
+    void        *elt, *new;
+    size_t       size;
+    ngx_uint_t   nalloc;
+    ngx_pool_t  *p;
+
+    size = n * a-&gt;size;
+
+    if (a-&gt;nelts + n &gt; a-&gt;nalloc) {
+
+        /* the array is full */
+
+        p = a-&gt;pool;
+
+        /*
+         * 如果elts指向的位置加上当前数组的大小等于last 且 last到end之间 有足够的空间去容纳n个元素则直接在这个内存池上添加元素
+         * 这个判定是要保证添加的元素所在的内存与之前数组的内存是连续的
+         */
+        if ((u_char *) a-&gt;elts + a-&gt;size * a-&gt;nalloc == p-&gt;d.last
+            &amp;&amp; p-&gt;d.last + size &lt;= p-&gt;d.end)
+        {
+            /*
+             * the array allocation is the last in the pool
+             * and there is space for new allocation
+             */
+
+            p-&gt;d.last += size;  // size = n * a-&gt;size; 调整last的指向
+            a-&gt;nalloc += n;     // 更新元素个数
+
+        } else {    // 否则扩容
+            /* allocate a new array */
+
+            nalloc = 2 * ((n &gt;= a-&gt;nalloc) ? n : a-&gt;nalloc);
+
+            new = ngx_palloc(p, nalloc * a-&gt;size);
+            if (new == NULL) {
+                return NULL;
+            }
+
+            ngx_memcpy(new, a-&gt;elts, a-&gt;nelts * a-&gt;size);    // 宏函数，实际上调用的memcpy函数
+            a-&gt;elts = new;
+            a-&gt;nalloc = nalloc;
+        }
+    }
+
+    elt = (u_char *) a-&gt;elts + a-&gt;size * a-&gt;nelts;
+    a-&gt;nelts += n;
+
+    return elt;
+}</code></pre>
+<h5 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h5><ol>
+<li>首先谈下nginx数组的管理结构–</li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
@@ -881,12 +902,12 @@ spec:
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>一次海外k8s集群代码发布实践</p>
+    <p><span class="copy-title">文章标题:</span>nginx数组</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
-    <p><span class="copy-title">发布时间:</span>2021-03-18, 11:09:52</p>
-    <p><span class="copy-title">最后更新:</span>2021-03-18, 11:09:52</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/18/%E4%B8%80%E6%AC%A1%E6%B5%B7%E5%A4%96k8s%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5/" title="一次海外k8s集群代码发布实践">http://blog.3amupupup.online/2021/03/18/%E4%B8%80%E6%AC%A1%E6%B5%B7%E5%A4%96k8s%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5/</a>
+    <p><span class="copy-title">发布时间:</span>2021-03-20, 11:43:30</p>
+    <p><span class="copy-title">最后更新:</span>2021-03-20, 11:43:30</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/20/ngx_array/" title="nginx数组">http://blog.3amupupup.online/2021/03/20/ngx_array/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

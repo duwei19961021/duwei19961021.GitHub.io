@@ -6,20 +6,21 @@
   <meta name="keywords" content=" 进程 ">
   <meta name="description" content="进程 | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="2.1 信息存储 大多数计算机使用8位的块，或者字节(byte)，作为最小的可寻址的内存单位，而不是访问内存中单独的位。 C编译器把指针和类型联系起来，这样就可以根据指针值的类型，生成不同的机器级别代码来访问存储在指针所指向位置处的值。尽管C编译器维护着这个类型的信息，但是它生成的实际机器级程序不包含关于数据类型的信息。 机器级程序将内存视为一个非常大的字节数组，称为虚拟内存(virtual me">
+<meta name="description" content="nginx数据类型：双向链表struct ngx_queue_s {       &#x2F;*           链表这个结构本身不带有任何数据，而是把这个链表结构挂载到业务数据结构上，实现了业务数据结构与链表结构的解耦       *&#x2F;     ngx_queue_t  *prev;    &#x2F;&#x2F; 前驱指针     ngx_queue_t  *next;    &#x2F;&#x2F; 后驱指针 };  双向链表提供的接口">
 <meta property="og:type" content="article">
-<meta property="og:title" content="信息的表示和处理">
-<meta property="og:url" content="https://duwei19961021.github.io/2021/03/20/information_representation_and_processing/index.html">
+<meta property="og:title" content="nginx双向链表">
+<meta property="og:url" content="https://duwei19961021.github.io/2021/03/21/ngx_queue/index.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="2.1 信息存储 大多数计算机使用8位的块，或者字节(byte)，作为最小的可寻址的内存单位，而不是访问内存中单独的位。 C编译器把指针和类型联系起来，这样就可以根据指针值的类型，生成不同的机器级别代码来访问存储在指针所指向位置处的值。尽管C编译器维护着这个类型的信息，但是它生成的实际机器级程序不包含关于数据类型的信息。 机器级程序将内存视为一个非常大的字节数组，称为虚拟内存(virtual me">
+<meta property="og:description" content="nginx数据类型：双向链表struct ngx_queue_s {       &#x2F;*           链表这个结构本身不带有任何数据，而是把这个链表结构挂载到业务数据结构上，实现了业务数据结构与链表结构的解耦       *&#x2F;     ngx_queue_t  *prev;    &#x2F;&#x2F; 前驱指针     ngx_queue_t  *next;    &#x2F;&#x2F; 后驱指针 };  双向链表提供的接口">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://duwei19961021.github.io/image/image-20201023114928097.png">
-<meta property="og:image" content="https://duwei19961021.github.io/image/image-20201023131136500.png">
-<meta property="article:published_time" content="2021-03-20T03:55:12.704Z">
-<meta property="article:modified_time" content="2021-03-20T03:55:12.704Z">
+<meta property="og:image" content="https://img.3amupupup.online/ngx_queue_2.png">
+<meta property="og:image" content="https://img.3amupupup.online/ngx_queue_split_1.png">
+<meta property="article:published_time" content="2021-03-21T11:02:44.000Z">
+<meta property="article:modified_time" content="2021-03-21T15:31:49.751Z">
 <meta property="article:author" content="拦云">
+<meta property="article:tag" content="queue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://duwei19961021.github.io/image/image-20201023114928097.png">
+<meta name="twitter:image" content="https://img.3amupupup.online/ngx_queue_2.png">
 
 
 <link rel="icon" href="/img/favicon.ico">
@@ -609,7 +610,7 @@
            href="/2021/03/18/ngx_buf/"
            data-tag="buf"
            data-author="" >
-            <span class="post-title" title="ngx缓冲区">ngx缓冲区</span>
+            <span class="post-title" title="nginx缓冲区">nginx缓冲区</span>
             <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
         </a>
         

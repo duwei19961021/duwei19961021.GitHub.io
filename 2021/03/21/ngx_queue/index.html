@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>C Primer Plus | BLOG</title>
-  <meta name="keywords" content=" c primer plus ">
-  <meta name="description" content="C Primer Plus | BLOG">
+  <title>nginx双向链表 | BLOG</title>
+  <meta name="keywords" content=" queue ">
+  <meta name="description" content="nginx双向链表 | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="2.1 信息存储 大多数计算机使用8位的块，或者字节(byte)，作为最小的可寻址的内存单位，而不是访问内存中单独的位。 C编译器把指针和类型联系起来，这样就可以根据指针值的类型，生成不同的机器级别代码来访问存储在指针所指向位置处的值。尽管C编译器维护着这个类型的信息，但是它生成的实际机器级程序不包含关于数据类型的信息。 机器级程序将内存视为一个非常大的字节数组，称为虚拟内存(virtual me">
 <meta property="og:type" content="article">
@@ -641,9 +641,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-C Primer Plus" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-ngx_queue" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">C Primer Plus</h1>
+        <h1 class="article-title">nginx双向链表</h1>
     
     <div class="article-meta">
         
@@ -651,21 +651,21 @@
         
         <span class="book">
             
-                <a  data-rel="C语言">C语言</a>
+                <a  data-rel="Nginx">Nginx</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a class="color4">c primer plus</a>
+            <a class="color1">queue</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-03-18 11:09:52'>2021-03-18 11:09</time>
+        创建时间:<time class="date" title='更新时间: 2021-03-21 22:41:57'>2021-03-21 19:02</time>
         
     </div>
     <div class="article-meta">
@@ -687,7 +687,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#nginx数据类型：双向链表"><span class="toc-text">nginx数据类型：双向链表</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#双向链表提供的接口"><span class="toc-text">双向链表提供的接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#接口实现"><span class="toc-text">接口实现</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -703,601 +703,195 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code class="c">#include &lt;stdio.h&gt; 
-#include &lt;stdlib.h&gt; 
-#include &lt;string.h&gt;
-#include &lt;errno.h&gt;
-#include &lt;stddef.h&gt;
-#define LEN 40
-#define MAX 41
+        <h4 id="nginx数据类型：双向链表"><a href="#nginx数据类型：双向链表" class="headerlink" title="nginx数据类型：双向链表"></a>nginx数据类型：双向链表</h4><pre><code class="c">struct ngx_queue_s {
+      /*
+          链表这个结构本身不带有任何数据，而是把这个链表结构挂载到业务数据结构上，实现了业务数据结构与链表结构的解耦
+      */
+    ngx_queue_t  *prev;    // 前驱指针
+    ngx_queue_t  *next;    // 后驱指针
+};</code></pre>
+<p><img src="https://img.3amupupup.online/ngx_queue_2.png" alt="链表示例"></p>
+<h5 id="双向链表提供的接口"><a href="#双向链表提供的接口" class="headerlink" title="双向链表提供的接口"></a>双向链表提供的接口</h5><pre><code class="c">ngx_queue_init(q);                        // 初始化链表指向
+ngx_queue_empty(h);                        // 判断链表是否为空
+ngx_queue_insert_head(h, x);    // 链表头插
+ngx_queue_insert_tail(h, x);    // 链表尾插
+ngx_queue_head(h);                        // 获取链表第一个元素，h是哨兵位
+ngx_queue_last(h);                        // 获取链表最后一个元素
+ngx_queue_sentinel(h);                // 获取哨兵结点
+ngx_queue_next(q);                        // 获取结点q的下一个结q
+ngx_queue_prev(q);                        // 获取结点q的前一个结点
+ngx_queue_remove(x);                    // 从链表中移除x结点
+ngx_queue_split(h, q, n);
+ngx_queue_add(h, n);
+ngx_queue_data(q, type, link);
+// 以上都是宏函数
 
-
+ngx_queue_t *ngx_queue_middle(ngx_queue_t *queue);</code></pre>
+<h5 id="接口实现"><a href="#接口实现" class="headerlink" title="接口实现"></a>接口实现</h5><ol>
+<li><p>ngx_queue_init(q): 初始化链表</p>
+<pre><code class="c">#define ngx_queue_init(q)                                                     \
+    (q)-&gt;prev = q;                                                            \
+    (q)-&gt;next = q
 /*
-常量：在程序使用之前已经预设定好，在整个程序的运行过程中没有变化
-变量：在程序运行期间可能会被改变或者赋值
+    前驱、后驱指针都指向自己，当前结点是哨兵位
+*/</code></pre>
+</li>
+<li><p>ngx_queue_empty(h): 判断链表是否为空</p>
+<pre><code class="c">#define ngx_queue_empty(h)                                                    \
+    (h == (h)-&gt;prev)
+/*
+    双向链表的前驱或者后驱指向的是自己时则为空(仅存在哨兵结点)
+*/</code></pre>
+</li>
+<li><p>ngx_queue_insert_head(h, x): 在头结点之后插入x结点(头插)</p>
+<pre><code class="c">#define ngx_queue_insert_head(h, x)                                           \
+    (x)-&gt;next = (h)-&gt;next;                                                    \
+    (x)-&gt;next-&gt;prev = x;                                                      \
+    (x)-&gt;prev = h;                                                            \
+    (h)-&gt;next = x</code></pre>
+</li>
+<li><p>ngx_queue_insert_tail(h, x): 在链表的末尾添加新结点x(尾插)</p>
+<pre><code class="c">#define ngx_queue_insert_tail(h, x)                                           \
+    (x)-&gt;prev = (h)-&gt;prev;                                                    \
+    (x)-&gt;prev-&gt;next = x;                                                      \
+    (x)-&gt;next = h;                                                            \
+    (h)-&gt;prev = x</code></pre>
+</li>
+<li><p>ngx_queue_head(h): 获取链表的第一个有效结点(除去哨兵位)</p>
+<pre><code class="c">#define ngx_queue_head(h)                                                     \
+    (h)-&gt;next</code></pre>
+</li>
+<li><p>ngx_queue_last(h): 获取链表最后一个结点</p>
+<pre><code>#define ngx_queue_last(h)                                                     \
+    (h)-&gt;prev</code></pre></li>
+<li><p>ngx_queue_sentinel(h): 获取哨兵位</p>
+<pre><code>#define ngx_queue_sentinel(h)                                                 \
+    (h)</code></pre></li>
+<li><p>ngx_queue_next(q): 获取q的下一个结点</p>
+<pre><code class="c">#define ngx_queue_next(q)                                                     \
+    (q)-&gt;next</code></pre>
+</li>
+<li><p>ngx_queue_prev(q): 获取q的前一个结点</p>
+<pre><code class="c">#define ngx_queue_prev(q)                                                     \
+    (q)-&gt;prev</code></pre>
+</li>
+<li><p>ngx_queue_remove(x): 从链表中移除结点x</p>
+<pre><code class="c">#define ngx_queue_remove(x)                                                   \
+    (x)-&gt;next-&gt;prev = (x)-&gt;prev;                                              \
+    (x)-&gt;prev-&gt;next = (x)-&gt;next;                                              \
+    (x)-&gt;prev = NULL;                                                         \
+    (x)-&gt;next = NULL</code></pre>
+</li>
+<li><p>ngx_queue_add</p>
+<pre><code>#define ngx_queue_add(h, n)                                                   \
+    (h)-&gt;prev-&gt;next = (n)-&gt;next;                                              \
+    (n)-&gt;next-&gt;prev = (h)-&gt;prev;                                              \
+    (h)-&gt;prev = (n)-&gt;prev;                                                    \
+    (h)-&gt;prev-&gt;next = h;</code></pre></li>
+<li><p>ngx_queue_data(q, type, link)</p>
+<pre><code class="c">#define ngx_queue_data(q, type, link)                                         \
+    (type *) ((u_char *) q - offsetof(type, link))
+/*
+    可以通过业务结构体中ngx_queue_t数据结构的偏移量来得到业务主体的数据结构的指针地址，
+    实现了业务数据结构和链表结构的解耦
+*/</code></pre>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;stddef.h&gt;
 
-数据：
-    显示十进制数：%d
-    显示八进制数：%o
-    显示十六进制数：%x
-
-指针&amp;数组：
-    数组名是首元素地址：
-        arr[i]=*(arr+i) 二者等价
-        特殊情况：
-            1. sizeof(数组名) - 数组名表示整个数组
-            2. &amp;数组名 - 数组名表示整个数组
-    指针操作：
-        赋值：可以把地址赋给指针
-        解引用：*运算符获得指针指向地址上存储的值
-        取地址：&amp;运算符，指针也拥有自己的地址
-        指针与整数相加：int *a = 1; a+1 即 a的地址 + sizeof(int)*1，步长为a指向的数据类型的大小
-        指针求差
-        比较：如果要使用关系运算符比较两个指针，那么要确保两个指针指向同一数据类型的对象
-        解引用未初始化的指针：严重的错误
-            int main(void){
-                int *pt; //错误写法
-                int *pt = NULL; //正确写法
-                *pt = 100; // pt在定义之后未被初始化，其值是一个随机值，不能确定100的存储位置，这可能不会出什么错，但是也有可能擦写数据或代码，导致程序崩溃，因此创建指针必须初始化，特殊情况下可以将指针指向NULL
-                printf(&quot;%d\n&quot;, *p);
-                return 0;
-            }
-
-    const：
-        1、把const或者非const数据的地址初始化为指向const的指针或者为其赋值是合法的。
-            int main(void){
-                int arr1[10] = {1,2,3,4,5,6,7,8,9,10};
-                const int arr2[10] = {11,12,13,14,15,16,17,18,19,20}; 
-
-                const int * pt = arr1; //把pt指向的int类型的值声明为const(注意是值而非地址)，所以不能够用*pt修改数组的值，但是能修改pt所指向的地址
-
-                pt = arr2;
-                pt = &amp;arr1[3];
-
-                return 0;
-            }
-        2、只能把非const数据的地址赋给普通指针，
-            int main(void){
-                int arr1[10] = {1,2,3,4,5,6,7,8,9,10};
-                const int arr2[10] = {11,12,13,14,15,16,17,18,19,20};
-
-                const int * pt = arr1;
-
-                int * pt2 = arr1;
-                pt2 = arr2; //非法，只能将非const的数据的地址赋值给普通指针，否则通过指针就能改变const数组中的数组，显然不合理。
-                pt2 = &amp;arr1[3];
-
-                return 0;
-            }
-        3、创建一个不能改变指向地址的指针，但是能改变指针指向的地址的值
-                int main(void){
-                    int arr1[10] = {1,2,3,4,5,6,7,8,9,10};
-                    const int arr2[10] = {11,12,13,14,15,16,17,18,19,20};
-                    const int * pt = arr1;
-                    int * pt2 = arr1;
-                    pt2 = &amp;arr1[3];
-                    int * const pt3 = arr1;
-                    pt3 = &amp;arr1[3]; //非法
-                    *(pt3+1) = 100; 
-                    printf(&quot;new = %d\n&quot;,arr1[1]);
-                    return 0;
-                }
-
-    指针和多维数组：
-        int main(void){
-            int arr[3][4];
-            printf(&quot;%d\n&quot;,**arr); // arr = arr[0] = &amp;arr[0][0],**arr 与 *&amp;arr[0][0]等价，**arrd第一次解引用表示arr[0],此时仍然是个地址所以需要再次解引用
-            printf(&quot;arr = %p, arr[0] = %p, arr[0][0] = %p\n&quot;,arr,arr[0],&amp;arr[0][0]); // arr = 0x7ffeeeec7be0, arr[0] = 0x7ffeeeec7be0, arr[0][0] = 0x7ffeeeec7be0
-            return 0;
-        }
-
-    指向数组的指针：
-        int *p[]; //指针数组
-        int (*p)[]; // 数组指针
-                ----例题：
-                    int main(void){
-                        int arr[10] = {100 ,2,3,4,5,6,7,8,9,10};
-                        int res = max(arr);
-                        printf(&quot;%d\n&quot;,res);
-                        return 0;
-                    }
-
-                    int max(int *arr){
-                        int temp;
-                        for (int i = 1; i &lt; 10; ++i)
-                        {
-                            if (arr[0]&lt;arr[i])
-                            {
-                                temp = arr[0];
-                                arr[0] = arr[i];
-                                arr[i] = temp;
-                            }
-                        }
-                        return arr[0];
-                    }
-分配内存 malloc 和 free
-    之前所使用的的存储类别有一个共同之处：在确定存储类别之后，根据已定制好的内存管理规则，将自动选择其作用域和存储期，然而还有更灵活的选择，即使用库函数分配和管理内存。
-    int main(){
-
-    double * ptd1;
-    ptd1 = (double *)malloc(30 * sizeof(double));  //为30个double类型的值申请内存空间，并让ptd指向该片内存的首地址。double类型且长度为30的数组
-    if (ptd1==NULL){
-        printf(&quot;内存分配失败\n&quot;);
-        exit(-1);
-    }
-    free(ptd1); //释放内存
-
-    long * ptd2;
-    ptd2 = (long *)calloc(100,sizeof(long));
-    printf(&quot;ptd2 = %d\n&quot;,ptd2);
-    free(ptd2);
-
-    return 0;
-}
-    可以认为程序把它的可用内存分为三部分：一部分供具有外部链接、内部链接和无连接的静态变量使用；一部分供自动变量使用；一部分供动态内存分配。
-    int num1 = 100; //文件作用域，外部链接
-    static int num2 = 100; //文件作用域，内部链接。
-    //无论外部还是内部链接，文件作用域变量都具有静态存储期(随程序执行创建，程序结束销毁，在程序执行和结束期间一直存在)
-    //块级作用域具有自动存储器。当程序进入定义这些变量的块时，为这些变量分配内存，当退出这个块时，释放刚才为变量分配的内存。(变长数组略有不同，它的存储器从生命到块结尾)
-    //块级作用域也能具有静态存储期。在块中声明变量时，加上static关键字。但是只有执行其所在的函数时才能访问，该函数可以提供改变量的存储地址以便间接的访问对象，例如返回一个指针
-    //静态变量：该变量在内存中原地不动，并不是值不可改变。
-
-    void trystat(void){
-        int fade = 1; //函数执行一次，初始化一次
-        static int stay = 1; //只在编译阶段初始化一次
-        printf(&quot;fade = %d and stay = %d\n&quot;,fade++,stay++);
-    }
-
-    void test(void){
-        extern int num1; //可选重复声明
-        printf(&quot;%d\n&quot;,num1);
-    }
-
-----------------------------------------------------------------------------------
-    C的存储类别：(静态存储期：随着程序运行创建，程序结束销毁，在这期间一直存在；文件作用域：可以多个程序文件使用；自动存储期：当程序进入定义这些变量的块时，为这些变量分配内存，当退出这个块时，释放刚才为变量分配的内存；静态存储期：在块中声明变量时，加上static关键字。但是只有执行其所在的函数时才能访问，该函数可以提供改变量的存储地址以便间接的访问对象)
-        自动：在块中不带存储类别说明符或带auto(默认)存储类说明符声明的变量(或者作为函数头中的形参)属于自动存储类别。
-        寄存器：在块中带register存储类别说明符声明的变量(或作为函数头中的形参)属于寄存器存储类别，具有自动存储区、块作用域、无链接且无法获取其地址。
-        静态、无链接：在块中带有static存储类别说明符声明的变量，具有静态存储期、块作用域、无链接，只在编译时初始化一次
-        静态、外部链接：在所有函数外部且没有使用static存储类别说明符，具有静态存储期、文件作用域、外部链接。只能在编译器被初始化一次
-        静态、内部链接：在所有函数外使用了static存储类别说明符，具有静态存储期、文件作用域、内部链接。只能在编译器被初始化一次
-        动态分配的内存：由malloc()相关函数分配。
-        类型限定符：const、volatile、restrict、_Automic，const限定符限定数据在程序运行时不能改变。对指针使用const时，可限定指针本身不能改变或者指向的数据不能改变。
-----------------------------------------------------------------------------------
-文件输入与输出：
-    r:只读打开
-    w:覆盖写
-    a:追加写
-    r+:读写
-    w+:读，覆盖写
-    a+:读，追加写
-
-    int main(){
-        int ch; //读文件时存储每个字符的地方
-        FILE *fp; //文件指针
-        int count = 0;
-        fp = fopen(&quot;test.txt&quot;,&quot;r&quot;);
-        if (fp==NULL){
-            return 0;
-        }
-
-        for (;(ch = getc(fp))!=EOF;){ //getc() putc() 要传递文件的指针。
-            putc(ch,stdout);
-            count++; 
-        }
-        fclose(fp);
-        printf(&quot;\n%d\n&quot;, count);
-
-        return 0;
-    }
-    ---------------
-    文件读写demo:
-        int main(){
-            int ch;
-            FILE *fp,*wfp;
-            int count = 0;
-            wfp = fopen(&quot;test.txt&quot;,&quot;a+&quot;);
-            if ((fp=fopen(&quot;/Users/duwei/ingress-controller-manager.yaml&quot;,&quot;r&quot;))==NULL)
-            {
-                printf(&quot;%s\n&quot;,strerror(errno)); //strerror(errno)
-            }
-            for (;(ch = getc(fp)) != EOF;)
-            {
-                putc(ch,wfp);
-            }
-            fclose(fp);
-            return 0;
-        }
-    ---------------
-    rewind：
-        int main(){
-            FILE *fp;
-            char str1[10],str2[10],str3[10];
-            int year;
-
-            fp = fopen(&quot;test.txt&quot;,&quot;w+&quot;);
-            fputs(&quot;we are in 2020&quot;,fp);
-
-            rewind(fp);//写完时文件描述符在末尾，rewind将文件描述符拉回文件开始的地方
-            fscanf(fp,&quot;%s %s %s %de&quot;,&amp;str1,&amp;str2,&amp;str3,&amp;year);
-
-            printf(&quot;Read String1 |%s|\n&quot;, str1 );
-            printf(&quot;Read String2 |%s|\n&quot;, str2 );
-            printf(&quot;Read String3 |%s|\n&quot;, str3 );
-            printf(&quot;Read Integer |%d|\n&quot;, year );
-            fprintf(stderr, &quot;end.\n&quot;);
-
-            fclose(fp);
-
-            return 0;
-        }
-结构体：
-    ---------------
-    struct book{
-        char title[100];
-        char author[100];
-        int value;
-    };
-
-    void setV(struct book bk);
-
-    int main(){
-        struct book  library[100];
-        library[0].value = 99;
-        printf(&quot;out func,value = %d\n&quot;,library[0].value );
-        setV(library[0]);
-
-        printf(&quot;out func,value = %d\n&quot;,library[0].value );
-    }
-
-    void setV(struct book bk){
-        bk.value=999;
-        printf(&quot;in func,value = %d\n&quot;,bk.value);
-    }
-    stdout:
-        out func,value = 99
-        in func,value = 999
-        out func,value = 99
-    结论：结构体是值传递。
-    ---------------
-    对齐规则：
-    1、第一个成员在与结构体变量偏移量为0的地址处。(c1为起始位置)
-    2、其它成员变量要对齐到某个数(对齐数，vs默认为8，我用的gcc，对齐数就是成员自身大小)的整数倍的地址处。(对齐数: 编译器默认的对齐数 与 该成员大小 比较，小的就是该成员的对齐数。a大小为4，编译器默认的是8，那么该成员的对齐数就是4，
-    所以a的位置要为4的倍数处，所以a的位置为4，另外a占四个字节。同理c2的对齐数是1(1与8比较)，所以c2的位置为8。)
-    3、结构体总大小为最大对齐数(每个成员变量都有一个对齐数)的整数倍。(s1中的最大对齐数为4[来自a]，当前三个变量占了0-8也就是9个字节，所以结构体s1的整体大小为3*4=12字节)
-    4、如果嵌套了结构的情况，嵌套的结构体对齐到自己的最大对齐数的整数倍处，结构体的整体大小就是所有最大对齐数(含嵌套结构体的对齐数)的整数倍。 
-    在设计结构体时候，将占用空间小的成员尽量集中在一起。 
-    #pragma pack(4) //设置默认对齐数
-    struct S1
-    {
-    char c1;
-    int a;
-    char c2;
-    };    
-    _________________    ____         __________                                 
- 0 |_________________|    c1              |                                     
- 1 |_________________|    |               |                                       
- 2 |_________________|    |               |                     
- 3 |_________________|   _|__
- 4 |_________________|    a          s1: 12个字节,1、2、3、9、10、11浪费掉
- 5 |_________________|                    |   
- 6 |_________________|                    |
- 7 |_________________|   ____             |
- 8 |_________________|   _c2_             |
- 9 |_________________|                    |
-10 |_________________|                    | 
-11 |_________________|               _____|____
-12 |_________________|
-13 |_________________|
-14 |_________________|
-   |_________________|
-   |_________________|
-   |_________________|
-   |_________________|
-   |_________________|
-   |_________________|
-   |_________________|
-
-    同理s2如下：
-    struct S2
-    {
-    char c1;
-    char c2;
-    int a;
-    };
-    _________________    ____         _________
- 0 |_________________|   _c1_            |
- 1 |_________________|   _c2_            |
- 2 |_________________|                   |
- 3 |_________________|   ____
- 4 |_________________|    a          s1: 8 个字节,2、3浪费掉
- 5 |_________________|                   |   
- 6 |_________________|                   |
- 7 |_________________|   ____        ____|_____
- 8 |_________________|                    
- 9 |_________________|                    
-10 |_________________|                    
-11 |_________________|           
-12 |_________________|
-13 |_________________|
-14 |_________________|
-   |_________________|
-   |_________________|
-   |_________________|
-   |_________________|
-   |_________________|
-   |_________________|
-   |_________________|
-
-   struct S3
-    {
-    double d;
-    char c;
-    int i;
-    };
-   struct S4
-    {
-    char c1;
-   struct S3 s3;
-    double d;
-    };
-————————----------——————————————
-    struct S{
-    int a;
-    char c;
-    double d;
-    };
-
-void Init(struct S * tmp)
+struct data
 {
-    tmp-&gt;a = 100;
-    tmp-&gt;c = &#39;d&#39;;
-    tmp-&gt;d = 3.14;
-}
-
-int main(){
-    struct S s = {0};
-    Init(&amp;s);
-    printf(&quot;%d\n&quot;, s.a);
-}
-
-————————----------——————————————
-位段：(二进制位)
-    1、位段的成员可以使 int、unsigned int、signed int 或者是char（属于整型家族）类型。
-    2、位段的空间上是按照需要以4个字节(int)或者一个字节(char)的方式来开辟的。
-    3、位段涉及很多不确定因素，不跨平台，注重可移植的程序应避免使用位段。
-    4、每一次开辟的内存，从右往左使用。
-            struct S 
-            {
-                int _a:2; //2代表只需要两个比特位
-                int _b:5; //5代表只需要五个比特位
-                int _c:10;
-                int _d:30;
-            };
-            //47个比特位 需要 6字节*8bit = 48比特
-
-            int main()
-            {
-                struct S s;
-                printf(&quot;%d\n&quot;, sizeof(s)); //结果为8，int类型所以一次开辟四个字节，开辟两次。
-                return 0;
-            }
-            ——————————————————————————————————
-                    struct S 
-                    {
-                        char a:3;
-                        char b:4;
-                        char c:5;
-                        char d:4;
-                    };
-
-                    int main()
-                    {                                                   |               |               |               |
-                        struct S s = {0};                                | | | | | | | | | | | | | | | | | | | | | | | | |
-                        s.a = 10; //二进制：1010，但是长度只给了3            |  b    |  a  |     |    b    |       |   d   |
-                        s.b = 20;
-                        s.c = 3;
-                        s.d = 4;
-                        printf(&quot;%d\n&quot;, sizeof(s)); // 类型是char：开辟一个字节放入a，再放入b，此时一个字节被占用了7个比特，剩下的1个比特不足以存放c，所以再开辟一个字节放入5，剩下的3个字节不足以存放d，so再次开辟一个字节。浪费了8比特。
-                        printf(&quot;%d\n&quot;, s.a);
-                        return 0;
-                    }
-————————————————————————————
-枚举：
-    enum Sex
-    {
-        MALE,
-        FAMALE,
-        SECRET
-    };
-
-    enum Color
-    {
-        RED, //0
-        GREEN, //1
-        BLUE //2
-    };
-
-    int main(){
-        enum Sex s = MALE;
-        enum Color c = BLUE;
-        printf(&quot;%d,%d,%d\n&quot;, RED,GREEN,BLUE);
-    }
-————————————————————————————
-union:
-    union Un
-    {
-        char c; 
-        int i; //对齐数为4
-        char arr[5]; //对齐数是1而不是5，最小占用内存为 最大对齐数的整数倍
-    };
-
-    int main()
-    {
-        union Un u;
-        printf(&quot;%lu\n&quot;, sizeof(u));
-        printf(&quot;%p\n&quot;, &amp;u);
-        printf(&quot;%p\n&quot;, &amp;u.c);
-    }
-————————————————————————————
-动态内存分配：
-    _____________________________________
-    |          局部变量                  |
-    |          函数形参                  |
-    |                                   |
-    |                                   |
-    |                                   |  栈区
-    |                                   |
-    |                                   |
-    |                                   |
-    |                                   |
-    |———————————————————————————————————|
-    |      动态内存分配                   |
-    |                                   |
-    |                                   |
-    |                                   |
-    |                                   |
-    |                                   |
-    |                                   |  堆区
-    |                                   |
-    |                                   |
-    |                                   |
-    |                                   |
-    |                                   |
-    |                                   |
-    |———————————————————————————————————|
-    |                                   |
-    |        全局变量                    |
-    |        静态变量                    |
-    |                                   |
-    |                                   |
-    |                                   |  静态区
-    |                                   |
-    |                                   |
-    |                                   |
-    |                                   |
-    |                                   |
-    |                                   |
-    —————————————————————————————————————
-            int main()
-            {
-            int * p1 = (int *)malloc(10*sizeof(int)); //初始化之后默认值是随机的，int * p = realloc(NULL,40)
-            if (p1 == NULL)
-            {
-                printf(&quot;%s\n&quot;, strerror(errno));
-            }
-            else
-            {
-                for (int i = 0; i &lt; 10; ++i)
-                {
-                    printf(&quot;p1 = %d\n&quot;, p1[i]);
-                }
-            }
-            free(p1);
-            p1 = NULL;
-
-            printf(&quot;\n&quot;);
-
-            int * p2 = (int *)calloc(10,sizeof(int));  //初始化之后默认值是0
-            if (p2 == NULL)
-            {
-                printf(&quot;%s\n&quot;, strerror(errno));
-            }
-            else
-            {
-                for (int i = 0; i &lt; 10; ++i)
-                {
-                printf(&quot;p2 = %d\n&quot;, *(p2+i));
-                }
-            }
-            free(p2);
-            p2 = NULL;
-
-            printf(&quot;\n&quot;);
-
-            int * p3 = (int *)malloc(20);
-            if (p3 == NULL)
-            {
-                printf(&quot;%s\n&quot;, strerror(errno));
-            }
-            else
-            {
-                for (int i = 0; i &lt; 5; ++i)
-                {
-                    *(p3+i) = i;
-                }
-            }
-            int * p4 = realloc(p3,40); //调整已开辟内存的大小。
-            // 1、如果p3指向的内存空间后有足够的空间可以追加，则直接追加后返回p3。
-            // 2、如果p3指向的内存空间后没有足够的空间可以追加，则开辟一块全新的内存区域，将原来内存中的数据拷贝至新内存，释放旧内存空间，返回新开辟的内存空间地址
-            if (p4!=NULL)
-            {
-                p3 = p4;
-            }
-            for (int i = 0; i &lt; 40; ++i)
-            {
-                printf(&quot;p3 = %d\n&quot;, *(p4+i));
-            }
-            free(p3);
-            p3 = NULL;
-
-            return 0;
-        }
-
-*/
-
-// #pragma pack(4) //设置默认对齐数
-
-// void GetMemory(char **p)
-// {
-//     p = (char *)malloc(100);
-// }
-
-// void Test(void)
-// {
-//     char * str = NULL;
-//     GetMemory(&amp;str);
-//     strcpy(str,&quot;hello world&quot;);
-//     printf(str);
-// }
-
-// int main()
-// {
-//     //str传给GetMemory()函数，传的是str而不是str的地址，所以p是str的值拷贝，p的值为NULL，函数里将申请的内存的地址赋给p，GetMemory执行完毕之后，
-//     //p是临时变量被销毁，所以str的值还是NULL
-//     Test();
-//     return 0;
-
-// }
-
-// char *GetMemory(void)
-// {
-//      char p[] = &quot;hello world&quot;;
-//     return p;
-// }
-
-// void Test(void)
-// {
-//     char * str = NULL;
-//     str = GetMemory();
-//     printf(str);
-// }
-
-// int main()
-// {
-//     Test();
-//     return 0;
-
-// }
+    int _a[10];
+    long _b;
+    char* _c;
+    float _d;
+    data* _e;
+};
 
 int main()
 {
-    int a = 10000;
-    FILE* pf = fopen(&quot;test.txt&quot;,&quot;wb&quot;);
-    fwrite(&amp;a,4,1,pf);
-    fclose(pf);
-    pf = NULL;
+    printf(&quot;data结构中_a 偏移量 = %ld字节\n&quot;,offsetof(struct data, _a));
+    printf(&quot;data结构中_d 偏移量 = %ld字节\n&quot;,offsetof(struct data, _d));
     return 0;
 }</code></pre>
+</li>
+<li><p>ngx_queue_t *ngx_queue_middle(ngx_queue_t *queue): 获取链表的中间结点</p>
+<pre><code class="c">/*
+    快慢指针获取中间结点
+*/
+ngx_queue_t *
+ngx_queue_middle(ngx_queue_t *queue)
+{
+    ngx_queue_t  *middle, *next;
+
+    middle = ngx_queue_head(queue);             //头结点的下一个结点
+
+    if (middle == ngx_queue_last(queue)) {      // 如果middle等于头结点的上一个结点，则链表只有两个元素 head 和 mid
+        return middle;
+    }
+
+    next = ngx_queue_head(queue);               // next保存链表的头结点之后的结点
+
+    for ( ;; ) {
+        middle = ngx_queue_next(middle);
+
+        next = ngx_queue_next(next);                        // 走到这里 middle、next都指向第二个有效结点
+
+        if (next == ngx_queue_last(queue)) {    // 当next走到末尾元素时，mid才走一半，所以mid是中间元素
+            return middle;
+        }
+
+        next = ngx_queue_next(next);                    // next走的速度是middle的两倍
+
+        if (next == ngx_queue_last(queue)) {
+            return middle;
+        }
+    }
+}</code></pre>
+</li>
+<li><p>void ngx_queue_sort(ngx_queue_t <em>queue, ngx_int_t (</em>cmp)(const ngx_queue_t *, const ngx_queue_t *)): 链表排序</p>
+<pre><code class="c">void
+ngx_queue_sort(ngx_queue_t *queue,
+    ngx_int_t (*cmp)(const ngx_queue_t *, const ngx_queue_t *))
+{
+    ngx_queue_t  *q, *prev, *next;
+
+    q = ngx_queue_head(queue);
+
+    if (q == ngx_queue_last(queue)) {
+        return;
+    }
+
+    for (q = ngx_queue_next(q); q != ngx_queue_sentinel(queue); q = next) {
+
+        prev = ngx_queue_prev(q);
+        next = ngx_queue_next(q);
+
+        ngx_queue_remove(q);
+
+        do {
+            if (cmp(prev, q) &lt;= 0) {
+                break;
+            }
+
+            prev = ngx_queue_prev(prev);
+
+        } while (prev != ngx_queue_sentinel(queue));
+
+        ngx_queue_insert_after(prev, q);
+    }
+}</code></pre>
+</li>
+<li><p>ngx_queue_split(h, q, n): </p>
+<p><img src="https://img.3amupupup.online/ngx_queue_split_1.png" alt="image-20210321223136781"></p>
+<pre><code class="c">#define ngx_queue_split(h, q, n)                                              \
+    (n)-&gt;prev = (h)-&gt;prev;                                                    \
+    (n)-&gt;prev-&gt;next = n;                                                      \
+    (n)-&gt;next = q;                                                            \
+    (h)-&gt;prev = (q)-&gt;prev;                                                    \
+    (h)-&gt;prev-&gt;next = h;                                                      \
+    (q)-&gt;prev = n;</code></pre>
+</li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
@@ -1307,12 +901,12 @@ int main()
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>C Primer Plus</p>
+    <p><span class="copy-title">文章标题:</span>nginx双向链表</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
-    <p><span class="copy-title">发布时间:</span>2021-03-18, 11:09:52</p>
-    <p><span class="copy-title">最后更新:</span>2021-03-18, 11:09:52</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/18/C%20Primer%20Plus/" title="C Primer Plus">https://duwei19961021.github.io/2021/03/18/C%20Primer%20Plus/</a>
+    <p><span class="copy-title">发布时间:</span>2021-03-21, 19:02:44</p>
+    <p><span class="copy-title">最后更新:</span>2021-03-21, 22:41:57</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/21/ngx_queue/" title="nginx双向链表">https://duwei19961021.github.io/2021/03/21/ngx_queue/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

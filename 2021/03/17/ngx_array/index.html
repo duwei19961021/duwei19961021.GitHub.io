@@ -653,7 +653,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-03-20 12:00:05'>2021-03-17 11:26</time>
+        创建时间:<time class="date" title='更新时间: 2021-03-21 15:17:16'>2021-03-17 11:26</time>
         
     </div>
     <div class="article-meta">
@@ -675,7 +675,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#nginx数据类型：数组"><span class="toc-text">nginx数据类型：数组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#数组提供的接口"><span class="toc-text">数组提供的接口</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#ngx-array-t-ngx-array-create-ngx-pool-t-p-ngx-uint-t-n-size-t-size"><span class="toc-text">ngx_array_t *ngx_array_create(ngx_pool_t *p, ngx_uint_t n, size_t size);</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#static-ngx-inline-ngx-int-t-ngx-array-init-ngx-array-t-array-ngx-pool-t-pool-ngx-uint-t-n-size-t-size"><span class="toc-text">static ngx_inline ngx_int_t ngx_array_init(ngx_array_t *array, ngx_pool_t *pool, ngx_uint_t n, size_t size)</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#void-ngx-array-destroy-ngx-array-t-a"><span class="toc-text">void ngx_array_destroy(ngx_array_t *a)</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#void-ngx-array-push-ngx-array-t-a"><span class="toc-text">void *ngx_array_push(ngx_array_t *a)</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#void-ngx-array-push-n-ngx-array-t-a-ngx-uint-t-n"><span class="toc-text">void *ngx_array_push_n(ngx_array_t *a, ngx_uint_t n)</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#总结："><span class="toc-text">总结：</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#nginx数据类型：数组"><span class="toc-text">nginx数据类型：数组</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#数组提供的接口"><span class="toc-text">数组提供的接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#接口"><span class="toc-text">接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -691,38 +691,49 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="nginx数据类型：数组"><a href="#nginx数据类型：数组" class="headerlink" title="nginx数据类型：数组"></a>nginx数据类型：数组</h5><p><img src="https://img.3amupupup.online/ngx_array-.png" alt="ngx_array"></p>
+        <h4 id="nginx数据类型：数组"><a href="#nginx数据类型：数组" class="headerlink" title="nginx数据类型：数组"></a>nginx数据类型：数组</h4><p><img src="https://img.3amupupup.online/ngx_array_2.png" alt="ngx_array"></p>
 <pre><code class="c">typedef struct {
     void        *elts;      // 指向第一个元素的指针
     ngx_uint_t   nelts;     // 未使用的元素的索引
     size_t       size;      // 每个元素大小
     ngx_uint_t   nalloc;    //  元素个数
-    ngx_pool_t  *pool;      //  内存池
+    ngx_pool_t  *pool;      //  指向内存池的指针
 } ngx_array_t;</code></pre>
 <h5 id="数组提供的接口"><a href="#数组提供的接口" class="headerlink" title="数组提供的接口"></a>数组提供的接口</h5><pre><code class="c">ngx_array_t *ngx_array_create(ngx_pool_t *p, ngx_uint_t n, size_t size);    // 创建数组的数据结构
 void ngx_array_destroy(ngx_array_t *a); // 销毁数组
 void *ngx_array_push(ngx_array_t *a);   // push单个元素
 void *ngx_array_push_n(ngx_array_t *a, ngx_uint_t n);    // push n个元素
 static ngx_inline ngx_int_t ngx_array_init(ngx_array_t *array, ngx_pool_t *pool, ngx_uint_t n, size_t size)    //  // ngx_array_create会调用此函数，申请之后调用这个函数进行初始化操作</code></pre>
-<h6 id="ngx-array-t-ngx-array-create-ngx-pool-t-p-ngx-uint-t-n-size-t-size"><a href="#ngx-array-t-ngx-array-create-ngx-pool-t-p-ngx-uint-t-n-size-t-size" class="headerlink" title="ngx_array_t *ngx_array_create(ngx_pool_t *p, ngx_uint_t n, size_t size);"></a>ngx_array_t *ngx_array_create(ngx_pool_t *p, ngx_uint_t n, size_t size);</h6><pre><code class="c">ngx_array_t *
+<h5 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h5><ol>
+<li><p>ngx_array_t *ngx_array_create(ngx_pool_t *p, ngx_uint_t n, size_t size): 创建数组</p>
+<pre><code class="c">ngx_array_t *
 ngx_array_create(ngx_pool_t *p, ngx_uint_t n, size_t size)
 {
     ngx_array_t *a;
 
-      // 在内存池上为ngx_array_t结构体申请内存,具体分配到小数据块链表还是大数据块链表取决于size,不再作解释
     a = ngx_palloc(p, sizeof(ngx_array_t));
+      /*
+          调用ngx_palloc在内存池上为ngx_array_t结构体(控制中心)申请内存(分配在内存池结点上的数据区---小数据块区)
+      */
     if (a == NULL) {
         return NULL;
     }
 
-    if (ngx_array_init(a, p, n, size) != NGX_OK) {  // 再次申请内存(给数组分配的)
+    if (ngx_array_init(a, p, n, size) != NGX_OK) {
+          /*
+              上一步只是给数组的控制中心ngx_array_t在内存池上分配了内存，
+              ngx_array_init为数组分配数据区域并初始化ngx_array_t的成员，
+              分配ngx_array_t的内存和分配数据区内存的操作时分开的，
+              所以
+          */
         return NULL;
     }
 
     return a;
 }</code></pre>
-<h6 id="static-ngx-inline-ngx-int-t-ngx-array-init-ngx-array-t-array-ngx-pool-t-pool-ngx-uint-t-n-size-t-size"><a href="#static-ngx-inline-ngx-int-t-ngx-array-init-ngx-array-t-array-ngx-pool-t-pool-ngx-uint-t-n-size-t-size" class="headerlink" title="static ngx_inline ngx_int_t ngx_array_init(ngx_array_t *array, ngx_pool_t *pool, ngx_uint_t n, size_t size)"></a>static ngx_inline ngx_int_t ngx_array_init(ngx_array_t *array, ngx_pool_t *pool, ngx_uint_t n, size_t size)</h6><pre><code class="c">// ngx_array_create会调用此函数，申请之后进行初始化操作
-static ngx_inline ngx_int_t
+</li>
+<li><p>ngx_inline ngx_int_t: 初始化数组，为数组类型分配数据区的内存</p>
+<pre><code class="c">static ngx_inline ngx_int_t
 ngx_array_init(ngx_array_t *array, ngx_pool_t *pool, ngx_uint_t n, size_t size)
 {
     /*
@@ -734,51 +745,59 @@ ngx_array_init(ngx_array_t *array, ngx_pool_t *pool, ngx_uint_t n, size_t size)
     array-&gt;size = size;
     array-&gt;nalloc = n;
     array-&gt;pool = pool;
+      /*
+          初始化
+      */
 
-    array-&gt;elts = ngx_palloc(pool, n * size);   // 去内存池上分配内存
+    array-&gt;elts = ngx_palloc(pool, n * size);
+      /*
+          在内存吃上给数组的数据区分配内存，至于分配在large链表还是small链表需要根据数组大小决定
+      */
     if (array-&gt;elts == NULL) {
         return NGX_ERROR;
     }
 
     return NGX_OK;
 }</code></pre>
-<h6 id="void-ngx-array-destroy-ngx-array-t-a"><a href="#void-ngx-array-destroy-ngx-array-t-a" class="headerlink" title="void ngx_array_destroy(ngx_array_t *a)"></a>void ngx_array_destroy(ngx_array_t *a)</h6><ul>
-<li><pre><code class="c">/*
- * 在 ngx_array_create() 函数中 ngx_array_t结构的内存和数组的内存是分开申请的，不一定连续，
- * 所以在将内存归还给内存池的时候也得分开归还
- */
-void
+</li>
+<li><p>void ngx_array_destroy(ngx_array_t *a): 销毁数组</p>
+<p><img src="https://img.3amupupup.online/ngx_array_destroy_2.png" alt="ngx_array"></p>
+<pre><code class="c">void
 ngx_array_destroy(ngx_array_t *a)
 {
+    /*
+         在 ngx_array_create() 函数中 ngx_array_t结构的内存和数组的内存是分开申请的，不一定连续，
+         所以在将内存归还给内存池的时候也得分开归还
+     */
     ngx_pool_t  *p;
 
     p = a-&gt;pool;    // 内存池的地址是被保存在ngx数组数据结构中的
 
     /*
-     * 如果 数组首元素地址 + 元素大小*元素个数 == last的指向位置，
-     * 则说明这个数组的内存段是在used区域的尾部的，last直接减去 元素大小*元素个数 就代表销毁了这个数组的内存
+         如果 数组首元素地址 + 元素大小*元素个数 == last的指向位置，
+         则说明这个数组的内存段是在used区域的尾部的，last直接减去 元素大小*元素个数 就代表销毁了这个数组的内存
      */
     if ((u_char *) a-&gt;elts + a-&gt;size * a-&gt;nalloc == p-&gt;d.last) {
         p-&gt;d.last -= a-&gt;size * a-&gt;nalloc;
     }
 
     /*
-     *  道理和上面类似
+         销毁控制中心所在的内存，道理和上面类似
      */
     if ((u_char *) a + sizeof(ngx_array_t) == p-&gt;d.last) {
         p-&gt;d.last = (u_char *) a;
     }
 
-    // 否则就不能移动last
+    /*
+        走到这里就说明数组的控制中心的内存的末尾与数据区内存的末尾不等于last的指向，
+        它们末尾的位置到last位置之间的内存分配了给其它调用者，因此无法释放，请看图。
+        ①③是可以移动last将其归还给内存池的，②④不可以。
+    */
 }</code></pre>
 </li>
-<li><p><img src="http://img.3amupupup.online/ngx_array_destroy-.png" alt="ngx_array"></p>
-<p>1、3是可以修改last指向的，2、4不行。</p>
-<p>这里有疑问：2、4这两种情况内存岂不是无法释放(归还给内存池)，内存池会越来越大。</p>
-</li>
-</ul>
-<h6 id="void-ngx-array-push-ngx-array-t-a"><a href="#void-ngx-array-push-ngx-array-t-a" class="headerlink" title="void *ngx_array_push(ngx_array_t *a)"></a>void *ngx_array_push(ngx_array_t *a)</h6><pre><code class="c">void *
-ngx_array_push(ngx_array_t *a)  // 添加1个元素
+<li><p>void *ngx_array_push(ngx_array_t *a): 向数组中添加单个元素</p>
+<pre><code class="c">void *
+ngx_array_push(ngx_array_t *a)
 {
     void        *elt, *new;
     size_t       size;
@@ -788,16 +807,20 @@ ngx_array_push(ngx_array_t *a)  // 添加1个元素
 
         /* the array is full */
 
-        size = a-&gt;size * a-&gt;nalloc; // 计算当前数组的大小
+        size = a-&gt;size * a-&gt;nalloc;
+          /*
+              计算当前数组的大小
+          */
 
         p = a-&gt;pool;
 
         if ((u_char *) a-&gt;elts + size == p-&gt;d.last
             &amp;&amp; p-&gt;d.last + a-&gt;size &lt;= p-&gt;d.end)
         /*
-         * 如果elts指向的位置加上当前数组的大小等于last且last到end之间有足够的空间去容纳一个元素则直接在这个内存池上添加元素
-         * 这个判定是要保证添加的元素所在的内存与之前数组的内存是连续的
-         */
+            第一个条件：保证数组数据区所在的内存在内存池used区域的末尾，因为添加元素时要保证数组所有的元素
+            在内存上是连续的。
+            第二个条件：在数组数据区所在的内存池的小块数据区域有足够的内存容纳一个元素。
+        */
         {
             /*
              * the array allocation is the last in the pool
@@ -808,29 +831,49 @@ ngx_array_push(ngx_array_t *a)  // 添加1个元素
             a-&gt;nalloc++;
 
         } else {
-            // 否则就是不能保证内存连续或者空间不足
+            /*
+                否则就是不能保证内存连续或者空间不足，进行扩容
+            */
+
             /* allocate a new array */
 
-            // 申请一个两倍的空间，new是首地址
             new = ngx_palloc(p, 2 * size);
+              /*
+                  扩容的逻辑是二倍增长
+              */
+
             if (new == NULL) {
                 return NULL;
             }
 
-            // #define ngx_memcpy(dst, src, n)   (void) memcpy(dst, src, n) 看到这个👴🏻想笑
-            ngx_memcpy(new, a-&gt;elts, size); // 将原来的内存地址上的数组部分的内容拷贝到新内存池上
+            // 
+            ngx_memcpy(new, a-&gt;elts, size); // 
             a-&gt;elts = new;  // 指向新内存的位置
-            a-&gt;nalloc *= 2; // 元素个数翻倍
+            a-&gt;nalloc *= 2;
+              /*
+                      #define ngx_memcpy(dst, src, n)   (void) memcpy(dst, src, n)
+                      将原来的内存地址上的数组部分的内容拷贝到新内存池上，
+                      elts指向新内存的位置，
+                      元素个数翻倍。
+              */
         }
     }
 
-    // 未使用的索引
+    // 未使用的元素的下标
     elt = (u_char *) a-&gt;elts + a-&gt;size * a-&gt;nelts;
     a-&gt;nelts++;
 
+      /*
+          走到这里你可能会有疑问：为什么之前数组的内存没有释放呢？
+          我来给你解答：能直接添加元素需要满足的条件：数组所在内存区域在used区域的末尾且last之后有足够的空间容纳             新元素，反过来说就是数组所在的内存区域不在used区域的末尾(数组的结束位置与last位置之间的内存被分配给了            其它调用者)，如果修改last的指向会导致被分配给其它调用者的内存归还给了内存池，再下一次分配时这一片内存                很可能再被分配出去，如果发生修改的操作会发生意外的结果。
+          所以之前数组数据区域的内存是不能归还给内存池的。
+      */
     return elt;
 }</code></pre>
-<h6 id="void-ngx-array-push-n-ngx-array-t-a-ngx-uint-t-n"><a href="#void-ngx-array-push-n-ngx-array-t-a-ngx-uint-t-n" class="headerlink" title="void *ngx_array_push_n(ngx_array_t *a, ngx_uint_t n)"></a>void *ngx_array_push_n(ngx_array_t *a, ngx_uint_t n)</h6><pre><code class="c">void *
+</li>
+<li><p>void *ngx_array_push_n(ngx_array_t *a, ngx_uint_t n): 逻辑和ngx_array_push相似</p>
+<pre><code class="c">
+void *
 ngx_array_push_n(ngx_array_t *a, ngx_uint_t n)
 {
     void        *elt, *new;
@@ -847,8 +890,8 @@ ngx_array_push_n(ngx_array_t *a, ngx_uint_t n)
         p = a-&gt;pool;
 
         /*
-         * 如果elts指向的位置加上当前数组的大小等于last 且 last到end之间 有足够的空间去容纳n个元素则直接在这个内存池上添加元素
-         * 这个判定是要保证添加的元素所在的内存与之前数组的内存是连续的
+         如果elts指向的位置加上当前数组的大小等于last 且 last到end之间有足够的空间去容纳n个元素，
+         则直接在这个内存池上添加元素，这个判定是要保证添加的元素所在的内存与之前数组的内存是连续的。
          */
         if ((u_char *) a-&gt;elts + a-&gt;size * a-&gt;nalloc == p-&gt;d.last
             &amp;&amp; p-&gt;d.last + size &lt;= p-&gt;d.end)
@@ -871,7 +914,7 @@ ngx_array_push_n(ngx_array_t *a, ngx_uint_t n)
                 return NULL;
             }
 
-            ngx_memcpy(new, a-&gt;elts, a-&gt;nelts * a-&gt;size);    // 宏函数，实际上调用的memcpy函数
+            ngx_memcpy(new, a-&gt;elts, a-&gt;nelts * a-&gt;size);
             a-&gt;elts = new;
             a-&gt;nalloc = nalloc;
         }
@@ -882,8 +925,16 @@ ngx_array_push_n(ngx_array_t *a, ngx_uint_t n)
 
     return elt;
 }</code></pre>
-<h5 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h5><ol>
-<li>首先谈下nginx数组的管理结构–</li>
+</li>
+</ol>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><ol>
+<li><p>数组的控制中心ngx_array_t和数据区data是分开申请内存的，它们在内存池上很大概率是不连续的内存，释放数组时要对它们分开进行释放。</p>
+</li>
+<li><p>数组能不能被释放取决于其所在的内存区域，如果是在used区域的末尾则可以通过调整last将其归还给内存池。</p>
+<p>如果不在used的末尾，则意味着数组内存的尾端和last之间存在分配给了其它调用者的内存，如果修改last会导致这块内存在下一次调用申请内存的函数时再次被分配出去并修改上面的数据导致意外的结果。</p>
+</li>
+<li><p>数组数据区域必须连续，以保证能随机访问以及访问的效率。</p>
+</li>
 </ol>
 
       
@@ -898,7 +949,7 @@ ngx_array_push_n(ngx_array_t *a, ngx_uint_t n)
     
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-03-17, 11:26:01</p>
-    <p><span class="copy-title">最后更新:</span>2021-03-20, 12:00:05</p>
+    <p><span class="copy-title">最后更新:</span>2021-03-21, 15:17:16</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/17/ngx_array/" title="nginx数组">https://duwei19961021.github.io/2021/03/17/ngx_array/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

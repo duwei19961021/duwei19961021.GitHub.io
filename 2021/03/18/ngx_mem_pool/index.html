@@ -653,7 +653,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-03-20 14:00:21'>2021-03-18 15:14</time>
+        创建时间:<time class="date" title='更新时间: 2021-03-21 13:22:34'>2021-03-18 15:14</time>
         
     </div>
     <div class="article-meta">
@@ -779,7 +779,7 @@ ngx_create_pool(size_t size, ngx_log_t *log)
 
     p-&gt;d.last = (u_char *) p + sizeof(ngx_pool_t);
       /*
-          p是申请得到的内存的首地址，前sizeof(ngx_pool_t)字节的内存要留给内存池的管理结构(我也叫他控制中心)，
+          p是通过malloc申请得到的内存的首地址，前sizeof(ngx_pool_t)字节的内存要留给内存池的管理结构(我也叫他控制中心)，
           控制中心之后的内存是给申请者使用的。last是申请者能够使用内存的起始位置，end是结束位置(由数据结构得知)
       */
 
@@ -1320,7 +1320,7 @@ ngx_pool_delete_file(void *data)
     
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-03-18, 15:14:01</p>
-    <p><span class="copy-title">最后更新:</span>2021-03-20, 14:00:21</p>
+    <p><span class="copy-title">最后更新:</span>2021-03-21, 13:22:34</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/18/ngx_mem_pool/" title="nginx内存池">https://duwei19961021.github.io/2021/03/18/ngx_mem_pool/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

@@ -6,20 +6,22 @@
   <meta name="keywords" content=" Nginx ">
   <meta name="description" content="Nginx | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="2.1 信息存储 大多数计算机使用8位的块，或者字节(byte)，作为最小的可寻址的内存单位，而不是访问内存中单独的位。 C编译器把指针和类型联系起来，这样就可以根据指针值的类型，生成不同的机器级别代码来访问存储在指针所指向位置处的值。尽管C编译器维护着这个类型的信息，但是它生成的实际机器级程序不包含关于数据类型的信息。 机器级程序将内存视为一个非常大的字节数组，称为虚拟内存(virtual me">
+<meta name="description" content="第九章：虚拟内存1、什么是虚拟内存？虚拟内存是磁盘上(较低层)连续N个字节组成的数组，每个字节都有唯一的虚拟地址作为数组的索引，磁盘上数组的内容被缓存在主存中。(虚拟页存在于磁盘上) 物理内存被分隔成物理页(Physical Page,PP)。 VM系统将虚拟内存分隔成虚拟页(Virtual Page,VP)，虚拟页面的集合分为三个不相交的子集：  未分配的(VM系统还未分配或者未创建的页，未分配">
 <meta property="og:type" content="article">
-<meta property="og:title" content="信息的表示和处理">
-<meta property="og:url" content="https://duwei19961021.github.io/2021/03/20/information_representation_and_processing/index.html">
+<meta property="og:title" content="操作系统">
+<meta property="og:url" content="https://duwei19961021.github.io/2021/03/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/index.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="2.1 信息存储 大多数计算机使用8位的块，或者字节(byte)，作为最小的可寻址的内存单位，而不是访问内存中单独的位。 C编译器把指针和类型联系起来，这样就可以根据指针值的类型，生成不同的机器级别代码来访问存储在指针所指向位置处的值。尽管C编译器维护着这个类型的信息，但是它生成的实际机器级程序不包含关于数据类型的信息。 机器级程序将内存视为一个非常大的字节数组，称为虚拟内存(virtual me">
+<meta property="og:description" content="第九章：虚拟内存1、什么是虚拟内存？虚拟内存是磁盘上(较低层)连续N个字节组成的数组，每个字节都有唯一的虚拟地址作为数组的索引，磁盘上数组的内容被缓存在主存中。(虚拟页存在于磁盘上) 物理内存被分隔成物理页(Physical Page,PP)。 VM系统将虚拟内存分隔成虚拟页(Virtual Page,VP)，虚拟页面的集合分为三个不相交的子集：  未分配的(VM系统还未分配或者未创建的页，未分配">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://duwei19961021.github.io/image/image-20201023114928097.png">
-<meta property="og:image" content="https://duwei19961021.github.io/image/image-20201023131136500.png">
-<meta property="article:published_time" content="2021-03-20T03:55:12.704Z">
-<meta property="article:modified_time" content="2021-03-20T03:55:12.704Z">
+<meta property="og:image" content="https://duwei19961021.github.io/image/image-20201020134441586.png">
+<meta property="og:image" content="https://duwei19961021.github.io/image/image-20201020140133328.png">
+<meta property="og:image" content="https://duwei19961021.github.io/image/image-20201020145055727.png">
+<meta property="og:image" content="https://duwei19961021.github.io/image/image-20201020145822292.png">
+<meta property="article:published_time" content="2021-03-20T03:54:29.615Z">
+<meta property="article:modified_time" content="2021-03-20T03:54:29.615Z">
 <meta property="article:author" content="拦云">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://duwei19961021.github.io/image/image-20201023114928097.png">
+<meta name="twitter:image" content="https://duwei19961021.github.io/image/image-20201020134441586.png">
 
 
 <link rel="icon" href="/img/favicon.ico">
@@ -830,8 +832,8 @@ worker进程：TERM ，INT；QUIT；USR1；WINCH</code></pre><h6 id="reload真�
         var gitalk = new Gitalk({
             clientID: '3b4b650a1fd8dbde420e',
             clientSecret: '7a8771f729d9677939c7cc49101f518a17ce8a99',
-            repo: 'duwei19961021.github.io',
-            owner: 'duwei19961021@163.com',
+            repo: 'github.com/duwei19961021/learn_nginx-1.18.0',
+            owner: 'duwei19961021',
             admin: ['duwei19961021'],
             id: decodeURI(location.pathname),
             distractionFreeMode: 'true',

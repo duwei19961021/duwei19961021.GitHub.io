@@ -6,20 +6,20 @@
   <meta name="keywords" content="">
   <meta name="description" content="sql | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="2.1 信息存储 大多数计算机使用8位的块，或者字节(byte)，作为最小的可寻址的内存单位，而不是访问内存中单独的位。 C编译器把指针和类型联系起来，这样就可以根据指针值的类型，生成不同的机器级别代码来访问存储在指针所指向位置处的值。尽管C编译器维护着这个类型的信息，但是它生成的实际机器级程序不包含关于数据类型的信息。 机器级程序将内存视为一个非常大的字节数组，称为虚拟内存(virtual me">
+<meta name="description" content="nginx数据类型：单向链表 &#x2F;&#x2F; 单向链表的子结点 struct ngx_list_part_s {     void             *elts; &#x2F;&#x2F; 数据区的首地址     ngx_uint_t        nelts;    &#x2F;&#x2F;  指向第一个未使用过的元素     ngx_list_part_t  *next; &#x2F;&#x2F;  指向下一个结点的指针 };  &#x2F;&#x2F; 单向链表的父结点 t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="信息的表示和处理">
-<meta property="og:url" content="https://duwei19961021.github.io/2021/03/20/information_representation_and_processing/index.html">
+<meta property="og:title" content="nginx单向链表">
+<meta property="og:url" content="https://duwei19961021.github.io/2021/03/22/ngx_list/index.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="2.1 信息存储 大多数计算机使用8位的块，或者字节(byte)，作为最小的可寻址的内存单位，而不是访问内存中单独的位。 C编译器把指针和类型联系起来，这样就可以根据指针值的类型，生成不同的机器级别代码来访问存储在指针所指向位置处的值。尽管C编译器维护着这个类型的信息，但是它生成的实际机器级程序不包含关于数据类型的信息。 机器级程序将内存视为一个非常大的字节数组，称为虚拟内存(virtual me">
+<meta property="og:description" content="nginx数据类型：单向链表 &#x2F;&#x2F; 单向链表的子结点 struct ngx_list_part_s {     void             *elts; &#x2F;&#x2F; 数据区的首地址     ngx_uint_t        nelts;    &#x2F;&#x2F;  指向第一个未使用过的元素     ngx_list_part_t  *next; &#x2F;&#x2F;  指向下一个结点的指针 };  &#x2F;&#x2F; 单向链表的父结点 t">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://duwei19961021.github.io/image/image-20201023114928097.png">
-<meta property="og:image" content="https://duwei19961021.github.io/image/image-20201023131136500.png">
-<meta property="article:published_time" content="2021-03-20T03:55:12.704Z">
-<meta property="article:modified_time" content="2021-03-20T03:55:12.704Z">
+<meta property="og:image" content="https://img.3amupupup.online/ngx_list_1.png">
+<meta property="article:published_time" content="2021-03-22T03:15:43.000Z">
+<meta property="article:modified_time" content="2021-03-22T05:17:19.917Z">
 <meta property="article:author" content="拦云">
+<meta property="article:tag" content="list">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://duwei19961021.github.io/image/image-20201023114928097.png">
+<meta name="twitter:image" content="https://img.3amupupup.online/ngx_list_1.png">
 
 
 <link rel="icon" href="/img/favicon.ico">
@@ -73,7 +73,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(45)</small></div></li>
+    <li><div class="all active">全部文章<small>(47)</small></div></li>
     
         
             
@@ -117,7 +117,7 @@
     
         
             
-            <li><div data-rel="Nginx">Nginx<small>(5)</small></div>
+            <li><div data-rel="Nginx">Nginx<small>(6)</small></div>
                 
             </li>
             
@@ -141,7 +141,7 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="45">
+<input type="hidden" id="yelog_site_posts_number" value="47">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -273,6 +273,10 @@
     
     <li class="article-tag-list-item">
         <a class="color5">list</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">hashtable</a>
     </li>
     
     <div class="clearfix"></div>
@@ -641,6 +645,22 @@
             <span class="post-date" title="2021-03-22 11:15:43">2021/03/22</span>
         </a>
         
+        <a  class=""
+           href="/2021/03/22/ngx_align/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ngx_align">ngx_align</span>
+            <span class="post-date" title="2021-03-22 15:44:36">2021/03/22</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/23/ngx_hash/"
+           data-tag="hashtable"
+           data-author="" >
+            <span class="post-title" title="nginx散列表">nginx散列表</span>
+            <span class="post-date" title="2021-03-23 18:21:27">2021/03/23</span>
+        </a>
+        
     </nav>
 </div>
     </div>
@@ -771,7 +791,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#内存','#buf','#queue','#list',],
+            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#内存','#buf','#queue','#list','#hashtable',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

@@ -6,7 +6,7 @@
   <link href="https://duwei19961021.github.io/atom.xml" rel="self"/>
   
   <link href="https://duwei19961021.github.io/"/>
-  <updated>2021-03-22T05:17:19.917Z</updated>
+  <updated>2021-03-24T03:39:11.359Z</updated>
   <id>https://duwei19961021.github.io/</id>
   
   <author>
@@ -15,6 +15,53 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nginx散列表</title>
+    <link href="https://duwei19961021.github.io/2021/03/23/ngx_hash/"/>
+    <id>https://duwei19961021.github.io/2021/03/23/ngx_hash/</id>
+    <published>2021-03-23T10:21:27.000Z</published>
+    <updated>2021-03-24T03:39:11.359Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="nginx数据类型：散列表"><a href="#nginx数据类型：散列表" class="headerlink" title="nginx数据类型：散列表"></a>nginx数据类型：散列表</h4><p><img src="https://img.3amupupup.online/ngx_hash_2.png" alt="散列表"></p><pre><code class="c">// 存储key和value的元素typedef struct {    void             *value;    // 指向value的指针    u_short           len;  // key的长度    u_char            name[1];  // key长度是可变的，这里使用了c语言的柔性数组} ngx_hash_elt_t;// hash表结构typedef struct {    ngx_hash_elt_t  **buckets;  // hash表的桶指针地址值    ngx_uint_t        size; // hash表的t桶个数} ngx_hash_t;// hash表初始化时所需的key的结构typedef struct {    ngx_str_t         key;  // key    ngx_uint_t        key_hash; // key经过hash函数计算得到的值    void             *value;    // value} ngx_hash_key_t;// 初始化结构，通过这个结构里的参数进行初始化typedef struct {    ngx_hash_t       *hash; // 指向hash表的指针    ngx_hash_key_pt   key;  // hash函数    ngx_uint_t        max_size; // 最多能有多少个桶    ngx_uint_t        bucket_size;  // 桶的大小(桶的内存空间size，单位是字节)    char             *name; // hash表名称    ngx_pool_t       *pool; // 内存池    ngx_pool_t       *temp_pool;    // 临时内存池} ngx_hash_init_t;</code></pre><h5 id="散列表提供的接口"><a href="#散列表提供的接口" class="headerlink" title="散列表提供的接口"></a>散列表提供的接口</h5><pre><code class="c">ngx_int_t ngx_hash_init(ngx_hash_init_t *hinit, ngx_hash_key_t *names, ngx_uint_t nelts); // 构建散列表</code></pre><h5 id="接口实现"><a href="#接口实现" class="headerlink" title="接口实现"></a>接口实现</h5><ol><li><p>ngx_int_t ngx_hash_init(ngx_hash_init_t *hinit, ngx_hash_key_t *names, ngx_uint_t nelts): 构建散列表</p><p><img src="https://img.3amupupup.online/ngx_hash_test_1.png" alt="test"></p><pre><code class="c">/*typedef struct {    ngx_str_t         key;  // ngx_string类型的key    ngx_uint_t        key_hash; //  key经过hash函数处理之后的值    void             *value;    // value} ngx_hash_key_t;*//*    第一个参数：hash表初始化结构：通过这个结构提供的参数进行初始化    第二个参数：ngx_hash_key_t组成的数组(先将key的hash值算好存储在结构里，用的时候直接取就行了，而不是边用边           计算hash值)    第三个元素：数组的元素个数*//*    出现的参数说明：                            max_size: 桶的最大数量(这个hash表桶的最大个数)                            bucket_size: 桶的内存空间大小(不能超过65535)                            elt: ngx_hash_elt_t类型，桶中存储的元素    */ngx_int_tngx_hash_init(ngx_hash_init_t *hinit, ngx_hash_key_t *names, ngx_uint_t nelts){    u_char          *elts;    size_t           len;    u_short         *test;    ngx_uint_t       i, n, key, size, start, bucket_size;    ngx_hash_elt_t  *elt, **buckets;    if (hinit-&gt;max_size == 0) {        /*            如果max_size为0，那么这个hash表毫无意义         */        ngx_log_error(NGX_LOG_EMERG, hinit-&gt;pool-&gt;log, 0,                      &quot;could not build %s, you should &quot;u                      &quot;increase %s_max_size: %i&quot;,                      hinit-&gt;name, hinit-&gt;name, hinit-&gt;max_size);        return NGX_ERROR;    }    if (hinit-&gt;bucket_size &gt; 65536 - ngx_cacheline_size) {        /*                从这里可以看出：bucket_size的长度不会超过65535字节，                elt的len成员的类型是u_short(无符号短整型，范围0~65535)，                也就是说一个桶在最坏情况下只能存储一个elt(如果elt足够长)。        */        ngx_log_error(NGX_LOG_EMERG, hinit-&gt;pool-&gt;log, 0,                      &quot;could not build %s, too large &quot;                      &quot;%s_bucket_size: %i&quot;,                      hinit-&gt;name, hinit-&gt;name, hinit-&gt;bucket_size);        return NGX_ERROR;    }    for (n = 0; n &lt; nelts; n++) {        if (hinit-&gt;bucket_size &lt; NGX_HASH_ELT_SIZE(&amp;names[n]) + sizeof(void *))          /*              这里直接说结论：所有的bucket都是存储在一块连续的内存上的，所有的bucket通过              自己末尾上的NULL指针进行间隔(看上面的图)，由于names数组中每个元素对应的key              的长度可能都是不一样的，在用names中的元素生成对应的elt(elt包含一个柔性数组)时，              names中元素的key的长度不同，生成的elt的大小也就不同，为了提高对内存的访问效率，              ngx对每个elt进行了内存对齐，所以在连续内存上给elt分配内存时，并不是elt多大就分配              多少内存，而是分配对齐后的内存(类似结构体的内存对齐)。              这里遍历names中的每个元素，计算对应elt的内存大小进行计算，如果发现出现了bucket_size小于              其中任何一个元素的对应的elt的内存的大小(必须保证bucket_size能存储至少一个elt)，              就会返回失败提醒调用者增加bucket_size。          */        {            ngx_log_error(NGX_LOG_EMERG, hinit-&gt;pool-&gt;log, 0,                          &quot;could not build %s, you should &quot;                          &quot;increase %s_bucket_size: %i&quot;,                          hinit-&gt;name, hinit-&gt;name, hinit-&gt;bucket_size);            return NGX_ERROR;        }    }    test = ngx_alloc(hinit-&gt;max_size * sizeof(u_short), hinit-&gt;pool-&gt;log);      /*          申请一个数组test，max_size个元素，元素类型u_short，稍后会进行模拟hash表的生成过程，          test数组是用来存储每一个bucket在生成hash表的过程中存储的元素所占用的内存大小，检测桶          中所有元素的内存大小是否超过了bucket_size。      */    if (test == NULL) {        return NGX_ERROR;    }    bucket_size = hinit-&gt;bucket_size - sizeof(void *);      /*          上面说过一个结论：每个bucket的末尾都存在一个NULL指针。所以一个桶能真正被用来          存储elt的空间应该减去一个空指针的大小。      */    start = nelts / (bucket_size / (2 * sizeof(void *)));    /*        一个ngx_hash_elt_t结构实例化之后的对象在内存上最少需要占用(2 * sizeof(void *))        字节内存，在此记为elt_min_size。        bucket_size / elt_min_size 的含义即：桶中能存储的最大元素个数，在此记为max_num。        start = nelts / max_num 的含义即为：桶的个数(至少)。      */    start = start ? start : 1;    // 最起码要给一个桶    if (hinit-&gt;max_size &gt; 10000 &amp;&amp; nelts &amp;&amp; hinit-&gt;max_size / nelts &lt; 100) {        /*             这一段暂时说不出原因，应该是对桶个数上的优化        */        start = hinit-&gt;max_size - 1000;    }    for (size = start; size &lt;= hinit-&gt;max_size; size++) {        /*            这里开始进行探测的逻辑，内存循环根据桶子的个数去探测是否能装下所有elt，            外层循环不断增加桶子个数。        */        ngx_memzero(test, size * sizeof(u_short));        /*            初始化为0，按需初始化，有多少个桶就初始化多少个test的元素(置0)        */        for (n = 0; n &lt; nelts; n++) {            if (names[n].key.data == NULL) {              /*                  key是ngx_string类型，ngx_string的成员data指向字符的地址                这里是排除空串的情况              */                continue;            }            key = names[n].key_hash % size;            /*                key的hash值 模 上size(桶个数)就能得出位于哪个bucket            */            len = test[key] + NGX_HASH_ELT_SIZE(&amp;names[n]);              /*                  test[key]上存储的是对应的桶buckets[key]已经使用了的空间，                  len是当前桶再次存储一个elt之后的内存空间大小的值              */#if 0            ngx_log_error(NGX_LOG_ALERT, hinit-&gt;pool-&gt;log, 0,                          &quot;%ui: %ui %uz \&quot;%V\&quot;&quot;,                          size, key, len, &amp;names[n].key);#endif            if (len &gt; bucket_size) {               /*                  如果有发现len大于桶子的存储空间，说明发生了hash碰撞次数较多(碰撞多存储的元素就多)，                  导致桶子里的空间溢出了，因此跳出当前循环进入外层的循环去增加桶子的葛素。              */                 goto next;            }            test[key] = (u_short) len;              /*                  如果没发生桶空间溢出，则将len更新至test              */        }        goto found;          /*              走完一圈都没发生桶子空间溢出，则说明此时的size比较合适，能够存储所有元素          */    next:        continue;    }    size = hinit-&gt;max_size;    ngx_log_error(NGX_LOG_WARN, hinit-&gt;pool-&gt;log, 0,                  &quot;could not build optimal %s, you should increase &quot;                  &quot;either %s_max_size: %i or %s_bucket_size: %i; &quot;                  &quot;ignoring %s_bucket_size&quot;,                  hinit-&gt;name, hinit-&gt;name, hinit-&gt;max_size,                  hinit-&gt;name, hinit-&gt;bucket_size, hinit-&gt;name);found:    /*         此时已经找到了最合适的桶子数：size。(决定桶子个数的原则：不浪费内存)    */    for (i = 0; i &lt; size; i++) {        test[i] = sizeof(void *);          /*              上一步计算除去了bucket中NULL指针的空间,但是在实际中，              NULL指针也要算进去，这样才能给bucket分配最准确的内存大小，          */    }    for (n = 0; n &lt; nelts; n++) {        if (names[n].key.data == NULL) {    // 忽略空key            continue;        }        key = names[n].key_hash % size; // 得到当前key应该位于哪个桶        len = test[key] + NGX_HASH_ELT_SIZE(&amp;names[n]);    // 当前桶子已经使用了的内存空间        if (len &gt; 65536 - ngx_cacheline_size) {               /*                  如果有桶的长度大于bucket_size，说明桶溢出了              */            ngx_log_error(NGX_LOG_EMERG, hinit-&gt;pool-&gt;log, 0,                          &quot;could not build %s, you should &quot;                          &quot;increase %s_max_size: %i&quot;,                          hinit-&gt;name, hinit-&gt;name, hinit-&gt;max_size);            ngx_free(test); // 这里下一步是直接返回错误了，test必须free掉，否则会发生内存泄露            return NGX_ERROR;        }        test[key] = (u_short) len;          /*              test对应的元素保存了对应桶子的所需空间大小 test[i] == bucket[i]的size          */    }    len = 0;    for (i = 0; i &lt; size; i++) {        if (test[i] == sizeof(void *)) {            continue;        }        test[i] = (u_short) (ngx_align(test[i], ngx_cacheline_size));        len += test[i];        /*            计算出所有bucket总共需要多少内存        */    }    if (hinit-&gt;hash == NULL) {        hinit-&gt;hash = ngx_pcalloc(hinit-&gt;pool, sizeof(ngx_hash_wildcard_t)                                             + size * sizeof(ngx_hash_elt_t *));        /*            sizeof(ngx_hash_wildcard_t)应该是有其它作用，暂时不理会。            这里分配了一个指针数组(ngx_hash_elt_t *)，每个指针指向对应的bucket的头部。(看文章开始的图)        */        if (hinit-&gt;hash == NULL) {            ngx_free(test);            return NGX_ERROR;        }        buckets = (ngx_hash_elt_t **)                      ((u_char *) hinit-&gt;hash + sizeof(ngx_hash_wildcard_t));    } else {        buckets = ngx_pcalloc(hinit-&gt;pool, size * sizeof(ngx_hash_elt_t *));        if (buckets == NULL) {            ngx_free(test);            return NGX_ERROR;        }    }    elts = ngx_palloc(hinit-&gt;pool, len + ngx_cacheline_size);      /*          根据之前计算得到的len给所有elts分配一大块连续的内存(从内存池上申请的)      */    if (elts == NULL) {        ngx_free(test);        return NGX_ERROR;    }    elts = ngx_align_ptr(elts, ngx_cacheline_size); // 内存对齐，暂时不理解    for (i = 0; i &lt; size; i++) {        if (test[i] == sizeof(void *)) { // 说明在构建hash表时没有elt落进这个桶            continue;        }        buckets[i] = (ngx_hash_elt_t *) elts;          /*              类型转换          */        elts += test[i];          /*              test[i]中存储的是模拟hash表构建过程中，元素大小的总和。现在按照这个值给桶子按需分配内存，              最大程度的节省内存          */     }    for (i = 0; i &lt; size; i++) {    // test数组置0        test[i] = 0;    }    for (n = 0; n &lt; nelts; n++) {        if (names[n].key.data == NULL) {    // 跳过空key            continue;        }        // 这里开始真正的遍历names数组，构建hash表        key = names[n].key_hash % size;        elt = (ngx_hash_elt_t *) ((u_char *) buckets[key] + test[key]); //  拿到elt的首地址        elt-&gt;value = names[n].value;    // 写入value        elt-&gt;len = (u_short) names[n].key.len;  // 写入len字段        ngx_strlow(elt-&gt;name, names[n].key.data, names[n].key.len); // 修改key为小写        test[key] = (u_short) (test[key] + NGX_HASH_ELT_SIZE(&amp;names[n]));   // 记录每个bucket的大小    }    for (i = 0; i &lt; size; i++) {    // 遍历buckets        if (buckets[i] == NULL) {            continue;        }        elt = (ngx_hash_elt_t *) ((u_char *) buckets[i] + test[i]);          /*              buckets[i]是每个bucket的首地址，加上起存储空间就是末尾的位置，              将次位置当做elt处理，其value置空，当做间隔标志。          */        elt-&gt;value = NULL;  // 置为NULL    }    ngx_free(test);    hinit-&gt;hash-&gt;buckets = buckets;    hinit-&gt;hash-&gt;size = size;#if 0    for (i = 0; i &lt; size; i++) {        ngx_str_t   val;        ngx_uint_t  key;        elt = buckets[i];        if (elt == NULL) {            ngx_log_error(NGX_LOG_ALERT, hinit-&gt;pool-&gt;log, 0,                          &quot;%ui: NULL&quot;, i);            continue;        }        while (elt-&gt;value) {            val.len = elt-&gt;len;            val.data = &amp;elt-&gt;name[0];            key = hinit-&gt;key(val.data, val.len);            ngx_log_error(NGX_LOG_ALERT, hinit-&gt;pool-&gt;log, 0,                          &quot;%ui: %p \&quot;%V\&quot; %ui&quot;, i, elt, &amp;val, key);            elt = (ngx_hash_elt_t *) ngx_align_ptr(&amp;elt-&gt;name[0] + elt-&gt;len,                                                   sizeof(void *));        }    }#endif    return NGX_OK;}</code></pre></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;nginx数据类型：散列表&quot;&gt;&lt;a href=&quot;#nginx数据类型：散列表&quot; class=&quot;headerlink&quot; title=&quot;nginx数据类型：散列表&quot;&gt;&lt;/a&gt;nginx数据类型：散列表&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;https://img.3amu</summary>
+      
+    
+    
+    
+    <category term="Nginx" scheme="https://duwei19961021.github.io/categories/Nginx/"/>
+    
+    
+    <category term="hashtable" scheme="https://duwei19961021.github.io/tags/hashtable/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ngx_align</title>
+    <link href="https://duwei19961021.github.io/2021/03/22/ngx_align/"/>
+    <id>https://duwei19961021.github.io/2021/03/22/ngx_align/</id>
+    <published>2021-03-22T07:44:36.108Z</published>
+    <updated>2021-03-23T06:20:13.264Z</updated>
+    
+    <content type="html"><![CDATA[<p>1、cache line</p><blockquote><p><a href="https://zhuanlan.zhihu.com/p/130770773" target="_blank" rel="noopener">CPU Cache</a></p><h3 id="Cache-Line"><a href="#Cache-Line" class="headerlink" title="Cache Line"></a><strong>Cache Line</strong></h3><p>CPU 每次访问数据时先在缓存中查找一次，找不到则去主存找，访问完数据后会将数据存入缓存，以备后用。这就产生了一个问题，CPU 在访问某个地址的时候如何知道目标数据是在缓存中存在？如何知道缓存的数据是否还有效没被修改？不能为每个存入缓存的字节都打标记，所以 CPU 缓存会划分为固定大小的 Block 称为 Cache Line，作为存取数据的最小单位。大小都为 2 的整数幂，比如 16 字节，256 字节等。这样一个 cache line 这一整块内存能通过一个标记来记录是否在内存中，是否还有效，是否被修改等。一次存取一块数据也能充分利用总线带宽以及 CPU 访问的空间局部性。</p></blockquote><pre><code class="c">#define ngx_align(d, a)     (((d) + (a - 1)) &amp; ~(a - 1))    // ~按位取反，&amp; 同时为1结果才为1/*    a = 4:  二进制： 0000 0100       从右往左，第三位为1，剩下全为0;    a = 8:  二进制： 0000 1000       从右往左，第四位为1, 剩下全为0；    a = 16: 二进制:  0001 0000       从右往左，第五位为1，剩下全为0；    a - 1 = 3:  二进制： 0000 0011   从右往左，第三位之前，全是1；    a - 1 = 7:  二进制： 0000 0111   从右往左，第四位之前，全是1；    a - 1 = 15: 二进制： 0000 1111   从右往左，第五位之前，全是1；    ~(a - 1) = ~3:  二进制： 1111 1100   从右往左，第二位之后，全是1；    ~(a - 1) = ~7:  二进制： 1111 1000   从右往左，第三位之后，全是1；    ~(a - 1) = ~15: 二进制： 1111 0000   从右往左，第四位之后，全是1；    一个数，一定是这个数的二进制从右起第一个不为零的位所表示的数的整数倍    a = 12:  二进制： 0000 1100     从右起，第一个不为零的位所表示的整数为 0000 0100 即 4    那么，a = 12 一定是 4 的整数倍    如果，我们需要任意的一个数a对4取整怎么办呢？很简单，只需要把a从右起的若干位置0就可以了。    比如：            a = 13: 二进制：0000 1101            向0000 0100 即 4 取整，只需要将 0000 1101从右起，前两位置0，即可得到，0000 1100 即12            这个置0的过程可以表达为0000 1101 &amp;  1111 1100            而 1111 1100 = ~(4 - 1)，因此，13 对 4 取整的二进制运算即为：13 &amp; ~(4 - 1)    对于一个任意的数d和一个2的任意次幂a：    d对a向下取整的二进制运算为：d &amp; ~(a -1)    d对a向上取整的二进制运算为：(d + (a - 1)) &amp; ~(a - 1)*/</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;1、cache line&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/130770773&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CPU Cache&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>nginx单向链表</title>
@@ -134,6 +181,23 @@
   </entry>
   
   <entry>
+    <title>nginx缓冲区</title>
+    <link href="https://duwei19961021.github.io/2021/03/18/ngx_buf/"/>
+    <id>https://duwei19961021.github.io/2021/03/18/ngx_buf/</id>
+    <published>2021-03-18T07:14:01.000Z</published>
+    <updated>2021-03-21T14:58:16.468Z</updated>
+    
+    
+    
+    
+    <category term="Nginx" scheme="https://duwei19961021.github.io/categories/Nginx/"/>
+    
+    
+    <category term="buf" scheme="https://duwei19961021.github.io/tags/buf/"/>
+    
+  </entry>
+  
+  <entry>
     <title>nginx内存池</title>
     <link href="https://duwei19961021.github.io/2021/03/18/ngx_mem_pool/"/>
     <id>https://duwei19961021.github.io/2021/03/18/ngx_mem_pool/</id>
@@ -154,47 +218,6 @@
     
     
     <category term="mem_pool" scheme="https://duwei19961021.github.io/tags/mem-pool/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nginx缓冲区</title>
-    <link href="https://duwei19961021.github.io/2021/03/18/ngx_buf/"/>
-    <id>https://duwei19961021.github.io/2021/03/18/ngx_buf/</id>
-    <published>2021-03-18T07:14:01.000Z</published>
-    <updated>2021-03-21T14:58:16.468Z</updated>
-    
-    
-    
-    
-    <category term="Nginx" scheme="https://duwei19961021.github.io/categories/Nginx/"/>
-    
-    
-    <category term="buf" scheme="https://duwei19961021.github.io/tags/buf/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Jenkins结合sonar代码检测流水线</title>
-    <link href="https://duwei19961021.github.io/2021/03/18/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/"/>
-    <id>https://duwei19961021.github.io/2021/03/18/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/</id>
-    <published>2021-03-18T03:09:52.078Z</published>
-    <updated>2021-03-18T03:09:52.078Z</updated>
-    
-    <content type="html"><![CDATA[<h5 id="1、jenkins所需插件"><a href="#1、jenkins所需插件" class="headerlink" title="1、jenkins所需插件"></a>1、jenkins所需插件</h5><p><a href="https://plugins.jenkins.io/workflow-aggregator" target="_blank" rel="noopener">Pipeline</a>、<a href="https://plugins.jenkins.io/sonar-quality-gates" target="_blank" rel="noopener">Sonar Quality Gates Plugin</a>、<a href="https://plugins.jenkins.io/sonar" target="_blank" rel="noopener">SonarQube Scanner</a>、<a href="https://plugins.jenkins.io/generic-webhook-trigger" target="_blank" rel="noopener">Generic Webhook Trigger Plugin</a></p><h5 id="2、jenkins配置"><a href="#2、jenkins配置" class="headerlink" title="2、jenkins配置"></a>2、jenkins配置</h5><ul><li><p>Dashboard =&gt; 系统管理 =&gt; 全局工具配置</p><p><img src="/image/image-20201227165338711.png" alt="sonar scanner安装"></p></li><li><p>Dashboard =&gt; 系统管理 =&gt; 系统配置</p><p><img src="/image/image-20201227165501679.png" alt="sonarqube servers配置"></p></li></ul><p>  <img src="/image/image-20201227165627390.png" alt="token配置"></p><p>  这个token是在sonar web上生成的，然后在jenkins上创建一个secret text类型凭据。</p><p>  <img src="/image/image-20201227165828644.png" alt="gitlab"></p><p>  配置连接gitlab，要生成gitlab api token</p><p>  <img src="/image/image-20201227165956042.png" alt="获取gitlab Private token"></p><p>  生成private token。在sonar检测代码所有条件都通过时，要通过这个private token去操作gitlab的api来自动接受合并请求。</p><p>  <img src="/image/image-20201227170513752.png" alt="private token 凭据"></p><p>  生成凭据，记住这里的id 为12，一会pipeline脚本要用</p><ul><li><p>在gitlab项目下配置触发器，只勾选Merge Request Events (这个token随机生成一个就好了)</p><p><img src="/image/image-20201227170841973.png" alt="gitlab webhook"></p></li></ul><h5 id="3、pipiline脚本"><a href="#3、pipiline脚本" class="headerlink" title="3、pipiline脚本"></a>3、pipiline脚本</h5><pre><code class="pipeline">pipeline {   agent any   environment {        PrivateToken= credentials(&#39;12&#39;) // 获取private token，之前在凭据里配置过，这样比较安全，不需要在脚本里明文使用token    }   options {      gitLabConnection(&#39;gitlab&#39;)    }       triggers {        GenericTrigger(            genericVariables: [            [key: &#39;source_branch&#39;, value: &#39;$.object_attributes.source_branch&#39;], // 获取merge的源分支,只检测源分支，源分支的代码检测成功才能合并到目标分支            [key: &#39;url&#39;, value: &#39;$.object_attributes.url&#39;], // 获取gitlab merge请求的url            [key: &#39;action&#39;, value: &#39;$.object_attributes.action&#39;], // 获取merge动作 [reopen,close,open],只在reopen和open时才出发流水线检测            [key: &#39;source_project_id&#39;, value: &#39;$.object_attributes.source_project_id&#39;],            [key: &#39;iid&#39;, value: &#39;$.object_attributes.iid&#39;],            [key: &#39;name&#39;, value: &#39;$.user.name&#39;], // 获取合并请求的发起人            [key: &#39;project_name&#39;, value: &#39;$.project.name&#39;], // 或者项目名            [key: &#39;target_branch&#39;, value: &#39;$.object_attributes.target_branch&#39;], // 获取目标分支，我这里的需求是：合并到release.test分支的请求才进行质检、自动合并，所以我需要拿到这个变量            [key: &#39;object_kind&#39;, value: &#39;$.object_kind&#39;]            ],            token: &#39;fc161920aa6f1886e7417416edc85500&#39; , // 这是webhook上填写的token            causeString: &#39; Triggered on $ref&#39; ,            printContributedVariables: true,            printPostContent: true        )    }   stages {    stage(&quot;select branch&quot;){        steps{                script{                    if((env.source_branch =~ &#39;release.*&#39;).matches() || (env.action!=&quot;open&quot;  &amp;&amp; env.action!=&quot;update&quot;) || env.target_branch != &quot;release.test&quot;){ // 触发流水线检测代码的条件                        stage(&quot;exit with 0&quot;){                            ansiColor(&#39;gnome-terminal&#39;) {                                echo &quot;\033[32m Jump Sonar\n user:$name\nproject_name:$project_name\nobject_kind:$object_kind\naction:$action\nsource_branch:$source_branch\n target_branch:$target_branch \033[0m&quot;                            }                                   }                    }else{                        stage(&#39;pull branch&#39;) {                            checkout([$class: &#39;GitSCM&#39;, branches: [[name: &quot;*/$source_branch&quot;]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: &#39;11&#39;, url: &#39;http://gitlab.xxxxxx.com:8888/xubin/xxxxxxxx.git&#39;]]])                        }                        stage(&#39;SonarQubeanalysis&#39;) {                                script {                                    scannerHome = tool &#39;sonar-scanner&#39;                                }                            withSonarQubeEnv(&#39;sonar&#39;) {                            sh &quot;echo ${scannerHome}&quot;                            sh &quot;${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=$JOB_BASE_NAME -Dsonar.sources=./app&quot;                            }                    }                       stage(&quot;SonarQube Quality Gate&quot;) {                                    timeout(time: 1, unit: &#39;HOURS&#39;) {                                    def qg = waitForQualityGate(&#39;sonar&#39;)                                    if (qg.status != &#39;OK&#39;) {                                    echo &quot;Status: ${qg.status}&quot;                                    error &quot;Pipeline aborted due to quality gate failure: ${qg.status}&quot; // 质检没通过直接让流水线失败退出                                    }                                }                                ansiColor(&#39;gnome-terminal&#39;) {                                echo &quot;\033[32m Jump Sonar\n user:$name\nproject_name:$project_name\nobject_kind:$object_kind\naction:$action\nsource_branch:$source_branch\n target_branch:$target_branch \033[0m&quot;                            }                    }                         stage(&quot;Merge&quot;){ // 如果检测通过自动合并请求                                script{                                    httpRequest authentication: &#39;11&#39;, customHeaders: [[maskValue: false, name: &#39;PRIVATE-TOKEN&#39;, value: &quot;$PrivateToken&quot;]], httpMode: &#39;PUT&#39;, responseHandle: &#39;NONE&#39;, url: &quot;http://gitlab.xxxxxx.com:8888/api/v4/projects/$source_project_id/merge_requests/$iid/merge&quot;                                }                        }                    }                }            }        }    }}</code></pre>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h5 id=&quot;1、jenkins所需插件&quot;&gt;&lt;a href=&quot;#1、jenkins所需插件&quot; class=&quot;headerlink&quot; title=&quot;1、jenkins所需插件&quot;&gt;&lt;/a&gt;1、jenkins所需插件&lt;/h5&gt;&lt;p&gt;&lt;a href=&quot;https://plugins.j</summary>
-      
-    
-    
-    
-    <category term="运维" scheme="https://duwei19961021.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
-    
-    
-    <category term="sonar" scheme="https://duwei19961021.github.io/tags/sonar/"/>
     
   </entry>
   
@@ -225,6 +248,30 @@
   </entry>
   
   <entry>
+    <title>Jenkins结合sonar代码检测流水线</title>
+    <link href="https://duwei19961021.github.io/2021/03/18/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/"/>
+    <id>https://duwei19961021.github.io/2021/03/18/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/</id>
+    <published>2021-03-18T03:09:52.078Z</published>
+    <updated>2021-03-18T03:09:52.078Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="1、jenkins所需插件"><a href="#1、jenkins所需插件" class="headerlink" title="1、jenkins所需插件"></a>1、jenkins所需插件</h5><p><a href="https://plugins.jenkins.io/workflow-aggregator" target="_blank" rel="noopener">Pipeline</a>、<a href="https://plugins.jenkins.io/sonar-quality-gates" target="_blank" rel="noopener">Sonar Quality Gates Plugin</a>、<a href="https://plugins.jenkins.io/sonar" target="_blank" rel="noopener">SonarQube Scanner</a>、<a href="https://plugins.jenkins.io/generic-webhook-trigger" target="_blank" rel="noopener">Generic Webhook Trigger Plugin</a></p><h5 id="2、jenkins配置"><a href="#2、jenkins配置" class="headerlink" title="2、jenkins配置"></a>2、jenkins配置</h5><ul><li><p>Dashboard =&gt; 系统管理 =&gt; 全局工具配置</p><p><img src="/image/image-20201227165338711.png" alt="sonar scanner安装"></p></li><li><p>Dashboard =&gt; 系统管理 =&gt; 系统配置</p><p><img src="/image/image-20201227165501679.png" alt="sonarqube servers配置"></p></li></ul><p>  <img src="/image/image-20201227165627390.png" alt="token配置"></p><p>  这个token是在sonar web上生成的，然后在jenkins上创建一个secret text类型凭据。</p><p>  <img src="/image/image-20201227165828644.png" alt="gitlab"></p><p>  配置连接gitlab，要生成gitlab api token</p><p>  <img src="/image/image-20201227165956042.png" alt="获取gitlab Private token"></p><p>  生成private token。在sonar检测代码所有条件都通过时，要通过这个private token去操作gitlab的api来自动接受合并请求。</p><p>  <img src="/image/image-20201227170513752.png" alt="private token 凭据"></p><p>  生成凭据，记住这里的id 为12，一会pipeline脚本要用</p><ul><li><p>在gitlab项目下配置触发器，只勾选Merge Request Events (这个token随机生成一个就好了)</p><p><img src="/image/image-20201227170841973.png" alt="gitlab webhook"></p></li></ul><h5 id="3、pipiline脚本"><a href="#3、pipiline脚本" class="headerlink" title="3、pipiline脚本"></a>3、pipiline脚本</h5><pre><code class="pipeline">pipeline {   agent any   environment {        PrivateToken= credentials(&#39;12&#39;) // 获取private token，之前在凭据里配置过，这样比较安全，不需要在脚本里明文使用token    }   options {      gitLabConnection(&#39;gitlab&#39;)    }       triggers {        GenericTrigger(            genericVariables: [            [key: &#39;source_branch&#39;, value: &#39;$.object_attributes.source_branch&#39;], // 获取merge的源分支,只检测源分支，源分支的代码检测成功才能合并到目标分支            [key: &#39;url&#39;, value: &#39;$.object_attributes.url&#39;], // 获取gitlab merge请求的url            [key: &#39;action&#39;, value: &#39;$.object_attributes.action&#39;], // 获取merge动作 [reopen,close,open],只在reopen和open时才出发流水线检测            [key: &#39;source_project_id&#39;, value: &#39;$.object_attributes.source_project_id&#39;],            [key: &#39;iid&#39;, value: &#39;$.object_attributes.iid&#39;],            [key: &#39;name&#39;, value: &#39;$.user.name&#39;], // 获取合并请求的发起人            [key: &#39;project_name&#39;, value: &#39;$.project.name&#39;], // 或者项目名            [key: &#39;target_branch&#39;, value: &#39;$.object_attributes.target_branch&#39;], // 获取目标分支，我这里的需求是：合并到release.test分支的请求才进行质检、自动合并，所以我需要拿到这个变量            [key: &#39;object_kind&#39;, value: &#39;$.object_kind&#39;]            ],            token: &#39;fc161920aa6f1886e7417416edc85500&#39; , // 这是webhook上填写的token            causeString: &#39; Triggered on $ref&#39; ,            printContributedVariables: true,            printPostContent: true        )    }   stages {    stage(&quot;select branch&quot;){        steps{                script{                    if((env.source_branch =~ &#39;release.*&#39;).matches() || (env.action!=&quot;open&quot;  &amp;&amp; env.action!=&quot;update&quot;) || env.target_branch != &quot;release.test&quot;){ // 触发流水线检测代码的条件                        stage(&quot;exit with 0&quot;){                            ansiColor(&#39;gnome-terminal&#39;) {                                echo &quot;\033[32m Jump Sonar\n user:$name\nproject_name:$project_name\nobject_kind:$object_kind\naction:$action\nsource_branch:$source_branch\n target_branch:$target_branch \033[0m&quot;                            }                                   }                    }else{                        stage(&#39;pull branch&#39;) {                            checkout([$class: &#39;GitSCM&#39;, branches: [[name: &quot;*/$source_branch&quot;]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: &#39;11&#39;, url: &#39;http://gitlab.xxxxxx.com:8888/xubin/xxxxxxxx.git&#39;]]])                        }                        stage(&#39;SonarQubeanalysis&#39;) {                                script {                                    scannerHome = tool &#39;sonar-scanner&#39;                                }                            withSonarQubeEnv(&#39;sonar&#39;) {                            sh &quot;echo ${scannerHome}&quot;                            sh &quot;${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=$JOB_BASE_NAME -Dsonar.sources=./app&quot;                            }                    }                       stage(&quot;SonarQube Quality Gate&quot;) {                                    timeout(time: 1, unit: &#39;HOURS&#39;) {                                    def qg = waitForQualityGate(&#39;sonar&#39;)                                    if (qg.status != &#39;OK&#39;) {                                    echo &quot;Status: ${qg.status}&quot;                                    error &quot;Pipeline aborted due to quality gate failure: ${qg.status}&quot; // 质检没通过直接让流水线失败退出                                    }                                }                                ansiColor(&#39;gnome-terminal&#39;) {                                echo &quot;\033[32m Jump Sonar\n user:$name\nproject_name:$project_name\nobject_kind:$object_kind\naction:$action\nsource_branch:$source_branch\n target_branch:$target_branch \033[0m&quot;                            }                    }                         stage(&quot;Merge&quot;){ // 如果检测通过自动合并请求                                script{                                    httpRequest authentication: &#39;11&#39;, customHeaders: [[maskValue: false, name: &#39;PRIVATE-TOKEN&#39;, value: &quot;$PrivateToken&quot;]], httpMode: &#39;PUT&#39;, responseHandle: &#39;NONE&#39;, url: &quot;http://gitlab.xxxxxx.com:8888/api/v4/projects/$source_project_id/merge_requests/$iid/merge&quot;                                }                        }                    }                }            }        }    }}</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h5 id=&quot;1、jenkins所需插件&quot;&gt;&lt;a href=&quot;#1、jenkins所需插件&quot; class=&quot;headerlink&quot; title=&quot;1、jenkins所需插件&quot;&gt;&lt;/a&gt;1、jenkins所需插件&lt;/h5&gt;&lt;p&gt;&lt;a href=&quot;https://plugins.j</summary>
+      
+    
+    
+    
+    <category term="运维" scheme="https://duwei19961021.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="sonar" scheme="https://duwei19961021.github.io/tags/sonar/"/>
+    
+  </entry>
+  
+  <entry>
     <title>带环链表</title>
     <link href="https://duwei19961021.github.io/2021/03/18/%E5%B8%A6%E7%8E%AF%E9%93%BE%E8%A1%A8/"/>
     <id>https://duwei19961021.github.io/2021/03/18/%E5%B8%A6%E7%8E%AF%E9%93%BE%E8%A1%A8/</id>
@@ -249,30 +296,6 @@
   </entry>
   
   <entry>
-    <title>ECS磁盘扩容</title>
-    <link href="https://duwei19961021.github.io/2021/03/18/ECS%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9/"/>
-    <id>https://duwei19961021.github.io/2021/03/18/ECS%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9/</id>
-    <published>2021-03-18T03:09:52.075Z</published>
-    <updated>2021-03-18T03:09:52.076Z</updated>
-    
-    <content type="html"><![CDATA[<h6 id="1、通过-df-h-知根分区大小为40G。"><a href="#1、通过-df-h-知根分区大小为40G。" class="headerlink" title="1、通过 df -h 知根分区大小为40G。"></a>1、通过 df -h 知根分区大小为40G。</h6><p><img src="/image/image-20200512133700547.png" alt="image-20200512133700547"></p><h6 id="2、在阿里云后台对当前ECS实例的磁盘进行在线扩容。"><a href="#2、在阿里云后台对当前ECS实例的磁盘进行在线扩容。" class="headerlink" title="2、在阿里云后台对当前ECS实例的磁盘进行在线扩容。"></a>2、在阿里云后台对当前ECS实例的磁盘进行在线扩容。</h6><p><img src="/image/image-20200512134218782.png" alt="image-20200512134218782"></p><h6 id="3、扩容后登陆ECS使用fdisk-l查看磁盘大小，磁盘已经扩容到100G。"><a href="#3、扩容后登陆ECS使用fdisk-l查看磁盘大小，磁盘已经扩容到100G。" class="headerlink" title="3、扩容后登陆ECS使用fdisk -l查看磁盘大小，磁盘已经扩容到100G。"></a>3、扩容后登陆ECS使用fdisk -l查看磁盘大小，磁盘已经扩容到100G。</h6><p><img src="/image/image-20200512134102595.png" alt="image-20200512134102595"></p><h6 id="4、安装growpart"><a href="#4、安装growpart" class="headerlink" title="4、安装growpart"></a>4、安装growpart</h6><pre><code class="shell">[root@iZbp1e8z3uz7pmqbsis8bkZ ~]# yum -y install cloud-utils-growpartLoaded plugins: fastestmirrorbase                                                     | 3.6 kB     00:00epel                                                     | 4.7 kB     00:00extras                                                   | 2.9 kB     00:00updates                                                  | 2.9 kB     00:00(1/7): base/7/x86_64/group_gz                              | 153 kB   00:00(2/7): extras/7/x86_64/primary_db                          | 190 kB   00:00(3/7): epel/x86_64/group_gz                                |  95 kB   00:00(4/7): updates/7/x86_64/primary_db                         | 176 kB   00:00(5/7): epel/x86_64/updateinfo                              | 1.0 MB   00:00(6/7): base/7/x86_64/primary_db                            | 6.1 MB   00:00(7/7): epel/x86_64/primary_db                              | 6.8 MB   00:00Determining fastest mirrors * base: mirrors.cloud.aliyuncs.com * epel: mirrors.cloud.aliyuncs.com * extras: mirrors.cloud.aliyuncs.com * updates: mirrors.cloud.aliyuncs.comResolving Dependencies--&gt; Running transaction check---&gt; Package cloud-utils-growpart.noarch 0:0.29-5.el7 will be installed--&gt; Finished Dependency ResolutionDependencies Resolved================================================================================ Package                     Arch          Version            Repository   Size================================================================================Installing: cloud-utils-growpart        noarch        0.29-5.el7         base         27 kTransaction Summary================================================================================Install  1 PackageTotal download size: 27 kInstalled size: 61 kDownloading packages:cloud-utils-growpart-0.29-5.el7.noarch.rpm                 |  27 kB   00:00Running transaction checkRunning transaction testTransaction test succeededRunning transaction  Installing : cloud-utils-growpart-0.29-5.el7.noarch                       1/1  Verifying  : cloud-utils-growpart-0.29-5.el7.noarch                       1/1Installed:  cloud-utils-growpart.noarch 0:0.29-5.el7Complete!</code></pre><h6 id="5、扩展-dev-vda1分区（命名含义为扩展-dev-vda磁盘的第一个分区）。"><a href="#5、扩展-dev-vda1分区（命名含义为扩展-dev-vda磁盘的第一个分区）。" class="headerlink" title="5、扩展/dev/vda1分区（命名含义为扩展/dev/vda磁盘的第一个分区）。"></a>5、扩展/dev/vda1分区（命名含义为扩展/dev/vda磁盘的第一个分区）。</h6><pre><code class="shell">[root@iZbp1e8z3uz7pmqbsis8bkZ ~]# growpart /dev/vda 1CHANGED: partition=1 start=2048 old: size=83881984 end=83884032 new: size=209713119 end=209715167</code></pre><p>​     若报错unexpected output in sfdisk –version……..则运行LANG=en_US.UTF-8切换ECS实例的字符编码类型。</p><p>6、运行resize2fs <PartitionName> 命令调用resize2fs扩容文件系统。</p><pre><code class="shell">[root@iZbp1e8z3uz7pmqbsis8bkZ ~]# resize2fs /dev/vda1resize2fs 1.42.9 (28-Dec-2013)Filesystem at /dev/vda1 is mounted on /; on-line resizing requiredold_desc_blocks = 3, new_desc_blocks = 7The filesystem on /dev/vda1 is now 26214139 blocks long.[root@iZbp1e8z3uz7pmqbsis8bkZ ~]# df -hFilesystem      Size  Used Avail Use% Mounted on/dev/vda1        99G  1.5G   93G   2% /devtmpfs        487M     0  487M   0% /devtmpfs           497M     0  497M   0% /dev/shmtmpfs           497M  308K  496M   1% /runtmpfs           497M     0  497M   0% /sys/fs/cgrouptmpfs           100M     0  100M   0% /run/user/0</code></pre>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h6 id=&quot;1、通过-df-h-知根分区大小为40G。&quot;&gt;&lt;a href=&quot;#1、通过-df-h-知根分区大小为40G。&quot; class=&quot;headerlink&quot; title=&quot;1、通过 df -h 知根分区大小为40G。&quot;&gt;&lt;/a&gt;1、通过 df -h 知根分区大小为40G。</summary>
-      
-    
-    
-    
-    <category term="运维" scheme="https://duwei19961021.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
-    
-    
-    <category term="ecs" scheme="https://duwei19961021.github.io/tags/ecs/"/>
-    
-  </entry>
-  
-  <entry>
     <title>linux性能优化实战笔记</title>
     <link href="https://duwei19961021.github.io/2021/03/18/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"/>
     <id>https://duwei19961021.github.io/2021/03/18/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/</id>
@@ -293,6 +316,30 @@
     
     
     <category term="linux性能优化实战笔记" scheme="https://duwei19961021.github.io/tags/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ECS磁盘扩容</title>
+    <link href="https://duwei19961021.github.io/2021/03/18/ECS%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9/"/>
+    <id>https://duwei19961021.github.io/2021/03/18/ECS%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9/</id>
+    <published>2021-03-18T03:09:52.075Z</published>
+    <updated>2021-03-18T03:09:52.076Z</updated>
+    
+    <content type="html"><![CDATA[<h6 id="1、通过-df-h-知根分区大小为40G。"><a href="#1、通过-df-h-知根分区大小为40G。" class="headerlink" title="1、通过 df -h 知根分区大小为40G。"></a>1、通过 df -h 知根分区大小为40G。</h6><p><img src="/image/image-20200512133700547.png" alt="image-20200512133700547"></p><h6 id="2、在阿里云后台对当前ECS实例的磁盘进行在线扩容。"><a href="#2、在阿里云后台对当前ECS实例的磁盘进行在线扩容。" class="headerlink" title="2、在阿里云后台对当前ECS实例的磁盘进行在线扩容。"></a>2、在阿里云后台对当前ECS实例的磁盘进行在线扩容。</h6><p><img src="/image/image-20200512134218782.png" alt="image-20200512134218782"></p><h6 id="3、扩容后登陆ECS使用fdisk-l查看磁盘大小，磁盘已经扩容到100G。"><a href="#3、扩容后登陆ECS使用fdisk-l查看磁盘大小，磁盘已经扩容到100G。" class="headerlink" title="3、扩容后登陆ECS使用fdisk -l查看磁盘大小，磁盘已经扩容到100G。"></a>3、扩容后登陆ECS使用fdisk -l查看磁盘大小，磁盘已经扩容到100G。</h6><p><img src="/image/image-20200512134102595.png" alt="image-20200512134102595"></p><h6 id="4、安装growpart"><a href="#4、安装growpart" class="headerlink" title="4、安装growpart"></a>4、安装growpart</h6><pre><code class="shell">[root@iZbp1e8z3uz7pmqbsis8bkZ ~]# yum -y install cloud-utils-growpartLoaded plugins: fastestmirrorbase                                                     | 3.6 kB     00:00epel                                                     | 4.7 kB     00:00extras                                                   | 2.9 kB     00:00updates                                                  | 2.9 kB     00:00(1/7): base/7/x86_64/group_gz                              | 153 kB   00:00(2/7): extras/7/x86_64/primary_db                          | 190 kB   00:00(3/7): epel/x86_64/group_gz                                |  95 kB   00:00(4/7): updates/7/x86_64/primary_db                         | 176 kB   00:00(5/7): epel/x86_64/updateinfo                              | 1.0 MB   00:00(6/7): base/7/x86_64/primary_db                            | 6.1 MB   00:00(7/7): epel/x86_64/primary_db                              | 6.8 MB   00:00Determining fastest mirrors * base: mirrors.cloud.aliyuncs.com * epel: mirrors.cloud.aliyuncs.com * extras: mirrors.cloud.aliyuncs.com * updates: mirrors.cloud.aliyuncs.comResolving Dependencies--&gt; Running transaction check---&gt; Package cloud-utils-growpart.noarch 0:0.29-5.el7 will be installed--&gt; Finished Dependency ResolutionDependencies Resolved================================================================================ Package                     Arch          Version            Repository   Size================================================================================Installing: cloud-utils-growpart        noarch        0.29-5.el7         base         27 kTransaction Summary================================================================================Install  1 PackageTotal download size: 27 kInstalled size: 61 kDownloading packages:cloud-utils-growpart-0.29-5.el7.noarch.rpm                 |  27 kB   00:00Running transaction checkRunning transaction testTransaction test succeededRunning transaction  Installing : cloud-utils-growpart-0.29-5.el7.noarch                       1/1  Verifying  : cloud-utils-growpart-0.29-5.el7.noarch                       1/1Installed:  cloud-utils-growpart.noarch 0:0.29-5.el7Complete!</code></pre><h6 id="5、扩展-dev-vda1分区（命名含义为扩展-dev-vda磁盘的第一个分区）。"><a href="#5、扩展-dev-vda1分区（命名含义为扩展-dev-vda磁盘的第一个分区）。" class="headerlink" title="5、扩展/dev/vda1分区（命名含义为扩展/dev/vda磁盘的第一个分区）。"></a>5、扩展/dev/vda1分区（命名含义为扩展/dev/vda磁盘的第一个分区）。</h6><pre><code class="shell">[root@iZbp1e8z3uz7pmqbsis8bkZ ~]# growpart /dev/vda 1CHANGED: partition=1 start=2048 old: size=83881984 end=83884032 new: size=209713119 end=209715167</code></pre><p>​     若报错unexpected output in sfdisk –version……..则运行LANG=en_US.UTF-8切换ECS实例的字符编码类型。</p><p>6、运行resize2fs <PartitionName> 命令调用resize2fs扩容文件系统。</p><pre><code class="shell">[root@iZbp1e8z3uz7pmqbsis8bkZ ~]# resize2fs /dev/vda1resize2fs 1.42.9 (28-Dec-2013)Filesystem at /dev/vda1 is mounted on /; on-line resizing requiredold_desc_blocks = 3, new_desc_blocks = 7The filesystem on /dev/vda1 is now 26214139 blocks long.[root@iZbp1e8z3uz7pmqbsis8bkZ ~]# df -hFilesystem      Size  Used Avail Use% Mounted on/dev/vda1        99G  1.5G   93G   2% /devtmpfs        487M     0  487M   0% /devtmpfs           497M     0  497M   0% /dev/shmtmpfs           497M  308K  496M   1% /runtmpfs           497M     0  497M   0% /sys/fs/cgrouptmpfs           100M     0  100M   0% /run/user/0</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h6 id=&quot;1、通过-df-h-知根分区大小为40G。&quot;&gt;&lt;a href=&quot;#1、通过-df-h-知根分区大小为40G。&quot; class=&quot;headerlink&quot; title=&quot;1、通过 df -h 知根分区大小为40G。&quot;&gt;&lt;/a&gt;1、通过 df -h 知根分区大小为40G。</summary>
+      
+    
+    
+    
+    <category term="运维" scheme="https://duwei19961021.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="ecs" scheme="https://duwei19961021.github.io/tags/ecs/"/>
     
   </entry>
   
@@ -396,33 +443,6 @@ gitla</summary>
   </entry>
   
   <entry>
-    <title>汇编笔记</title>
-    <link href="https://duwei19961021.github.io/2021/03/18/%E6%B1%87%E7%BC%96%E7%AC%94%E8%AE%B0/"/>
-    <id>https://duwei19961021.github.io/2021/03/18/%E6%B1%87%E7%BC%96%E7%AC%94%E8%AE%B0/</id>
-    <published>2021-03-18T03:09:52.070Z</published>
-    <updated>2021-03-18T03:09:52.071Z</updated>
-    
-    <content type="html"><![CDATA[<p>AX = AH + AL</p><p>BX = BH + BL</p><p>CX = CH + CL</p><p>DX = DH + DL</p><p>数据寄存器</p><p>段地址寄存器：偏移地址寄存器</p><p>DS    SP</p><p>ES    BP</p><p>SS    SI</p><p>CS    DI</p><p>​         IP(和指令有关)</p><p>​         BX</p><p>u指令：将内存某个地址开始的字节全部当做指令</p><p>d指令：将某个内存地址开始的字节全部当做数据</p><p>指令和数据在内存中是没有区别的</p><p>cpu中的cs段地址寄存器和ip这个偏移地址寄存器组合的时候，从中读取的内容当作指令来执行</p><p>指令是有长度的，一条指令可以由多个字节构成</p><p>执行过程：</p><p>1、cpu从cs:ip所指向的内存单元读取指令，存放到指令缓存器中</p><p>2、ip = ip+所读指令的长度，从而指向下一条指令</p><p>3、执行指令缓存器中的内容，毁到步骤1</p><p>汇编指令 jmp</p><p>转移指令，可以修改cs和ip这两个寄存器 决定了cpu从哪里读取指令</p><p>debug调试工具：</p><ul><li><p>r：可以查看和改变寄存器中的内容</p><p><img src="/Users/duwei/Desktop/source/image/image-20201102234009082.png" alt="image-20201102234009082"></p><p><img src="/Users/duwei/Desktop/source/image/image-20201102234134627.png" alt="image-20201102234134627"></p></li><li><p>d：可以查看内存中的内容</p><p><img src="/Users/duwei/Desktop/source/image/image-20201102234450730.png" alt="image-20201102234450730"></p></li></ul><ul><li><p>u：可以将内存中的机器指令翻译成汇编指令 u:地址</p><p><img src="/Users/duwei/Desktop/source/image/image-20201102234935752.png" alt="image-20201102234935752"></p></li><li><p>a：向内存写入一条汇编指令</p><p><img src="/Users/duwei/Desktop/source/image/image-20201102235151996.png" alt="image-20201102235151996"></p></li><li><p>t：执行当前cs:ip所指向的机器指令</p></li><li><p>e：可以改写内存中的内容</p><p><img src="/Users/duwei/Desktop/source/image/image-20201102235637216.png" alt="image-20201102235637216"></p></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;AX = AH + AL&lt;/p&gt;
-&lt;p&gt;BX = BH + BL&lt;/p&gt;
-&lt;p&gt;CX = CH + CL&lt;/p&gt;
-&lt;p&gt;DX = DH + DL&lt;/p&gt;
-&lt;p&gt;数据寄存器&lt;/p&gt;
-&lt;p&gt;段地址寄存器：偏移地址寄存器&lt;/p&gt;
-&lt;p&gt;DS    SP&lt;/p&gt;
-&lt;p&gt;ES    </summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>进程</title>
     <link href="https://duwei19961021.github.io/2021/03/18/%E8%BF%9B%E7%A8%8B/"/>
     <id>https://duwei19961021.github.io/2021/03/18/%E8%BF%9B%E7%A8%8B/</id>
@@ -449,49 +469,25 @@ gitla</summary>
   </entry>
   
   <entry>
-    <title>C深入剖析</title>
-    <link href="https://duwei19961021.github.io/2021/03/18/C%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90/"/>
-    <id>https://duwei19961021.github.io/2021/03/18/C%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90/</id>
-    <published>2021-03-18T03:09:52.069Z</published>
-    <updated>2021-03-18T03:09:52.070Z</updated>
+    <title>汇编笔记</title>
+    <link href="https://duwei19961021.github.io/2021/03/18/%E6%B1%87%E7%BC%96%E7%AC%94%E8%AE%B0/"/>
+    <id>https://duwei19961021.github.io/2021/03/18/%E6%B1%87%E7%BC%96%E7%AC%94%E8%AE%B0/</id>
+    <published>2021-03-18T03:09:52.070Z</published>
+    <updated>2021-03-18T03:09:52.071Z</updated>
     
-    <content type="html"><![CDATA[<ul><li><p>定义和声明</p><ul><li><p>定义：编译器创建一个对象，为这个对象分配一块内存并给它取一个名字，名字就是我们常说的变量或对象名。</p><pre><code class="c">int a;</code></pre></li><li><p>声明：告诉编译器，这个名字已经匹配到一块内存上了；告诉编译器，这个名字预定了，其它地方不能再使用，这种声明的最典型例子就是声明一个函数；声明不会分配内存。</p><pre><code class="c">extern inn a;void func(int a);    //声明一个函数</code></pre></li></ul></li><li><p>struct</p><pre><code class="c">#include &lt;stdio.h&gt;struct stu{} s1;int main(){    printf(&quot;%lu\n&quot;,sizeof(s1)); // 0    return 0;}// 编译器gcc</code></pre></li><li><p>柔性数组</p><pre><code class="c">#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;typedef struct{    int a;    int b[];} soft_arr;int main(){    printf(&quot;%lu\n&quot;,sizeof(soft_arr)); // 4    soft_arr *p = malloc(sizeof(soft_arr)+sizeof(int));    free(p);    return 0;}</code></pre><p>结构中最后一个成员允许是一个未知大小的数组，这个成员叫做柔性数组。sizefo 返回这种类型的大小不包括柔性数组的内存。包含柔性数组成员的结构用malloc进行内存动态分配。(应用：比如网络通信，收发数据包)</p></li><li><p>union</p><pre><code class="c">union Person{    char *name;    int age;    char *addr;    double balance;};int main(){    printf(&quot;%lu\n&quot;,sizeof(union Person));    return 0;}</code></pre><p>union维护足够的空间来置放多个成员的某一个成员，而不是为每个数据成员配置空间。在union中所有成员公用一个空间，同一时间只能存储其中一个数据成员，所有数据成员拥有相同的起始地址。</p><p>一个union需要配置足够的空间来容纳所有成员。上述例子中：double占用内存空间最大，所以Person的内存大小是8字节。</p><p>大小端对union的影响：</p><pre><code class="c">union T{    char a;    int b;};int main(){    union T t1;    t1.b = 1;    printf(&quot;%d\n&quot;,t1.a);    return 0;}</code></pre><img src="https://upload-images.jianshu.io/upload_images/15150075-33c893aeed324c98.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" style="zoom:67%;" /></li><li><p>enum</p><pre><code class="c">enum Color{    RED,    BLACK,    WHITE,    YELLOW,};int main(){    RED = 3; // expression is not assignable    return 0;}</code></pre></li><li><p>auto</p><p>编译器在默认缺省的情况下，所有变量都是auto。</p></li><li><p>register</p><p>请求编译器尽可能的将这个变量存在cpu内部的寄存器中而不是通过内存寻址访问。register变量可能不存放在内存中，所以不能用&amp;符取地址。</p></li><li><p>static</p><ul><li>修饰变量。<ul><li>变量分局部变量和全局变量，被static修饰它们都存在于内存的静态区。</li><li>静态全局变量：作用域仅限于变量被定义的文件中。</li><li>局部静态变量：只能在定义这个局部静态变量的函数使用，即使函数调用结束，这个变量也不会消失。</li></ul></li><li>修饰函数。<ul><li>函数前加static称为静态函数，静态不是指存储方式，而是此函数的作用域仅限于本文件内。</li></ul></li></ul></li><li><p>switch</p><pre><code class="c">int main(){    int a = 4;    int c=6;    switch (a) {        case 1:            printf(&quot;1\n&quot;);            break;        default:            printf(&quot;default\n&quot;);        case 2:            printf(&quot;2\n&quot;);        case 3:            printf(&quot;3\n&quot;);//        case c:   // error//            printf(&quot;%d&quot;,c);//            break;//        case 3.14:    // error//            printf(&quot;3.14\n&quot;);    }}// output:// default// 2// 3</code></pre><ul><li>case后只能是整形或字符型常量或常量表达式</li></ul></li><li><p>End0</p></li><li><p>0x01&lt;&lt;2+3</p><p>结果为32，+的优先级比&lt;&lt;高。</p><p>左移右移的位数不能大于数据的长度，不能小于0。</p></li><li><p>++i、i++</p><pre><code class="c">int main(){    int i = 0;    int j = (++i,++i,++i);      // ++i 先自增再进它其他运算。i在遇见逗号之后认为本计算单位已经结束，然后进行自增。    printf(&quot;j = %d\n&quot;,j);       // 3    int k = 0;    int z = (k++,k++,k++);      // i++ 先进行其它运算再自增    printf(&quot;z = %d\n&quot;,z);       // 2    int x = 0;    int y = (x++) + (x++) + (x++);    printf(&quot;y = %d\n&quot;,y);       // 1+1+1=3 x遇到分号之后才认为本次计算单位已结束，x这时候才会进行自加}</code></pre></li><li><p>++i+++i+++i</p><pre><code class="c">int main(){    int a = 1;    int b = 2;    int ret = a+++b;            // 贪心算法：a++ + b    printf(&quot;ret = %d\n&quot;,ret);   // ret = 3}</code></pre></li><li><p>#define宏定义注释符号</p><pre><code class="c">#define BSC //#define BMC /*#define EMC */int main(){    int a = 10;BSC a is int    DMC input a number:EMC}</code></pre><p>注释先于预处理指令被处理。当发生宏替换时，注释已经处理完毕，再出现//、/*则会出现错误。</p></li><li><p>宏定义中的空格</p><pre><code class="c">#define SUM(x) (x)+(x)int main(){    int ret = SUM (3);    return 0;}</code></pre><p>这个空格仅在定义的时候有效，在使用这个宏函数的时候，空格会被忽略掉。因此：SUM(x) 和SUM (x)是一样的。</p><pre><code class="shell">duweideMacBook-Pro:test duwei$ cat test.c#define SUM(x) (x)+(x)int main(){    int ret = SUM (3);    return 0;}duweideMacBook-Pro:test duwei$ gcc -E test.c -o test.iduweideMacBook-Pro:test duwei$ cat test.i# 1 &quot;test.c&quot;# 1 &quot;&lt;built-in&gt;&quot; 1# 1 &quot;&lt;built-in&gt;&quot; 3# 361 &quot;&lt;built-in&gt;&quot; 3# 1 &quot;&lt;command line&gt;&quot; 1# 1 &quot;&lt;built-in&gt;&quot; 2# 1 &quot;test.c&quot; 2</code></pre></li></ul><p>  int main(){<br>   int ret = (3)+(3);<br>   return 0;<br>  }<br>  duweideMacBook-Pro:test duwei$</p><pre><code>- 预处理余下部分暂时省略，以后回来看- 略- 略- 略- int *p = NULL和 *p = NULL的区别  - ```c    int *p = NULL;    ```    定义一个指针变量p，其指向的内存里面保存的是int类型的数据，在定义变量p的同时把p的值设为0x00000000，这个过程叫初始化，是在编译的时候进行的。  - ```c    int *p;    *p = NULL;    ```    第一行代码，定义了一个指针变量p，其指向内存里保存的是int类型的数据，此时p变量本身是多少不可知，也就是说p变量此时指向的内存地址可能是个非法值。第二行代码给*p赋值为NULL，也就是给 *p指向的内存赋值NULL。由于p变量的内存地址可能是非法的，所以在调试时编译器可能会报错。- ```c  int main(){      char *p1 = &quot;abcdef&quot;;      printf(&quot;p1 = %p\n&quot;,p1);         // p1 = 0x109002f82      printf(&quot;p1 = %p\n&quot;,p1+1);       // p1 = 0x109002f82      printf(&quot;p1 = %p\n&quot;,p1+2);       // p1 = 0x109002f82      printf(&quot;&amp;p1 = %p\n&quot;,&amp;p1);       // &amp;p1 = 0x7ffee6bfda48      char p2[] = &quot;123456&quot;;      printf(&quot;p2 = %p\n&quot;,p2);         // p2 = 0x7ffee6bfda41      printf(&quot;&amp;p2 = %p\n&quot;,p2+1);      // &amp;p2 = 0x7ffee6bfda42      printf(&quot;&amp;p2 = %p\n&quot;,p2+2);      // &amp;p2 = 0x7ffee6bfda43  }</code></pre><p>  <img src="https://upload-images.jianshu.io/upload_images/15150075-95496cd76b42207b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" alt="p1的访问方式"></p><p>  <img src="https://upload-images.jianshu.io/upload_images/15150075-586f59dc81a1ece9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" alt="p2的访问方式"></p><p>  结论：</p><ul><li>数组名即为数据本身</li><li>数组作为参数传递给函数时，数组的地址赋值给形参，发生降维。</li></ul><ul><li><p>a和&amp;a的区别(数组名)</p><pre><code class="c">int main(){    int a[5] = {1,2,3,4,5};    int *ptr = (int *)(&amp;a+1);    printf(&quot;*(a+1)=%d\n*(ptr-1))=%d\n&quot;,*(a+1),*(ptr-1));    // *(a+1)=2，*(ptr-1))=5}</code></pre><p>结论：</p><ul><li>&amp;a代表的是数组地址，&amp;a+1，加上的是sizeof(a)，指向a[4]的下一个元素。</li><li>a代表的是首元素地址。</li></ul></li><li><p>定义为数组，声明为指针</p><pre><code class="c">int arr[3] = {1,2,3};int main(){    extern int *arr;}</code></pre><p>将arr声明为指针会造成访问方式的错误，得出意外的结果。本应该是直接读取到arr的内存地址然后进行偏移操作，但是这里声明为指针，导致了访问方式的改变，访问时会先读取arr所在内存空间存放的内存地址，然后再进行偏移操作。</p></li><li><p>定义为指针，声明为数组</p><pre><code class="c">char *p = &quot;abcd&quot;;int main(){    extern char p[];}</code></pre><p>也会因为定义和声明的方式不一样造成访问方式不一样从而得到意外的结果。</p></li><li><p>指针和数组对比</p><table><thead><tr><th>指针</th><th>数组</th></tr></thead><tbody><tr><td>保存数据的地址，任何被存入指针变量p的数据都会被当做地址处理。p本身的地址有编译器另外存储，存储在哪里我们并不知道。</td><td>保存数据，数组名a代表的是数组首元素的地址而不是数组的首地址，&amp;a才是整个数组的首地址。a本身的地址由编译器另外存储，存储在哪里，我们并不知道。</td></tr><tr><td>间接访问数据，首先取得指针变量p的内容，把它当做地址，然后从这个地址提取或者写入数据。指针可以以指针的形式访问*(p+i)；也可以以下标的方式访问p[i]。但是其本质都是先取p的内容然后加上 i * sizeof(类型)个byte作为数据的真正地址。</td><td>直接访问数据，数组名a是整个数组的名字，数组内每个元素并没有名字。只能通过”具名+匿名”的方式来访问其它某个元素，不能把数组当做一个整体来进行读写操作。数组可以以指针的形式访问*(pa+i)；也可以以下标的方式访问a[i]。但其本质都是a所代表的数组的首元素地址加上 i * sizeof(类型)个byte作为数据的真正地址。</td></tr><tr><td>通常用于动态数据结构</td><td>通常用于存储固定数目且数据类型相同的元素</td></tr><tr><td>相关函数malloc和free</td><td>隐式分配和删除</td></tr><tr><td>通常指向匿名数据（也可指向具名数据）</td><td>自身即为数组名</td></tr></tbody></table></li><li><p>地址强制转换</p><pre><code class="c">int main(){    int a[4] = {1,2,3,4};    int *ptr1 = (int *)(&amp;a+1);    int *ptr2 = (int *)((int)a+1);    printf(&quot;ptr1[-1] = %x\n&quot;,ptr1[-1]);    printf(&quot;*ptr2 = %x\n&quot;,*ptr2);    return 0;}</code></pre><p>32位系统下：</p><p><img src="https://upload-images.jianshu.io/upload_images/15150075-c638b8896fc9d3be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p>64位系统下会报错：Segmentation fault</p><p>个人看法：a代表的是首元素地址，将其强转成int然后+1再强转成int<em>，即将a地址进行+1操作然后赋值给ptr2。在32位下指针的长度和 int\</em> 类型的长度相同，所以不会发生提升。但是在64位下，将4位的int* 提升为8位的地址会发生提升，提升后的地址远远大于当前数组所有元素的地址，所以在进行printf访问打印时会报错：Segmentation fault。</p></li><li><p>&amp;p[4][2] - &amp;a[4][2] 等于多少？</p><pre><code class="c">int main(){    int a[5][5];    int(*p)[4];    p = a;    printf(&quot;%p,%d\n&quot;,&amp;p[4][2] - &amp;a[4][2],&amp;p[4][2] - &amp;a[4][2]);}</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/15150075-59a8fe82de0a6d11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=" 是"></p></li><li><p>无法向一个函数传递数组</p><ul><li>C语言中，当一维数组作为函数参数时，编译器总把它解析成一个指向其首元素地址的指针。</li><li>函数本身没有类型，只有函数的返回值才有类型。</li></ul></li><li><p>能否把指针变量本身传递给一个函数</p><p>main函数中的变量不是全局变量，只不过是它的声明周期和全区变量一样长而已。全局变量定义在函数外部。</p></li><li><p>函数指针的定义</p><pre><code class="c">char* (*func1)(char* p1, char* p2);</code></pre><p>func1是一个指针变量，指向一个有两个char*类型参数且返回值是char*类型的函数</p></li><li><p>*(int*)&amp;p</p><pre><code class="c">// 32位void Function(){    printf(&quot;Call Function.\n&quot;);}int main(){    void (*p)();    *(int*)&amp;p = (int)Function;    (*p)();    return 0;}</code></pre><p>p是一个指针变量，指向一个无参数无返回值的函数；</p><p>(int*)&amp;p将p的地址强转成int数据类型的指针；</p><p>*(int*)&amp;p 就是一个整型，要将函数Function的地址赋值给p得先将其转为整型。</p></li><li><p>(*(void(*)())0)();</p><p>void(*)()：表示一个指针，指向一个返回值时void且没有参数的函数。</p><p>(void(*)())0：表示将0强制转换成void(*)()这个函数指针类型。</p><p>(*(void(*)())0)：获取地址0开始的内存中的一段内容(解引用)。</p><p>(*(void(*)())0)()：函数调用。</p></li><li><p>函数指针数组</p><pre><code class="c">char* (*pf1)(char *p);        // pf1是一个指向参数是char *类型，返回值时char*的函数的指针char* (*pf2[3])(char *p);    // pf2是函数指针数组</code></pre><pre><code class="c">#include &lt;stdio.h&gt;#include &lt;string.h&gt;char * func1(char *p){    printf(&quot;%s\n&quot;,p);    return p;}char * func2(char *p){    printf(&quot;%s\n&quot;,p);    return p;}char * func3(char *p){    printf(&quot;%s\n&quot;,p);    return p;}int main(){    char *(*pf[3])(char *);    pf[0]=func1;    pf[1]=func2;    pf[2]=func3;    pf[0](&quot;func1&quot;);    pf[1](&quot;func2&quot;);    pf[2](&quot;func3&quot;);    return 0;}</code></pre></li><li><p>函数指针数组的指针</p><pre><code class="c">char* (*pf2[3])(char *p);    // pf2是函数指针数组char* (*(*pf2)[3])(char *p);    // pf2是函数指针数组指针</code></pre></li><li><p>常见内存错误以及对策</p><ul><li><p>指针没有指向一块合法的内存</p><ul><li><p>结构体成员指针未初始化</p><pre><code class="c">struct student{    char *name;    int score;}stu,*pstu;int main(){    strcpy(stu.name,&quot;jim&quot;);    stu.score=99;    return 0;}</code></pre><p>在实例化stu时，给name分配了四字节的内存，但并没有指向合法的地址。调用strcpy往所指向的内存拷贝”jim”，这块内存name指针根本就无权访问，导致出错。</p><pre><code class="c">#include &lt;stdlib.h&gt;#include &lt;stdio.h&gt;struct student{    char *name;    int score;}stu,*pstu;int main(){    stu.name = (char*)malloc(sizeof(char));    strcpy(stu.name,&quot;jim&quot;);    stu.score=99;    printf(&quot;%s\n&quot;,stu.name);    free(pstu);    return 0;}</code></pre></li><li><p>没有为结构体指针分配足够的内存</p></li><li><p>函数入口校验</p><pre><code class="c">assert(NULL!=p); // 是一个宏而非函数</code></pre></li></ul></li><li><p>为指针分配的内存太小</p></li><li><p>内存分配成功，但未初始化</p><pre><code class="c">int i = 10;char *p = (char *)malloc(sizeof(char));//在不确定变量初始值的时候可以初始化为0或者NULLint i = 0;char *p = NULL;//或者使用memset(起始地址,要被设置的值,要被设置的内存大小);int a[10];memset(a,0,sizeof(a));</code></pre></li></ul></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;定义和声明&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;定义：编译器创建一个对象，为这个对象分配一块内存并给它取一个名字，名字就是我们常说的变量或对象名。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;int a;&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;</summary>
-      
-    
-    
-    
-    <category term="C语言" scheme="https://duwei19961021.github.io/categories/C%E8%AF%AD%E8%A8%80/"/>
-    
-    
-    <category term="book" scheme="https://duwei19961021.github.io/tags/book/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CppPrimer</title>
-    <link href="https://duwei19961021.github.io/2021/03/18/CppPrimer/"/>
-    <id>https://duwei19961021.github.io/2021/03/18/CppPrimer/</id>
-    <published>2021-03-18T03:09:52.068Z</published>
-    <updated>2021-03-18T03:09:52.068Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="第七章-类"><a href="#第七章-类" class="headerlink" title="第七章 类"></a>第七章 类</h4><p>类作用域和成员函数：</p><p>编译器分两步处理类：首先编译成员的声明，然后才轮到成员函数体(如果有的话)。因此，成员函数体可以随意使用类中的其它成员而无需在意这些成员出现的次序。</p><p>IO类属于不能被拷贝的类型，因此只能通过引用传递。</p><p>每个类都分别定义了它的对象被初始化的方式，类通过一个或者几个特殊的成员函数来控制其对象的初始化过程，被称为构造函数。构造函数的任务是初始化类对象的数据成员，无论何时只要类的对象被创建，就会执行构造函数。</p><p>构造函数不能被声明成const，当创建一个const对象时，直到构造函数完成初始化过程，对象才能真正取得其“常量”属性。因此，构造函数在const对象的构造过程中可以向其写值。</p><p>如果类没有显示的定义构造函数，那么编译器就会为我们隐式的定义一个默认构造函数。</p><p>某些类不能依赖于合成的默认构造函数：</p><ol><li>只有当类没有声明任何构造函数时，编译器才会自动的生成默认构造函数。</li><li>合成的默认构造函数有可能执行错误的操作。如果定义在块中的内置类型或符合类型(比如数组和指针)的对象被默认初始化，则他们的值将是未定义的。该准则同样适用于默认初始化的内置类型成员。因此，函数内置类型或者复合类型成员的类应该在类的内部初始化这些成员，或者定义一个自己的默认构造函数。否则，用户在创建类对象时就可能得到未定义的值。</li><li>编译器不能为某些类合成默认的构造函数。例如：一个类中包含另一个类类型的成员且这个成员没有默认构造函数。</li></ol>]]></content>
+    <content type="html"><![CDATA[<p>AX = AH + AL</p><p>BX = BH + BL</p><p>CX = CH + CL</p><p>DX = DH + DL</p><p>数据寄存器</p><p>段地址寄存器：偏移地址寄存器</p><p>DS    SP</p><p>ES    BP</p><p>SS    SI</p><p>CS    DI</p><p>​         IP(和指令有关)</p><p>​         BX</p><p>u指令：将内存某个地址开始的字节全部当做指令</p><p>d指令：将某个内存地址开始的字节全部当做数据</p><p>指令和数据在内存中是没有区别的</p><p>cpu中的cs段地址寄存器和ip这个偏移地址寄存器组合的时候，从中读取的内容当作指令来执行</p><p>指令是有长度的，一条指令可以由多个字节构成</p><p>执行过程：</p><p>1、cpu从cs:ip所指向的内存单元读取指令，存放到指令缓存器中</p><p>2、ip = ip+所读指令的长度，从而指向下一条指令</p><p>3、执行指令缓存器中的内容，毁到步骤1</p><p>汇编指令 jmp</p><p>转移指令，可以修改cs和ip这两个寄存器 决定了cpu从哪里读取指令</p><p>debug调试工具：</p><ul><li><p>r：可以查看和改变寄存器中的内容</p><p><img src="/Users/duwei/Desktop/source/image/image-20201102234009082.png" alt="image-20201102234009082"></p><p><img src="/Users/duwei/Desktop/source/image/image-20201102234134627.png" alt="image-20201102234134627"></p></li><li><p>d：可以查看内存中的内容</p><p><img src="/Users/duwei/Desktop/source/image/image-20201102234450730.png" alt="image-20201102234450730"></p></li></ul><ul><li><p>u：可以将内存中的机器指令翻译成汇编指令 u:地址</p><p><img src="/Users/duwei/Desktop/source/image/image-20201102234935752.png" alt="image-20201102234935752"></p></li><li><p>a：向内存写入一条汇编指令</p><p><img src="/Users/duwei/Desktop/source/image/image-20201102235151996.png" alt="image-20201102235151996"></p></li><li><p>t：执行当前cs:ip所指向的机器指令</p></li><li><p>e：可以改写内存中的内容</p><p><img src="/Users/duwei/Desktop/source/image/image-20201102235637216.png" alt="image-20201102235637216"></p></li></ul>]]></content>
     
     
       
       
-    <summary type="html">&lt;h4 id=&quot;第七章-类&quot;&gt;&lt;a href=&quot;#第七章-类&quot; class=&quot;headerlink&quot; title=&quot;第七章 类&quot;&gt;&lt;/a&gt;第七章 类&lt;/h4&gt;&lt;p&gt;类作用域和成员函数：&lt;/p&gt;
-&lt;p&gt;编译器分两步处理类：首先编译成员的声明，然后才轮到成员函数体(如果有的话)。因此</summary>
+    <summary type="html">&lt;p&gt;AX = AH + AL&lt;/p&gt;
+&lt;p&gt;BX = BH + BL&lt;/p&gt;
+&lt;p&gt;CX = CH + CL&lt;/p&gt;
+&lt;p&gt;DX = DH + DL&lt;/p&gt;
+&lt;p&gt;数据寄存器&lt;/p&gt;
+&lt;p&gt;段地址寄存器：偏移地址寄存器&lt;/p&gt;
+&lt;p&gt;DS    SP&lt;/p&gt;
+&lt;p&gt;ES    </summary>
       
     
     

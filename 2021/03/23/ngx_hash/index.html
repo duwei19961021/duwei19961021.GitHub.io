@@ -6,20 +6,21 @@
   <meta name="keywords" content=" hashtable ">
   <meta name="description" content="nginx散列表 | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="nginx数据类型：单向链表 &#x2F;&#x2F; 单向链表的子结点 struct ngx_list_part_s {     void             *elts; &#x2F;&#x2F; 数据区的首地址     ngx_uint_t        nelts;    &#x2F;&#x2F;  指向第一个未使用过的元素     ngx_list_part_t  *next; &#x2F;&#x2F;  指向下一个结点的指针 };  &#x2F;&#x2F; 单向链表的父结点 t">
+<meta name="description" content="nginx数据类型：散列表 &#x2F;&#x2F; 存储key和value的元素 typedef struct {     void             *value;    &#x2F;&#x2F; 指向value的指针     u_short           len;  &#x2F;&#x2F; key的长度     u_char            name[1];  &#x2F;&#x2F; key长度是可变的，这里使用了c语言的柔性数组 } ngx_ha">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nginx单向链表">
-<meta property="og:url" content="https://duwei19961021.github.io/2021/03/22/ngx_list/index.html">
+<meta property="og:title" content="nginx散列表">
+<meta property="og:url" content="https://duwei19961021.github.io/2021/03/23/ngx_hash/index.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="nginx数据类型：单向链表 &#x2F;&#x2F; 单向链表的子结点 struct ngx_list_part_s {     void             *elts; &#x2F;&#x2F; 数据区的首地址     ngx_uint_t        nelts;    &#x2F;&#x2F;  指向第一个未使用过的元素     ngx_list_part_t  *next; &#x2F;&#x2F;  指向下一个结点的指针 };  &#x2F;&#x2F; 单向链表的父结点 t">
+<meta property="og:description" content="nginx数据类型：散列表 &#x2F;&#x2F; 存储key和value的元素 typedef struct {     void             *value;    &#x2F;&#x2F; 指向value的指针     u_short           len;  &#x2F;&#x2F; key的长度     u_char            name[1];  &#x2F;&#x2F; key长度是可变的，这里使用了c语言的柔性数组 } ngx_ha">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img.3amupupup.online/ngx_list_1.png">
-<meta property="article:published_time" content="2021-03-22T03:15:43.000Z">
-<meta property="article:modified_time" content="2021-03-22T05:17:19.917Z">
+<meta property="og:image" content="https://img.3amupupup.online/ngx_hash_2.png">
+<meta property="og:image" content="https://img.3amupupup.online/ngx_hash_test_1.png">
+<meta property="article:published_time" content="2021-03-23T10:21:27.000Z">
+<meta property="article:modified_time" content="2021-03-24T05:07:19.229Z">
 <meta property="article:author" content="拦云">
-<meta property="article:tag" content="list">
+<meta property="article:tag" content="hashtable">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img.3amupupup.online/ngx_list_1.png">
+<meta name="twitter:image" content="https://img.3amupupup.online/ngx_hash_2.png">
 
 
 <link rel="icon" href="/img/favicon.ico">
@@ -42,8 +43,6 @@
 <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
 
 
-
-<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
 
 <script src="/js/iconfont.js?v=1.0.1" ></script>
 
@@ -142,7 +141,7 @@
     <div><a  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="47">
-
+<input type="hidden" id="yelog_site_word_count" value="59.7k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -165,7 +164,7 @@
 </div>
         <div class="title-list">
     <form onkeydown="if(event.keyCode === 13){return false;}">
-        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <input id="local-search-input" class="search" type="text" placeholder="以 in: 开头进行全文搜索" />
         <i class="cross"></i>
         <span>
             <label for="tagswitch">Tags:</label>
@@ -282,6 +281,10 @@
     <div class="clearfix"></div>
 </div>
 
+    
+    <div id="local-search-result">
+
+    </div>
     
     <nav id="title-list-nav">
         
@@ -697,10 +700,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-03-24 11:39:11'>2021-03-23 18:21</time>
+        创建时间:<time class="date" title='更新时间: 2021-03-24 13:07:19'>2021-03-23 18:21</time>
         
     </div>
     <div class="article-meta">
+        
+        <span>字数:2.4k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -714,6 +719,17 @@
             </span>
         </span>
         
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
         
     </div>
     
@@ -782,15 +798,16 @@ typedef struct {
 
 /*
     第一个参数：hash表初始化结构：通过这个结构提供的参数进行初始化
-    第二个参数：ngx_hash_key_t组成的数组(先将key的hash值算好存储在结构里，用的时候直接取就行了，而不是边用边           计算hash值)
+    第二个参数：ngx_hash_key_t组成的数组(先将key的hash值算好存储在结构里，
+    用的时候直接取就行了，而不是边用边计算hash值)
     第三个元素：数组的元素个数
 */
 
 /*
     出现的参数说明：
-                            max_size: 桶的最大数量(这个hash表桶的最大个数)
-                            bucket_size: 桶的内存空间大小(不能超过65535)
-                            elt: ngx_hash_elt_t类型，桶中存储的元素    
+                        max_size: 桶的最大数量(这个hash表桶的最大个数)
+                        bucket_size: 桶的内存空间大小(不能超过65535)
+                        elt: ngx_hash_elt_t类型，桶中存储的元素    
 */
 ngx_int_t
 ngx_hash_init(ngx_hash_init_t *hinit, ngx_hash_key_t *names, ngx_uint_t nelts)
@@ -834,9 +851,9 @@ ngx_hash_init(ngx_hash_init_t *hinit, ngx_hash_key_t *names, ngx_uint_t nelts)
               names中元素的key的长度不同，生成的elt的大小也就不同，为了提高对内存的访问效率，
               ngx对每个elt进行了内存对齐，所以在连续内存上给elt分配内存时，并不是elt多大就分配
               多少内存，而是分配对齐后的内存(类似结构体的内存对齐)。
-              这里遍历names中的每个元素，计算对应elt的内存大小进行计算，如果发现出现了bucket_size小于
-              其中任何一个元素的对应的elt的内存的大小(必须保证bucket_size能存储至少一个elt)，
-              就会返回失败提醒调用者增加bucket_size。
+              这里遍历names中的每个元素，计算对应elt的内存大小进行计算，如果发现出现了
+              bucket_size小于其中任何一个元素的对应的elt的内存的大小(必须保证bucket_size
+              能存储至少一个elt)，就会返回失败提醒调用者增加bucket_size。
           */
         {
             ngx_log_error(NGX_LOG_EMERG, hinit-&gt;pool-&gt;log, 0,
@@ -919,8 +936,9 @@ ngx_hash_init(ngx_hash_init_t *hinit, ngx_hash_key_t *names, ngx_uint_t nelts)
 
             if (len &gt; bucket_size) { 
               /*
-                  如果有发现len大于桶子的存储空间，说明发生了hash碰撞次数较多(碰撞多存储的元素就多)，
-                  导致桶子里的空间溢出了，因此跳出当前循环进入外层的循环去增加桶子的葛素。
+                  如果有发现len大于桶子的存储空间，说明发生了hash碰撞次数较多
+                  (碰撞多存储的元素就多)，导致桶子里的空间溢出了，因此跳出当前
+                  循环进入外层的循环去增加桶子的葛素。
               */ 
                 goto next;
             }
@@ -1007,8 +1025,9 @@ found:
         hinit-&gt;hash = ngx_pcalloc(hinit-&gt;pool, sizeof(ngx_hash_wildcard_t)
                                              + size * sizeof(ngx_hash_elt_t *));
         /*
-            sizeof(ngx_hash_wildcard_t)应该是有其它作用，暂时不理会。
-            这里分配了一个指针数组(ngx_hash_elt_t *)，每个指针指向对应的bucket的头部。(看文章开始的图)
+            sizeof(ngx_hash_wildcard_t)应该是有其它作用，暂时不理会。这里
+            分配了一个指针数组(ngx_hash_elt_t *)，每个指针指向对应的bucket的头部。
+            (看文章开始的图)
         */
         if (hinit-&gt;hash == NULL) {
             ngx_free(test);
@@ -1049,8 +1068,8 @@ found:
 
         elts += test[i];
           /*
-              test[i]中存储的是模拟hash表构建过程中，元素大小的总和。现在按照这个值给桶子按需分配内存，
-              最大程度的节省内存
+              test[i]中存储的是模拟hash表构建过程中，每个桶中元素大小的总和。
+              现在按照这个值给桶子按需分配内存，最大程度的节省内存
           */ 
     }
 
@@ -1065,17 +1084,18 @@ found:
 
         // 这里开始真正的遍历names数组，构建hash表
         key = names[n].key_hash % size;
-        elt = (ngx_hash_elt_t *) ((u_char *) buckets[key] + test[key]); //  拿到elt的首地址
+        elt = (ngx_hash_elt_t *) ((u_char *) buckets[key] + test[key]); // 拿到elt的首地址
 
-        elt-&gt;value = names[n].value;    // 写入value
-        elt-&gt;len = (u_short) names[n].key.len;  // 写入len字段
+        elt-&gt;value = names[n].value; // 写入value
+        elt-&gt;len = (u_short) names[n].key.len; // 写入len字段
 
         ngx_strlow(elt-&gt;name, names[n].key.data, names[n].key.len); // 修改key为小写
 
-        test[key] = (u_short) (test[key] + NGX_HASH_ELT_SIZE(&amp;names[n]));   // 记录每个bucket的大小
+        test[key] = (u_short) (test[key] + NGX_HASH_ELT_SIZE(&amp;names[n])); 
+        // 记录每个bucket的大小
     }
 
-    for (i = 0; i &lt; size; i++) {    // 遍历buckets
+    for (i = 0; i &lt; size; i++) { // 遍历buckets
         if (buckets[i] == NULL) {
             continue;
         }
@@ -1137,16 +1157,35 @@ found:
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>nginx散列表</p>
-    
+    <p><span class="copy-title">文章字数:</span><span class="post-count">2.4k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-03-23, 18:21:27</p>
-    <p><span class="copy-title">最后更新:</span>2021-03-24, 11:39:11</p>
+    <p><span class="copy-title">最后更新:</span>2021-03-24, 13:07:19</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/23/ngx_hash/" title="nginx散列表">https://duwei19961021.github.io/2021/03/23/ngx_hash/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
 </div>
 
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+
+<script src="/js/gitment.js"></script>
+
+<script>
+    var gitment = new Gitment({
+        id: 'https://duwei19961021.github.io/2021/03/23/ngx_hash/', // 可选。默认为 location.href
+        owner: 'duwei19961021',
+        repo: 'duwei19961021.github.io',
+        oauth: {
+            client_id: '9508ca828c58f4e437c4',
+            client_secret: 'b06cbcaf50e681f423354b619cdde7039528761b',
+        },
+    })
+    gitment.render('comments')
+</script>
 
 
 
@@ -1158,7 +1197,7 @@ found:
 
     </div>
     <div class="copyright">
-        <p class="footer-entry">©2016-2019 Yelog</p>
+        <p class="footer-entry">©2019-2021 duwei</p>
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
@@ -1339,6 +1378,16 @@ found:
     }
     
 
+    
+    .post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
     
 </style>
 

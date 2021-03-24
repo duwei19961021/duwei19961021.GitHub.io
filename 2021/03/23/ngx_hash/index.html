@@ -15,8 +15,10 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img.3amupupup.online/ngx_hash_2.png">
 <meta property="og:image" content="https://img.3amupupup.online/ngx_hash_test_1.png">
+<meta property="og:image" content="https://img.3amupupup.online/ngx_align_1.png">
+<meta property="og:image" content="https://duwei19961021.github.io/2021/Desktop/source/image/image-20210324172119669.png">
 <meta property="article:published_time" content="2021-03-23T10:21:27.000Z">
-<meta property="article:modified_time" content="2021-03-24T05:07:19.229Z">
+<meta property="article:modified_time" content="2021-03-24T13:17:47.408Z">
 <meta property="article:author" content="拦云">
 <meta property="article:tag" content="hashtable">
 <meta name="twitter:card" content="summary">
@@ -141,7 +143,7 @@
     <div><a  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="47">
-<input type="hidden" id="yelog_site_word_count" value="59.7k">
+<input type="hidden" id="yelog_site_word_count" value="60.7k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -700,12 +702,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-03-24 13:07:19'>2021-03-23 18:21</time>
+        创建时间:<time class="date" title='更新时间: 2021-03-24 21:17:47'>2021-03-23 18:21</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:2.4k</span>
+        <span>字数:3.9k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -724,7 +726,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#nginx数据类型：散列表"><span class="toc-text">nginx数据类型：散列表</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#散列表提供的接口"><span class="toc-text">散列表提供的接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#接口实现"><span class="toc-text">接口实现</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#nginx数据类型：散列表"><span class="toc-text">nginx数据类型：散列表</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#散列表提供的接口"><span class="toc-text">散列表提供的接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#接口实现"><span class="toc-text">接口实现</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#补充："><span class="toc-text">补充：</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -773,7 +775,8 @@ typedef struct {
     ngx_pool_t       *pool; // 内存池
     ngx_pool_t       *temp_pool;    // 临时内存池
 } ngx_hash_init_t;</code></pre>
-<h5 id="散列表提供的接口"><a href="#散列表提供的接口" class="headerlink" title="散列表提供的接口"></a>散列表提供的接口</h5><pre><code class="c">ngx_int_t ngx_hash_init(ngx_hash_init_t *hinit, ngx_hash_key_t *names, ngx_uint_t nelts); // 构建散列表</code></pre>
+<h5 id="散列表提供的接口"><a href="#散列表提供的接口" class="headerlink" title="散列表提供的接口"></a>散列表提供的接口</h5><pre><code class="c">ngx_int_t ngx_hash_init(ngx_hash_init_t *hinit, ngx_hash_key_t *names, ngx_uint_t nelts); // 构建散列表
+void * ngx_hash_find(ngx_hash_t *hash, ngx_uint_t key, u_char *name, size_t len); // 查找key</code></pre>
 <h5 id="接口实现"><a href="#接口实现" class="headerlink" title="接口实现"></a>接口实现</h5><ol>
 <li><p>ngx_int_t ngx_hash_init(ngx_hash_init_t *hinit, ngx_hash_key_t *names, ngx_uint_t nelts): 构建散列表</p>
 <p><img src="https://img.3amupupup.online/ngx_hash_test_1.png" alt="test"></p>
@@ -991,7 +994,8 @@ found:
 
         test[key] = (u_short) len;
           /*
-              test对应的元素保存了对应桶子的所需空间大小 test[i] == bucket[i]的size
+              test对应的元素保存了对应桶子的所需空间大小(桶里进一个elt，len累加)，
+              test[i] == bucket[i]的size
           */
     }
 
@@ -1135,6 +1139,136 @@ found:
     return NGX_OK;
 }</code></pre>
 </li>
+<li><p>void * ngx_hash_find(ngx_hash_t *hash, ngx_uint_t key, u_char *name, size_t len): 查找key</p>
+<pre><code class="c">/*
+ * 第一个参数：hash表
+ * 第二个参数：key经过hash函数计算出的值
+ * 第三个参数：key
+ * 第四个长度：key的长度
+ */
+void *
+ngx_hash_find(ngx_hash_t *hash, ngx_uint_t key, u_char *name, size_t len)
+{
+    ngx_uint_t       i;
+    ngx_hash_elt_t  *elt;
+
+#if 0
+    ngx_log_error(NGX_LOG_ALERT, ngx_cycle-&gt;log, 0, &quot;hf:\&quot;%*s\&quot;&quot;, len, name);
+#endif
+
+    elt = hash-&gt;buckets[key % hash-&gt;size];
+    /*
+        key进行取模得到它是位于哪个桶里，得到的是bucket的首地址
+    */
+
+    if (elt == NULL) {
+        /*
+            说明桶里没有元素
+        */
+        return NULL;
+    }
+
+    while (elt-&gt;value) {
+        /*
+            桶的结尾元素：elt-&gt;value==NULL，间隔标志，
+            走到NULL说明key不存在
+        */ 
+        if (len != (size_t) elt-&gt;len) {
+          /*
+              如果传入的key的长度不等于桶中elt的长度(elt-&gt;len是指key的长度)
+              那么必不是这个key，就不用检查key了。先判断长度，在判断key，长
+              度不同key就不用比较了
+          */
+            goto next;
+        }
+
+        for (i = 0; i &lt; len; i++) {
+              /*
+                  比较key
+              */
+            if (name[i] != elt-&gt;name[i]) {
+                goto next;
+            }
+        }
+
+        return elt-&gt;value;
+          /*
+              走到这里说明找到了
+          */
+
+    next:
+
+        elt = (ngx_hash_elt_t *) ngx_align_ptr(&amp;elt-&gt;name[0] + elt-&gt;len,
+                                               sizeof(void *));
+        /*
+            计算下一个元素的起始地址并进行类型转换
+        */
+        continue;
+    }
+
+    return NULL;    // 否则返回空
+}</code></pre>
+</li>
+</ol>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>ngx_hash_init初始化的hash表是静态的，根据给定的一组key结构和key的个数进行初始化，生成的hash表仅仅是为了查找，不能动态添加元素。初始化过程中会模拟hash表的构建，但又不是真正意义上的构建，仅仅是在模拟构建时计算每个桶需要的空间，然后在真正构建hash表时按需给桶分配内存，最大程度的节省内存。</p>
+<p>所有bucket下的所有elt位于一块连续的内存上，通过elt-&gt;value == NULL作为bucket之间的间隔。</p>
+<p>最重要的一点：</p>
+<p>buckets是一块连续的内存，由多个bucket组成，每个bucket的末尾存在一个NULL指针作为标志位。</p>
+<p>bucket由多个elt组成，因为key的长度不一样，最终生成的elt长度也不一样(key是保存在elt的柔性数组上)，也就是说不能像操作数组一样去操作bucket(数组的每个元素大小相同，可以通过步长去访问，但是这里的bucket中的每个elt长度不一致)。</p>
+<p>解决办法：</p>
+<p><img src="https://img.3amupupup.online/ngx_align_1.png" alt="test"></p>
+<p>这两个宏函数的作用： 在b的基础上对a求最小的倍数。 ngx_hash_elt_t的前两个结构体成员自动对齐了，不对齐的是后面的这个柔性数组，经过这两个宏函数处理后，在柔性数组后面补了一块内存(红色部分)，这就对齐了。这是连续的内存但是因为elt这个结构的内存大小和key有关系，key越大name越大越大elt越大，key是不定长的，因此每个elt的大小都不一样，那就不能像数组那样操作bucket。在计算模拟hash构建阶段，会计算elt对齐后的内存空间大小，因此elt的末尾地址必然是4或8的倍数，访问第二个元素时，通过拿到第一个elt的(&amp;elt-&gt;name[0] + elt-&gt;len)再使用ngx_align_ptr对其进行取整，拿到的就是下一个elt的首地址。(要拿到第二个元素就必须知道第一个元素的name数组后的第一个内存地址，拿第三个就需要知道第二个的，有链表那味儿，但是无伤大雅，因为在构建hash时多个元素可能会落进同一个桶里，查找时如果得到的桶里恰好有多个元素，也是需要去遍历对比name的)。</p>
+<h5 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h5><ol>
+<li><p>内存对齐</p>
+<pre><code class="c">#define ngx_align(d, a)     (((d) + (a - 1)) &amp; ~(a - 1))
+
+#define ngx_align_ptr(p, a)                                                   \
+    (u_char *) (((uintptr_t) (p) + ((uintptr_t) a - 1)) &amp; ~((uintptr_t) a - 1))
+
+#define NGX_HASH_ELT_SIZE(name)                                               \
+    (sizeof(void *) + ngx_align((name)-&gt;key.len + 2, sizeof(void *)))
+
+/*
+    a = 4:  二进制： 0000 0100       从右往左，第三位为1，剩下全为0;
+    a = 8:  二进制： 0000 1000       从右往左，第四位为1, 剩下全为0；
+    a = 16: 二进制:  0001 0000       从右往左，第五位为1，剩下全为0；
+
+    a - 1 = 3:  二进制： 0000 0011   从右往左，第三位之前，全是1；
+    a - 1 = 7:  二进制： 0000 0111   从右往左，第四位之前，全是1；
+    a - 1 = 15: 二进制： 0000 1111   从右往左，第五位之前，全是1；
+
+    ~(a - 1) = ~3:  二进制： 1111 1100   从右往左，第二位之后，全是1；
+    ~(a - 1) = ~7:  二进制： 1111 1000   从右往左，第三位之后，全是1；
+    ~(a - 1) = ~15: 二进制： 1111 0000   从右往左，第四位之后，全是1；
+
+    一个数，一定是这个数的二进制从右起第一个不为零的位所表示的数的整数倍
+    a = 12:  二进制： 0000 1100 
+    从右起，第一个不为零的位所表示的整数为 0000 0100 即 4
+    那么，a = 12 一定是 4 的整数倍
+
+    如果，我们需要任意的一个数a对4取整怎么办呢？很简单，只需要把a从右起的若干位置0就可以了。
+    比如：
+            a = 13: 二进制：0000 1101
+            向0000 0100 即 4 取整，只需要将 0000 1101从右起，前两位置0，即可得到，0000 1100 即12
+            这个置0的过程可以表达为0000 1101 &amp;  1111 1100
+            而 1111 1100 = ~(4 - 1)，因此，13 对 4 取整的二进制运算即为：13 &amp; ~(4 - 1)
+
+    对于一个任意的数d和一个2的任意次幂a：
+    d对a向下取整的二进制运算为：d &amp; ~(a -1)
+    d对a向上取整的二进制运算为：(d + (a - 1)) &amp; ~(a - 1)
+*/
+
+/*
+    ngx_align(9,4) = 12
+    ngx_align(17,4) = 20
+
+    ngx_align_ptr(p, a)和ngx_align一样，只是会先将内存地址转成数字再计算
+*/</code></pre>
+</li>
+<li><p>柔性数组</p>
+<p><img src="../../../Desktop/source/image/image-20210324172119669.png" alt="image-20210324172119669"></p>
+<p>结论：柔性数组与结构体在内存上是连续的</p>
+</li>
 </ol>
 
       
@@ -1146,10 +1280,10 @@ found:
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>nginx散列表</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">2.4k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">3.9k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-03-23, 18:21:27</p>
-    <p><span class="copy-title">最后更新:</span>2021-03-24, 13:07:19</p>
+    <p><span class="copy-title">最后更新:</span>2021-03-24, 21:17:47</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/23/ngx_hash/" title="nginx散列表">https://duwei19961021.github.io/2021/03/23/ngx_hash/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

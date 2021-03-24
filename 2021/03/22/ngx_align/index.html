@@ -15,8 +15,10 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img.3amupupup.online/ngx_hash_2.png">
 <meta property="og:image" content="https://img.3amupupup.online/ngx_hash_test_1.png">
+<meta property="og:image" content="https://img.3amupupup.online/ngx_align_1.png">
+<meta property="og:image" content="https://duwei19961021.github.io/2021/Desktop/source/image/image-20210324172119669.png">
 <meta property="article:published_time" content="2021-03-23T10:21:27.000Z">
-<meta property="article:modified_time" content="2021-03-24T05:07:19.229Z">
+<meta property="article:modified_time" content="2021-03-24T13:17:47.408Z">
 <meta property="article:author" content="拦云">
 <meta property="article:tag" content="hashtable">
 <meta name="twitter:card" content="summary">
@@ -141,7 +143,7 @@
     <div><a  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="47">
-<input type="hidden" id="yelog_site_word_count" value="59.7k">
+<input type="hidden" id="yelog_site_word_count" value="60.7k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -688,12 +690,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-03-23 14:20:13'>2021-03-22 15:44</time>
+        创建时间:<time class="date" title='更新时间: 2021-03-24 16:03:45'>2021-03-22 15:44</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:685</span>
+        <span>字数:268</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -712,7 +714,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cache-Line"><span class="toc-text">Cache Line</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -731,39 +733,17 @@
         <p>1、cache line</p>
 <blockquote>
 <p><a href="https://zhuanlan.zhihu.com/p/130770773" target="_blank" rel="noopener">CPU Cache</a></p>
-<h3 id="Cache-Line"><a href="#Cache-Line" class="headerlink" title="Cache Line"></a><strong>Cache Line</strong></h3><p>CPU 每次访问数据时先在缓存中查找一次，找不到则去主存找，访问完数据后会将数据存入缓存，以备后用。这就产生了一个问题，CPU 在访问某个地址的时候如何知道目标数据是在缓存中存在？如何知道缓存的数据是否还有效没被修改？不能为每个存入缓存的字节都打标记，所以 CPU 缓存会划分为固定大小的 Block 称为 Cache Line，作为存取数据的最小单位。大小都为 2 的整数幂，比如 16 字节，256 字节等。这样一个 cache line 这一整块内存能通过一个标记来记录是否在内存中，是否还有效，是否被修改等。一次存取一块数据也能充分利用总线带宽以及 CPU 访问的空间局部性。</p>
+<p>CPU 每次访问数据时先在缓存中查找一次，找不到则去主存找，访问完数据后会将数据存入缓存，以备后用。这就产生了一个问题，CPU 在访问某个地址的时候如何知道目标数据是在缓存中存在？如何知道缓存的数据是否还有效没被修改？不能为每个存入缓存的字节都打标记，所以 CPU 缓存会划分为固定大小的 Block 称为 Cache Line，作为存取数据的最小单位。大小都为 2 的整数幂，比如 16 字节，256 字节等。这样一个 cache line 这一整块内存能通过一个标记来记录是否在内存中，是否还有效，是否被修改等。一次存取一块数据也能充分利用总线带宽以及 CPU 访问的空间局部性。</p>
 </blockquote>
-<pre><code class="c">#define ngx_align(d, a)     (((d) + (a - 1)) &amp; ~(a - 1))    // ~按位取反，&amp; 同时为1结果才为1
-
-/*
-    a = 4:  二进制： 0000 0100       从右往左，第三位为1，剩下全为0;
-    a = 8:  二进制： 0000 1000       从右往左，第四位为1, 剩下全为0；
-    a = 16: 二进制:  0001 0000       从右往左，第五位为1，剩下全为0；
-
-    a - 1 = 3:  二进制： 0000 0011   从右往左，第三位之前，全是1；
-    a - 1 = 7:  二进制： 0000 0111   从右往左，第四位之前，全是1；
-    a - 1 = 15: 二进制： 0000 1111   从右往左，第五位之前，全是1；
-
-    ~(a - 1) = ~3:  二进制： 1111 1100   从右往左，第二位之后，全是1；
-    ~(a - 1) = ~7:  二进制： 1111 1000   从右往左，第三位之后，全是1；
-    ~(a - 1) = ~15: 二进制： 1111 0000   从右往左，第四位之后，全是1；
-
-    一个数，一定是这个数的二进制从右起第一个不为零的位所表示的数的整数倍
-    a = 12:  二进制： 0000 1100 
-    从右起，第一个不为零的位所表示的整数为 0000 0100 即 4
-    那么，a = 12 一定是 4 的整数倍
-
-    如果，我们需要任意的一个数a对4取整怎么办呢？很简单，只需要把a从右起的若干位置0就可以了。
-    比如：
-            a = 13: 二进制：0000 1101
-            向0000 0100 即 4 取整，只需要将 0000 1101从右起，前两位置0，即可得到，0000 1100 即12
-            这个置0的过程可以表达为0000 1101 &amp;  1111 1100
-            而 1111 1100 = ~(4 - 1)，因此，13 对 4 取整的二进制运算即为：13 &amp; ~(4 - 1)
-
-    对于一个任意的数d和一个2的任意次幂a：
-    d对a向下取整的二进制运算为：d &amp; ~(a -1)
-    d对a向上取整的二进制运算为：(d + (a - 1)) &amp; ~(a - 1)
-*/</code></pre>
+<pre><code class="c"></code></pre>
+<hr>
+<p>实际上，对齐参数(MALLOC_ALIGNMENT)大小的设定需要满足以下两点：</p>
+<ol>
+<li><p>必须是2的幂</p>
+</li>
+<li><p>必须是void *的整数倍</p>
+</li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
@@ -774,10 +754,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>ngx_align</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">685</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">268</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-03-22, 15:44:36</p>
-    <p><span class="copy-title">最后更新:</span>2021-03-23, 14:20:13</p>
+    <p><span class="copy-title">最后更新:</span>2021-03-24, 16:03:45</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/22/ngx_align/" title="ngx_align">https://duwei19961021.github.io/2021/03/22/ngx_align/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

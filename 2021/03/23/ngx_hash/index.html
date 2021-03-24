@@ -16,9 +16,9 @@
 <meta property="og:image" content="https://img.3amupupup.online/ngx_hash_2.png">
 <meta property="og:image" content="https://img.3amupupup.online/ngx_hash_test_1.png">
 <meta property="og:image" content="https://img.3amupupup.online/ngx_align_1.png">
-<meta property="og:image" content="https://duwei19961021.github.io/2021/Desktop/source/image/image-20210324172119669.png">
+<meta property="og:image" content="https://img.3amupupup.online/soft_array.png">
 <meta property="article:published_time" content="2021-03-23T10:21:27.000Z">
-<meta property="article:modified_time" content="2021-03-24T13:17:47.408Z">
+<meta property="article:modified_time" content="2021-03-24T13:22:18.585Z">
 <meta property="article:author" content="拦云">
 <meta property="article:tag" content="hashtable">
 <meta name="twitter:card" content="summary">
@@ -702,7 +702,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-03-24 21:17:47'>2021-03-23 18:21</time>
+        创建时间:<time class="date" title='更新时间: 2021-03-24 21:22:18'>2021-03-23 18:21</time>
         
     </div>
     <div class="article-meta">
@@ -1216,7 +1216,7 @@ ngx_hash_find(ngx_hash_t *hash, ngx_uint_t key, u_char *name, size_t len)
 <p>buckets是一块连续的内存，由多个bucket组成，每个bucket的末尾存在一个NULL指针作为标志位。</p>
 <p>bucket由多个elt组成，因为key的长度不一样，最终生成的elt长度也不一样(key是保存在elt的柔性数组上)，也就是说不能像操作数组一样去操作bucket(数组的每个元素大小相同，可以通过步长去访问，但是这里的bucket中的每个elt长度不一致)。</p>
 <p>解决办法：</p>
-<p><img src="https://img.3amupupup.online/ngx_align_1.png" alt="test"></p>
+<p><img src="https://img.3amupupup.online/ngx_align_1.png" alt="ngx_align"></p>
 <p>这两个宏函数的作用： 在b的基础上对a求最小的倍数。 ngx_hash_elt_t的前两个结构体成员自动对齐了，不对齐的是后面的这个柔性数组，经过这两个宏函数处理后，在柔性数组后面补了一块内存(红色部分)，这就对齐了。这是连续的内存但是因为elt这个结构的内存大小和key有关系，key越大name越大越大elt越大，key是不定长的，因此每个elt的大小都不一样，那就不能像数组那样操作bucket。在计算模拟hash构建阶段，会计算elt对齐后的内存空间大小，因此elt的末尾地址必然是4或8的倍数，访问第二个元素时，通过拿到第一个elt的(&amp;elt-&gt;name[0] + elt-&gt;len)再使用ngx_align_ptr对其进行取整，拿到的就是下一个elt的首地址。(要拿到第二个元素就必须知道第一个元素的name数组后的第一个内存地址，拿第三个就需要知道第二个的，有链表那味儿，但是无伤大雅，因为在构建hash时多个元素可能会落进同一个桶里，查找时如果得到的桶里恰好有多个元素，也是需要去遍历对比name的)。</p>
 <h5 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h5><ol>
 <li><p>内存对齐</p>
@@ -1266,7 +1266,7 @@ ngx_hash_find(ngx_hash_t *hash, ngx_uint_t key, u_char *name, size_t len)
 */</code></pre>
 </li>
 <li><p>柔性数组</p>
-<p><img src="../../../Desktop/source/image/image-20210324172119669.png" alt="image-20210324172119669"></p>
+<p><img src="https://img.3amupupup.online/soft_array.png" alt="柔性数组"></p>
 <p>结论：柔性数组与结构体在内存上是连续的</p>
 </li>
 </ol>
@@ -1283,7 +1283,7 @@ ngx_hash_find(ngx_hash_t *hash, ngx_uint_t key, u_char *name, size_t len)
     <p><span class="copy-title">文章字数:</span><span class="post-count">3.9k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-03-23, 18:21:27</p>
-    <p><span class="copy-title">最后更新:</span>2021-03-24, 21:17:47</p>
+    <p><span class="copy-title">最后更新:</span>2021-03-24, 21:22:18</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/23/ngx_hash/" title="nginx散列表">https://duwei19961021.github.io/2021/03/23/ngx_hash/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

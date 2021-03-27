@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://duwei19961021.github.io/2021/03/18/ngx_mem_pool/</loc>
+    <lastmod>2021-03-27</lastmod>
+  </url>
+  <url>
     <loc>https://duwei19961021.github.io/2021/03/23/ngx_hash/</loc>
     <lastmod>2021-03-24</lastmod>
   </url>
@@ -22,10 +26,6 @@
   </url>
   <url>
     <loc>https://duwei19961021.github.io/2021/03/17/ngx_array/</loc>
-    <lastmod>2021-03-21</lastmod>
-  </url>
-  <url>
-    <loc>https://duwei19961021.github.io/2021/03/18/ngx_mem_pool/</loc>
     <lastmod>2021-03-21</lastmod>
   </url>
   <url>

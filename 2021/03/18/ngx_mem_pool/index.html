@@ -143,7 +143,7 @@
     <div><a  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="47">
-<input type="hidden" id="yelog_site_word_count" value="60.7k">
+<input type="hidden" id="yelog_site_word_count" value="61.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -702,12 +702,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-03-21 13:22:34'>2021-03-18 15:14</time>
+        创建时间:<time class="date" title='更新时间: 2021-03-27 23:01:25'>2021-03-18 15:14</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:3.2k</span>
+        <span>字数:3.9k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -726,7 +726,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#nginx内存池"><span class="toc-text">nginx内存池</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#内存池的数据结构"><span class="toc-text">内存池的数据结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#接口"><span class="toc-text">接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#nginx内存池"><span class="toc-text">nginx内存池</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#"><span class="toc-text"></span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#接口"><span class="toc-text">接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#补充"><span class="toc-text">补充</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -742,10 +742,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="nginx内存池"><a href="#nginx内存池" class="headerlink" title="nginx内存池"></a>nginx内存池</h4><h5 id="内存池的数据结构"><a href="#内存池的数据结构" class="headerlink" title="内存池的数据结构"></a>内存池的数据结构</h5><p><img src="http://img.3amupupup.online/ngx_mem_pool_struct.png" alt="内存池结构"></p>
-<p><img src="http://img.3amupupup.online/ngx_mem_pool_5.png" alt="ngx内存池"></p>
-<pre><code class="c">// src/core/ngx_palloc.h
-typedef struct 
+        <h4 id="nginx内存池"><a href="#nginx内存池" class="headerlink" title="nginx内存池"></a>nginx内存池</h4><h5 id=""><a href="#" class="headerlink" title=""></a><img src="https://img.3amupupup.online/ngx_mem_pool_struct_3.png" alt="内存池结构"></h5><p><img src="https://img.3amupupup.online/ngx_mem_pool_5.png" alt="内存池"></p>
+<pre><code class="c">typedef struct 
 {
     u_char               *last;     /* 内存池中未使用内存的开始节点地址 */
     u_char               *end;      /* 内存池的结束地址 */
@@ -773,26 +771,6 @@ struct ngx_pool_cleanup_s
     ngx_pool_cleanup_t   *next;     /* 下一个ngx_pool_cleanup_t */
 };</code></pre>
 <h5 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h5><ol>
-<li><p>ngx_alloc: 分配内存，底层调用的是malloc。</p>
-<pre><code class="c">void *
-ngx_alloc(size_t size, ngx_log_t *log)
-{
-    void  *p;
-
-    p = malloc(size);
-      /* 
-          底层去调用malloc分配内存
-      */
-    if (p == NULL) {
-        ngx_log_error(NGX_LOG_EMERG, log, ngx_errno,
-                      &quot;malloc(%uz) failed&quot;, size);
-    }
-
-    ngx_log_debug2(NGX_LOG_DEBUG_ALLOC, log, 0, &quot;malloc: %p:%uz&quot;, p, size);
-
-    return p;
-}</code></pre>
-</li>
 <li><p>ngx_calloc: 分配内存并初始化，底层调用的是malloc和memset。</p>
 <pre><code class="c">void *
 ngx_calloc(size_t size, ngx_log_t *log)
@@ -811,6 +789,28 @@ ngx_calloc(size_t size, ngx_log_t *log)
 
     return p;
 }</code></pre>
+</li>
+</ol>
+<ol start="2">
+<li><p>ngx_alloc: 分配内存，底层调用的是malloc。</p>
+<pre><code class="c">void *
+   ngx_alloc(size_t size, ngx_log_t *log)
+   {
+       void  *p;
+
+       p = malloc(size);
+         /* 
+             底层去调用malloc分配内存
+         */
+       if (p == NULL) {
+           ngx_log_error(NGX_LOG_EMERG, log, ngx_errno,
+                         &quot;malloc(%uz) failed&quot;, size);
+       }
+
+       ngx_log_debug2(NGX_LOG_DEBUG_ALLOC, log, 0, &quot;malloc: %p:%uz&quot;, p, size);
+
+       return p;
+   }</code></pre>
 </li>
 <li><p>ngx_create_pool: 创建内存池结点</p>
 <pre><code class="c">ngx_pool_t *
@@ -1358,6 +1358,53 @@ ngx_pool_delete_file(void *data)
 <li>申请大数据内存(size &gt;= poo-&gt;max)，large的控制中心结构ngx_pool_large_t所需要的内存是在ngx_pool_data_t管理的区域上分配的，size大小的内存是直接向操作系统申请的(malloc)，然后用alloc指针保存分配的内存的地址。</li>
 <li>cleanup设计灵活，能自定义清理工作，便于我们在内存池申请自定义或者特殊类型的内存，申请的数据区域存在于large链表或内存池结点的小块数据区域。</li>
 </ol>
+<h5 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h5><ol>
+<li><p>关于current指针</p>
+<p>current在内存池初始化时时指向父节点本身的，但是随着内存的不断分配出去其指向会不断的从small链表的头结点向尾结点方向移动。在分配小块内存时，会遍历small链表的结点，然后判断结点上是否有足够的空间满足申请者的需求，如果有则在已存在的结点上分配内存，如果没有则添加新的结点并在新结点上分配内存。随着内存不断的分配，结点上的内存空间可能会被分配完或者接近分配完(只剩下小块的内存，无法满足申请者的需求，类似内存碎片)，因此就要去扩容了，随着结点个数不断增加链表越来越长，遍历结点的效率会越来越低，而且链表中很多结点上的空间可能已经被分配完了，重复的遍历时没有任何意义的。nginx巧妙的借助current指针来解决这个问题，</p>
+<pre><code class="c">static void *
+ngx_palloc_block(ngx_pool_t *pool, size_t size)
+{
+    u_char      *m;
+    size_t       psize;
+    ngx_pool_t  *p, *new;
+
+    psize = (size_t) (pool-&gt;d.end - (u_char *) pool);
+
+    m = ngx_memalign(NGX_POOL_ALIGNMENT, psize, pool-&gt;log);
+
+    if (m == NULL) {
+        return NULL;
+    }
+
+    new = (ngx_pool_t *) m;
+
+    new-&gt;d.end = m + psize;
+
+    new-&gt;d.next = NULL;
+
+    new-&gt;d.failed = 0;
+
+    m += sizeof(ngx_pool_data_t);
+
+    m = ngx_align_ptr(m, NGX_ALIGNMENT);
+
+    new-&gt;d.last = m + size;
+
+    // 重点部分
+    for (p = pool-&gt;current; p-&gt;d.next; p = p-&gt;d.next) {
+        if (p-&gt;d.failed++ &gt; 4) {
+            pool-&gt;current = p-&gt;d.next;
+        }
+    }
+
+    p-&gt;d.next = new;
+
+    return m;
+}</code></pre>
+<p>这部分代码是nginx扩容small链表的逻辑，关于current指针的部分我已经标出。根据代码得知：在链表上已存在的结点上的空间都无法满足分配内存的需求时就会新建一个结点然后分配内存，新结点采用的是尾插，因此要遍历链表拿到尾结点，但是如果链表过长就会导致效率低下。因此每增加一个结点时，就会从current指向的结点开始遍历(最开始时指向父节点本身的)，对其结点的failed字段进行判断(还要增加1，因为扩容就意味着此前的所有结点不能满足分配需求)，如果某个结点四次以上不满足分配内存的需求，就将current指向这个结点的下一个结点(找你这个结点要了四次内存都要不到，我就认为你没有可分配的内存了，下次再找内存池要内存，直接跳过你，从你后面的结点开始要内存)。这样就可以避免每次都遍历整个链表以及其中空间已经分配完的结点。</p>
+<p><img src="https://img.3amupupup.online/ngx_current_1.png" alt="内存池结构"></p>
+</li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
@@ -1368,10 +1415,10 @@ ngx_pool_delete_file(void *data)
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>nginx内存池</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">3.2k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">3.9k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-03-18, 15:14:01</p>
-    <p><span class="copy-title">最后更新:</span>2021-03-21, 13:22:34</p>
+    <p><span class="copy-title">最后更新:</span>2021-03-27, 23:01:25</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/18/ngx_mem_pool/" title="nginx内存池">https://duwei19961021.github.io/2021/03/18/ngx_mem_pool/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

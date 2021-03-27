@@ -702,7 +702,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-03-27 23:01:25'>2021-03-18 15:14</time>
+        创建时间:<time class="date" title='更新时间: 2021-03-27 23:07:14'>2021-03-18 15:14</time>
         
     </div>
     <div class="article-meta">
@@ -1402,7 +1402,7 @@ ngx_palloc_block(ngx_pool_t *pool, size_t size)
     return m;
 }</code></pre>
 <p>这部分代码是nginx扩容small链表的逻辑，关于current指针的部分我已经标出。根据代码得知：在链表上已存在的结点上的空间都无法满足分配内存的需求时就会新建一个结点然后分配内存，新结点采用的是尾插，因此要遍历链表拿到尾结点，但是如果链表过长就会导致效率低下。因此每增加一个结点时，就会从current指向的结点开始遍历(最开始时指向父节点本身的)，对其结点的failed字段进行判断(还要增加1，因为扩容就意味着此前的所有结点不能满足分配需求)，如果某个结点四次以上不满足分配内存的需求，就将current指向这个结点的下一个结点(找你这个结点要了四次内存都要不到，我就认为你没有可分配的内存了，下次再找内存池要内存，直接跳过你，从你后面的结点开始要内存)。这样就可以避免每次都遍历整个链表以及其中空间已经分配完的结点。</p>
-<p><img src="https://img.3amupupup.online/ngx_current_1.png" alt="内存池结构"></p>
+<p><img src="https://img.3amupupup.online/ngx_current_1.png" alt="current指针"></p>
 </li>
 </ol>
 
@@ -1418,7 +1418,7 @@ ngx_palloc_block(ngx_pool_t *pool, size_t size)
     <p><span class="copy-title">文章字数:</span><span class="post-count">3.9k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-03-18, 15:14:01</p>
-    <p><span class="copy-title">最后更新:</span>2021-03-27, 23:01:25</p>
+    <p><span class="copy-title">最后更新:</span>2021-03-27, 23:07:14</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/18/ngx_mem_pool/" title="nginx内存池">https://duwei19961021.github.io/2021/03/18/ngx_mem_pool/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

@@ -702,7 +702,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-03-29 18:42:30'>2021-03-18 15:14</time>
+        创建时间:<time class="date" title='更新时间: 2021-03-29 18:45:01'>2021-03-18 15:14</time>
         
     </div>
     <div class="article-meta">
@@ -1383,7 +1383,7 @@ ngx_pool_delete_file(void *data)
 <p>不对齐时：cpu读取a只需要一次(0<del>3)，读取b需要两次(0</del>3,4<del>7)，读取c需要三次(4</del>7,8<del>11,12</del>15)；</p>
 <p>对齐时：cpu读取a需要一次(0<del>3)，读取b需要一次(4</del>7)，读取c需要两次(8<del>11,11</del>15)；</p>
 <p>不对齐时cpu需要读取6次，对齐时cpu只需要读取四次，虽然多占用了三字节的内存，但是减少了cpu读取内存的次数，提高 了效率，典型的空间换时间。</p>
-<p><img src="https://img.3amupupup.online/mem_align_3.png" alt="内存池结构"></p>
+<p><img src="https://img.3amupupup.online/mem_align_3.png" alt="内存对齐"></p>
 </li>
 </ol>
 <h5 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h5><ol>
@@ -1446,7 +1446,7 @@ ngx_palloc_block(ngx_pool_t *pool, size_t size)
     <p><span class="copy-title">文章字数:</span><span class="post-count">4.5k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-03-18, 15:14:01</p>
-    <p><span class="copy-title">最后更新:</span>2021-03-29, 18:42:30</p>
+    <p><span class="copy-title">最后更新:</span>2021-03-29, 18:45:01</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/18/ngx_mem_pool/" title="nginx内存池">https://duwei19961021.github.io/2021/03/18/ngx_mem_pool/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>BLOG</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="BLOG">
+  <title>CppPrimer | BLOG</title>
+  <meta name="keywords" content=" book ">
+  <meta name="description" content="CppPrimer | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="nginx数据类型：散列表 &#x2F;&#x2F; 存储key和value的元素 typedef struct {     void             *value;    &#x2F;&#x2F; 指向value的指针     u_short           len;  &#x2F;&#x2F; key的长度     u_char            name[1];  &#x2F;&#x2F; key长度是可变的，这里使用了c语言的柔性数组 } ngx_ha">
 <meta property="og:type" content="article">
@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://img.3amupupup.online/ngx_align_1.png">
 <meta property="og:image" content="https://img.3amupupup.online/soft_array.png">
 <meta property="article:published_time" content="2021-03-23T10:21:27.000Z">
-<meta property="article:modified_time" content="2021-03-27T15:46:48.215Z">
+<meta property="article:modified_time" content="2021-04-01T02:08:45.460Z">
 <meta property="article:author" content="拦云">
 <meta property="article:tag" content="hashtable">
 <meta name="twitter:card" content="summary">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/docker.png" />
@@ -132,6 +132,14 @@
             
         
     
+        
+            
+            <li><div data-rel="c++">c++<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
 </ul>
 <div class="left-bottom">
     <div class="menus">
@@ -143,7 +151,7 @@
     <div><a  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="47">
-<input type="hidden" id="yelog_site_word_count" value="62k">
+<input type="hidden" id="yelog_site_word_count" value="63.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -265,10 +273,6 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">buf</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a class="color1">queue</a>
     </li>
     
@@ -278,6 +282,10 @@
     
     <li class="article-tag-list-item">
         <a class="color5">hashtable</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">缓冲区</a>
     </li>
     
     <div class="clearfix"></div>
@@ -290,12 +298,12 @@
     
     <nav id="title-list-nav">
         
-        <a  class=""
-           href="/2021/03/18/CppPrimer/"
-           data-tag=""
+        <a  class="c++ "
+           href="/2021/04/13/CppPrimer/"
+           data-tag="book"
            data-author="" >
             <span class="post-title" title="CppPrimer">CppPrimer</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-04-13 11:26:55">2021/04/13</span>
         </a>
         
         <a  class=""
@@ -583,7 +591,7 @@
            data-tag="进程"
            data-author="" >
             <span class="post-title" title="进程">进程</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-18 11:09:00">2021/03/18</span>
         </a>
         
         <a  class="C语言 "
@@ -620,7 +628,7 @@
         
         <a  class="Nginx "
            href="/2021/03/18/ngx_buf/"
-           data-tag="buf"
+           data-tag="缓冲区"
            data-author="" >
             <span class="post-title" title="nginx缓冲区">nginx缓冲区</span>
             <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
@@ -676,12 +684,57 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-CppPrimer" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li></ol></li></ol>
+        <h1 class="article-title">CppPrimer</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="c++">c++</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color5">book</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2021-04-14 00:54:51'>2021-04-13 11:26</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.1k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一章"><span class="toc-text">第一章</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-类简介"><span class="toc-text">1.5 类简介</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-5-1-Sales-item类"><span class="toc-text">1.5.1 Sales_item类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-5-2-成员函数"><span class="toc-text">1.5.2 成员函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三章-字符串、向量和数组"><span class="toc-text">第三章 字符串、向量和数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-标准库类型-string"><span class="toc-text">3.2 标准库类型 string</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-1-定义和初始化-string-对象"><span class="toc-text">3.2.1 定义和初始化 string 对象</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#直接初始化和拷贝初始化"><span class="toc-text">直接初始化和拷贝初始化</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第四章-表达式"><span class="toc-text">第四章 表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-11-类型转换"><span class="toc-text">4.11 类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#何时发生类型转换"><span class="toc-text">何时发生类型转换</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-11-1-算术转换"><span class="toc-text">4.11.1 算术转换</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#算术转换"><span class="toc-text">算术转换</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#整形提升"><span class="toc-text">整形提升</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-11-3-显示类型转换"><span class="toc-text">4.11.3 显示类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#命名的强制类型转换"><span class="toc-text">命名的强制类型转换</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#static-cast"><span class="toc-text">static_cast</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#const-cast"><span class="toc-text">const_cast</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#reinterpret-cast"><span class="toc-text">reinterpret_cast</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -694,22 +747,108 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><h4 id="1-5-类简介"><a href="#1-5-类简介" class="headerlink" title="1.5 类简介"></a>1.5 类简介</h4><h5 id="1-5-1-Sales-item类"><a href="#1-5-1-Sales-item类" class="headerlink" title="1.5.1 Sales_item类"></a>1.5.1 Sales_item类</h5><p>c++中通过定义类来定义数据结构。一个类定义了一个类型，以及与其相关联的操作。</p>
+<h5 id="1-5-2-成员函数"><a href="#1-5-2-成员函数" class="headerlink" title="1.5.2 成员函数"></a>1.5.2 成员函数</h5><p>成员函数时定义为类一部分的函数，有时也被称为方法。</p>
+<h3 id="第三章-字符串、向量和数组"><a href="#第三章-字符串、向量和数组" class="headerlink" title="第三章 字符串、向量和数组"></a>第三章 字符串、向量和数组</h3><h4 id="3-2-标准库类型-string"><a href="#3-2-标准库类型-string" class="headerlink" title="3.2 标准库类型 string"></a>3.2 标准库类型 string</h4><h5 id="3-2-1-定义和初始化-string-对象"><a href="#3-2-1-定义和初始化-string-对象" class="headerlink" title="3.2.1 定义和初始化 string 对象"></a>3.2.1 定义和初始化 string 对象</h5><pre><code class="c">string s1;
+string s2 = s1;
+string s3 = &quot;heya&quot;;
+string s4(10,&#39;c&#39;);</code></pre>
+<h6 id="直接初始化和拷贝初始化"><a href="#直接初始化和拷贝初始化" class="headerlink" title="直接初始化和拷贝初始化"></a>直接初始化和拷贝初始化</h6><p>如果使用等号初始化一个变量，实际上执行的是拷贝初始化，编译器把等号右侧的初始值拷贝到新创建的对象中去。</p>
+<p>与之相反，如果不使用等号，则执行的是直接初始化。</p>
+<h3 id="第四章-表达式"><a href="#第四章-表达式" class="headerlink" title="第四章 表达式"></a>第四章 表达式</h3><h4 id="4-11-类型转换"><a href="#4-11-类型转换" class="headerlink" title="4.11 类型转换"></a>4.11 类型转换</h4><h6 id="何时发生类型转换"><a href="#何时发生类型转换" class="headerlink" title="何时发生类型转换"></a>何时发生类型转换</h6><ol>
+<li>在大多表达式中，比int类型小的整形值会提升为较大的整数类型。</li>
+<li>在条件中，非布尔值转换成布尔类型。</li>
+<li>初始化过程中，初始值转换成变量类型；在赋值语句中，右侧运算对象转换成左侧运算对象的类型。</li>
+<li>如果算数运算或关系运算的运算对象有多种类型，需要转换成同一种类型。</li>
+<li>函数调用时会发生类型转换。</li>
+</ol>
+<h5 id="4-11-1-算术转换"><a href="#4-11-1-算术转换" class="headerlink" title="4.11.1 算术转换"></a>4.11.1 算术转换</h5><h6 id="算术转换"><a href="#算术转换" class="headerlink" title="算术转换"></a>算术转换</h6><p>算术转换的含义是把一种算术类型转换成另一种算术类型。</p>
+<p>算术转换的规则定义了一套类型转换的层次，其中运算符的运算对象将转换成最宽的类型。例如：</p>
+<p>如果一个运算对象是long double，那么不论另外一个运算对象的类型是什么都会转换成long double</p>
+<h6 id="整形提升"><a href="#整形提升" class="headerlink" title="整形提升"></a>整形提升</h6><p>负责把小整数类型转换成较大的整数类型。(前提是转换后的类型要能容纳原类型所有可能的值)</p>
+<h5 id="4-11-3-显示类型转换"><a href="#4-11-3-显示类型转换" class="headerlink" title="4.11.3 显示类型转换"></a>4.11.3 显示类型转换</h5><h6 id="命名的强制类型转换"><a href="#命名的强制类型转换" class="headerlink" title="命名的强制类型转换"></a>命名的强制类型转换</h6><p>cast-name&lt;type&gt; (expression)，type是转换的目标类型，expression是要转换的值。如果type是引用类型，则结果是左值。cast-name是static_cast、</p>
+<p>dynamic_cast、const_cast和reinterpret_cast中的一种。dynamic_cast支持运行时类型识别。</p>
+<h6 id="static-cast"><a href="#static-cast" class="headerlink" title="static_cast"></a>static_cast</h6><p>任何具有明确定义的类型转换，只要不包含底层const，都可以使用static_cast。</p>
+<pre><code class="c">#include &lt;iostream&gt;
+using namespace std;
 
-        </article>
-        
-        
+int main()
+{
+    int a = 10;
+    int b = 3;
+    double ret = static_cast&lt;double&gt;(a) / b;
+    cout &lt;&lt; ret &lt;&lt; endl;
+    return 0;
+}
+// output: 3.33333</code></pre>
+<p>当需要把一个较大的算数类型赋值给较小的类型时，static_cast非常有用。此时强制类型转换的意思是告诉编译器和读者：我们知道且不在乎潜在的精度损失。</p>
+<p>static_cast对于编译器无法自动执行的类型转换也非常有用。例如，可以使用static_cast找回存在于void*指针中的值。</p>
+<pre><code class="c">#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    double d = 3.14;
+    void* p = &amp;d; // 任何非常量对象的地址都能存入void*
+    double *dp = static_cast&lt;double*&gt;(p); // 将void*转换回初始的指针类型
+    return 0;
+}</code></pre>
+<h6 id="const-cast"><a href="#const-cast" class="headerlink" title="const_cast"></a>const_cast</h6><blockquote>
+<p>顶层const表示指针本身是个常量，底层const表示指针指向的对象是一个常量。</p>
+</blockquote>
+<p>const_cast 只能改变运算对象的底层const：</p>
+<pre><code class="c">#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    char c = &#39;a&#39;;
+    char const *cp  = &amp;c;
+    char *p = const_cast&lt;char*&gt;(cp); // 如果不使用const_cast去掉const性质，那么*cp是无法修改的。
+    *p = &#39;b&#39;;
+    cout &lt;&lt; &quot;*cp = &quot; &lt;&lt; *cp &lt;&lt; &quot;,&quot; &lt;&lt; &quot;*p = &quot; &lt;&lt; *p &lt;&lt; endl;
+    return 0;
+}</code></pre>
+<pre><code class="c">const char *pc;
+char *p = const_cast&lt;char*&gt;(pc);</code></pre>
+<p>将常量对象转换成非常量对象的行为一般称为–去掉const性质。一旦抹去对象的const性质，编译器不再阻止对该对象进行写操作。如果一个对象本身不是一个常量，使用强制类型转换获得写权限是合法行为。</p>
+<pre><code class="c">const char *cp;
+char *p = const_cast&lt;char*&gt;(cp); // 不能转换掉const性质，const_cast只能改变运算对象的底层const
+static_cast&lt;string&gt;(cp);
+const_cast&lt;string&gt;(cp); // 错误，const_cast只能改变常量属性</code></pre>
+<h6 id="reinterpret-cast"><a href="#reinterpret-cast" class="headerlink" title="reinterpret_cast"></a>reinterpret_cast</h6><p>reinterpret_cast 通常为运算对象的位模式提供较低层次上的重新解释。</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>CppPrimer</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.1k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
+    <p><span class="copy-title">发布时间:</span>2021-04-13, 11:26:55</p>
+    <p><span class="copy-title">最后更新:</span>2021-04-14, 00:54:51</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/04/13/CppPrimer/" title="CppPrimer">https://duwei19961021.github.io/2021/04/13/CppPrimer/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2019-2021 duwei</p>
@@ -739,7 +878,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#内存','#buf','#queue','#list','#hashtable',],
+            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#内存','#queue','#list','#hashtable','#缓冲区',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

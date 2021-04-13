@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>nginx缓冲区 | BLOG</title>
-  <meta name="keywords" content=" buf ">
+  <meta name="keywords" content=" 缓冲区 ">
   <meta name="description" content="nginx缓冲区 | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="nginx数据类型：散列表 &#x2F;&#x2F; 存储key和value的元素 typedef struct {     void             *value;    &#x2F;&#x2F; 指向value的指针     u_short           len;  &#x2F;&#x2F; key的长度     u_char            name[1];  &#x2F;&#x2F; key长度是可变的，这里使用了c语言的柔性数组 } ngx_ha">
@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://img.3amupupup.online/ngx_align_1.png">
 <meta property="og:image" content="https://img.3amupupup.online/soft_array.png">
 <meta property="article:published_time" content="2021-03-23T10:21:27.000Z">
-<meta property="article:modified_time" content="2021-03-27T15:46:48.215Z">
+<meta property="article:modified_time" content="2021-04-01T02:08:45.460Z">
 <meta property="article:author" content="拦云">
 <meta property="article:tag" content="hashtable">
 <meta name="twitter:card" content="summary">
@@ -132,6 +132,14 @@
             
         
     
+        
+            
+            <li><div data-rel="c++">c++<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
 </ul>
 <div class="left-bottom">
     <div class="menus">
@@ -143,7 +151,7 @@
     <div><a  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="47">
-<input type="hidden" id="yelog_site_word_count" value="62k">
+<input type="hidden" id="yelog_site_word_count" value="63.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -265,10 +273,6 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">buf</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a class="color1">queue</a>
     </li>
     
@@ -278,6 +282,10 @@
     
     <li class="article-tag-list-item">
         <a class="color5">hashtable</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">缓冲区</a>
     </li>
     
     <div class="clearfix"></div>
@@ -290,12 +298,12 @@
     
     <nav id="title-list-nav">
         
-        <a  class=""
-           href="/2021/03/18/CppPrimer/"
-           data-tag=""
+        <a  class="c++ "
+           href="/2021/04/13/CppPrimer/"
+           data-tag="book"
            data-author="" >
             <span class="post-title" title="CppPrimer">CppPrimer</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-04-13 11:26:55">2021/04/13</span>
         </a>
         
         <a  class=""
@@ -583,7 +591,7 @@
            data-tag="进程"
            data-author="" >
             <span class="post-title" title="进程">进程</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-18 11:09:00">2021/03/18</span>
         </a>
         
         <a  class="C语言 "
@@ -620,7 +628,7 @@
         
         <a  class="Nginx "
            href="/2021/03/18/ngx_buf/"
-           data-tag="buf"
+           data-tag="缓冲区"
            data-author="" >
             <span class="post-title" title="nginx缓冲区">nginx缓冲区</span>
             <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
@@ -695,19 +703,19 @@
         
         <span class="tag">
             
-            <a class="color4">buf</a>
+            <a class="color4">缓冲区</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-03-21 22:58:16'>2021-03-18 15:14</time>
+        创建时间:<time class="date" title='更新时间: 2021-03-31 11:42:05'>2021-03-18 15:14</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:142</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -726,7 +734,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#nginx缓冲区"><span class="toc-text">nginx缓冲区</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#数据结构"><span class="toc-text">数据结构</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -742,7 +750,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h4 id="nginx缓冲区"><a href="#nginx缓冲区" class="headerlink" title="nginx缓冲区"></a>nginx缓冲区</h4><h5 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h5><pre><code class="c">struct ngx_buf_s {
+    u_char          *pos;           /* 待处理数据的开始标记  */
+    u_char          *last;          /* 待处理数据的结尾标记 */
+    off_t            file_pos;
+    off_t            file_last;
+
+    u_char          *start;         /* start of buffer */
+    u_char          *end;           /* end of buffer */
+    ngx_buf_tag_t    tag;
+    ngx_file_t      *file;
+    ngx_buf_t       *shadow;
+
+
+    /* the buf&#39;s content could be changed */
+    unsigned         temporary:1;   /* 标志位，为1时，内存可修改 */
+
+    /*
+     * the buf&#39;s content is in a memory cache or in a read only memory
+     * and must not be changed
+     */
+    unsigned         memory:1;
+
+    /* the buf&#39;s content is mmap()ed and must not be changed */
+    unsigned         mmap:1;
+
+    unsigned         recycled:1;
+    unsigned         in_file:1;
+    unsigned         flush:1;
+    unsigned         sync:1;
+    unsigned         last_buf:1;
+    unsigned         last_in_chain:1;
+
+    unsigned         last_shadow:1;
+    unsigned         temp_file:1;
+
+    /* STUB */ int   num;
+};</code></pre>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
     </div>
@@ -752,10 +797,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>nginx缓冲区</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">0</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">142</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-03-18, 15:14:01</p>
-    <p><span class="copy-title">最后更新:</span>2021-03-21, 22:58:16</p>
+    <p><span class="copy-title">最后更新:</span>2021-03-31, 11:42:05</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/18/ngx_buf/" title="nginx缓冲区">https://duwei19961021.github.io/2021/03/18/ngx_buf/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -800,7 +845,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#内存','#buf','#queue','#list','#hashtable',],
+            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#内存','#queue','#list','#hashtable','#缓冲区',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

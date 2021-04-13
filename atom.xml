@@ -6,7 +6,7 @@
   <link href="https://duwei19961021.github.io/atom.xml" rel="self"/>
   
   <link href="https://duwei19961021.github.io/"/>
-  <updated>2021-04-13T16:54:51.193Z</updated>
+  <updated>2021-04-13T16:59:09.945Z</updated>
   <id>https://duwei19961021.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://duwei19961021.github.io/2021/04/13/CppPrimer/"/>
     <id>https://duwei19961021.github.io/2021/04/13/CppPrimer/</id>
     <published>2021-04-13T03:26:55.000Z</published>
-    <updated>2021-04-13T16:54:51.193Z</updated>
+    <updated>2021-04-13T16:59:09.945Z</updated>
     
     <content type="html"><![CDATA[<h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><h4 id="1-5-类简介"><a href="#1-5-类简介" class="headerlink" title="1.5 类简介"></a>1.5 类简介</h4><h5 id="1-5-1-Sales-item类"><a href="#1-5-1-Sales-item类" class="headerlink" title="1.5.1 Sales_item类"></a>1.5.1 Sales_item类</h5><p>c++中通过定义类来定义数据结构。一个类定义了一个类型，以及与其相关联的操作。</p><h5 id="1-5-2-成员函数"><a href="#1-5-2-成员函数" class="headerlink" title="1.5.2 成员函数"></a>1.5.2 成员函数</h5><p>成员函数时定义为类一部分的函数，有时也被称为方法。</p><h3 id="第三章-字符串、向量和数组"><a href="#第三章-字符串、向量和数组" class="headerlink" title="第三章 字符串、向量和数组"></a>第三章 字符串、向量和数组</h3><h4 id="3-2-标准库类型-string"><a href="#3-2-标准库类型-string" class="headerlink" title="3.2 标准库类型 string"></a>3.2 标准库类型 string</h4><h5 id="3-2-1-定义和初始化-string-对象"><a href="#3-2-1-定义和初始化-string-对象" class="headerlink" title="3.2.1 定义和初始化 string 对象"></a>3.2.1 定义和初始化 string 对象</h5><pre><code class="c">string s1;string s2 = s1;string s3 = &quot;heya&quot;;string s4(10,&#39;c&#39;);</code></pre><h6 id="直接初始化和拷贝初始化"><a href="#直接初始化和拷贝初始化" class="headerlink" title="直接初始化和拷贝初始化"></a>直接初始化和拷贝初始化</h6><p>如果使用等号初始化一个变量，实际上执行的是拷贝初始化，编译器把等号右侧的初始值拷贝到新创建的对象中去。</p><p>与之相反，如果不使用等号，则执行的是直接初始化。</p><h3 id="第四章-表达式"><a href="#第四章-表达式" class="headerlink" title="第四章 表达式"></a>第四章 表达式</h3><h4 id="4-11-类型转换"><a href="#4-11-类型转换" class="headerlink" title="4.11 类型转换"></a>4.11 类型转换</h4><h6 id="何时发生类型转换"><a href="#何时发生类型转换" class="headerlink" title="何时发生类型转换"></a>何时发生类型转换</h6><ol><li>在大多表达式中，比int类型小的整形值会提升为较大的整数类型。</li><li>在条件中，非布尔值转换成布尔类型。</li><li>初始化过程中，初始值转换成变量类型；在赋值语句中，右侧运算对象转换成左侧运算对象的类型。</li><li>如果算数运算或关系运算的运算对象有多种类型，需要转换成同一种类型。</li><li>函数调用时会发生类型转换。</li></ol><h5 id="4-11-1-算术转换"><a href="#4-11-1-算术转换" class="headerlink" title="4.11.1 算术转换"></a>4.11.1 算术转换</h5><h6 id="算术转换"><a href="#算术转换" class="headerlink" title="算术转换"></a>算术转换</h6><p>算术转换的含义是把一种算术类型转换成另一种算术类型。</p><p>算术转换的规则定义了一套类型转换的层次，其中运算符的运算对象将转换成最宽的类型。例如：</p><p>如果一个运算对象是long double，那么不论另外一个运算对象的类型是什么都会转换成long double</p><h6 id="整形提升"><a href="#整形提升" class="headerlink" title="整形提升"></a>整形提升</h6><p>负责把小整数类型转换成较大的整数类型。(前提是转换后的类型要能容纳原类型所有可能的值)</p><h5 id="4-11-3-显示类型转换"><a href="#4-11-3-显示类型转换" class="headerlink" title="4.11.3 显示类型转换"></a>4.11.3 显示类型转换</h5><h6 id="命名的强制类型转换"><a href="#命名的强制类型转换" class="headerlink" title="命名的强制类型转换"></a>命名的强制类型转换</h6><p>cast-name&lt;type&gt; (expression)，type是转换的目标类型，expression是要转换的值。如果type是引用类型，则结果是左值。cast-name是static_cast、</p><p>dynamic_cast、const_cast和reinterpret_cast中的一种。dynamic_cast支持运行时类型识别。</p><h6 id="static-cast"><a href="#static-cast" class="headerlink" title="static_cast"></a>static_cast</h6><p>任何具有明确定义的类型转换，只要不包含底层const，都可以使用static_cast。</p><pre><code class="c">#include &lt;iostream&gt;using namespace std;int main(){    int a = 10;    int b = 3;    double ret = static_cast&lt;double&gt;(a) / b;    cout &lt;&lt; ret &lt;&lt; endl;    return 0;}// output: 3.33333</code></pre><p>当需要把一个较大的算数类型赋值给较小的类型时，static_cast非常有用。此时强制类型转换的意思是告诉编译器和读者：我们知道且不在乎潜在的精度损失。</p><p>static_cast对于编译器无法自动执行的类型转换也非常有用。例如，可以使用static_cast找回存在于void*指针中的值。</p><pre><code class="c">#include &lt;iostream&gt;using namespace std;int main(){    double d = 3.14;    void* p = &amp;d; // 任何非常量对象的地址都能存入void*    double *dp = static_cast&lt;double*&gt;(p); // 将void*转换回初始的指针类型    return 0;}</code></pre><h6 id="const-cast"><a href="#const-cast" class="headerlink" title="const_cast"></a>const_cast</h6><blockquote><p>顶层const表示指针本身是个常量，底层const表示指针指向的对象是一个常量。</p></blockquote><p>const_cast 只能改变运算对象的底层const：</p><pre><code class="c">#include &lt;iostream&gt;using namespace std;int main(){    char c = &#39;a&#39;;    char const *cp  = &amp;c;    char *p = const_cast&lt;char*&gt;(cp); // 如果不使用const_cast去掉const性质，那么*cp是无法修改的。    *p = &#39;b&#39;;    cout &lt;&lt; &quot;*cp = &quot; &lt;&lt; *cp &lt;&lt; &quot;,&quot; &lt;&lt; &quot;*p = &quot; &lt;&lt; *p &lt;&lt; endl;    return 0;}</code></pre><pre><code class="c">const char *pc;char *p = const_cast&lt;char*&gt;(pc);</code></pre><p>将常量对象转换成非常量对象的行为一般称为–去掉const性质。一旦抹去对象的const性质，编译器不再阻止对该对象进行写操作。如果一个对象本身不是一个常量，使用强制类型转换获得写权限是合法行为。</p><pre><code class="c">const char *cp;char *p = const_cast&lt;char*&gt;(cp); // 不能转换掉const性质，const_cast只能改变运算对象的底层conststatic_cast&lt;string&gt;(cp);const_cast&lt;string&gt;(cp); // 错误，const_cast只能改变常量属性</code></pre><h6 id="reinterpret-cast"><a href="#reinterpret-cast" class="headerlink" title="reinterpret_cast"></a>reinterpret_cast</h6><p>reinterpret_cast 通常为运算对象的位模式提供较低层次上的重新解释。</p>]]></content>
     
@@ -33,7 +33,7 @@
     
     
     
-    <category term="c++" scheme="https://duwei19961021.github.io/categories/c/"/>
+    <category term="C语言" scheme="https://duwei19961021.github.io/categories/C%E8%AF%AD%E8%A8%80/"/>
     
     
     <category term="book" scheme="https://duwei19961021.github.io/tags/book/"/>

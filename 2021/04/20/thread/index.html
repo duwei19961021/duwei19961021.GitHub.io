@@ -6,23 +6,20 @@
   <meta name="keywords" content=" 线程 ">
   <meta name="description" content="thread | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="nginx数据类型：散列表 &#x2F;&#x2F; 存储key和value的元素 typedef struct {     void             *value;    &#x2F;&#x2F; 指向value的指针     u_short           len;  &#x2F;&#x2F; key的长度     u_char            name[1];  &#x2F;&#x2F; key长度是可变的，这里使用了c语言的柔性数组 } ngx_ha">
+<meta name="description" content="继承1、什么是继承？继承是面向对象程序设计使代码可以复用的重要手段，允许程序员在保持原有类特性的基础上进行扩展，增加功能，这样产生的新类叫派生类。继承是类设计层次的复用。 class Person { public:     void speak()     {         ;     }      void sleep()     {         ;     }  public:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nginx散列表">
-<meta property="og:url" content="https://duwei19961021.github.io/2021/03/23/ngx_hash/index.html">
+<meta property="og:title" content="c++继承">
+<meta property="og:url" content="https://duwei19961021.github.io/2021/04/25/c++inheritance/index.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="nginx数据类型：散列表 &#x2F;&#x2F; 存储key和value的元素 typedef struct {     void             *value;    &#x2F;&#x2F; 指向value的指针     u_short           len;  &#x2F;&#x2F; key的长度     u_char            name[1];  &#x2F;&#x2F; key长度是可变的，这里使用了c语言的柔性数组 } ngx_ha">
+<meta property="og:description" content="继承1、什么是继承？继承是面向对象程序设计使代码可以复用的重要手段，允许程序员在保持原有类特性的基础上进行扩展，增加功能，这样产生的新类叫派生类。继承是类设计层次的复用。 class Person { public:     void speak()     {         ;     }      void sleep()     {         ;     }  public:">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img.3amupupup.online/ngx_hash_2.png">
-<meta property="og:image" content="https://img.3amupupup.online/ngx_hash_test_1.png">
-<meta property="og:image" content="https://img.3amupupup.online/ngx_align_1.png">
-<meta property="og:image" content="https://img.3amupupup.online/soft_array.png">
-<meta property="article:published_time" content="2021-03-23T10:21:27.000Z">
-<meta property="article:modified_time" content="2021-04-01T02:08:45.460Z">
+<meta property="og:image" content="https://img.3amupupup.online/CppInheritance.png">
+<meta property="article:published_time" content="2021-04-25T14:55:23.000Z">
+<meta property="article:modified_time" content="2021-04-25T17:24:54.565Z">
 <meta property="article:author" content="拦云">
-<meta property="article:tag" content="hashtable">
+<meta property="article:tag" content="c++">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img.3amupupup.online/ngx_hash_2.png">
+<meta name="twitter:image" content="https://img.3amupupup.online/CppInheritance.png">
 
 
 <link rel="icon" href="/img/favicon.ico">
@@ -78,7 +75,7 @@
     
         
             
-            <li><div data-rel="C语言">C语言<small>(15)</small></div>
+            <li><div data-rel="C语言">C语言<small>(14)</small></div>
                 
             </li>
             
@@ -126,7 +123,7 @@
     
         
             
-            <li><div data-rel="操作系统">操作系统<small>(4)</small></div>
+            <li><div data-rel="操作系统">操作系统<small>(5)</small></div>
                 
             </li>
             
@@ -143,7 +140,7 @@
     <div><a  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="50">
-<input type="hidden" id="yelog_site_word_count" value="70.2k">
+<input type="hidden" id="yelog_site_word_count" value="71.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -694,7 +691,7 @@
             <span class="post-date" title="2021-04-25 22:55:23">2021/04/25</span>
         </a>
         
-        <a  class="C语言 "
+        <a  class="操作系统 "
            href="/2021/04/20/thread/"
            data-tag="线程"
            data-author="" >
@@ -724,7 +721,7 @@
         
         <span class="book">
             
-                <a  data-rel="C语言">C语言</a>
+                <a  data-rel="操作系统">操作系统</a>
             
         </span>
         
@@ -738,12 +735,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-04-20 21:10:50'>2021-04-20 17:02</time>
+        创建时间:<time class="date" title='更新时间: 2021-04-26 01:29:13'>2021-04-20 17:02</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:329</span>
+        <span>字数:2.1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -762,7 +759,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、线程概念"><span class="toc-text">1、线程概念</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#什么是线程？"><span class="toc-text">什么是线程？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#线程优点"><span class="toc-text">线程优点</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、线程概念"><span class="toc-text">1、线程概念</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#什么是线程？"><span class="toc-text">什么是线程？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#线程优点"><span class="toc-text">线程优点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#线程有点"><span class="toc-text">线程有点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#线程异常"><span class="toc-text">线程异常</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#进程和线程"><span class="toc-text">进程和线程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#进程的多个线程共享"><span class="toc-text">进程的多个线程共享</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#互斥锁"><span class="toc-text">互斥锁</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#牛刀小试"><span class="toc-text">牛刀小试</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#线程退出"><span class="toc-text">线程退出</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#线程分离"><span class="toc-text">线程分离</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#多线程抢票"><span class="toc-text">多线程抢票</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#锁的本质"><span class="toc-text">锁的本质</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#互斥量本质研究"><span class="toc-text">互斥量本质研究</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#同步锁"><span class="toc-text">同步锁</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#牛刀小试-1"><span class="toc-text">牛刀小试</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -795,7 +792,339 @@
 </li>
 <li><p>线程占用的资源少</p>
 </li>
+<li><p>能充分利用多处理器的可并行数量</p>
+</li>
+<li><p>在等待慢I/O操作结束时，程序可执行其它计算任务。</p>
+</li>
+<li><p>计算密集型应用，为了能在多处理器系统上运行，将计算分割到多个线程中实现</p>
+</li>
+<li><p>I/O密集应用，为了提高性能，将I/O操作重叠，线程可以同时等待不同的I/O操作。</p>
+</li>
 </ul>
+<h5 id="线程有点"><a href="#线程有点" class="headerlink" title="线程有点"></a>线程有点</h5><ul>
+<li><p>性能损失</p>
+<p>一个很少被外部事件阻塞的计算密集型线程往往无法与其它线程共享一个处理器。如果计算密集型线程的数量比可用处理器多，那么可能会有较大的性能损失，这里性能的损失指的是增加了额外的同步和调度开销，而可用的资源不变。</p>
+</li>
+<li><p>健壮性降低</p>
+<p>编写多线程需要更全面更深入的考虑，在一个多线程程序里，因时间分配上的偏差或者共享了不该共享的变量而造成的不良影响的可能性是很大的，换句话说线程之间缺乏保护。</p>
+</li>
+<li><p>缺乏访问控制</p>
+<p>进程是访问控制的基本粒度，在一个线程中调用某些OS函数会对整个进程造成影响。</p>
+</li>
+<li><p>编程难度提高</p>
+</li>
+</ul>
+<h5 id="线程异常"><a href="#线程异常" class="headerlink" title="线程异常"></a>线程异常</h5><p>线程时进程的执行分支，线程出现异常，就类似进程出现异常，进而触发信号机制，终止进程，进程终止，该进程内的所有线程也就随即退出。</p>
+<h5 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h5><ul>
+<li>进程是资源分配的基本单位</li>
+<li>线程时调度的基本单位</li>
+<li>线程共享进程数据，但也拥有自己的一部分数据：<ul>
+<li>线程ID</li>
+<li>*一组寄存器(独立的硬件上下文)</li>
+<li>*栈</li>
+<li>errno</li>
+<li>信号屏蔽字</li>
+<li>调度优先级</li>
+</ul>
+</li>
+</ul>
+<h5 id="进程的多个线程共享"><a href="#进程的多个线程共享" class="headerlink" title="进程的多个线程共享"></a>进程的多个线程共享</h5><p>同一地址空间，因此Text Segment(代码段)、Data Segment(数据区)都是共享的，如果定义一个函数，在各线程中都可以调用，如果定义一个全局变量，在各个线程中都可以访问，除此之外，线程还共享以下进程资源和环境：</p>
+<ul>
+<li>文件描述符</li>
+<li>每种信号的处理方式(SIG_IGN、SIG_DFL)</li>
+<li>当前工作目录</li>
+<li>用户id和组id</li>
+</ul>
+<h5 id="互斥锁"><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h5><h6 id="牛刀小试"><a href="#牛刀小试" class="headerlink" title="牛刀小试"></a>牛刀小试</h6><pre><code class="c">#include &lt;pthread.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;unistd.h&gt;
+
+void *thread_run(void *arg)
+{
+    while(1)
+    {
+        printf(&quot;I am %s\n&quot;, (char*)arg);
+        sleep(1);
+    }
+}
+
+int main()
+{
+    pthread_t tid;
+
+    int ret = pthread_create(&amp;tid, NULL, thread_run, (void*)&quot;thread 1&quot;); // 创建线程，成功返回0，失败返回相对应的错误码。
+
+    while(1)
+    {
+        printf(&quot;I am thread!\n&quot;);
+        sleep(2);
+    }
+}</code></pre>
+<pre><code class="shell">☁  ~  ps aux |grep test
+root     27491  0.0  0.0  14568   380 pts/0    Sl+  21:41   0:00 ./test
+☁  ~  ps -al
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S     0 27491 26311  0  80   0 -  3642 hrtime pts/0    00:00:00 test
+0 R     0 27537 27501  0  80   0 - 38265 -      pts/1    00:00:00 ps
+☁  ~  ps -aL
+  PID   LWP TTY          TIME CMD
+27491 27491 pts/0    00:00:00 test
+27491 27492 pts/0    00:00:00 test
+27543 27543 pts/1    00:00:00 ps
+
+# LWP ———— 轻量级进程</code></pre>
+<h6 id="线程退出"><a href="#线程退出" class="headerlink" title="线程退出"></a>线程退出</h6><pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;pthread.h&gt;
+#include &lt;unistd.h&gt;
+
+void* thread_run(void* arg)
+{
+    while(1)
+    {
+        printf(&quot;thread 1: %lu, pid: %d\n&quot;,pthread_self(), getpid());
+        sleep(1);
+    }
+
+//    pthread_exit((void*)99); // 终止线程
+//    return (void*)10;
+}
+
+int main()
+{
+    pthread_t tid;
+
+    int i;
+
+    pthread_create(&amp;tid, NULL, thread_run, &quot;thread 1&quot;);
+
+    while(1)
+    {
+        printf(&quot;main thread: %lu, pid: %d\n&quot;,pthread_self(), getpid());
+        sleep(10);
+        break;
+    }
+
+    pthread_cancel(tid); // 使线程退出
+
+    void* ret = NULL;
+
+    pthread_join(tid, &amp;ret); // 获取线程的退出码
+
+    printf(&quot;thread return number: %d\n&quot;, (long long)ret);
+
+    return 0;
+}</code></pre>
+<h6 id="线程分离"><a href="#线程分离" class="headerlink" title="线程分离"></a>线程分离</h6><blockquote>
+<ul>
+<li>默认情况下，新创建的进程是joinable的，线程退出后，需要对其进行pthread_join操作，否则无法释放资源，从而导致系统资源泄露。</li>
+<li>如果不关心线程的返回值，join是一种负担，这个时候可以告诉操作系统，当线程退出时，自动释放线程资源。</li>
+</ul>
+</blockquote>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;pthread.h&gt;
+#include &lt;unistd.h&gt;
+
+void* thread_run(void* arg)
+{
+    pthread_detach(pthread_self());
+
+    while(1)
+    {
+        printf(&quot;thread 1: %lu, pid: %d\n&quot;,pthread_self(), getpid());
+        sleep(1);
+        break;
+    }
+
+    return (void*)10;
+}
+
+int main()
+{
+    pthread_t tid;
+
+    int i;
+
+    pthread_create(&amp;tid, NULL, thread_run, &quot;thread 1&quot;);
+
+    while(1)
+    {
+        printf(&quot;main thread: %lu, pid: %d\n&quot;,pthread_self(), getpid());
+        sleep(1);
+        break;
+    }
+
+    pthread_cancel(tid);
+
+    void* ret = NULL;
+
+    pthread_join(tid, &amp;ret);
+
+    printf(&quot;thread return number: %d\n&quot;, (long long)ret);
+
+    return 0;
+}
+
+/*
+  main thread: 140614304589568, pid: 9352
+  thread 1: 140614296327936, pid: 9352
+  thread return number: 0
+*/</code></pre>
+<h6 id="多线程抢票"><a href="#多线程抢票" class="headerlink" title="多线程抢票"></a>多线程抢票</h6><pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;pthread.h&gt;
+#include &lt;unistd.h&gt;
+
+#define N 10
+int tickets = 10000;
+
+pthread_mutex_t lock;
+
+void* get(void* arg)
+{
+    usleep(1000);
+
+    int num = (int)arg;
+
+    while(1)
+    {
+        usleep(100);
+
+        pthread_mutex_lock(&amp;lock);
+
+        if(tickets &gt; 0)
+        {
+            printf(&quot;thread %d get ticket: %d\n&quot;, num, tickets);
+
+            tickets--;
+
+            pthread_mutex_unlock(&amp;lock);
+        }
+        else
+        {
+            pthread_mutex_unlock(&amp;lock);
+            break;
+        }
+    }
+}
+
+int main()
+{
+    pthread_mutex_init(&amp;lock, NULL);
+
+    int i;
+
+    pthread_t arr[N];
+
+    for(i = 0; i &lt; N; i++)
+    {
+        pthread_create(arr+i, NULL, get, (void*)i);
+    }
+
+    for(i = 0; i &lt; N; i++)
+    {
+        pthread_join(arr[i], NULL);
+    }
+
+    pthread_mutex_destroy(&amp;lock);
+
+    return 0;
+}</code></pre>
+<h6 id="锁的本质"><a href="#锁的本质" class="headerlink" title="锁的本质"></a>锁的本质</h6><ol>
+<li><p>对临界区进行保护，所有执行的线程都必须遵守这个规则。</p>
+</li>
+<li><p>lock -&gt; 访问临界区 -&gt; unlock。</p>
+</li>
+<li><p>所有线程必须看到同一把锁，所以说：锁本身就是临界资源！锁必须保证自身安全！申请锁的过程，不能有中间状态，lock -&gt; 原子性，unlock -&gt; 原子性。</p>
+</li>
+<li><p>lock -&gt; 访问临界区(花时间) -&gt; unlock，在特定线程/进程拥有锁的时候，期间有新线程/进程过来申请锁，一定申请不到！新线程该如何？阻塞，本质：将进程/线程对应的pcb投入到操作系统的进程等待队列，unlock之后进行进程/线程的唤醒操作！</p>
+</li>
+<li><p>如何理解锁</p>
+<pre><code class="c">struct mutex
+{
+    int lock; // 0/1
+    wait_queue *head;
+    ...
+}</code></pre>
+</li>
+<li><p>对锁的相关操作</p>
+<pre><code class="c">pthread_mutex_init：初始化锁
+pthread_mutex_destroy：释放锁，锁也是资源
+pthread_mutex_unlock：上锁
+pthread_mutex_unlock：解锁</code></pre>
+</li>
+<li><p>一次保证只有一个线程进入临界区，访问临界资源，就叫做互斥。</p>
+</li>
+<li><p>加锁为什么一般效率比较低，或者影响效率？所有任务都串行了；线程切换会带来cpu的消耗，上下文切换。</p>
+</li>
+</ol>
+<h6 id="互斥量本质研究"><a href="#互斥量本质研究" class="headerlink" title="互斥量本质研究"></a>互斥量本质研究</h6><blockquote>
+<p>为了实现互斥锁，大多数体系结构都提供了swap或者exchange指令，该指令的作用是把寄存器和内存单元数据交换，由于只有一条指令，保证了原子性。</p>
+</blockquote>
+<pre><code>lock:
+    move $0, $al
+    xchgb $al, mutex
+    if(al &gt; 0)
+    {
+        return 0;
+    }
+    else
+    {
+        挂起等待;
+    }
+
+    goto lock;
+
+    unlock:
+        move $1, mutex
+        唤醒等待mutex线程
+        return 0;</code></pre><h5 id="同步锁"><a href="#同步锁" class="headerlink" title="同步锁"></a>同步锁</h5><h6 id="牛刀小试-1"><a href="#牛刀小试-1" class="headerlink" title="牛刀小试"></a>牛刀小试</h6><pre><code class="c">#include &lt;pthread.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+pthread_cond_t cond;
+pthread_mutex_t lock;
+
+void* thread_run1(void* arg)
+{
+    const char* name = (char*)arg;
+    while(1)
+    {
+        pthread_cond_wait(&amp;cond, &amp;lock);
+        printf(&quot;%s, activing....\n&quot;,name);
+        printf(&quot;\n&quot;);
+    }
+}
+
+void* thread_run2(void* arg)
+{
+    const char* name = (char*)arg;
+    while(1)
+    {
+        sleep(1);
+        pthread_cond_signal(&amp;cond);
+        printf(&quot;%s, signal to thread1 done....\n&quot;,name);
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main()
+{
+    pthread_t t1,t2;
+
+    pthread_cond_init(&amp;cond, NULL);
+
+    pthread_mutex_init(&amp;lock, NULL);
+
+    pthread_create(&amp;t1, NULL, thread_run1, (void *)&quot;thread 1&quot;);
+
+    pthread_create(&amp;t2, NULL, thread_run2, (void *)&quot;thread 2&quot;);
+
+    pthread_join(&amp;t1, NULL);
+
+    pthread_join(&amp;t2, NULL);
+
+    return 0;
+}</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
@@ -806,10 +1135,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>thread</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">329</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">2.1k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-04-20, 17:02:24</p>
-    <p><span class="copy-title">最后更新:</span>2021-04-20, 21:10:50</p>
+    <p><span class="copy-title">最后更新:</span>2021-04-26, 01:29:13</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/04/20/thread/" title="thread">https://duwei19961021.github.io/2021/04/20/thread/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

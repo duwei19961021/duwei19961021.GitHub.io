@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>C语言预处理 | BLOG</title>
-  <meta name="keywords" content=" c ">
-  <meta name="description" content="C语言预处理 | BLOG">
+  <title>c++继承 | BLOG</title>
+  <meta name="keywords" content=" c++ ">
+  <meta name="description" content="c++继承 | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="nginx数据类型：散列表 &#x2F;&#x2F; 存储key和value的元素 typedef struct {     void             *value;    &#x2F;&#x2F; 指向value的指针     u_short           len;  &#x2F;&#x2F; key的长度     u_char            name[1];  &#x2F;&#x2F; key长度是可变的，这里使用了c语言的柔性数组 } ngx_ha">
 <meta property="og:type" content="article">
@@ -714,9 +714,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-C语言预处理" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-c++inheritance" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">C语言预处理</h1>
+        <h1 class="article-title">c++继承</h1>
     
     <div class="article-meta">
         
@@ -731,19 +731,19 @@
         
         <span class="tag">
             
-            <a class="color2">c</a>
+            <a class="color4">c++</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-03-18 11:09:52'>2021-03-18 11:09</time>
+        创建时间:<time class="date" title='更新时间: 2021-04-26 01:24:54'>2021-04-25 22:55</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:195</span>
+        <span>字数:1.6k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -762,7 +762,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、预编译-预处理-gcc-E-test-c-gt-test-i，文本操作"><span class="toc-text">1、预编译&#x2F;预处理(gcc -E test.c &gt; test.i，文本操作)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、编译-gcc-S-test-i，将c代码编译成汇编代码"><span class="toc-text">2、编译(gcc -S test.i，将c代码编译成汇编代码)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、汇编-gcc-c-test-s"><span class="toc-text">3、汇编(gcc -c test.s)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、链接"><span class="toc-text">4、链接</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#5、宏"><span class="toc-text">5、宏</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#继承"><span class="toc-text">继承</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、什么是继承？"><span class="toc-text">1、什么是继承？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、继承定义"><span class="toc-text">2、继承定义</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#继承关系和访问限定符"><span class="toc-text">继承关系和访问限定符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#继承父类，子类访问父类成员的变化。"><span class="toc-text">继承父类，子类访问父类成员的变化。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基类和派生类对象赋值转换（只存在于public继承）"><span class="toc-text">基类和派生类对象赋值转换（只存在于public继承）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3、继承中的作用域"><span class="toc-text">3、继承中的作用域</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4、派生类的默认成员函数"><span class="toc-text">4、派生类的默认成员函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5、继承与友元"><span class="toc-text">5、继承与友元</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6、继承和静态成员"><span class="toc-text">6、继承和静态成员</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -778,45 +778,368 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/image/image-20201020173044074.png" alt="image-20201020173044074"></p>
-<pre><code class="c">#include &lt;stdio.h&gt;
-
-int g_val = 1000;
-
-int main(){
-    int i = 0;
-    int arr[10] = { 0 };
-    for (i = 0; i &lt; 10; i++){
-        arr[i] = i;
+        <h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><h5 id="1、什么是继承？"><a href="#1、什么是继承？" class="headerlink" title="1、什么是继承？"></a>1、什么是继承？</h5><p>继承是面向对象程序设计使代码可以复用的重要手段，允许程序员在保持原有类特性的基础上进行扩展，增加功能，这样产生的新类叫派生类。继承是类设计层次的复用。</p>
+<pre><code class="c++">class Person
+{
+public:
+    void speak()
+    {
+        ;
     }
-    for (i = 0; i &lt; 10; i++){
-        printf(&quot;%d &quot;, arr[i]);
+
+    void sleep()
+    {
+        ;
     }
+
+public:
+    int age;
+    string name;
+
+private:
+    float weight;
+};
+
+class boy: public Person
+{
+
+};
+
+class girl: public Person
+{
+
+};</code></pre>
+<p>boy类和girl类都具有speak()、sleep()行为，以及年龄、名字属性，它们都可以从Person类中继承，而没有必要在他们自己的类中再次声明定义。在这个例子中：Person类称为父类或者基类，boy、girl类称为子类或者派生类。</p>
+<h5 id="2、继承定义"><a href="#2、继承定义" class="headerlink" title="2、继承定义"></a>2、继承定义</h5><h6 id="继承关系和访问限定符"><a href="#继承关系和访问限定符" class="headerlink" title="继承关系和访问限定符"></a>继承关系和访问限定符</h6><p>继承方式：</p>
+<ul>
+<li>public 继承</li>
+<li>protected 继承</li>
+<li>private 继承</li>
+</ul>
+<h6 id="继承父类，子类访问父类成员的变化。"><a href="#继承父类，子类访问父类成员的变化。" class="headerlink" title="继承父类，子类访问父类成员的变化。"></a>继承父类，子类访问父类成员的变化。</h6><table>
+<thead>
+<tr>
+<th align="left">类成员/继承方式</th>
+<th align="center">public继承</th>
+<th align="center">protected继承</th>
+<th align="center">private继承</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">基类的public成员</td>
+<td align="center">派生类的public成员</td>
+<td align="center">派生类的protected成员</td>
+<td align="center">派生类的private成员</td>
+</tr>
+<tr>
+<td align="left">基类的protected成员</td>
+<td align="center">派生类的protected成员</td>
+<td align="center">派生类的protected成员</td>
+<td align="center">派生类的private成员</td>
+</tr>
+<tr>
+<td align="left">基类的private成员</td>
+<td align="center">在派生类中不可见</td>
+<td align="center">在派生类中不可见</td>
+<td align="center">在派生类中不可见</td>
+</tr>
+</tbody></table>
+<p>1、在子类中的访问方式 = min(基类访问方式，继承方式)。</p>
+<p>2、基类private成员，在子类中不可见。(不可见，但是任然被继承)。</p>
+<pre><code class="c++">#include &lt;string&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+class Person
+{
+public:
+    void speak()
+    {
+        ;
+    }
+
+    void sleep()
+    {
+        ;
+    }
+
+public:
+    int age;
+    string name;
+
+private:
+    float weight;
+};
+
+class boy: public Person
+{
+
+};
+
+class girl: public Person
+{
+
+};
+
+int main()
+{
+    cout &lt;&lt; &quot;sizeof(Person) = &quot; &lt;&lt; sizeof(Person) &lt;&lt; endl; // 24
+
+    cout &lt;&lt; &quot;sizeof(boy) = &quot; &lt;&lt; sizeof(boy) &lt;&lt; endl; // 24
+
+    cout &lt;&lt; &quot;sizeof(girl) = &quot; &lt;&lt; sizeof(girl) &lt;&lt; endl; // 24
+      // Person、boy、girl类的大小相同
+
+    boy b;
+
+    cout &lt;&lt; b.Person::weight &lt;&lt; endl; // error,父类的private成员，派生类无法访问
+
     return 0;
 }</code></pre>
-<h4 id="1、预编译-预处理-gcc-E-test-c-gt-test-i，文本操作"><a href="#1、预编译-预处理-gcc-E-test-c-gt-test-i，文本操作" class="headerlink" title="1、预编译/预处理(gcc -E test.c &gt; test.i，文本操作)"></a>1、预编译/预处理(gcc -E test.c &gt; test.i，文本操作)</h4><ol>
-<li><p>#include</p>
-<p>头文件的包含</p>
+<h4 id="基类和派生类对象赋值转换（只存在于public继承）"><a href="#基类和派生类对象赋值转换（只存在于public继承）" class="headerlink" title="基类和派生类对象赋值转换（只存在于public继承）"></a>基类和派生类对象赋值转换（只存在于public继承）</h4><ul>
+<li>派生类可以赋值给 基类的对象 / 基类的指针 / 基类的引用，有个形象的说法叫做切片或者切割。</li>
+<li>基类对象不能赋值给派生类对象。</li>
+<li>基类的指针可以通过强制类型转换赋值给派生类的指针，但是必须是基类的指针是指向派生类对象时才是安全的。</li>
+</ul>
+<p><img src="https://img.3amupupup.online/CppInheritance.png" alt="切片"></p>
+<pre><code class="c++">#include &lt;string&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+class Person
+{
+public:
+    Person()
+    {
+        _name = &quot;duwei&quot;;
+        _sex = &quot;man&quot;;
+        _age = 24;
+    }
+public:
+    string _name;
+    string _sex;
+    int _age;
+};
+
+class Student: public Person
+{
+public:
+    int _No;
+};
+
+int main()
+{
+    Person p;
+
+    Student stu;
+
+    p = stu;
+
+      cout &lt;&lt; p._name &lt;&lt; &quot;,&quot; &lt;&lt; p._sex &lt;&lt; &quot;,&quot; &lt;&lt; p._age &lt;&lt; endl; // duwei,man,24
+
+    cout &lt;&lt; p._NO &lt;&lt; endl; // 错误：‘class Person’没有名为‘_NO’的成员。如图所示，发生了切片
+
+    return 0;
+}</code></pre>
+<h5 id="3、继承中的作用域"><a href="#3、继承中的作用域" class="headerlink" title="3、继承中的作用域"></a>3、继承中的作用域</h5><blockquote>
+<ol>
+<li><p>在继承体系中基类和派生类都有独立的作用域。</p>
 </li>
-<li><p>删除注释</p>
+<li><p>子类和父类中存在同名成员，子类成员将屏蔽对父类中同名成员的直接访问，这种情况叫隐藏，也叫重定义。</p>
+<pre><code class="c++">#include &lt;string&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+class Person
+{
+public:
+    string _name = &quot;duwei&quot;;
+    int _age = 24;
+    string _city = &quot;hz&quot;;
+};
+
+class Student:public Person
+{
+public:
+    string _name = &quot;zhangsan&quot;;
+    int _age = 25;
+    string _home = &quot;hunan&quot;;
+};
+
+int main()
+{
+    Student stu;
+
+    cout &lt;&lt; stu._name &lt;&lt; endl; // zhangsan
+
+    cout &lt;&lt; stu.Person::_name &lt;&lt; endl; // duwei 如果需要访问父类中的同名成员，需要加上作用域。
+
+    return 0;
+}</code></pre>
 </li>
-<li><p>#define</p>
-<p>进行符号替换</p>
+<li><p>如果是成员函数的隐藏，只需要函数名相同就构成隐藏。</p>
+</li>
+<li><p>在实际继承体系中，最好不要定义同名的成员。</p>
 </li>
 </ol>
-<h4 id="2、编译-gcc-S-test-i，将c代码编译成汇编代码"><a href="#2、编译-gcc-S-test-i，将c代码编译成汇编代码" class="headerlink" title="2、编译(gcc -S test.i，将c代码编译成汇编代码)"></a>2、编译(gcc -S test.i，将c代码编译成汇编代码)</h4><ol>
-<li>语法分析</li>
-<li>词法分析</li>
-<li>语义分析</li>
-<li>符号汇总</li>
+</blockquote>
+<h5 id="4、派生类的默认成员函数"><a href="#4、派生类的默认成员函数" class="headerlink" title="4、派生类的默认成员函数"></a>4、派生类的默认成员函数</h5><ol>
+<li><p>派生类的构造函数必须调用基类的构造函数初始化基类的那一部分成员。<strong>如果基类没有默认的构造函数，则必须在派生类构造函数的初始化列表阶段显示调用。</strong></p>
+<pre><code class="c++">#include &lt;string&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+class Person
+{
+public:
+    Person()
+    {
+        _name = &quot;duwei&quot;;
+        _sex = &quot;man&quot;;
+        _age = 24;
+    }
+public:
+    string _name;
+    string _sex;
+    int _age;
+};
+
+class Student: public Person
+{
+public:
+    Student(int No)
+    : Person() // 继承下来的父类部分成员，要使用父类的构造函数去初始化，不能自己显示的初始化。
+    , _No(No)
+    {}
+
+public:
+    int _No;
+};
+
+int main()
+{
+    Student s(20);
+
+    cout &lt;&lt; s._name &lt;&lt; &quot;,&quot; &lt;&lt; s._sex &lt;&lt; &quot;,&quot; &lt;&lt; s._age &lt;&lt; endl; // duwei,man,24
+
+    cout &lt;&lt; s._No &lt;&lt; endl; // 20
+
+    return 0;
+}</code></pre>
+</li>
+<li><p>派生类的拷贝构造函数必须调用基类的拷贝构造完成基类的拷贝初始化。</p>
+<pre><code class="c++">#include &lt;string&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+class Person
+{
+public:
+   Person()
+   {
+       _name = &quot;duwei&quot;;
+       _sex = &quot;man&quot;;
+       _age = 24;
+   }
+public:
+   string _name;
+   string _sex;
+   int _age;
+};
+
+class Student: public Person
+{
+public:
+   Student(int No)
+   : Person()
+   , _No(No)
+   {}
+
+   Student(const Student &amp;s)
+   : Person(s) // 存在切片行为，派生类对象赋值给基类对象
+   , _No(s._No)
+   {}
+
+public:
+   int _No;
+};
+
+int main()
+{
+   Student s(20);
+
+   Student s2(s);
+
+   return 0;
+}</code></pre>
+</li>
+<li><p>派生类的operator=必须要调用基类的operator=完成基的复制。</p>
+<pre><code class="c++">#include &lt;string&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+class Person
+{
+public:
+    Person()
+    {
+        _name = &quot;duwei&quot;;
+        _sex = &quot;man&quot;;
+        _age = 24;
+    }
+public:
+    string _name;
+    string _sex;
+    int _age;
+};
+
+class Student: public Person
+{
+public:
+    Student(int No)
+    : Person()
+    , _No(No)
+    {}
+
+    Student(const Student &amp;s)
+    : Person(s)
+    , _No(s._No)
+    {}
+
+    Student&amp; operator=(const Student &amp;s)
+    {
+        if(this != &amp;s)
+        {
+            Person::operator=(s); // 需要加上作用域，否则会和子类中的 operator= 产生歧义
+            _No = s._No;
+        }
+        return *this;
+    }
+
+public:
+    int _No;
+};
+
+int main()
+{
+    Student s(20);
+
+    Student s2(s);
+
+    Student s3 = s2;
+
+    return 0;
+}</code></pre>
+</li>
+<li><p>派生类的析构函数会在被调用完成后自动调用基类的析构函数清理基类成员。因为这样才能保证派生对象先清理派生类成员再清理基类成员的顺序。（先创建的后销毁）</p>
+</li>
+<li><p>派生类对象初始化先调用基类构造再调派生类构造。</p>
+</li>
+<li><p>派生类对象析构清理先调用派生类析构再调基类的析构。</p>
+</li>
 </ol>
-<h4 id="3、汇编-gcc-c-test-s"><a href="#3、汇编-gcc-c-test-s" class="headerlink" title="3、汇编(gcc -c test.s)"></a>3、汇编(gcc -c test.s)</h4><p>将汇编代码转换成二进制指令</p>
-<h4 id="4、链接"><a href="#4、链接" class="headerlink" title="4、链接"></a>4、链接</h4><ol>
-<li>合并段表</li>
-<li>符号表的合并和重新定位</li>
-</ol>
-<h5 id="5、宏"><a href="#5、宏" class="headerlink" title="5、宏"></a>5、宏</h5><p>函数在调用的时候会有函数调用和返回的开销。</p>
-<p>宏在预处理阶段就完成了替换，没有调用和返回的开销。</p>
+<h5 id="5、继承与友元"><a href="#5、继承与友元" class="headerlink" title="5、继承与友元"></a>5、继承与友元</h5><p>友元关系不能继承，也就是说基类友元不能访问子类私有和保护成员。</p>
+<h5 id="6、继承和静态成员"><a href="#6、继承和静态成员" class="headerlink" title="6、继承和静态成员"></a>6、继承和静态成员</h5><p>基类定义了static静态成员，则整个继承体系里面只有一个这样的成员。无论派生出多少个子类，都只有一 个static成员实例 。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
@@ -826,12 +1149,12 @@ int main(){
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>C语言预处理</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">195</span></p>
+    <p><span class="copy-title">文章标题:</span>c++继承</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.6k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
-    <p><span class="copy-title">发布时间:</span>2021-03-18, 11:09:52</p>
-    <p><span class="copy-title">最后更新:</span>2021-03-18, 11:09:52</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E9%A2%84%E5%A4%84%E7%90%86/" title="C语言预处理">https://duwei19961021.github.io/2021/03/18/C%E8%AF%AD%E8%A8%80%E9%A2%84%E5%A4%84%E7%90%86/</a>
+    <p><span class="copy-title">发布时间:</span>2021-04-25, 22:55:23</p>
+    <p><span class="copy-title">最后更新:</span>2021-04-26, 01:24:54</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/04/25/c++inheritance/" title="c++继承">https://duwei19961021.github.io/2021/04/25/c++inheritance/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

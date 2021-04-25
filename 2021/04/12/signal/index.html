@@ -6,18 +6,23 @@
   <meta name="keywords" content=" 信号 ">
   <meta name="description" content="信号 | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="第一章1.5 类简介1.5.1 Sales_item类c++中通过定义类来定义数据结构。一个类定义了一个类型，以及与其相关联的操作。 1.5.2 成员函数成员函数时定义为类一部分的函数，有时也被称为方法。 第三章 字符串、向量和数组3.2 标准库类型 string3.2.1 定义和初始化 string 对象string s1; string s2 &#x3D; s1; string s3 &#x3D; &quot;h">
+<meta name="description" content="nginx数据类型：散列表 &#x2F;&#x2F; 存储key和value的元素 typedef struct {     void             *value;    &#x2F;&#x2F; 指向value的指针     u_short           len;  &#x2F;&#x2F; key的长度     u_char            name[1];  &#x2F;&#x2F; key长度是可变的，这里使用了c语言的柔性数组 } ngx_ha">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CppPrimer">
-<meta property="og:url" content="https://duwei19961021.github.io/2021/04/13/CppPrimer/index.html">
+<meta property="og:title" content="nginx散列表">
+<meta property="og:url" content="https://duwei19961021.github.io/2021/03/23/ngx_hash/index.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="第一章1.5 类简介1.5.1 Sales_item类c++中通过定义类来定义数据结构。一个类定义了一个类型，以及与其相关联的操作。 1.5.2 成员函数成员函数时定义为类一部分的函数，有时也被称为方法。 第三章 字符串、向量和数组3.2 标准库类型 string3.2.1 定义和初始化 string 对象string s1; string s2 &#x3D; s1; string s3 &#x3D; &quot;h">
+<meta property="og:description" content="nginx数据类型：散列表 &#x2F;&#x2F; 存储key和value的元素 typedef struct {     void             *value;    &#x2F;&#x2F; 指向value的指针     u_short           len;  &#x2F;&#x2F; key的长度     u_char            name[1];  &#x2F;&#x2F; key长度是可变的，这里使用了c语言的柔性数组 } ngx_ha">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-04-13T03:26:55.000Z">
-<meta property="article:modified_time" content="2021-04-15T10:30:50.709Z">
+<meta property="og:image" content="https://img.3amupupup.online/ngx_hash_2.png">
+<meta property="og:image" content="https://img.3amupupup.online/ngx_hash_test_1.png">
+<meta property="og:image" content="https://img.3amupupup.online/ngx_align_1.png">
+<meta property="og:image" content="https://img.3amupupup.online/soft_array.png">
+<meta property="article:published_time" content="2021-03-23T10:21:27.000Z">
+<meta property="article:modified_time" content="2021-04-01T02:08:45.460Z">
 <meta property="article:author" content="拦云">
-<meta property="article:tag" content="book">
+<meta property="article:tag" content="hashtable">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.3amupupup.online/ngx_hash_2.png">
 
 
 <link rel="icon" href="/img/favicon.ico">
@@ -69,11 +74,11 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(48)</small></div></li>
+    <li><div class="all active">全部文章<small>(50)</small></div></li>
     
         
             
-            <li><div data-rel="C语言">C语言<small>(13)</small></div>
+            <li><div data-rel="C语言">C语言<small>(15)</small></div>
                 
             </li>
             
@@ -137,8 +142,8 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="48">
-<input type="hidden" id="yelog_site_word_count" value="68.2k">
+<input type="hidden" id="yelog_site_posts_number" value="50">
+<input type="hidden" id="yelog_site_word_count" value="70.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -277,6 +282,14 @@
     
     <li class="article-tag-list-item">
         <a class="color3">信号</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">c++</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">线程</a>
     </li>
     
     <div class="clearfix"></div>
@@ -673,6 +686,22 @@
             <span class="post-date" title="2021-04-12 19:57:55">2021/04/12</span>
         </a>
         
+        <a  class="C语言 "
+           href="/2021/04/25/c++inheritance/"
+           data-tag="c++"
+           data-author="" >
+            <span class="post-title" title="c++继承">c++继承</span>
+            <span class="post-date" title="2021-04-25 22:55:23">2021/04/25</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/04/20/thread/"
+           data-tag="线程"
+           data-author="" >
+            <span class="post-title" title="thread">thread</span>
+            <span class="post-date" title="2021-04-20 17:02:24">2021/04/20</span>
+        </a>
+        
     </nav>
 </div>
     </div>
@@ -709,12 +738,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-04-19 00:50:14'>2021-04-12 19:57</time>
+        创建时间:<time class="date" title='更新时间: 2021-04-20 17:26:21'>2021-04-12 19:57</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.4k</span>
+        <span>字数:1.5k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -733,7 +762,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#信号保存：pending位图"><span class="toc-text">信号保存：pending位图</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#实现"><span class="toc-text">实现</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#信号相关概念"><span class="toc-text">信号相关概念</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#block位图"><span class="toc-text">block位图</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#handler"><span class="toc-text">handler</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#信号集操作函数"><span class="toc-text">信号集操作函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#信号捕捉"><span class="toc-text">信号捕捉</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#信号保存：pending位图"><span class="toc-text">信号保存：pending位图</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#实现"><span class="toc-text">实现</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#信号相关概念"><span class="toc-text">信号相关概念</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#block位图"><span class="toc-text">block位图</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#handler"><span class="toc-text">handler</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#信号集操作函数"><span class="toc-text">信号集操作函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#信号捕捉"><span class="toc-text">信号捕捉</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#volatile"><span class="toc-text">volatile</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -904,6 +933,7 @@ int main()
     while(1);
     return 0;
 }</code></pre>
+<h5 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h5><p>volatile作用：保持内存的可见性，告知编译器，被该关键字修饰的变量，不允许被优化，对该变量的任何操作，都必须在真实的内存中操作。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
@@ -914,10 +944,10 @@ int main()
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>信号</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">1.4k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.5k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-04-12, 19:57:55</p>
-    <p><span class="copy-title">最后更新:</span>2021-04-19, 00:50:14</p>
+    <p><span class="copy-title">最后更新:</span>2021-04-20, 17:26:21</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/04/12/signal/" title="信号">https://duwei19961021.github.io/2021/04/12/signal/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -962,7 +992,7 @@ int main()
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#内存','#queue','#list','#hashtable','#缓冲区','#信号',],
+            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#内存','#queue','#list','#hashtable','#缓冲区','#信号','#c++','#线程',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

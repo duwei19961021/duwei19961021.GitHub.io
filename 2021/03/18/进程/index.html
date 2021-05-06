@@ -15,7 +15,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img.3amupupup.online/CppInheritance.png">
 <meta property="article:published_time" content="2021-04-25T14:55:23.000Z">
-<meta property="article:modified_time" content="2021-04-25T17:24:54.565Z">
+<meta property="article:modified_time" content="2021-05-03T04:16:48.000Z">
 <meta property="article:author" content="拦云">
 <meta property="article:tag" content="c++">
 <meta name="twitter:card" content="summary">
@@ -71,11 +71,11 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(50)</small></div></li>
+    <li><div class="all active">全部文章<small>(52)</small></div></li>
     
         
             
-            <li><div data-rel="C语言">C语言<small>(14)</small></div>
+            <li><div data-rel="C语言">C语言<small>(16)</small></div>
                 
             </li>
             
@@ -115,7 +115,7 @@
     
         
             
-            <li><div data-rel="Nginx">Nginx<small>(6)</small></div>
+            <li><div data-rel="Nginx">Nginx<small>(7)</small></div>
                 
             </li>
             
@@ -123,7 +123,7 @@
     
         
             
-            <li><div data-rel="操作系统">操作系统<small>(5)</small></div>
+            <li><div data-rel="操作系统">操作系统<small>(4)</small></div>
                 
             </li>
             
@@ -139,8 +139,8 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="50">
-<input type="hidden" id="yelog_site_word_count" value="71.9k">
+<input type="hidden" id="yelog_site_posts_number" value="52">
+<input type="hidden" id="yelog_site_word_count" value="78.7k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -287,6 +287,10 @@
     
     <li class="article-tag-list-item">
         <a class="color3">线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">thread_pool</a>
     </li>
     
     <div class="clearfix"></div>
@@ -691,12 +695,28 @@
             <span class="post-date" title="2021-04-25 22:55:23">2021/04/25</span>
         </a>
         
-        <a  class="操作系统 "
+        <a  class="C语言 "
            href="/2021/04/20/thread/"
            data-tag="线程"
            data-author="" >
             <span class="post-title" title="thread">thread</span>
             <span class="post-date" title="2021-04-20 17:02:24">2021/04/20</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/05/03/c++polymorphic/"
+           data-tag="c++"
+           data-author="" >
+            <span class="post-title" title="c++继承">c++继承</span>
+            <span class="post-date" title="2021-05-03 12:17:03">2021/05/03</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/05/04/ngx_thread_pool/"
+           data-tag="thread_pool"
+           data-author="" >
+            <span class="post-title" title="nginx线程池">nginx线程池</span>
+            <span class="post-date" title="2021-05-04 00:43:27">2021/05/04</span>
         </a>
         
     </nav>
@@ -735,12 +755,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-04-06 11:20:14'>2021-03-18 11:09</time>
+        创建时间:<time class="date" title='更新时间: 2021-05-05 11:29:18'>2021-03-18 11:09</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:3.5k</span>
+        <span>字数:4.8k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -759,7 +779,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#fork"><span class="toc-text">fork:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#wait"><span class="toc-text">wait</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#waitpid"><span class="toc-text">waitpid</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IPC"><span class="toc-text">IPC</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#pipe"><span class="toc-text">pipe</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#FIFO"><span class="toc-text">FIFO</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#shm"><span class="toc-text">shm</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#概念"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#进程描述符"><span class="toc-text">进程描述符</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#进程状态"><span class="toc-text">进程状态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#进程链表（双向链表）"><span class="toc-text">进程链表（双向链表）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#TASK-RUNNING状态的进程链表"><span class="toc-text">TASK_RUNNING状态的进程链表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#进程资源限制"><span class="toc-text">进程资源限制</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#进程切换"><span class="toc-text">进程切换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#硬件上下文"><span class="toc-text">硬件上下文</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#任务状态段（Task-Stat-Segment：TSS）"><span class="toc-text">任务状态段（Task Stat Segment：TSS）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#thread字段"><span class="toc-text">thread字段</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#执行进程切换"><span class="toc-text">执行进程切换</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建进程"><span class="toc-text">创建进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fork"><span class="toc-text">fork:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#wait"><span class="toc-text">wait</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#waitpid"><span class="toc-text">waitpid</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IPC"><span class="toc-text">IPC</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#pipe"><span class="toc-text">pipe</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#FIFO"><span class="toc-text">FIFO</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#shm"><span class="toc-text">shm</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -775,7 +795,61 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="fork"><a href="#fork" class="headerlink" title="fork:"></a>fork:</h4><p>fork()函数man手册：</p>
+        <h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>定义：进程是程序执行时的一个实例。从内核角度来看：进程是承担操作系统所分配的资源(cpu时间、内存等)的实体。</p>
+<h4 id="进程描述符"><a href="#进程描述符" class="headerlink" title="进程描述符"></a>进程描述符</h4><h5 id="进程状态"><a href="#进程状态" class="headerlink" title="进程状态"></a>进程状态</h5><ol>
+<li><p>可运行状态（TASK_RUNNING）</p>
+<p>进程要么在cpu上执行，要么准备执行</p>
+</li>
+<li><p>可中断等待状态（TASK_INTERRUPTIBLE）</p>
+<p>进程被挂起（睡眠），直到某个条件变为真。硬件中断、传递一个信号都可以作为唤醒条件。</p>
+</li>
+<li><p>不可中断等待状态（TASK_UNINTERRUPTIBLE）</p>
+<p>与可中断等待状态类似，但是存在一个例外：把信号传递到睡眠进程无法修改它的状态。</p>
+</li>
+<li><p>暂停状态（TASK_STOPPED）</p>
+<p>进程的执行被暂停。当进程收到SIGSTOP、SIGTSTP、SOGTTIN、SIGTTOU等信号后进入暂停状态。</p>
+</li>
+<li><p>跟踪状态（TASK_TRACED）</p>
+</li>
+<li><p>僵死状态（EXIT_ZOMBIE）</p>
+<p>也成僵尸状态。进程执行已终止，但是由于父进程并未调用wait或waitpid系统调用来收集死亡进程的相关信息，内核不能丢弃包含在死进程描述符中的数据，因为父进程可能还会用到。</p>
+</li>
+<li><p>僵死撤销状态（EXIT_DEAD）</p>
+<p>进程的最终状态。父进程调用wait或waitpid等系统调用收集死进程的信息之后，由操作系统删除死进程的数据且释放死进程的相关资源。</p>
+</li>
+</ol>
+<h5 id="进程链表（双向链表）"><a href="#进程链表（双向链表）" class="headerlink" title="进程链表（双向链表）"></a>进程链表（双向链表）</h5><p>进程链表把所有的进程描述符链接起来。每个task_struct结构都包含一个list_head类型的tasks字段，这个类型的prev和next字段分别指向前面和后面的task_struct元素。</p>
+<p>进程链表的头是init_task，即0号进程。</p>
+<p><img src="https://img.3amupupup.online/task_struct-list.png" alt="进程链表"></p>
+<h5 id="TASK-RUNNING状态的进程链表"><a href="#TASK-RUNNING状态的进程链表" class="headerlink" title="TASK_RUNNING状态的进程链表"></a>TASK_RUNNING状态的进程链表</h5><p>当内核寻找一个新进程在CPU上运行时，必须只考虑可运行进程（TASK_RUNNING状态的进程）。</p>
+<p>提高调度程序运行速度的诀窍时建立多个可运行进程链表，每种进程优先级对应一个不同的链表。</p>
+<h5 id="进程资源限制"><a href="#进程资源限制" class="headerlink" title="进程资源限制"></a>进程资源限制</h5><p>每个进程都有一组相关的资源限制，限制指定了进程能够使用的系统资源数量。这些限制避免用户过度使用系统资源。</p>
+<ul>
+<li>RLIMIT_AS：进程地址空间的最大数（字节为单位）。当进程使用malloc或者相关函数扩大它的进程空间时，内核会检查这个值。</li>
+<li>RLIMIT_CPU：进程使用cpu的最长时间（秒为单位），如果进程超过了这个限制，内核就向它发送一个SIGXCPU信号，如果不终止，则发送SIGKILL信号。</li>
+<li>RLIMIT_DATA：堆大小的最大值。</li>
+<li>RLIMIT_RSS：进程能够拥有的虚拟内存页的最大数量。</li>
+<li>RLIMIT_STACK：进程栈的最大值。</li>
+</ul>
+<h4 id="进程切换"><a href="#进程切换" class="headerlink" title="进程切换"></a>进程切换</h4><p>为了控制进程的执行，内核必须有能力挂起正在cpu上执行的进程，并恢复以前挂起的某个进程的执行。</p>
+<h5 id="硬件上下文"><a href="#硬件上下文" class="headerlink" title="硬件上下文"></a>硬件上下文</h5><p>每个进程拥有自己的地址空间，但是所有进程必须共享CPU寄存器。因此，在恢复一个进程执行之前，内核必须确保每个寄存器装入了挂起进程时的值。</p>
+<p><strong>进程恢复执行前必须装入寄存器的一组数据称为硬件上下文</strong>。</p>
+<p>进程切换只发生在内核态。在执行切换之前，用户态进程使用的所有寄存器内容都已保存在内核态堆栈上。</p>
+<h5 id="任务状态段（Task-Stat-Segment：TSS）"><a href="#任务状态段（Task-Stat-Segment：TSS）" class="headerlink" title="任务状态段（Task Stat Segment：TSS）"></a>任务状态段（Task Stat Segment：TSS）</h5><p>用来存放硬件上下文。</p>
+<blockquote>
+<p>任务切换(硬切换)需要用到TSS来保存全部寄存器(2.4以前使用jmp来实现切换)，中断发生时也需要从TSS中读取ring0的esp0，那么，进程使用相同的TSS，任务切换怎么办？ 其实2.4以后不再使用硬切换，而是使用软切换，寄存器不再保存在TSS中了，而是保存在task-&gt;thread中，只用TSS的esp0和IO许可位图，所以，在进程切换过程中，只需要更新TSS中的esp0(内核态栈顶指针)、io bitmap。</p>
+</blockquote>
+<h5 id="thread字段"><a href="#thread字段" class="headerlink" title="thread字段"></a>thread字段</h5><p>每次硬件上下文切换时，被替换进程的上下文必须保存在别处。因为linux为每个处理器而不是每个进程使用tss。</p>
+<p>因此每个进程描述符(task_struct)包含一个类型为thread_struct的thread字段，只要进程被切换出去，内核就把其硬件上下文保存在这个结构中。</p>
+<h5 id="执行进程切换"><a href="#执行进程切换" class="headerlink" title="执行进程切换"></a>执行进程切换</h5><p>暂时略</p>
+<h4 id="创建进程"><a href="#创建进程" class="headerlink" title="创建进程"></a>创建进程</h4><p>传统的unix操作系统：子进程复制父进程所拥有的的资源。效率低下，因为子进程要复制父进程的整个地址空间，且子进程几乎不必读和修改父进程所拥有的所有资源。</p>
+<p>现代unix解决办法：</p>
+<ul>
+<li>写时复制。允许父子进程读相同的物理页，只要二者中有一个试图写一个物理页，内核就把这个页拷贝到另一个物理页，并将这个新的物理页分配给试图写的这个进程。</li>
+<li>轻量级进程允许父子进程共享进程在内核的很多数据结构，如页表、打开的文件表等。</li>
+<li>vfork()系统调用创建的进程能其父进程的内存地址空间。</li>
+</ul>
+<h4 id="fork"><a href="#fork" class="headerlink" title="fork:"></a>fork:</h4><p>fork()函数man手册：</p>
 <ul>
 <li>fork函数通过调用它的进程复制出一个新的进程(谁调用它复制谁，准确说是共享（比如代码段），对于私有数据采用写时复制机制)。</li>
 <li>子进程的父进程id与父进程相同</li>
@@ -1281,10 +1355,10 @@ int main()
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>进程</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">3.5k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">4.8k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-03-18, 11:09:00</p>
-    <p><span class="copy-title">最后更新:</span>2021-04-06, 11:20:14</p>
+    <p><span class="copy-title">最后更新:</span>2021-05-05, 11:29:18</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/18/%E8%BF%9B%E7%A8%8B/" title="进程">https://duwei19961021.github.io/2021/03/18/%E8%BF%9B%E7%A8%8B/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -1329,7 +1403,7 @@ int main()
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#内存','#queue','#list','#hashtable','#缓冲区','#信号','#c++','#线程',],
+            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#内存','#queue','#list','#hashtable','#缓冲区','#信号','#c++','#线程','#thread_pool',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

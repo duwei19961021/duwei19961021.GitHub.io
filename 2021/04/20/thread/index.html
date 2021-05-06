@@ -15,7 +15,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img.3amupupup.online/CppInheritance.png">
 <meta property="article:published_time" content="2021-04-25T14:55:23.000Z">
-<meta property="article:modified_time" content="2021-04-25T17:24:54.565Z">
+<meta property="article:modified_time" content="2021-05-03T04:16:48.000Z">
 <meta property="article:author" content="拦云">
 <meta property="article:tag" content="c++">
 <meta name="twitter:card" content="summary">
@@ -71,11 +71,11 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(50)</small></div></li>
+    <li><div class="all active">全部文章<small>(52)</small></div></li>
     
         
             
-            <li><div data-rel="C语言">C语言<small>(14)</small></div>
+            <li><div data-rel="C语言">C语言<small>(16)</small></div>
                 
             </li>
             
@@ -115,7 +115,7 @@
     
         
             
-            <li><div data-rel="Nginx">Nginx<small>(6)</small></div>
+            <li><div data-rel="Nginx">Nginx<small>(7)</small></div>
                 
             </li>
             
@@ -123,7 +123,7 @@
     
         
             
-            <li><div data-rel="操作系统">操作系统<small>(5)</small></div>
+            <li><div data-rel="操作系统">操作系统<small>(4)</small></div>
                 
             </li>
             
@@ -139,8 +139,8 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="50">
-<input type="hidden" id="yelog_site_word_count" value="71.9k">
+<input type="hidden" id="yelog_site_posts_number" value="52">
+<input type="hidden" id="yelog_site_word_count" value="78.7k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -287,6 +287,10 @@
     
     <li class="article-tag-list-item">
         <a class="color3">线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">thread_pool</a>
     </li>
     
     <div class="clearfix"></div>
@@ -691,12 +695,28 @@
             <span class="post-date" title="2021-04-25 22:55:23">2021/04/25</span>
         </a>
         
-        <a  class="操作系统 "
+        <a  class="C语言 "
            href="/2021/04/20/thread/"
            data-tag="线程"
            data-author="" >
             <span class="post-title" title="thread">thread</span>
             <span class="post-date" title="2021-04-20 17:02:24">2021/04/20</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/05/03/c++polymorphic/"
+           data-tag="c++"
+           data-author="" >
+            <span class="post-title" title="c++继承">c++继承</span>
+            <span class="post-date" title="2021-05-03 12:17:03">2021/05/03</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/05/04/ngx_thread_pool/"
+           data-tag="thread_pool"
+           data-author="" >
+            <span class="post-title" title="nginx线程池">nginx线程池</span>
+            <span class="post-date" title="2021-05-04 00:43:27">2021/05/04</span>
         </a>
         
     </nav>
@@ -721,7 +741,7 @@
         
         <span class="book">
             
-                <a  data-rel="操作系统">操作系统</a>
+                <a  data-rel="C语言">C语言</a>
             
         </span>
         
@@ -735,12 +755,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-04-26 01:29:13'>2021-04-20 17:02</time>
+        创建时间:<time class="date" title='更新时间: 2021-05-05 21:03:34'>2021-04-20 17:02</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:2.1k</span>
+        <span>字数:3.9k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -759,7 +779,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、线程概念"><span class="toc-text">1、线程概念</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#什么是线程？"><span class="toc-text">什么是线程？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#线程优点"><span class="toc-text">线程优点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#线程有点"><span class="toc-text">线程有点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#线程异常"><span class="toc-text">线程异常</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#进程和线程"><span class="toc-text">进程和线程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#进程的多个线程共享"><span class="toc-text">进程的多个线程共享</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#互斥锁"><span class="toc-text">互斥锁</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#牛刀小试"><span class="toc-text">牛刀小试</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#线程退出"><span class="toc-text">线程退出</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#线程分离"><span class="toc-text">线程分离</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#多线程抢票"><span class="toc-text">多线程抢票</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#锁的本质"><span class="toc-text">锁的本质</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#互斥量本质研究"><span class="toc-text">互斥量本质研究</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#同步锁"><span class="toc-text">同步锁</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#牛刀小试-1"><span class="toc-text">牛刀小试</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#什么是线程？"><span class="toc-text">什么是线程？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#线程优点"><span class="toc-text">线程优点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#线程有点"><span class="toc-text">线程有点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#线程异常"><span class="toc-text">线程异常</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#进程和线程"><span class="toc-text">进程和线程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#进程的多个线程共享"><span class="toc-text">进程的多个线程共享</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#互斥锁"><span class="toc-text">互斥锁</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#牛刀小试"><span class="toc-text">牛刀小试</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#线程退出"><span class="toc-text">线程退出</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#线程分离"><span class="toc-text">线程分离</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#多线程抢票"><span class="toc-text">多线程抢票</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#锁的本质"><span class="toc-text">锁的本质</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#互斥量本质研究"><span class="toc-text">互斥量本质研究</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#同步"><span class="toc-text">同步</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#条件变量"><span class="toc-text">条件变量</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#同步概念与竞态条件"><span class="toc-text">同步概念与竞态条件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#为什么要同步？"><span class="toc-text">为什么要同步？</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#相关函数"><span class="toc-text">相关函数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#牛刀小试-1"><span class="toc-text">牛刀小试</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#基于阻塞队列的生产消费模型"><span class="toc-text">基于阻塞队列的生产消费模型</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#信号量"><span class="toc-text">信号量</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#是什么？"><span class="toc-text">是什么？</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#伪代码"><span class="toc-text">伪代码</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#相关函数-1"><span class="toc-text">相关函数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#基于环形队列的生产消费者模型"><span class="toc-text">基于环形队列的生产消费者模型</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#线程池"><span class="toc-text">线程池</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -775,19 +795,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1、线程概念"><a href="#1、线程概念" class="headerlink" title="1、线程概念"></a>1、线程概念</h4><h5 id="什么是线程？"><a href="#什么是线程？" class="headerlink" title="什么是线程？"></a>什么是线程？</h5><ul>
+        <h5 id="什么是线程？"><a href="#什么是线程？" class="headerlink" title="什么是线程？"></a>什么是线程？</h5><ul>
 <li>在一个程序里的一个执行路线就叫做线程。更准确的定义是：线程是“一个进程的内部序列”。</li>
 <li>一个进程至少有一个线程。</li>
 <li>线程在进程内部运行，本质是在进程地址空间运行。</li>
 <li>透过进程虚拟地址空间，可以看到进程大部分的资源，将进程资源合理的分配给每个执行流，就形成了线程执行流。</li>
 </ul>
-<p>进程：承担系统分配资源的基本实体。</p>
+<p>进程：承担系统分配资源的基本实体。为了承担资源操作系统为进程提供了大批数据结构和内存块，以承担程序的数据和代码。</p>
 <p>线程：调度的基本单位，是进程内部的执行流。（线程在进程的地址空间内运行）</p>
 <h5 id="线程优点"><a href="#线程优点" class="headerlink" title="线程优点"></a>线程优点</h5><ul>
 <li><p>创建一个新线程的代价比创建一个新进程代价要小的多。</p>
 <p>进程是承担系统分配资源的基本实体，只有当资源创建好了，这个进程才算是被创建好；而线程只需要创建一个pcb，然后将已分配的部分资源指派给线程就好了。</p>
 </li>
-<li><p>与进程之间的切换相比，线程之间切换需要操作系统做的工作要少很多。</p>
+<li><p>与进程之间的切换相比，线程之间切换需要操作系统做的工作要少很多。（地址空间、页表不需要更换，只需要更换tss）</p>
 <p>线程切换理论上只需要切换tss。线程只对应了进程部分资源。</p>
 </li>
 <li><p>线程占用的资源少</p>
@@ -1076,7 +1096,33 @@ pthread_mutex_unlock：解锁</code></pre>
     unlock:
         move $1, mutex
         唤醒等待mutex线程
-        return 0;</code></pre><h5 id="同步锁"><a href="#同步锁" class="headerlink" title="同步锁"></a>同步锁</h5><h6 id="牛刀小试-1"><a href="#牛刀小试-1" class="headerlink" title="牛刀小试"></a>牛刀小试</h6><pre><code class="c">#include &lt;pthread.h&gt;
+        return 0;</code></pre><h5 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h5><h6 id="条件变量"><a href="#条件变量" class="headerlink" title="条件变量"></a>条件变量</h6><blockquote>
+<ul>
+<li>当一个线程互斥的访问某个变量时，它可能发现在其它线程改变状态之前，什么也做不了。</li>
+<li>例如一个线程访问队列时，当它发现队列为空，它只能等待，直到其它线程将数据添加到队列中。这种情况需要用到条件变量，当它发现队列为空时应当去通知生产者往队列里投放数据。</li>
+</ul>
+</blockquote>
+<h6 id="同步概念与竞态条件"><a href="#同步概念与竞态条件" class="headerlink" title="同步概念与竞态条件"></a>同步概念与竞态条件</h6><blockquote>
+<p>同步：在保证数据安全的前提下，让线程能够按照某种特定的顺序访问临界资源，从而有效避免饥饿问题，叫做同步。</p>
+<p>竞态条件：因为时序问题而导致程序异常，称之为竞态条件。</p>
+</blockquote>
+<h6 id="为什么要同步？"><a href="#为什么要同步？" class="headerlink" title="为什么要同步？"></a>为什么要同步？</h6><p>互斥能够保证线程之间访问资源不出错，但是不能保证高效。同步的目的是让多线程同步高效的完成某些任务。</p>
+<ol>
+<li>如果条件不满足，等待，释放锁</li>
+<li>通知机制</li>
+</ol>
+<h6 id="相关函数"><a href="#相关函数" class="headerlink" title="相关函数"></a>相关函数</h6><pre><code class="c">// 初始化条件变量
+int pthread_cond_init(pthread_cond_t *restrict cond, const pthread_condattr_t *restrict attr);
+
+// 销毁条件变量
+int pthread_cond_destroy(pthread_cond_t *cond);
+
+// 等待条件满足
+int pthread_cond_wait(pthread_cond_t *restrict cond, pthread_mutex_t *restrict mutex);
+
+// 通知cond条件下wait的线程
+int pthread_cond_signal(pthread_cond_t *cond);</code></pre>
+<h6 id="牛刀小试-1"><a href="#牛刀小试-1" class="headerlink" title="牛刀小试"></a>牛刀小试</h6><pre><code class="c">#include &lt;pthread.h&gt;
 #include &lt;unistd.h&gt;
 #include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
@@ -1089,7 +1135,7 @@ void* thread_run1(void* arg)
     const char* name = (char*)arg;
     while(1)
     {
-        pthread_cond_wait(&amp;cond, &amp;lock);
+        pthread_cond_wait(&amp;cond, &amp;lock); // 程序执行到这里，使当前线程加入cond结构下的某个成员里，猜测是个数组或者链表
         printf(&quot;%s, activing....\n&quot;,name);
         printf(&quot;\n&quot;);
     }
@@ -1101,7 +1147,7 @@ void* thread_run2(void* arg)
     while(1)
     {
         sleep(1);
-        pthread_cond_signal(&amp;cond);
+        pthread_cond_signal(&amp;cond); // 唤醒cond条件下等待的线程。（个人理解：从cond结构的某个成员里取出一个线程进行唤醒）
         printf(&quot;%s, signal to thread1 done....\n&quot;,name);
         printf(&quot;\n&quot;);
     }
@@ -1125,6 +1171,431 @@ int main()
 
     return 0;
 }</code></pre>
+<h6 id="基于阻塞队列的生产消费模型"><a href="#基于阻塞队列的生产消费模型" class="headerlink" title="基于阻塞队列的生产消费模型"></a>基于阻塞队列的生产消费模型</h6><pre><code class="c">#ifndef __BLOCK_QUEUE_H__
+#define __BLOCK_QUEUE_H__
+
+#include &lt;queue&gt;
+#include &lt;iostream&gt;
+#include &lt;pthread.h&gt;
+
+template&lt;class T&gt;
+class BlockQueue
+{
+public:
+    BlockQueue(size_t cap = 5): _cap(cap)
+    {
+        pthread_mutex_init(&amp;lock, nullptr);
+        pthread_cond_init(&amp;c_cond, nullptr);
+        pthread_cond_init(&amp;p_cond, nullptr);
+    }
+
+    ~BlockQueue()
+    {
+        pthread_mutex_destroy(&amp;lock);
+        pthread_cond_destroy(&amp;c_cond);
+        pthread_cond_destroy(&amp;p_cond);
+    }
+
+    void Put(T &amp;data)
+    {
+        LockQueue();
+        while(Full())
+        {
+            WakeUpCon();
+            ProWait();
+        }
+        q.push(data);
+        unLockQueue();
+    }
+
+    void Get(T &amp;data)
+    {
+        LockQueue();
+        while(Empty())
+        {
+            WakeUpPro(); // 先唤醒生产者
+            ConWait(); // 再休眠消费者
+        }
+        data = q.front();
+        q.pop();
+        unLockQueue();
+    }
+
+private:
+    void ProWait()
+    {
+        pthread_cond_wait(&amp;p_cond, &amp;lock);
+        /*
+         * 1、为什么要等？条件不满足
+         * 2、怎么知道条件是否满足？要判断是否满足条件就必须进入临界区，需要持有锁进入
+         * 3、如果条件不满足就需要阻塞等待，但是不能持有锁去等待！！！(锁被你拿着，其它线程无法获取锁就无法进入临界区，条件就无法发生改变，因此进入死锁状态)，因此wait时必须释放锁。
+         * 4、因此这个函数需要传入一个lock
+         *
+         * 1、在调用该函数时会自动释放锁。
+         * 2、当该函数返回时，返回到了临界区内，所以该函数会让该线程重新持有该锁。
+         */
+    }
+
+    void ConWait()
+    {
+        pthread_cond_wait(&amp;c_cond, &amp;lock);
+    }
+
+    void WakeUpPro()
+    {
+        pthread_cond_signal(&amp;p_cond);
+        std::cout &lt;&lt; &quot;signal productor&quot; &lt;&lt; std::endl;
+    }
+
+    void WakeUpCon()
+    {
+        pthread_cond_signal(&amp;c_cond);
+        std::cout &lt;&lt; &quot;signal consumer&quot; &lt;&lt; std::endl;
+    }
+
+    bool Empty()
+    {
+        return q.empty();
+    }
+
+    bool Full()
+    {
+        return q.size() == _cap;
+    }
+
+    void LockQueue()
+    {
+        pthread_mutex_lock(&amp;lock);
+    }
+
+    void unLockQueue()
+    {
+        pthread_mutex_unlock(&amp;lock);
+    }
+private:
+    pthread_mutex_t lock;
+    pthread_cond_t c_cond; // 消费者在该条件下等
+    pthread_cond_t p_cond; // 生产者在该条件下等
+    std::queue&lt;T&gt; q;
+    size_t _cap;
+};
+
+
+#endif</code></pre>
+<pre><code class="c">#include &lt;iostream&gt;
+#include &lt;unistd.h&gt;
+#include &lt;pthread.h&gt;
+#include &quot;BlockQueue.hpp&quot;
+#include &lt;stdlib.h&gt;
+using namespace std;
+
+void* Pro_run(void *arg)
+{
+    BlockQueue&lt;int&gt; *q = (BlockQueue&lt;int&gt;*)arg;
+    while(true)
+    {
+        int data = rand()%110;
+        q-&gt;Put(data);
+        cout &lt;&lt; &quot;Pro put: &quot; &lt;&lt; data &lt;&lt; endl;
+        sleep(1);
+    }
+}
+
+void* Con_run(void *arg)
+{
+    BlockQueue&lt;int&gt; *q = (BlockQueue&lt;int&gt;*)arg;
+    while(true)
+    {
+        int data = 0;
+        q-&gt;Get(data);
+        cout &lt;&lt; &quot;Con get: &quot; &lt;&lt; data &lt;&lt; endl;
+    }
+}
+
+int main()
+{
+    pthread_t con,pro;
+
+    BlockQueue&lt;int&gt; *bq = new BlockQueue&lt;int&gt;(10);
+
+    pthread_create(&amp;pro, nullptr, Pro_run, (void*)bq);
+
+    pthread_create(&amp;con, nullptr, Con_run, (void*)bq);
+
+    pthread_join(con, nullptr);
+    pthread_join(pro, nullptr);
+
+    delete bq;
+
+    return 0;
+}</code></pre>
+<h5 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h5><h6 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h6><p>信号量本质是一个计数器，描述临界资源有效个数的计数器。（保证每次访问的临界资源不是同一个）</p>
+<p>允许多个线程操作临界区内的多个资源。</p>
+<pre><code class="c">int count = 5;
+count--; // p() 原子性
+count++; // v() 原子性
+
+// 临界资源可以看成是多份的，不冲突的，提高效率</code></pre>
+<h6 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h6><p>临界资源可以看成多份且不冲突的，信号量本质就是多份资源的计数器。</p>
+<pre><code class="c">struct sem
+{
+    int count;
+    mutex lock;
+    wait_queue *head;
+}
+
+void P()
+{
+    lock();
+
+    if(count &gt; 0)
+    {
+        count--;
+    }
+    else
+    {
+        wait();
+    }
+
+    unlock();
+}</code></pre>
+<h6 id="相关函数-1"><a href="#相关函数-1" class="headerlink" title="相关函数"></a>相关函数</h6><pre><code class="c">#include &lt;semaphore.h&gt;
+
+// 初始化信号量
+int sem_init(sem_t *sem, int pshared, unsigned int value); // pshared：0表示线程间共享，1表示进程间共享。value：信号量初始值
+
+// 销毁信号量
+int sem_destroy(sem_t *sem);
+
+// 等待信号量，会将信号量的值减1，P()
+int sem_wait(sem_t *sem);
+
+// 发布信号量，表示资源使用完毕，可以归还了。将信号量值加1，V()
+int sem_post(sem_t *sem)</code></pre>
+<h6 id="基于环形队列的生产消费者模型"><a href="#基于环形队列的生产消费者模型" class="headerlink" title="基于环形队列的生产消费者模型"></a>基于环形队列的生产消费者模型</h6><p><img src="https://img.3amupupup.online/circle_queue_by_semaphore.png" alt="环形队列"></p>
+<pre><code class="c">#include &lt;vector&gt;
+#include &lt;semaphore.h&gt;
+
+template&lt;class T&gt;
+class RingQueue
+{
+public:
+    RingQueue(size_t cap = 10):_v(cap)
+    {
+        p_index = c_index = 0;
+        _max_cap = cap;
+        sem_init(&amp;sem_data, 0, 0);
+        sem_init(&amp;sem_blank, 0, _max_cap);
+    }
+
+    ~RingQueue()
+    {
+        sem_destroy(&amp;sem_data);
+        sem_destroy(&amp;sem_blank);
+        p_index = 0;
+        c_index = 0;
+    }
+
+    void Get(T &amp;out)
+    {
+        P(sem_data); // 取数据时，要将数据对应的信号量减1
+        out = _v[c_index];
+        c_index++;
+        c_index %= _max_cap; // 数据减1时对应的装数据的格子增1
+        V(sem_blank);
+    }
+
+    void Put(T &amp;in)
+    {
+        P(sem_blank);
+        _v[p_index] = in;
+        p_index++;
+        p_index %= _max_cap;
+        V(sem_data);
+    }
+
+private:
+    void P(sem_t &amp;s)
+    {
+        sem_wait(&amp;s);
+    }
+
+    void V(sem_t &amp;s)
+    {
+        sem_post(&amp;s);
+    }
+private:
+    std::vector&lt;T&gt; _v;
+    size_t _max_cap;
+    sem_t sem_data;
+    sem_t sem_blank;
+    size_t p_index;
+    size_t c_index;
+};</code></pre>
+<pre><code class="c">#include &quot;RingQueue.hpp&quot;
+#include &lt;iostream&gt;
+#include &lt;pthread.h&gt;
+#include &lt;unistd.h&gt;
+using namespace std;
+
+void* Productor(void *arg)
+{
+    RingQueue&lt;int&gt; *q = (RingQueue&lt;int&gt;*)arg;
+    while(true)
+    {
+        int data = rand() % 100;
+        q-&gt;Put(data);
+        cout &lt;&lt; &quot;Productor Put data: &quot; &lt;&lt; data &lt;&lt; endl;
+    }
+}
+
+void* Consumer(void *arg)
+{
+    RingQueue&lt;int&gt; *q = (RingQueue&lt;int&gt;*)arg;
+    while(true)
+    {
+        int data;
+        q-&gt;Get(data);
+        cout &lt;&lt; &quot;Consumer Get data: &quot; &lt;&lt; data &lt;&lt; endl;
+        sleep(1);
+    }
+}
+
+int main()
+{
+    RingQueue&lt;int&gt; *rq = new RingQueue&lt;int&gt;;
+
+    pthread_t pro, con;
+
+    pthread_create(&amp;pro, nullptr, Productor, (void*)rq);
+
+    pthread_create(&amp;con, nullptr, Consumer, (void*)rq);
+
+    pthread_join(pro, nullptr);
+
+    pthread_join(con, nullptr);
+
+    return 0;
+}</code></pre>
+<h5 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h5><h6 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h6><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;queue&gt;
+#include &lt;pthread.h&gt;
+#include &lt;cmath&gt;
+#include &lt;unistd.h&gt;
+
+class Task
+{
+public:
+    int base;
+public:
+    Task() = default;
+    Task(int num): base(num){}
+    void Run()
+    {
+        std::cout &lt;&lt; &quot;thread id[&quot; &lt;&lt; pthread_self() &lt;&lt;&quot;]&quot; &lt;&lt; &quot;thread run done...... : base# &quot; &lt;&lt; base &lt;&lt; &quot; pow is # &quot; &lt;&lt; pow(base, 2)  &lt;&lt; std::endl;
+        usleep(100);
+    }
+
+};
+
+class ThreadPool
+{
+private:
+    pthread_mutex_t lock;
+    pthread_cond_t cond; // 只能让消费者等，如果作为服务器时，生产者等待那么就无法接收外部请求了
+    std::queue&lt;Task&gt; q;
+    size_t max_num;
+public:
+    void LockQueue()
+    {
+        pthread_mutex_lock(&amp;lock);
+    }
+
+    void UnLockQueue()
+    {
+        pthread_mutex_unlock(&amp;lock);
+    }
+
+    void ThreadWait()
+    {
+        pthread_cond_wait(&amp;cond, &amp;lock);
+    }
+
+    void WakeUpThread()
+    {
+        pthread_cond_signal(&amp;cond);
+    }
+
+    bool IsEmpty()
+    {
+        return q.size() == 0;
+    }
+
+    // threadpool
+    void Get(Task &amp;out)
+    {
+        out = q.front();
+        q.pop();
+    }
+
+    // server
+    void Put(Task &amp;in)
+    {
+        LockQueue();
+        q.push(in);
+        UnLockQueue();
+        WakeUpThread(); // 生产者塞任务进入队列之后，需要通知消费者。
+    }
+
+public:
+    ThreadPool(int num = 5): max_num(num)
+    {}
+
+    static void* Routine(void *arg)
+    {
+        ThreadPool *this_p = (ThreadPool*)arg;
+        while(true)
+        {
+            this_p-&gt;LockQueue();
+            while(this_p-&gt;IsEmpty())
+            {
+                this_p-&gt;ThreadWait();
+            }
+
+            Task t;
+            this_p-&gt;Get(t);
+            this_p-&gt;UnLockQueue();
+            t.Run();
+        }
+    }
+
+    void ThreadPoolInit()
+    {
+        pthread_cond_init(&amp;cond, nullptr);
+        pthread_mutex_init(&amp;lock, nullptr);
+        pthread_t t;
+        for(size_t i = 0; i &lt; max_num; i++)
+        {
+            pthread_create(&amp;t, nullptr, Routine, this);
+        }
+    }
+
+    ~ThreadPool()
+    {
+        pthread_cond_destroy(&amp;cond);
+        pthread_mutex_destroy(&amp;lock);
+    }
+};</code></pre>
+<p>线程池存在的价值：</p>
+<ul>
+<li>有任务，立马有线程进行服务，省掉了线程创建的时间。</li>
+<li>有效防止，server中线程过多，导致系统过载问题。</li>
+</ul>
+<p>线程池 VS 进程池：</p>
+<ul>
+<li>线程池占用资源更少，但是健壮性不强。</li>
+<li>进程池占用资源更多，但是健壮性强。</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
@@ -1135,10 +1606,10 @@ int main()
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>thread</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">2.1k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">3.9k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-04-20, 17:02:24</p>
-    <p><span class="copy-title">最后更新:</span>2021-04-26, 01:29:13</p>
+    <p><span class="copy-title">最后更新:</span>2021-05-05, 21:03:34</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/04/20/thread/" title="thread">https://duwei19961021.github.io/2021/04/20/thread/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -1183,7 +1654,7 @@ int main()
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#内存','#queue','#list','#hashtable','#缓冲区','#信号','#c++','#线程',],
+            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#内存','#queue','#list','#hashtable','#缓冲区','#信号','#c++','#线程','#thread_pool',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

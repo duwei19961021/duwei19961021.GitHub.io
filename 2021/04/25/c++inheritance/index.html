@@ -15,7 +15,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img.3amupupup.online/CppInheritance.png">
 <meta property="article:published_time" content="2021-04-25T14:55:23.000Z">
-<meta property="article:modified_time" content="2021-04-25T17:24:54.565Z">
+<meta property="article:modified_time" content="2021-05-03T04:16:48.000Z">
 <meta property="article:author" content="拦云">
 <meta property="article:tag" content="c++">
 <meta name="twitter:card" content="summary">
@@ -71,11 +71,11 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(50)</small></div></li>
+    <li><div class="all active">全部文章<small>(52)</small></div></li>
     
         
             
-            <li><div data-rel="C语言">C语言<small>(14)</small></div>
+            <li><div data-rel="C语言">C语言<small>(16)</small></div>
                 
             </li>
             
@@ -115,7 +115,7 @@
     
         
             
-            <li><div data-rel="Nginx">Nginx<small>(6)</small></div>
+            <li><div data-rel="Nginx">Nginx<small>(7)</small></div>
                 
             </li>
             
@@ -123,7 +123,7 @@
     
         
             
-            <li><div data-rel="操作系统">操作系统<small>(5)</small></div>
+            <li><div data-rel="操作系统">操作系统<small>(4)</small></div>
                 
             </li>
             
@@ -139,8 +139,8 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="50">
-<input type="hidden" id="yelog_site_word_count" value="71.9k">
+<input type="hidden" id="yelog_site_posts_number" value="52">
+<input type="hidden" id="yelog_site_word_count" value="78.7k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -287,6 +287,10 @@
     
     <li class="article-tag-list-item">
         <a class="color3">线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">thread_pool</a>
     </li>
     
     <div class="clearfix"></div>
@@ -691,12 +695,28 @@
             <span class="post-date" title="2021-04-25 22:55:23">2021/04/25</span>
         </a>
         
-        <a  class="操作系统 "
+        <a  class="C语言 "
            href="/2021/04/20/thread/"
            data-tag="线程"
            data-author="" >
             <span class="post-title" title="thread">thread</span>
             <span class="post-date" title="2021-04-20 17:02:24">2021/04/20</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/05/03/c++polymorphic/"
+           data-tag="c++"
+           data-author="" >
+            <span class="post-title" title="c++继承">c++继承</span>
+            <span class="post-date" title="2021-05-03 12:17:03">2021/05/03</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/05/04/ngx_thread_pool/"
+           data-tag="thread_pool"
+           data-author="" >
+            <span class="post-title" title="nginx线程池">nginx线程池</span>
+            <span class="post-date" title="2021-05-04 00:43:27">2021/05/04</span>
         </a>
         
     </nav>
@@ -735,12 +755,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-04-26 01:24:54'>2021-04-25 22:55</time>
+        创建时间:<time class="date" title='更新时间: 2021-05-03 12:16:48'>2021-04-25 22:55</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.6k</span>
+        <span>字数:2.2k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -759,7 +779,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#继承"><span class="toc-text">继承</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、什么是继承？"><span class="toc-text">1、什么是继承？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、继承定义"><span class="toc-text">2、继承定义</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#继承关系和访问限定符"><span class="toc-text">继承关系和访问限定符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#继承父类，子类访问父类成员的变化。"><span class="toc-text">继承父类，子类访问父类成员的变化。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基类和派生类对象赋值转换（只存在于public继承）"><span class="toc-text">基类和派生类对象赋值转换（只存在于public继承）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3、继承中的作用域"><span class="toc-text">3、继承中的作用域</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4、派生类的默认成员函数"><span class="toc-text">4、派生类的默认成员函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5、继承与友元"><span class="toc-text">5、继承与友元</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6、继承和静态成员"><span class="toc-text">6、继承和静态成员</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#继承"><span class="toc-text">继承</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、什么是继承？"><span class="toc-text">1、什么是继承？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、继承定义"><span class="toc-text">2、继承定义</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#继承关系和访问限定符"><span class="toc-text">继承关系和访问限定符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#继承父类，子类访问父类成员的变化。"><span class="toc-text">继承父类，子类访问父类成员的变化。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基类和派生类对象赋值转换（只存在于public继承）"><span class="toc-text">基类和派生类对象赋值转换（只存在于public继承）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3、继承中的作用域"><span class="toc-text">3、继承中的作用域</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4、派生类的默认成员函数"><span class="toc-text">4、派生类的默认成员函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5、继承与友元"><span class="toc-text">5、继承与友元</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6、继承和静态成员"><span class="toc-text">6、继承和静态成员</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7、菱形继承"><span class="toc-text">7、菱形继承</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#单继承"><span class="toc-text">单继承</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#多继承"><span class="toc-text">多继承</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#棱形继承"><span class="toc-text">棱形继承</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#虚继承"><span class="toc-text">虚继承</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#虚拟继承分析"><span class="toc-text">虚拟继承分析</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1137,6 +1157,141 @@ int main()
 </ol>
 <h5 id="5、继承与友元"><a href="#5、继承与友元" class="headerlink" title="5、继承与友元"></a>5、继承与友元</h5><p>友元关系不能继承，也就是说基类友元不能访问子类私有和保护成员。</p>
 <h5 id="6、继承和静态成员"><a href="#6、继承和静态成员" class="headerlink" title="6、继承和静态成员"></a>6、继承和静态成员</h5><p>基类定义了static静态成员，则整个继承体系里面只有一个这样的成员。无论派生出多少个子类，都只有一 个static成员实例 。</p>
+<h5 id="7、菱形继承"><a href="#7、菱形继承" class="headerlink" title="7、菱形继承"></a>7、菱形继承</h5><h6 id="单继承"><a href="#单继承" class="headerlink" title="单继承"></a>单继承</h6><p>一个子类只有一个直接父类时称这个继承关系为单继承。</p>
+<p>![单继承](../Library/Application Support/typora-user-images/image-20210429205858101.png)</p>
+<h6 id="多继承"><a href="#多继承" class="headerlink" title="多继承"></a>多继承</h6><p>一个子类有两个或以上直接父类时称这个继承关系为多继承。</p>
+<p>![多继承](../Library/Application Support/typora-user-images/image-20210429210815054.png)</p>
+<h6 id="棱形继承"><a href="#棱形继承" class="headerlink" title="棱形继承"></a>棱形继承</h6><p>多继承的特殊情况</p>
+<p>![棱形继承](../Library/Application Support/typora-user-images/image-20210429210855540.png)</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Person
+{
+public:
+    string name;
+};
+
+class Teacher : public Person
+{
+    int _id; // 职工编号
+};
+
+class Student : public Person
+{
+public:
+    int _num; // 学号
+};
+
+class Assistant:public Student, public Teacher
+{
+    string _course; // 课程名
+};
+
+int main()
+{
+    Assistant a;
+
+    // a.name = &quot;duwei&quot;; // 错误：对成员‘name’的请求有歧义
+
+    a.Student::name = &quot;duwei&quot;; // 指定父类可以解决二义性，但是数据会存在冗余
+    a.Teacher::name = &quot;duwei&quot;;
+
+    return 0;
+}</code></pre>
+<h6 id="虚继承"><a href="#虚继承" class="headerlink" title="虚继承"></a>虚继承</h6><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Person
+{
+public:
+    string name;
+};
+
+class Teacher : virtual public Person
+{
+    int _id; // 职工编号
+};
+
+class Student : virtual public Person
+{
+public:
+    int _num; // 学号
+};
+
+class Assistant:public Student, public Teacher
+{
+    string _course; // 课程名
+};
+
+int main()
+{
+    Assistant a;
+
+    a.name = &quot;duwei&quot;;
+    cout &lt;&lt; a.name &lt;&lt; endl; // duwei
+
+    a.Student::name = &quot;zhangsan&quot;;
+    cout &lt;&lt; a.name &lt;&lt; endl; // zhangsan
+
+    a.Teacher::name = &quot;lisi&quot;;
+    cout &lt;&lt; a.name &lt;&lt; endl; // lisi
+
+    return 0;
+}</code></pre>
+<h6 id="虚拟继承分析"><a href="#虚拟继承分析" class="headerlink" title="虚拟继承分析"></a>虚拟继承分析</h6><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class A
+{
+public:
+    int _a;
+};
+
+class B : public A
+{
+public:
+    int _b;
+};
+
+class C : public A
+{
+public:
+    int _c; // 学号
+};
+
+class D: public B, public C
+{
+public:
+    int _d;
+};
+
+int main()
+{
+    D d;
+
+    cout &lt;&lt; sizeof(d) &lt;&lt; endl;
+
+    d.B::_a = 1;
+    d.C::_a = 2;
+    d._b = 3;
+    d._d = 4;
+
+    return 0;
+}</code></pre>
+<p>![image-20210429225636867](../Library/Application Support/typora-user-images/image-20210429225636867.png)</p>
+<p>借助Clion查看d对象在内存上的结构：</p>
+<p>其中成员 _a 各自一份的，类继承之后的存储和结构体成员的存储类似。</p>
+<p>![image-20210429231041888](../Library/Application Support/typora-user-images/image-20210429231041888.png)</p>
+<p>使用虚拟继承之后只有一份公共的虚基类成员 A，解决了数据冗余和二义性 </p>
+<p>![image-20210502155450341](../Library/Application Support/typora-user-images/image-20210502155450341.png)</p>
+<blockquote>
+<p>set p pertty &lt;on/off&gt;: 按照层次打印结构体</p>
+<p>set p obj &lt;on/off&gt;: 在C++中，如果一个对象指针指向其派生类，如果打开这个选项，GDB会自动按照虚方法调用的规则显示输出，如果关闭这个选项的话，GDB就不管虚函数表了。这个选项默认是off。 使用show print object查看对象选项的设置。</p>
+</blockquote>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
@@ -1147,10 +1302,10 @@ int main()
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>c++继承</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">1.6k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">2.2k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-04-25, 22:55:23</p>
-    <p><span class="copy-title">最后更新:</span>2021-04-26, 01:24:54</p>
+    <p><span class="copy-title">最后更新:</span>2021-05-03, 12:16:48</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/04/25/c++inheritance/" title="c++继承">https://duwei19961021.github.io/2021/04/25/c++inheritance/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -1195,7 +1350,7 @@ int main()
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#内存','#queue','#list','#hashtable','#缓冲区','#信号','#c++','#线程',],
+            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#内存','#queue','#list','#hashtable','#缓冲区','#信号','#c++','#线程','#thread_pool',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

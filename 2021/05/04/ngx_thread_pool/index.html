@@ -6,20 +6,20 @@
   <meta name="keywords" content=" thread_pool ">
   <meta name="description" content="nginx线程池 | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="继承1、什么是继承？继承是面向对象程序设计使代码可以复用的重要手段，允许程序员在保持原有类特性的基础上进行扩展，增加功能，这样产生的新类叫派生类。继承是类设计层次的复用。 class Person { public:     void speak()     {         ;     }      void sleep()     {         ;     }  public:">
+<meta name="description" content="nginx线程池&#x2F;&#x2F; task链表 struct ngx_thread_task_s {     ngx_thread_task_t   *next; &#x2F;&#x2F; 指向下一个task结构     ngx_uint_t          id; &#x2F;&#x2F; 起标识作用的id     void                *ctx; &#x2F;&#x2F; 传给handler的参数     void">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c++继承">
-<meta property="og:url" content="https://duwei19961021.github.io/2021/04/25/c++inheritance/index.html">
+<meta property="og:title" content="nginx线程池">
+<meta property="og:url" content="https://duwei19961021.github.io/2021/05/04/ngx_thread_pool/index.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="继承1、什么是继承？继承是面向对象程序设计使代码可以复用的重要手段，允许程序员在保持原有类特性的基础上进行扩展，增加功能，这样产生的新类叫派生类。继承是类设计层次的复用。 class Person { public:     void speak()     {         ;     }      void sleep()     {         ;     }  public:">
+<meta property="og:description" content="nginx线程池&#x2F;&#x2F; task链表 struct ngx_thread_task_s {     ngx_thread_task_t   *next; &#x2F;&#x2F; 指向下一个task结构     ngx_uint_t          id; &#x2F;&#x2F; 起标识作用的id     void                *ctx; &#x2F;&#x2F; 传给handler的参数     void">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img.3amupupup.online/CppInheritance.png">
-<meta property="article:published_time" content="2021-04-25T14:55:23.000Z">
-<meta property="article:modified_time" content="2021-05-03T04:16:48.000Z">
+<meta property="og:image" content="https://duwei19961021.github.io/2021/Desktop/source/image/ngx_task_queue.png">
+<meta property="article:published_time" content="2021-05-03T16:43:27.000Z">
+<meta property="article:modified_time" content="2021-05-06T16:28:37.285Z">
 <meta property="article:author" content="拦云">
-<meta property="article:tag" content="c++">
+<meta property="article:tag" content="thread_pool">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img.3amupupup.online/CppInheritance.png">
+<meta name="twitter:image" content="https://duwei19961021.github.io/2021/Desktop/source/image/ngx_task_queue.png">
 
 
 <link rel="icon" href="/img/favicon.ico">
@@ -140,7 +140,7 @@
     <div><a  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="52">
-<input type="hidden" id="yelog_site_word_count" value="78.7k">
+<input type="hidden" id="yelog_site_word_count" value="79.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -755,12 +755,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-05-06 14:46:01'>2021-05-04 00:43</time>
+        创建时间:<time class="date" title='更新时间: 2021-05-07 00:28:37'>2021-05-04 00:43</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:2.1k</span>
+        <span>字数:2.8k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -779,7 +779,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#nginx线程池"><span class="toc-text">nginx线程池</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#接口"><span class="toc-text">接口</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#nginx线程池"><span class="toc-text">nginx线程池</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#接口"><span class="toc-text">接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -798,8 +798,8 @@
         <h4 id="nginx线程池"><a href="#nginx线程池" class="headerlink" title="nginx线程池"></a>nginx线程池</h4><pre><code class="c++">// task链表
 struct ngx_thread_task_s {
     ngx_thread_task_t   *next; // 指向下一个task结构
-    ngx_uint_t          id;
-    void                *ctx;
+    ngx_uint_t          id; // 起标识作用的id
+    void                *ctx; // 传给handler的参数
     void                (*handler)(void *data, ngx_log_t *log); // 要执行的任务(函数指针)
     ngx_event_t         event;
 };
@@ -814,11 +814,11 @@ struct ngx_thread_pool_s {
     ngx_thread_mutex_t        mtx; // 互斥锁：其本质是 pthread_mutex_t，使用的pthread库
     ngx_thread_pool_queue_t   queue; // 通过这个数据结构的两个指针，添加task，取task交给线程执行
     ngx_int_t                 waiting;
-    ngx_thread_cond_t         cond; // 同步锁：其本质是 pthread_cond_t，使用的pthread库
+    ngx_thread_cond_t         cond; // 条件变量：其本质是 pthread_cond_t，使用的pthread库
 
     ngx_log_t                *log;
 
-    ngx_str_t                 name;
+    ngx_str_t                 name; // 线程池名字，默认default
     ngx_uint_t                threads; // 线程池中线程的数量
     ngx_int_t                 max_queue; // 队列中task最大数量
 
@@ -867,11 +867,15 @@ struct ngx_thread_pool_s {
             }
 
             err = pthread_mutexattr_settype(&amp;attr, PTHREAD_MUTEX_ERRORCHECK);
+
             // 通过：man pthread_mutexattr_settype 查询手册得知，这个函数功能是设置锁的类型。
             // PTHREAD_MUTEX_ERRORCHECK：这种类型的互斥锁提供错误检查，一个线程试图重新锁
             // 互斥锁而不首先解锁它将返回一个错误。试图解锁另一个线程已锁定的互斥锁的线程将返回
             // 一个错误。一个线程尝试解锁已解锁的互斥锁将返回一个错误。
             // 出现上述三种情况时就会范湖错误。
+            // 由此可知：生产者将task初始化好之后放入ngx_thread_pool_queue_t，线程池的线程再去这个链表中获取task，
+            // 获取task时如果发现有其它线程已经在操作这个链表了，线程不会进入阻塞，会直接return，因此线程处理task这
+            // 个过程是异步非阻塞的
 
             if (err != 0) {
                 ngx_log_error(NGX_LOG_EMERG, log, err,
@@ -887,7 +891,7 @@ struct ngx_thread_pool_s {
                 return NGX_ERROR;
             }
 
-            err = pthread_mutexattr_destroy(&amp;attr); // 销毁attr，属性已经设置完，可以释放
+            err = pthread_mutexattr_destroy(&amp;attr); // 销毁attr，属性已经设置完，可以释放，避免内存泄露
             if (err != 0) {
                 ngx_log_error(NGX_LOG_ALERT, log, err,
                               &quot;pthread_mutexattr_destroy() failed&quot;);
@@ -942,15 +946,16 @@ struct ngx_thread_pool_s {
 #endif
 
     for (n = 0; n &lt; tp-&gt;threads; n++) { // 创建n个线程
-        err = pthread_create(&amp;tid, &amp;attr, ngx_thread_pool_cycle, tp); // 线程执行的函数是ngx_thread_pool_cycle，给ngx_thread_pool_cycle函数的参数是tp
+        err = pthread_create(&amp;tid, &amp;attr, ngx_thread_pool_cycle, tp); // 线程执行的函数是ngx_thread_pool_cycle，给ngx_thread_pool_cycle函数的参数是tp(线程池本身)
         if (err) {
             ngx_log_error(NGX_LOG_ALERT, log, err,
                           &quot;pthread_create() failed&quot;);
             return NGX_ERROR;
         }
     }
+      // 此时n个线程已经创建完毕，它们都执行同一个工作：执行ngx_thread_pool_cycle函数（获取任务，执行任务）
 
-    (void) pthread_attr_destroy(&amp;attr);
+    (void) pthread_attr_destroy(&amp;attr); // 销毁设置线程属性的结构，避免内存泄露
 
     return NGX_OK;
 }</code></pre>
@@ -979,7 +984,7 @@ ngx_thread_pool_cycle(void *data)
     sigdelset(&amp;set, SIGSEGV); // 段错误
     sigdelset(&amp;set, SIGBUS); // 非法地址
 
-    err = pthread_sigmask(SIG_BLOCK, &amp;set, NULL); // 除了以上四个信号，其它信号都会被阻塞（blokc）
+    err = pthread_sigmask(SIG_BLOCK, &amp;set, NULL); // 除了以上四个信号，其它信号都会被阻塞（block）
     if (err) {
         ngx_log_error(NGX_LOG_ALERT, tp-&gt;log, err, &quot;pthread_sigmask() failed&quot;);
         return NULL;
@@ -990,15 +995,22 @@ ngx_thread_pool_cycle(void *data)
             // 给mtx上锁，如果mtx已经被锁了则会报错（因为之前设置过锁属性--PTHREAD_MUTEX_ERRORCHECK），这个线程执行结束，走到
             // 这一步链表上的task并没有被取下来。如果线程获取task时发现task队列正有其它线程在从中获取任务则直接结束，不进行阻塞。
             return NULL;
+            // 有一点没想明白：如果return那么这个线程就结束了，线程池里的线程数量会减少
+
+              // 在线程们刚启动的时候可能会出现多个线程争抢一把锁的问题，ngx这里是直接将争抢锁的线程结束掉而不是阻塞，虽然可能会造成某些线程退出，
+              // 造成线程池中线程数量减少，但是这里不阻塞选择结束，带来了性能上的提升，且并不是会持续减少，当所有线程都在cond条件变量下等待时，
+              // 线程的运行就是有序的了，就不会出现争抢锁导致锁退出的情况了。虽然线程数量会减少，但是也并不是会一直减少，在所有线程进入cond条件变量下
+              // 时，便不会再发生争抢锁的情况，且效率比互斥锁要更高。
+              // 在此过程中生产者是worker进程，生产者只有一个！！！，线程多个，所以消费起来，消费者必然比生产者快。
         }
 
           // 上锁成功，进入临界区！！！
 
         /* the number may become negative */
-        tp-&gt;waiting--; // 上锁成功，休眠的线程数量减1
+        tp-&gt;waiting--; // 未知
 
-        while (tp-&gt;queue.first == NULL) { // 如果task队列空（没有任务取），则进入阻塞状态，直到被唤醒
-            if (ngx_thread_cond_wait(&amp;tp-&gt;cond, &amp;tp-&gt;mtx, tp-&gt;log)
+        while (tp-&gt;queue.first == NULL) { // 如果task队列空（没有任务取），则线程在cond条件变量下休眠，直到被唤醒。使用while：如果醒来发现任务队列还是为空继续休眠
+            if (ngx_thread_cond_wait(&amp;tp-&gt;cond, &amp;tp-&gt;mtx, tp-&gt;log) // 阻塞在当前位置
                 != NGX_OK)
                // pthread_cond_wait函数在进入休眠时会将锁释放，重新被唤醒时再加锁。如果wait失败则锁不会被释放，所以在这里是用while而不是if，ngx_thread_cond_wait执行失败会释放锁
             {
@@ -1055,9 +1067,9 @@ ngx_thread_pool_handler(ngx_event_t *ev)
 
     ngx_log_debug0(NGX_LOG_DEBUG_CORE, ev-&gt;log, 0, &quot;thread pool handler&quot;);
 
-    ngx_spinlock(&amp;ngx_thread_pool_done_lock, 1, 2048);
+    ngx_spinlock(&amp;ngx_thread_pool_done_lock, 1, 2048); // 使用的自旋锁，将已完成的task加入至ngx_thread_pool_done链表，操作步骤少，需要的时间也少，使用自旋锁是最合适的，避免进入阻塞，线程切换带来的开销
 
-    task = ngx_thread_pool_done.first;
+    task = ngx_thread_pool_done.first; // task保存头结点，这一段代码：一次取出done链表上的多个task
     ngx_thread_pool_done.first = NULL;
     ngx_thread_pool_done.last = &amp;ngx_thread_pool_done.first;
 
@@ -1065,14 +1077,14 @@ ngx_thread_pool_handler(ngx_event_t *ev)
 
     ngx_unlock(&amp;ngx_thread_pool_done_lock);
 
-    while (task) {
+    while (task) { // 遍历从done链表上取下来的多个结点
         ngx_log_debug1(NGX_LOG_DEBUG_CORE, ev-&gt;log, 0,
                        &quot;run completion handler for task #%ui&quot;, task-&gt;id);
 
         event = &amp;task-&gt;event;
         task = task-&gt;next;
 
-        event-&gt;complete = 1;
+        event-&gt;complete = 1; // 标记为已经完成
         event-&gt;active = 0;
 
         event-&gt;handler(event);
@@ -1175,54 +1187,56 @@ ngx_thread_pool_destroy(ngx_thread_pool_t *tp)
     (void) ngx_thread_mutex_destroy(&amp;tp-&gt;mtx, tp-&gt;log); // 销毁互斥锁
 }</code></pre>
 </li>
-<li><p>dddd</p>
+<li><p>ngx_int_t ngx_thread_task_post(ngx_thread_pool_t *tp, ngx_thread_task_t *task)：添加task进入task队列</p>
 <pre><code class="c">ngx_int_t
 ngx_thread_task_post(ngx_thread_pool_t *tp, ngx_thread_task_t *task)
 {
-    if (task-&gt;event.active) {
-        ngx_log_error(NGX_LOG_ALERT, tp-&gt;log, 0,
-                      &quot;task #%ui already active&quot;, task-&gt;id);
-        return NGX_ERROR;
-    }
+   if (task-&gt;event.active) {
+       ngx_log_error(NGX_LOG_ALERT, tp-&gt;log, 0,
+                     &quot;task #%ui already active&quot;, task-&gt;id);
+       return NGX_ERROR;
+   }
 
-    if (ngx_thread_mutex_lock(&amp;tp-&gt;mtx, tp-&gt;log) != NGX_OK) {
-        return NGX_ERROR;
-    }
+   if (ngx_thread_mutex_lock(&amp;tp-&gt;mtx, tp-&gt;log) != NGX_OK) {
+       return NGX_ERROR;
+   }
 
-    if (tp-&gt;waiting &gt;= tp-&gt;max_queue) {
-        (void) ngx_thread_mutex_unlock(&amp;tp-&gt;mtx, tp-&gt;log);
+   if (tp-&gt;waiting &gt;= tp-&gt;max_queue) {
+       (void) ngx_thread_mutex_unlock(&amp;tp-&gt;mtx, tp-&gt;log);
 
-        ngx_log_error(NGX_LOG_ERR, tp-&gt;log, 0,
-                      &quot;thread pool \&quot;%V\&quot; queue overflow: %i tasks waiting&quot;,
-                      &amp;tp-&gt;name, tp-&gt;waiting);
-        return NGX_ERROR;
-    }
+       ngx_log_error(NGX_LOG_ERR, tp-&gt;log, 0,
+                     &quot;thread pool \&quot;%V\&quot; queue overflow: %i tasks waiting&quot;,
+                     &amp;tp-&gt;name, tp-&gt;waiting);
+       return NGX_ERROR;
+   }
 
-    task-&gt;event.active = 1;
+   task-&gt;event.active = 1;
 
-    task-&gt;id = ngx_thread_pool_task_id++;
-    task-&gt;next = NULL;
+   task-&gt;id = ngx_thread_pool_task_id++;
+   task-&gt;next = NULL;
 
-    if (ngx_thread_cond_signal(&amp;tp-&gt;cond, tp-&gt;log) != NGX_OK) {
-        (void) ngx_thread_mutex_unlock(&amp;tp-&gt;mtx, tp-&gt;log);
-        return NGX_ERROR;
-    }
+   if (ngx_thread_cond_signal(&amp;tp-&gt;cond, tp-&gt;log) != NGX_OK) { // 有task进队事件发生，唤醒线程处理，奇怪的是为什么是先唤醒消费者线程，再把task放入队列
+       (void) ngx_thread_mutex_unlock(&amp;tp-&gt;mtx, tp-&gt;log);
+       return NGX_ERROR;
+   }
 
-    *tp-&gt;queue.last = task;
-    tp-&gt;queue.last = &amp;task-&gt;next;
+   *tp-&gt;queue.last = task;
+   tp-&gt;queue.last = &amp;task-&gt;next;
 
-    tp-&gt;waiting++;
+   tp-&gt;waiting++;
 
-    (void) ngx_thread_mutex_unlock(&amp;tp-&gt;mtx, tp-&gt;log);
+   (void) ngx_thread_mutex_unlock(&amp;tp-&gt;mtx, tp-&gt;log);
 
-    ngx_log_debug2(NGX_LOG_DEBUG_CORE, tp-&gt;log, 0,
-                   &quot;task #%ui added to thread pool \&quot;%V\&quot;&quot;,
-                   task-&gt;id, &amp;tp-&gt;name);
+   ngx_log_debug2(NGX_LOG_DEBUG_CORE, tp-&gt;log, 0,
+                  &quot;task #%ui added to thread pool \&quot;%V\&quot;&quot;,
+                  task-&gt;id, &amp;tp-&gt;name);
 
-    return NGX_OK;
+   return NGX_OK;
 }</code></pre>
 </li>
 </ol>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p><img src="../../../Desktop/source/image/ngx_task_queue.png" alt="ngx_task_queue"></p>
+<p>线程从task队列获取任务时，尽可能的多获取任务多执行任务，而不是多个线程同步式的去从task队列获取，减少线程的切换。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
@@ -1233,10 +1247,10 @@ ngx_thread_task_post(ngx_thread_pool_t *tp, ngx_thread_task_t *task)
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>nginx线程池</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">2.1k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">2.8k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-05-04, 00:43:27</p>
-    <p><span class="copy-title">最后更新:</span>2021-05-06, 14:46:01</p>
+    <p><span class="copy-title">最后更新:</span>2021-05-07, 00:28:37</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/05/04/ngx_thread_pool/" title="nginx线程池">https://duwei19961021.github.io/2021/05/04/ngx_thread_pool/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

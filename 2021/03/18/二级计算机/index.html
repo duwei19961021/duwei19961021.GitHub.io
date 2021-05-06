@@ -6,20 +6,20 @@
   <meta name="keywords" content="">
   <meta name="description" content="二级计算机 | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="继承1、什么是继承？继承是面向对象程序设计使代码可以复用的重要手段，允许程序员在保持原有类特性的基础上进行扩展，增加功能，这样产生的新类叫派生类。继承是类设计层次的复用。 class Person { public:     void speak()     {         ;     }      void sleep()     {         ;     }  public:">
+<meta name="description" content="nginx线程池&#x2F;&#x2F; task链表 struct ngx_thread_task_s {     ngx_thread_task_t   *next; &#x2F;&#x2F; 指向下一个task结构     ngx_uint_t          id; &#x2F;&#x2F; 起标识作用的id     void                *ctx; &#x2F;&#x2F; 传给handler的参数     void">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c++继承">
-<meta property="og:url" content="https://duwei19961021.github.io/2021/04/25/c++inheritance/index.html">
+<meta property="og:title" content="nginx线程池">
+<meta property="og:url" content="https://duwei19961021.github.io/2021/05/04/ngx_thread_pool/index.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="继承1、什么是继承？继承是面向对象程序设计使代码可以复用的重要手段，允许程序员在保持原有类特性的基础上进行扩展，增加功能，这样产生的新类叫派生类。继承是类设计层次的复用。 class Person { public:     void speak()     {         ;     }      void sleep()     {         ;     }  public:">
+<meta property="og:description" content="nginx线程池&#x2F;&#x2F; task链表 struct ngx_thread_task_s {     ngx_thread_task_t   *next; &#x2F;&#x2F; 指向下一个task结构     ngx_uint_t          id; &#x2F;&#x2F; 起标识作用的id     void                *ctx; &#x2F;&#x2F; 传给handler的参数     void">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img.3amupupup.online/CppInheritance.png">
-<meta property="article:published_time" content="2021-04-25T14:55:23.000Z">
-<meta property="article:modified_time" content="2021-05-03T04:16:48.000Z">
+<meta property="og:image" content="https://duwei19961021.github.io/2021/Desktop/source/image/ngx_task_queue.png">
+<meta property="article:published_time" content="2021-05-03T16:43:27.000Z">
+<meta property="article:modified_time" content="2021-05-06T16:28:37.285Z">
 <meta property="article:author" content="拦云">
-<meta property="article:tag" content="c++">
+<meta property="article:tag" content="thread_pool">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img.3amupupup.online/CppInheritance.png">
+<meta name="twitter:image" content="https://duwei19961021.github.io/2021/Desktop/source/image/ngx_task_queue.png">
 
 
 <link rel="icon" href="/img/favicon.ico">
@@ -140,7 +140,7 @@
     <div><a  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="52">
-<input type="hidden" id="yelog_site_word_count" value="78.7k">
+<input type="hidden" id="yelog_site_word_count" value="79.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>

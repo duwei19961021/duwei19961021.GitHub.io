@@ -6,17 +6,16 @@
   <meta name="keywords" content=" 进程 ">
   <meta name="description" content="进程 | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="网络字节序内存分为大端存储和小端存储，网络数据同样有大小端之分。  发送主机通常将发送缓冲区中的数据按照内存地址从低到高的顺序发出。 接收主机把从网络上收到的字节依次保存在接收缓冲区中，也是按照内存从低到高的顺序保存。 因此，网络数据流的地址应该规定：先发出的数据是低地址，后发出的数据是高地址。 TCP&#x2F;IP协议规定，网络数据流应采用大端字节序，即低地址高字节。 不管是大端机还是小端机，都会按照T">
-<meta property="og:type" content="article">
-<meta property="og:title" content="socket">
-<meta property="og:url" content="https://duwei19961021.github.io/2021/05/12/socket/index.html">
+<meta name="description" content="gitlabBranch gitlabSourceBranch gitlabActionType gitlabUserName gitlabUserUsername gitlabUserEmail gitlabSourceRepoHomepage gitlabSourceRepoName gitlabSourceNamespace gitlabSourceRepoURL gitlabSourceR">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BLOG">
+<meta property="og:url" content="https://duwei19961021.github.io/file/sonar.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="网络字节序内存分为大端存储和小端存储，网络数据同样有大小端之分。  发送主机通常将发送缓冲区中的数据按照内存地址从低到高的顺序发出。 接收主机把从网络上收到的字节依次保存在接收缓冲区中，也是按照内存从低到高的顺序保存。 因此，网络数据流的地址应该规定：先发出的数据是低地址，后发出的数据是高地址。 TCP&#x2F;IP协议规定，网络数据流应采用大端字节序，即低地址高字节。 不管是大端机还是小端机，都会按照T">
+<meta property="og:description" content="gitlabBranch gitlabSourceBranch gitlabActionType gitlabUserName gitlabUserUsername gitlabUserEmail gitlabSourceRepoHomepage gitlabSourceRepoName gitlabSourceNamespace gitlabSourceRepoURL gitlabSourceR">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-12T05:44:40.000Z">
-<meta property="article:modified_time" content="2021-05-20T05:56:40.085Z">
+<meta property="article:published_time" content="2021-05-23T01:21:25.624Z">
+<meta property="article:modified_time" content="2021-03-18T03:09:52.073Z">
 <meta property="article:author" content="拦云">
-<meta property="article:tag" content="net">
 <meta name="twitter:card" content="summary">
 
 
@@ -44,7 +43,7 @@
 <script src="/js/iconfont.js?v=1.0.1" ></script>
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="BLOG" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 <div style="display: none">
   <input class="theme_disqus_on" value="false">
   <input class="theme_preload_comment" value="true">
@@ -69,31 +68,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(53)</small></div></li>
-    
-        
-            
-            <li><div data-rel="C语言">C语言<small>(17)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="运维">运维<small>(10)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="k8s">k8s<small>(2)</small></div>
-                
-            </li>
-            
-        
+    <li><div class="all active">全部文章<small>(52)</small></div></li>
     
         
             
@@ -121,6 +96,30 @@
     
         
             
+            <li><div data-rel="运维">运维<small>(11)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="k8s">k8s<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="C语言">C语言<small>(18)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
             <li><div data-rel="操作系统">操作系统<small>(4)</small></div>
                 
             </li>
@@ -137,8 +136,8 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="53">
-<input type="hidden" id="yelog_site_word_count" value="82k">
+<input type="hidden" id="yelog_site_posts_number" value="52">
+<input type="hidden" id="yelog_site_word_count" value="77.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -172,15 +171,7 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a class="color2">c</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">ecs</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color2">Jenkinsfile</a>
+        <a class="color1">Dockerfile</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -188,23 +179,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">sonar</a>
+        <a class="color4">sql_base</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">kubectl</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">jenkins</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">linux性能优化实战笔记</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">mongodb</a>
+        <a class="color4">ecs</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -212,15 +191,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">cicd</a>
+        <a class="color2">Jenkinsfile</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">数据结构</a>
+        <a class="color4">linux性能优化实战笔记</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">c语言基础</a>
+        <a class="color3">kubectl</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -228,7 +207,39 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">Dockerfile</a>
+        <a class="color2">c</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">c primer plus</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">cicd</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">c语言基础</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">jenkins</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">mongodb</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">数据结构</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">sonar</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">操作系统</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -240,35 +251,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">c primer plus</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">sql_base</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color1">array</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">mem_pool</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">内存</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color1">queue</a>
+        <a class="color4">c++</a>
     </li>
     
     <li class="article-tag-list-item">
         <a class="color5">list</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color5">hashtable</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -280,11 +267,23 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">c++</a>
+        <a class="color1">queue</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">线程</a>
+        <a class="color4">net</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">内存</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">no</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">hashtable</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -292,7 +291,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">net</a>
+        <a class="color3">线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">array</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">mem_pool</a>
     </li>
     
     <div class="clearfix"></div>
@@ -305,6 +312,30 @@
     
     <nav id="title-list-nav">
         
+        <a  class="运维 "
+           href="/2021/03/16/Nginx%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96header/"
+           data-tag="Nginx"
+           data-author="" >
+            <span class="post-title" title="Nginx日志获取header">Nginx日志获取header</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/16/make/"
+           data-tag="c"
+           data-author="" >
+            <span class="post-title" title="make">make</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/c++%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="c++构造函数">c++构造函数</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
         <a  class="C语言 "
            href="/2021/04/13/CppPrimer/"
            data-tag="book"
@@ -314,75 +345,67 @@
         </a>
         
         <a  class=""
-           href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0linux%E5%91%BD%E4%BB%A4/"
+           href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0linux%E5%91%BD%E4%BB%A4/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="C语言实现linux命令">C语言实现linux命令</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E9%A2%84%E5%A4%84%E7%90%86/"
+           href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E9%A2%84%E5%A4%84%E7%90%86/"
            data-tag="c"
            data-author="" >
             <span class="post-title" title="C语言预处理">C语言预处理</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/ECS%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9/"
+           href="/2021/03/16/ECS%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9/"
            data-tag="ecs"
            data-author="" >
             <span class="post-title" title="ECS磁盘扩容">ECS磁盘扩容</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/Jenkinsfile/"
+           href="/2021/03/16/Jenkinsfile/"
            data-tag="Jenkinsfile"
            data-author="" >
             <span class="post-title" title="Jenkinsfile">Jenkinsfile</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/Nginx%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96header/"
-           data-tag="Nginx"
-           data-author="" >
-            <span class="post-title" title="Nginx日志获取header">Nginx日志获取header</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="运维 "
-           href="/2021/03/18/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/"
+           href="/2021/03/16/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/"
            data-tag="sonar"
            data-author="" >
             <span class="post-title" title="Jenkins结合sonar代码检测流水线">Jenkins结合sonar代码检测流水线</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/c++%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="c++构造函数">c++构造函数</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/Nginx/"
+           href="/2021/03/16/Nginx/"
            data-tag="Nginx"
            data-author="" >
             <span class="post-title" title="Nginx">Nginx</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class=""
-           href="/2021/03/18/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B7/"
+           href="/2021/03/16/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B7/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="c陷阱与缺陷">c陷阱与缺陷</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/16/jenkins%E7%BB%93%E5%90%88rsync%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81/"
+           data-tag="jenkins"
+           data-author="" >
+            <span class="post-title" title="jenkins结合rsync同步代码">jenkins结合rsync同步代码</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="k8s "
@@ -394,203 +417,155 @@
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/jenkins%E7%BB%93%E5%90%88rsync%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81/"
-           data-tag="jenkins"
-           data-author="" >
-            <span class="post-title" title="jenkins结合rsync同步代码">jenkins结合rsync同步代码</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="运维 "
-           href="/2021/03/18/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"
+           href="/2021/03/16/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"
            data-tag="linux性能优化实战笔记"
            data-author="" >
             <span class="post-title" title="linux性能优化实战笔记">linux性能优化实战笔记</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="C语言 "
-           href="/2021/03/18/make/"
-           data-tag="c"
-           data-author="" >
-            <span class="post-title" title="make">make</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/mongo/"
+           href="/2021/03/16/mongo/"
            data-tag="mongodb"
            data-author="" >
             <span class="post-title" title="mongo">mongo</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="Nginx "
-           href="/2021/03/17/ngx_array/"
-           data-tag="array"
-           data-author="" >
-            <span class="post-title" title="nginx数组">nginx数组</span>
-            <span class="post-date" title="2021-03-17 11:26:01">2021/03/17</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/sonar/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="sonar">sonar</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/sql/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="sql">sql</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/zabbix_dingdingAlert/"
+           href="/2021/03/16/zabbix_dingdingAlert/"
            data-tag="zabbix"
            data-author="" >
             <span class="post-title" title="zabbix_dingdingAlert">zabbix_dingdingAlert</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="k8s "
-           href="/2021/03/18/%E4%B8%80%E6%AC%A1%E6%B5%B7%E5%A4%96k8s%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5/"
-           data-tag="cicd"
-           data-author="" >
-            <span class="post-title" title="一次海外k8s集群代码发布实践">一次海外k8s集群代码发布实践</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/%E4%BA%8C%E5%8F%89%E6%A0%91/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="二叉树">二叉树</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/zabbix_key/"
+           href="/2021/03/16/zabbix_key/"
            data-tag="zabbix"
            data-author="" >
             <span class="post-title" title="zabbix_key">zabbix_key</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="k8s "
+           href="/2021/03/16/%E4%B8%80%E6%AC%A1%E6%B5%B7%E5%A4%96k8s%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5/"
+           data-tag="cicd"
+           data-author="" >
+            <span class="post-title" title="一次海外k8s集群代码发布实践">一次海外k8s集群代码发布实践</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class=""
-           href="/2021/03/18/%E4%BA%8C%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/"
+           href="/2021/03/16/%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="二叉树">二叉树</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/%E4%BA%8C%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="二级计算机">二级计算机</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E5%B8%A6%E7%8E%AF%E9%93%BE%E8%A1%A8/"
+           href="/2021/03/16/%E5%B8%A6%E7%8E%AF%E9%93%BE%E8%A1%A8/"
            data-tag="数据结构"
            data-author="" >
             <span class="post-title" title="带环链表">带环链表</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/%E6%B1%87%E7%BC%96%E7%AC%94%E8%AE%B0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="汇编笔记">汇编笔记</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="操作系统 "
-           href="/2021/03/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="操作系统">操作系统</span>
-            <span class="post-date" title="2021-03-20 11:54:29">2021/03/20</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/"
+           href="/2021/03/16/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/"
            data-tag="c语言基础"
            data-author="" >
             <span class="post-title" title="数据的存储">数据的存储</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class=""
-           href="/2021/03/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
+           href="/2021/03/16/%E6%B1%87%E7%BC%96%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="汇编笔记">汇编笔记</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/05/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"
+           data-tag="no"
+           data-author="" >
+            <span class="post-title" title="操作系统">操作系统</span>
+            <span class="post-date" title="2021-05-23 09:25:50">2021/05/23</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="计算机网络">计算机网络</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E4%B8%93%E5%AE%B6%E7%BC%96%E7%A8%8B/"
+           href="/2021/03/16/C%E4%B8%93%E5%AE%B6%E7%BC%96%E7%A8%8B/"
            data-tag="book"
            data-author="" >
             <span class="post-title" title="C专家编程">C专家编程</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E5%92%8C%E6%8C%87%E9%92%88/"
+           href="/2021/03/16/C%E5%92%8C%E6%8C%87%E9%92%88/"
            data-tag="book"
            data-author="" >
             <span class="post-title" title="C和指针">C和指针</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="Docker "
-           href="/2021/03/18/Dockerfile/"
-           data-tag="Dockerfile"
-           data-author="" >
-            <span class="post-title" title="Dockerfile">Dockerfile</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90/"
+           href="/2021/03/16/C%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90/"
            data-tag="book"
            data-author="" >
             <span class="post-title" title="C深入剖析">C深入剖析</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
-        <a  class="Nginx "
-           href="/2021/03/18/ngx_mem_pool/"
-           data-tag="mem_pool"
+        <a  class="Docker "
+           href="/2021/03/16/Dockerfile/"
+           data-tag="Dockerfile"
            data-author="" >
-            <span class="post-title" title="nginx内存池">nginx内存池</span>
-            <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+            <span class="post-title" title="Dockerfile">Dockerfile</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           href="/2021/03/16/c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
            data-tag="c"
            data-author="" >
             <span class="post-title" title="c学习笔记">c学习笔记</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E6%8C%87%E9%92%88/"
+           href="/2021/03/16/%E6%8C%87%E9%92%88/"
            data-tag="c语言基础"
            data-author="" >
             <span class="post-title" title="指针">指针</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E6%8E%92%E5%BA%8F/"
+           href="/2021/03/16/%E6%8E%92%E5%BA%8F/"
            data-tag="排序"
            data-author="" >
             <span class="post-title" title="排序">排序</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
@@ -601,44 +576,52 @@
             <span class="post-date" title="2021-03-18 11:09:00">2021/03/18</span>
         </a>
         
+        <a  class="运维 "
+           href="/2020/09/10/tcp:ip/"
+           data-tag="操作系统"
+           data-author="" >
+            <span class="post-title" title="tcp-ip">tcp-ip</span>
+            <span class="post-date" title="2020-09-10 10:09:00">2020/09/10</span>
+        </a>
+        
         <a  class="C语言 "
-           href="/2021/03/18/C%20Primer%20Plus/"
+           href="/2021/03/16/C%20Primer%20Plus/"
            data-tag="c primer plus"
            data-author="" >
             <span class="post-title" title="C Primer Plus">C Primer Plus</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/tcp:ip/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="tcp:ip">tcp:ip</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="mysql "
-           href="/2021/03/18/PracticeSql/"
+           href="/2021/03/16/PracticeSql/"
            data-tag="sql_base"
            data-author="" >
             <span class="post-title" title="PracticeSql">PracticeSql</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="操作系统 "
-           href="/2021/03/20/virtual_memory/"
-           data-tag="内存"
-           data-author="" >
-            <span class="post-title" title="虚拟内存">虚拟内存</span>
-            <span class="post-date" title="2021-03-20 11:51:57">2021/03/20</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="Nginx "
-           href="/2021/03/18/ngx_buf/"
-           data-tag="缓冲区"
+           href="/2021/03/18/ngx_mem_pool/"
+           data-tag="mem_pool"
            data-author="" >
-            <span class="post-title" title="nginx缓冲区">nginx缓冲区</span>
+            <span class="post-title" title="nginx内存池">nginx内存池</span>
             <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/17/ngx_array/"
+           data-tag="array"
+           data-author="" >
+            <span class="post-title" title="nginx数组">nginx数组</span>
+            <span class="post-date" title="2021-03-17 11:26:01">2021/03/17</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/05/22/BSTree/"
+           data-tag="c++"
+           data-author="" >
+            <span class="post-title" title="二叉搜索树">二叉搜索树</span>
+            <span class="post-date" title="2021-05-22 20:47:06">2021/05/22</span>
         </a>
         
         <a  class="操作系统 "
@@ -649,60 +632,12 @@
             <span class="post-date" title="2021-03-20 11:55:12">2021/03/20</span>
         </a>
         
-        <a  class="Nginx "
-           href="/2021/03/21/ngx_queue/"
-           data-tag="queue"
-           data-author="" >
-            <span class="post-title" title="nginx双向链表">nginx双向链表</span>
-            <span class="post-date" title="2021-03-21 19:02:44">2021/03/21</span>
-        </a>
-        
-        <a  class="Nginx "
-           href="/2021/03/22/ngx_list/"
-           data-tag="list"
-           data-author="" >
-            <span class="post-title" title="nginx单向链表">nginx单向链表</span>
-            <span class="post-date" title="2021-03-22 11:15:43">2021/03/22</span>
-        </a>
-        
         <a  class=""
            href="/2021/03/22/ngx_align/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="ngx_align">ngx_align</span>
             <span class="post-date" title="2021-03-22 15:44:36">2021/03/22</span>
-        </a>
-        
-        <a  class="Nginx "
-           href="/2021/03/23/ngx_hash/"
-           data-tag="hashtable"
-           data-author="" >
-            <span class="post-title" title="nginx散列表">nginx散列表</span>
-            <span class="post-date" title="2021-03-23 18:21:27">2021/03/23</span>
-        </a>
-        
-        <a  class="操作系统 "
-           href="/2021/04/12/signal/"
-           data-tag="信号"
-           data-author="" >
-            <span class="post-title" title="信号">信号</span>
-            <span class="post-date" title="2021-04-12 19:57:55">2021/04/12</span>
-        </a>
-        
-        <a  class="C语言 "
-           href="/2021/04/25/c++inheritance/"
-           data-tag="c++"
-           data-author="" >
-            <span class="post-title" title="c++继承">c++继承</span>
-            <span class="post-date" title="2021-04-25 22:55:23">2021/04/25</span>
-        </a>
-        
-        <a  class="C语言 "
-           href="/2021/04/20/thread/"
-           data-tag="线程"
-           data-author="" >
-            <span class="post-title" title="thread">thread</span>
-            <span class="post-date" title="2021-04-20 17:02:24">2021/04/20</span>
         </a>
         
         <a  class="C语言 "
@@ -714,11 +649,43 @@
         </a>
         
         <a  class="Nginx "
-           href="/2021/05/04/ngx_thread_pool/"
-           data-tag="thread_pool"
+           href="/2021/03/22/ngx_list/"
+           data-tag="list"
            data-author="" >
-            <span class="post-title" title="nginx线程池">nginx线程池</span>
-            <span class="post-date" title="2021-05-04 00:43:27">2021/05/04</span>
+            <span class="post-title" title="nginx单向链表">nginx单向链表</span>
+            <span class="post-date" title="2021-03-22 11:15:43">2021/03/22</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/18/ngx_buf/"
+           data-tag="缓冲区"
+           data-author="" >
+            <span class="post-title" title="nginx缓冲区">nginx缓冲区</span>
+            <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/04/25/c++inheritance/"
+           data-tag="c++"
+           data-author="" >
+            <span class="post-title" title="c++继承">c++继承</span>
+            <span class="post-date" title="2021-04-25 22:55:23">2021/04/25</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/04/12/signal/"
+           data-tag="信号"
+           data-author="" >
+            <span class="post-title" title="信号">信号</span>
+            <span class="post-date" title="2021-04-12 19:57:55">2021/04/12</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/21/ngx_queue/"
+           data-tag="queue"
+           data-author="" >
+            <span class="post-title" title="nginx双向链表">nginx双向链表</span>
+            <span class="post-date" title="2021-03-21 19:02:44">2021/03/21</span>
         </a>
         
         <a  class="C语言 "
@@ -727,6 +694,38 @@
            data-author="" >
             <span class="post-title" title="socket">socket</span>
             <span class="post-date" title="2021-05-12 13:44:40">2021/05/12</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/03/20/virtual_memory/"
+           data-tag="内存"
+           data-author="" >
+            <span class="post-title" title="虚拟内存">虚拟内存</span>
+            <span class="post-date" title="2021-03-20 11:51:57">2021/03/20</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/23/ngx_hash/"
+           data-tag="hashtable"
+           data-author="" >
+            <span class="post-title" title="nginx散列表">nginx散列表</span>
+            <span class="post-date" title="2021-03-23 18:21:27">2021/03/23</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/05/04/ngx_thread_pool/"
+           data-tag="thread_pool"
+           data-author="" >
+            <span class="post-title" title="nginx线程池">nginx线程池</span>
+            <span class="post-date" title="2021-05-04 00:43:27">2021/05/04</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/04/20/thread/"
+           data-tag="线程"
+           data-author="" >
+            <span class="post-title" title="thread">thread</span>
+            <span class="post-date" title="2021-04-20 17:02:24">2021/04/20</span>
         </a>
         
     </nav>
@@ -770,7 +769,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:4.8k</span>
+        <span>字数:4.7k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -882,35 +881,35 @@
 </ol>
 <p>在fork函数执行完毕之后，如果创建进程成功，则出现两个进程，一个是子进程一个是父进程。在父进程中返回新创建子进程的pid，在子进程中返回0，可以通过fork返回值判断当前进程是父进程还是子进程。</p>
 <p>另外根据程序的输出信息：父进程中的age结果为-1，子进程中的age为1，但是age的地址在父子进程中相同。父进程和子进程共享内存，但是不共享私有数据，使用了写时复制的机制。但是pid不同(现阶段认知)。内存地址相同但是值却不相同，这里需要学习一下操作系统-虚拟内存。这里解释下：虽然父子进程中的age的内存地址相同，但是他们彼此独立不可见，虚拟内存地址相同但是它们各自对应的物理地址不相同。</p>
-<pre><code class="c">#include &lt;unistd.h&gt;
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-int main()
-{
-    int age = 0;
-    int pid;
-    pid = fork();
-    if(pid &lt; 0)
-    {
-        printf(&quot;fork() error.\n)&quot;);
-        exit(-1);
-    }
-    else if (pid == 0)
-    {
-        age++;
-        printf(&quot;I am child and my pid = %d, age = %d, addr = %p\n&quot;,getpid(),age,&amp;age);
-    }
-    else if (pid &gt; 0)
-    {
-        age--;
-        printf(&quot;I am parent and my Pid=%d, age = %d, addr = %p\n&quot;,getpid(),age,&amp;age);
-    }
-    return 0;
-}
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> age <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> pid<span class="token punctuation">;</span>
+    pid <span class="token operator">=</span> <span class="token function">fork</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>pid <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"fork() error.\n)"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>pid <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        age<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"I am child and my pid = %d, age = %d, addr = %p\n"</span><span class="token punctuation">,</span><span class="token function">getpid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>age<span class="token punctuation">,</span><span class="token operator">&amp;</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>pid <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        age<span class="token operator">--</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"I am parent and my Pid=%d, age = %d, addr = %p\n"</span><span class="token punctuation">,</span><span class="token function">getpid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>age<span class="token punctuation">,</span><span class="token operator">&amp;</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// 编译执行结果：
-// I am parent and my Pid=13086, age = -1, addr = 0x7fffc4e4dc98
-// I am child and my pid = 13087, age = 1, addr = 0x7fffc4e4dc98</code></pre>
+<span class="token comment" spellcheck="true">// 编译执行结果：</span>
+<span class="token comment" spellcheck="true">// I am parent and my Pid=13086, age = -1, addr = 0x7fffc4e4dc98</span>
+<span class="token comment" spellcheck="true">// I am child and my pid = 13087, age = 1, addr = 0x7fffc4e4dc98</span></code></pre>
 <h4 id="wait"><a href="#wait" class="headerlink" title="wait"></a>wait</h4><h4 id="waitpid"><a href="#waitpid" class="headerlink" title="waitpid"></a>waitpid</h4><p>pid_t waitpid(pid_t pid, int *statusp, int options);</p>
 <p>当options=0时，waitpid挂起调用进程的执行，直到它的等待集合中的一个进程终止；如果这个集合中的一个进程在刚调用的时刻就已经终止，那么waitpid立即返回。</p>
 <ol>
@@ -930,70 +929,70 @@ int main()
 </li>
 <li><p>WNOHANG</p>
 <p>如果等待集合中的任何子进程都没有终止，那么立即返回(返回值为0)，如果有子进程退出返回退出子进程的pid，失败返回-1(没有子进程或者子进程死光了)。在等待子进程终止的同时如果想做其它事情，这个选项很有用。</p>
-<pre><code class="c">#include &lt;unistd.h&gt;
-#include &lt;sys/wait.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;stdio.h&gt;
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/wait.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
 
-int main()
-{
-    int status;
-    int pid;
-    pid = fork();
-    if(pid == 0)
-    {
-        printf(&quot;I&#39;m child.\n&quot;);
-        sleep(3);
-        exit(0);
-    }
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> status<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> pid<span class="token punctuation">;</span>
+    pid <span class="token operator">=</span> <span class="token function">fork</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>pid <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"I'm child.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    while((pid = waitpid(-1,&amp;status,WNOHANG)) &gt; 0)
-    {
-        printf(&quot;child exit.\n&quot;);
-    }
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token punctuation">(</span>pid <span class="token operator">=</span> <span class="token function">waitpid</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>status<span class="token punctuation">,</span>WNOHANG<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"child exit.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    printf(&quot;I&#39;m parent.\n&quot;);
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"I'm parent.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    return 0;
-}
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// 使用 WNOHANG 父进程不会等待自己成退出，所以执行效果是: 父进程、子进程执行各自的代码，父进程执行完毕之后退出，因为子进程sleep(3)，所以子进程在输出打印之后三秒钟退出。</code></pre>
+<span class="token comment" spellcheck="true">// 使用 WNOHANG 父进程不会等待自己成退出，所以执行效果是: 父进程、子进程执行各自的代码，父进程执行完毕之后退出，因为子进程sleep(3)，所以子进程在输出打印之后三秒钟退出。</span></code></pre>
 </li>
 <li><p>WUNTRACED</p>
 <p>挂起调动进程的执行，直到等待集合中的一个进程变成已终止或者停止。返回的pid为导致返回的已终止或被停止子进程的pid。默认的行为是只返回已终止子进程。在想要检查已终止或已停止的子进程时，这个选项比较有用。</p>
-<pre><code class="c">#include &lt;unistd.h&gt;
-#include &lt;sys/wait.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;stdio.h&gt;
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/wait.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
 
-int main()
-{
-    int status;
-    int pid;
-    pid = fork();
-    if(pid == 0)
-    {
-        printf(&quot;child run and pid = %d\n&quot;,getpid());
-        printf(&quot;I&#39;m child.\n&quot;);
-        sleep(3);
-        exit(0);
-    }
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> status<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> pid<span class="token punctuation">;</span>
+    pid <span class="token operator">=</span> <span class="token function">fork</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>pid <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"child run and pid = %d\n"</span><span class="token punctuation">,</span><span class="token function">getpid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"I'm child.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    while((pid = waitpid(-1,&amp;status,WUNTRACED)) &gt; 0)
-    {
-        printf(&quot;child exit who pid = %d.\n&quot;,pid);
-    }
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token punctuation">(</span>pid <span class="token operator">=</span> <span class="token function">waitpid</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>status<span class="token punctuation">,</span>WUNTRACED<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"child exit who pid = %d.\n"</span><span class="token punctuation">,</span>pid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    printf(&quot;I&#39;m parent.\n&quot;);
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"I'm parent.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    return 0;
-}
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// root$ ./a.out
-// child run and pid = 26334
-// I&#39;m child.
-// child exit who pid = 26334.
-// I&#39;m parent.</code></pre>
+<span class="token comment" spellcheck="true">// root$ ./a.out</span>
+<span class="token comment" spellcheck="true">// child run and pid = 26334</span>
+<span class="token comment" spellcheck="true">// I'm child.</span>
+<span class="token comment" spellcheck="true">// child exit who pid = 26334.</span>
+<span class="token comment" spellcheck="true">// I'm parent.</span></code></pre>
 </li>
 <li><p>WCONTINUED</p>
 <p>挂起调用进程的执行，直到等待集合中一个正在运行的进程终止或者等待集合中一个被停止的进程收到SIGCONT信号重新开始执行。</p>
@@ -1007,67 +1006,67 @@ int main()
 <p><img src="http://img.3amupupup.online/childProcessStatus.png" alt="waitpid() status参数"></p>
 <p>如果statusp参数是非空的，那么操作系统就会读取进程的PCB，保存在status指向的变量中。</p>
 <p>status中保存的就是进程退出的信息，int是32bit，是否正常运行，退出码是多少，退出信号是多少。</p>
-<pre><code class="c">#include &lt;unistd.h&gt;
-#include &lt;sys/wait.h&gt;
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/wait.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
 
-int main()
-{
-    int status = 0;
-    pid_t id = fork();
-    if(id &lt; 0)
-    {
-        perror(&quot;fork error!\n&quot;);
-    }
-    else if(id == 0) // child
-    {
-        printf(&quot;i am child process\n&quot;);
-        int count = 0;
-        while (count &lt; 5)
-        {
-            sleep(1);
-            count++;
-            printf(&quot;sleep 1\n&quot;);
-        }
-//        int ret = 1/0;
-//        exit(99);
-        exit(0);
-    }
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> status <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    pid_t id <span class="token operator">=</span> <span class="token function">fork</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>id <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"fork error!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>id <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// child</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"i am child process\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>count <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            count<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"sleep 1\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//        int ret = 1/0;</span>
+<span class="token comment" spellcheck="true">//        exit(99);</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    // parent
-    printf(&quot;father wait before.\n&quot;);
-    pid_t ret = waitpid(id,&amp;status,0);
-    printf(&quot;status = %d\n&quot;,status); // 保存子进程的返回状态
-    if(ret &gt; 0)
-    {
-        printf(&quot;子进程终止信号: %d\n&quot;, status &amp; 0x7f); // 利用位运算&amp;来获取status低7位的值，0 表示是正常退出
-        printf(&quot;子进程退出码: %d\n&quot;,(status &gt;&gt; 8) &amp; 0xff);    // 也是利用的位运算，将status右移八位，再获取其低8位上的值
-        printf(&quot;wait success!\n&quot;);
-        if(status &amp; 0x7f) // 非0则说明子进程不是正常退出的
-        {
-            printf(&quot;child run error!\n&quot;);
-        }
-        else
-        {
-            if((status&gt;&gt;8) &amp; 0xff) // 运行成功但是结果不正确
-            {
-                printf(&quot;child run success, but result is not right, exit code: %d\n&quot;,(status&gt;&gt;8)&amp;0xff);
-            }
-            else
-            {
-                printf(&quot;child run success and result is right,exit code: %d\n&quot;,(status&gt;&gt;8)&amp;0xff);
-            }
-        }
-    }
-    else
-    {
-        printf(&quot;wait failed!\n&quot;);
-    }
-    printf(&quot;father wait after.\n&quot;);
+    <span class="token comment" spellcheck="true">// parent</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"father wait before.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pid_t ret <span class="token operator">=</span> <span class="token function">waitpid</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span><span class="token operator">&amp;</span>status<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"status = %d\n"</span><span class="token punctuation">,</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 保存子进程的返回状态</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>ret <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"子进程终止信号: %d\n"</span><span class="token punctuation">,</span> status <span class="token operator">&amp;</span> <span class="token number">0x7f</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 利用位运算&amp;来获取status低7位的值，0 表示是正常退出</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"子进程退出码: %d\n"</span><span class="token punctuation">,</span><span class="token punctuation">(</span>status <span class="token operator">>></span> <span class="token number">8</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">0xff</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 也是利用的位运算，将status右移八位，再获取其低8位上的值</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"wait success!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>status <span class="token operator">&amp;</span> <span class="token number">0x7f</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 非0则说明子进程不是正常退出的</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"child run error!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>status<span class="token operator">>></span><span class="token number">8</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">0xff</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 运行成功但是结果不正确</span>
+            <span class="token punctuation">{</span>
+                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"child run success, but result is not right, exit code: %d\n"</span><span class="token punctuation">,</span><span class="token punctuation">(</span>status<span class="token operator">>></span><span class="token number">8</span><span class="token punctuation">)</span><span class="token operator">&amp;</span><span class="token number">0xff</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">{</span>
+                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"child run success and result is right,exit code: %d\n"</span><span class="token punctuation">,</span><span class="token punctuation">(</span>status<span class="token operator">>></span><span class="token number">8</span><span class="token punctuation">)</span><span class="token operator">&amp;</span><span class="token number">0xff</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"wait failed!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"father wait after.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    return 0;
-}</code></pre>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p><img src="http://img.3amupupup.online/WaitpidStatus.png" alt="image-20210202163458393"></p>
 <p>图中在子进程sleep的时候给其发送了一个SIGSTOP信号导致子进程退出，status中保存的是子进程终止的状态信息。</p>
 <p>标准库中也提供一些宏函数来检测进程的退出状态：</p>
@@ -1075,51 +1074,51 @@ int main()
 <li><p>WIFEXITED(status): 如果为正常子进程终止子进程的返回状态，则为真。(查看子进程是否正常退出：! (status &amp; 0x7f))</p>
 </li>
 <li><p>WEXITSTATUS(status): 如果WIFEXITED(status)为非零，提取子进程退出码。(查看子进程退出码: (status&gt;&gt;8)&amp;0xff))</p>
-<pre><code class="c">#include &lt;unistd.h&gt;
-#include &lt;sys/wait.h&gt;
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/wait.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
 
-int main()
-{
-    int status = 0;
-    pid_t id = fork();
-    if(id &lt; 0)
-    {
-        perror(&quot;fork error!\n&quot;);
-    }
-    else if(id == 0) // child
-    {
-        printf(&quot;i am child process\n&quot;);
-        int count = 0;
-        while (count &lt; 3)
-        {
-            sleep(1);
-            count++;
-            printf(&quot;sleep 1\n&quot;);
-        }
-        int ret = 1/0;
-        exit(10);
-    }
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> status <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    pid_t id <span class="token operator">=</span> <span class="token function">fork</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>id <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"fork error!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>id <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// child</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"i am child process\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>count <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            count<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"sleep 1\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">int</span> ret <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">/</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    // parent
-    printf(&quot;father wait before.\n&quot;);
-    pid_t ret = waitpid(id,&amp;status,0);
-    printf(&quot;status = %d\n&quot;,status); // 保存子进程的返回状态
+    <span class="token comment" spellcheck="true">// parent</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"father wait before.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pid_t ret <span class="token operator">=</span> <span class="token function">waitpid</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span><span class="token operator">&amp;</span>status<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"status = %d\n"</span><span class="token punctuation">,</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 保存子进程的返回状态</span>
 
-    if(WIFEXITED(status)) // 为真说明是正常退出的
-    {
-        printf(&quot;child exit code: %d\n&quot;,WEXITSTATUS(status));
-    }
-    else
-    {
-        printf(&quot;child exit error!\n&quot;);
-    }
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">WIFEXITED</span><span class="token punctuation">(</span>status<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 为真说明是正常退出的</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"child exit code: %d\n"</span><span class="token punctuation">,</span><span class="token function">WEXITSTATUS</span><span class="token punctuation">(</span>status<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"child exit error!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    printf(&quot;father wait after.\n&quot;);
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"father wait after.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    return 0; 
-}</code></pre>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span></code></pre>
 </li>
 </ol>
 </li>
@@ -1128,64 +1127,64 @@ int main()
 <p>如果读端写端条件不成熟，会阻塞。</p>
 <p>如果写端关闭文件描述符，读端读完管道的数据之后会读到文件结尾(‘\0’)。</p>
 <p>如果读端关闭，写端会被进程kill掉。</p>
-<pre><code class="c">#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
-#include &lt;unistd.h&gt;
-#include &lt;sys/types.h&gt;
-#include &lt;sys/stat.h&gt;
-#include &lt;fcntl.h&gt;
-#include &lt;stdlib.h&gt;
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
 
-int main()
-{
-    int fd[2];
-    int ret = pipe(fd);
-    if(ret != 0)
-    {
-        perror(&quot;open pipe failed.\n&quot;);
-        exit(-1);
-    }
-    size_t pid = fork();
-    if(pid == 0)
-    {
-        // child,write
-        close(fd[0]);
-        char buf[25] = &quot;hello duwei1996\n&quot;;
-        int count = 0;
-        while(1)
-        {
-            write(fd[1], buf, strlen(buf));
-            printf(&quot;child say: hello duwei1996\n&quot;);
-            if(count++ == 5)
-            {
-                close(fd[1]);
-                break;
-            }
-        }
-        exit(0);
-    }
-    else
-    {
-        // parent,read
-        char buf[25];
-        close(fd[1]);
-        while(1)
-        {
-            ssize_t len = read(fd[0], buf, sizeof(buf)-1);
-            printf(&quot;parent get %lu bytes.\n&quot;,len);
-            if(len &gt; 0)
-            {
-                buf[len] = &#39;\0&#39;;
-            }
-            printf(&quot;parent get: %s&quot;,buf);
-            sleep(2);
-        }
-    }
-    return 0;
-}</code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> fd<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> ret <span class="token operator">=</span> <span class="token function">pipe</span><span class="token punctuation">(</span>fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>ret <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"open pipe failed.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    size_t pid <span class="token operator">=</span> <span class="token function">fork</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>pid <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// child,write</span>
+        <span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">char</span> buf<span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"hello duwei1996\n"</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">write</span><span class="token punctuation">(</span>fd<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> buf<span class="token punctuation">,</span> <span class="token function">strlen</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"child say: hello duwei1996\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>count<span class="token operator">++</span> <span class="token operator">==</span> <span class="token number">5</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// parent,read</span>
+        <span class="token keyword">char</span> buf<span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            ssize_t len <span class="token operator">=</span> <span class="token function">read</span><span class="token punctuation">(</span>fd<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> buf<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"parent get %lu bytes.\n"</span><span class="token punctuation">,</span>len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>len <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                buf<span class="token punctuation">[</span>len<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'\0'</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"parent get: %s"</span><span class="token punctuation">,</span>buf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>管道大小</p>
 <ul>
-<li><pre><code class="shell">[root@iZbp11u8qxiwepq15dm1liZ ComputerSystem]# ulimit -a
+<li><pre class=" language-shell"><code class="language-shell">[root@iZbp11u8qxiwepq15dm1liZ ComputerSystem]# ulimit -a
 core file size          (blocks, -c) 0
 data seg size           (kbytes, -d) unlimited
 scheduling priority             (-e) 0
@@ -1222,55 +1221,55 @@ file locks                      (-x) unlimited</code></pre>
 </ul>
 </li>
 <li><p>内核会给fifo文件开辟一个缓冲区，操作fifo文件，可以操作缓冲区，实现进程通信–实际上就是文件读写</p>
-<pre><code class="c">#include &lt;stdio.h&gt;
-#include &lt;unistd.h&gt;
-#include &lt;sys/types.h&gt;
-#include &lt;sys/stat.h&gt;
-#include &lt;fcntl.h&gt;
-#include &lt;string.h&gt;
-#define FIFO &quot;/root/ComputerSystem/myfifo&quot; // shell: mkfifo myfifo
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">define</span> FIFO "/root/ComputerSystem/myfifo" </span><span class="token comment" spellcheck="true">// shell: mkfifo myfifo</span>
 
-int main()
-{
-    int fd = open(FIFO,O_WRONLY); // 如果没有程序 read，open会阻塞
-    char buf[256];
-    int num = 1;
-    while(1)
-       {
-        memset(buf,0x00,sizeof(buf));
-        sprintf(buf,&quot;hello%d&quot;,num++);
-        write(fd,buf,strlen(buf));
-        sleep(1);
-    }
-    close(fd);
-    return 0;
-}
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span>FIFO<span class="token punctuation">,</span>O_WRONLY<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 如果没有程序 read，open会阻塞</span>
+    <span class="token keyword">char</span> buf<span class="token punctuation">[</span><span class="token number">256</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+       <span class="token punctuation">{</span>
+        <span class="token function">memset</span><span class="token punctuation">(</span>buf<span class="token punctuation">,</span><span class="token number">0x00</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">sprintf</span><span class="token punctuation">(</span>buf<span class="token punctuation">,</span><span class="token string">"hello%d"</span><span class="token punctuation">,</span>num<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">write</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span>buf<span class="token punctuation">,</span><span class="token function">strlen</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-//  若无读端写端open阻塞</code></pre>
-<pre><code class="c">#include &lt;stdio.h&gt;
-#include &lt;unistd.h&gt;
-#include &lt;sys/types.h&gt;
-#include &lt;sys/stat.h&gt;
-#include &lt;fcntl.h&gt;
+<span class="token comment" spellcheck="true">//  若无读端写端open阻塞</span></code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
 
-int main()
-{
-    int fd = open(&quot;myfifo&quot;,O_RDONLY);
-    char buf[256];
-    int num = 1;
-    while(1)
-       {
-        int ret = read(fd,buf,sizeof(buf));
-        if(ret &gt; 0)
-        {
-            printf(&quot;read:%s\n&quot;,buf);
-        }
-    }
-    close(fd);
-    return 0;
-}
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"myfifo"</span><span class="token punctuation">,</span>O_RDONLY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> buf<span class="token punctuation">[</span><span class="token number">256</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+       <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> ret <span class="token operator">=</span> <span class="token function">read</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span>buf<span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>ret <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"read:%s\n"</span><span class="token punctuation">,</span>buf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-//  若无写端读端阻塞，有点类似golang里的无缓冲channel</code></pre>
+<span class="token comment" spellcheck="true">//  若无写端读端阻塞，有点类似golang里的无缓冲channel</span></code></pre>
 <p>linux系统上通过命令：man 7 signal 查看信号的手册</p>
 <p><img src="http://img.3amupupup.online/SignalAction.png" alt="signal"></p>
 <p><img src="http://img.3amupupup.online/fifo.png" alt="fifo"></p>
@@ -1280,78 +1279,78 @@ int main()
 </ul>
 <h5 id="shm"><a href="#shm" class="headerlink" title="shm"></a>shm</h5><ol>
 <li><p>server</p>
-<pre><code class="c">#include &lt;stdio.h&gt;
-#include &lt;sys/types.h&gt;
-#include &lt;sys/ipc.h&gt;
-#include &lt;sys/shm.h&gt;
-#include &lt;unistd.h&gt;
-#include &quot;comm.h&quot;
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/ipc.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/shm.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"comm.h"</span></span>
 
-int main()
-{
-    key_t key = ftok(PATHNAME, PROJ_ID); // 将PATHNAME和PROJ_ID作为信息源，生成一个唯一的key值(在系统中保证唯一)
-    printf(&quot;key = %X\n&quot;,key);
-    int shmid = shmget(key, SIZE, IPC_CREAT | IPC_EXCL | 0666); // 生命周期跟随操作系统，申请之后要释放
-    if(shmid &lt; 0)
-    {
-        perror(&quot;shmget failed.\n&quot;);
-        return 1;
-    }
-    printf(&quot;shmid = %d\n&quot;,shmid);
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    key_t key <span class="token operator">=</span> <span class="token function">ftok</span><span class="token punctuation">(</span>PATHNAME<span class="token punctuation">,</span> PROJ_ID<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 将PATHNAME和PROJ_ID作为信息源，生成一个唯一的key值(在系统中保证唯一)</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"key = %X\n"</span><span class="token punctuation">,</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> shmid <span class="token operator">=</span> <span class="token function">shmget</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> SIZE<span class="token punctuation">,</span> IPC_CREAT <span class="token operator">|</span> IPC_EXCL <span class="token operator">|</span> <span class="token number">0666</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 生命周期跟随操作系统，申请之后要释放</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>shmid <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"shmget failed.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"shmid = %d\n"</span><span class="token punctuation">,</span>shmid<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    char* str = shmat(shmid, NULL, 0); // 关联共享内存
+    <span class="token keyword">char</span><span class="token operator">*</span> str <span class="token operator">=</span> <span class="token function">shmat</span><span class="token punctuation">(</span>shmid<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 关联共享内存</span>
 
-    while(1)
-    {
-        sleep(1);
-        printf(&quot;msg: %s\n&quot;, str);
-    }
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"msg: %s\n"</span><span class="token punctuation">,</span> str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    sleep(10);
+    <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    shmdt(str);
+    <span class="token function">shmdt</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    sleep(10);
-    printf(&quot;I will rm ipc source right now, shmid = %d\n&quot;,shmid);
-    shmctl(shmid, IPC_RMID, NULL);
-    return 0;
-}</code></pre>
+    <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"I will rm ipc source right now, shmid = %d\n"</span><span class="token punctuation">,</span>shmid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">shmctl</span><span class="token punctuation">(</span>shmid<span class="token punctuation">,</span> IPC_RMID<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>client</p>
-<pre><code class="c">#include &lt;stdio.h&gt;
-#include &lt;sys/types.h&gt;
-#include &lt;sys/ipc.h&gt;
-#include &lt;sys/shm.h&gt;
-#include &lt;unistd.h&gt;
-#include &quot;comm.h&quot;
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/ipc.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/shm.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"comm.h"</span></span>
 
-int main()
-{
-    key_t key = ftok(PATHNAME, PROJ_ID);
-    printf(&quot;key = %X\n&quot;,key);
-    int shmid = shmget(key, SIZE, 0);
-    if(shmid &lt; 0)
-    {
-        perror(&quot;shmget failed.\n&quot;);
-        return 1;
-    }
-    printf(&quot;shmid = %d\n&quot;,shmid);
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    key_t key <span class="token operator">=</span> <span class="token function">ftok</span><span class="token punctuation">(</span>PATHNAME<span class="token punctuation">,</span> PROJ_ID<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"key = %X\n"</span><span class="token punctuation">,</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> shmid <span class="token operator">=</span> <span class="token function">shmget</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> SIZE<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>shmid <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"shmget failed.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"shmid = %d\n"</span><span class="token punctuation">,</span>shmid<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    char* str = shmat(shmid, NULL, 0); // 关联共享内存
+    <span class="token keyword">char</span><span class="token operator">*</span> str <span class="token operator">=</span> <span class="token function">shmat</span><span class="token punctuation">(</span>shmid<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 关联共享内存</span>
 
-    char c = &#39;a&#39;; // 操作系统不提供同步与互斥
-    for(; c &lt;= &#39;z&#39;; c++)
-    {
-        str[c - &#39;a&#39;] = c;
-        sleep(5);
-    }
-    sleep(5);
+    <span class="token keyword">char</span> c <span class="token operator">=</span> <span class="token string">'a'</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 操作系统不提供同步与互斥</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span> c <span class="token operator">&lt;=</span> <span class="token string">'z'</span><span class="token punctuation">;</span> c<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        str<span class="token punctuation">[</span>c <span class="token operator">-</span> <span class="token string">'a'</span><span class="token punctuation">]</span> <span class="token operator">=</span> c<span class="token punctuation">;</span>
+        <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    shmdt(str);
+    <span class="token function">shmdt</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    sleep(5);
-    return 0;
-}</code></pre>
+    <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>ipcs -m; ipcrm -m id</p>
 </li>
 </ol>
@@ -1365,7 +1364,7 @@ int main()
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>进程</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">4.8k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">4.7k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-03-18, 11:09:00</p>
     <p><span class="copy-title">最后更新:</span>2021-05-05, 11:29:18</p>
@@ -1413,7 +1412,7 @@ int main()
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#内存','#queue','#list','#hashtable','#缓冲区','#信号','#c++','#线程','#thread_pool','#net',],
+            'data': ['#Dockerfile','#Nginx','#sql_base','#ecs','#zabbix','#Jenkinsfile','#linux性能优化实战笔记','#kubectl','#book','#c','#c primer plus','#cicd','#c语言基础','#jenkins','#mongodb','#数据结构','#sonar','#操作系统','#排序','#进程','#c++','#list','#缓冲区','#信号','#queue','#net','#内存','#no','#hashtable','#thread_pool','#线程','#array','#mem_pool',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

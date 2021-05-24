@@ -1,0 +1,2249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PracticeSql | BLOG</title>
+  <meta name="keywords" content=" sql_base ">
+  <meta name="description" content="PracticeSql | BLOG">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="gitlabBranch gitlabSourceBranch gitlabActionType gitlabUserName gitlabUserUsername gitlabUserEmail gitlabSourceRepoHomepage gitlabSourceRepoName gitlabSourceNamespace gitlabSourceRepoURL gitlabSourceR">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BLOG">
+<meta property="og:url" content="https://duwei19961021.github.io/file/sonar.html">
+<meta property="og:site_name" content="BLOG">
+<meta property="og:description" content="gitlabBranch gitlabSourceBranch gitlabActionType gitlabUserName gitlabUserUsername gitlabUserEmail gitlabSourceRepoHomepage gitlabSourceRepoName gitlabSourceNamespace gitlabSourceRepoURL gitlabSourceR">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-05-23T01:21:25.624Z">
+<meta property="article:modified_time" content="2021-03-18T03:09:52.073Z">
+<meta property="article:author" content="拦云">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/favicon.ico">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/darcula.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="BLOG" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="true">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/docker.png" />
+</a>
+<div class="author">
+    <span>拦云</span>
+</div>
+
+<div class="icon">
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(52)</small></div></li>
+    
+        
+            
+            <li><div data-rel="Docker">Docker<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="mysql">mysql<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Nginx">Nginx<small>(7)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="运维">运维<small>(11)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="k8s">k8s<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="C语言">C语言<small>(18)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="操作系统">操作系统<small>(4)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="52">
+<input type="hidden" id="yelog_site_word_count" value="77.2k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="以 in: 开头进行全文搜索" />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Dockerfile</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Nginx</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">sql_base</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">ecs</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">zabbix</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Jenkinsfile</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">linux性能优化实战笔记</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">kubectl</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">book</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">c</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">c primer plus</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">cicd</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">c语言基础</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">jenkins</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">mongodb</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">数据结构</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">sonar</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">操作系统</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">排序</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">进程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">c++</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">list</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">缓冲区</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">信号</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">queue</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">net</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">内存</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">no</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">hashtable</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">thread_pool</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">array</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">mem_pool</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a  class="运维 "
+           href="/2021/03/16/Nginx%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96header/"
+           data-tag="Nginx"
+           data-author="" >
+            <span class="post-title" title="Nginx日志获取header">Nginx日志获取header</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/16/make/"
+           data-tag="c"
+           data-author="" >
+            <span class="post-title" title="make">make</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/c++%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="c++构造函数">c++构造函数</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/04/13/CppPrimer/"
+           data-tag="book"
+           data-author="" >
+            <span class="post-title" title="CppPrimer">CppPrimer</span>
+            <span class="post-date" title="2021-04-13 11:26:55">2021/04/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0linux%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C语言实现linux命令">C语言实现linux命令</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E9%A2%84%E5%A4%84%E7%90%86/"
+           data-tag="c"
+           data-author="" >
+            <span class="post-title" title="C语言预处理">C语言预处理</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/16/ECS%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9/"
+           data-tag="ecs"
+           data-author="" >
+            <span class="post-title" title="ECS磁盘扩容">ECS磁盘扩容</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/16/Jenkinsfile/"
+           data-tag="Jenkinsfile"
+           data-author="" >
+            <span class="post-title" title="Jenkinsfile">Jenkinsfile</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/16/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/"
+           data-tag="sonar"
+           data-author="" >
+            <span class="post-title" title="Jenkins结合sonar代码检测流水线">Jenkins结合sonar代码检测流水线</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/16/Nginx/"
+           data-tag="Nginx"
+           data-author="" >
+            <span class="post-title" title="Nginx">Nginx</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="c陷阱与缺陷">c陷阱与缺陷</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/16/jenkins%E7%BB%93%E5%90%88rsync%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81/"
+           data-tag="jenkins"
+           data-author="" >
+            <span class="post-title" title="jenkins结合rsync同步代码">jenkins结合rsync同步代码</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="k8s "
+           href="/2021/03/18/kubectl/"
+           data-tag="kubectl"
+           data-author="" >
+            <span class="post-title" title="kubectl">kubectl</span>
+            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/16/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"
+           data-tag="linux性能优化实战笔记"
+           data-author="" >
+            <span class="post-title" title="linux性能优化实战笔记">linux性能优化实战笔记</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/16/mongo/"
+           data-tag="mongodb"
+           data-author="" >
+            <span class="post-title" title="mongo">mongo</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/16/zabbix_dingdingAlert/"
+           data-tag="zabbix"
+           data-author="" >
+            <span class="post-title" title="zabbix_dingdingAlert">zabbix_dingdingAlert</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/16/zabbix_key/"
+           data-tag="zabbix"
+           data-author="" >
+            <span class="post-title" title="zabbix_key">zabbix_key</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="k8s "
+           href="/2021/03/16/%E4%B8%80%E6%AC%A1%E6%B5%B7%E5%A4%96k8s%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5/"
+           data-tag="cicd"
+           data-author="" >
+            <span class="post-title" title="一次海外k8s集群代码发布实践">一次海外k8s集群代码发布实践</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="二叉树">二叉树</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/%E4%BA%8C%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="二级计算机">二级计算机</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/16/%E5%B8%A6%E7%8E%AF%E9%93%BE%E8%A1%A8/"
+           data-tag="数据结构"
+           data-author="" >
+            <span class="post-title" title="带环链表">带环链表</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/16/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/"
+           data-tag="c语言基础"
+           data-author="" >
+            <span class="post-title" title="数据的存储">数据的存储</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/%E6%B1%87%E7%BC%96%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="汇编笔记">汇编笔记</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/05/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"
+           data-tag="no"
+           data-author="" >
+            <span class="post-title" title="操作系统">操作系统</span>
+            <span class="post-date" title="2021-05-23 09:25:50">2021/05/23</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算机网络">计算机网络</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/16/C%E4%B8%93%E5%AE%B6%E7%BC%96%E7%A8%8B/"
+           data-tag="book"
+           data-author="" >
+            <span class="post-title" title="C专家编程">C专家编程</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/16/C%E5%92%8C%E6%8C%87%E9%92%88/"
+           data-tag="book"
+           data-author="" >
+            <span class="post-title" title="C和指针">C和指针</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/16/C%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90/"
+           data-tag="book"
+           data-author="" >
+            <span class="post-title" title="C深入剖析">C深入剖析</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="Docker "
+           href="/2021/03/16/Dockerfile/"
+           data-tag="Dockerfile"
+           data-author="" >
+            <span class="post-title" title="Dockerfile">Dockerfile</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/16/c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag="c"
+           data-author="" >
+            <span class="post-title" title="c学习笔记">c学习笔记</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/16/%E6%8C%87%E9%92%88/"
+           data-tag="c语言基础"
+           data-author="" >
+            <span class="post-title" title="指针">指针</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/16/%E6%8E%92%E5%BA%8F/"
+           data-tag="排序"
+           data-author="" >
+            <span class="post-title" title="排序">排序</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/18/%E8%BF%9B%E7%A8%8B/"
+           data-tag="进程"
+           data-author="" >
+            <span class="post-title" title="进程">进程</span>
+            <span class="post-date" title="2021-03-18 11:09:00">2021/03/18</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2020/09/10/tcp:ip/"
+           data-tag="操作系统"
+           data-author="" >
+            <span class="post-title" title="tcp-ip">tcp-ip</span>
+            <span class="post-date" title="2020-09-10 10:09:00">2020/09/10</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/16/C%20Primer%20Plus/"
+           data-tag="c primer plus"
+           data-author="" >
+            <span class="post-title" title="C Primer Plus">C Primer Plus</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="mysql "
+           href="/2021/03/16/PracticeSql/"
+           data-tag="sql_base"
+           data-author="" >
+            <span class="post-title" title="PracticeSql">PracticeSql</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/18/ngx_mem_pool/"
+           data-tag="mem_pool"
+           data-author="" >
+            <span class="post-title" title="nginx内存池">nginx内存池</span>
+            <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/17/ngx_array/"
+           data-tag="array"
+           data-author="" >
+            <span class="post-title" title="nginx数组">nginx数组</span>
+            <span class="post-date" title="2021-03-17 11:26:01">2021/03/17</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/05/22/BSTree/"
+           data-tag="c++"
+           data-author="" >
+            <span class="post-title" title="二叉搜索树">二叉搜索树</span>
+            <span class="post-date" title="2021-05-22 20:47:06">2021/05/22</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/03/20/information_representation_and_processing/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="信息的表示和处理">信息的表示和处理</span>
+            <span class="post-date" title="2021-03-20 11:55:12">2021/03/20</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/22/ngx_align/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ngx_align">ngx_align</span>
+            <span class="post-date" title="2021-03-22 15:44:36">2021/03/22</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/05/03/c++polymorphic/"
+           data-tag="c++"
+           data-author="" >
+            <span class="post-title" title="c++继承">c++继承</span>
+            <span class="post-date" title="2021-05-03 12:17:03">2021/05/03</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/22/ngx_list/"
+           data-tag="list"
+           data-author="" >
+            <span class="post-title" title="nginx单向链表">nginx单向链表</span>
+            <span class="post-date" title="2021-03-22 11:15:43">2021/03/22</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/18/ngx_buf/"
+           data-tag="缓冲区"
+           data-author="" >
+            <span class="post-title" title="nginx缓冲区">nginx缓冲区</span>
+            <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/04/25/c++inheritance/"
+           data-tag="c++"
+           data-author="" >
+            <span class="post-title" title="c++继承">c++继承</span>
+            <span class="post-date" title="2021-04-25 22:55:23">2021/04/25</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/04/12/signal/"
+           data-tag="信号"
+           data-author="" >
+            <span class="post-title" title="信号">信号</span>
+            <span class="post-date" title="2021-04-12 19:57:55">2021/04/12</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/21/ngx_queue/"
+           data-tag="queue"
+           data-author="" >
+            <span class="post-title" title="nginx双向链表">nginx双向链表</span>
+            <span class="post-date" title="2021-03-21 19:02:44">2021/03/21</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/05/12/socket/"
+           data-tag="net"
+           data-author="" >
+            <span class="post-title" title="socket">socket</span>
+            <span class="post-date" title="2021-05-12 13:44:40">2021/05/12</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/03/20/virtual_memory/"
+           data-tag="内存"
+           data-author="" >
+            <span class="post-title" title="虚拟内存">虚拟内存</span>
+            <span class="post-date" title="2021-03-20 11:51:57">2021/03/20</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/23/ngx_hash/"
+           data-tag="hashtable"
+           data-author="" >
+            <span class="post-title" title="nginx散列表">nginx散列表</span>
+            <span class="post-date" title="2021-03-23 18:21:27">2021/03/23</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/05/04/ngx_thread_pool/"
+           data-tag="thread_pool"
+           data-author="" >
+            <span class="post-title" title="nginx线程池">nginx线程池</span>
+            <span class="post-date" title="2021-05-04 00:43:27">2021/05/04</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/04/20/thread/"
+           data-tag="线程"
+           data-author="" >
+            <span class="post-title" title="thread">thread</span>
+            <span class="post-date" title="2021-04-20 17:02:24">2021/04/20</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-PracticeSql" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">PracticeSql</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="mysql">mysql</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color4">sql_base</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-03-29 13:19:14'>2021-03-16 00:33</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:5.1k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#数据类型"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#列属性-null-not-null"><span class="toc-text">列属性(null | not null)</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#添加主键："><span class="toc-text">添加主键：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#添加主键的方法"><span class="toc-text">添加主键的方法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#删除主键："><span class="toc-text">删除主键：</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#数据完整性"><span class="toc-text">数据完整性</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code class="mysql">select TrueName,IDCard,Mobile from xb_mem_info where IDCard like &#39;%1999%&#39; limit 10;
+
+select id,TrueName,IDCard,soundex(TrueName) from xb_mem_info where 
+
+soundex(TrueName)=soundex(&#39;杜维&#39;);select upper(NickName) as new,NickName from xb_mem_info limit 10;
+
+select id,Mobile,TrueName,IDCard,Mobile+id as sumid from xb_mem_info where id=3;
+
+select concat(curdate(),&#39; &#39;,curtime());
+
+select count(1) from xb_mem_info;    select count(*) from xb_mem_info;
+
+select max(Mobile) from xb_mem_info;
+
+select distinct name from student ; 去重
+
+select count(distinct name) from student;
+
+select stutel,count(*) as newnum from student group by stutel ;不同的stutel出现的次数
+
+select name,count(*) as newnum from student group by name having count(*)&gt;3;
+
+select name,count(*) as newnum from student group by name having name=&#39;duwei1&#39;; having过滤分组，where过滤行
+
+select name,count(*)  from student where stutel&gt;13487459071 group by name having count(*) &gt;2;
+
+(
+
+select name,count(*) from student group by name order by count(*) desc;
+
+select name,count(*) from student group by name having count(*) &gt;= 1 order by count(*) desc;
+
+)
+
+create database if not exists learn;</code></pre>
+<p><img src="/image/image-20191231170722883.png" alt="image-20191231170722883"></p>
+<p><img src="/image/image-20191231170801573.png" alt="image-20191231170801573"></p>
+<p><img src="/image/image-20191231171401086.png" alt="image-20191231171401086"></p>
+<p><img src="/image/image-20191231174815794.png" alt="image-20191231174815794"></p>
+<p><img src="/image/image-20191231181937032.png" alt="image-20191231181937032"></p>
+<p>复制表数据至另一个表</p>
+<p><img src="/image/image-20200102171303711.png" alt="image-20200102171303711"></p>
+<p><img src="/image/image-20200102173859668.png" alt="image-20200102173859668"></p>
+<p><img src="/image/image-20200102181132702.png" alt="image-20200102181132702"></p>
+<pre><code class="mysql">CREATE TABLE IF NOT EXISTS teacher (
+    id int PRIMARY KEY AUTO_INCREMENT COMMENT &#39;id 主键&#39;,
+    name varchar(20) NOT NULL COMMENT &#39;姓名&#39;,
+    telnum varchar(11) COMMENT &#39;手机号码&#39;,
+    addr varchar(100) DEFAULT &#39;unknow address&#39; COMMENT &#39;地址&#39;
+) ENGINE = innodb;</code></pre>
+<p>添加、删除索引</p>
+<p><img src="/image/image-20200229012250765.png" alt="image-20200229012250765"></p>
+<p>修改列名</p>
+<p><img src="/image/image-20200229012336903.png" alt="image-20200229012336903"></p>
+<p>添加列</p>
+<p><img src="/image/image-20200229012405184.png" alt="image-20200229012405184"></p>
+<p><img src="/image/image-20200229012417290.png" alt="image-20200229012417290"></p>
+<p>复制表操作</p>
+<pre><code class="mysql">create table new_table like old_table; //仅复制表结构
+create table new_table select column form old_table;//仅复制表数据
+truncate table table_name;//清空表(删除再创建)
+delete from table;//仅删除数据</code></pre>
+<hr>
+<h5 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h5><p>一、值类型</p>
+<p>1、整形</p>
+<table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">字节</th>
+<th align="center">范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">int</td>
+<td align="center">4</td>
+<td align="center">-2^31~2^31-1</td>
+</tr>
+<tr>
+<td align="center">mediumint</td>
+<td align="center">3</td>
+<td align="center">-2^23~2^23-1</td>
+</tr>
+<tr>
+<td align="center">smallint</td>
+<td align="center">2</td>
+<td align="center">-2^15~2^15-1</td>
+</tr>
+<tr>
+<td align="center">tinyint</td>
+<td align="center">1</td>
+<td align="center">-2^7~2^7-1</td>
+</tr>
+<tr>
+<td align="center">bigint</td>
+<td align="center">8</td>
+<td align="center">-2^63~2^63-1</td>
+</tr>
+</tbody></table>
+<p>无符号整数（unsigned），无符号没有负数，整数部分是有符号的两倍。</p>
+<pre><code class="mysql">mysql&gt; create table stu(
+    -&gt; id smallint unsigned auto_increment primary key comment &#39;主键&#39;,
+    -&gt; age tinyint unsigned not null comment &#39;年龄&#39;,
+    -&gt;  money bigint unsigned comment &#39;存款&#39;
+    -&gt; );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; desc stu;
++-------+----------------------+------+-----+---------+----------------+
+| Field | Type                 | Null | Key | Default | Extra          |
++-------+----------------------+------+-----+---------+----------------+
+| id    | smallint(5) unsigned | NO   | PRI | NULL    | auto_increment |
+| age   | tinyint(3) unsigned  | NO   |     | NULL    |                |
+| money | bigint(20) unsigned  | YES  |     | NULL    |                |
++-------+----------------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+mysql&gt; insert into stu values (null,5,11);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; select * from stu;
++----+-----+-------+
+| id | age | money |
++----+-----+-------+
+|  1 |   5 |    11 |
++----+-----+-------+
+1 row in set (0.00 sec)
+
+mysql&gt; drop table stu;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; create table stu(
+    -&gt; id int(5),
+    -&gt; age int(5) zerofill
+    -&gt; );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; desc stu;
++-------+--------------------------+------+-----+---------+-------+
+| Field | Type                     | Null | Key | Default | Extra |
++-------+--------------------------+------+-----+---------+-------+
+| id    | int(5)                   | YES  |     | NULL    |       |
+| age   | int(5) unsigned zerofill | YES  |     | NULL    |       |
++-------+--------------------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql&gt; insert into stu values(1,11);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; select * from stu;
++------+-------+
+| id   | age   |
++------+-------+
+|    1 | 00011 |
++------+-------+
+1 row in set (0.00 sec)
+
+mysql&gt; insert into stu values(1111111,1111111);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; select * from stu;
++---------+---------+
+| id      | age     |
++---------+---------+
+|       1 |   00011 |
+| 1111111 | 1111111 |
++---------+---------+
+2 rows in set (0.00 sec)
+</code></pre>
+<hr>
+<p>2、浮点型（精度超出则会四舍五入，精确度会丢失）</p>
+<table>
+<thead>
+<tr>
+<th align="center">浮点型</th>
+<th align="center">占用字节</th>
+<th align="center">范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">float（单精度）</td>
+<td align="center">4</td>
+<td align="center">-3.4E+38~3.4E+38</td>
+</tr>
+<tr>
+<td align="center">double（双精度）</td>
+<td align="center">8</td>
+<td align="center">-1.8E+308~1.8E+308</td>
+</tr>
+</tbody></table>
+<p>浮点数声明：float(M,D) double(M,D)</p>
+<p>M:总位数</p>
+<p>D:小数位数</p>
+<pre><code class="mysql">mysql&gt; create table t1(
+    -&gt; num1 float(5,2),
+    -&gt; num2 double(4,1)
+    -&gt; );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql&gt; insert into t1 values(1.23,1.23)
+    -&gt; ;
+Query OK, 1 row affected (0.01 sec)
+
+mysql&gt; select * from t1;
++------+------+
+| num1 | num2 |
++------+------+
+| 1.23 |  1.2 |
++------+------+
+1 row in set (0.00 sec)
+
+mysql&gt; insert into t1 values(1555.23,122222.23); 
+ERROR 1264 (22003): Out of range value for column &#39;num1&#39; at row 1
+mysql&gt; insert into t1 values(123.233336,12.23444);
+Query OK, 1 row affected (0.01 sec)
+
+mysql&gt; select * from t1;
++--------+------+
+| num1   | num2 |
++--------+------+
+|   1.23 |  1.2 |
+| 123.23 | 12.2 |
++--------+------+
+2 rows in set (0.00 sec)
+
+mysql&gt; insert into t1 values(9.9999,9.999);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; select * from t1;
++--------+-------+
+| num1   | num2  |
++--------+-------+
+|   1.23 |   1.2 |
+| 123.23 |  12.2 |
+| 999.99 | 999.9 |
+|  10.00 |  10.0 |
++--------+-------+
+4 rows in set (0.00 sec)
+</code></pre>
+<p>3、定点数（精度不会丢失）</p>
+<p>语法：decimal(M,D)</p>
+<p>定点数都是变长的，大致每9个数字用四个字节来存储。定点数之所以能保存精确小数，因为整数和小数是分开存储的。占用的资源比浮点数要多。</p>
+<p>定点数和浮点数都支持显示宽度和无符号数。</p>
+<pre><code class="mysql">mysql&gt; create table t4(
+    -&gt; num decimal(20,19)
+    -&gt; );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; insert into t4 values (1.1234567890123456789);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; select * from t4;
++-----------------------+
+| num                   |
++-----------------------+
+| 1.1234567890123456789 |
++-----------------------+
+1 row in set (0.00 sec)
+</code></pre>
+<p>二、字符型</p>
+<p>varchar：小于等于规定的长度，回收多余字符，节省空间。</p>
+<p>char：小于等于规定的长度，不回收多余字符，执行效率比变长高。</p>
+<table>
+<thead>
+<tr>
+<th align="center">数据类型</th>
+<th align="center">描述</th>
+<th align="center">长度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">char(长度)</td>
+<td align="center">定长</td>
+<td align="center">最大255</td>
+</tr>
+<tr>
+<td align="center">varchar(长度)</td>
+<td align="center">变长</td>
+<td align="center">最大65535（理论值）</td>
+</tr>
+<tr>
+<td align="center">tinytext</td>
+<td align="center">大段文本</td>
+<td align="center">2^8-1=255</td>
+</tr>
+<tr>
+<td align="center">text</td>
+<td align="center">大段文本</td>
+<td align="center">2^16-1=65535</td>
+</tr>
+<tr>
+<td align="center">mediumtext</td>
+<td align="center">大段文本</td>
+<td align="center">2^24-1</td>
+</tr>
+<tr>
+<td align="center">longtext</td>
+<td align="center">大段文本</td>
+<td align="center">2^32-1</td>
+</tr>
+</tbody></table>
+<pre><code class="mysql">mysql&gt; create table t3(
+    -&gt; name varchar(10),
+    -&gt; sex char(1)
+    -&gt; );
+Query OK, 0 rows affected (0.01 sec)
+mysql&gt; insert into t3(name) values(&#39;12345678900&#39;);
+ERROR 1406 (22001): Data too long for column &#39;name&#39; at row 1
+
+mysql&gt; insert into t3(name) values(&#39;1234567890&#39;);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; select * from t3;
++------------+------+
+| name       | sex  |
++------------+------+
+| 1234567890 | NULL |
++------------+------+
+
+mysql&gt; insert into t3(name) values(&#39;123456&#39;);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; select * from t3;
++------------+------+
+| name       | sex  |
++------------+------+
+| 1234567890 | NULL |
+| 123456     | NULL |
++------------+------+
+2 rows in set (0.00 sec)</code></pre>
+<p>三、枚举（enmu）</p>
+<p>优点： 运行速度快（数字比字符串运算速度快）</p>
+<p>​            限制数据</p>
+<p>​            节省空间</p>
+<pre><code class="mysql">mysql&gt; create table t5(
+    -&gt; name varchar(20),
+    -&gt; sex enum(&#39;男&#39;,&#39;女&#39;,&#39;保密&#39;)
+    -&gt; );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql&gt; insert into t5 values(&#39;tom&#39;,&#39;男&#39;);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; insert into t5 values(&#39;jim&#39;,&#39;女&#39;);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; insert into t5 values(&#39;marry&#39;,&#39;未知&#39;);
+ERROR 1265 (01000): Data truncated for column &#39;sex&#39; at row 1 #只能插入枚举值
+mysql&gt; insert into t5 values(&#39;yls&#39;,&#39;保密&#39;);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; select * from t5;
++------+--------+
+| name | sex    |
++------+--------+
+| tom  | 男     |
+| jim  | 女     |
+| yls  | 保密   |
++------+--------+
+3 rows in set (0.00 sec)
+
+mysql&gt; select sex+0 from t5; #内部通过数字存储
++-------+
+| sex+0 |
++-------+
+|     1 |
+|     2 |
+|     3 |
++-------+
+3 rows in set (0.01 sec)
+
+mysql&gt; insert into t5 values(&#39;qss&#39;,&#39;3&#39;); #能直接插入数字
+Query OK, 1 row affected (0.01 sec)
+
+mysql&gt; select * from t5;
++------+--------+
+| name | sex    |
++------+--------+
+| tom  | 男     |
+| jim  | 女     |
+| yls  | 保密   |
+| qss  | 保密   |
++------+--------+
+4 rows in set (0.00 sec)
+</code></pre>
+<p>四、集合（set）最多64个选项</p>
+<pre><code class="mysql">mysql&gt; create table t6(
+    -&gt; hobby set(&#39;爬山&#39;,&#39;读书&#39;,&#39;golang&#39;)
+    -&gt; );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql&gt; insert into t6 values(&#39;爬山&#39;);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; insert into t6 values(&#39;爬山&#39;,&#39;读书&#39;);
+ERROR 1136 (21S01): Column count doesn&#39;t match value count at row 1
+
+mysql&gt; insert into t6 values(&#39;爬山,读书&#39;);
+Query OK, 1 row affected (0.01 sec)
+
+mysql&gt; select * from t6;
++---------------+
+| hobby         |
++---------------+
+| 爬山          |
+| 爬山,读书     |
++---------------+
+2 rows in set (0.00 sec)
+
+mysql&gt; insert into t6 values(&#39;读书,爬山&#39;); #插入顺序不一样，但是显示顺序会一样。
+Query OK, 1 row affected (0.01 sec)
+
+mysql&gt; select * from t6;
++---------------+
+| hobby         |
++---------------+
+| 爬山          |
+| 爬山,读书     |
+| 爬山,读书     |
++---------------+
+3 rows in set (0.00 sec)
+</code></pre>
+<p>五、时间类型</p>
+<table>
+<thead>
+<tr>
+<th align="center">数据类型</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">datetime</td>
+<td align="center">日期时间，占用8个字节</td>
+</tr>
+<tr>
+<td align="center">date</td>
+<td align="center">日期，占用3个字节</td>
+</tr>
+<tr>
+<td align="center">time</td>
+<td align="center">时间，占用3个字节</td>
+</tr>
+<tr>
+<td align="center">timestamp</td>
+<td align="center">时间戳，占用4个字节</td>
+</tr>
+<tr>
+<td align="center">year</td>
+<td align="center">年份，占用1个字节</td>
+</tr>
+</tbody></table>
+<p>1、datetime 格式：年-月-日 小时：分钟：秒 （范围：0001-9999年）</p>
+<pre><code class="mysql">mysql&gt; create table t7(
+    -&gt; field datetime
+    -&gt; );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; insert into t7 values(&#39;2020-02-29 04:25:29&#39;);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; select * from t7;
++---------------------+
+| field               |
++---------------------+
+| 2020-02-29 04:25:29 |
++---------------------+
+1 row in set (0.00 sec)</code></pre>
+<p>2、date</p>
+<pre><code class="mysql">mysql&gt; create table t8(
+    -&gt; field date
+    -&gt; );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; insert into t8 values(&#39;2020-02-29&#39;);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; select * from t8;
++------------+
+| field      |
++------------+
+| 2020-02-29 |
++------------+
+1 row in set (0.00 sec)</code></pre>
+<p>3、timestamp（日期形式）</p>
+<p>4、year</p>
+<p>最多只能表示255个年份，范围1901-2155</p>
+<p>5、time 表示时间或者时间间隔</p>
+<p>六、boolean</p>
+<pre><code class="mysql">mysql&gt; create table t9(
+    -&gt; field boolean
+    -&gt; );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; insert into t9 values (true),(false);
+Query OK, 2 rows affected (0.00 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql&gt; select * from t9;
++-------+
+| field |
++-------+
+|     1 |
+|     0 |
++-------+
+2 rows in set (0.00 sec)</code></pre>
+<hr>
+<h5 id="列属性-null-not-null"><a href="#列属性-null-not-null" class="headerlink" title="列属性(null | not null)"></a>列属性(null | not null)</h5><p>default:默认值</p>
+<pre><code class="mysql">mysql&gt; create table t10(
+    -&gt; id int unsigned,
+    -&gt; addr varchar(20) not null default &#39;不详&#39;
+    -&gt; );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; insert into t10 values(1,&#39;杭州&#39;),(2,default);
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql&gt; select * from t10;
++------+--------+
+| id   | addr   |
++------+--------+
+|    1 | 杭州   |
+|    2 | 不详   |
++------+--------+
+2 rows in set (0.00 sec)</code></pre>
+<p>auto_increment:auto_increment必须是主键，但是主键不一定是自增。</p>
+<p>​                          给自增列插入数据，使用null关键字。</p>
+<pre><code>                      自增列上的数据被删除，默认情况下此记录编号不再使用。</code></pre><p>唯一键：</p>
+<p>​            特点：不能重复，可以为空，同一张表可以拥有多个唯一键</p>
+<p>​            作用：保证数据不能重复，保证数据完整性，加快数据访问</p>
+<p>​            添加唯一键：</p>
+<p>​            </p>
+<pre><code class="mysql">mysql&gt; create table t14(
+    -&gt; id int primary key,
+    -&gt; name varchar(20) unique
+    -&gt; );
+Query OK, 0 rows affected (0.02 sec)
+-----------------------------------------------------------------------------------------------
+
+mysql&gt; create table t15(
+    -&gt; id int primary key,
+    -&gt; name varchar(20)
+    -&gt; );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; alter table t15 add unique(name);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql&gt; desc t15;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int(11)     | NO   | PRI | NULL    |       |
+| name  | varchar(20) | YES  | UNI | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+-----------------------------------------------------------------------------------------------
+
+mysql&gt; create table t16(
+    -&gt; id int,
+    -&gt; name varchar(20),
+    -&gt; addr varchar(20)
+    -&gt; );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; alter table t16 add unique(name),add unique(addr);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql&gt; desc t16;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int(11)     | YES  |     | NULL    |       |
+| name  | varchar(20) | YES  | UNI | NULL    |       |
+| addr  | varchar(20) | YES  | UNI | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+-----------------------------------------------------------------------------------------------
+
+mysql&gt; create table t17(
+    -&gt; id int,
+    -&gt; name varchar(20),
+    -&gt; addr varchar(20)
+    -&gt; );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; alter table t16 add unique(name,addr); #name、addr组合成唯一键
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql&gt; desc t16;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int(11)     | YES  |     | NULL    |       |
+| name  | varchar(20) | YES  | UNI | NULL    |       |
+| addr  | varchar(20) | YES  | UNI | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)</code></pre>
+<p>​            查看唯一键：</p>
+<pre><code class="mysql">mysql&gt; show create table t15\G
+*************************** 1. row ***************************
+       Table: t15
+Create Table: CREATE TABLE `t15` (
+  `id` int(11) NOT NULL,
+  `name` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+1 row in set (0.00 sec)
+
+mysql&gt; show create table t16\G
+*************************** 1. row ***************************
+       Table: t16
+Create Table: CREATE TABLE `t16` (
+  `id` int(11) DEFAULT NULL,
+  `name` varchar(20) DEFAULT NULL,
+  `addr` varchar(20) DEFAULT NULL,
+  UNIQUE KEY `name` (`name`),
+  UNIQUE KEY `addr` (`addr`),
+  UNIQUE KEY `name_2` (`name`,`addr`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+1 row in set (0.00 sec)</code></pre>
+<p>​            删除唯一键:</p>
+<pre><code class="mysql">mysql&gt; show create table t16\G
+*************************** 1. row ***************************
+       Table: t16
+Create Table: CREATE TABLE `t16` (
+  `id` int(11) DEFAULT NULL,
+  `name` varchar(20) DEFAULT NULL,
+  `addr` varchar(20) DEFAULT NULL,
+  UNIQUE KEY `name` (`name`),
+  UNIQUE KEY `addr` (`addr`),
+  UNIQUE KEY `name_2` (`name`,`addr`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+1 row in set (0.00 sec)
+
+mysql&gt; alter table t16 drop index name_2;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql&gt; show create table t16\G
+*************************** 1. row ***************************
+       Table: t16
+Create Table: CREATE TABLE `t16` (
+  `id` int(11) DEFAULT NULL,
+  `name` varchar(20) DEFAULT NULL,
+  `addr` varchar(20) DEFAULT NULL,
+  UNIQUE KEY `name` (`name`),
+  UNIQUE KEY `addr` (`addr`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+1 row in set (0.00 sec)</code></pre>
+<p>primary key:</p>
+<p>​                    唯一标识表中记录的一个或者一组列</p>
+<p>​                    不能重复，不能为空</p>
+<p>​                    一个表只能有一个主键，可以由多个字段组成</p>
+<p>​                    保证数据完整性，加快查询速度</p>
+<p>选择主键原则：</p>
+<p>​                    </p>
+<hr>
+<h6 id="添加主键："><a href="#添加主键：" class="headerlink" title="添加主键："></a>添加主键：</h6><pre><code class="mysql">mysql&gt; create table t11(
+    -&gt; id varchar(5) primary key,
+    -&gt; name varchar(10) not null
+    -&gt; );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; insert into t11 values(&#39;s2531&#39;,&#39;tom&#39;),(&#39;s2532&#39;,&#39;berry&#39;);
+Query OK, 2 rows affected (0.00 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql&gt; insert into t11 values(&#39;s2531&#39;,&#39;tom&#39;);
+ERROR 1062 (23000): Duplicate entry &#39;s2531&#39; for key &#39;PRIMARY&#39;
+
+mysql&gt; insert into t11 values(null,&#39;tom&#39;);
+ERROR 1048 (23000): Column &#39;id&#39; cannot be null</code></pre>
+<h6 id="添加主键的方法"><a href="#添加主键的方法" class="headerlink" title="添加主键的方法"></a>添加主键的方法</h6><pre><code class="mysql">mysql&gt; create table t11(
+    -&gt; id varchar(5) primary key,
+    -&gt; name varchar(10) not null
+    -&gt; );
+Query OK, 0 rows affected (0.02 sec)
+-----------------------------------------------------------------------------------------------
+
+mysql&gt; create table t12(
+    -&gt; id int,
+    -&gt; name varchar(10),
+    -&gt; primary key(id)
+    -&gt; );
+Query OK, 0 rows affected (0.02 sec)
+-----------------------------------------------------------------------------------------------
+
+mysql&gt; create table t13(
+    -&gt; id int,
+    -&gt; name varchar(10)
+    -&gt; );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; alter table t13 add primary key(id);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql&gt; desc t13;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int(11)     | NO   | PRI | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)</code></pre>
+<h6 id="删除主键："><a href="#删除主键：" class="headerlink" title="删除主键："></a>删除主键：</h6><pre><code class="mysql">mysql&gt; alter table t13 drop primary key;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql&gt; desc t13;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int(11)     | NO   |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)</code></pre>
+<h5 id="数据完整性"><a href="#数据完整性" class="headerlink" title="数据完整性"></a>数据完整性</h5><p>引用完整性</p>
+<p>外键</p>
+<pre><code class="mysql">mysql&gt; create table stuinfo(
+    -&gt; stunum char(4) primary key,
+    -&gt; name varchar(10) not null
+    -&gt; );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; create table stumarks(
+    -&gt; stuid char(4) primary key,
+    -&gt; score tinyint unsigned,
+    -&gt; foreign key (stuid) references stuinfo(stunum)
+    -&gt; );
+Query OK, 0 rows affected (0.01 sec)
+-----------------------------------------------------------------------------------------------
+
+mysql&gt; insert into stumarks values(&#39;s101&#39;,88);
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`school`.`stumarks`, CONSTRAINT `stumarks_ibfk_1` FOREIGN KEY (`stuid`) REFERENCES `stuinfo` (`stunum`))
+/* 主表中不存在s101，从表是无法插入的 */
+mysql&gt; insert into stuinfo values(&#39;s101&#39;,&#39;tom&#39;);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; insert into stumarks values(&#39;s101&#39;,88);
+Query OK, 1 row affected (0.00 sec)
+-----------------------------------------------------------------------------------------------
+
+mysql&gt; delete from stuinfo where stunum=&#39;s101&#39;;
+ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`school`.`stumarks`, CONSTRAINT `stumarks_ibfk_1` FOREIGN KEY (`stuid`) REFERENCES `stuinfo` (`stunum`))
+mysql&gt; delete from stumarks where stuid=&#39;s101&#39;;
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; delete from stuinfo where stunum=&#39;s101&#39;;
+Query OK, 1 row affected (0.01 sec)
+/*删除主表的数据必须先删除从表中的对应数据*/
+-----------------------------------------------------------------------------------------------
+
+mysql&gt; drop table stumarks;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; drop table stuinfo;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; create table stuinfo(
+    -&gt; stunum char(4) primary key,
+    -&gt; name varchar(10) not null
+    -&gt; );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; create table stumarks(
+    -&gt; stuid char(4) primary key,
+    -&gt; score tinyint unsigned
+    -&gt; );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; alter table stumarks add foreign key(stuid) references stuinfo(stunum);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+/*修改表的时候添加外键*/
+-----------------------------------------------------------------------------------------------
+
+mysql&gt; show create table stumarks\G
+*************************** 1. row ***************************
+       Table: stumarks
+Create Table: CREATE TABLE `stumarks` (
+  `stuid` char(4) NOT NULL,
+  `score` tinyint(3) unsigned DEFAULT NULL,
+  PRIMARY KEY (`stuid`),
+  CONSTRAINT `stumarks_ibfk_1` FOREIGN KEY (`stuid`) REFERENCES `stuinfo` (`stunum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+1 row in set (0.00 sec)
+
+mysql&gt; alter table stumarks drop foreign key stumarks_ibfk_1;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+/*删除外键*/
+-----------------------------------------------------------------------------------------------
+mysql&gt; create table stuinfo(
+    -&gt; stunum char(4) primary key,
+    -&gt; name varchar(10) not null
+    -&gt; );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; create table stumarks(
+    -&gt; stuid int auto_increment primary key,
+    -&gt; stunum char(4),
+    -&gt; score tinyint unsigned,
+    -&gt; foreign key (stunum) references stuinfo(stunum) on delete set null on update cascade
+    -&gt; );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; insert into stuinfo values(&#39;100&#39;,tom);
+ERROR 1054 (42S22): Unknown column &#39;tom&#39; in &#39;field list&#39;
+mysql&gt; insert into stuinfo values(&#39;100&#39;,&#39;tom&#39;);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; insert into stumarks values(null,&#39;100&#39;,88);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; select * from stuinfo;
++--------+------+
+| stunum | name |
++--------+------+
+| 100    | tom  |
++--------+------+
+1 row in set (0.00 sec)
+
+mysql&gt; select * from stumarks;
++-------+--------+-------+
+| stuid | stunum | score |
++-------+--------+-------+
+|     1 | 100    |    88 |
++-------+--------+-------+
+1 row in set (0.00 sec)
+
+mysql&gt; update stuinfo set stunum=&#39;101&#39; where stunum=&#39;100&#39;;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql&gt; select * from stumarks;
++-------+--------+-------+
+| stuid | stunum | score |
++-------+--------+-------+
+|     1 | 101    |    88 |
++-------+--------+-------+
+1 row in set (0.00 sec)
+
+mysql&gt; delete from stuinfo where stunum=&#39;101&#39;;
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; select * from stuinfo;
+Empty set (0.00 sec)
+
+mysql&gt; select * from stumarks;
++-------+--------+-------+
+| stuid | stunum | score |
++-------+--------+-------+
+|     1 | NULL   |    88 |
++-------+--------+-------+
+1 row in set (0.00 sec)
+/*级联操作：当主表中的数据删除是，从表中对应的记录置空；更新时也对应更新*/</code></pre>
+<blockquote>
+<pre><code class="mysql">/*in 、not in*/
+mysql&gt; select id,truename as &#39;姓名&#39;,idcard from xb_mem_info where id not in (10,330,499,331) limit 5;
++----+-----------+--------------------+
+| id | 姓名      | idcard             |
++----+-----------+--------------------+
+|  1 | 5990      | NULL               |
+|  3 | 蔡伟优    | 360727198706152011 |
+|  4 | 黄杰      | 360727199108280093 |
+|  5 | 谭辉金    | 360729199606260020 |
+|  6 | 黄美霞    | 36072719870519202X |
++----+-----------+--------------------+
+5 rows in set (0.01 sec)
+
+mysql&gt; select id,truename as &#39;姓名&#39;,idcard from xb_mem_info where id in (10,330,499,331) limit 5;
++-----+-----------+--------------------+
+| id  | 姓名      | idcard             |
++-----+-----------+--------------------+
+|  10 | 蔡素华    | 360727198902202020 |
+| 330 | 9375      | NULL               |
+| 331 | 2782      | NULL               |
+| 499 | 陈书芹    | 410727197812236921 |
++-----+-----------+--------------------+
+4 rows in set (0.00 sec)
+
+-----------------------------------------------------------------------------------------------
+/*between、not between*/
+mysql&gt; select id,truename,idcard from xb_mem_info where id  between 10 and 15 limit 6;
++----+-----------+--------------------+
+| id | truename  | idcard             |
++----+-----------+--------------------+
+| 10 | 蔡素华    | 360727198902202020 |
+| 11 | 5729      | NULL               |
+| 12 | 陈奎龙    | 500226199001052237 |
+| 13 | 3330      | NULL               |
+| 14 | 王忠诚    | 500381199401114118 |
+| 15 | 莫黎      | 511025198608230010 |
++----+-----------+--------------------+
+6 rows in set (0.00 sec)
+
+mysql&gt; select id,truename,idcard from xb_mem_info where id not between 10 and 15 limit 6;
++----+-----------+--------------------+
+| id | truename  | idcard             |
++----+-----------+--------------------+
+|  1 | 5990      | NULL               |
+|  3 | 蔡伟优    | 360727198706152011 |
+|  4 | 黄杰      | 360727199108280093 |
+|  5 | 谭辉金    | 360729199606260020 |
+|  6 | 黄美霞    | 36072719870519202X |
+|  7 | 黄燕芳    | 360727199309232020 |
++----+-----------+--------------------+
+6 rows in set (0.00 sec)
+
+-----------------------------------------------------------------------------------------------
+/*is null、is not null*/
+mysql&gt; select id,truename,idcard from xb_mem_info where idcard is null limit 10;
++----+----------+--------+
+| id | truename | idcard |
++----+----------+--------+
+|  1 | 5990     | NULL   |
+| 11 | 5729     | NULL   |
+| 13 | 3330     | NULL   |
+| 17 | 1468     | NULL   |
+| 20 | NULL     | NULL   |
+| 21 | 9474     | NULL   |
+| 22 | 5469     | NULL   |
+| 23 | 9453     | NULL   |
+| 25 | 2643     | NULL   |
+| 26 | 4491     | NULL   |
++----+----------+--------+
+10 rows in set (0.00 sec)
+
+mysql&gt; select id,truename,idcard from xb_mem_info where idcard is not null limit 10;
++----+-----------+--------------------+
+| id | truename  | idcard             |
++----+-----------+--------------------+
+|  3 | 蔡伟优    | 360727198706152011 |
+|  4 | 黄杰      | 360727199108280093 |
+|  5 | 谭辉金    | 360729199606260020 |
+|  6 | 黄美霞    | 36072719870519202X |
+|  7 | 黄燕芳    | 360727199309232020 |
+|  8 | 王经媛    | 360732199709234122 |
+|  9 | 刘利盛    | 360727198907082013 |
+| 10 | 蔡素华    | 360727198902202020 |
+| 12 | 陈奎龙    | 500226199001052237 |
+| 14 | 王忠诚    | 500381199401114118 |
++----+-----------+--------------------+
+10 rows in set (0.00 sec)
+
+-----------------------------------------------------------------------------------------------
+/*sum()*/
+mysql&gt; select sum(id) from xb_mem_info;
++----------+
+| sum(id)  |
++----------+
+| 60856657 |
++----------+
+1 row in set (0.01 sec)
+
+-----------------------------------------------------------------------------------------------
+/*avg()*/
+mysql&gt; select avg(idcard) from xb_mem_info;
++----------------------+
+| avg(idcard)          |
++----------------------+
+| 3.556618801202589e17 |
++----------------------+
+1 row in set, 789 warnings (0.01 sec)
+
+-----------------------------------------------------------------------------------------------
+/*max()*/
+mysql&gt; select max(idcard) from xb_mem_info;
++--------------------+
+| max(idcard)        |
++--------------------+
+| 659001199107054831 |
++--------------------+
+1 row in set (0.00 sec)
+
+-----------------------------------------------------------------------------------------------
+/*min*/
+mysql&gt; select min(idcard) from xb_mem_info;
++--------------------+
+| min(idcard)        |
++--------------------+
+| 110101198112240038 |
++--------------------+
+1 row in set (0.01 sec)
+
+-----------------------------------------------------------------------------------------------
+/*count()*/
+mysql&gt; select count(*) from xb_mem_info;
++----------+
+| count(*) |
++----------+
+|    11029 |
++----------+
+1 row in set (0.00 sec)
+
+mysql&gt; select count(1) from xb_mem_info;
++----------+
+| count(1) |
++----------+
+|    11029 |
++----------+
+1 row in set (0.00 sec)
+执行效率上：  
+列名为主键，count(列名)会比count(1)快  
+列名不为主键，count(1)会比count(列名)快  
+如果表多个列并且没有主键，则 count（1） 的执行效率优于 count（*）  
+如果有主键，则 select count（主键）的执行效率是最优的  
+如果表只有一个字段，则 select count（*）最优。
+https://blog.csdn.net/iFuMI/article/details/77920767
+
+----------------------------------------------------------------------------------------
+/*order by*/
+mysql&gt; select id,truename,idcard from xb_mem_info where idcard is not null order by idcard limit 10;
++------+-----------+--------------------+
+| id   | truename  | idcard             |
++------+-----------+--------------------+
+| 8847 | 曹磊      | 110101198112240038 |
+| 6870 | 李曌      | 11010119870608102X |
+| 6854 | 郭思酉    | 11010119930224451X |
+|  934 | 刘晨晞    | 110102197902222725 |
+| 1190 | 杨宽      | 110102198007070432 |
+| 7085 | 王璞      | 110102198103131530 |
+| 5252 | 杨雨      | 110102198806162405 |
+| 3243 | 霍建      | 110103197801230650 |
+| 7744 | 孟龙      | 110103198712181214 |
+| 5967 | 何林      | 110104196302251256 |
++------+-----------+--------------------+
+10 rows in set (0.00 sec)
+
+mysql&gt; select id,truename,idcard from xb_mem_info where idcard is not null order by idcard desc limit 10;
++-------+-------------------------+--------------------+
+| id    | truename                | idcard             |
++-------+-------------------------+--------------------+
+|  3671 | 杨先锋                  | 659001199107054831 |
+|  7297 | 孙正钰                  | 65900119910511161X |
+|  5523 | 孟蕊                    | 659001198612115725 |
+|  2194 | 胡安·巴合夏别克         | 654301199308090013 |
+| 10193 | 哈里哈什·胡沙因         | 654301198405201868 |
+|   912 | 晁永康                  | 65422219980303391X |
+|  6237 | 哈依那尔·叶尔肯         | 654221199506131437 |
+|  1598 | 刘洋                    | 65420219950519631X |
+|  9606 | 郭玉忠                  | 654123198710133299 |
+|  2521 | 屈荣兰                  | 654122198810251325 |
++-------+-------------------------+--------------------+
+10 rows in set (0.01 sec)
+
+----------------------------------------------------------------------------------------
+/*group by*/
+mysql&gt; select * from test;
++----+-----------+------+------+
+| id | name      | sex  | age  |
++----+-----------+------+------+
+|  1 | 蔡伟优    | 男   |   33 |
+|  2 | 黄杰      | 男   |   29 |
+|  3 | 谭辉金    | 男   |   24 |
+|  4 | 黄美霞    | 女   |   30 |
+|  5 | 黄燕芳    | 女   |   27 |
++----+-----------+------+------+
+5 rows in set (0.00 sec)
+
+mysql&gt; select avg(age) as avg_age,sex from test group by sex;
++---------+------+
+| avg_age | sex  |
++---------+------+
+| 28.6667 | 男   |
+| 28.5000 | 女   |
++---------+------+
+2 rows in set (0.00 sec)
+
+----------------------------------------------------------------------------------------
+/*distinct*/
+select distinct name from test;
+
+----------------------------------------------------------------------------------------
+/*内连接：inner join*/
+①：select column from t1 inner join t2 on t1.commen_column=t2.commen_column;
+②：select column from t1,t2 where t1.commen_column=t2.commen_column;
+③：select from t1 inner join t2 on t1.commen_column=t2.commen_column inner join t3 on t2.commen_column=t3.commen_column;
+
+----------------------------------------------------------------------------------------
+/*左外连接：left join*/
+select column from t1 left join t2 on t1.commen_column=t2.commen_column;
+
+----------------------------------------------------------------------------------------
+/*添加索引*/
+mysql&gt; desc stu;
++-------+--------------------------+------+-----+---------+-------+
+| Field | Type                     | Null | Key | Default | Extra |
++-------+--------------------------+------+-----+---------+-------+
+| id    | int(5)                   | YES  |     | NULL    |       |
+| age   | int(5) unsigned zerofill | YES  |     | NULL    |       |
++-------+--------------------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql&gt; create index idx_id on stu(id); #
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql&gt; show index from stu;
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| Table | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| stu   |          1 | idx_id   |            1 | id          | A         |           2 |     NULL | NULL   | YES  | BTREE      |         |               |
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+1 row in set (0.00 sec)
+
+----------------------------------------------------------------------------------------
+/*添加索引*/
+mysql&gt; desc t10;
++-------+------------------+------+-----+---------+-------+
+| Field | Type             | Null | Key | Default | Extra |
++-------+------------------+------+-----+---------+-------+
+| id    | int(10) unsigned | YES  |     | NULL    |       |
+| addr  | varchar(20)      | NO   |     | 不详    |       |
++-------+------------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql&gt; show index from t10;
+Empty set (0.00 sec)
+
+mysql&gt; alter table t10 add index idx_addr(addr);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql&gt; show index from t10;
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| Table | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| t10   |          1 | idx_addr |            1 | addr        | A         |           2 |     NULL | NULL   |      | BTREE      |         |               |
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+1 row in set (0.00 sec)
+
+----------------------------------------------------------------------------------------
+/*创建表时添加索引*/
+mysql&gt; create table t18(
+    -&gt; id int,
+    -&gt; name varchar(10),
+    -&gt; index idx_name (name)
+    -&gt; );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; show index from t18;
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| Table | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| t18   |          1 | idx_name |            1 | name        | A         |           0 |     NULL | NULL   | YES  | BTREE      |         |               |
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+1 row in set (0.00 sec)
+
+mysql&gt; drop index idx_name on t18; /*删除索引*/
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql&gt; show index from t18;
+Empty set (0.00 sec)
+
+/*唯一索引*/
+create unique index index_name table_name (column_name);
+alter table table_name add unqiue index index_name (column)
+
+----------------------------------------------------------------------------------------
+/*rand()*/
+mysql&gt; select truename from xb_mem_info order by rand() limit 5; //随机取值
++-----------+
+| truename  |
++-----------+
+| 杨昌龙    |
+| 高胜兵    |
+| 陆惠玲    |
+| 石兴      |
+| 1108      |
++-----------+
+5 rows in set (0.01 sec)
+
+mysql&gt; select truename from xb_mem_info order by rand() limit 5;
++-----------+
+| truename  |
++-----------+
+| 陈常华    |
+| 吴宾宾    |
+| 刘宏斌    |
+| 8011      |
+| 漆艳玲    |
++-----------+
+5 rows in set (0.02 sec)
+
+mysql&gt; select truename from xb_mem_info order by rand() limit 5;
++-----------+
+| truename  |
++-----------+
+| 张雨      |
+| 彭宏扬    |
+| 施树伟    |
+| 易亚平    |
+| 陈泳希    |
++-----------+
+5 rows in set (0.02 sec)</code></pre>
+</blockquote>
+<pre><code class="msql"></code></pre>
+<hr>
+<p>title: jQuery对表单的操作及更多应用<br>date: 2017-05-26 12:12:57<br>categories: </p>
+<ul>
+<li>test</li>
+</ul>
+<hr>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>PracticeSql</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">5.1k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
+    <p><span class="copy-title">发布时间:</span>2021-03-16, 00:33:59</p>
+    <p><span class="copy-title">最后更新:</span>2020-03-29, 13:19:14</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/16/PracticeSql/" title="PracticeSql">https://duwei19961021.github.io/2021/03/16/PracticeSql/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2021 duwei</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#Dockerfile','#Nginx','#sql_base','#ecs','#zabbix','#Jenkinsfile','#linux性能优化实战笔记','#kubectl','#book','#c','#c primer plus','#cicd','#c语言基础','#jenkins','#mongodb','#数据结构','#sonar','#操作系统','#排序','#进程','#c++','#list','#缓冲区','#信号','#queue','#net','#内存','#no','#hashtable','#thread_pool','#线程','#array','#mem_pool',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+    .post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>

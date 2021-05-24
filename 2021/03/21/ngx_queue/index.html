@@ -6,17 +6,16 @@
   <meta name="keywords" content=" queue ">
   <meta name="description" content="nginx双向链表 | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="网络字节序内存分为大端存储和小端存储，网络数据同样有大小端之分。  发送主机通常将发送缓冲区中的数据按照内存地址从低到高的顺序发出。 接收主机把从网络上收到的字节依次保存在接收缓冲区中，也是按照内存从低到高的顺序保存。 因此，网络数据流的地址应该规定：先发出的数据是低地址，后发出的数据是高地址。 TCP&#x2F;IP协议规定，网络数据流应采用大端字节序，即低地址高字节。 不管是大端机还是小端机，都会按照T">
-<meta property="og:type" content="article">
-<meta property="og:title" content="socket">
-<meta property="og:url" content="https://duwei19961021.github.io/2021/05/12/socket/index.html">
+<meta name="description" content="gitlabBranch gitlabSourceBranch gitlabActionType gitlabUserName gitlabUserUsername gitlabUserEmail gitlabSourceRepoHomepage gitlabSourceRepoName gitlabSourceNamespace gitlabSourceRepoURL gitlabSourceR">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BLOG">
+<meta property="og:url" content="https://duwei19961021.github.io/file/sonar.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="网络字节序内存分为大端存储和小端存储，网络数据同样有大小端之分。  发送主机通常将发送缓冲区中的数据按照内存地址从低到高的顺序发出。 接收主机把从网络上收到的字节依次保存在接收缓冲区中，也是按照内存从低到高的顺序保存。 因此，网络数据流的地址应该规定：先发出的数据是低地址，后发出的数据是高地址。 TCP&#x2F;IP协议规定，网络数据流应采用大端字节序，即低地址高字节。 不管是大端机还是小端机，都会按照T">
+<meta property="og:description" content="gitlabBranch gitlabSourceBranch gitlabActionType gitlabUserName gitlabUserUsername gitlabUserEmail gitlabSourceRepoHomepage gitlabSourceRepoName gitlabSourceNamespace gitlabSourceRepoURL gitlabSourceR">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-12T05:44:40.000Z">
-<meta property="article:modified_time" content="2021-05-20T05:56:40.085Z">
+<meta property="article:published_time" content="2021-05-23T01:21:25.624Z">
+<meta property="article:modified_time" content="2021-03-18T03:09:52.073Z">
 <meta property="article:author" content="拦云">
-<meta property="article:tag" content="net">
 <meta name="twitter:card" content="summary">
 
 
@@ -44,7 +43,7 @@
 <script src="/js/iconfont.js?v=1.0.1" ></script>
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="BLOG" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 <div style="display: none">
   <input class="theme_disqus_on" value="false">
   <input class="theme_preload_comment" value="true">
@@ -69,31 +68,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(53)</small></div></li>
-    
-        
-            
-            <li><div data-rel="C语言">C语言<small>(17)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="运维">运维<small>(10)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="k8s">k8s<small>(2)</small></div>
-                
-            </li>
-            
-        
+    <li><div class="all active">全部文章<small>(52)</small></div></li>
     
         
             
@@ -121,6 +96,30 @@
     
         
             
+            <li><div data-rel="运维">运维<small>(11)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="k8s">k8s<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="C语言">C语言<small>(18)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
             <li><div data-rel="操作系统">操作系统<small>(4)</small></div>
                 
             </li>
@@ -137,8 +136,8 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="53">
-<input type="hidden" id="yelog_site_word_count" value="82k">
+<input type="hidden" id="yelog_site_posts_number" value="52">
+<input type="hidden" id="yelog_site_word_count" value="77.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -172,15 +171,7 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a class="color2">c</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">ecs</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color2">Jenkinsfile</a>
+        <a class="color1">Dockerfile</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -188,23 +179,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">sonar</a>
+        <a class="color4">sql_base</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">kubectl</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">jenkins</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">linux性能优化实战笔记</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">mongodb</a>
+        <a class="color4">ecs</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -212,15 +191,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">cicd</a>
+        <a class="color2">Jenkinsfile</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">数据结构</a>
+        <a class="color4">linux性能优化实战笔记</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">c语言基础</a>
+        <a class="color3">kubectl</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -228,7 +207,39 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">Dockerfile</a>
+        <a class="color2">c</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">c primer plus</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">cicd</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">c语言基础</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">jenkins</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">mongodb</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">数据结构</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">sonar</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">操作系统</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -240,35 +251,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">c primer plus</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">sql_base</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color1">array</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">mem_pool</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">内存</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color1">queue</a>
+        <a class="color4">c++</a>
     </li>
     
     <li class="article-tag-list-item">
         <a class="color5">list</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color5">hashtable</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -280,11 +267,23 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">c++</a>
+        <a class="color1">queue</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">线程</a>
+        <a class="color4">net</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">内存</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">no</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">hashtable</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -292,7 +291,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">net</a>
+        <a class="color3">线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">array</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">mem_pool</a>
     </li>
     
     <div class="clearfix"></div>
@@ -305,6 +312,30 @@
     
     <nav id="title-list-nav">
         
+        <a  class="运维 "
+           href="/2021/03/16/Nginx%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96header/"
+           data-tag="Nginx"
+           data-author="" >
+            <span class="post-title" title="Nginx日志获取header">Nginx日志获取header</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/16/make/"
+           data-tag="c"
+           data-author="" >
+            <span class="post-title" title="make">make</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/c++%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="c++构造函数">c++构造函数</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
         <a  class="C语言 "
            href="/2021/04/13/CppPrimer/"
            data-tag="book"
@@ -314,75 +345,67 @@
         </a>
         
         <a  class=""
-           href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0linux%E5%91%BD%E4%BB%A4/"
+           href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0linux%E5%91%BD%E4%BB%A4/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="C语言实现linux命令">C语言实现linux命令</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E9%A2%84%E5%A4%84%E7%90%86/"
+           href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E9%A2%84%E5%A4%84%E7%90%86/"
            data-tag="c"
            data-author="" >
             <span class="post-title" title="C语言预处理">C语言预处理</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/ECS%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9/"
+           href="/2021/03/16/ECS%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9/"
            data-tag="ecs"
            data-author="" >
             <span class="post-title" title="ECS磁盘扩容">ECS磁盘扩容</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/Jenkinsfile/"
+           href="/2021/03/16/Jenkinsfile/"
            data-tag="Jenkinsfile"
            data-author="" >
             <span class="post-title" title="Jenkinsfile">Jenkinsfile</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/Nginx%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96header/"
-           data-tag="Nginx"
-           data-author="" >
-            <span class="post-title" title="Nginx日志获取header">Nginx日志获取header</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="运维 "
-           href="/2021/03/18/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/"
+           href="/2021/03/16/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/"
            data-tag="sonar"
            data-author="" >
             <span class="post-title" title="Jenkins结合sonar代码检测流水线">Jenkins结合sonar代码检测流水线</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/c++%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="c++构造函数">c++构造函数</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/Nginx/"
+           href="/2021/03/16/Nginx/"
            data-tag="Nginx"
            data-author="" >
             <span class="post-title" title="Nginx">Nginx</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class=""
-           href="/2021/03/18/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B7/"
+           href="/2021/03/16/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B7/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="c陷阱与缺陷">c陷阱与缺陷</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/16/jenkins%E7%BB%93%E5%90%88rsync%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81/"
+           data-tag="jenkins"
+           data-author="" >
+            <span class="post-title" title="jenkins结合rsync同步代码">jenkins结合rsync同步代码</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="k8s "
@@ -394,203 +417,155 @@
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/jenkins%E7%BB%93%E5%90%88rsync%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81/"
-           data-tag="jenkins"
-           data-author="" >
-            <span class="post-title" title="jenkins结合rsync同步代码">jenkins结合rsync同步代码</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="运维 "
-           href="/2021/03/18/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"
+           href="/2021/03/16/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"
            data-tag="linux性能优化实战笔记"
            data-author="" >
             <span class="post-title" title="linux性能优化实战笔记">linux性能优化实战笔记</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="C语言 "
-           href="/2021/03/18/make/"
-           data-tag="c"
-           data-author="" >
-            <span class="post-title" title="make">make</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/mongo/"
+           href="/2021/03/16/mongo/"
            data-tag="mongodb"
            data-author="" >
             <span class="post-title" title="mongo">mongo</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="Nginx "
-           href="/2021/03/17/ngx_array/"
-           data-tag="array"
-           data-author="" >
-            <span class="post-title" title="nginx数组">nginx数组</span>
-            <span class="post-date" title="2021-03-17 11:26:01">2021/03/17</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/sonar/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="sonar">sonar</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/sql/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="sql">sql</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/zabbix_dingdingAlert/"
+           href="/2021/03/16/zabbix_dingdingAlert/"
            data-tag="zabbix"
            data-author="" >
             <span class="post-title" title="zabbix_dingdingAlert">zabbix_dingdingAlert</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="k8s "
-           href="/2021/03/18/%E4%B8%80%E6%AC%A1%E6%B5%B7%E5%A4%96k8s%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5/"
-           data-tag="cicd"
-           data-author="" >
-            <span class="post-title" title="一次海外k8s集群代码发布实践">一次海外k8s集群代码发布实践</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/%E4%BA%8C%E5%8F%89%E6%A0%91/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="二叉树">二叉树</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/zabbix_key/"
+           href="/2021/03/16/zabbix_key/"
            data-tag="zabbix"
            data-author="" >
             <span class="post-title" title="zabbix_key">zabbix_key</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="k8s "
+           href="/2021/03/16/%E4%B8%80%E6%AC%A1%E6%B5%B7%E5%A4%96k8s%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5/"
+           data-tag="cicd"
+           data-author="" >
+            <span class="post-title" title="一次海外k8s集群代码发布实践">一次海外k8s集群代码发布实践</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class=""
-           href="/2021/03/18/%E4%BA%8C%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/"
+           href="/2021/03/16/%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="二叉树">二叉树</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/%E4%BA%8C%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="二级计算机">二级计算机</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E5%B8%A6%E7%8E%AF%E9%93%BE%E8%A1%A8/"
+           href="/2021/03/16/%E5%B8%A6%E7%8E%AF%E9%93%BE%E8%A1%A8/"
            data-tag="数据结构"
            data-author="" >
             <span class="post-title" title="带环链表">带环链表</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/%E6%B1%87%E7%BC%96%E7%AC%94%E8%AE%B0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="汇编笔记">汇编笔记</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="操作系统 "
-           href="/2021/03/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="操作系统">操作系统</span>
-            <span class="post-date" title="2021-03-20 11:54:29">2021/03/20</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/"
+           href="/2021/03/16/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/"
            data-tag="c语言基础"
            data-author="" >
             <span class="post-title" title="数据的存储">数据的存储</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class=""
-           href="/2021/03/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
+           href="/2021/03/16/%E6%B1%87%E7%BC%96%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="汇编笔记">汇编笔记</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/05/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"
+           data-tag="no"
+           data-author="" >
+            <span class="post-title" title="操作系统">操作系统</span>
+            <span class="post-date" title="2021-05-23 09:25:50">2021/05/23</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="计算机网络">计算机网络</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E4%B8%93%E5%AE%B6%E7%BC%96%E7%A8%8B/"
+           href="/2021/03/16/C%E4%B8%93%E5%AE%B6%E7%BC%96%E7%A8%8B/"
            data-tag="book"
            data-author="" >
             <span class="post-title" title="C专家编程">C专家编程</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E5%92%8C%E6%8C%87%E9%92%88/"
+           href="/2021/03/16/C%E5%92%8C%E6%8C%87%E9%92%88/"
            data-tag="book"
            data-author="" >
             <span class="post-title" title="C和指针">C和指针</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="Docker "
-           href="/2021/03/18/Dockerfile/"
-           data-tag="Dockerfile"
-           data-author="" >
-            <span class="post-title" title="Dockerfile">Dockerfile</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90/"
+           href="/2021/03/16/C%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90/"
            data-tag="book"
            data-author="" >
             <span class="post-title" title="C深入剖析">C深入剖析</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
-        <a  class="Nginx "
-           href="/2021/03/18/ngx_mem_pool/"
-           data-tag="mem_pool"
+        <a  class="Docker "
+           href="/2021/03/16/Dockerfile/"
+           data-tag="Dockerfile"
            data-author="" >
-            <span class="post-title" title="nginx内存池">nginx内存池</span>
-            <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+            <span class="post-title" title="Dockerfile">Dockerfile</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           href="/2021/03/16/c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
            data-tag="c"
            data-author="" >
             <span class="post-title" title="c学习笔记">c学习笔记</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E6%8C%87%E9%92%88/"
+           href="/2021/03/16/%E6%8C%87%E9%92%88/"
            data-tag="c语言基础"
            data-author="" >
             <span class="post-title" title="指针">指针</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E6%8E%92%E5%BA%8F/"
+           href="/2021/03/16/%E6%8E%92%E5%BA%8F/"
            data-tag="排序"
            data-author="" >
             <span class="post-title" title="排序">排序</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
@@ -601,44 +576,52 @@
             <span class="post-date" title="2021-03-18 11:09:00">2021/03/18</span>
         </a>
         
+        <a  class="运维 "
+           href="/2020/09/10/tcp:ip/"
+           data-tag="操作系统"
+           data-author="" >
+            <span class="post-title" title="tcp-ip">tcp-ip</span>
+            <span class="post-date" title="2020-09-10 10:09:00">2020/09/10</span>
+        </a>
+        
         <a  class="C语言 "
-           href="/2021/03/18/C%20Primer%20Plus/"
+           href="/2021/03/16/C%20Primer%20Plus/"
            data-tag="c primer plus"
            data-author="" >
             <span class="post-title" title="C Primer Plus">C Primer Plus</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/tcp:ip/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="tcp:ip">tcp:ip</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="mysql "
-           href="/2021/03/18/PracticeSql/"
+           href="/2021/03/16/PracticeSql/"
            data-tag="sql_base"
            data-author="" >
             <span class="post-title" title="PracticeSql">PracticeSql</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="操作系统 "
-           href="/2021/03/20/virtual_memory/"
-           data-tag="内存"
-           data-author="" >
-            <span class="post-title" title="虚拟内存">虚拟内存</span>
-            <span class="post-date" title="2021-03-20 11:51:57">2021/03/20</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="Nginx "
-           href="/2021/03/18/ngx_buf/"
-           data-tag="缓冲区"
+           href="/2021/03/18/ngx_mem_pool/"
+           data-tag="mem_pool"
            data-author="" >
-            <span class="post-title" title="nginx缓冲区">nginx缓冲区</span>
+            <span class="post-title" title="nginx内存池">nginx内存池</span>
             <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/17/ngx_array/"
+           data-tag="array"
+           data-author="" >
+            <span class="post-title" title="nginx数组">nginx数组</span>
+            <span class="post-date" title="2021-03-17 11:26:01">2021/03/17</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/05/22/BSTree/"
+           data-tag="c++"
+           data-author="" >
+            <span class="post-title" title="二叉搜索树">二叉搜索树</span>
+            <span class="post-date" title="2021-05-22 20:47:06">2021/05/22</span>
         </a>
         
         <a  class="操作系统 "
@@ -649,60 +632,12 @@
             <span class="post-date" title="2021-03-20 11:55:12">2021/03/20</span>
         </a>
         
-        <a  class="Nginx "
-           href="/2021/03/21/ngx_queue/"
-           data-tag="queue"
-           data-author="" >
-            <span class="post-title" title="nginx双向链表">nginx双向链表</span>
-            <span class="post-date" title="2021-03-21 19:02:44">2021/03/21</span>
-        </a>
-        
-        <a  class="Nginx "
-           href="/2021/03/22/ngx_list/"
-           data-tag="list"
-           data-author="" >
-            <span class="post-title" title="nginx单向链表">nginx单向链表</span>
-            <span class="post-date" title="2021-03-22 11:15:43">2021/03/22</span>
-        </a>
-        
         <a  class=""
            href="/2021/03/22/ngx_align/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="ngx_align">ngx_align</span>
             <span class="post-date" title="2021-03-22 15:44:36">2021/03/22</span>
-        </a>
-        
-        <a  class="Nginx "
-           href="/2021/03/23/ngx_hash/"
-           data-tag="hashtable"
-           data-author="" >
-            <span class="post-title" title="nginx散列表">nginx散列表</span>
-            <span class="post-date" title="2021-03-23 18:21:27">2021/03/23</span>
-        </a>
-        
-        <a  class="操作系统 "
-           href="/2021/04/12/signal/"
-           data-tag="信号"
-           data-author="" >
-            <span class="post-title" title="信号">信号</span>
-            <span class="post-date" title="2021-04-12 19:57:55">2021/04/12</span>
-        </a>
-        
-        <a  class="C语言 "
-           href="/2021/04/25/c++inheritance/"
-           data-tag="c++"
-           data-author="" >
-            <span class="post-title" title="c++继承">c++继承</span>
-            <span class="post-date" title="2021-04-25 22:55:23">2021/04/25</span>
-        </a>
-        
-        <a  class="C语言 "
-           href="/2021/04/20/thread/"
-           data-tag="线程"
-           data-author="" >
-            <span class="post-title" title="thread">thread</span>
-            <span class="post-date" title="2021-04-20 17:02:24">2021/04/20</span>
         </a>
         
         <a  class="C语言 "
@@ -714,11 +649,43 @@
         </a>
         
         <a  class="Nginx "
-           href="/2021/05/04/ngx_thread_pool/"
-           data-tag="thread_pool"
+           href="/2021/03/22/ngx_list/"
+           data-tag="list"
            data-author="" >
-            <span class="post-title" title="nginx线程池">nginx线程池</span>
-            <span class="post-date" title="2021-05-04 00:43:27">2021/05/04</span>
+            <span class="post-title" title="nginx单向链表">nginx单向链表</span>
+            <span class="post-date" title="2021-03-22 11:15:43">2021/03/22</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/18/ngx_buf/"
+           data-tag="缓冲区"
+           data-author="" >
+            <span class="post-title" title="nginx缓冲区">nginx缓冲区</span>
+            <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/04/25/c++inheritance/"
+           data-tag="c++"
+           data-author="" >
+            <span class="post-title" title="c++继承">c++继承</span>
+            <span class="post-date" title="2021-04-25 22:55:23">2021/04/25</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/04/12/signal/"
+           data-tag="信号"
+           data-author="" >
+            <span class="post-title" title="信号">信号</span>
+            <span class="post-date" title="2021-04-12 19:57:55">2021/04/12</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/21/ngx_queue/"
+           data-tag="queue"
+           data-author="" >
+            <span class="post-title" title="nginx双向链表">nginx双向链表</span>
+            <span class="post-date" title="2021-03-21 19:02:44">2021/03/21</span>
         </a>
         
         <a  class="C语言 "
@@ -727,6 +694,38 @@
            data-author="" >
             <span class="post-title" title="socket">socket</span>
             <span class="post-date" title="2021-05-12 13:44:40">2021/05/12</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/03/20/virtual_memory/"
+           data-tag="内存"
+           data-author="" >
+            <span class="post-title" title="虚拟内存">虚拟内存</span>
+            <span class="post-date" title="2021-03-20 11:51:57">2021/03/20</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/23/ngx_hash/"
+           data-tag="hashtable"
+           data-author="" >
+            <span class="post-title" title="nginx散列表">nginx散列表</span>
+            <span class="post-date" title="2021-03-23 18:21:27">2021/03/23</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/05/04/ngx_thread_pool/"
+           data-tag="thread_pool"
+           data-author="" >
+            <span class="post-title" title="nginx线程池">nginx线程池</span>
+            <span class="post-date" title="2021-05-04 00:43:27">2021/05/04</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/04/20/thread/"
+           data-tag="线程"
+           data-author="" >
+            <span class="post-title" title="thread">thread</span>
+            <span class="post-date" title="2021-04-20 17:02:24">2021/04/20</span>
         </a>
         
     </nav>
@@ -770,7 +769,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:1.2k</span>
+        <span>字数:1.1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -805,63 +804,63 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="nginx数据类型：双向链表"><a href="#nginx数据类型：双向链表" class="headerlink" title="nginx数据类型：双向链表"></a>nginx数据类型：双向链表</h4><pre><code class="c">struct ngx_queue_s {
-      /*
+        <h4 id="nginx数据类型：双向链表"><a href="#nginx数据类型：双向链表" class="headerlink" title="nginx数据类型：双向链表"></a>nginx数据类型：双向链表</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span> ngx_queue_s <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">/*
           链表这个结构本身不带有任何数据，而是把这个链表结构挂载到业务数据结构上，实现了业务数据结构与链表结构的解耦
-      */
-    ngx_queue_t  *prev;    // 前驱指针
-    ngx_queue_t  *next;    // 后驱指针
-};</code></pre>
+      */</span>
+    ngx_queue_t  <span class="token operator">*</span>prev<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 前驱指针</span>
+    ngx_queue_t  <span class="token operator">*</span>next<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 后驱指针</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <p><img src="https://img.3amupupup.online/ngx_queue_2.png" alt="链表示例"></p>
-<h5 id="双向链表提供的接口"><a href="#双向链表提供的接口" class="headerlink" title="双向链表提供的接口"></a>双向链表提供的接口</h5><pre><code class="c">ngx_queue_init(q);    // 初始化链表指向
-ngx_queue_empty(h);    // 判断链表是否为空
-ngx_queue_insert_head(h, x);    // 链表头插
-ngx_queue_insert_tail(h, x);    // 链表尾插
-ngx_queue_head(h);    // 获取链表第一个元素，h是哨兵位
-ngx_queue_last(h);    // 获取链表最后一个元素
-ngx_queue_sentinel(h);    // 获取哨兵结点
-ngx_queue_next(q);    // 获取结点q的下一个结q
-ngx_queue_prev(q);    // 获取结点q的前一个结点
-ngx_queue_remove(x);    // 从链表中移除x结点
-ngx_queue_split(h, q, n);    // 切割链表
-ngx_queue_add(h, n);
-ngx_queue_data(q, type, link);
-// 以上都是宏函数
+<h5 id="双向链表提供的接口"><a href="#双向链表提供的接口" class="headerlink" title="双向链表提供的接口"></a>双向链表提供的接口</h5><pre class=" language-c"><code class="language-c"><span class="token function">ngx_queue_init</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 初始化链表指向</span>
+<span class="token function">ngx_queue_empty</span><span class="token punctuation">(</span>h<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 判断链表是否为空</span>
+<span class="token function">ngx_queue_insert_head</span><span class="token punctuation">(</span>h<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 链表头插</span>
+<span class="token function">ngx_queue_insert_tail</span><span class="token punctuation">(</span>h<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 链表尾插</span>
+<span class="token function">ngx_queue_head</span><span class="token punctuation">(</span>h<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 获取链表第一个元素，h是哨兵位</span>
+<span class="token function">ngx_queue_last</span><span class="token punctuation">(</span>h<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 获取链表最后一个元素</span>
+<span class="token function">ngx_queue_sentinel</span><span class="token punctuation">(</span>h<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 获取哨兵结点</span>
+<span class="token function">ngx_queue_next</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 获取结点q的下一个结q</span>
+<span class="token function">ngx_queue_prev</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 获取结点q的前一个结点</span>
+<span class="token function">ngx_queue_remove</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 从链表中移除x结点</span>
+<span class="token function">ngx_queue_split</span><span class="token punctuation">(</span>h<span class="token punctuation">,</span> q<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 切割链表</span>
+<span class="token function">ngx_queue_add</span><span class="token punctuation">(</span>h<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ngx_queue_data</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span> type<span class="token punctuation">,</span> link<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 以上都是宏函数</span>
 
-ngx_queue_t *ngx_queue_middle(ngx_queue_t *queue);</code></pre>
+ngx_queue_t <span class="token operator">*</span><span class="token function">ngx_queue_middle</span><span class="token punctuation">(</span>ngx_queue_t <span class="token operator">*</span>queue<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h5 id="接口实现"><a href="#接口实现" class="headerlink" title="接口实现"></a>接口实现</h5><ol>
 <li><p>ngx_queue_init(q): 初始化链表</p>
-<pre><code class="c">#define ngx_queue_init(q)                                                     \
-    (q)-&gt;prev = q;                                                            \
-    (q)-&gt;next = q
-/*
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> ngx_queue_init(q)                                                     \
+    (q)->prev = q;                                                            \
+    (q)->next = q</span>
+<span class="token comment" spellcheck="true">/*
     前驱、后驱指针都指向自己，当前结点是哨兵位
-*/</code></pre>
+*/</span></code></pre>
 </li>
 <li><p>ngx_queue_empty(h): 判断链表是否为空</p>
-<pre><code class="c">#define ngx_queue_empty(h)                                                    \
-    (h == (h)-&gt;prev)
-/*
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> ngx_queue_empty(h)                                                    \
+    (h == (h)->prev)</span>
+<span class="token comment" spellcheck="true">/*
     双向链表的前驱或者后驱指向的是自己时则为空(仅存在哨兵结点)
-*/</code></pre>
+*/</span></code></pre>
 </li>
 <li><p>ngx_queue_insert_head(h, x): 在头结点之后插入x结点(头插)</p>
-<pre><code class="c">#define ngx_queue_insert_head(h, x)                                           \
-    (x)-&gt;next = (h)-&gt;next;                                                    \
-    (x)-&gt;next-&gt;prev = x;                                                      \
-    (x)-&gt;prev = h;                                                            \
-    (h)-&gt;next = x</code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> ngx_queue_insert_head(h, x)                                           \
+    (x)->next = (h)->next;                                                    \
+    (x)->next->prev = x;                                                      \
+    (x)->prev = h;                                                            \
+    (h)->next = x</span></code></pre>
 </li>
 <li><p>ngx_queue_insert_tail(h, x): 在链表的末尾添加新结点x(尾插)</p>
-<pre><code class="c">#define ngx_queue_insert_tail(h, x)                                           \
-    (x)-&gt;prev = (h)-&gt;prev;                                                    \
-    (x)-&gt;prev-&gt;next = x;                                                      \
-    (x)-&gt;next = h;                                                            \
-    (h)-&gt;prev = x</code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> ngx_queue_insert_tail(h, x)                                           \
+    (x)->prev = (h)->prev;                                                    \
+    (x)->prev->next = x;                                                      \
+    (x)->next = h;                                                            \
+    (h)->prev = x</span></code></pre>
 </li>
 <li><p>ngx_queue_head(h): 获取链表的第一个有效结点(除去哨兵位)</p>
-<pre><code class="c">#define ngx_queue_head(h)                                                     \
-    (h)-&gt;next</code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> ngx_queue_head(h)                                                     \
+    (h)->next</span></code></pre>
 </li>
 <li><p>ngx_queue_last(h): 获取链表最后一个结点</p>
 <pre><code>#define ngx_queue_last(h)                                                     \
@@ -870,19 +869,19 @@ ngx_queue_t *ngx_queue_middle(ngx_queue_t *queue);</code></pre>
 <pre><code>#define ngx_queue_sentinel(h)                                                 \
     (h)</code></pre></li>
 <li><p>ngx_queue_next(q): 获取q的下一个结点</p>
-<pre><code class="c">#define ngx_queue_next(q)                                                     \
-    (q)-&gt;next</code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> ngx_queue_next(q)                                                     \
+    (q)->next</span></code></pre>
 </li>
 <li><p>ngx_queue_prev(q): 获取q的前一个结点</p>
-<pre><code class="c">#define ngx_queue_prev(q)                                                     \
-    (q)-&gt;prev</code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> ngx_queue_prev(q)                                                     \
+    (q)->prev</span></code></pre>
 </li>
 <li><p>ngx_queue_remove(x): 从链表中移除结点x</p>
-<pre><code class="c">#define ngx_queue_remove(x)                                                   \
-    (x)-&gt;next-&gt;prev = (x)-&gt;prev;                                              \
-    (x)-&gt;prev-&gt;next = (x)-&gt;next;                                              \
-    (x)-&gt;prev = NULL;                                                         \
-    (x)-&gt;next = NULL</code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> ngx_queue_remove(x)                                                   \
+    (x)->next->prev = (x)->prev;                                              \
+    (x)->prev->next = (x)->next;                                              \
+    (x)->prev = NULL;                                                         \
+    (x)->next = NULL</span></code></pre>
 </li>
 <li><p>ngx_queue_add</p>
 <pre><code>#define ngx_queue_add(h, n)                                                   \
@@ -891,151 +890,151 @@ ngx_queue_t *ngx_queue_middle(ngx_queue_t *queue);</code></pre>
     (h)-&gt;prev = (n)-&gt;prev;                                                    \
     (h)-&gt;prev-&gt;next = h;</code></pre></li>
 <li><p>ngx_queue_data(q, type, link)</p>
-<pre><code class="c">#define ngx_queue_data(q, type, link)                                         \
-    (type *) ((u_char *) q - offsetof(type, link))
-/*
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> ngx_queue_data(q, type, link)                                         \
+    (type *) ((u_char *) q - offsetof(type, link))</span>
+<span class="token comment" spellcheck="true">/*
     可以通过业务结构体中ngx_queue_t数据结构的偏移量来得到业务主体的数据结构的指针地址，
     实现了业务数据结构和链表结构的解耦
-*/</code></pre>
-<pre><code class="c">#include &lt;stdio.h&gt;
-#include &lt;stddef.h&gt;
+*/</span></code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stddef.h></span></span>
 
-/*
+<span class="token comment" spellcheck="true">/*
  #define ngx_queue_data(q, type, link)                                         \
     (type *) ((u_char *) q - offsetof(type, link))
-*/
+*/</span>
 
-struct data
-{
-    int* _a;
-    long _b;
-    char* _c;
-    float _d;
-    struct data* _e;
-};
+<span class="token keyword">struct</span> data
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span><span class="token operator">*</span> _a<span class="token punctuation">;</span>
+    <span class="token keyword">long</span> _b<span class="token punctuation">;</span>
+    <span class="token keyword">char</span><span class="token operator">*</span> _c<span class="token punctuation">;</span>
+    <span class="token keyword">float</span> _d<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> data<span class="token operator">*</span> _e<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-int main()
-{
-    printf(&quot;data结构中_a 偏移量 = %ld字节\n&quot;,offsetof(struct data, _a));
-    printf(&quot;data结构中_d 偏移量 = %ld字节\n&quot;,offsetof(struct data, _d));
-    struct data d;
-    int array[] = {1,2,3,4,5,6,7,8,9,10};
-    d._a = array;
-    d._b = 333;
-    d._c = &quot;duwei&quot;;
-    d._d = 3.14;
-    printf(&quot;d._c = %s\n&quot;,d._c);
-    printf(&quot;d._d = %f\n&quot;,d._d);
-    struct data *newP = (struct data*)((char*)&amp;(d._d) - offsetof(struct data, _d));
-    /*
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"data结构中_a 偏移量 = %ld字节\n"</span><span class="token punctuation">,</span><span class="token function">offsetof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> data<span class="token punctuation">,</span> _a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"data结构中_d 偏移量 = %ld字节\n"</span><span class="token punctuation">,</span><span class="token function">offsetof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> data<span class="token punctuation">,</span> _d<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> data d<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> array<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    d<span class="token punctuation">.</span>_a <span class="token operator">=</span> array<span class="token punctuation">;</span>
+    d<span class="token punctuation">.</span>_b <span class="token operator">=</span> <span class="token number">333</span><span class="token punctuation">;</span>
+    d<span class="token punctuation">.</span>_c <span class="token operator">=</span> <span class="token string">"duwei"</span><span class="token punctuation">;</span>
+    d<span class="token punctuation">.</span>_d <span class="token operator">=</span> <span class="token number">3.14</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"d._c = %s\n"</span><span class="token punctuation">,</span>d<span class="token punctuation">.</span>_c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"d._d = %f\n"</span><span class="token punctuation">,</span>d<span class="token punctuation">.</span>_d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> data <span class="token operator">*</span>newP <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> data<span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">&amp;</span><span class="token punctuation">(</span>d<span class="token punctuation">.</span>_d<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token function">offsetof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> data<span class="token punctuation">,</span> _d<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/*
         将_d成员的地址转换成char*, 再减去_d相对data的偏移量(字节)，
         再将得到的结果转换成struct data*就是d的首地址。
-    */
-    printf(&quot;newP-&gt;_c = %s\n&quot;,newP-&gt;_c);
-    printf(&quot;newP-&gt;_d = %f\n&quot;,newP-&gt;_d);
+    */</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"newP->_c = %s\n"</span><span class="token punctuation">,</span>newP<span class="token operator">-></span>_c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"newP->_d = %f\n"</span><span class="token punctuation">,</span>newP<span class="token operator">-></span>_d<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    printf(&quot;d = %p, newP = %p\n&quot;,&amp;d,newP);
-    return 0;
-}</code></pre>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"d = %p, newP = %p\n"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>d<span class="token punctuation">,</span>newP<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>ngx_queue_t *ngx_queue_middle(ngx_queue_t *queue): 获取链表的中间结点</p>
-<pre><code class="c">/*
+<pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">/*
     快慢指针获取中间结点
-*/
-ngx_queue_t *
-ngx_queue_middle(ngx_queue_t *queue)
-{
-    ngx_queue_t  *middle, *next;
+*/</span>
+ngx_queue_t <span class="token operator">*</span>
+<span class="token function">ngx_queue_middle</span><span class="token punctuation">(</span>ngx_queue_t <span class="token operator">*</span>queue<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ngx_queue_t  <span class="token operator">*</span>middle<span class="token punctuation">,</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
 
-    middle = ngx_queue_head(queue);
-      /*
+    middle <span class="token operator">=</span> <span class="token function">ngx_queue_head</span><span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
           头结点的下一个结点
-      */
+      */</span>
 
-    if (middle == ngx_queue_last(queue)) {
-          /*
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>middle <span class="token operator">==</span> <span class="token function">ngx_queue_last</span><span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment" spellcheck="true">/*
               如果middle等于头结点的上一个结点，则链表只有两个元素 head 和 mid
-          */
-        return middle;
-    }
+          */</span>
+        <span class="token keyword">return</span> middle<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    next = ngx_queue_head(queue);
-      /*
+    next <span class="token operator">=</span> <span class="token function">ngx_queue_head</span><span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
           next保存链表的头结点之后的结点
-      */
+      */</span>
 
-    for ( ;; ) {
-        middle = ngx_queue_next(middle);
+    <span class="token keyword">for</span> <span class="token punctuation">(</span> <span class="token punctuation">;</span><span class="token punctuation">;</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        middle <span class="token operator">=</span> <span class="token function">ngx_queue_next</span><span class="token punctuation">(</span>middle<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        next = ngx_queue_next(next);
-          /*
+        next <span class="token operator">=</span> <span class="token function">ngx_queue_next</span><span class="token punctuation">(</span>next<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token comment" spellcheck="true">/*
               走到这里 middle、next都指向第二个有效结点
-          */
+          */</span>
 
-        if (next == ngx_queue_last(queue)) {
-              /*
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>next <span class="token operator">==</span> <span class="token function">ngx_queue_last</span><span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token comment" spellcheck="true">/*
                   当next走到末尾元素时，mid才走一半，所以mid是中间元素
-              */
-            return middle;
-        }
+              */</span>
+            <span class="token keyword">return</span> middle<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        next = ngx_queue_next(next);
-          /*
+        next <span class="token operator">=</span> <span class="token function">ngx_queue_next</span><span class="token punctuation">(</span>next<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token comment" spellcheck="true">/*
               next走的速度是middle的两倍
-          */
+          */</span>
 
-        if (next == ngx_queue_last(queue)) {
-              /*
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>next <span class="token operator">==</span> <span class="token function">ngx_queue_last</span><span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token comment" spellcheck="true">/*
                   走到末尾时，middle才走一半路程，此时指向中间位置
-              */
-            return middle;
-        }
-    }
-}</code></pre>
+              */</span>
+            <span class="token keyword">return</span> middle<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>void ngx_queue_sort(ngx_queue_t <em>queue, ngx_int_t (</em>cmp)(const ngx_queue_t *, const ngx_queue_t *)): 链表排序</p>
-<pre><code class="c">void
-ngx_queue_sort(ngx_queue_t *queue,
-    ngx_int_t (*cmp)(const ngx_queue_t *, const ngx_queue_t *))
-{
-    ngx_queue_t  *q, *prev, *next;
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span>
+<span class="token function">ngx_queue_sort</span><span class="token punctuation">(</span>ngx_queue_t <span class="token operator">*</span>queue<span class="token punctuation">,</span>
+    <span class="token function">ngx_int_t</span> <span class="token punctuation">(</span><span class="token operator">*</span>cmp<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token keyword">const</span> ngx_queue_t <span class="token operator">*</span><span class="token punctuation">,</span> <span class="token keyword">const</span> ngx_queue_t <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ngx_queue_t  <span class="token operator">*</span>q<span class="token punctuation">,</span> <span class="token operator">*</span>prev<span class="token punctuation">,</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
 
-    q = ngx_queue_head(queue);
+    q <span class="token operator">=</span> <span class="token function">ngx_queue_head</span><span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    if (q == ngx_queue_last(queue)) {
-        return;
-    }
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>q <span class="token operator">==</span> <span class="token function">ngx_queue_last</span><span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    for (q = ngx_queue_next(q); q != ngx_queue_sentinel(queue); q = next) {
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>q <span class="token operator">=</span> <span class="token function">ngx_queue_next</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span> q <span class="token operator">!=</span> <span class="token function">ngx_queue_sentinel</span><span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">;</span> q <span class="token operator">=</span> next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-        prev = ngx_queue_prev(q);
-        next = ngx_queue_next(q);
+        prev <span class="token operator">=</span> <span class="token function">ngx_queue_prev</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        next <span class="token operator">=</span> <span class="token function">ngx_queue_next</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        ngx_queue_remove(q);
+        <span class="token function">ngx_queue_remove</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        do {
-            if (cmp(prev, q) &lt;= 0) {
-                break;
-            }
+        <span class="token keyword">do</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">cmp</span><span class="token punctuation">(</span>prev<span class="token punctuation">,</span> q<span class="token punctuation">)</span> <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
 
-            prev = ngx_queue_prev(prev);
+            prev <span class="token operator">=</span> <span class="token function">ngx_queue_prev</span><span class="token punctuation">(</span>prev<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        } while (prev != ngx_queue_sentinel(queue));
+        <span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>prev <span class="token operator">!=</span> <span class="token function">ngx_queue_sentinel</span><span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        ngx_queue_insert_after(prev, q);
-    }
-}</code></pre>
+        <span class="token function">ngx_queue_insert_after</span><span class="token punctuation">(</span>prev<span class="token punctuation">,</span> q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>ngx_queue_split(h, q, n): </p>
 <p><img src="https://img.3amupupup.online/ngx_queue_2.png" alt="链表示例"></p>
 <p><img src="https://img.3amupupup.online/ngx_queue_split_1.png" alt="切割链表"></p>
-<pre><code class="c">#define ngx_queue_split(h, q, n)                                              \
-    (n)-&gt;prev = (h)-&gt;prev;                                                    \
-    (n)-&gt;prev-&gt;next = n;                                                      \
-    (n)-&gt;next = q;                                                            \
-    (h)-&gt;prev = (q)-&gt;prev;                                                    \
-    (h)-&gt;prev-&gt;next = h;                                                      \
-    (q)-&gt;prev = n;</code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> ngx_queue_split(h, q, n)                                              \
+    (n)->prev = (h)->prev;                                                    \
+    (n)->prev->next = n;                                                      \
+    (n)->next = q;                                                            \
+    (h)->prev = (q)->prev;                                                    \
+    (h)->prev->next = h;                                                      \
+    (q)->prev = n;</span></code></pre>
 <h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>双向链表的数据结构中并未定义数据，而是通过将链表结构挂载到业务结构中通过offsetof计算出链表结构在业务结构中的偏移量，再减去偏移量就得到了业务结构的指针地址。实现了链表与数据的解耦。</p>
 </li>
 </ol>
@@ -1049,7 +1048,7 @@ ngx_queue_sort(ngx_queue_t *queue,
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>nginx双向链表</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">1.2k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.1k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-03-21, 19:02:44</p>
     <p><span class="copy-title">最后更新:</span>2021-03-22, 10:50:53</p>
@@ -1097,7 +1096,7 @@ ngx_queue_sort(ngx_queue_t *queue,
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#内存','#queue','#list','#hashtable','#缓冲区','#信号','#c++','#线程','#thread_pool','#net',],
+            'data': ['#Dockerfile','#Nginx','#sql_base','#ecs','#zabbix','#Jenkinsfile','#linux性能优化实战笔记','#kubectl','#book','#c','#c primer plus','#cicd','#c语言基础','#jenkins','#mongodb','#数据结构','#sonar','#操作系统','#排序','#进程','#c++','#list','#缓冲区','#信号','#queue','#net','#内存','#no','#hashtable','#thread_pool','#线程','#array','#mem_pool',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

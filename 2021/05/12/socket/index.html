@@ -6,17 +6,16 @@
   <meta name="keywords" content=" net ">
   <meta name="description" content="socket | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="网络字节序内存分为大端存储和小端存储，网络数据同样有大小端之分。  发送主机通常将发送缓冲区中的数据按照内存地址从低到高的顺序发出。 接收主机把从网络上收到的字节依次保存在接收缓冲区中，也是按照内存从低到高的顺序保存。 因此，网络数据流的地址应该规定：先发出的数据是低地址，后发出的数据是高地址。 TCP&#x2F;IP协议规定，网络数据流应采用大端字节序，即低地址高字节。 不管是大端机还是小端机，都会按照T">
-<meta property="og:type" content="article">
-<meta property="og:title" content="socket">
-<meta property="og:url" content="https://duwei19961021.github.io/2021/05/12/socket/index.html">
+<meta name="description" content="gitlabBranch gitlabSourceBranch gitlabActionType gitlabUserName gitlabUserUsername gitlabUserEmail gitlabSourceRepoHomepage gitlabSourceRepoName gitlabSourceNamespace gitlabSourceRepoURL gitlabSourceR">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BLOG">
+<meta property="og:url" content="https://duwei19961021.github.io/file/sonar.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="网络字节序内存分为大端存储和小端存储，网络数据同样有大小端之分。  发送主机通常将发送缓冲区中的数据按照内存地址从低到高的顺序发出。 接收主机把从网络上收到的字节依次保存在接收缓冲区中，也是按照内存从低到高的顺序保存。 因此，网络数据流的地址应该规定：先发出的数据是低地址，后发出的数据是高地址。 TCP&#x2F;IP协议规定，网络数据流应采用大端字节序，即低地址高字节。 不管是大端机还是小端机，都会按照T">
+<meta property="og:description" content="gitlabBranch gitlabSourceBranch gitlabActionType gitlabUserName gitlabUserUsername gitlabUserEmail gitlabSourceRepoHomepage gitlabSourceRepoName gitlabSourceNamespace gitlabSourceRepoURL gitlabSourceR">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-12T05:44:40.000Z">
-<meta property="article:modified_time" content="2021-05-20T05:56:40.085Z">
+<meta property="article:published_time" content="2021-05-23T01:21:25.624Z">
+<meta property="article:modified_time" content="2021-03-18T03:09:52.073Z">
 <meta property="article:author" content="拦云">
-<meta property="article:tag" content="net">
 <meta name="twitter:card" content="summary">
 
 
@@ -44,7 +43,7 @@
 <script src="/js/iconfont.js?v=1.0.1" ></script>
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="BLOG" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 <div style="display: none">
   <input class="theme_disqus_on" value="false">
   <input class="theme_preload_comment" value="true">
@@ -69,31 +68,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(53)</small></div></li>
-    
-        
-            
-            <li><div data-rel="C语言">C语言<small>(17)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="运维">运维<small>(10)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="k8s">k8s<small>(2)</small></div>
-                
-            </li>
-            
-        
+    <li><div class="all active">全部文章<small>(52)</small></div></li>
     
         
             
@@ -121,6 +96,30 @@
     
         
             
+            <li><div data-rel="运维">运维<small>(11)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="k8s">k8s<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="C语言">C语言<small>(18)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
             <li><div data-rel="操作系统">操作系统<small>(4)</small></div>
                 
             </li>
@@ -137,8 +136,8 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="53">
-<input type="hidden" id="yelog_site_word_count" value="82k">
+<input type="hidden" id="yelog_site_posts_number" value="52">
+<input type="hidden" id="yelog_site_word_count" value="77.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -172,15 +171,7 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a class="color2">c</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">ecs</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color2">Jenkinsfile</a>
+        <a class="color1">Dockerfile</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -188,23 +179,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">sonar</a>
+        <a class="color4">sql_base</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">kubectl</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">jenkins</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">linux性能优化实战笔记</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">mongodb</a>
+        <a class="color4">ecs</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -212,15 +191,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">cicd</a>
+        <a class="color2">Jenkinsfile</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">数据结构</a>
+        <a class="color4">linux性能优化实战笔记</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">c语言基础</a>
+        <a class="color3">kubectl</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -228,7 +207,39 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">Dockerfile</a>
+        <a class="color2">c</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">c primer plus</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">cicd</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">c语言基础</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">jenkins</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">mongodb</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">数据结构</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">sonar</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">操作系统</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -240,35 +251,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">c primer plus</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">sql_base</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color1">array</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">mem_pool</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">内存</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color1">queue</a>
+        <a class="color4">c++</a>
     </li>
     
     <li class="article-tag-list-item">
         <a class="color5">list</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color5">hashtable</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -280,11 +267,23 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">c++</a>
+        <a class="color1">queue</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">线程</a>
+        <a class="color4">net</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">内存</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">no</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">hashtable</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -292,7 +291,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">net</a>
+        <a class="color3">线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">array</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">mem_pool</a>
     </li>
     
     <div class="clearfix"></div>
@@ -305,6 +312,30 @@
     
     <nav id="title-list-nav">
         
+        <a  class="运维 "
+           href="/2021/03/16/Nginx%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96header/"
+           data-tag="Nginx"
+           data-author="" >
+            <span class="post-title" title="Nginx日志获取header">Nginx日志获取header</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/16/make/"
+           data-tag="c"
+           data-author="" >
+            <span class="post-title" title="make">make</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/c++%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="c++构造函数">c++构造函数</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
         <a  class="C语言 "
            href="/2021/04/13/CppPrimer/"
            data-tag="book"
@@ -314,75 +345,67 @@
         </a>
         
         <a  class=""
-           href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0linux%E5%91%BD%E4%BB%A4/"
+           href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0linux%E5%91%BD%E4%BB%A4/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="C语言实现linux命令">C语言实现linux命令</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E9%A2%84%E5%A4%84%E7%90%86/"
+           href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E9%A2%84%E5%A4%84%E7%90%86/"
            data-tag="c"
            data-author="" >
             <span class="post-title" title="C语言预处理">C语言预处理</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/ECS%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9/"
+           href="/2021/03/16/ECS%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9/"
            data-tag="ecs"
            data-author="" >
             <span class="post-title" title="ECS磁盘扩容">ECS磁盘扩容</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/Jenkinsfile/"
+           href="/2021/03/16/Jenkinsfile/"
            data-tag="Jenkinsfile"
            data-author="" >
             <span class="post-title" title="Jenkinsfile">Jenkinsfile</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/Nginx%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96header/"
-           data-tag="Nginx"
-           data-author="" >
-            <span class="post-title" title="Nginx日志获取header">Nginx日志获取header</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="运维 "
-           href="/2021/03/18/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/"
+           href="/2021/03/16/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/"
            data-tag="sonar"
            data-author="" >
             <span class="post-title" title="Jenkins结合sonar代码检测流水线">Jenkins结合sonar代码检测流水线</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/c++%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="c++构造函数">c++构造函数</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/Nginx/"
+           href="/2021/03/16/Nginx/"
            data-tag="Nginx"
            data-author="" >
             <span class="post-title" title="Nginx">Nginx</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class=""
-           href="/2021/03/18/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B7/"
+           href="/2021/03/16/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B7/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="c陷阱与缺陷">c陷阱与缺陷</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/16/jenkins%E7%BB%93%E5%90%88rsync%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81/"
+           data-tag="jenkins"
+           data-author="" >
+            <span class="post-title" title="jenkins结合rsync同步代码">jenkins结合rsync同步代码</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="k8s "
@@ -394,203 +417,155 @@
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/jenkins%E7%BB%93%E5%90%88rsync%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81/"
-           data-tag="jenkins"
-           data-author="" >
-            <span class="post-title" title="jenkins结合rsync同步代码">jenkins结合rsync同步代码</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="运维 "
-           href="/2021/03/18/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"
+           href="/2021/03/16/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"
            data-tag="linux性能优化实战笔记"
            data-author="" >
             <span class="post-title" title="linux性能优化实战笔记">linux性能优化实战笔记</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="C语言 "
-           href="/2021/03/18/make/"
-           data-tag="c"
-           data-author="" >
-            <span class="post-title" title="make">make</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/mongo/"
+           href="/2021/03/16/mongo/"
            data-tag="mongodb"
            data-author="" >
             <span class="post-title" title="mongo">mongo</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="Nginx "
-           href="/2021/03/17/ngx_array/"
-           data-tag="array"
-           data-author="" >
-            <span class="post-title" title="nginx数组">nginx数组</span>
-            <span class="post-date" title="2021-03-17 11:26:01">2021/03/17</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/sonar/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="sonar">sonar</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/sql/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="sql">sql</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/zabbix_dingdingAlert/"
+           href="/2021/03/16/zabbix_dingdingAlert/"
            data-tag="zabbix"
            data-author="" >
             <span class="post-title" title="zabbix_dingdingAlert">zabbix_dingdingAlert</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="k8s "
-           href="/2021/03/18/%E4%B8%80%E6%AC%A1%E6%B5%B7%E5%A4%96k8s%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5/"
-           data-tag="cicd"
-           data-author="" >
-            <span class="post-title" title="一次海外k8s集群代码发布实践">一次海外k8s集群代码发布实践</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/%E4%BA%8C%E5%8F%89%E6%A0%91/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="二叉树">二叉树</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/zabbix_key/"
+           href="/2021/03/16/zabbix_key/"
            data-tag="zabbix"
            data-author="" >
             <span class="post-title" title="zabbix_key">zabbix_key</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="k8s "
+           href="/2021/03/16/%E4%B8%80%E6%AC%A1%E6%B5%B7%E5%A4%96k8s%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5/"
+           data-tag="cicd"
+           data-author="" >
+            <span class="post-title" title="一次海外k8s集群代码发布实践">一次海外k8s集群代码发布实践</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class=""
-           href="/2021/03/18/%E4%BA%8C%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/"
+           href="/2021/03/16/%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="二叉树">二叉树</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/%E4%BA%8C%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="二级计算机">二级计算机</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E5%B8%A6%E7%8E%AF%E9%93%BE%E8%A1%A8/"
+           href="/2021/03/16/%E5%B8%A6%E7%8E%AF%E9%93%BE%E8%A1%A8/"
            data-tag="数据结构"
            data-author="" >
             <span class="post-title" title="带环链表">带环链表</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/%E6%B1%87%E7%BC%96%E7%AC%94%E8%AE%B0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="汇编笔记">汇编笔记</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="操作系统 "
-           href="/2021/03/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="操作系统">操作系统</span>
-            <span class="post-date" title="2021-03-20 11:54:29">2021/03/20</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/"
+           href="/2021/03/16/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/"
            data-tag="c语言基础"
            data-author="" >
             <span class="post-title" title="数据的存储">数据的存储</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class=""
-           href="/2021/03/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
+           href="/2021/03/16/%E6%B1%87%E7%BC%96%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="汇编笔记">汇编笔记</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/05/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"
+           data-tag="no"
+           data-author="" >
+            <span class="post-title" title="操作系统">操作系统</span>
+            <span class="post-date" title="2021-05-23 09:25:50">2021/05/23</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="计算机网络">计算机网络</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E4%B8%93%E5%AE%B6%E7%BC%96%E7%A8%8B/"
+           href="/2021/03/16/C%E4%B8%93%E5%AE%B6%E7%BC%96%E7%A8%8B/"
            data-tag="book"
            data-author="" >
             <span class="post-title" title="C专家编程">C专家编程</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E5%92%8C%E6%8C%87%E9%92%88/"
+           href="/2021/03/16/C%E5%92%8C%E6%8C%87%E9%92%88/"
            data-tag="book"
            data-author="" >
             <span class="post-title" title="C和指针">C和指针</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="Docker "
-           href="/2021/03/18/Dockerfile/"
-           data-tag="Dockerfile"
-           data-author="" >
-            <span class="post-title" title="Dockerfile">Dockerfile</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90/"
+           href="/2021/03/16/C%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90/"
            data-tag="book"
            data-author="" >
             <span class="post-title" title="C深入剖析">C深入剖析</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
-        <a  class="Nginx "
-           href="/2021/03/18/ngx_mem_pool/"
-           data-tag="mem_pool"
+        <a  class="Docker "
+           href="/2021/03/16/Dockerfile/"
+           data-tag="Dockerfile"
            data-author="" >
-            <span class="post-title" title="nginx内存池">nginx内存池</span>
-            <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+            <span class="post-title" title="Dockerfile">Dockerfile</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           href="/2021/03/16/c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
            data-tag="c"
            data-author="" >
             <span class="post-title" title="c学习笔记">c学习笔记</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E6%8C%87%E9%92%88/"
+           href="/2021/03/16/%E6%8C%87%E9%92%88/"
            data-tag="c语言基础"
            data-author="" >
             <span class="post-title" title="指针">指针</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E6%8E%92%E5%BA%8F/"
+           href="/2021/03/16/%E6%8E%92%E5%BA%8F/"
            data-tag="排序"
            data-author="" >
             <span class="post-title" title="排序">排序</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
@@ -601,44 +576,52 @@
             <span class="post-date" title="2021-03-18 11:09:00">2021/03/18</span>
         </a>
         
+        <a  class="运维 "
+           href="/2020/09/10/tcp:ip/"
+           data-tag="操作系统"
+           data-author="" >
+            <span class="post-title" title="tcp-ip">tcp-ip</span>
+            <span class="post-date" title="2020-09-10 10:09:00">2020/09/10</span>
+        </a>
+        
         <a  class="C语言 "
-           href="/2021/03/18/C%20Primer%20Plus/"
+           href="/2021/03/16/C%20Primer%20Plus/"
            data-tag="c primer plus"
            data-author="" >
             <span class="post-title" title="C Primer Plus">C Primer Plus</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/tcp:ip/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="tcp:ip">tcp:ip</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="mysql "
-           href="/2021/03/18/PracticeSql/"
+           href="/2021/03/16/PracticeSql/"
            data-tag="sql_base"
            data-author="" >
             <span class="post-title" title="PracticeSql">PracticeSql</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="操作系统 "
-           href="/2021/03/20/virtual_memory/"
-           data-tag="内存"
-           data-author="" >
-            <span class="post-title" title="虚拟内存">虚拟内存</span>
-            <span class="post-date" title="2021-03-20 11:51:57">2021/03/20</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="Nginx "
-           href="/2021/03/18/ngx_buf/"
-           data-tag="缓冲区"
+           href="/2021/03/18/ngx_mem_pool/"
+           data-tag="mem_pool"
            data-author="" >
-            <span class="post-title" title="nginx缓冲区">nginx缓冲区</span>
+            <span class="post-title" title="nginx内存池">nginx内存池</span>
             <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/17/ngx_array/"
+           data-tag="array"
+           data-author="" >
+            <span class="post-title" title="nginx数组">nginx数组</span>
+            <span class="post-date" title="2021-03-17 11:26:01">2021/03/17</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/05/22/BSTree/"
+           data-tag="c++"
+           data-author="" >
+            <span class="post-title" title="二叉搜索树">二叉搜索树</span>
+            <span class="post-date" title="2021-05-22 20:47:06">2021/05/22</span>
         </a>
         
         <a  class="操作系统 "
@@ -649,60 +632,12 @@
             <span class="post-date" title="2021-03-20 11:55:12">2021/03/20</span>
         </a>
         
-        <a  class="Nginx "
-           href="/2021/03/21/ngx_queue/"
-           data-tag="queue"
-           data-author="" >
-            <span class="post-title" title="nginx双向链表">nginx双向链表</span>
-            <span class="post-date" title="2021-03-21 19:02:44">2021/03/21</span>
-        </a>
-        
-        <a  class="Nginx "
-           href="/2021/03/22/ngx_list/"
-           data-tag="list"
-           data-author="" >
-            <span class="post-title" title="nginx单向链表">nginx单向链表</span>
-            <span class="post-date" title="2021-03-22 11:15:43">2021/03/22</span>
-        </a>
-        
         <a  class=""
            href="/2021/03/22/ngx_align/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="ngx_align">ngx_align</span>
             <span class="post-date" title="2021-03-22 15:44:36">2021/03/22</span>
-        </a>
-        
-        <a  class="Nginx "
-           href="/2021/03/23/ngx_hash/"
-           data-tag="hashtable"
-           data-author="" >
-            <span class="post-title" title="nginx散列表">nginx散列表</span>
-            <span class="post-date" title="2021-03-23 18:21:27">2021/03/23</span>
-        </a>
-        
-        <a  class="操作系统 "
-           href="/2021/04/12/signal/"
-           data-tag="信号"
-           data-author="" >
-            <span class="post-title" title="信号">信号</span>
-            <span class="post-date" title="2021-04-12 19:57:55">2021/04/12</span>
-        </a>
-        
-        <a  class="C语言 "
-           href="/2021/04/25/c++inheritance/"
-           data-tag="c++"
-           data-author="" >
-            <span class="post-title" title="c++继承">c++继承</span>
-            <span class="post-date" title="2021-04-25 22:55:23">2021/04/25</span>
-        </a>
-        
-        <a  class="C语言 "
-           href="/2021/04/20/thread/"
-           data-tag="线程"
-           data-author="" >
-            <span class="post-title" title="thread">thread</span>
-            <span class="post-date" title="2021-04-20 17:02:24">2021/04/20</span>
         </a>
         
         <a  class="C语言 "
@@ -714,11 +649,43 @@
         </a>
         
         <a  class="Nginx "
-           href="/2021/05/04/ngx_thread_pool/"
-           data-tag="thread_pool"
+           href="/2021/03/22/ngx_list/"
+           data-tag="list"
            data-author="" >
-            <span class="post-title" title="nginx线程池">nginx线程池</span>
-            <span class="post-date" title="2021-05-04 00:43:27">2021/05/04</span>
+            <span class="post-title" title="nginx单向链表">nginx单向链表</span>
+            <span class="post-date" title="2021-03-22 11:15:43">2021/03/22</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/18/ngx_buf/"
+           data-tag="缓冲区"
+           data-author="" >
+            <span class="post-title" title="nginx缓冲区">nginx缓冲区</span>
+            <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/04/25/c++inheritance/"
+           data-tag="c++"
+           data-author="" >
+            <span class="post-title" title="c++继承">c++继承</span>
+            <span class="post-date" title="2021-04-25 22:55:23">2021/04/25</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/04/12/signal/"
+           data-tag="信号"
+           data-author="" >
+            <span class="post-title" title="信号">信号</span>
+            <span class="post-date" title="2021-04-12 19:57:55">2021/04/12</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/21/ngx_queue/"
+           data-tag="queue"
+           data-author="" >
+            <span class="post-title" title="nginx双向链表">nginx双向链表</span>
+            <span class="post-date" title="2021-03-21 19:02:44">2021/03/21</span>
         </a>
         
         <a  class="C语言 "
@@ -727,6 +694,38 @@
            data-author="" >
             <span class="post-title" title="socket">socket</span>
             <span class="post-date" title="2021-05-12 13:44:40">2021/05/12</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/03/20/virtual_memory/"
+           data-tag="内存"
+           data-author="" >
+            <span class="post-title" title="虚拟内存">虚拟内存</span>
+            <span class="post-date" title="2021-03-20 11:51:57">2021/03/20</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/23/ngx_hash/"
+           data-tag="hashtable"
+           data-author="" >
+            <span class="post-title" title="nginx散列表">nginx散列表</span>
+            <span class="post-date" title="2021-03-23 18:21:27">2021/03/23</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/05/04/ngx_thread_pool/"
+           data-tag="thread_pool"
+           data-author="" >
+            <span class="post-title" title="nginx线程池">nginx线程池</span>
+            <span class="post-date" title="2021-05-04 00:43:27">2021/05/04</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/04/20/thread/"
+           data-tag="线程"
+           data-author="" >
+            <span class="post-title" title="thread">thread</span>
+            <span class="post-date" title="2021-04-20 17:02:24">2021/04/20</span>
         </a>
         
     </nav>
@@ -770,7 +769,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:2.5k</span>
+        <span>字数:1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -814,27 +813,27 @@
 <p>不管是大端机还是小端机，都会按照TCP/IP规定的网络字节序来发送/接受数据。</p>
 <p>如果当前发送主机是小端，就需要先将数据转换为大端，否则就忽略直接发送。</p>
 </blockquote>
-<h6 id="小端机-amp-大端机"><a href="#小端机-amp-大端机" class="headerlink" title="小端机 &amp; 大端机"></a>小端机 &amp; 大端机</h6><pre><code class="c">#include &lt;stdio.h&gt;
+<h6 id="小端机-amp-大端机"><a href="#小端机-amp-大端机" class="headerlink" title="小端机 &amp; 大端机"></a>小端机 &amp; 大端机</h6><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
 
-int main()
-{
-    int a = 0x11223344;
-    return 0;
-}</code></pre>
-<pre><code class="shell">☁  exercise  gcc small.c -g
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0x11223344</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-shell"><code class="language-shell">☁  exercise  gcc small.c -g
 ☁  exercise  gdb a.out
 GNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-120.el7
 Copyright (C) 2013 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.  Type &quot;show copying&quot;
-and &quot;show warranty&quot; for details.
-This GDB was configured as &quot;x86_64-redhat-linux-gnu&quot;.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-redhat-linux-gnu".
 For bug reporting instructions, please see:
-&lt;http://www.gnu.org/software/gdb/bugs/&gt;...
+<http://www.gnu.org/software/gdb/bugs/>...
 Reading symbols from /root/exercise/a.out...done.
 (gdb) l
-1    #include &lt;stdio.h&gt;
+1    #include <stdio.h>
 2
 3    int main()
 4    {
@@ -848,50 +847,50 @@ Starting program: /root/exercise/a.out
 
 Breakpoint 1, main () at small.c:6
 6        return 0;
-(gdb) x/16xb &amp;a # x：查看内存，8：显示连续16个单元，x：以16进制方式显示，b：一个字节为一个单元
+(gdb) x/16xb &a # x：查看内存，8：显示连续16个单元，x：以16进制方式显示，b：一个字节为一个单元
 0x7fffffffe35c:    0x44    0x33    0x22    0x11    0x00    0x00    0x00    0x00
 0x7fffffffe364:    0x00    0x00    0x00    0x00    0x85    0x1a    0xa5    0xf7
 (gdb)</code></pre>
 <h6 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h6><p>通过gdb查看内存可知：a值为：0x11223344，但是其在内存上的表示为：44 33 22 11，低权重为存储在低地址处，高权重位存储在高低地址处，这样的存储方式称为小端存储法。反之则为大端存储。</p>
 <p>按照TCP/IP协议规定，如果要将a的内容通过网络发送给另一台主机：因为我这里是小端机，a在内存上为：44 33 22 11，发送之前需要将其转换为大端：11 22 33 44，然后按照低地址到高地址的方式发送，接受主机接收到的顺序为：11 22 33 44，接收主机保存时会按照低地址到高地址的方式保存在内存中：11 22 33 44</p>
 <h6 id="C语言接口"><a href="#C语言接口" class="headerlink" title="C语言接口"></a>C语言接口</h6><p>为了使网络具有可移植性，使同样的代码在大端机和小端机编译后都能正常运行，可以调用库函数做网络字节序和主机字节序的转换。</p>
-<pre><code class="c">#include &lt;arpa/inet.h&gt;
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;arpa/inet.h></span></span>
 
-uint32_t htonl(uint32_t hostlong);
+uint32_t <span class="token function">htonl</span><span class="token punctuation">(</span>uint32_t hostlong<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-uint16_t htons(uint16_t hostshort);
+uint16_t <span class="token function">htons</span><span class="token punctuation">(</span>uint16_t hostshort<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-uint32_t ntohl(uint32_t netlong);
+uint32_t <span class="token function">ntohl</span><span class="token punctuation">(</span>uint32_t netlong<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-uint16_t ntohs(uint16_t netshort);
+uint16_t <span class="token function">ntohs</span><span class="token punctuation">(</span>uint16_t netshort<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// h表示host，n表示net，l表示32位长整数，s表示16位短整数 (32位系统)</code></pre>
-<pre><code class="c">// /usr/include/linux/in.h
+<span class="token comment" spellcheck="true">// h表示host，n表示net，l表示32位长整数，s表示16位短整数 (32位系统)</span></code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">// /usr/include/linux/in.h</span>
 
-struct sockaddr_in {
-  __kernel_sa_family_t  sin_family; /* Address family       */
-  __be16        sin_port;   /* Port number          */
-  struct in_addr    sin_addr;   /* Internet address     */
+<span class="token keyword">struct</span> sockaddr_in <span class="token punctuation">{</span>
+  __kernel_sa_family_t  sin_family<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* Address family       */</span>
+  __be16        sin_port<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">/* Port number          */</span>
+  <span class="token keyword">struct</span> in_addr    sin_addr<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">/* Internet address     */</span>
 
-  /* Pad to size of `struct sockaddr&#39;. */
-  unsigned char     __pad[__SOCK_SIZE__ - sizeof(short int) -
-            sizeof(unsigned short int) - sizeof(struct in_addr)];
-};
+  <span class="token comment" spellcheck="true">/* Pad to size of `struct sockaddr'. */</span>
+  <span class="token keyword">unsigned</span> <span class="token keyword">char</span>     __pad<span class="token punctuation">[</span>__SOCK_SIZE__ <span class="token operator">-</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">short</span> <span class="token keyword">int</span><span class="token punctuation">)</span> <span class="token operator">-</span>
+            <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">short</span> <span class="token keyword">int</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> in_addr<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-/* Internet address. */
-struct in_addr {
-    __be32  s_addr;
-};</code></pre>
-<h4 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h4><h6 id="server"><a href="#server" class="headerlink" title="server"></a>server</h6><pre><code class="c++">#pragma once
+<span class="token comment" spellcheck="true">/* Internet address. */</span>
+<span class="token keyword">struct</span> in_addr <span class="token punctuation">{</span>
+    __be32  s_addr<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<h4 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h4><h6 id="server"><a href="#server" class="headerlink" title="server"></a>server</h6><pre class=" language-c++"><code class="language-c++">#pragma once
 
-#include &lt;iostream&gt;
-#include &lt;string&gt;
-#include &lt;sys/types.h&gt;
-#include &lt;sys/socket.h&gt;
-#include &lt;netinet/in.h&gt;
-#include &lt;arpa/inet.h&gt;
-#include &lt;unistd.h&gt;
-#include &lt;stdlib.h&gt;
+#include <iostream>
+#include <string>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 class udpServer
 {
@@ -900,7 +899,7 @@ private:
     short _port;
     int _sock;
 public:
-    udpServer(std::string ip = &quot;127.0.0.1&quot;, short port = 8080)
+    udpServer(std::string ip = "127.0.0.1", short port = 8080)
     {
         _ip = ip;
         _port = port;
@@ -909,14 +908,14 @@ public:
     void initServer()
     {
         _sock = socket(AF_INET, SOCK_DGRAM, 0);
-        std::cout &lt;&lt; &quot;sock: &quot; &lt;&lt; _sock &lt;&lt; std::endl;
+        std::cout << "sock: " << _sock << std::endl;
         struct sockaddr_in local;
         local.sin_family = AF_INET;
         local.sin_port = htons(_port); // 将主机序列转换为网络序列（解决大小端问题）
         local.sin_addr.s_addr = inet_addr(_ip.c_str()); // 将字符串类型的ip地址转换成4字节的整形（ip地址可以用四个字节表示）
-        if(bind(_sock, (struct sockaddr*)&amp;local, sizeof(local)) &lt; 0)
+        if(bind(_sock, (struct sockaddr*)&local, sizeof(local)) < 0)
         {
-            std::cerr &lt;&lt; &quot;bind error&quot; &lt;&lt; std::endl;
+            std::cerr << "bind error" << std::endl;
             exit(-1);
         }
     }
@@ -926,15 +925,15 @@ public:
         char buf[64];
         for(;;)
         {
-            buf[0] = &#39;\0&#39;;
+            buf[0] = '\0';
             struct sockaddr_in end_point;
             socklen_t len = sizeof(end_point);
-            ssize_t s = recvfrom(_sock, buf, sizeof(buf)-1, 0,(struct sockaddr*)&amp;end_point, &amp;len); // 接收：套接字fd，接收存放的缓冲区，缓冲区的大小，阻塞或非阻塞方式，成员有协议、目的端口、目的端口的结构体（输出型参数），结构体大小
-            if(s &gt; 0)
+            ssize_t s = recvfrom(_sock, buf, sizeof(buf)-1, 0,(struct sockaddr*)&end_point, &len); // 接收：套接字fd，接收存放的缓冲区，缓冲区的大小，阻塞或非阻塞方式，成员有协议、目的端口、目的端口的结构体（输出型参数），结构体大小
+            if(s > 0)
             {
-                buf[s] = &#39;\0&#39;;
-                std::cout &lt;&lt; &quot;client# &quot; &lt;&lt; buf &lt;&lt; std::endl;
-                sendto(_sock, buf, s, 0, (struct sockaddr*)&amp;end_point, len); // 发送：end_point是输入型参数
+                buf[s] = '\0';
+                std::cout << "client# " << buf << std::endl;
+                sendto(_sock, buf, s, 0, (struct sockaddr*)&end_point, len); // 发送：end_point是输入型参数
             }
         }
     }
@@ -944,16 +943,16 @@ public:
         close(_sock);
     }
 };</code></pre>
-<h6 id="client"><a href="#client" class="headerlink" title="client"></a>client</h6><pre><code class="c++">#pragma once
+<h6 id="client"><a href="#client" class="headerlink" title="client"></a>client</h6><pre class=" language-c++"><code class="language-c++">#pragma once
 
-#include &lt;iostream&gt;
-#include &lt;string&gt;
-#include &lt;sys/types.h&gt;
-#include &lt;sys/socket.h&gt;
-#include &lt;netinet/in.h&gt;
-#include &lt;arpa/inet.h&gt;
-#include &lt;unistd.h&gt;
-#include &lt;stdlib.h&gt;
+#include <iostream>
+#include <string>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 class udpClient
 {
@@ -962,7 +961,7 @@ private:
     short _port;
     int _sock;
 public:
-    udpClient(std::string ip = &quot;127.0.0.1&quot;, short port = 8080)
+    udpClient(std::string ip = "127.0.0.1", short port = 8080)
     {
         _ip = ip;
         _port = port;
@@ -971,7 +970,7 @@ public:
     void initServer()
     {
         _sock = socket(AF_INET, SOCK_DGRAM, 0); // 创建套接字
-        std::cout &lt;&lt; &quot;sock: &quot; &lt;&lt; _sock &lt;&lt; std::endl;
+        std::cout << "sock: " << _sock << std::endl;
     }
 
     void start()
@@ -983,15 +982,15 @@ public:
         std::string msg;
         for(;;)
         {
-            std::cout &lt;&lt; &quot;Please Enter: &quot;;
-            std::cin &gt;&gt; msg;
-            sendto(_sock, msg.c_str(), msg.size(), 0, (struct sockaddr*)&amp;peer,  sizeof(peer));
+            std::cout << "Please Enter: ";
+            std::cin >> msg;
+            sendto(_sock, msg.c_str(), msg.size(), 0, (struct sockaddr*)&peer,  sizeof(peer));
             char recvMsg[64];
             ssize_t s = recvfrom(_sock, recvMsg, sizeof(recvMsg)-1, 0, NULL, NULL);
-            if(s &gt; 0)
+            if(s > 0)
             {
-                recvMsg[s] = &#39;\0&#39;;
-                std::cout &lt;&lt; &quot;Server# &quot; &lt;&lt; recvMsg &lt;&lt; std::endl;
+                recvMsg[s] = '\0';
+                std::cout << "Server# " << recvMsg << std::endl;
             }
         }
     }
@@ -1002,19 +1001,19 @@ public:
     }
 };</code></pre>
 <h4 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h4><h5 id="server-1"><a href="#server-1" class="headerlink" title="server"></a>server</h5><h6 id="单进程"><a href="#单进程" class="headerlink" title="单进程"></a>单进程</h6><p>一次只能处理一个请求。</p>
-<pre><code class="c++">#ifndef __TCP_SERVER_
+<pre class=" language-c++"><code class="language-c++">#ifndef __TCP_SERVER_
 #define __TCP_SERVER_
 
-#include &lt;iostream&gt;
-#include &lt;string&gt;
-#include &lt;cstdlib&gt;
-#include &lt;sys/types.h&gt;
-#include &lt;sys/socket.h&gt;
-#include &lt;netinet/in.h&gt;
-#include &lt;cstring&gt;
-#include &lt;unistd.h&gt;
-#include &lt;signal.h&gt;
-#include &lt;pthread.h&gt;
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <cstring>
+#include <unistd.h>
+#include <signal.h>
+#include <pthread.h>
 
 #define BACKLOG 5
 class tcpServer
@@ -1032,9 +1031,9 @@ public:
     {
         signal(SIGCHLD, SIG_IGN); // 父进程注册sigchild信号，子进程自行退出，父进程不关心
         listen_sock = socket(AF_INET, SOCK_STREAM, 0);
-        if(listen_sock &lt; 0)
+        if(listen_sock < 0)
         {
-            std::cerr &lt;&lt; &quot;socket error&quot; &lt;&lt; std::endl;
+            std::cerr << "socket error" << std::endl;
             exit(2);
         }
 
@@ -1043,15 +1042,15 @@ public:
         local.sin_port = htons(_port);
         local.sin_addr.s_addr = INADDR_ANY;
 
-        if(bind(listen_sock, (struct sockaddr*)&amp;local, sizeof(local)) &lt; 0)
+        if(bind(listen_sock, (struct sockaddr*)&local, sizeof(local)) < 0)
         {
-            std::cerr &lt;&lt; &quot;bind error&quot; &lt;&lt; std::endl;
+            std::cerr << "bind error" << std::endl;
             exit(3);
         }
 
-        if(listen(listen_sock, BACKLOG) &lt; 0)
+        if(listen(listen_sock, BACKLOG) < 0)
         {
-            std::cerr &lt;&lt; &quot;listen error&quot; &lt;&lt; std::endl;
+            std::cerr << "listen error" << std::endl;
             exit(4);
         }
     }
@@ -1061,20 +1060,20 @@ public:
         char buf[128];
         while(true)
         {
-            buf[0] = &#39;\0&#39;;
+            buf[0] = '\0';
             ssize_t s = recv(sock, buf, sizeof(buf)-1, 0);
-            std::cout &lt;&lt; s &lt;&lt; std::endl;
-            if(s &gt; 0)
+            std::cout << s << std::endl;
+            if(s > 0)
             {
-                buf[s] = &#39;\0&#39;;
-                std::cout &lt;&lt; &quot;client # &quot; &lt;&lt; buf &lt;&lt; std::endl;
+                buf[s] = '\0';
+                std::cout << "client # " << buf << std::endl;
                 send(sock, buf, strlen(buf), 0);
             }
 
             if(s == 0)
             {
                 close(sock);
-                std::cout &lt;&lt; &quot;client quit&quot; &lt;&lt; std::endl;
+                std::cout << "client quit" << std::endl;
                 break;
             }
         }
@@ -1086,13 +1085,13 @@ public:
         while(true)
         {
             socklen_t len = sizeof(endpoint);
-            int sock = accept(listen_sock, (struct sockaddr*)&amp;endpoint, &amp;len);
-            if(sock &lt; 0)
+            int sock = accept(listen_sock, (struct sockaddr*)&endpoint, &len);
+            if(sock < 0)
             {
-                std::cerr &lt;&lt; &quot;accept error&quot; &lt;&lt; std::endl;
+                std::cerr << "accept error" << std::endl;
                 continue;
             }
-            std::cout &lt;&lt; &quot;get a link&quot; &lt;&lt; std::endl;
+            std::cout << "get a link" << std::endl;
       service(sock);
         }
     }
@@ -1105,19 +1104,19 @@ public:
 
 #endif</code></pre>
 <h6 id="多进程"><a href="#多进程" class="headerlink" title="多进程"></a>多进程</h6><p>效率不会高，创建进程开销很大，另外进程比较占用系统资源。</p>
-<pre><code class="c++">#ifndef __TCP_SERVER_
+<pre class=" language-c++"><code class="language-c++">#ifndef __TCP_SERVER_
 #define __TCP_SERVER_
 
-#include &lt;iostream&gt;
-#include &lt;string&gt;
-#include &lt;cstdlib&gt;
-#include &lt;sys/types.h&gt;
-#include &lt;sys/socket.h&gt;
-#include &lt;netinet/in.h&gt;
-#include &lt;cstring&gt;
-#include &lt;unistd.h&gt;
-#include &lt;signal.h&gt;
-#include &lt;pthread.h&gt;
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <cstring>
+#include <unistd.h>
+#include <signal.h>
+#include <pthread.h>
 
 #define BACKLOG 5
 class tcpServer
@@ -1135,9 +1134,9 @@ public:
     {
         signal(SIGCHLD, SIG_IGN); // 父进程注册sigchild信号，子进程自行退出，父进程不关心
         listen_sock = socket(AF_INET, SOCK_STREAM, 0);
-        if(listen_sock &lt; 0)
+        if(listen_sock < 0)
         {
-            std::cerr &lt;&lt; &quot;socket error&quot; &lt;&lt; std::endl;
+            std::cerr << "socket error" << std::endl;
             exit(2);
         }
 
@@ -1146,15 +1145,15 @@ public:
         local.sin_port = htons(_port);
         local.sin_addr.s_addr = INADDR_ANY;
 
-        if(bind(listen_sock, (struct sockaddr*)&amp;local, sizeof(local)) &lt; 0)
+        if(bind(listen_sock, (struct sockaddr*)&local, sizeof(local)) < 0)
         {
-            std::cerr &lt;&lt; &quot;bind error&quot; &lt;&lt; std::endl;
+            std::cerr << "bind error" << std::endl;
             exit(3);
         }
 
-        if(listen(listen_sock, BACKLOG) &lt; 0)
+        if(listen(listen_sock, BACKLOG) < 0)
         {
-            std::cerr &lt;&lt; &quot;listen error&quot; &lt;&lt; std::endl;
+            std::cerr << "listen error" << std::endl;
             exit(4);
         }
     }
@@ -1164,20 +1163,20 @@ public:
         char buf[128];
         while(true)
         {
-            buf[0] = &#39;\0&#39;;
+            buf[0] = '\0';
             ssize_t s = recv(sock, buf, sizeof(buf)-1, 0);
-            std::cout &lt;&lt; s &lt;&lt; std::endl;
-            if(s &gt; 0)
+            std::cout << s << std::endl;
+            if(s > 0)
             {
-                buf[s] = &#39;\0&#39;;
-                std::cout &lt;&lt; &quot;client # &quot; &lt;&lt; buf &lt;&lt; std::endl;
+                buf[s] = '\0';
+                std::cout << "client # " << buf << std::endl;
                 send(sock, buf, strlen(buf), 0);
             }
 
             if(s == 0)
             {
                 close(sock);
-                std::cout &lt;&lt; &quot;client quit&quot; &lt;&lt; std::endl;
+                std::cout << "client quit" << std::endl;
                 break;
             }
         }
@@ -1189,13 +1188,13 @@ public:
         while(true)
         {
             socklen_t len = sizeof(endpoint);
-            int sock = accept(listen_sock, (struct sockaddr*)&amp;endpoint, &amp;len);
-            if(sock &lt; 0)
+            int sock = accept(listen_sock, (struct sockaddr*)&endpoint, &len);
+            if(sock < 0)
             {
-                std::cerr &lt;&lt; &quot;accept error&quot; &lt;&lt; std::endl;
+                std::cerr << "accept error" << std::endl;
                 continue;
             }
-            std::cout &lt;&lt; &quot;get a link&quot; &lt;&lt; std::endl;
+            std::cout << "get a link" << std::endl;
       pid_t id = fork();
       if(id == 0)
       {
@@ -1214,19 +1213,19 @@ public:
 };
 
 #endif</code></pre>
-<h6 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h6><pre><code class="c++">#ifndef __TCP_SERVER_
+<h6 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h6><pre class=" language-c++"><code class="language-c++">#ifndef __TCP_SERVER_
 #define __TCP_SERVER_
 
-#include &lt;iostream&gt;
-#include &lt;string&gt;
-#include &lt;cstdlib&gt;
-#include &lt;sys/types.h&gt;
-#include &lt;sys/socket.h&gt;
-#include &lt;netinet/in.h&gt;
-#include &lt;cstring&gt;
-#include &lt;unistd.h&gt;
-#include &lt;signal.h&gt;
-#include &lt;pthread.h&gt;
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <cstring>
+#include <unistd.h>
+#include <signal.h>
+#include <pthread.h>
 
 #define BACKLOG 5
 class tcpServer
@@ -1244,9 +1243,9 @@ public:
     {
         signal(SIGCHLD, SIG_IGN); // 父进程注册sigchild信号，子进程自行退出，父进程不关心
         listen_sock = socket(AF_INET, SOCK_STREAM, 0);
-        if(listen_sock &lt; 0)
+        if(listen_sock < 0)
         {
-            std::cerr &lt;&lt; &quot;socket error&quot; &lt;&lt; std::endl;
+            std::cerr << "socket error" << std::endl;
             exit(2);
         }
 
@@ -1255,15 +1254,15 @@ public:
         local.sin_port = htons(_port);
         local.sin_addr.s_addr = INADDR_ANY;
 
-        if(bind(listen_sock, (struct sockaddr*)&amp;local, sizeof(local)) &lt; 0)
+        if(bind(listen_sock, (struct sockaddr*)&local, sizeof(local)) < 0)
         {
-            std::cerr &lt;&lt; &quot;bind error&quot; &lt;&lt; std::endl;
+            std::cerr << "bind error" << std::endl;
             exit(3);
         }
 
-        if(listen(listen_sock, BACKLOG) &lt; 0)
+        if(listen(listen_sock, BACKLOG) < 0)
         {
-            std::cerr &lt;&lt; &quot;listen error&quot; &lt;&lt; std::endl;
+            std::cerr << "listen error" << std::endl;
             exit(4);
         }
     }
@@ -1275,20 +1274,20 @@ public:
         char buf[128];
         while(true)
         {
-            buf[0] = &#39;\0&#39;;
+            buf[0] = '\0';
             ssize_t s = recv(sock, buf, sizeof(buf)-1, 0);
-            std::cout &lt;&lt; s &lt;&lt; std::endl;
-            if(s &gt; 0)
+            std::cout << s << std::endl;
+            if(s > 0)
             {
-                buf[s] = &#39;\0&#39;;
-                std::cout &lt;&lt; &quot;client # &quot; &lt;&lt; buf &lt;&lt; std::endl;
+                buf[s] = '\0';
+                std::cout << "client # " << buf << std::endl;
                 send(sock, buf, strlen(buf), 0);
             }
 
             if(s == 0)
             {
                 close(sock);
-                std::cout &lt;&lt; &quot;client quit&quot; &lt;&lt; std::endl;
+                std::cout << "client quit" << std::endl;
                 break;
             }
         }
@@ -1300,17 +1299,17 @@ public:
         while(true)
         {
             socklen_t len = sizeof(endpoint);
-            int sock = accept(listen_sock, (struct sockaddr*)&amp;endpoint, &amp;len);
-            if(sock &lt; 0)
+            int sock = accept(listen_sock, (struct sockaddr*)&endpoint, &len);
+            if(sock < 0)
             {
-                std::cerr &lt;&lt; &quot;accept error&quot; &lt;&lt; std::endl;
+                std::cerr << "accept error" << std::endl;
                 continue;
             }
-            std::cout &lt;&lt; &quot;get a link&quot; &lt;&lt; std::endl;
+            std::cout << "get a link" << std::endl;
             pthread_t tid;
             int* p = new int;
             *p = sock;
-            pthread_create(&amp;tid, NULL, service, (void*)p);
+            pthread_create(&tid, NULL, service, (void*)p);
         }
     }
 
@@ -1331,7 +1330,7 @@ public:
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>socket</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">2.5k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-05-12, 13:44:40</p>
     <p><span class="copy-title">最后更新:</span>2021-05-20, 13:56:40</p>
@@ -1379,7 +1378,7 @@ public:
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#内存','#queue','#list','#hashtable','#缓冲区','#信号','#c++','#线程','#thread_pool','#net',],
+            'data': ['#Dockerfile','#Nginx','#sql_base','#ecs','#zabbix','#Jenkinsfile','#linux性能优化实战笔记','#kubectl','#book','#c','#c primer plus','#cicd','#c语言基础','#jenkins','#mongodb','#数据结构','#sonar','#操作系统','#排序','#进程','#c++','#list','#缓冲区','#信号','#queue','#net','#内存','#no','#hashtable','#thread_pool','#线程','#array','#mem_pool',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

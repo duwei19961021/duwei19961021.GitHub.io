@@ -6,17 +6,16 @@
   <meta name="keywords" content=" book ">
   <meta name="description" content="CppPrimer | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="网络字节序内存分为大端存储和小端存储，网络数据同样有大小端之分。  发送主机通常将发送缓冲区中的数据按照内存地址从低到高的顺序发出。 接收主机把从网络上收到的字节依次保存在接收缓冲区中，也是按照内存从低到高的顺序保存。 因此，网络数据流的地址应该规定：先发出的数据是低地址，后发出的数据是高地址。 TCP&#x2F;IP协议规定，网络数据流应采用大端字节序，即低地址高字节。 不管是大端机还是小端机，都会按照T">
-<meta property="og:type" content="article">
-<meta property="og:title" content="socket">
-<meta property="og:url" content="https://duwei19961021.github.io/2021/05/12/socket/index.html">
+<meta name="description" content="gitlabBranch gitlabSourceBranch gitlabActionType gitlabUserName gitlabUserUsername gitlabUserEmail gitlabSourceRepoHomepage gitlabSourceRepoName gitlabSourceNamespace gitlabSourceRepoURL gitlabSourceR">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BLOG">
+<meta property="og:url" content="https://duwei19961021.github.io/file/sonar.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="网络字节序内存分为大端存储和小端存储，网络数据同样有大小端之分。  发送主机通常将发送缓冲区中的数据按照内存地址从低到高的顺序发出。 接收主机把从网络上收到的字节依次保存在接收缓冲区中，也是按照内存从低到高的顺序保存。 因此，网络数据流的地址应该规定：先发出的数据是低地址，后发出的数据是高地址。 TCP&#x2F;IP协议规定，网络数据流应采用大端字节序，即低地址高字节。 不管是大端机还是小端机，都会按照T">
+<meta property="og:description" content="gitlabBranch gitlabSourceBranch gitlabActionType gitlabUserName gitlabUserUsername gitlabUserEmail gitlabSourceRepoHomepage gitlabSourceRepoName gitlabSourceNamespace gitlabSourceRepoURL gitlabSourceR">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-12T05:44:40.000Z">
-<meta property="article:modified_time" content="2021-05-20T05:56:40.085Z">
+<meta property="article:published_time" content="2021-05-23T01:21:25.624Z">
+<meta property="article:modified_time" content="2021-03-18T03:09:52.073Z">
 <meta property="article:author" content="拦云">
-<meta property="article:tag" content="net">
 <meta name="twitter:card" content="summary">
 
 
@@ -44,7 +43,7 @@
 <script src="/js/iconfont.js?v=1.0.1" ></script>
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="BLOG" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 <div style="display: none">
   <input class="theme_disqus_on" value="false">
   <input class="theme_preload_comment" value="true">
@@ -69,31 +68,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(53)</small></div></li>
-    
-        
-            
-            <li><div data-rel="C语言">C语言<small>(17)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="运维">运维<small>(10)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="k8s">k8s<small>(2)</small></div>
-                
-            </li>
-            
-        
+    <li><div class="all active">全部文章<small>(52)</small></div></li>
     
         
             
@@ -121,6 +96,30 @@
     
         
             
+            <li><div data-rel="运维">运维<small>(11)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="k8s">k8s<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="C语言">C语言<small>(18)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
             <li><div data-rel="操作系统">操作系统<small>(4)</small></div>
                 
             </li>
@@ -137,8 +136,8 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="53">
-<input type="hidden" id="yelog_site_word_count" value="82k">
+<input type="hidden" id="yelog_site_posts_number" value="52">
+<input type="hidden" id="yelog_site_word_count" value="77.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -172,15 +171,7 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a class="color2">c</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">ecs</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color2">Jenkinsfile</a>
+        <a class="color1">Dockerfile</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -188,23 +179,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">sonar</a>
+        <a class="color4">sql_base</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">kubectl</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">jenkins</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">linux性能优化实战笔记</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">mongodb</a>
+        <a class="color4">ecs</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -212,15 +191,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">cicd</a>
+        <a class="color2">Jenkinsfile</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">数据结构</a>
+        <a class="color4">linux性能优化实战笔记</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">c语言基础</a>
+        <a class="color3">kubectl</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -228,7 +207,39 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">Dockerfile</a>
+        <a class="color2">c</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">c primer plus</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">cicd</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">c语言基础</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">jenkins</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">mongodb</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">数据结构</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">sonar</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">操作系统</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -240,35 +251,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">c primer plus</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">sql_base</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color1">array</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">mem_pool</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">内存</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color1">queue</a>
+        <a class="color4">c++</a>
     </li>
     
     <li class="article-tag-list-item">
         <a class="color5">list</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color5">hashtable</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -280,11 +267,23 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">c++</a>
+        <a class="color1">queue</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">线程</a>
+        <a class="color4">net</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">内存</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">no</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">hashtable</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -292,7 +291,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">net</a>
+        <a class="color3">线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">array</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">mem_pool</a>
     </li>
     
     <div class="clearfix"></div>
@@ -305,6 +312,30 @@
     
     <nav id="title-list-nav">
         
+        <a  class="运维 "
+           href="/2021/03/16/Nginx%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96header/"
+           data-tag="Nginx"
+           data-author="" >
+            <span class="post-title" title="Nginx日志获取header">Nginx日志获取header</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/16/make/"
+           data-tag="c"
+           data-author="" >
+            <span class="post-title" title="make">make</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/c++%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="c++构造函数">c++构造函数</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
         <a  class="C语言 "
            href="/2021/04/13/CppPrimer/"
            data-tag="book"
@@ -314,75 +345,67 @@
         </a>
         
         <a  class=""
-           href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0linux%E5%91%BD%E4%BB%A4/"
+           href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0linux%E5%91%BD%E4%BB%A4/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="C语言实现linux命令">C语言实现linux命令</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E9%A2%84%E5%A4%84%E7%90%86/"
+           href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E9%A2%84%E5%A4%84%E7%90%86/"
            data-tag="c"
            data-author="" >
             <span class="post-title" title="C语言预处理">C语言预处理</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/ECS%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9/"
+           href="/2021/03/16/ECS%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9/"
            data-tag="ecs"
            data-author="" >
             <span class="post-title" title="ECS磁盘扩容">ECS磁盘扩容</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/Jenkinsfile/"
+           href="/2021/03/16/Jenkinsfile/"
            data-tag="Jenkinsfile"
            data-author="" >
             <span class="post-title" title="Jenkinsfile">Jenkinsfile</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/Nginx%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96header/"
-           data-tag="Nginx"
-           data-author="" >
-            <span class="post-title" title="Nginx日志获取header">Nginx日志获取header</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="运维 "
-           href="/2021/03/18/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/"
+           href="/2021/03/16/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/"
            data-tag="sonar"
            data-author="" >
             <span class="post-title" title="Jenkins结合sonar代码检测流水线">Jenkins结合sonar代码检测流水线</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/c++%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="c++构造函数">c++构造函数</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/Nginx/"
+           href="/2021/03/16/Nginx/"
            data-tag="Nginx"
            data-author="" >
             <span class="post-title" title="Nginx">Nginx</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class=""
-           href="/2021/03/18/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B7/"
+           href="/2021/03/16/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B7/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="c陷阱与缺陷">c陷阱与缺陷</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/16/jenkins%E7%BB%93%E5%90%88rsync%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81/"
+           data-tag="jenkins"
+           data-author="" >
+            <span class="post-title" title="jenkins结合rsync同步代码">jenkins结合rsync同步代码</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="k8s "
@@ -394,203 +417,155 @@
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/jenkins%E7%BB%93%E5%90%88rsync%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81/"
-           data-tag="jenkins"
-           data-author="" >
-            <span class="post-title" title="jenkins结合rsync同步代码">jenkins结合rsync同步代码</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="运维 "
-           href="/2021/03/18/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"
+           href="/2021/03/16/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"
            data-tag="linux性能优化实战笔记"
            data-author="" >
             <span class="post-title" title="linux性能优化实战笔记">linux性能优化实战笔记</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="C语言 "
-           href="/2021/03/18/make/"
-           data-tag="c"
-           data-author="" >
-            <span class="post-title" title="make">make</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/mongo/"
+           href="/2021/03/16/mongo/"
            data-tag="mongodb"
            data-author="" >
             <span class="post-title" title="mongo">mongo</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="Nginx "
-           href="/2021/03/17/ngx_array/"
-           data-tag="array"
-           data-author="" >
-            <span class="post-title" title="nginx数组">nginx数组</span>
-            <span class="post-date" title="2021-03-17 11:26:01">2021/03/17</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/sonar/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="sonar">sonar</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/sql/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="sql">sql</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/zabbix_dingdingAlert/"
+           href="/2021/03/16/zabbix_dingdingAlert/"
            data-tag="zabbix"
            data-author="" >
             <span class="post-title" title="zabbix_dingdingAlert">zabbix_dingdingAlert</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="k8s "
-           href="/2021/03/18/%E4%B8%80%E6%AC%A1%E6%B5%B7%E5%A4%96k8s%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5/"
-           data-tag="cicd"
-           data-author="" >
-            <span class="post-title" title="一次海外k8s集群代码发布实践">一次海外k8s集群代码发布实践</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/%E4%BA%8C%E5%8F%89%E6%A0%91/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="二叉树">二叉树</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/zabbix_key/"
+           href="/2021/03/16/zabbix_key/"
            data-tag="zabbix"
            data-author="" >
             <span class="post-title" title="zabbix_key">zabbix_key</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="k8s "
+           href="/2021/03/16/%E4%B8%80%E6%AC%A1%E6%B5%B7%E5%A4%96k8s%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5/"
+           data-tag="cicd"
+           data-author="" >
+            <span class="post-title" title="一次海外k8s集群代码发布实践">一次海外k8s集群代码发布实践</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class=""
-           href="/2021/03/18/%E4%BA%8C%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/"
+           href="/2021/03/16/%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="二叉树">二叉树</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/%E4%BA%8C%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="二级计算机">二级计算机</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E5%B8%A6%E7%8E%AF%E9%93%BE%E8%A1%A8/"
+           href="/2021/03/16/%E5%B8%A6%E7%8E%AF%E9%93%BE%E8%A1%A8/"
            data-tag="数据结构"
            data-author="" >
             <span class="post-title" title="带环链表">带环链表</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/%E6%B1%87%E7%BC%96%E7%AC%94%E8%AE%B0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="汇编笔记">汇编笔记</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="操作系统 "
-           href="/2021/03/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="操作系统">操作系统</span>
-            <span class="post-date" title="2021-03-20 11:54:29">2021/03/20</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/"
+           href="/2021/03/16/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/"
            data-tag="c语言基础"
            data-author="" >
             <span class="post-title" title="数据的存储">数据的存储</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class=""
-           href="/2021/03/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
+           href="/2021/03/16/%E6%B1%87%E7%BC%96%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="汇编笔记">汇编笔记</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/05/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"
+           data-tag="no"
+           data-author="" >
+            <span class="post-title" title="操作系统">操作系统</span>
+            <span class="post-date" title="2021-05-23 09:25:50">2021/05/23</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="计算机网络">计算机网络</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E4%B8%93%E5%AE%B6%E7%BC%96%E7%A8%8B/"
+           href="/2021/03/16/C%E4%B8%93%E5%AE%B6%E7%BC%96%E7%A8%8B/"
            data-tag="book"
            data-author="" >
             <span class="post-title" title="C专家编程">C专家编程</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E5%92%8C%E6%8C%87%E9%92%88/"
+           href="/2021/03/16/C%E5%92%8C%E6%8C%87%E9%92%88/"
            data-tag="book"
            data-author="" >
             <span class="post-title" title="C和指针">C和指针</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="Docker "
-           href="/2021/03/18/Dockerfile/"
-           data-tag="Dockerfile"
-           data-author="" >
-            <span class="post-title" title="Dockerfile">Dockerfile</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90/"
+           href="/2021/03/16/C%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90/"
            data-tag="book"
            data-author="" >
             <span class="post-title" title="C深入剖析">C深入剖析</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
-        <a  class="Nginx "
-           href="/2021/03/18/ngx_mem_pool/"
-           data-tag="mem_pool"
+        <a  class="Docker "
+           href="/2021/03/16/Dockerfile/"
+           data-tag="Dockerfile"
            data-author="" >
-            <span class="post-title" title="nginx内存池">nginx内存池</span>
-            <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+            <span class="post-title" title="Dockerfile">Dockerfile</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           href="/2021/03/16/c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
            data-tag="c"
            data-author="" >
             <span class="post-title" title="c学习笔记">c学习笔记</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E6%8C%87%E9%92%88/"
+           href="/2021/03/16/%E6%8C%87%E9%92%88/"
            data-tag="c语言基础"
            data-author="" >
             <span class="post-title" title="指针">指针</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E6%8E%92%E5%BA%8F/"
+           href="/2021/03/16/%E6%8E%92%E5%BA%8F/"
            data-tag="排序"
            data-author="" >
             <span class="post-title" title="排序">排序</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
@@ -601,44 +576,52 @@
             <span class="post-date" title="2021-03-18 11:09:00">2021/03/18</span>
         </a>
         
+        <a  class="运维 "
+           href="/2020/09/10/tcp:ip/"
+           data-tag="操作系统"
+           data-author="" >
+            <span class="post-title" title="tcp-ip">tcp-ip</span>
+            <span class="post-date" title="2020-09-10 10:09:00">2020/09/10</span>
+        </a>
+        
         <a  class="C语言 "
-           href="/2021/03/18/C%20Primer%20Plus/"
+           href="/2021/03/16/C%20Primer%20Plus/"
            data-tag="c primer plus"
            data-author="" >
             <span class="post-title" title="C Primer Plus">C Primer Plus</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/tcp:ip/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="tcp:ip">tcp:ip</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="mysql "
-           href="/2021/03/18/PracticeSql/"
+           href="/2021/03/16/PracticeSql/"
            data-tag="sql_base"
            data-author="" >
             <span class="post-title" title="PracticeSql">PracticeSql</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="操作系统 "
-           href="/2021/03/20/virtual_memory/"
-           data-tag="内存"
-           data-author="" >
-            <span class="post-title" title="虚拟内存">虚拟内存</span>
-            <span class="post-date" title="2021-03-20 11:51:57">2021/03/20</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="Nginx "
-           href="/2021/03/18/ngx_buf/"
-           data-tag="缓冲区"
+           href="/2021/03/18/ngx_mem_pool/"
+           data-tag="mem_pool"
            data-author="" >
-            <span class="post-title" title="nginx缓冲区">nginx缓冲区</span>
+            <span class="post-title" title="nginx内存池">nginx内存池</span>
             <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/17/ngx_array/"
+           data-tag="array"
+           data-author="" >
+            <span class="post-title" title="nginx数组">nginx数组</span>
+            <span class="post-date" title="2021-03-17 11:26:01">2021/03/17</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/05/22/BSTree/"
+           data-tag="c++"
+           data-author="" >
+            <span class="post-title" title="二叉搜索树">二叉搜索树</span>
+            <span class="post-date" title="2021-05-22 20:47:06">2021/05/22</span>
         </a>
         
         <a  class="操作系统 "
@@ -649,60 +632,12 @@
             <span class="post-date" title="2021-03-20 11:55:12">2021/03/20</span>
         </a>
         
-        <a  class="Nginx "
-           href="/2021/03/21/ngx_queue/"
-           data-tag="queue"
-           data-author="" >
-            <span class="post-title" title="nginx双向链表">nginx双向链表</span>
-            <span class="post-date" title="2021-03-21 19:02:44">2021/03/21</span>
-        </a>
-        
-        <a  class="Nginx "
-           href="/2021/03/22/ngx_list/"
-           data-tag="list"
-           data-author="" >
-            <span class="post-title" title="nginx单向链表">nginx单向链表</span>
-            <span class="post-date" title="2021-03-22 11:15:43">2021/03/22</span>
-        </a>
-        
         <a  class=""
            href="/2021/03/22/ngx_align/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="ngx_align">ngx_align</span>
             <span class="post-date" title="2021-03-22 15:44:36">2021/03/22</span>
-        </a>
-        
-        <a  class="Nginx "
-           href="/2021/03/23/ngx_hash/"
-           data-tag="hashtable"
-           data-author="" >
-            <span class="post-title" title="nginx散列表">nginx散列表</span>
-            <span class="post-date" title="2021-03-23 18:21:27">2021/03/23</span>
-        </a>
-        
-        <a  class="操作系统 "
-           href="/2021/04/12/signal/"
-           data-tag="信号"
-           data-author="" >
-            <span class="post-title" title="信号">信号</span>
-            <span class="post-date" title="2021-04-12 19:57:55">2021/04/12</span>
-        </a>
-        
-        <a  class="C语言 "
-           href="/2021/04/25/c++inheritance/"
-           data-tag="c++"
-           data-author="" >
-            <span class="post-title" title="c++继承">c++继承</span>
-            <span class="post-date" title="2021-04-25 22:55:23">2021/04/25</span>
-        </a>
-        
-        <a  class="C语言 "
-           href="/2021/04/20/thread/"
-           data-tag="线程"
-           data-author="" >
-            <span class="post-title" title="thread">thread</span>
-            <span class="post-date" title="2021-04-20 17:02:24">2021/04/20</span>
         </a>
         
         <a  class="C语言 "
@@ -714,11 +649,43 @@
         </a>
         
         <a  class="Nginx "
-           href="/2021/05/04/ngx_thread_pool/"
-           data-tag="thread_pool"
+           href="/2021/03/22/ngx_list/"
+           data-tag="list"
            data-author="" >
-            <span class="post-title" title="nginx线程池">nginx线程池</span>
-            <span class="post-date" title="2021-05-04 00:43:27">2021/05/04</span>
+            <span class="post-title" title="nginx单向链表">nginx单向链表</span>
+            <span class="post-date" title="2021-03-22 11:15:43">2021/03/22</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/18/ngx_buf/"
+           data-tag="缓冲区"
+           data-author="" >
+            <span class="post-title" title="nginx缓冲区">nginx缓冲区</span>
+            <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/04/25/c++inheritance/"
+           data-tag="c++"
+           data-author="" >
+            <span class="post-title" title="c++继承">c++继承</span>
+            <span class="post-date" title="2021-04-25 22:55:23">2021/04/25</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/04/12/signal/"
+           data-tag="信号"
+           data-author="" >
+            <span class="post-title" title="信号">信号</span>
+            <span class="post-date" title="2021-04-12 19:57:55">2021/04/12</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/21/ngx_queue/"
+           data-tag="queue"
+           data-author="" >
+            <span class="post-title" title="nginx双向链表">nginx双向链表</span>
+            <span class="post-date" title="2021-03-21 19:02:44">2021/03/21</span>
         </a>
         
         <a  class="C语言 "
@@ -727,6 +694,38 @@
            data-author="" >
             <span class="post-title" title="socket">socket</span>
             <span class="post-date" title="2021-05-12 13:44:40">2021/05/12</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/03/20/virtual_memory/"
+           data-tag="内存"
+           data-author="" >
+            <span class="post-title" title="虚拟内存">虚拟内存</span>
+            <span class="post-date" title="2021-03-20 11:51:57">2021/03/20</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/23/ngx_hash/"
+           data-tag="hashtable"
+           data-author="" >
+            <span class="post-title" title="nginx散列表">nginx散列表</span>
+            <span class="post-date" title="2021-03-23 18:21:27">2021/03/23</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/05/04/ngx_thread_pool/"
+           data-tag="thread_pool"
+           data-author="" >
+            <span class="post-title" title="nginx线程池">nginx线程池</span>
+            <span class="post-date" title="2021-05-04 00:43:27">2021/05/04</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/04/20/thread/"
+           data-tag="线程"
+           data-author="" >
+            <span class="post-title" title="thread">thread</span>
+            <span class="post-date" title="2021-04-20 17:02:24">2021/04/20</span>
         </a>
         
     </nav>
@@ -770,7 +769,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:4.6k</span>
+        <span>字数:4.5k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -807,10 +806,10 @@
       
         <h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><h4 id="1-5-类简介"><a href="#1-5-类简介" class="headerlink" title="1.5 类简介"></a>1.5 类简介</h4><h5 id="1-5-1-Sales-item类"><a href="#1-5-1-Sales-item类" class="headerlink" title="1.5.1 Sales_item类"></a>1.5.1 Sales_item类</h5><p>c++中通过定义类来定义数据结构。一个类定义了一个类型，以及与其相关联的操作。</p>
 <h5 id="1-5-2-成员函数"><a href="#1-5-2-成员函数" class="headerlink" title="1.5.2 成员函数"></a>1.5.2 成员函数</h5><p>成员函数时定义为类一部分的函数，有时也被称为方法。</p>
-<h3 id="第三章-字符串、向量和数组"><a href="#第三章-字符串、向量和数组" class="headerlink" title="第三章 字符串、向量和数组"></a>第三章 字符串、向量和数组</h3><h4 id="3-2-标准库类型-string"><a href="#3-2-标准库类型-string" class="headerlink" title="3.2 标准库类型 string"></a>3.2 标准库类型 string</h4><h5 id="3-2-1-定义和初始化-string-对象"><a href="#3-2-1-定义和初始化-string-对象" class="headerlink" title="3.2.1 定义和初始化 string 对象"></a>3.2.1 定义和初始化 string 对象</h5><pre><code class="c">string s1;
-string s2 = s1;
-string s3 = &quot;heya&quot;;
-string s4(10,&#39;c&#39;);</code></pre>
+<h3 id="第三章-字符串、向量和数组"><a href="#第三章-字符串、向量和数组" class="headerlink" title="第三章 字符串、向量和数组"></a>第三章 字符串、向量和数组</h3><h4 id="3-2-标准库类型-string"><a href="#3-2-标准库类型-string" class="headerlink" title="3.2 标准库类型 string"></a>3.2 标准库类型 string</h4><h5 id="3-2-1-定义和初始化-string-对象"><a href="#3-2-1-定义和初始化-string-对象" class="headerlink" title="3.2.1 定义和初始化 string 对象"></a>3.2.1 定义和初始化 string 对象</h5><pre class=" language-c"><code class="language-c">string s1<span class="token punctuation">;</span>
+string s2 <span class="token operator">=</span> s1<span class="token punctuation">;</span>
+string s3 <span class="token operator">=</span> <span class="token string">"heya"</span><span class="token punctuation">;</span>
+string <span class="token function">s4</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h6 id="直接初始化和拷贝初始化"><a href="#直接初始化和拷贝初始化" class="headerlink" title="直接初始化和拷贝初始化"></a>直接初始化和拷贝初始化</h6><p>如果使用等号初始化一个变量，实际上执行的是拷贝初始化，编译器把等号右侧的初始值拷贝到新创建的对象中去。</p>
 <p>与之相反，如果不使用等号，则执行的是直接初始化。</p>
 <h3 id="第四章-表达式"><a href="#第四章-表达式" class="headerlink" title="第四章 表达式"></a>第四章 表达式</h3><h4 id="4-11-类型转换"><a href="#4-11-类型转换" class="headerlink" title="4.11 类型转换"></a>4.11 类型转换</h4><h6 id="何时发生类型转换"><a href="#何时发生类型转换" class="headerlink" title="何时发生类型转换"></a>何时发生类型转换</h6><ol>
@@ -827,53 +826,53 @@ string s4(10,&#39;c&#39;);</code></pre>
 <h5 id="4-11-3-显示类型转换"><a href="#4-11-3-显示类型转换" class="headerlink" title="4.11.3 显示类型转换"></a>4.11.3 显示类型转换</h5><h6 id="命名的强制类型转换"><a href="#命名的强制类型转换" class="headerlink" title="命名的强制类型转换"></a>命名的强制类型转换</h6><p>cast-name&lt;type&gt; (expression)，type是转换的目标类型，expression是要转换的值。如果type是引用类型，则结果是左值。cast-name是static_cast、</p>
 <p>dynamic_cast、const_cast和reinterpret_cast中的一种。dynamic_cast支持运行时类型识别。</p>
 <h6 id="static-cast"><a href="#static-cast" class="headerlink" title="static_cast"></a>static_cast</h6><p>任何具有明确定义的类型转换，只要不包含底层const，都可以使用static_cast。</p>
-<pre><code class="c">#include &lt;iostream&gt;
-using namespace std;
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+using namespace std<span class="token punctuation">;</span>
 
-int main()
-{
-    int a = 10;
-    int b = 3;
-    double ret = static_cast&lt;double&gt;(a) / b;
-    cout &lt;&lt; ret &lt;&lt; endl;
-    return 0;
-}
-// output: 3.33333</code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> ret <span class="token operator">=</span> static_cast<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">></span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">/</span> b<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> ret <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// output: 3.33333</span></code></pre>
 <p>当需要把一个较大的算数类型赋值给较小的类型时，static_cast非常有用。此时强制类型转换的意思是告诉编译器和读者：我们知道且不在乎潜在的精度损失。</p>
 <p>static_cast对于编译器无法自动执行的类型转换也非常有用。例如，可以使用static_cast找回存在于void*指针中的值。</p>
-<pre><code class="c">#include &lt;iostream&gt;
-using namespace std;
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+using namespace std<span class="token punctuation">;</span>
 
-int main()
-{
-    double d = 3.14;
-    void* p = &amp;d; // 任何非常量对象的地址都能存入void*
-    double *dp = static_cast&lt;double*&gt;(p); // 将void*转换回初始的指针类型
-    return 0;
-}</code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">double</span> d <span class="token operator">=</span> <span class="token number">3.14</span><span class="token punctuation">;</span>
+    <span class="token keyword">void</span><span class="token operator">*</span> p <span class="token operator">=</span> <span class="token operator">&amp;</span>d<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 任何非常量对象的地址都能存入void*</span>
+    <span class="token keyword">double</span> <span class="token operator">*</span>dp <span class="token operator">=</span> static_cast<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">*</span><span class="token operator">></span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 将void*转换回初始的指针类型</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <h6 id="const-cast"><a href="#const-cast" class="headerlink" title="const_cast"></a>const_cast</h6><blockquote>
 <p>顶层const表示指针本身是个常量，底层const表示指针指向的对象是一个常量。</p>
 </blockquote>
 <p>const_cast 只能改变运算对象的底层const：</p>
-<pre><code class="c">#include &lt;iostream&gt;
-using namespace std;
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+using namespace std<span class="token punctuation">;</span>
 
-int main()
-{
-    char c = &#39;a&#39;;
-    char const *cp  = &amp;c;
-    char *p = const_cast&lt;char*&gt;(cp); // 如果不使用const_cast去掉const性质，那么*cp是无法修改的。
-    *p = &#39;b&#39;;
-    cout &lt;&lt; &quot;*cp = &quot; &lt;&lt; *cp &lt;&lt; &quot;,&quot; &lt;&lt; &quot;*p = &quot; &lt;&lt; *p &lt;&lt; endl;
-    return 0;
-}</code></pre>
-<pre><code class="c">const char *pc;
-char *p = const_cast&lt;char*&gt;(pc);</code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> c <span class="token operator">=</span> <span class="token string">'a'</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> <span class="token keyword">const</span> <span class="token operator">*</span>cp  <span class="token operator">=</span> <span class="token operator">&amp;</span>c<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>p <span class="token operator">=</span> const_cast<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">></span><span class="token punctuation">(</span>cp<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 如果不使用const_cast去掉const性质，那么*cp是无法修改的。</span>
+    <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token string">'b'</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"*cp = "</span> <span class="token operator">&lt;&lt;</span> <span class="token operator">*</span>cp <span class="token operator">&lt;&lt;</span> <span class="token string">","</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"*p = "</span> <span class="token operator">&lt;&lt;</span> <span class="token operator">*</span>p <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>pc<span class="token punctuation">;</span>
+<span class="token keyword">char</span> <span class="token operator">*</span>p <span class="token operator">=</span> const_cast<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">></span><span class="token punctuation">(</span>pc<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>将常量对象转换成非常量对象的行为一般称为–去掉const性质。一旦抹去对象的const性质，编译器不再阻止对该对象进行写操作。如果一个对象本身不是一个常量，使用强制类型转换获得写权限是合法行为。</p>
-<pre><code class="c">const char *cp;
-char *p = const_cast&lt;char*&gt;(cp); // 不能转换掉const性质，const_cast只能改变运算对象的底层const
-static_cast&lt;string&gt;(cp);
-const_cast&lt;string&gt;(cp); // 错误，const_cast只能改变常量属性</code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>cp<span class="token punctuation">;</span>
+<span class="token keyword">char</span> <span class="token operator">*</span>p <span class="token operator">=</span> const_cast<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">></span><span class="token punctuation">(</span>cp<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 不能转换掉const性质，const_cast只能改变运算对象的底层const</span>
+static_cast<span class="token operator">&lt;</span>string<span class="token operator">></span><span class="token punctuation">(</span>cp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+const_cast<span class="token operator">&lt;</span>string<span class="token operator">></span><span class="token punctuation">(</span>cp<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 错误，const_cast只能改变常量属性</span></code></pre>
 <h6 id="reinterpret-cast"><a href="#reinterpret-cast" class="headerlink" title="reinterpret_cast"></a>reinterpret_cast</h6><p>reinterpret_cast 通常为运算对象的位模式提供较低层次上的重新解释。</p>
 <h3 id="第六章-函数"><a href="#第六章-函数" class="headerlink" title="第六章 函数"></a>第六章 函数</h3><h4 id="6-1-函数基础"><a href="#6-1-函数基础" class="headerlink" title="6.1 函数基础"></a>6.1 函数基础</h4><p>实参是形参的初始值。实参的类型必须与对应的形参存在对应关系。</p>
 <h5 id="6-1-1-局部对象"><a href="#6-1-1-局部对象" class="headerlink" title="6.1.1 局部对象"></a>6.1.1 局部对象</h5><p>名字有作用域，对象有生命周期。</p>
@@ -887,110 +886,110 @@ const_cast&lt;string&gt;(cp); // 错误，const_cast只能改变常量属性</co
 <h4 id="6-2-参数传递"><a href="#6-2-参数传递" class="headerlink" title="6.2 参数传递"></a>6.2 参数传递</h4><h5 id="6-2-6-含有可变形参的函数"><a href="#6-2-6-含有可变形参的函数" class="headerlink" title="6.2.6 含有可变形参的函数"></a>6.2.6 含有可变形参的函数</h5><p>为了编写能处理不同数量实参的函数，c++11新标准提供了两种主要方法：</p>
 <ol>
 <li><p>如果所有实参类型相同，可以传递一个名为initializer_list的标准库类型。initializer_list对象中的元素永远是常量值，无法改变其中的元素的值。</p>
-<pre><code class="c">#include &lt;iostream&gt;
-#include &lt;initializer_list&gt;
-using namespace std;
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;initializer_list></span></span>
+using namespace std<span class="token punctuation">;</span>
 
-void test(initializer_list&lt;int&gt; il)
-{
-    for(initializer_list&lt;int&gt;::iterator it = il.begin(); it != il.end(); it++)
-    {
-        cout &lt;&lt; *it &lt;&lt; endl;
-    }
-}
+<span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span>initializer_list<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> il<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>initializer_list<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">:</span><span class="token punctuation">:</span>iterator it <span class="token operator">=</span> il<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it <span class="token operator">!=</span> il<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token operator">*</span>it <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-int main()
-{
-    initializer_list&lt;int&gt; il = {1,3,5,7,9,2,4,6,8,10};
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    initializer_list<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> il <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-    test(il);
+    <span class="token function">test</span><span class="token punctuation">(</span>il<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    return 0;
-}</code></pre>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 </ol>
 <ol start="2">
 <li>如果实参的类型不同，可以编写一种特殊的函数，也就是可变参数模板。</li>
 </ol>
 <h6 id=""><a href="#" class="headerlink" title=""></a></h6><h4 id="6-4-函数重载"><a href="#6-4-函数重载" class="headerlink" title="6.4 函数重载"></a>6.4 函数重载</h4><h6 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h6><p>如果同一作用域内的几个函数名字相同但形参列表不同，称之为函数重载。</p>
-<pre><code class="c">void print(const char *cp);
-void print(const int *beg, const int *end);
-void print(const int ia[], size_t size);</code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>cp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">int</span> <span class="token operator">*</span>beg<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">int</span> <span class="token operator">*</span>end<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">int</span> ia<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> size_t size<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>对于重载函数来说，它们应该在形参数量或形参类型上有所不同。</p>
 <p>不允许两个函数除了返回类型外其它所有的要素都相同，也就是说返回值类型不能作为函数重载的要素。</p>
 <h6 id="重载和const形参"><a href="#重载和const形参" class="headerlink" title="重载和const形参"></a>重载和const形参</h6><p>一个拥有顶层const的形参无法和另一个没有顶层const的形参区分开来。</p>
-<pre><code class="c">#include &lt;iostream&gt;
-#include &lt;initializer_list&gt;
-using namespace std;
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;initializer_list></span></span>
+using namespace std<span class="token punctuation">;</span>
 
 class C1
-{
+<span class="token punctuation">{</span>
 
-};
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-/*
+<span class="token comment" spellcheck="true">/*
 // 重复定义,顶层const无法区分
 void Print(C1* c1)
 {
-    cout &lt;&lt; &quot;c1&quot; &lt;&lt; endl;
+    cout &lt;&lt; "c1" &lt;&lt; endl;
 }
 
 void Print(C1* const c2) // 表示形参指针变量c2是个常量，顶层const
 {
-    cout &lt;&lt; &quot;c2&quot; &lt;&lt; endl;
+    cout &lt;&lt; "c2" &lt;&lt; endl;
 }
-*/
+*/</span>
 
-void echo(C1&amp; c1)
-{
-    cout &lt;&lt; &quot;ref c1&quot; &lt;&lt; endl;
-}
+<span class="token keyword">void</span> <span class="token function">echo</span><span class="token punctuation">(</span>C1<span class="token operator">&amp;</span> c1<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"ref c1"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-void echo(const C1&amp; c2) // const修饰c2这个引用指向的对象是个常量，因此是底层const
-{
-    cout &lt;&lt; &quot;c2&quot; &lt;&lt; endl &lt;&lt; endl;;
-}
+<span class="token keyword">void</span> <span class="token function">echo</span><span class="token punctuation">(</span><span class="token keyword">const</span> C1<span class="token operator">&amp;</span> c2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// const修饰c2这个引用指向的对象是个常量，因此是底层const</span>
+<span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"c2"</span> <span class="token operator">&lt;&lt;</span> endl <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-void echo(C1* c3)
-{
-    cout &lt;&lt; &quot;c3&quot; &lt;&lt; endl;
-}
+<span class="token keyword">void</span> <span class="token function">echo</span><span class="token punctuation">(</span>C1<span class="token operator">*</span> c3<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"c3"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-void echo(const C1* c4) // const修饰的是C1对象
-{
-    cout &lt;&lt; &quot;c4&quot; &lt;&lt; endl;
-}
+<span class="token keyword">void</span> <span class="token function">echo</span><span class="token punctuation">(</span><span class="token keyword">const</span> C1<span class="token operator">*</span> c4<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// const修饰的是C1对象</span>
+<span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"c4"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-/*
+<span class="token comment" spellcheck="true">/*
 void echo(C1* const c5) // 此时const修饰的是c5这个指针变量本身而非其指向的对象，是顶层const
 {
     ;
 }
-*/
+*/</span>
 
-int main()
-{
-    return 0;
-}</code></pre>
-<h6 id="const-cast和重载"><a href="#const-cast和重载" class="headerlink" title="const_cast和重载"></a>const_cast和重载</h6><pre><code class="c">const string &amp;shorterString(const string &amp;s1, const string &amp;s2)
-{
-    return s1.size() &lt;= s2.size() ? s1 : s2;
-}
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h6 id="const-cast和重载"><a href="#const-cast和重载" class="headerlink" title="const_cast和重载"></a>const_cast和重载</h6><pre class=" language-c"><code class="language-c"><span class="token keyword">const</span> string <span class="token operator">&amp;</span><span class="token function">shorterString</span><span class="token punctuation">(</span><span class="token keyword">const</span> string <span class="token operator">&amp;</span>s1<span class="token punctuation">,</span> <span class="token keyword">const</span> string <span class="token operator">&amp;</span>s2<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> s1<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;=</span> s2<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span> s1 <span class="token punctuation">:</span> s2<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// 这种情况下，返回值也必须是const 引用类型
+<span class="token comment" spellcheck="true">// 这种情况下，返回值也必须是const 引用类型</span>
 
-/* 
+<span class="token comment" spellcheck="true">/* 
     当需要得到一个普通的引用时，借助const_cast。(这里的两个shorterString函数是有发生重载的)
     先将它的实参强制类型转换成对应的const的引用，然后调用shorterString函数的const版本。
     const版本返回对const string的引用，再将这个引用转换成一个普通的string&amp;，然后返回。
-*/
+*/</span>
 
-string &amp;shorterString(string &amp;s1, string &amp;s2)
-{
-    const string &amp;r = shorterString(const_cast&lt;const string&amp;&gt;(s1), const_cast&lt;const string&amp;&gt;(s2));
-    return  const_cast&lt;string&amp;&gt;(r);
-}</code></pre>
-<h4 id="6-5-特殊用途语言特性"><a href="#6-5-特殊用途语言特性" class="headerlink" title="6.5 特殊用途语言特性"></a>6.5 特殊用途语言特性</h4><h5 id="6-5-1-默认实参"><a href="#6-5-1-默认实参" class="headerlink" title="6.5.1 默认实参"></a>6.5.1 默认实参</h5><pre><code class="c">int sum(int a = 10, int b = 20);</code></pre>
+string <span class="token operator">&amp;</span><span class="token function">shorterString</span><span class="token punctuation">(</span>string <span class="token operator">&amp;</span>s1<span class="token punctuation">,</span> string <span class="token operator">&amp;</span>s2<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">const</span> string <span class="token operator">&amp;</span>r <span class="token operator">=</span> <span class="token function">shorterString</span><span class="token punctuation">(</span>const_cast<span class="token operator">&lt;</span><span class="token keyword">const</span> string<span class="token operator">&amp;</span><span class="token operator">></span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">,</span> const_cast<span class="token operator">&lt;</span><span class="token keyword">const</span> string<span class="token operator">&amp;</span><span class="token operator">></span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span>  const_cast<span class="token operator">&lt;</span>string<span class="token operator">&amp;</span><span class="token operator">></span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="6-5-特殊用途语言特性"><a href="#6-5-特殊用途语言特性" class="headerlink" title="6.5 特殊用途语言特性"></a>6.5 特殊用途语言特性</h4><h5 id="6-5-1-默认实参"><a href="#6-5-1-默认实参" class="headerlink" title="6.5.1 默认实参"></a>6.5.1 默认实参</h5><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h5 id="6-5-2-内联函数和constexpr函数"><a href="#6-5-2-内联函数和constexpr函数" class="headerlink" title="6.5.2 内联函数和constexpr函数"></a>6.5.2 内联函数和constexpr函数</h5><p>把一些规模较小的操作定义成函数有很多好处，包括：</p>
 <ul>
 <li>容易阅读和理解</li>
@@ -1005,52 +1004,52 @@ string &amp;shorterString(string &amp;s1, string &amp;s2)
 <li>程序转向一个新的位置继续执行。</li>
 </ol>
 <h6 id="内联函数可避免函数调用的开销"><a href="#内联函数可避免函数调用的开销" class="headerlink" title="内联函数可避免函数调用的开销"></a>内联函数可避免函数调用的开销</h6><p>将函数指定为内联函数，通常就是将它在每个调用点上“内联地”展开。例如 6.4 中的shorterString函数：</p>
-<pre><code class="c">// 调用
-cout &lt;&lt; shorterString(s1, s2) &lt;&lt; endl;
+<pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">// 调用</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token function">shorterString</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span> s2<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
 
-// 将在编译过程中展开成类似于下面的形式
-cout &lt;&lt; (s1.size() &lt; s2.size() ? s1 : s2) &lt;&lt; endl;
+<span class="token comment" spellcheck="true">// 将在编译过程中展开成类似于下面的形式</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> s2<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span> s1 <span class="token punctuation">:</span> s2<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
 
-// 在函数前加上inline关键字将其声明成内联函数，实际上不一定需要加inline，编译器会帮我们去优化的。</code></pre>
+<span class="token comment" spellcheck="true">// 在函数前加上inline关键字将其声明成内联函数，实际上不一定需要加inline，编译器会帮我们去优化的。</span></code></pre>
 <h6 id="constexpr函数"><a href="#constexpr函数" class="headerlink" title="constexpr函数"></a>constexpr函数</h6><p>constexpr函数(constexpr function)是指 能用于常量表达式的函数。定义constexpr函数的方法与其它函数类似，需要遵循以下约定：</p>
 <ol>
 <li><p>函数的返回类型及所有形参的类型都得是字面值类型</p>
 </li>
 <li><p>函数体中必须有且只有一条return语句</p>
-<pre><code class="c">constexpr int new_sz() { return 42; }
-constexpr int foo = new_sz();
-/*
+<pre class=" language-c"><code class="language-c">constexpr <span class="token keyword">int</span> <span class="token function">new_sz</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token number">42</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+constexpr <span class="token keyword">int</span> foo <span class="token operator">=</span> <span class="token function">new_sz</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/*
     执行该初始化任务时，编译器把对constexpr函数的调用替换成其结果值。
     为了能在编译过程中随时展开，constexpr函数被隐式地指定为内联函数。
-*/
+*/</span>
 
-/*
+<span class="token comment" spellcheck="true">/*
     constexpr函数体内也可以包含其它语句，只要这些语句不执行任何操作就行。例如，constexpr函数中可以有空语句、
     类型别名以及using声明。
-*/
-constexpr size_t scale(size_t cnt) { return new_sz() * cnt; }
-int arr[scale(2)]; // 正确，scale的实参是常量表达式，所以它的返回值也是常量表达式。
+*/</span>
+constexpr size_t <span class="token function">scale</span><span class="token punctuation">(</span>size_t cnt<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token function">new_sz</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> cnt<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token function">scale</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 正确，scale的实参是常量表达式，所以它的返回值也是常量表达式。</span>
 
-int i = 2；
-int a2[scale(i)]; // 错误，数组的大小不能是变量，必须是常量。因为scale的实参是变量，所以它的返回值也是一个变量</code></pre>
+<span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">2</span>；
+<span class="token keyword">int</span> a2<span class="token punctuation">[</span><span class="token function">scale</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 错误，数组的大小不能是变量，必须是常量。因为scale的实参是变量，所以它的返回值也是一个变量</span></code></pre>
 </li>
 </ol>
 <h4 id="6-6-函数匹配"><a href="#6-6-函数匹配" class="headerlink" title="6.6 函数匹配"></a>6.6 函数匹配</h4><h6 id="确定候选函数和可行函数"><a href="#确定候选函数和可行函数" class="headerlink" title="确定候选函数和可行函数"></a>确定候选函数和可行函数</h6><p>第一步是确定本次调用对应的重载函数集，集合中的函数称为候选函数。候选函数具备两个特征：① 与被调用的函数同名，② 其生命在调用点可见</p>
 <p>第二步考察本次调用提供的实参，然后从候选函数中选出能被这组实参调用的函数，这些新选出的函数称为可行函数。可行函数具备两个特征：① 其形参数量与本次调用提供的实参数量相等，② 每个实参的类型与对应的形参类型相同或者能转换成形参的类型。</p>
-<pre><code class="c">void f();
-void f(int);
-void f(int, int);
-void f(double, double = 3.14);
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">,</span> <span class="token keyword">double</span> <span class="token operator">=</span> <span class="token number">3.14</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-f(5.6); 
-/* 
+<span class="token function">f</span><span class="token punctuation">(</span><span class="token number">5.6</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment" spellcheck="true">/* 
     调用 void f(double, double); 
 
     可行函数：
         f(int) // double能转换成int
         f(double, double) // 第二个形参提供了默认值
     如果没有找到可行函数，编译器将报告无匹配函数的错误。
-*/</code></pre>
+*/</span></code></pre>
 <h6 id="寻找最佳匹配-如果有的话"><a href="#寻找最佳匹配-如果有的话" class="headerlink" title="寻找最佳匹配(如果有的话)"></a>寻找最佳匹配(如果有的话)</h6><p>第三步是从可行函数中选择与本次调用最匹配的函数。在这一过程中，逐一检查函数调用提供的实参，寻找形参类型与实参类型最匹配的那个可行函数。实参类型与形参类型越接近，匹配的越好。精确匹配比需要类型转换的匹配更好。所以最终调用的是 f(double, double = 3.14)。</p>
 <h6 id="含有多个形参的函数匹配"><a href="#含有多个形参的函数匹配" class="headerlink" title="含有多个形参的函数匹配"></a>含有多个形参的函数匹配</h6><p>例如调用：f(42, 2.56);</p>
 <p>先确定可行函数：f(int, int)，f(double, double)。</p>
@@ -1062,47 +1061,47 @@ f(5.6);
 <p>在上面的调用中，如果只考虑第一个实参，那么f(int, int) 能精确匹配；要想匹配第二个函数，int类型的实参必须转换成double类型，但是需要内置类型转换的匹配劣于精确匹配，因此就第一个实参来说，f(int, int) 比 f(double, double)更好。</p>
 <p>接着考虑第二个实参2.56，同理，f(double, double)更好。</p>
 <p>编译器最终会因为这个调用具有二义性而拒绝其请求：因为每一个可行函数各自在一个实参上实现了更好的匹配，从整体上无法判断孰优孰劣。</p>
-<pre><code class="c">#include &lt;iostream&gt;
-#include &lt;string&gt;
-using namespace std;
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string></span></span>
+using namespace std<span class="token punctuation">;</span>
 
-void f()
-{
-    cout &lt;&lt; &quot;f()&quot; &lt;&lt; endl;
-}
+<span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"f()"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-void f(int)
-{
-    cout &lt;&lt; &quot;f(int)&quot; &lt;&lt; endl;
-}
+<span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"f(int)"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-void f(int, int)
-{
-    cout &lt;&lt; &quot;f(int, int)&quot; &lt;&lt; endl;
-}
+<span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"f(int, int)"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-void f(double, double = 3.14)
-{
-    cout &lt;&lt; &quot;f(double, double = 3.14)&quot; &lt;&lt; endl;
-}
+<span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">,</span> <span class="token keyword">double</span> <span class="token operator">=</span> <span class="token number">3.14</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"f(double, double = 3.14)"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-void f(int, int, int)
-{
-    cout &lt;&lt; &quot;f(int, int, int)&quot; &lt;&lt; endl;
-}
+<span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"f(int, int, int)"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-void f(double, double, double)
-{
-    cout &lt;&lt; &quot;f(double, double, double)&quot; &lt;&lt; endl;
-}
+<span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">,</span> <span class="token keyword">double</span><span class="token punctuation">,</span> <span class="token keyword">double</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"f(double, double, double)"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-int main()
-{
-    f(5.6); // 正确
-    f(32,3.14); // 报错
-    f(32, 33, 4.4); // 报错
-    return 0;
-}</code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">f</span><span class="token punctuation">(</span><span class="token number">5.6</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 正确</span>
+    <span class="token function">f</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">3.14</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 报错</span>
+    <span class="token function">f</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">33</span><span class="token punctuation">,</span> <span class="token number">4.4</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 报错</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <h5 id="6-6-1"><a href="#6-6-1" class="headerlink" title="6.6.1"></a>6.6.1</h5><p>为了确定最佳匹配，编译器将实参类型到形参类型的转换划分成几个等级：</p>
 <ol>
 <li>精确匹配<ul>
@@ -1117,17 +1116,17 @@ int main()
 <li>通过类类型转换实现的匹配</li>
 </ol>
 <h6 id="需要类型提升和算术类型转换的匹配"><a href="#需要类型提升和算术类型转换的匹配" class="headerlink" title="需要类型提升和算术类型转换的匹配"></a>需要类型提升和算术类型转换的匹配</h6><p>小整形一般都会提升到int类型或者更大的整形类型。</p>
-<pre><code class="c">void ff(int);
-void ff(short);
-ff(&#39;a&#39;); // char提升成int，调用f(int)</code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">ff</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">ff</span><span class="token punctuation">(</span><span class="token keyword">short</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ff</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// char提升成int，调用f(int)</span></code></pre>
 <p>所有算术类型转换的级别都一样。例如，从int想unsigned int的转换并不比int向double的转换级别高。例如：</p>
-<pre><code class="c">void manip(long);
-void manip(float);
-manip(3.14); // 错误：二义性调用</code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">manip</span><span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">manip</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">manip</span><span class="token punctuation">(</span><span class="token number">3.14</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 错误：二义性调用</span></code></pre>
 <h6 id="函数匹配和const实参"><a href="#函数匹配和const实参" class="headerlink" title="函数匹配和const实参"></a>函数匹配和const实参</h6><h4 id="6-7-函数指针"><a href="#6-7-函数指针" class="headerlink" title="6.7 函数指针"></a>6.7 函数指针</h4><p>函数指针指向的是函数而非对象。函数的类型由它的返回类型和形参类型共同决定，与函数名无关。</p>
-<pre><code class="c">bool lengthCompare(const string &amp;, const string &amp;);
-bool (const string&amp;, const string&amp;);
-bool (*pf)(const string&amp;, const string&amp;);</code></pre>
+<pre class=" language-c"><code class="language-c">bool <span class="token function">lengthCompare</span><span class="token punctuation">(</span><span class="token keyword">const</span> string <span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">const</span> string <span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">bool</span> <span class="token punctuation">(</span><span class="token keyword">const</span> string<span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">const</span> string<span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">bool</span> <span class="token punctuation">(</span><span class="token operator">*</span>pf<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token keyword">const</span> string<span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">const</span> string<span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h3 id="第七章-类"><a href="#第七章-类" class="headerlink" title="第七章 类"></a>第七章 类</h3><p>类的基本思想是数据抽象和封装(实现了类的接口和实现的分离，隐藏实现细节)。数据抽象是一种依赖于接口和实现的分离编程技术。</p>
 <h4 id="7-1-定义抽象数据类型"><a href="#7-1-定义抽象数据类型" class="headerlink" title="7.1 定义抽象数据类型"></a>7.1 定义抽象数据类型</h4><h5 id="7-1-4-构造函数"><a href="#7-1-4-构造函数" class="headerlink" title="7.1.4 构造函数"></a>7.1.4 构造函数</h5><p>每个类都定义了它的对象被初始化的方式，类通过一个或几个特殊的成员函数控制其对象的初始化过程，这些函数叫构造函数。构造函数的任务是初始化类对象的数据成员，无论何时只要类被初始化，就会调用构造函数。</p>
 <p>构造函数的名字与类名相同，无返回值。</p>
@@ -1144,28 +1143,28 @@ bool (*pf)(const string&amp;, const string&amp;);</code></pre>
 </li>
 </ol>
 <h6 id="default"><a href="#default" class="headerlink" title="=default"></a>=default</h6><p>当定义其它形式的构造函数时，也需要默认的构造函数，c++11中可以使用=default来要求编译器生成默认构造函数</p>
-<pre><code class="c">#include &lt;iostream&gt;
-using namespace std;
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+using namespace std<span class="token punctuation">;</span>
 
 class Person
-{
-public:
-    Person() = default;
+<span class="token punctuation">{</span>
+public<span class="token punctuation">:</span>
+    <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token keyword">default</span><span class="token punctuation">;</span>
 
-    Person(int age)
-    {
-        _age = age;
-    }
+    <span class="token function">Person</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        _age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-private:
-    int _age;
-};
+private<span class="token punctuation">:</span>
+    <span class="token keyword">int</span> _age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-int main()
-{
-    Person p;
-    return 0;
-}</code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    Person p<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <h4 id="7-2-访问控制与封装"><a href="#7-2-访问控制与封装" class="headerlink" title="7.2 访问控制与封装"></a>7.2 访问控制与封装</h4><p>定义在public说明符之后的成员在整个程序内可以被访问，public成员定义类的接口。</p>
 <p>定义在private说明符之后的成员可以被类的成员函数访问。</p>
 <h6 id="使用struct-或-class关键字"><a href="#使用struct-或-class关键字" class="headerlink" title="使用struct 或 class关键字"></a>使用struct 或 class关键字</h6><p>class中，默认的权限是私有的。struct中，默认的权限是public。</p>
@@ -1180,7 +1179,7 @@ int main()
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>CppPrimer</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">4.6k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">4.5k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-04-13, 11:26:55</p>
     <p><span class="copy-title">最后更新:</span>2021-04-17, 23:47:26</p>
@@ -1228,7 +1227,7 @@ int main()
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#内存','#queue','#list','#hashtable','#缓冲区','#信号','#c++','#线程','#thread_pool','#net',],
+            'data': ['#Dockerfile','#Nginx','#sql_base','#ecs','#zabbix','#Jenkinsfile','#linux性能优化实战笔记','#kubectl','#book','#c','#c primer plus','#cicd','#c语言基础','#jenkins','#mongodb','#数据结构','#sonar','#操作系统','#排序','#进程','#c++','#list','#缓冲区','#信号','#queue','#net','#内存','#no','#hashtable','#thread_pool','#线程','#array','#mem_pool',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

@@ -6,17 +6,16 @@
   <meta name="keywords" content=" 线程 ">
   <meta name="description" content="thread | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="网络字节序内存分为大端存储和小端存储，网络数据同样有大小端之分。  发送主机通常将发送缓冲区中的数据按照内存地址从低到高的顺序发出。 接收主机把从网络上收到的字节依次保存在接收缓冲区中，也是按照内存从低到高的顺序保存。 因此，网络数据流的地址应该规定：先发出的数据是低地址，后发出的数据是高地址。 TCP&#x2F;IP协议规定，网络数据流应采用大端字节序，即低地址高字节。 不管是大端机还是小端机，都会按照T">
-<meta property="og:type" content="article">
-<meta property="og:title" content="socket">
-<meta property="og:url" content="https://duwei19961021.github.io/2021/05/12/socket/index.html">
+<meta name="description" content="gitlabBranch gitlabSourceBranch gitlabActionType gitlabUserName gitlabUserUsername gitlabUserEmail gitlabSourceRepoHomepage gitlabSourceRepoName gitlabSourceNamespace gitlabSourceRepoURL gitlabSourceR">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BLOG">
+<meta property="og:url" content="https://duwei19961021.github.io/file/sonar.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="网络字节序内存分为大端存储和小端存储，网络数据同样有大小端之分。  发送主机通常将发送缓冲区中的数据按照内存地址从低到高的顺序发出。 接收主机把从网络上收到的字节依次保存在接收缓冲区中，也是按照内存从低到高的顺序保存。 因此，网络数据流的地址应该规定：先发出的数据是低地址，后发出的数据是高地址。 TCP&#x2F;IP协议规定，网络数据流应采用大端字节序，即低地址高字节。 不管是大端机还是小端机，都会按照T">
+<meta property="og:description" content="gitlabBranch gitlabSourceBranch gitlabActionType gitlabUserName gitlabUserUsername gitlabUserEmail gitlabSourceRepoHomepage gitlabSourceRepoName gitlabSourceNamespace gitlabSourceRepoURL gitlabSourceR">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-12T05:44:40.000Z">
-<meta property="article:modified_time" content="2021-05-20T05:56:40.085Z">
+<meta property="article:published_time" content="2021-05-23T01:21:25.624Z">
+<meta property="article:modified_time" content="2021-03-18T03:09:52.073Z">
 <meta property="article:author" content="拦云">
-<meta property="article:tag" content="net">
 <meta name="twitter:card" content="summary">
 
 
@@ -44,7 +43,7 @@
 <script src="/js/iconfont.js?v=1.0.1" ></script>
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="BLOG" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 <div style="display: none">
   <input class="theme_disqus_on" value="false">
   <input class="theme_preload_comment" value="true">
@@ -69,31 +68,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(53)</small></div></li>
-    
-        
-            
-            <li><div data-rel="C语言">C语言<small>(17)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="运维">运维<small>(10)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="k8s">k8s<small>(2)</small></div>
-                
-            </li>
-            
-        
+    <li><div class="all active">全部文章<small>(52)</small></div></li>
     
         
             
@@ -121,6 +96,30 @@
     
         
             
+            <li><div data-rel="运维">运维<small>(11)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="k8s">k8s<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="C语言">C语言<small>(18)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
             <li><div data-rel="操作系统">操作系统<small>(4)</small></div>
                 
             </li>
@@ -137,8 +136,8 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="53">
-<input type="hidden" id="yelog_site_word_count" value="82k">
+<input type="hidden" id="yelog_site_posts_number" value="52">
+<input type="hidden" id="yelog_site_word_count" value="77.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -172,15 +171,7 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a class="color2">c</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">ecs</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color2">Jenkinsfile</a>
+        <a class="color1">Dockerfile</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -188,23 +179,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">sonar</a>
+        <a class="color4">sql_base</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">kubectl</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">jenkins</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">linux性能优化实战笔记</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">mongodb</a>
+        <a class="color4">ecs</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -212,15 +191,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">cicd</a>
+        <a class="color2">Jenkinsfile</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">数据结构</a>
+        <a class="color4">linux性能优化实战笔记</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">c语言基础</a>
+        <a class="color3">kubectl</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -228,7 +207,39 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">Dockerfile</a>
+        <a class="color2">c</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">c primer plus</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">cicd</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">c语言基础</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">jenkins</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">mongodb</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">数据结构</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">sonar</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">操作系统</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -240,35 +251,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">c primer plus</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">sql_base</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color1">array</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">mem_pool</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">内存</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color1">queue</a>
+        <a class="color4">c++</a>
     </li>
     
     <li class="article-tag-list-item">
         <a class="color5">list</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color5">hashtable</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -280,11 +267,23 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">c++</a>
+        <a class="color1">queue</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">线程</a>
+        <a class="color4">net</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">内存</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">no</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">hashtable</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -292,7 +291,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">net</a>
+        <a class="color3">线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">array</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">mem_pool</a>
     </li>
     
     <div class="clearfix"></div>
@@ -305,6 +312,30 @@
     
     <nav id="title-list-nav">
         
+        <a  class="运维 "
+           href="/2021/03/16/Nginx%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96header/"
+           data-tag="Nginx"
+           data-author="" >
+            <span class="post-title" title="Nginx日志获取header">Nginx日志获取header</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/16/make/"
+           data-tag="c"
+           data-author="" >
+            <span class="post-title" title="make">make</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/c++%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="c++构造函数">c++构造函数</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
         <a  class="C语言 "
            href="/2021/04/13/CppPrimer/"
            data-tag="book"
@@ -314,75 +345,67 @@
         </a>
         
         <a  class=""
-           href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0linux%E5%91%BD%E4%BB%A4/"
+           href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0linux%E5%91%BD%E4%BB%A4/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="C语言实现linux命令">C语言实现linux命令</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E9%A2%84%E5%A4%84%E7%90%86/"
+           href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E9%A2%84%E5%A4%84%E7%90%86/"
            data-tag="c"
            data-author="" >
             <span class="post-title" title="C语言预处理">C语言预处理</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/ECS%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9/"
+           href="/2021/03/16/ECS%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9/"
            data-tag="ecs"
            data-author="" >
             <span class="post-title" title="ECS磁盘扩容">ECS磁盘扩容</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/Jenkinsfile/"
+           href="/2021/03/16/Jenkinsfile/"
            data-tag="Jenkinsfile"
            data-author="" >
             <span class="post-title" title="Jenkinsfile">Jenkinsfile</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/Nginx%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96header/"
-           data-tag="Nginx"
-           data-author="" >
-            <span class="post-title" title="Nginx日志获取header">Nginx日志获取header</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="运维 "
-           href="/2021/03/18/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/"
+           href="/2021/03/16/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/"
            data-tag="sonar"
            data-author="" >
             <span class="post-title" title="Jenkins结合sonar代码检测流水线">Jenkins结合sonar代码检测流水线</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/c++%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="c++构造函数">c++构造函数</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/Nginx/"
+           href="/2021/03/16/Nginx/"
            data-tag="Nginx"
            data-author="" >
             <span class="post-title" title="Nginx">Nginx</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class=""
-           href="/2021/03/18/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B7/"
+           href="/2021/03/16/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B7/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="c陷阱与缺陷">c陷阱与缺陷</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/16/jenkins%E7%BB%93%E5%90%88rsync%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81/"
+           data-tag="jenkins"
+           data-author="" >
+            <span class="post-title" title="jenkins结合rsync同步代码">jenkins结合rsync同步代码</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="k8s "
@@ -394,203 +417,155 @@
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/jenkins%E7%BB%93%E5%90%88rsync%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81/"
-           data-tag="jenkins"
-           data-author="" >
-            <span class="post-title" title="jenkins结合rsync同步代码">jenkins结合rsync同步代码</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="运维 "
-           href="/2021/03/18/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"
+           href="/2021/03/16/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"
            data-tag="linux性能优化实战笔记"
            data-author="" >
             <span class="post-title" title="linux性能优化实战笔记">linux性能优化实战笔记</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="C语言 "
-           href="/2021/03/18/make/"
-           data-tag="c"
-           data-author="" >
-            <span class="post-title" title="make">make</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/mongo/"
+           href="/2021/03/16/mongo/"
            data-tag="mongodb"
            data-author="" >
             <span class="post-title" title="mongo">mongo</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="Nginx "
-           href="/2021/03/17/ngx_array/"
-           data-tag="array"
-           data-author="" >
-            <span class="post-title" title="nginx数组">nginx数组</span>
-            <span class="post-date" title="2021-03-17 11:26:01">2021/03/17</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/sonar/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="sonar">sonar</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/sql/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="sql">sql</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/zabbix_dingdingAlert/"
+           href="/2021/03/16/zabbix_dingdingAlert/"
            data-tag="zabbix"
            data-author="" >
             <span class="post-title" title="zabbix_dingdingAlert">zabbix_dingdingAlert</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="k8s "
-           href="/2021/03/18/%E4%B8%80%E6%AC%A1%E6%B5%B7%E5%A4%96k8s%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5/"
-           data-tag="cicd"
-           data-author="" >
-            <span class="post-title" title="一次海外k8s集群代码发布实践">一次海外k8s集群代码发布实践</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/%E4%BA%8C%E5%8F%89%E6%A0%91/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="二叉树">二叉树</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/zabbix_key/"
+           href="/2021/03/16/zabbix_key/"
            data-tag="zabbix"
            data-author="" >
             <span class="post-title" title="zabbix_key">zabbix_key</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="k8s "
+           href="/2021/03/16/%E4%B8%80%E6%AC%A1%E6%B5%B7%E5%A4%96k8s%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5/"
+           data-tag="cicd"
+           data-author="" >
+            <span class="post-title" title="一次海外k8s集群代码发布实践">一次海外k8s集群代码发布实践</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class=""
-           href="/2021/03/18/%E4%BA%8C%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/"
+           href="/2021/03/16/%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="二叉树">二叉树</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/%E4%BA%8C%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="二级计算机">二级计算机</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E5%B8%A6%E7%8E%AF%E9%93%BE%E8%A1%A8/"
+           href="/2021/03/16/%E5%B8%A6%E7%8E%AF%E9%93%BE%E8%A1%A8/"
            data-tag="数据结构"
            data-author="" >
             <span class="post-title" title="带环链表">带环链表</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/%E6%B1%87%E7%BC%96%E7%AC%94%E8%AE%B0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="汇编笔记">汇编笔记</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="操作系统 "
-           href="/2021/03/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="操作系统">操作系统</span>
-            <span class="post-date" title="2021-03-20 11:54:29">2021/03/20</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/"
+           href="/2021/03/16/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/"
            data-tag="c语言基础"
            data-author="" >
             <span class="post-title" title="数据的存储">数据的存储</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class=""
-           href="/2021/03/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
+           href="/2021/03/16/%E6%B1%87%E7%BC%96%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="汇编笔记">汇编笔记</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/05/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"
+           data-tag="no"
+           data-author="" >
+            <span class="post-title" title="操作系统">操作系统</span>
+            <span class="post-date" title="2021-05-23 09:25:50">2021/05/23</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="计算机网络">计算机网络</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E4%B8%93%E5%AE%B6%E7%BC%96%E7%A8%8B/"
+           href="/2021/03/16/C%E4%B8%93%E5%AE%B6%E7%BC%96%E7%A8%8B/"
            data-tag="book"
            data-author="" >
             <span class="post-title" title="C专家编程">C专家编程</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E5%92%8C%E6%8C%87%E9%92%88/"
+           href="/2021/03/16/C%E5%92%8C%E6%8C%87%E9%92%88/"
            data-tag="book"
            data-author="" >
             <span class="post-title" title="C和指针">C和指针</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="Docker "
-           href="/2021/03/18/Dockerfile/"
-           data-tag="Dockerfile"
-           data-author="" >
-            <span class="post-title" title="Dockerfile">Dockerfile</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90/"
+           href="/2021/03/16/C%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90/"
            data-tag="book"
            data-author="" >
             <span class="post-title" title="C深入剖析">C深入剖析</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
-        <a  class="Nginx "
-           href="/2021/03/18/ngx_mem_pool/"
-           data-tag="mem_pool"
+        <a  class="Docker "
+           href="/2021/03/16/Dockerfile/"
+           data-tag="Dockerfile"
            data-author="" >
-            <span class="post-title" title="nginx内存池">nginx内存池</span>
-            <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+            <span class="post-title" title="Dockerfile">Dockerfile</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           href="/2021/03/16/c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
            data-tag="c"
            data-author="" >
             <span class="post-title" title="c学习笔记">c学习笔记</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E6%8C%87%E9%92%88/"
+           href="/2021/03/16/%E6%8C%87%E9%92%88/"
            data-tag="c语言基础"
            data-author="" >
             <span class="post-title" title="指针">指针</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E6%8E%92%E5%BA%8F/"
+           href="/2021/03/16/%E6%8E%92%E5%BA%8F/"
            data-tag="排序"
            data-author="" >
             <span class="post-title" title="排序">排序</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
@@ -601,44 +576,52 @@
             <span class="post-date" title="2021-03-18 11:09:00">2021/03/18</span>
         </a>
         
+        <a  class="运维 "
+           href="/2020/09/10/tcp:ip/"
+           data-tag="操作系统"
+           data-author="" >
+            <span class="post-title" title="tcp-ip">tcp-ip</span>
+            <span class="post-date" title="2020-09-10 10:09:00">2020/09/10</span>
+        </a>
+        
         <a  class="C语言 "
-           href="/2021/03/18/C%20Primer%20Plus/"
+           href="/2021/03/16/C%20Primer%20Plus/"
            data-tag="c primer plus"
            data-author="" >
             <span class="post-title" title="C Primer Plus">C Primer Plus</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/tcp:ip/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="tcp:ip">tcp:ip</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="mysql "
-           href="/2021/03/18/PracticeSql/"
+           href="/2021/03/16/PracticeSql/"
            data-tag="sql_base"
            data-author="" >
             <span class="post-title" title="PracticeSql">PracticeSql</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="操作系统 "
-           href="/2021/03/20/virtual_memory/"
-           data-tag="内存"
-           data-author="" >
-            <span class="post-title" title="虚拟内存">虚拟内存</span>
-            <span class="post-date" title="2021-03-20 11:51:57">2021/03/20</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="Nginx "
-           href="/2021/03/18/ngx_buf/"
-           data-tag="缓冲区"
+           href="/2021/03/18/ngx_mem_pool/"
+           data-tag="mem_pool"
            data-author="" >
-            <span class="post-title" title="nginx缓冲区">nginx缓冲区</span>
+            <span class="post-title" title="nginx内存池">nginx内存池</span>
             <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/17/ngx_array/"
+           data-tag="array"
+           data-author="" >
+            <span class="post-title" title="nginx数组">nginx数组</span>
+            <span class="post-date" title="2021-03-17 11:26:01">2021/03/17</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/05/22/BSTree/"
+           data-tag="c++"
+           data-author="" >
+            <span class="post-title" title="二叉搜索树">二叉搜索树</span>
+            <span class="post-date" title="2021-05-22 20:47:06">2021/05/22</span>
         </a>
         
         <a  class="操作系统 "
@@ -649,60 +632,12 @@
             <span class="post-date" title="2021-03-20 11:55:12">2021/03/20</span>
         </a>
         
-        <a  class="Nginx "
-           href="/2021/03/21/ngx_queue/"
-           data-tag="queue"
-           data-author="" >
-            <span class="post-title" title="nginx双向链表">nginx双向链表</span>
-            <span class="post-date" title="2021-03-21 19:02:44">2021/03/21</span>
-        </a>
-        
-        <a  class="Nginx "
-           href="/2021/03/22/ngx_list/"
-           data-tag="list"
-           data-author="" >
-            <span class="post-title" title="nginx单向链表">nginx单向链表</span>
-            <span class="post-date" title="2021-03-22 11:15:43">2021/03/22</span>
-        </a>
-        
         <a  class=""
            href="/2021/03/22/ngx_align/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="ngx_align">ngx_align</span>
             <span class="post-date" title="2021-03-22 15:44:36">2021/03/22</span>
-        </a>
-        
-        <a  class="Nginx "
-           href="/2021/03/23/ngx_hash/"
-           data-tag="hashtable"
-           data-author="" >
-            <span class="post-title" title="nginx散列表">nginx散列表</span>
-            <span class="post-date" title="2021-03-23 18:21:27">2021/03/23</span>
-        </a>
-        
-        <a  class="操作系统 "
-           href="/2021/04/12/signal/"
-           data-tag="信号"
-           data-author="" >
-            <span class="post-title" title="信号">信号</span>
-            <span class="post-date" title="2021-04-12 19:57:55">2021/04/12</span>
-        </a>
-        
-        <a  class="C语言 "
-           href="/2021/04/25/c++inheritance/"
-           data-tag="c++"
-           data-author="" >
-            <span class="post-title" title="c++继承">c++继承</span>
-            <span class="post-date" title="2021-04-25 22:55:23">2021/04/25</span>
-        </a>
-        
-        <a  class="C语言 "
-           href="/2021/04/20/thread/"
-           data-tag="线程"
-           data-author="" >
-            <span class="post-title" title="thread">thread</span>
-            <span class="post-date" title="2021-04-20 17:02:24">2021/04/20</span>
         </a>
         
         <a  class="C语言 "
@@ -714,11 +649,43 @@
         </a>
         
         <a  class="Nginx "
-           href="/2021/05/04/ngx_thread_pool/"
-           data-tag="thread_pool"
+           href="/2021/03/22/ngx_list/"
+           data-tag="list"
            data-author="" >
-            <span class="post-title" title="nginx线程池">nginx线程池</span>
-            <span class="post-date" title="2021-05-04 00:43:27">2021/05/04</span>
+            <span class="post-title" title="nginx单向链表">nginx单向链表</span>
+            <span class="post-date" title="2021-03-22 11:15:43">2021/03/22</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/18/ngx_buf/"
+           data-tag="缓冲区"
+           data-author="" >
+            <span class="post-title" title="nginx缓冲区">nginx缓冲区</span>
+            <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/04/25/c++inheritance/"
+           data-tag="c++"
+           data-author="" >
+            <span class="post-title" title="c++继承">c++继承</span>
+            <span class="post-date" title="2021-04-25 22:55:23">2021/04/25</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/04/12/signal/"
+           data-tag="信号"
+           data-author="" >
+            <span class="post-title" title="信号">信号</span>
+            <span class="post-date" title="2021-04-12 19:57:55">2021/04/12</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/21/ngx_queue/"
+           data-tag="queue"
+           data-author="" >
+            <span class="post-title" title="nginx双向链表">nginx双向链表</span>
+            <span class="post-date" title="2021-03-21 19:02:44">2021/03/21</span>
         </a>
         
         <a  class="C语言 "
@@ -727,6 +694,38 @@
            data-author="" >
             <span class="post-title" title="socket">socket</span>
             <span class="post-date" title="2021-05-12 13:44:40">2021/05/12</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/03/20/virtual_memory/"
+           data-tag="内存"
+           data-author="" >
+            <span class="post-title" title="虚拟内存">虚拟内存</span>
+            <span class="post-date" title="2021-03-20 11:51:57">2021/03/20</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/23/ngx_hash/"
+           data-tag="hashtable"
+           data-author="" >
+            <span class="post-title" title="nginx散列表">nginx散列表</span>
+            <span class="post-date" title="2021-03-23 18:21:27">2021/03/23</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/05/04/ngx_thread_pool/"
+           data-tag="thread_pool"
+           data-author="" >
+            <span class="post-title" title="nginx线程池">nginx线程池</span>
+            <span class="post-date" title="2021-05-04 00:43:27">2021/05/04</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/04/20/thread/"
+           data-tag="线程"
+           data-author="" >
+            <span class="post-title" title="thread">thread</span>
+            <span class="post-date" title="2021-04-20 17:02:24">2021/04/20</span>
         </a>
         
     </nav>
@@ -770,7 +769,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:4.1k</span>
+        <span>字数:3.5k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -865,32 +864,32 @@
 <li>当前工作目录</li>
 <li>用户id和组id</li>
 </ul>
-<h5 id="互斥锁"><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h5><h6 id="牛刀小试"><a href="#牛刀小试" class="headerlink" title="牛刀小试"></a>牛刀小试</h6><pre><code class="c">#include &lt;pthread.h&gt;
-#include &lt;stdio.h&gt;
-#include &lt;unistd.h&gt;
+<h5 id="互斥锁"><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h5><h6 id="牛刀小试"><a href="#牛刀小试" class="headerlink" title="牛刀小试"></a>牛刀小试</h6><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;pthread.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 
-void *thread_run(void *arg)
-{
-    while(1)
-    {
-        printf(&quot;I am %s\n&quot;, (char*)arg);
-        sleep(1);
-    }
-}
+<span class="token keyword">void</span> <span class="token operator">*</span><span class="token function">thread_run</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span>arg<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"I am %s\n"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token punctuation">)</span>arg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-int main()
-{
-    pthread_t tid;
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    pthread_t tid<span class="token punctuation">;</span>
 
-    int ret = pthread_create(&amp;tid, NULL, thread_run, (void*)&quot;thread 1&quot;); // 创建线程，成功返回0，失败返回相对应的错误码。
+    <span class="token keyword">int</span> ret <span class="token operator">=</span> <span class="token function">pthread_create</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tid<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> thread_run<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token string">"thread 1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 创建线程，成功返回0，失败返回相对应的错误码。</span>
 
-    while(1)
-    {
-        printf(&quot;I am thread!\n&quot;);
-        sleep(2);
-    }
-}</code></pre>
-<pre><code class="shell">☁  ~  ps aux |grep test
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"I am thread!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-shell"><code class="language-shell">☁  ~  ps aux |grep test
 root     27491  0.0  0.0  14568   380 pts/0    Sl+  21:41   0:00 ./test
 ☁  ~  ps -al
 F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
@@ -903,161 +902,161 @@ F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
 27543 27543 pts/1    00:00:00 ps
 
 # LWP ———— 轻量级进程</code></pre>
-<h6 id="线程退出"><a href="#线程退出" class="headerlink" title="线程退出"></a>线程退出</h6><pre><code class="c">#include &lt;stdio.h&gt;
-#include &lt;pthread.h&gt;
-#include &lt;unistd.h&gt;
+<h6 id="线程退出"><a href="#线程退出" class="headerlink" title="线程退出"></a>线程退出</h6><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;pthread.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 
-void* thread_run(void* arg)
-{
-    while(1)
-    {
-        printf(&quot;thread 1: %lu, pid: %d\n&quot;,pthread_self(), getpid());
-        sleep(1);
-    }
+<span class="token keyword">void</span><span class="token operator">*</span> <span class="token function">thread_run</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token operator">*</span> arg<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"thread 1: %lu, pid: %d\n"</span><span class="token punctuation">,</span><span class="token function">pthread_self</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">getpid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-//    pthread_exit((void*)99); // 终止线程
-//    return (void*)10;
-}
+<span class="token comment" spellcheck="true">//    pthread_exit((void*)99); // 终止线程</span>
+<span class="token comment" spellcheck="true">//    return (void*)10;</span>
+<span class="token punctuation">}</span>
 
-int main()
-{
-    pthread_t tid;
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    pthread_t tid<span class="token punctuation">;</span>
 
-    int i;
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
 
-    pthread_create(&amp;tid, NULL, thread_run, &quot;thread 1&quot;);
+    <span class="token function">pthread_create</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tid<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> thread_run<span class="token punctuation">,</span> <span class="token string">"thread 1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    while(1)
-    {
-        printf(&quot;main thread: %lu, pid: %d\n&quot;,pthread_self(), getpid());
-        sleep(10);
-        break;
-    }
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"main thread: %lu, pid: %d\n"</span><span class="token punctuation">,</span><span class="token function">pthread_self</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">getpid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    pthread_cancel(tid); // 使线程退出
+    <span class="token function">pthread_cancel</span><span class="token punctuation">(</span>tid<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 使线程退出</span>
 
-    void* ret = NULL;
+    <span class="token keyword">void</span><span class="token operator">*</span> ret <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
 
-    pthread_join(tid, &amp;ret); // 获取线程的退出码
+    <span class="token function">pthread_join</span><span class="token punctuation">(</span>tid<span class="token punctuation">,</span> <span class="token operator">&amp;</span>ret<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 获取线程的退出码</span>
 
-    printf(&quot;thread return number: %d\n&quot;, (long long)ret);
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"thread return number: %d\n"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span>ret<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    return 0;
-}</code></pre>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <h6 id="线程分离"><a href="#线程分离" class="headerlink" title="线程分离"></a>线程分离</h6><blockquote>
 <ul>
 <li>默认情况下，新创建的进程是joinable的，线程退出后，需要对其进行pthread_join操作，否则无法释放资源，从而导致系统资源泄露。</li>
 <li>如果不关心线程的返回值，join是一种负担，这个时候可以告诉操作系统，当线程退出时，自动释放线程资源。</li>
 </ul>
 </blockquote>
-<pre><code class="c">#include &lt;stdio.h&gt;
-#include &lt;pthread.h&gt;
-#include &lt;unistd.h&gt;
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;pthread.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 
-void* thread_run(void* arg)
-{
-    pthread_detach(pthread_self());
+<span class="token keyword">void</span><span class="token operator">*</span> <span class="token function">thread_run</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token operator">*</span> arg<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">pthread_detach</span><span class="token punctuation">(</span><span class="token function">pthread_self</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    while(1)
-    {
-        printf(&quot;thread 1: %lu, pid: %d\n&quot;,pthread_self(), getpid());
-        sleep(1);
-        break;
-    }
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"thread 1: %lu, pid: %d\n"</span><span class="token punctuation">,</span><span class="token function">pthread_self</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">getpid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    return (void*)10;
-}
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-int main()
-{
-    pthread_t tid;
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    pthread_t tid<span class="token punctuation">;</span>
 
-    int i;
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
 
-    pthread_create(&amp;tid, NULL, thread_run, &quot;thread 1&quot;);
+    <span class="token function">pthread_create</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tid<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> thread_run<span class="token punctuation">,</span> <span class="token string">"thread 1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    while(1)
-    {
-        printf(&quot;main thread: %lu, pid: %d\n&quot;,pthread_self(), getpid());
-        sleep(1);
-        break;
-    }
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"main thread: %lu, pid: %d\n"</span><span class="token punctuation">,</span><span class="token function">pthread_self</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">getpid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    pthread_cancel(tid);
+    <span class="token function">pthread_cancel</span><span class="token punctuation">(</span>tid<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    void* ret = NULL;
+    <span class="token keyword">void</span><span class="token operator">*</span> ret <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
 
-    pthread_join(tid, &amp;ret);
+    <span class="token function">pthread_join</span><span class="token punctuation">(</span>tid<span class="token punctuation">,</span> <span class="token operator">&amp;</span>ret<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    printf(&quot;thread return number: %d\n&quot;, (long long)ret);
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"thread return number: %d\n"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span>ret<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    return 0;
-}
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-/*
+<span class="token comment" spellcheck="true">/*
   main thread: 140614304589568, pid: 9352
   thread 1: 140614296327936, pid: 9352
   thread return number: 0
-*/</code></pre>
-<h6 id="多线程抢票"><a href="#多线程抢票" class="headerlink" title="多线程抢票"></a>多线程抢票</h6><pre><code class="c">#include &lt;stdio.h&gt;
-#include &lt;pthread.h&gt;
-#include &lt;unistd.h&gt;
+*/</span></code></pre>
+<h6 id="多线程抢票"><a href="#多线程抢票" class="headerlink" title="多线程抢票"></a>多线程抢票</h6><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;pthread.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 
-#define N 10
-int tickets = 10000;
+<span class="token macro property">#<span class="token directive keyword">define</span> N 10</span>
+<span class="token keyword">int</span> tickets <span class="token operator">=</span> <span class="token number">10000</span><span class="token punctuation">;</span>
 
-pthread_mutex_t lock;
+pthread_mutex_t lock<span class="token punctuation">;</span>
 
-void* get(void* arg)
-{
-    usleep(1000);
+<span class="token keyword">void</span><span class="token operator">*</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token operator">*</span> arg<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">usleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    int num = (int)arg;
+    <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>arg<span class="token punctuation">;</span>
 
-    while(1)
-    {
-        usleep(100);
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">usleep</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        pthread_mutex_lock(&amp;lock);
+        <span class="token function">pthread_mutex_lock</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>lock<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        if(tickets &gt; 0)
-        {
-            printf(&quot;thread %d get ticket: %d\n&quot;, num, tickets);
+        <span class="token keyword">if</span><span class="token punctuation">(</span>tickets <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"thread %d get ticket: %d\n"</span><span class="token punctuation">,</span> num<span class="token punctuation">,</span> tickets<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-            tickets--;
+            tickets<span class="token operator">--</span><span class="token punctuation">;</span>
 
-            pthread_mutex_unlock(&amp;lock);
-        }
-        else
-        {
-            pthread_mutex_unlock(&amp;lock);
-            break;
-        }
-    }
-}
+            <span class="token function">pthread_mutex_unlock</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>lock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">pthread_mutex_unlock</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>lock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-int main()
-{
-    pthread_mutex_init(&amp;lock, NULL);
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">pthread_mutex_init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>lock<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    int i;
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
 
-    pthread_t arr[N];
+    pthread_t arr<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-    for(i = 0; i &lt; N; i++)
-    {
-        pthread_create(arr+i, NULL, get, (void*)i);
-    }
+    <span class="token keyword">for</span><span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">pthread_create</span><span class="token punctuation">(</span>arr<span class="token operator">+</span>i<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> get<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token operator">*</span><span class="token punctuation">)</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    for(i = 0; i &lt; N; i++)
-    {
-        pthread_join(arr[i], NULL);
-    }
+    <span class="token keyword">for</span><span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">pthread_join</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    pthread_mutex_destroy(&amp;lock);
+    <span class="token function">pthread_mutex_destroy</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>lock<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    return 0;
-}</code></pre>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <h6 id="锁的本质"><a href="#锁的本质" class="headerlink" title="锁的本质"></a>锁的本质</h6><ol>
 <li><p>对临界区进行保护，所有执行的线程都必须遵守这个规则。</p>
 </li>
@@ -1068,15 +1067,15 @@ int main()
 <li><p>lock -&gt; 访问临界区(花时间) -&gt; unlock，在特定线程/进程拥有锁的时候，期间有新线程/进程过来申请锁，一定申请不到！新线程该如何？阻塞，本质：将进程/线程对应的pcb投入到操作系统的进程等待队列，unlock之后进行进程/线程的唤醒操作！</p>
 </li>
 <li><p>如何理解锁</p>
-<pre><code class="c">struct mutex
-{
-    int lock; // 0/1
-    wait_queue *head;
-    ...
-}</code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span> mutex
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> lock<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 0/1</span>
+    wait_queue <span class="token operator">*</span>head<span class="token punctuation">;</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>对锁的相关操作</p>
-<pre><code class="c">pthread_mutex_init：初始化锁
+<pre class=" language-c"><code class="language-c">pthread_mutex_init：初始化锁
 pthread_mutex_destroy：释放锁，锁也是资源
 pthread_mutex_unlock：上锁
 pthread_mutex_unlock：解锁</code></pre>
@@ -1121,121 +1120,121 @@ pthread_mutex_unlock：解锁</code></pre>
 <li>如果条件不满足，等待，释放锁</li>
 <li>通知机制</li>
 </ol>
-<h6 id="相关函数"><a href="#相关函数" class="headerlink" title="相关函数"></a>相关函数</h6><pre><code class="c">// 初始化条件变量
-int pthread_cond_init(pthread_cond_t *restrict cond, const pthread_condattr_t *restrict attr);
+<h6 id="相关函数"><a href="#相关函数" class="headerlink" title="相关函数"></a>相关函数</h6><pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">// 初始化条件变量</span>
+<span class="token keyword">int</span> <span class="token function">pthread_cond_init</span><span class="token punctuation">(</span>pthread_cond_t <span class="token operator">*</span>restrict cond<span class="token punctuation">,</span> <span class="token keyword">const</span> pthread_condattr_t <span class="token operator">*</span>restrict attr<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 销毁条件变量
-int pthread_cond_destroy(pthread_cond_t *cond);
+<span class="token comment" spellcheck="true">// 销毁条件变量</span>
+<span class="token keyword">int</span> <span class="token function">pthread_cond_destroy</span><span class="token punctuation">(</span>pthread_cond_t <span class="token operator">*</span>cond<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 等待条件满足
-int pthread_cond_wait(pthread_cond_t *restrict cond, pthread_mutex_t *restrict mutex);
+<span class="token comment" spellcheck="true">// 等待条件满足</span>
+<span class="token keyword">int</span> <span class="token function">pthread_cond_wait</span><span class="token punctuation">(</span>pthread_cond_t <span class="token operator">*</span>restrict cond<span class="token punctuation">,</span> pthread_mutex_t <span class="token operator">*</span>restrict mutex<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 通知cond条件下wait的线程
-int pthread_cond_signal(pthread_cond_t *cond);</code></pre>
-<h6 id="牛刀小试-1"><a href="#牛刀小试-1" class="headerlink" title="牛刀小试"></a>牛刀小试</h6><pre><code class="c">#include &lt;pthread.h&gt;
-#include &lt;unistd.h&gt;
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
+<span class="token comment" spellcheck="true">// 通知cond条件下wait的线程</span>
+<span class="token keyword">int</span> <span class="token function">pthread_cond_signal</span><span class="token punctuation">(</span>pthread_cond_t <span class="token operator">*</span>cond<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h6 id="牛刀小试-1"><a href="#牛刀小试-1" class="headerlink" title="牛刀小试"></a>牛刀小试</h6><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;pthread.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
 
-pthread_cond_t cond;
-pthread_mutex_t lock;
+pthread_cond_t cond<span class="token punctuation">;</span>
+pthread_mutex_t lock<span class="token punctuation">;</span>
 
-void* thread_run1(void* arg)
-{
-    const char* name = (char*)arg;
-    while(1)
-    {
-        pthread_cond_wait(&amp;cond, &amp;lock); // 程序执行到这里，使当前线程加入cond结构下的某个成员里，猜测是个数组或者链表
-        printf(&quot;%s, activing....\n&quot;,name);
-        printf(&quot;\n&quot;);
-    }
-}
+<span class="token keyword">void</span><span class="token operator">*</span> <span class="token function">thread_run1</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token operator">*</span> arg<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> name <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token punctuation">)</span>arg<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">pthread_cond_wait</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>cond<span class="token punctuation">,</span> <span class="token operator">&amp;</span>lock<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 程序执行到这里，使当前线程加入cond结构下的某个成员里，猜测是个数组或者链表</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s, activing....\n"</span><span class="token punctuation">,</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-void* thread_run2(void* arg)
-{
-    const char* name = (char*)arg;
-    while(1)
-    {
-        sleep(1);
-        pthread_cond_signal(&amp;cond); // 唤醒cond条件下等待的线程。（个人理解：从cond结构的某个成员里取出一个线程进行唤醒）
-        printf(&quot;%s, signal to thread1 done....\n&quot;,name);
-        printf(&quot;\n&quot;);
-    }
-}
+<span class="token keyword">void</span><span class="token operator">*</span> <span class="token function">thread_run2</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token operator">*</span> arg<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> name <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token punctuation">)</span>arg<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">pthread_cond_signal</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>cond<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 唤醒cond条件下等待的线程。（个人理解：从cond结构的某个成员里取出一个线程进行唤醒）</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s, signal to thread1 done....\n"</span><span class="token punctuation">,</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-int main()
-{
-    pthread_t t1,t2;
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    pthread_t t1<span class="token punctuation">,</span>t2<span class="token punctuation">;</span>
 
-    pthread_cond_init(&amp;cond, NULL);
+    <span class="token function">pthread_cond_init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>cond<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    pthread_mutex_init(&amp;lock, NULL);
+    <span class="token function">pthread_mutex_init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>lock<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    pthread_create(&amp;t1, NULL, thread_run1, (void *)&quot;thread 1&quot;);
+    <span class="token function">pthread_create</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>t1<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> thread_run1<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token string">"thread 1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    pthread_create(&amp;t2, NULL, thread_run2, (void *)&quot;thread 2&quot;);
+    <span class="token function">pthread_create</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>t2<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> thread_run2<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token string">"thread 2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    pthread_join(&amp;t1, NULL);
+    <span class="token function">pthread_join</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>t1<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    pthread_join(&amp;t2, NULL);
+    <span class="token function">pthread_join</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>t2<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    return 0;
-}</code></pre>
-<h6 id="基于阻塞队列的生产消费模型"><a href="#基于阻塞队列的生产消费模型" class="headerlink" title="基于阻塞队列的生产消费模型"></a>基于阻塞队列的生产消费模型</h6><pre><code class="c">#ifndef __BLOCK_QUEUE_H__
-#define __BLOCK_QUEUE_H__
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h6 id="基于阻塞队列的生产消费模型"><a href="#基于阻塞队列的生产消费模型" class="headerlink" title="基于阻塞队列的生产消费模型"></a>基于阻塞队列的生产消费模型</h6><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">ifndef</span> __BLOCK_QUEUE_H__</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __BLOCK_QUEUE_H__</span>
 
-#include &lt;queue&gt;
-#include &lt;iostream&gt;
-#include &lt;pthread.h&gt;
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;queue></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;pthread.h></span></span>
 
-template&lt;class T&gt;
+template<span class="token operator">&lt;</span>class T<span class="token operator">></span>
 class BlockQueue
-{
-public:
-    BlockQueue(size_t cap = 5): _cap(cap)
-    {
-        pthread_mutex_init(&amp;lock, nullptr);
-        pthread_cond_init(&amp;c_cond, nullptr);
-        pthread_cond_init(&amp;p_cond, nullptr);
-    }
+<span class="token punctuation">{</span>
+public<span class="token punctuation">:</span>
+    <span class="token function">BlockQueue</span><span class="token punctuation">(</span>size_t cap <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token function">_cap</span><span class="token punctuation">(</span>cap<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">pthread_mutex_init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>lock<span class="token punctuation">,</span> nullptr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">pthread_cond_init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>c_cond<span class="token punctuation">,</span> nullptr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">pthread_cond_init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>p_cond<span class="token punctuation">,</span> nullptr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    ~BlockQueue()
-    {
-        pthread_mutex_destroy(&amp;lock);
-        pthread_cond_destroy(&amp;c_cond);
-        pthread_cond_destroy(&amp;p_cond);
-    }
+    <span class="token operator">~</span><span class="token function">BlockQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">pthread_mutex_destroy</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>lock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">pthread_cond_destroy</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>c_cond<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">pthread_cond_destroy</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>p_cond<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    void Put(T &amp;data)
-    {
-        LockQueue();
-        while(Full())
-        {
-            WakeUpCon();
-            ProWait();
-        }
-        q.push(data);
-        unLockQueue();
-    }
+    <span class="token keyword">void</span> <span class="token function">Put</span><span class="token punctuation">(</span>T <span class="token operator">&amp;</span>data<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">LockQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">Full</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">WakeUpCon</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">ProWait</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">unLockQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    void Get(T &amp;data)
-    {
-        LockQueue();
-        while(Empty())
-        {
-            WakeUpPro(); // 先唤醒生产者
-            ConWait(); // 再休眠消费者
-        }
-        data = q.front();
-        q.pop();
-        unLockQueue();
-    }
+    <span class="token keyword">void</span> <span class="token function">Get</span><span class="token punctuation">(</span>T <span class="token operator">&amp;</span>data<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">LockQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">Empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">WakeUpPro</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 先唤醒生产者</span>
+            <span class="token function">ConWait</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 再休眠消费者</span>
+        <span class="token punctuation">}</span>
+        data <span class="token operator">=</span> q<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        q<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">unLockQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-private:
-    void ProWait()
-    {
-        pthread_cond_wait(&amp;p_cond, &amp;lock);
-        /*
+private<span class="token punctuation">:</span>
+    <span class="token keyword">void</span> <span class="token function">ProWait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">pthread_cond_wait</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>p_cond<span class="token punctuation">,</span> <span class="token operator">&amp;</span>lock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">/*
          * 1、为什么要等？条件不满足
          * 2、怎么知道条件是否满足？要判断是否满足条件就必须进入临界区，需要持有锁进入
          * 3、如果条件不满足就需要阻塞等待，但是不能持有锁去等待！！！(锁被你拿着，其它线程无法获取锁就无法进入临界区，条件就无法发生改变，因此进入死锁状态)，因此wait时必须释放锁。
@@ -1243,255 +1242,255 @@ private:
          *
          * 1、在调用该函数时会自动释放锁。
          * 2、当该函数返回时，返回到了临界区内，所以该函数会让该线程重新持有该锁。
-         */
-    }
+         */</span>
+    <span class="token punctuation">}</span>
 
-    void ConWait()
-    {
-        pthread_cond_wait(&amp;c_cond, &amp;lock);
-    }
+    <span class="token keyword">void</span> <span class="token function">ConWait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">pthread_cond_wait</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>c_cond<span class="token punctuation">,</span> <span class="token operator">&amp;</span>lock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    void WakeUpPro()
-    {
-        pthread_cond_signal(&amp;p_cond);
-        std::cout &lt;&lt; &quot;signal productor&quot; &lt;&lt; std::endl;
-    }
+    <span class="token keyword">void</span> <span class="token function">WakeUpPro</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">pthread_cond_signal</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>p_cond<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        std<span class="token punctuation">:</span><span class="token punctuation">:</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"signal productor"</span> <span class="token operator">&lt;&lt;</span> std<span class="token punctuation">:</span><span class="token punctuation">:</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    void WakeUpCon()
-    {
-        pthread_cond_signal(&amp;c_cond);
-        std::cout &lt;&lt; &quot;signal consumer&quot; &lt;&lt; std::endl;
-    }
+    <span class="token keyword">void</span> <span class="token function">WakeUpCon</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">pthread_cond_signal</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>c_cond<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        std<span class="token punctuation">:</span><span class="token punctuation">:</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"signal consumer"</span> <span class="token operator">&lt;&lt;</span> std<span class="token punctuation">:</span><span class="token punctuation">:</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    bool Empty()
-    {
-        return q.empty();
-    }
+    bool <span class="token function">Empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> q<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    bool Full()
-    {
-        return q.size() == _cap;
-    }
+    bool <span class="token function">Full</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> q<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> _cap<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    void LockQueue()
-    {
-        pthread_mutex_lock(&amp;lock);
-    }
+    <span class="token keyword">void</span> <span class="token function">LockQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">pthread_mutex_lock</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>lock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    void unLockQueue()
-    {
-        pthread_mutex_unlock(&amp;lock);
-    }
-private:
-    pthread_mutex_t lock;
-    pthread_cond_t c_cond; // 消费者在该条件下等
-    pthread_cond_t p_cond; // 生产者在该条件下等
-    std::queue&lt;T&gt; q;
-    size_t _cap;
-};
+    <span class="token keyword">void</span> <span class="token function">unLockQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">pthread_mutex_unlock</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>lock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+private<span class="token punctuation">:</span>
+    pthread_mutex_t lock<span class="token punctuation">;</span>
+    pthread_cond_t c_cond<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 消费者在该条件下等</span>
+    pthread_cond_t p_cond<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 生产者在该条件下等</span>
+    std<span class="token punctuation">:</span><span class="token punctuation">:</span>queue<span class="token operator">&lt;</span>T<span class="token operator">></span> q<span class="token punctuation">;</span>
+    size_t _cap<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 
-#endif</code></pre>
-<pre><code class="c">#include &lt;iostream&gt;
-#include &lt;unistd.h&gt;
-#include &lt;pthread.h&gt;
-#include &quot;BlockQueue.hpp&quot;
-#include &lt;stdlib.h&gt;
-using namespace std;
+<span class="token macro property">#<span class="token directive keyword">endif</span></span></code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;pthread.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"BlockQueue.hpp"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+using namespace std<span class="token punctuation">;</span>
 
-void* Pro_run(void *arg)
-{
-    BlockQueue&lt;int&gt; *q = (BlockQueue&lt;int&gt;*)arg;
-    while(true)
-    {
-        int data = rand()%110;
-        q-&gt;Put(data);
-        cout &lt;&lt; &quot;Pro put: &quot; &lt;&lt; data &lt;&lt; endl;
-        sleep(1);
-    }
-}
+<span class="token keyword">void</span><span class="token operator">*</span> <span class="token function">Pro_run</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span>arg<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    BlockQueue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">*</span>q <span class="token operator">=</span> <span class="token punctuation">(</span>BlockQueue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">*</span><span class="token punctuation">)</span>arg<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>true<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> data <span class="token operator">=</span> <span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">%</span><span class="token number">110</span><span class="token punctuation">;</span>
+        q<span class="token operator">-></span><span class="token function">Put</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Pro put: "</span> <span class="token operator">&lt;&lt;</span> data <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+        <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-void* Con_run(void *arg)
-{
-    BlockQueue&lt;int&gt; *q = (BlockQueue&lt;int&gt;*)arg;
-    while(true)
-    {
-        int data = 0;
-        q-&gt;Get(data);
-        cout &lt;&lt; &quot;Con get: &quot; &lt;&lt; data &lt;&lt; endl;
-    }
-}
+<span class="token keyword">void</span><span class="token operator">*</span> <span class="token function">Con_run</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span>arg<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    BlockQueue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">*</span>q <span class="token operator">=</span> <span class="token punctuation">(</span>BlockQueue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">*</span><span class="token punctuation">)</span>arg<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>true<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> data <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        q<span class="token operator">-></span><span class="token function">Get</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Con get: "</span> <span class="token operator">&lt;&lt;</span> data <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-int main()
-{
-    pthread_t con,pro;
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    pthread_t con<span class="token punctuation">,</span>pro<span class="token punctuation">;</span>
 
-    BlockQueue&lt;int&gt; *bq = new BlockQueue&lt;int&gt;(10);
+    BlockQueue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">*</span>bq <span class="token operator">=</span> new BlockQueue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    pthread_create(&amp;pro, nullptr, Pro_run, (void*)bq);
+    <span class="token function">pthread_create</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>pro<span class="token punctuation">,</span> nullptr<span class="token punctuation">,</span> Pro_run<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token operator">*</span><span class="token punctuation">)</span>bq<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    pthread_create(&amp;con, nullptr, Con_run, (void*)bq);
+    <span class="token function">pthread_create</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>con<span class="token punctuation">,</span> nullptr<span class="token punctuation">,</span> Con_run<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token operator">*</span><span class="token punctuation">)</span>bq<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    pthread_join(con, nullptr);
-    pthread_join(pro, nullptr);
+    <span class="token function">pthread_join</span><span class="token punctuation">(</span>con<span class="token punctuation">,</span> nullptr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">pthread_join</span><span class="token punctuation">(</span>pro<span class="token punctuation">,</span> nullptr<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    delete bq;
+    delete bq<span class="token punctuation">;</span>
 
-    return 0;
-}</code></pre>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <h5 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h5><h6 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h6><p>信号量本质是一个计数器，描述临界资源有效个数的计数器。（保证每次访问的临界资源不是同一个）</p>
 <p>允许多个线程操作临界区内的多个资源。</p>
-<pre><code class="c">int count = 5;
-count--; // p() 原子性
-count++; // v() 原子性
+<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+count<span class="token operator">--</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// p() 原子性</span>
+count<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// v() 原子性</span>
 
-// 临界资源可以看成是多份的，不冲突的，提高效率</code></pre>
+<span class="token comment" spellcheck="true">// 临界资源可以看成是多份的，不冲突的，提高效率</span></code></pre>
 <h6 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h6><p>临界资源可以看成多份且不冲突的，信号量本质就是多份资源的计数器。</p>
-<pre><code class="c">struct sem
-{
-    int count;
-    mutex lock;
-    wait_queue *head;
-}
+<pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span> sem
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> count<span class="token punctuation">;</span>
+    mutex lock<span class="token punctuation">;</span>
+    wait_queue <span class="token operator">*</span>head<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-void P()
-{
-    lock();
+<span class="token keyword">void</span> <span class="token function">P</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    if(count &gt; 0)
-    {
-        count--;
-    }
-    else
-    {
-        wait();
-    }
+    <span class="token keyword">if</span><span class="token punctuation">(</span>count <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        count<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    unlock();
-}</code></pre>
-<h6 id="相关函数-1"><a href="#相关函数-1" class="headerlink" title="相关函数"></a>相关函数</h6><pre><code class="c">#include &lt;semaphore.h&gt;
+    <span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h6 id="相关函数-1"><a href="#相关函数-1" class="headerlink" title="相关函数"></a>相关函数</h6><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;semaphore.h></span></span>
 
-// 初始化信号量
-int sem_init(sem_t *sem, int pshared, unsigned int value); // pshared：0表示线程间共享，1表示进程间共享。value：信号量初始值
+<span class="token comment" spellcheck="true">// 初始化信号量</span>
+<span class="token keyword">int</span> <span class="token function">sem_init</span><span class="token punctuation">(</span>sem_t <span class="token operator">*</span>sem<span class="token punctuation">,</span> <span class="token keyword">int</span> pshared<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// pshared：0表示线程间共享，1表示进程间共享。value：信号量初始值</span>
 
-// 销毁信号量
-int sem_destroy(sem_t *sem);
+<span class="token comment" spellcheck="true">// 销毁信号量</span>
+<span class="token keyword">int</span> <span class="token function">sem_destroy</span><span class="token punctuation">(</span>sem_t <span class="token operator">*</span>sem<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 等待信号量，会将信号量的值减1，P()
-int sem_wait(sem_t *sem);
+<span class="token comment" spellcheck="true">// 等待信号量，会将信号量的值减1，P()</span>
+<span class="token keyword">int</span> <span class="token function">sem_wait</span><span class="token punctuation">(</span>sem_t <span class="token operator">*</span>sem<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 发布信号量，表示资源使用完毕，可以归还了。将信号量值加1，V()
-int sem_post(sem_t *sem)</code></pre>
+<span class="token comment" spellcheck="true">// 发布信号量，表示资源使用完毕，可以归还了。将信号量值加1，V()</span>
+<span class="token keyword">int</span> <span class="token function">sem_post</span><span class="token punctuation">(</span>sem_t <span class="token operator">*</span>sem<span class="token punctuation">)</span></code></pre>
 <h6 id="基于环形队列的生产消费者模型"><a href="#基于环形队列的生产消费者模型" class="headerlink" title="基于环形队列的生产消费者模型"></a>基于环形队列的生产消费者模型</h6><p><img src="https://img.3amupupup.online/circle_queue_by_semaphore.png" alt="环形队列"></p>
-<pre><code class="c">#include &lt;vector&gt;
-#include &lt;semaphore.h&gt;
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;semaphore.h></span></span>
 
-template&lt;class T&gt;
+template<span class="token operator">&lt;</span>class T<span class="token operator">></span>
 class RingQueue
-{
-public:
-    RingQueue(size_t cap = 10):_v(cap)
-    {
-        p_index = c_index = 0;
-        _max_cap = cap;
-        sem_init(&amp;sem_data, 0, 0);
-        sem_init(&amp;sem_blank, 0, _max_cap);
-    }
+<span class="token punctuation">{</span>
+public<span class="token punctuation">:</span>
+    <span class="token function">RingQueue</span><span class="token punctuation">(</span>size_t cap <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">_v</span><span class="token punctuation">(</span>cap<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        p_index <span class="token operator">=</span> c_index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        _max_cap <span class="token operator">=</span> cap<span class="token punctuation">;</span>
+        <span class="token function">sem_init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>sem_data<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">sem_init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>sem_blank<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> _max_cap<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    ~RingQueue()
-    {
-        sem_destroy(&amp;sem_data);
-        sem_destroy(&amp;sem_blank);
-        p_index = 0;
-        c_index = 0;
-    }
+    <span class="token operator">~</span><span class="token function">RingQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">sem_destroy</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>sem_data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">sem_destroy</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>sem_blank<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        p_index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        c_index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    void Get(T &amp;out)
-    {
-        P(sem_data); // 取数据时，要将数据对应的信号量减1
-        out = _v[c_index];
-        c_index++;
-        c_index %= _max_cap; // 数据减1时对应的装数据的格子增1
-        V(sem_blank);
-    }
+    <span class="token keyword">void</span> <span class="token function">Get</span><span class="token punctuation">(</span>T <span class="token operator">&amp;</span>out<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">P</span><span class="token punctuation">(</span>sem_data<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 取数据时，要将数据对应的信号量减1</span>
+        out <span class="token operator">=</span> _v<span class="token punctuation">[</span>c_index<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        c_index<span class="token operator">++</span><span class="token punctuation">;</span>
+        c_index <span class="token operator">%</span><span class="token operator">=</span> _max_cap<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 数据减1时对应的装数据的格子增1</span>
+        <span class="token function">V</span><span class="token punctuation">(</span>sem_blank<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    void Put(T &amp;in)
-    {
-        P(sem_blank);
-        _v[p_index] = in;
-        p_index++;
-        p_index %= _max_cap;
-        V(sem_data);
-    }
+    <span class="token keyword">void</span> <span class="token function">Put</span><span class="token punctuation">(</span>T <span class="token operator">&amp;</span>in<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">P</span><span class="token punctuation">(</span>sem_blank<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        _v<span class="token punctuation">[</span>p_index<span class="token punctuation">]</span> <span class="token operator">=</span> in<span class="token punctuation">;</span>
+        p_index<span class="token operator">++</span><span class="token punctuation">;</span>
+        p_index <span class="token operator">%</span><span class="token operator">=</span> _max_cap<span class="token punctuation">;</span>
+        <span class="token function">V</span><span class="token punctuation">(</span>sem_data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-private:
-    void P(sem_t &amp;s)
-    {
-        sem_wait(&amp;s);
-    }
+private<span class="token punctuation">:</span>
+    <span class="token keyword">void</span> <span class="token function">P</span><span class="token punctuation">(</span>sem_t <span class="token operator">&amp;</span>s<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">sem_wait</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    void V(sem_t &amp;s)
-    {
-        sem_post(&amp;s);
-    }
-private:
-    std::vector&lt;T&gt; _v;
-    size_t _max_cap;
-    sem_t sem_data;
-    sem_t sem_blank;
-    size_t p_index;
-    size_t c_index;
-};</code></pre>
-<pre><code class="c">#include &quot;RingQueue.hpp&quot;
-#include &lt;iostream&gt;
-#include &lt;pthread.h&gt;
-#include &lt;unistd.h&gt;
-using namespace std;
+    <span class="token keyword">void</span> <span class="token function">V</span><span class="token punctuation">(</span>sem_t <span class="token operator">&amp;</span>s<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">sem_post</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+private<span class="token punctuation">:</span>
+    std<span class="token punctuation">:</span><span class="token punctuation">:</span>vector<span class="token operator">&lt;</span>T<span class="token operator">></span> _v<span class="token punctuation">;</span>
+    size_t _max_cap<span class="token punctuation">;</span>
+    sem_t sem_data<span class="token punctuation">;</span>
+    sem_t sem_blank<span class="token punctuation">;</span>
+    size_t p_index<span class="token punctuation">;</span>
+    size_t c_index<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"RingQueue.hpp"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;pthread.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+using namespace std<span class="token punctuation">;</span>
 
-void* Productor(void *arg)
-{
-    RingQueue&lt;int&gt; *q = (RingQueue&lt;int&gt;*)arg;
-    while(true)
-    {
-        int data = rand() % 100;
-        q-&gt;Put(data);
-        cout &lt;&lt; &quot;Productor Put data: &quot; &lt;&lt; data &lt;&lt; endl;
-    }
-}
+<span class="token keyword">void</span><span class="token operator">*</span> <span class="token function">Productor</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span>arg<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    RingQueue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">*</span>q <span class="token operator">=</span> <span class="token punctuation">(</span>RingQueue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">*</span><span class="token punctuation">)</span>arg<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>true<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> data <span class="token operator">=</span> <span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">100</span><span class="token punctuation">;</span>
+        q<span class="token operator">-></span><span class="token function">Put</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Productor Put data: "</span> <span class="token operator">&lt;&lt;</span> data <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-void* Consumer(void *arg)
-{
-    RingQueue&lt;int&gt; *q = (RingQueue&lt;int&gt;*)arg;
-    while(true)
-    {
-        int data;
-        q-&gt;Get(data);
-        cout &lt;&lt; &quot;Consumer Get data: &quot; &lt;&lt; data &lt;&lt; endl;
-        sleep(1);
-    }
-}
+<span class="token keyword">void</span><span class="token operator">*</span> <span class="token function">Consumer</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span>arg<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    RingQueue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">*</span>q <span class="token operator">=</span> <span class="token punctuation">(</span>RingQueue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">*</span><span class="token punctuation">)</span>arg<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>true<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> data<span class="token punctuation">;</span>
+        q<span class="token operator">-></span><span class="token function">Get</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Consumer Get data: "</span> <span class="token operator">&lt;&lt;</span> data <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+        <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-int main()
-{
-    RingQueue&lt;int&gt; *rq = new RingQueue&lt;int&gt;;
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    RingQueue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">*</span>rq <span class="token operator">=</span> new RingQueue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">;</span>
 
-    pthread_t pro, con;
+    pthread_t pro<span class="token punctuation">,</span> con<span class="token punctuation">;</span>
 
-    pthread_create(&amp;pro, nullptr, Productor, (void*)rq);
+    <span class="token function">pthread_create</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>pro<span class="token punctuation">,</span> nullptr<span class="token punctuation">,</span> Productor<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token operator">*</span><span class="token punctuation">)</span>rq<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    pthread_create(&amp;con, nullptr, Consumer, (void*)rq);
+    <span class="token function">pthread_create</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>con<span class="token punctuation">,</span> nullptr<span class="token punctuation">,</span> Consumer<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token operator">*</span><span class="token punctuation">)</span>rq<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    pthread_join(pro, nullptr);
+    <span class="token function">pthread_join</span><span class="token punctuation">(</span>pro<span class="token punctuation">,</span> nullptr<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    pthread_join(con, nullptr);
+    <span class="token function">pthread_join</span><span class="token punctuation">(</span>con<span class="token punctuation">,</span> nullptr<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    return 0;
-}</code></pre>
-<h5 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h5><h6 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h6><pre><code class="c++">#include &lt;iostream&gt;
-#include &lt;queue&gt;
-#include &lt;pthread.h&gt;
-#include &lt;cmath&gt;
-#include &lt;unistd.h&gt;
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h5 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h5><h6 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h6><pre class=" language-c++"><code class="language-c++">#include <iostream>
+#include <queue>
+#include <pthread.h>
+#include <cmath>
+#include <unistd.h>
 
 class Task
 {
@@ -1502,7 +1501,7 @@ public:
     Task(int num): base(num){}
     void Run()
     {
-        std::cout &lt;&lt; &quot;thread id[&quot; &lt;&lt; pthread_self() &lt;&lt;&quot;]&quot; &lt;&lt; &quot;thread run done...... : base# &quot; &lt;&lt; base &lt;&lt; &quot; pow is # &quot; &lt;&lt; pow(base, 2)  &lt;&lt; std::endl;
+        std::cout << "thread id[" << pthread_self() <<"]" << "thread run done...... : base# " << base << " pow is # " << pow(base, 2)  << std::endl;
         usleep(100);
     }
 
@@ -1513,27 +1512,27 @@ class ThreadPool
 private:
     pthread_mutex_t lock;
     pthread_cond_t cond; // 只能让消费者等，如果作为服务器时，生产者等待那么就无法接收外部请求了
-    std::queue&lt;Task&gt; q;
+    std::queue<Task> q;
     size_t max_num;
 public:
     void LockQueue()
     {
-        pthread_mutex_lock(&amp;lock);
+        pthread_mutex_lock(&lock);
     }
 
     void UnLockQueue()
     {
-        pthread_mutex_unlock(&amp;lock);
+        pthread_mutex_unlock(&lock);
     }
 
     void ThreadWait()
     {
-        pthread_cond_wait(&amp;cond, &amp;lock);
+        pthread_cond_wait(&cond, &lock);
     }
 
     void WakeUpThread()
     {
-        pthread_cond_signal(&amp;cond);
+        pthread_cond_signal(&cond);
     }
 
     bool IsEmpty()
@@ -1542,14 +1541,14 @@ public:
     }
 
     // threadpool
-    void Get(Task &amp;out)
+    void Get(Task &out)
     {
         out = q.front();
         q.pop();
     }
 
     // server
-    void Put(Task &amp;in)
+    void Put(Task &in)
     {
         LockQueue();
         q.push(in);
@@ -1566,27 +1565,27 @@ public:
         ThreadPool *this_p = (ThreadPool*)arg;
         while(true) // 这里是死循环，保证线程不会退出，一直从队列中取任务，队列空时又进入cond的休眠队列，等待被唤醒
         {
-            this_p-&gt;LockQueue();
-            while(this_p-&gt;IsEmpty())
+            this_p->LockQueue();
+            while(this_p->IsEmpty())
             {
-                this_p-&gt;ThreadWait();
+                this_p->ThreadWait();
             }
 
             Task t;
-            this_p-&gt;Get(t);
-            this_p-&gt;UnLockQueue();
+            this_p->Get(t);
+            this_p->UnLockQueue();
             t.Run();
         }
     }
 
     void ThreadPoolInit()
     {
-        pthread_cond_init(&amp;cond, nullptr);
-        pthread_mutex_init(&amp;lock, nullptr);
+        pthread_cond_init(&cond, nullptr);
+        pthread_mutex_init(&lock, nullptr);
         pthread_t t;
-        for(size_t i = 0; i &lt; max_num; i++)
+        for(size_t i = 0; i < max_num; i++)
         {
-            pthread_create(&amp;t, nullptr, Routine, this);
+            pthread_create(&t, nullptr, Routine, this);
       /*
           在初始化阶段，初始化线程，线程开始运行之后发现task队列为空，则会在cond条件变量下进行休眠。
           关于条件变量cond：这个结构中可能维护着一个队列，一旦线程调用pthread_cond_wait，那么这个线程就会
@@ -1597,8 +1596,8 @@ public:
 
     ~ThreadPool()
     {
-        pthread_cond_destroy(&amp;cond);
-        pthread_mutex_destroy(&amp;lock);
+        pthread_cond_destroy(&cond);
+        pthread_mutex_destroy(&lock);
     }
 };</code></pre>
 <p>线程池存在的价值：</p>
@@ -1621,7 +1620,7 @@ public:
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>thread</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">4.1k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">3.5k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-04-20, 17:02:24</p>
     <p><span class="copy-title">最后更新:</span>2021-05-20, 11:12:26</p>
@@ -1669,7 +1668,7 @@ public:
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#内存','#queue','#list','#hashtable','#缓冲区','#信号','#c++','#线程','#thread_pool','#net',],
+            'data': ['#Dockerfile','#Nginx','#sql_base','#ecs','#zabbix','#Jenkinsfile','#linux性能优化实战笔记','#kubectl','#book','#c','#c primer plus','#cicd','#c语言基础','#jenkins','#mongodb','#数据结构','#sonar','#操作系统','#排序','#进程','#c++','#list','#缓冲区','#信号','#queue','#net','#内存','#no','#hashtable','#thread_pool','#线程','#array','#mem_pool',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

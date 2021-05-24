@@ -6,17 +6,16 @@
   <meta name="keywords" content=" mem_pool ">
   <meta name="description" content="nginx内存池 | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="网络字节序内存分为大端存储和小端存储，网络数据同样有大小端之分。  发送主机通常将发送缓冲区中的数据按照内存地址从低到高的顺序发出。 接收主机把从网络上收到的字节依次保存在接收缓冲区中，也是按照内存从低到高的顺序保存。 因此，网络数据流的地址应该规定：先发出的数据是低地址，后发出的数据是高地址。 TCP&#x2F;IP协议规定，网络数据流应采用大端字节序，即低地址高字节。 不管是大端机还是小端机，都会按照T">
-<meta property="og:type" content="article">
-<meta property="og:title" content="socket">
-<meta property="og:url" content="https://duwei19961021.github.io/2021/05/12/socket/index.html">
+<meta name="description" content="gitlabBranch gitlabSourceBranch gitlabActionType gitlabUserName gitlabUserUsername gitlabUserEmail gitlabSourceRepoHomepage gitlabSourceRepoName gitlabSourceNamespace gitlabSourceRepoURL gitlabSourceR">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BLOG">
+<meta property="og:url" content="https://duwei19961021.github.io/file/sonar.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="网络字节序内存分为大端存储和小端存储，网络数据同样有大小端之分。  发送主机通常将发送缓冲区中的数据按照内存地址从低到高的顺序发出。 接收主机把从网络上收到的字节依次保存在接收缓冲区中，也是按照内存从低到高的顺序保存。 因此，网络数据流的地址应该规定：先发出的数据是低地址，后发出的数据是高地址。 TCP&#x2F;IP协议规定，网络数据流应采用大端字节序，即低地址高字节。 不管是大端机还是小端机，都会按照T">
+<meta property="og:description" content="gitlabBranch gitlabSourceBranch gitlabActionType gitlabUserName gitlabUserUsername gitlabUserEmail gitlabSourceRepoHomepage gitlabSourceRepoName gitlabSourceNamespace gitlabSourceRepoURL gitlabSourceR">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-12T05:44:40.000Z">
-<meta property="article:modified_time" content="2021-05-20T05:56:40.085Z">
+<meta property="article:published_time" content="2021-05-23T01:21:25.624Z">
+<meta property="article:modified_time" content="2021-03-18T03:09:52.073Z">
 <meta property="article:author" content="拦云">
-<meta property="article:tag" content="net">
 <meta name="twitter:card" content="summary">
 
 
@@ -44,7 +43,7 @@
 <script src="/js/iconfont.js?v=1.0.1" ></script>
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="BLOG" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 <div style="display: none">
   <input class="theme_disqus_on" value="false">
   <input class="theme_preload_comment" value="true">
@@ -69,31 +68,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(53)</small></div></li>
-    
-        
-            
-            <li><div data-rel="C语言">C语言<small>(17)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="运维">运维<small>(10)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="k8s">k8s<small>(2)</small></div>
-                
-            </li>
-            
-        
+    <li><div class="all active">全部文章<small>(52)</small></div></li>
     
         
             
@@ -121,6 +96,30 @@
     
         
             
+            <li><div data-rel="运维">运维<small>(11)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="k8s">k8s<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="C语言">C语言<small>(18)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
             <li><div data-rel="操作系统">操作系统<small>(4)</small></div>
                 
             </li>
@@ -137,8 +136,8 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="53">
-<input type="hidden" id="yelog_site_word_count" value="82k">
+<input type="hidden" id="yelog_site_posts_number" value="52">
+<input type="hidden" id="yelog_site_word_count" value="77.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -172,15 +171,7 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a class="color2">c</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">ecs</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color2">Jenkinsfile</a>
+        <a class="color1">Dockerfile</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -188,23 +179,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">sonar</a>
+        <a class="color4">sql_base</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">kubectl</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">jenkins</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">linux性能优化实战笔记</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">mongodb</a>
+        <a class="color4">ecs</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -212,15 +191,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">cicd</a>
+        <a class="color2">Jenkinsfile</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">数据结构</a>
+        <a class="color4">linux性能优化实战笔记</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">c语言基础</a>
+        <a class="color3">kubectl</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -228,7 +207,39 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">Dockerfile</a>
+        <a class="color2">c</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">c primer plus</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">cicd</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">c语言基础</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">jenkins</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">mongodb</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">数据结构</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">sonar</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">操作系统</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -240,35 +251,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">c primer plus</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">sql_base</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color1">array</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">mem_pool</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">内存</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color1">queue</a>
+        <a class="color4">c++</a>
     </li>
     
     <li class="article-tag-list-item">
         <a class="color5">list</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color5">hashtable</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -280,11 +267,23 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">c++</a>
+        <a class="color1">queue</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">线程</a>
+        <a class="color4">net</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">内存</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">no</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">hashtable</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -292,7 +291,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">net</a>
+        <a class="color3">线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">array</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">mem_pool</a>
     </li>
     
     <div class="clearfix"></div>
@@ -305,6 +312,30 @@
     
     <nav id="title-list-nav">
         
+        <a  class="运维 "
+           href="/2021/03/16/Nginx%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96header/"
+           data-tag="Nginx"
+           data-author="" >
+            <span class="post-title" title="Nginx日志获取header">Nginx日志获取header</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/16/make/"
+           data-tag="c"
+           data-author="" >
+            <span class="post-title" title="make">make</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/c++%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="c++构造函数">c++构造函数</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
         <a  class="C语言 "
            href="/2021/04/13/CppPrimer/"
            data-tag="book"
@@ -314,75 +345,67 @@
         </a>
         
         <a  class=""
-           href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0linux%E5%91%BD%E4%BB%A4/"
+           href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0linux%E5%91%BD%E4%BB%A4/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="C语言实现linux命令">C语言实现linux命令</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E9%A2%84%E5%A4%84%E7%90%86/"
+           href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E9%A2%84%E5%A4%84%E7%90%86/"
            data-tag="c"
            data-author="" >
             <span class="post-title" title="C语言预处理">C语言预处理</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/ECS%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9/"
+           href="/2021/03/16/ECS%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9/"
            data-tag="ecs"
            data-author="" >
             <span class="post-title" title="ECS磁盘扩容">ECS磁盘扩容</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/Jenkinsfile/"
+           href="/2021/03/16/Jenkinsfile/"
            data-tag="Jenkinsfile"
            data-author="" >
             <span class="post-title" title="Jenkinsfile">Jenkinsfile</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/Nginx%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96header/"
-           data-tag="Nginx"
-           data-author="" >
-            <span class="post-title" title="Nginx日志获取header">Nginx日志获取header</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="运维 "
-           href="/2021/03/18/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/"
+           href="/2021/03/16/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/"
            data-tag="sonar"
            data-author="" >
             <span class="post-title" title="Jenkins结合sonar代码检测流水线">Jenkins结合sonar代码检测流水线</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/c++%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="c++构造函数">c++构造函数</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/Nginx/"
+           href="/2021/03/16/Nginx/"
            data-tag="Nginx"
            data-author="" >
             <span class="post-title" title="Nginx">Nginx</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class=""
-           href="/2021/03/18/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B7/"
+           href="/2021/03/16/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B7/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="c陷阱与缺陷">c陷阱与缺陷</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/16/jenkins%E7%BB%93%E5%90%88rsync%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81/"
+           data-tag="jenkins"
+           data-author="" >
+            <span class="post-title" title="jenkins结合rsync同步代码">jenkins结合rsync同步代码</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="k8s "
@@ -394,203 +417,155 @@
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/jenkins%E7%BB%93%E5%90%88rsync%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81/"
-           data-tag="jenkins"
-           data-author="" >
-            <span class="post-title" title="jenkins结合rsync同步代码">jenkins结合rsync同步代码</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="运维 "
-           href="/2021/03/18/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"
+           href="/2021/03/16/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"
            data-tag="linux性能优化实战笔记"
            data-author="" >
             <span class="post-title" title="linux性能优化实战笔记">linux性能优化实战笔记</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="C语言 "
-           href="/2021/03/18/make/"
-           data-tag="c"
-           data-author="" >
-            <span class="post-title" title="make">make</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/mongo/"
+           href="/2021/03/16/mongo/"
            data-tag="mongodb"
            data-author="" >
             <span class="post-title" title="mongo">mongo</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="Nginx "
-           href="/2021/03/17/ngx_array/"
-           data-tag="array"
-           data-author="" >
-            <span class="post-title" title="nginx数组">nginx数组</span>
-            <span class="post-date" title="2021-03-17 11:26:01">2021/03/17</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/sonar/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="sonar">sonar</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/sql/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="sql">sql</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/zabbix_dingdingAlert/"
+           href="/2021/03/16/zabbix_dingdingAlert/"
            data-tag="zabbix"
            data-author="" >
             <span class="post-title" title="zabbix_dingdingAlert">zabbix_dingdingAlert</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="k8s "
-           href="/2021/03/18/%E4%B8%80%E6%AC%A1%E6%B5%B7%E5%A4%96k8s%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5/"
-           data-tag="cicd"
-           data-author="" >
-            <span class="post-title" title="一次海外k8s集群代码发布实践">一次海外k8s集群代码发布实践</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/%E4%BA%8C%E5%8F%89%E6%A0%91/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="二叉树">二叉树</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/zabbix_key/"
+           href="/2021/03/16/zabbix_key/"
            data-tag="zabbix"
            data-author="" >
             <span class="post-title" title="zabbix_key">zabbix_key</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="k8s "
+           href="/2021/03/16/%E4%B8%80%E6%AC%A1%E6%B5%B7%E5%A4%96k8s%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5/"
+           data-tag="cicd"
+           data-author="" >
+            <span class="post-title" title="一次海外k8s集群代码发布实践">一次海外k8s集群代码发布实践</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class=""
-           href="/2021/03/18/%E4%BA%8C%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/"
+           href="/2021/03/16/%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="二叉树">二叉树</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/%E4%BA%8C%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="二级计算机">二级计算机</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E5%B8%A6%E7%8E%AF%E9%93%BE%E8%A1%A8/"
+           href="/2021/03/16/%E5%B8%A6%E7%8E%AF%E9%93%BE%E8%A1%A8/"
            data-tag="数据结构"
            data-author="" >
             <span class="post-title" title="带环链表">带环链表</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/%E6%B1%87%E7%BC%96%E7%AC%94%E8%AE%B0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="汇编笔记">汇编笔记</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="操作系统 "
-           href="/2021/03/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="操作系统">操作系统</span>
-            <span class="post-date" title="2021-03-20 11:54:29">2021/03/20</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/"
+           href="/2021/03/16/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/"
            data-tag="c语言基础"
            data-author="" >
             <span class="post-title" title="数据的存储">数据的存储</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class=""
-           href="/2021/03/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
+           href="/2021/03/16/%E6%B1%87%E7%BC%96%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="汇编笔记">汇编笔记</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/05/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"
+           data-tag="no"
+           data-author="" >
+            <span class="post-title" title="操作系统">操作系统</span>
+            <span class="post-date" title="2021-05-23 09:25:50">2021/05/23</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="计算机网络">计算机网络</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E4%B8%93%E5%AE%B6%E7%BC%96%E7%A8%8B/"
+           href="/2021/03/16/C%E4%B8%93%E5%AE%B6%E7%BC%96%E7%A8%8B/"
            data-tag="book"
            data-author="" >
             <span class="post-title" title="C专家编程">C专家编程</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E5%92%8C%E6%8C%87%E9%92%88/"
+           href="/2021/03/16/C%E5%92%8C%E6%8C%87%E9%92%88/"
            data-tag="book"
            data-author="" >
             <span class="post-title" title="C和指针">C和指针</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="Docker "
-           href="/2021/03/18/Dockerfile/"
-           data-tag="Dockerfile"
-           data-author="" >
-            <span class="post-title" title="Dockerfile">Dockerfile</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90/"
+           href="/2021/03/16/C%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90/"
            data-tag="book"
            data-author="" >
             <span class="post-title" title="C深入剖析">C深入剖析</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
-        <a  class="Nginx "
-           href="/2021/03/18/ngx_mem_pool/"
-           data-tag="mem_pool"
+        <a  class="Docker "
+           href="/2021/03/16/Dockerfile/"
+           data-tag="Dockerfile"
            data-author="" >
-            <span class="post-title" title="nginx内存池">nginx内存池</span>
-            <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+            <span class="post-title" title="Dockerfile">Dockerfile</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           href="/2021/03/16/c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
            data-tag="c"
            data-author="" >
             <span class="post-title" title="c学习笔记">c学习笔记</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E6%8C%87%E9%92%88/"
+           href="/2021/03/16/%E6%8C%87%E9%92%88/"
            data-tag="c语言基础"
            data-author="" >
             <span class="post-title" title="指针">指针</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E6%8E%92%E5%BA%8F/"
+           href="/2021/03/16/%E6%8E%92%E5%BA%8F/"
            data-tag="排序"
            data-author="" >
             <span class="post-title" title="排序">排序</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
@@ -601,44 +576,52 @@
             <span class="post-date" title="2021-03-18 11:09:00">2021/03/18</span>
         </a>
         
+        <a  class="运维 "
+           href="/2020/09/10/tcp:ip/"
+           data-tag="操作系统"
+           data-author="" >
+            <span class="post-title" title="tcp-ip">tcp-ip</span>
+            <span class="post-date" title="2020-09-10 10:09:00">2020/09/10</span>
+        </a>
+        
         <a  class="C语言 "
-           href="/2021/03/18/C%20Primer%20Plus/"
+           href="/2021/03/16/C%20Primer%20Plus/"
            data-tag="c primer plus"
            data-author="" >
             <span class="post-title" title="C Primer Plus">C Primer Plus</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/tcp:ip/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="tcp:ip">tcp:ip</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="mysql "
-           href="/2021/03/18/PracticeSql/"
+           href="/2021/03/16/PracticeSql/"
            data-tag="sql_base"
            data-author="" >
             <span class="post-title" title="PracticeSql">PracticeSql</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="操作系统 "
-           href="/2021/03/20/virtual_memory/"
-           data-tag="内存"
-           data-author="" >
-            <span class="post-title" title="虚拟内存">虚拟内存</span>
-            <span class="post-date" title="2021-03-20 11:51:57">2021/03/20</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="Nginx "
-           href="/2021/03/18/ngx_buf/"
-           data-tag="缓冲区"
+           href="/2021/03/18/ngx_mem_pool/"
+           data-tag="mem_pool"
            data-author="" >
-            <span class="post-title" title="nginx缓冲区">nginx缓冲区</span>
+            <span class="post-title" title="nginx内存池">nginx内存池</span>
             <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/17/ngx_array/"
+           data-tag="array"
+           data-author="" >
+            <span class="post-title" title="nginx数组">nginx数组</span>
+            <span class="post-date" title="2021-03-17 11:26:01">2021/03/17</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/05/22/BSTree/"
+           data-tag="c++"
+           data-author="" >
+            <span class="post-title" title="二叉搜索树">二叉搜索树</span>
+            <span class="post-date" title="2021-05-22 20:47:06">2021/05/22</span>
         </a>
         
         <a  class="操作系统 "
@@ -649,60 +632,12 @@
             <span class="post-date" title="2021-03-20 11:55:12">2021/03/20</span>
         </a>
         
-        <a  class="Nginx "
-           href="/2021/03/21/ngx_queue/"
-           data-tag="queue"
-           data-author="" >
-            <span class="post-title" title="nginx双向链表">nginx双向链表</span>
-            <span class="post-date" title="2021-03-21 19:02:44">2021/03/21</span>
-        </a>
-        
-        <a  class="Nginx "
-           href="/2021/03/22/ngx_list/"
-           data-tag="list"
-           data-author="" >
-            <span class="post-title" title="nginx单向链表">nginx单向链表</span>
-            <span class="post-date" title="2021-03-22 11:15:43">2021/03/22</span>
-        </a>
-        
         <a  class=""
            href="/2021/03/22/ngx_align/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="ngx_align">ngx_align</span>
             <span class="post-date" title="2021-03-22 15:44:36">2021/03/22</span>
-        </a>
-        
-        <a  class="Nginx "
-           href="/2021/03/23/ngx_hash/"
-           data-tag="hashtable"
-           data-author="" >
-            <span class="post-title" title="nginx散列表">nginx散列表</span>
-            <span class="post-date" title="2021-03-23 18:21:27">2021/03/23</span>
-        </a>
-        
-        <a  class="操作系统 "
-           href="/2021/04/12/signal/"
-           data-tag="信号"
-           data-author="" >
-            <span class="post-title" title="信号">信号</span>
-            <span class="post-date" title="2021-04-12 19:57:55">2021/04/12</span>
-        </a>
-        
-        <a  class="C语言 "
-           href="/2021/04/25/c++inheritance/"
-           data-tag="c++"
-           data-author="" >
-            <span class="post-title" title="c++继承">c++继承</span>
-            <span class="post-date" title="2021-04-25 22:55:23">2021/04/25</span>
-        </a>
-        
-        <a  class="C语言 "
-           href="/2021/04/20/thread/"
-           data-tag="线程"
-           data-author="" >
-            <span class="post-title" title="thread">thread</span>
-            <span class="post-date" title="2021-04-20 17:02:24">2021/04/20</span>
         </a>
         
         <a  class="C语言 "
@@ -714,11 +649,43 @@
         </a>
         
         <a  class="Nginx "
-           href="/2021/05/04/ngx_thread_pool/"
-           data-tag="thread_pool"
+           href="/2021/03/22/ngx_list/"
+           data-tag="list"
            data-author="" >
-            <span class="post-title" title="nginx线程池">nginx线程池</span>
-            <span class="post-date" title="2021-05-04 00:43:27">2021/05/04</span>
+            <span class="post-title" title="nginx单向链表">nginx单向链表</span>
+            <span class="post-date" title="2021-03-22 11:15:43">2021/03/22</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/18/ngx_buf/"
+           data-tag="缓冲区"
+           data-author="" >
+            <span class="post-title" title="nginx缓冲区">nginx缓冲区</span>
+            <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/04/25/c++inheritance/"
+           data-tag="c++"
+           data-author="" >
+            <span class="post-title" title="c++继承">c++继承</span>
+            <span class="post-date" title="2021-04-25 22:55:23">2021/04/25</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/04/12/signal/"
+           data-tag="信号"
+           data-author="" >
+            <span class="post-title" title="信号">信号</span>
+            <span class="post-date" title="2021-04-12 19:57:55">2021/04/12</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/21/ngx_queue/"
+           data-tag="queue"
+           data-author="" >
+            <span class="post-title" title="nginx双向链表">nginx双向链表</span>
+            <span class="post-date" title="2021-03-21 19:02:44">2021/03/21</span>
         </a>
         
         <a  class="C语言 "
@@ -727,6 +694,38 @@
            data-author="" >
             <span class="post-title" title="socket">socket</span>
             <span class="post-date" title="2021-05-12 13:44:40">2021/05/12</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/03/20/virtual_memory/"
+           data-tag="内存"
+           data-author="" >
+            <span class="post-title" title="虚拟内存">虚拟内存</span>
+            <span class="post-date" title="2021-03-20 11:51:57">2021/03/20</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/23/ngx_hash/"
+           data-tag="hashtable"
+           data-author="" >
+            <span class="post-title" title="nginx散列表">nginx散列表</span>
+            <span class="post-date" title="2021-03-23 18:21:27">2021/03/23</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/05/04/ngx_thread_pool/"
+           data-tag="thread_pool"
+           data-author="" >
+            <span class="post-title" title="nginx线程池">nginx线程池</span>
+            <span class="post-date" title="2021-05-04 00:43:27">2021/05/04</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/04/20/thread/"
+           data-tag="线程"
+           data-author="" >
+            <span class="post-title" title="thread">thread</span>
+            <span class="post-date" title="2021-04-20 17:02:24">2021/04/20</span>
         </a>
         
     </nav>
@@ -770,7 +769,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:3.9k</span>
+        <span>字数:3.7k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -806,613 +805,613 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="nginx内存池"><a href="#nginx内存池" class="headerlink" title="nginx内存池"></a>nginx内存池</h4><h5 id=""><a href="#" class="headerlink" title=""></a><img src="http://img.3amupupup.online/ngx_mem_pool_struct_3.png" alt="内存池结构"></h5><p><img src="https://img.3amupupup.online/ngx_mem_pool_5.png" alt="内存池结构"></p>
-<pre><code class="c">typedef struct 
-{
-    u_char               *last;     /* 内存池中未使用内存的开始节点地址 */
-    u_char               *end;      /* 内存池的结束地址 */
-    ngx_pool_t           *next;     /* 指向下一个内存池,组成链表 */
-    ngx_uint_t            failed;   /* 失败次数 */
-} ngx_pool_data_t;
+<pre class=" language-c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> 
+<span class="token punctuation">{</span>
+    u_char               <span class="token operator">*</span>last<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">/* 内存池中未使用内存的开始节点地址 */</span>
+    u_char               <span class="token operator">*</span>end<span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">/* 内存池的结束地址 */</span>
+    ngx_pool_t           <span class="token operator">*</span>next<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">/* 指向下一个内存池,组成链表 */</span>
+    ngx_uint_t            failed<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">/* 失败次数 */</span>
+<span class="token punctuation">}</span> ngx_pool_data_t<span class="token punctuation">;</span>
 
-// typedef struct ngx_pool_s ngx_pool_t;
-struct ngx_pool_s 
-{
-    ngx_pool_data_t       d;        /* 内存池的数据区域(小块数据) */
-    size_t                max;      /* 最大每次可分配内存,大于这个值将被添加到大块数据链表上,小于这个值将被添加到小块数据链表上 */
-    ngx_pool_t           *current;  /* 指向当前的内存池指针地址。ngx_pool_t链表上最后一个缓存池结构 */
-    ngx_chain_t          *chain;    /* 缓冲区链表 */
-    ngx_pool_large_t     *large;    /* 存储大块数据的链表 */
-    ngx_pool_cleanup_t   *cleanup;  /* 可自定义回调函数，清除内存块分配的内存 */
-    ngx_log_t            *log;      /* 日志 */
-};
+<span class="token comment" spellcheck="true">// typedef struct ngx_pool_s ngx_pool_t;</span>
+<span class="token keyword">struct</span> ngx_pool_s 
+<span class="token punctuation">{</span>
+    ngx_pool_data_t       d<span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">/* 内存池的数据区域(小块数据) */</span>
+    size_t                max<span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">/* 最大每次可分配内存,大于这个值将被添加到大块数据链表上,小于这个值将被添加到小块数据链表上 */</span>
+    ngx_pool_t           <span class="token operator">*</span>current<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">/* 指向当前的内存池指针地址。ngx_pool_t链表上最后一个缓存池结构 */</span>
+    ngx_chain_t          <span class="token operator">*</span>chain<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">/* 缓冲区链表 */</span>
+    ngx_pool_large_t     <span class="token operator">*</span>large<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">/* 存储大块数据的链表 */</span>
+    ngx_pool_cleanup_t   <span class="token operator">*</span>cleanup<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">/* 可自定义回调函数，清除内存块分配的内存 */</span>
+    ngx_log_t            <span class="token operator">*</span>log<span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">/* 日志 */</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-// typedef struct ngx_pool_cleanup_s  ngx_pool_cleanup_t;
-struct ngx_pool_cleanup_s 
-{
-    ngx_pool_cleanup_pt   handler;  /* 清理的回调函数 */
-    void                 *data;     /* 指向存储的数据地址 */
-    ngx_pool_cleanup_t   *next;     /* 下一个ngx_pool_cleanup_t */
-};</code></pre>
+<span class="token comment" spellcheck="true">// typedef struct ngx_pool_cleanup_s  ngx_pool_cleanup_t;</span>
+<span class="token keyword">struct</span> ngx_pool_cleanup_s 
+<span class="token punctuation">{</span>
+    ngx_pool_cleanup_pt   handler<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">/* 清理的回调函数 */</span>
+    <span class="token keyword">void</span>                 <span class="token operator">*</span>data<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">/* 指向存储的数据地址 */</span>
+    ngx_pool_cleanup_t   <span class="token operator">*</span>next<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">/* 下一个ngx_pool_cleanup_t */</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <h5 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h5><ol>
 <li><p>ngx_calloc: 分配内存并初始化，底层调用的是malloc和memset。</p>
-<pre><code class="c">void *
-ngx_calloc(size_t size, ngx_log_t *log)
-{
-    void  *p;
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token operator">*</span>
+<span class="token function">ngx_calloc</span><span class="token punctuation">(</span>size_t size<span class="token punctuation">,</span> ngx_log_t <span class="token operator">*</span>log<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">void</span>  <span class="token operator">*</span>p<span class="token punctuation">;</span>
 
-    p = ngx_alloc(size, log);
+    p <span class="token operator">=</span> <span class="token function">ngx_alloc</span><span class="token punctuation">(</span>size<span class="token punctuation">,</span> log<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    if (p) {
-        ngx_memzero(p, size);
-          /*
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">ngx_memzero</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token comment" spellcheck="true">/*
               ngx_memzero是个宏函数，底层实际调用memset，src/core/ngx_string.h
               #define ngx_memzero(buf, n)       (void) memset(buf, 0, n)
-          */
-    }
+          */</span>
+    <span class="token punctuation">}</span>
 
-    return p;
-}</code></pre>
+    <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 </ol>
 <ol start="2">
 <li><p>ngx_alloc: 分配内存，底层调用的是malloc。</p>
-<pre><code class="c">void *
-   ngx_alloc(size_t size, ngx_log_t *log)
-   {
-       void  *p;
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token operator">*</span>
+   <span class="token function">ngx_alloc</span><span class="token punctuation">(</span>size_t size<span class="token punctuation">,</span> ngx_log_t <span class="token operator">*</span>log<span class="token punctuation">)</span>
+   <span class="token punctuation">{</span>
+       <span class="token keyword">void</span>  <span class="token operator">*</span>p<span class="token punctuation">;</span>
 
-       p = malloc(size);
-         /* 
+       p <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token comment" spellcheck="true">/* 
              底层去调用malloc分配内存
-         */
-       if (p == NULL) {
-           ngx_log_error(NGX_LOG_EMERG, log, ngx_errno,
-                         &quot;malloc(%uz) failed&quot;, size);
-       }
+         */</span>
+       <span class="token keyword">if</span> <span class="token punctuation">(</span>p <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           <span class="token function">ngx_log_error</span><span class="token punctuation">(</span>NGX_LOG_EMERG<span class="token punctuation">,</span> log<span class="token punctuation">,</span> ngx_errno<span class="token punctuation">,</span>
+                         <span class="token string">"malloc(%uz) failed"</span><span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
 
-       ngx_log_debug2(NGX_LOG_DEBUG_ALLOC, log, 0, &quot;malloc: %p:%uz&quot;, p, size);
+       <span class="token function">ngx_log_debug2</span><span class="token punctuation">(</span>NGX_LOG_DEBUG_ALLOC<span class="token punctuation">,</span> log<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"malloc: %p:%uz"</span><span class="token punctuation">,</span> p<span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-       return p;
-   }</code></pre>
+       <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>ngx_create_pool: 创建内存池结点</p>
-<pre><code class="c">ngx_pool_t *
-ngx_create_pool(size_t size, ngx_log_t *log)
-{
-    ngx_pool_t  *p;
+<pre class=" language-c"><code class="language-c">ngx_pool_t <span class="token operator">*</span>
+<span class="token function">ngx_create_pool</span><span class="token punctuation">(</span>size_t size<span class="token punctuation">,</span> ngx_log_t <span class="token operator">*</span>log<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ngx_pool_t  <span class="token operator">*</span>p<span class="token punctuation">;</span>
 
-    p = ngx_memalign(NGX_POOL_ALIGNMENT, size, log);
-      /*
+    p <span class="token operator">=</span> <span class="token function">ngx_memalign</span><span class="token punctuation">(</span>NGX_POOL_ALIGNMENT<span class="token punctuation">,</span> size<span class="token punctuation">,</span> log<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
           #define ngx_memalign(alignment, size, log)  ngx_alloc(size, log)，
           而ngx_alloc实际上是去调用malloc
-      */
+      */</span>
 
-    if (p == NULL) {
-        return NULL;
-    }
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>p <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    p-&gt;d.last = (u_char *) p + sizeof(ngx_pool_t);
-      /*
+    p<span class="token operator">-></span>d<span class="token punctuation">.</span>last <span class="token operator">=</span> <span class="token punctuation">(</span>u_char <span class="token operator">*</span><span class="token punctuation">)</span> p <span class="token operator">+</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>ngx_pool_t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
           p是通过malloc申请得到的内存的首地址，前sizeof(ngx_pool_t)字节的内存要留给内存池的管理结构(我也叫他控制中心)，
           控制中心之后的内存是给申请者使用的。last是申请者能够使用内存的起始位置，end是结束位置(由数据结构得知)
-      */
+      */</span>
 
-    p-&gt;d.end = (u_char *) p + size;
-      /*
+    p<span class="token operator">-></span>d<span class="token punctuation">.</span>end <span class="token operator">=</span> <span class="token punctuation">(</span>u_char <span class="token operator">*</span><span class="token punctuation">)</span> p <span class="token operator">+</span> size<span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
           end指向申请得到的内存的末尾位置，
           p是首地址，加上size就是结束地址即end的指向位置，
           内存的申请者总共申请了size个字节的内存，能够使用的内存为：size - sizeof(ngx_pool_t)
-      */
+      */</span>
 
-    p-&gt;d.next = NULL;
-      /*
+    p<span class="token operator">-></span>d<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
           内存池通过指针相连，组成一个链表，下一个结点在创建时应当指向NULL
-      */
+      */</span>
 
-    p-&gt;d.failed = 0;
+    p<span class="token operator">-></span>d<span class="token punctuation">.</span>failed <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-    size = size - sizeof(ngx_pool_t);
-    p-&gt;max = (size &lt; NGX_MAX_ALLOC_FROM_POOL) ? size : NGX_MAX_ALLOC_FROM_POOL;
-      /*
+    size <span class="token operator">=</span> size <span class="token operator">-</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>ngx_pool_t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    p<span class="token operator">-></span>max <span class="token operator">=</span> <span class="token punctuation">(</span>size <span class="token operator">&lt;</span> NGX_MAX_ALLOC_FROM_POOL<span class="token punctuation">)</span> <span class="token operator">?</span> size <span class="token punctuation">:</span> NGX_MAX_ALLOC_FROM_POOL<span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
      NGX_MAX_ALLOC_FROM_POOL should be (ngx_pagesize - 1), i.e. 4095 on x86.
      On Windows NT it decreases a number of locked pages in a kernel.
 
      max取size和操作系统弄内存页二者中较小的值
-     */
+     */</span>
 
-    p-&gt;current = p;
-    p-&gt;chain = NULL;
-    p-&gt;large = NULL;
-    p-&gt;cleanup = NULL;
-    p-&gt;log = log;
-      /*
-          只有缓存池的父节点，才会用到这几个成员  ，子节点只挂载在p-&gt;d.next,并且只负责p-&gt;d的数据内容
-      */
+    p<span class="token operator">-></span>current <span class="token operator">=</span> p<span class="token punctuation">;</span>
+    p<span class="token operator">-></span>chain <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    p<span class="token operator">-></span>large <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    p<span class="token operator">-></span>cleanup <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    p<span class="token operator">-></span>log <span class="token operator">=</span> log<span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
+          只有缓存池的父节点，才会用到这几个成员  ，子节点只挂载在p->d.next,并且只负责p->d的数据内容
+      */</span>
 
-    return p;
-}</code></pre>
+    <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>ngx_destroy_pool: 销毁内存池结点</p>
-<pre><code class="c">void
-ngx_destroy_pool(ngx_pool_t *pool)
-{
-    ngx_pool_t          *p, *n;
-    ngx_pool_large_t    *l;
-    ngx_pool_cleanup_t  *c;
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span>
+<span class="token function">ngx_destroy_pool</span><span class="token punctuation">(</span>ngx_pool_t <span class="token operator">*</span>pool<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ngx_pool_t          <span class="token operator">*</span>p<span class="token punctuation">,</span> <span class="token operator">*</span>n<span class="token punctuation">;</span>
+    ngx_pool_large_t    <span class="token operator">*</span>l<span class="token punctuation">;</span>
+    ngx_pool_cleanup_t  <span class="token operator">*</span>c<span class="token punctuation">;</span>
 
-    for (c = pool-&gt;cleanup; c; c = c-&gt;next) {
-        if (c-&gt;handler) {
-            ngx_log_debug1(NGX_LOG_DEBUG_ALLOC, pool-&gt;log, 0,
-                           &quot;run cleanup: %p&quot;, c);
-            c-&gt;handler(c-&gt;data);
-        }
-    }
-      /*
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>c <span class="token operator">=</span> pool<span class="token operator">-></span>cleanup<span class="token punctuation">;</span> c<span class="token punctuation">;</span> c <span class="token operator">=</span> c<span class="token operator">-></span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>c<span class="token operator">-></span>handler<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">ngx_log_debug1</span><span class="token punctuation">(</span>NGX_LOG_DEBUG_ALLOC<span class="token punctuation">,</span> pool<span class="token operator">-></span>log<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                           <span class="token string">"run cleanup: %p"</span><span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            c<span class="token operator">-></span><span class="token function">handler</span><span class="token punctuation">(</span>c<span class="token operator">-></span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+      <span class="token comment" spellcheck="true">/*
           只有父结点才有cleanup链表，
           cleanup链表的结点结构有三个成员：清理函数handler、指向存储数据的data、指向下一个结点的next
           这里遍历cleanup链表，调用handler清理data
-      */
+      */</span>
 
-#if (NGX_DEBUG)    // 编译debug级别，如果为true，会打印日志
+<span class="token macro property">#<span class="token directive keyword">if</span> (NGX_DEBUG)    </span><span class="token comment" spellcheck="true">// 编译debug级别，如果为true，会打印日志</span>
 
-    /*
-     * we could allocate the pool-&gt;log from this pool
+    <span class="token comment" spellcheck="true">/*
+     * we could allocate the pool->log from this pool
      * so we cannot use this log while free()ing the pool
-     */
+     */</span>
 
-    for (l = pool-&gt;large; l; l = l-&gt;next) {
-        ngx_log_debug1(NGX_LOG_DEBUG_ALLOC, pool-&gt;log, 0, &quot;free: %p&quot;, l-&gt;alloc);
-    }
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>l <span class="token operator">=</span> pool<span class="token operator">-></span>large<span class="token punctuation">;</span> l<span class="token punctuation">;</span> l <span class="token operator">=</span> l<span class="token operator">-></span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">ngx_log_debug1</span><span class="token punctuation">(</span>NGX_LOG_DEBUG_ALLOC<span class="token punctuation">,</span> pool<span class="token operator">-></span>log<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"free: %p"</span><span class="token punctuation">,</span> l<span class="token operator">-></span>alloc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    for (p = pool, n = pool-&gt;d.next; /* void */; p = n, n = n-&gt;d.next) {
-        ngx_log_debug2(NGX_LOG_DEBUG_ALLOC, pool-&gt;log, 0,
-                       &quot;free: %p, unused: %uz&quot;, p, p-&gt;d.end - p-&gt;d.last);
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>p <span class="token operator">=</span> pool<span class="token punctuation">,</span> n <span class="token operator">=</span> pool<span class="token operator">-></span>d<span class="token punctuation">.</span>next<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* void */</span><span class="token punctuation">;</span> p <span class="token operator">=</span> n<span class="token punctuation">,</span> n <span class="token operator">=</span> n<span class="token operator">-></span>d<span class="token punctuation">.</span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">ngx_log_debug2</span><span class="token punctuation">(</span>NGX_LOG_DEBUG_ALLOC<span class="token punctuation">,</span> pool<span class="token operator">-></span>log<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                       <span class="token string">"free: %p, unused: %uz"</span><span class="token punctuation">,</span> p<span class="token punctuation">,</span> p<span class="token operator">-></span>d<span class="token punctuation">.</span>end <span class="token operator">-</span> p<span class="token operator">-></span>d<span class="token punctuation">.</span>last<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        if (n == NULL) {
-            break;
-        }
-    }
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
-#endif
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
 
-    for (l = pool-&gt;large; l; l = l-&gt;next) {
-        if (l-&gt;alloc) {
-            ngx_free(l-&gt;alloc);
-        }
-    }
-      /*
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>l <span class="token operator">=</span> pool<span class="token operator">-></span>large<span class="token punctuation">;</span> l<span class="token punctuation">;</span> l <span class="token operator">=</span> l<span class="token operator">-></span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>l<span class="token operator">-></span>alloc<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">ngx_free</span><span class="token punctuation">(</span>l<span class="token operator">-></span>alloc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+      <span class="token comment" spellcheck="true">/*
           只有父结点才有large链表，
           遍历large(大块数据链表)链表，释放alloc指针指向的存储数据的内存
           #define ngx_free          free
           由此可知ngx_free是个宏，底层调用的还是free，这里直接将大块数据内存还给了操作系统
-      */
+      */</span>
 
-    for (p = pool, n = pool-&gt;d.next; /* void */; p = n, n = n-&gt;d.next) {
-        ngx_free(p);
-          /*
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>p <span class="token operator">=</span> pool<span class="token punctuation">,</span> n <span class="token operator">=</span> pool<span class="token operator">-></span>d<span class="token punctuation">.</span>next<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* void */</span><span class="token punctuation">;</span> p <span class="token operator">=</span> n<span class="token punctuation">,</span> n <span class="token operator">=</span> n<span class="token operator">-></span>d<span class="token punctuation">.</span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">ngx_free</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token comment" spellcheck="true">/*
               至此，父结点上的large链表以及cleanup链表都被清理了，然后循环清理内存池结点，
               小块数据内存是分配在内存池结点上的，和其控制中心(ngx_pool_t)是连续的，
               释放时直接释放当前结点就行了
-          */
+          */</span>
 
-          /*
+          <span class="token comment" spellcheck="true">/*
               至此清理工作结束。
               但是有个小疑问：chain(缓冲区)链表为啥没有被清理？
-          */
+          */</span>
 
-        if (n == NULL) {
-            break;
-        }
-    }
-}</code></pre>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>ngx_reset_pool: 清理内存池结点</p>
-<pre><code class="c">void
-ngx_reset_pool(ngx_pool_t *pool)
-{
-    ngx_pool_t        *p;
-    ngx_pool_large_t  *l;
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span>
+<span class="token function">ngx_reset_pool</span><span class="token punctuation">(</span>ngx_pool_t <span class="token operator">*</span>pool<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ngx_pool_t        <span class="token operator">*</span>p<span class="token punctuation">;</span>
+    ngx_pool_large_t  <span class="token operator">*</span>l<span class="token punctuation">;</span>
 
-    for (l = pool-&gt;large; l; l = l-&gt;next) {
-        if (l-&gt;alloc) {
-            ngx_free(l-&gt;alloc);
-        }
-    }
-      /*
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>l <span class="token operator">=</span> pool<span class="token operator">-></span>large<span class="token punctuation">;</span> l<span class="token punctuation">;</span> l <span class="token operator">=</span> l<span class="token operator">-></span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>l<span class="token operator">-></span>alloc<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">ngx_free</span><span class="token punctuation">(</span>l<span class="token operator">-></span>alloc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+      <span class="token comment" spellcheck="true">/*
           清理large链表
-      */
+      */</span>
 
-    for (p = pool; p; p = p-&gt;d.next) {
-        p-&gt;d.last = (u_char *) p + sizeof(ngx_pool_t);
-        p-&gt;d.failed = 0;
-    }
-      /*
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>p <span class="token operator">=</span> pool<span class="token punctuation">;</span> p<span class="token punctuation">;</span> p <span class="token operator">=</span> p<span class="token operator">-></span>d<span class="token punctuation">.</span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        p<span class="token operator">-></span>d<span class="token punctuation">.</span>last <span class="token operator">=</span> <span class="token punctuation">(</span>u_char <span class="token operator">*</span><span class="token punctuation">)</span> p <span class="token operator">+</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>ngx_pool_t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        p<span class="token operator">-></span>d<span class="token punctuation">.</span>failed <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+      <span class="token comment" spellcheck="true">/*
           重置小数据块区域的内存，注意这里是修改last的指向，将last重新指向起始位置，
           内存并没有被擦除，因为是小数据块内存，这里没有将其归还给操作系统，
           目的是避免频繁的malloc和free产生内存碎片问题，频繁调用这两个函数也会给
           操作系统带来额外的消耗。
-      */
+      */</span>
 
-    pool-&gt;current = pool;
-    pool-&gt;chain = NULL;
-    pool-&gt;large = NULL;
-}
+    pool<span class="token operator">-></span>current <span class="token operator">=</span> pool<span class="token punctuation">;</span>
+    pool<span class="token operator">-></span>chain <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    pool<span class="token operator">-></span>large <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 </li>
 <li><p>ngx_palloc: 向内存池申请内存的函数</p>
-<pre><code class="c">void *
-ngx_palloc(ngx_pool_t *pool, size_t size)
-{
-#if !(NGX_DEBUG_PALLOC)
-      /*
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token operator">*</span>
+<span class="token function">ngx_palloc</span><span class="token punctuation">(</span>ngx_pool_t <span class="token operator">*</span>pool<span class="token punctuation">,</span> size_t size<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+<span class="token macro property">#<span class="token directive keyword">if</span> !(NGX_DEBUG_PALLOC)</span>
+      <span class="token comment" spellcheck="true">/*
           这里是个条件编译，如果没开启ngx palloc debug就会根据size决定调用ngx_palloc_small还是                              ngx_palloc_large，如果开启了debug则一律调用ngx_palloc_large
-      */
+      */</span>
 
-    if (size &lt;= pool-&gt;max) {
-        return ngx_palloc_small(pool, size, 1);
-    }
-#endif
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>size <span class="token operator">&lt;=</span> pool<span class="token operator">-></span>max<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">ngx_palloc_small</span><span class="token punctuation">(</span>pool<span class="token punctuation">,</span> size<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
 
-    return ngx_palloc_large(pool, size);
-}</code></pre>
+    <span class="token keyword">return</span> <span class="token function">ngx_palloc_large</span><span class="token punctuation">(</span>pool<span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>ngx_palloc_small: 分配小块数据内存的函数，调用这个函数所分配的内存都是在内存池结点上</p>
-<pre><code class="c">static ngx_inline void *
-ngx_palloc_small(ngx_pool_t *pool, size_t size, ngx_uint_t align)
-{
-    u_char      *m;
-    ngx_pool_t  *p;
+<pre class=" language-c"><code class="language-c"><span class="token keyword">static</span> ngx_inline <span class="token keyword">void</span> <span class="token operator">*</span>
+<span class="token function">ngx_palloc_small</span><span class="token punctuation">(</span>ngx_pool_t <span class="token operator">*</span>pool<span class="token punctuation">,</span> size_t size<span class="token punctuation">,</span> ngx_uint_t align<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    u_char      <span class="token operator">*</span>m<span class="token punctuation">;</span>
+    ngx_pool_t  <span class="token operator">*</span>p<span class="token punctuation">;</span>
 
-    p = pool-&gt;current;
+    p <span class="token operator">=</span> pool<span class="token operator">-></span>current<span class="token punctuation">;</span>
 
-    do {
-        m = p-&gt;d.last;
-          /*
-              m保存了last的指向，last &lt;-&gt; end 之间是未被使用的内存
-          */
+    <span class="token keyword">do</span> <span class="token punctuation">{</span>
+        m <span class="token operator">=</span> p<span class="token operator">-></span>d<span class="token punctuation">.</span>last<span class="token punctuation">;</span>
+          <span class="token comment" spellcheck="true">/*
+              m保存了last的指向，last &lt;-> end 之间是未被使用的内存
+          */</span>
 
-        if (align) {
-            m = ngx_align_ptr(m, NGX_ALIGNMENT);
-        }
-          /*
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>align<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            m <span class="token operator">=</span> <span class="token function">ngx_align_ptr</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span> NGX_ALIGNMENT<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+          <span class="token comment" spellcheck="true">/*
               align，暂时不懂是啥意思
-          */
+          */</span>
 
-        if ((size_t) (p-&gt;d.end - m) &gt;= size) {
-            p-&gt;d.last = m + size;
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>size_t<span class="token punctuation">)</span> <span class="token punctuation">(</span>p<span class="token operator">-></span>d<span class="token punctuation">.</span>end <span class="token operator">-</span> m<span class="token punctuation">)</span> <span class="token operator">>=</span> size<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            p<span class="token operator">-></span>d<span class="token punctuation">.</span>last <span class="token operator">=</span> m <span class="token operator">+</span> size<span class="token punctuation">;</span>
 
-            return m;
-        }
-          /*
+            <span class="token keyword">return</span> m<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+          <span class="token comment" spellcheck="true">/*
               如果end到m(即last)之间的字节数大于size，那么这个内存池结点上的足够申请者使用，
               则将last后移size个字节并返回之前last的指向的内存的地址供调用者使用
-          */
+          */</span>
 
-        p = p-&gt;d.next;
+        p <span class="token operator">=</span> p<span class="token operator">-></span>d<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
 
-    } while (p);
+    <span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    return ngx_palloc_block(pool, size);
-      /*
+    <span class="token keyword">return</span> <span class="token function">ngx_palloc_block</span><span class="token punctuation">(</span>pool<span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
           走到这里说明内存池的所有结点上都没有足够的空间分配出去，
           此时则调用ngx_palloc_block新开一个内存池的节点(扩容)
-      */
-}</code></pre>
+      */</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>ngx_palloc_large: 分配大块数据内存的函数，调用这个函数所分配的内存都是在large链表上</p>
-<pre><code class="c">static void *
-ngx_palloc_large(ngx_pool_t *pool, size_t size)
-{
-    void              *p;
-    ngx_uint_t         n;
-    ngx_pool_large_t  *large;
+<pre class=" language-c"><code class="language-c"><span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token operator">*</span>
+<span class="token function">ngx_palloc_large</span><span class="token punctuation">(</span>ngx_pool_t <span class="token operator">*</span>pool<span class="token punctuation">,</span> size_t size<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">void</span>              <span class="token operator">*</span>p<span class="token punctuation">;</span>
+    ngx_uint_t         n<span class="token punctuation">;</span>
+    ngx_pool_large_t  <span class="token operator">*</span>large<span class="token punctuation">;</span>
 
-    p = ngx_alloc(size, pool-&gt;log);
-      /*
+    p <span class="token operator">=</span> <span class="token function">ngx_alloc</span><span class="token punctuation">(</span>size<span class="token punctuation">,</span> pool<span class="token operator">-></span>log<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
           底层调用malloc分配内存
-      */    
+      */</span>    
 
-    if (p == NULL) {
-        return NULL;
-    }
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>p <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    n = 0;
+    n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-    for (large = pool-&gt;large; large; large = large-&gt;next) {
-        if (large-&gt;alloc == NULL) {
-            large-&gt;alloc = p;
-            return p;
-        }
-          /*
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>large <span class="token operator">=</span> pool<span class="token operator">-></span>large<span class="token punctuation">;</span> large<span class="token punctuation">;</span> large <span class="token operator">=</span> large<span class="token operator">-></span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>large<span class="token operator">-></span>alloc <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            large<span class="token operator">-></span>alloc <span class="token operator">=</span> p<span class="token punctuation">;</span>
+            <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+          <span class="token comment" spellcheck="true">/*
               遍历large链表，寻找空闲结点，找到了则将large链表上的空闲结点的alloc指向刚刚申请的内存p
-          */
+          */</span>
 
-        if (n++ &gt; 3) {
-            break;
-        }
-          /*
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n<span class="token operator">++</span> <span class="token operator">></span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+          <span class="token comment" spellcheck="true">/*
               如果找了三次还没找到那就不找了，避免链表过长时查找效率低
-          */
+          */</span>
 
-    }
+    <span class="token punctuation">}</span>
 
-    large = ngx_palloc_small(pool, sizeof(ngx_pool_large_t), 1);
-      /*
+    large <span class="token operator">=</span> <span class="token function">ngx_palloc_small</span><span class="token punctuation">(</span>pool<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>ngx_pool_large_t<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
           在内存池结点的小块数据内存上给large的控制中心结构ngx_pool_large_t分配一块内存
-      */
+      */</span>
 
-    if (large == NULL) {
-        ngx_free(p);
-          /*
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>large <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">ngx_free</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token comment" spellcheck="true">/*
               如果large分配失败p是要释放的，避免内存泄露
-          */
-        return NULL;
-    }
+          */</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    large-&gt;alloc = p;
-    large-&gt;next = pool-&gt;large;
-    pool-&gt;large = large;
-      /*
+    large<span class="token operator">-></span>alloc <span class="token operator">=</span> p<span class="token punctuation">;</span>
+    large<span class="token operator">-></span>next <span class="token operator">=</span> pool<span class="token operator">-></span>large<span class="token punctuation">;</span>
+    pool<span class="token operator">-></span>large <span class="token operator">=</span> large<span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
           新开的large结点变为large链表的头结点。
-      */
+      */</span>
 
-    return p;
-}</code></pre>
+    <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>ngx_palloc_block: 添加新的内存池结点</p>
-<pre><code class="c">static void *
-ngx_palloc_block(ngx_pool_t *pool, size_t size)
-{
-    u_char      *m;
-    size_t       psize;
-    ngx_pool_t  *p, *new;
+<pre class=" language-c"><code class="language-c"><span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token operator">*</span>
+<span class="token function">ngx_palloc_block</span><span class="token punctuation">(</span>ngx_pool_t <span class="token operator">*</span>pool<span class="token punctuation">,</span> size_t size<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    u_char      <span class="token operator">*</span>m<span class="token punctuation">;</span>
+    size_t       psize<span class="token punctuation">;</span>
+    ngx_pool_t  <span class="token operator">*</span>p<span class="token punctuation">,</span> <span class="token operator">*</span>new<span class="token punctuation">;</span>
 
-    psize = (size_t) (pool-&gt;d.end - (u_char *) pool);
-      /*
+    psize <span class="token operator">=</span> <span class="token punctuation">(</span>size_t<span class="token punctuation">)</span> <span class="token punctuation">(</span>pool<span class="token operator">-></span>d<span class="token punctuation">.</span>end <span class="token operator">-</span> <span class="token punctuation">(</span>u_char <span class="token operator">*</span><span class="token punctuation">)</span> pool<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
           要新创建的内存池的结点的size是根据头结点的size创建的
-      */
+      */</span>
 
-    m = ngx_memalign(NGX_POOL_ALIGNMENT, psize, pool-&gt;log);
-      /*
+    m <span class="token operator">=</span> <span class="token function">ngx_memalign</span><span class="token punctuation">(</span>NGX_POOL_ALIGNMENT<span class="token punctuation">,</span> psize<span class="token punctuation">,</span> pool<span class="token operator">-></span>log<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
           申请psize大小的内存块
-      */
+      */</span>
 
-    if (m == NULL) {
-        return NULL;
-    }
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>m <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    new = (ngx_pool_t *) m;
-      /*
+    new <span class="token operator">=</span> <span class="token punctuation">(</span>ngx_pool_t <span class="token operator">*</span><span class="token punctuation">)</span> m<span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
           类型转换
-      */
+      */</span>
 
-    new-&gt;d.end = m + psize;
-      /*
+    new<span class="token operator">-></span>d<span class="token punctuation">.</span>end <span class="token operator">=</span> m <span class="token operator">+</span> psize<span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
           end指向末尾
-      */
+      */</span>
 
-    new-&gt;d.next = NULL;
-      /*
+    new<span class="token operator">-></span>d<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
           下一个结点指针 指向NULL避免野指针
-      */
+      */</span>
 
-    new-&gt;d.failed = 0;
+    new<span class="token operator">-></span>d<span class="token punctuation">.</span>failed <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-    m += sizeof(ngx_pool_data_t);
-      /*
+    m <span class="token operator">+</span><span class="token operator">=</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>ngx_pool_data_t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
           前sizeof(ngx_pool_data_t)个字节留给ngx_pool_data_t结构使用，
           这里用的比较巧妙，细品细品，此时有点惊叹设计者的做法。
           因为创建的是子节点，所以max、current指针、缓冲区链表指针、large链表指针、
           cleanup链表指针，这几个成员所占的内存都可以分配出去给调用者使用(子结点用不到这几个成员)，
           避免了空间浪费。
-      */
+      */</span>
 
-    m = ngx_align_ptr(m, NGX_ALIGNMENT);
-    new-&gt;d.last = m + size;
-      /*
+    m <span class="token operator">=</span> <span class="token function">ngx_align_ptr</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span> NGX_ALIGNMENT<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    new<span class="token operator">-></span>d<span class="token punctuation">.</span>last <span class="token operator">=</span> m <span class="token operator">+</span> size<span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
           移动last size个字节，标识这段内存已经被分配出去了
-      */
+      */</span>
 
-    for (p = pool-&gt;current; p-&gt;d.next; p = p-&gt;d.next) {
-        if (p-&gt;d.failed++ &gt; 4) {
-            pool-&gt;current = p-&gt;d.next;
-        }
-    }
-      /*
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>p <span class="token operator">=</span> pool<span class="token operator">-></span>current<span class="token punctuation">;</span> p<span class="token operator">-></span>d<span class="token punctuation">.</span>next<span class="token punctuation">;</span> p <span class="token operator">=</span> p<span class="token operator">-></span>d<span class="token punctuation">.</span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token operator">-></span>d<span class="token punctuation">.</span>failed<span class="token operator">++</span> <span class="token operator">></span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            pool<span class="token operator">-></span>current <span class="token operator">=</span> p<span class="token operator">-></span>d<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+      <span class="token comment" spellcheck="true">/*
           每遍历一个结点failed++，当failed超过了4时，current会指向新子结点，
           这么做可以避免遍历整个链表(如果链表足够长，遍历一次效率比较低)
-      */
+      */</span>
 
-    p-&gt;d.next = new;
+    p<span class="token operator">-></span>d<span class="token punctuation">.</span>next <span class="token operator">=</span> new<span class="token punctuation">;</span>
 
-    return m;
-}</code></pre>
+    <span class="token keyword">return</span> m<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>ngx_pnalloc: 开辟内存的函数，根据size去调用不同的函数</p>
-<pre><code class="c">void *
-ngx_pnalloc(ngx_pool_t *pool, size_t size)
-{
-#if !(NGX_DEBUG_PALLOC)
-    if (size &lt;= pool-&gt;max) {
-        return ngx_palloc_small(pool, size, 0);
-    }
-#endif
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token operator">*</span>
+<span class="token function">ngx_pnalloc</span><span class="token punctuation">(</span>ngx_pool_t <span class="token operator">*</span>pool<span class="token punctuation">,</span> size_t size<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+<span class="token macro property">#<span class="token directive keyword">if</span> !(NGX_DEBUG_PALLOC)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>size <span class="token operator">&lt;=</span> pool<span class="token operator">-></span>max<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">ngx_palloc_small</span><span class="token punctuation">(</span>pool<span class="token punctuation">,</span> size<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
 
-    return ngx_palloc_large(pool, size);
-}</code></pre>
+    <span class="token keyword">return</span> <span class="token function">ngx_palloc_large</span><span class="token punctuation">(</span>pool<span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>ngx_pcalloc: 申请一块内存并初始化为0值</p>
-<pre><code class="c">void *
-ngx_pcalloc(ngx_pool_t *pool, size_t size)
-{
-    void *p;
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token operator">*</span>
+<span class="token function">ngx_pcalloc</span><span class="token punctuation">(</span>ngx_pool_t <span class="token operator">*</span>pool<span class="token punctuation">,</span> size_t size<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token operator">*</span>p<span class="token punctuation">;</span>
 
-    p = ngx_palloc(pool, size);
-    if (p) {
-        ngx_memzero(p, size);
-    }
+    p <span class="token operator">=</span> <span class="token function">ngx_palloc</span><span class="token punctuation">(</span>pool<span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">ngx_memzero</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    return p;
-}</code></pre>
+    <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>ngx_pmemalign:</p>
-<pre><code class="c">void *
-ngx_pmemalign(ngx_pool_t *pool, size_t size, size_t alignment)
-{
-    void              *p;
-    ngx_pool_large_t  *large;
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token operator">*</span>
+<span class="token function">ngx_pmemalign</span><span class="token punctuation">(</span>ngx_pool_t <span class="token operator">*</span>pool<span class="token punctuation">,</span> size_t size<span class="token punctuation">,</span> size_t alignment<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">void</span>              <span class="token operator">*</span>p<span class="token punctuation">;</span>
+    ngx_pool_large_t  <span class="token operator">*</span>large<span class="token punctuation">;</span>
 
-    p = ngx_memalign(alignment, size, pool-&gt;log);
-    if (p == NULL) {
-        return NULL;
-    }
+    p <span class="token operator">=</span> <span class="token function">ngx_memalign</span><span class="token punctuation">(</span>alignment<span class="token punctuation">,</span> size<span class="token punctuation">,</span> pool<span class="token operator">-></span>log<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>p <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    large = ngx_palloc_small(pool, sizeof(ngx_pool_large_t), 1);
-    if (large == NULL) {
-        ngx_free(p);
-        return NULL;
-    }
+    large <span class="token operator">=</span> <span class="token function">ngx_palloc_small</span><span class="token punctuation">(</span>pool<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>ngx_pool_large_t<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>large <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">ngx_free</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    large-&gt;alloc = p;
-    large-&gt;next = pool-&gt;large;
-    pool-&gt;large = large;
+    large<span class="token operator">-></span>alloc <span class="token operator">=</span> p<span class="token punctuation">;</span>
+    large<span class="token operator">-></span>next <span class="token operator">=</span> pool<span class="token operator">-></span>large<span class="token punctuation">;</span>
+    pool<span class="token operator">-></span>large <span class="token operator">=</span> large<span class="token punctuation">;</span>
 
-    return p;
-}</code></pre>
+    <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>ngx_pfree: 释放large链表上的内存p</p>
-<pre><code class="c">ngx_int_t
-ngx_pfree(ngx_pool_t *pool, void *p)
-{
-    ngx_pool_large_t  *l;
+<pre class=" language-c"><code class="language-c">ngx_int_t
+<span class="token function">ngx_pfree</span><span class="token punctuation">(</span>ngx_pool_t <span class="token operator">*</span>pool<span class="token punctuation">,</span> <span class="token keyword">void</span> <span class="token operator">*</span>p<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ngx_pool_large_t  <span class="token operator">*</span>l<span class="token punctuation">;</span>
 
-    for (l = pool-&gt;large; l; l = l-&gt;next) {
-        if (p == l-&gt;alloc) {
-              /*
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>l <span class="token operator">=</span> pool<span class="token operator">-></span>large<span class="token punctuation">;</span> l<span class="token punctuation">;</span> l <span class="token operator">=</span> l<span class="token operator">-></span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>p <span class="token operator">==</span> l<span class="token operator">-></span>alloc<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token comment" spellcheck="true">/*
                   遍历large链表，查找p所在的节点，如果large链表足够长时，这个函数的效率偏低
-              */
+              */</span>
 
-            ngx_log_debug1(NGX_LOG_DEBUG_ALLOC, pool-&gt;log, 0,
-                           &quot;free: %p&quot;, l-&gt;alloc);
-            ngx_free(l-&gt;alloc);
-              /*
+            <span class="token function">ngx_log_debug1</span><span class="token punctuation">(</span>NGX_LOG_DEBUG_ALLOC<span class="token punctuation">,</span> pool<span class="token operator">-></span>log<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                           <span class="token string">"free: %p"</span><span class="token punctuation">,</span> l<span class="token operator">-></span>alloc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">ngx_free</span><span class="token punctuation">(</span>l<span class="token operator">-></span>alloc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+              <span class="token comment" spellcheck="true">/*
                   实际调用的还是free
-              */
+              */</span>
 
-            l-&gt;alloc = NULL;
+            l<span class="token operator">-></span>alloc <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
 
-            return NGX_OK;
-        }
-    }
+            <span class="token keyword">return</span> NGX_OK<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
-    return NGX_DECLINED;
-}</code></pre>
+    <span class="token keyword">return</span> NGX_DECLINED<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>ngx_pool_cleanup_add: cleanup机制设计的比较灵活，pool-&gt;cleanup是一个链表，每个ngx_pool_cleanup_t的数据结构上保存这指向的内存地址和回调清理函数，通过这个机制可以很方便的管理一些特殊的内存类型，比如文件描述符、自定义类型。</p>
-<pre><code class="c">ngx_pool_cleanup_t *
-ngx_pool_cleanup_add(ngx_pool_t *p, size_t size)
-{
-    ngx_pool_cleanup_t  *c;
+<pre class=" language-c"><code class="language-c">ngx_pool_cleanup_t <span class="token operator">*</span>
+<span class="token function">ngx_pool_cleanup_add</span><span class="token punctuation">(</span>ngx_pool_t <span class="token operator">*</span>p<span class="token punctuation">,</span> size_t size<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ngx_pool_cleanup_t  <span class="token operator">*</span>c<span class="token punctuation">;</span>
 
-    c = ngx_palloc(p, sizeof(ngx_pool_cleanup_t));
-      /*
+    c <span class="token operator">=</span> <span class="token function">ngx_palloc</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>ngx_pool_cleanup_t<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
           给cleanup的控制中心结构分配内存，分配在内存池小块数据内存上的。
-      */
+      */</span>
 
-    if (c == NULL) {
-        return NULL;
-    }
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>c <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    if (size) {
-        c-&gt;data = ngx_palloc(p, size);
-        if (c-&gt;data == NULL) {
-            return NULL;
-        }
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>size<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        c<span class="token operator">-></span>data <span class="token operator">=</span> <span class="token function">ngx_palloc</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>c<span class="token operator">-></span>data <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-    } else {
-        c-&gt;data = NULL;
-    }
-      /*
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        c<span class="token operator">-></span>data <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+      <span class="token comment" spellcheck="true">/*
           根据size决定是否分配数据区，数据区分配的内存在哪据size的大小而定，
           可能在小数据块内存上也可能在large链表上
-      */
+      */</span>
 
-    c-&gt;handler = NULL;
-    c-&gt;next = p-&gt;cleanup;
+    c<span class="token operator">-></span>handler <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    c<span class="token operator">-></span>next <span class="token operator">=</span> p<span class="token operator">-></span>cleanup<span class="token punctuation">;</span>
 
-    p-&gt;cleanup = c;
-      /*
+    p<span class="token operator">-></span>cleanup <span class="token operator">=</span> c<span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
           头插进cleanup链表
-      */
+      */</span>
 
-    ngx_log_debug1(NGX_LOG_DEBUG_ALLOC, p-&gt;log, 0, &quot;add cleanup: %p&quot;, c);
+    <span class="token function">ngx_log_debug1</span><span class="token punctuation">(</span>NGX_LOG_DEBUG_ALLOC<span class="token punctuation">,</span> p<span class="token operator">-></span>log<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"add cleanup: %p"</span><span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    return c;
-}</code></pre>
+    <span class="token keyword">return</span> c<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <ol>
 <li>ngx_pool_run_cleanup_file: 清理cleanup链表上的文件描述符fd，时间复杂度O(n)，链表过长时效率偏低</li>
 </ol>
-<pre><code class="c">void
-ngx_pool_run_cleanup_file(ngx_pool_t *p, ngx_fd_t fd)
-{
-    ngx_pool_cleanup_t       *c;
-    ngx_pool_cleanup_file_t  *cf;
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span>
+<span class="token function">ngx_pool_run_cleanup_file</span><span class="token punctuation">(</span>ngx_pool_t <span class="token operator">*</span>p<span class="token punctuation">,</span> ngx_fd_t fd<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ngx_pool_cleanup_t       <span class="token operator">*</span>c<span class="token punctuation">;</span>
+    ngx_pool_cleanup_file_t  <span class="token operator">*</span>cf<span class="token punctuation">;</span>
 
-    for (c = p-&gt;cleanup; c; c = c-&gt;next) {
-        if (c-&gt;handler == ngx_pool_cleanup_file) {
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>c <span class="token operator">=</span> p<span class="token operator">-></span>cleanup<span class="token punctuation">;</span> c<span class="token punctuation">;</span> c <span class="token operator">=</span> c<span class="token operator">-></span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>c<span class="token operator">-></span>handler <span class="token operator">==</span> ngx_pool_cleanup_file<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-            cf = c-&gt;data;
+            cf <span class="token operator">=</span> c<span class="token operator">-></span>data<span class="token punctuation">;</span>
 
-            if (cf-&gt;fd == fd) {
-                c-&gt;handler(cf);
-                c-&gt;handler = NULL;
-                return;
-            }
-        }
-    }
-}</code></pre>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>cf<span class="token operator">-></span>fd <span class="token operator">==</span> fd<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                c<span class="token operator">-></span><span class="token function">handler</span><span class="token punctuation">(</span>cf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                c<span class="token operator">-></span>handler <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <ol>
 <li>ngx_pool_cleanup_file: 关闭文件回调函数</li>
 </ol>
-<pre><code class="c">void
-ngx_pool_cleanup_file(void *data)
-{
-    ngx_pool_cleanup_file_t  *c = data;
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span>
+<span class="token function">ngx_pool_cleanup_file</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span>data<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ngx_pool_cleanup_file_t  <span class="token operator">*</span>c <span class="token operator">=</span> data<span class="token punctuation">;</span>
 
-    ngx_log_debug1(NGX_LOG_DEBUG_ALLOC, c-&gt;log, 0, &quot;file cleanup: fd:%d&quot;,
-                   c-&gt;fd);
+    <span class="token function">ngx_log_debug1</span><span class="token punctuation">(</span>NGX_LOG_DEBUG_ALLOC<span class="token punctuation">,</span> c<span class="token operator">-></span>log<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"file cleanup: fd:%d"</span><span class="token punctuation">,</span>
+                   c<span class="token operator">-></span>fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    if (ngx_close_file(c-&gt;fd) == NGX_FILE_ERROR) {
-        ngx_log_error(NGX_LOG_ALERT, c-&gt;log, ngx_errno,
-                      ngx_close_file_n &quot; \&quot;%s\&quot; failed&quot;, c-&gt;name);
-    }
-}</code></pre>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">ngx_close_file</span><span class="token punctuation">(</span>c<span class="token operator">-></span>fd<span class="token punctuation">)</span> <span class="token operator">==</span> NGX_FILE_ERROR<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">ngx_log_error</span><span class="token punctuation">(</span>NGX_LOG_ALERT<span class="token punctuation">,</span> c<span class="token operator">-></span>log<span class="token punctuation">,</span> ngx_errno<span class="token punctuation">,</span>
+                      ngx_close_file_n <span class="token string">" \"%s\" failed"</span><span class="token punctuation">,</span> c<span class="token operator">-></span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>ngx_pool_delete_file: 删除文件回调函数</p>
-<pre><code class="c">void
-ngx_pool_delete_file(void *data)
-{
-    ngx_pool_cleanup_file_t  *c = data;
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span>
+<span class="token function">ngx_pool_delete_file</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span>data<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ngx_pool_cleanup_file_t  <span class="token operator">*</span>c <span class="token operator">=</span> data<span class="token punctuation">;</span>
 
-    ngx_err_t  err;
+    ngx_err_t  err<span class="token punctuation">;</span>
 
-    ngx_log_debug2(NGX_LOG_DEBUG_ALLOC, c-&gt;log, 0, &quot;file cleanup: fd:%d %s&quot;,
-                   c-&gt;fd, c-&gt;name);
+    <span class="token function">ngx_log_debug2</span><span class="token punctuation">(</span>NGX_LOG_DEBUG_ALLOC<span class="token punctuation">,</span> c<span class="token operator">-></span>log<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"file cleanup: fd:%d %s"</span><span class="token punctuation">,</span>
+                   c<span class="token operator">-></span>fd<span class="token punctuation">,</span> c<span class="token operator">-></span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    if (ngx_delete_file(c-&gt;name) == NGX_FILE_ERROR) {
-        err = ngx_errno;
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">ngx_delete_file</span><span class="token punctuation">(</span>c<span class="token operator">-></span>name<span class="token punctuation">)</span> <span class="token operator">==</span> NGX_FILE_ERROR<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        err <span class="token operator">=</span> ngx_errno<span class="token punctuation">;</span>
 
-        if (err != NGX_ENOENT) {
-            ngx_log_error(NGX_LOG_CRIT, c-&gt;log, err,
-                          ngx_delete_file_n &quot; \&quot;%s\&quot; failed&quot;, c-&gt;name);
-        }
-    }
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>err <span class="token operator">!=</span> NGX_ENOENT<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">ngx_log_error</span><span class="token punctuation">(</span>NGX_LOG_CRIT<span class="token punctuation">,</span> c<span class="token operator">-></span>log<span class="token punctuation">,</span> err<span class="token punctuation">,</span>
+                          ngx_delete_file_n <span class="token string">" \"%s\" failed"</span><span class="token punctuation">,</span> c<span class="token operator">-></span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
-    if (ngx_close_file(c-&gt;fd) == NGX_FILE_ERROR) {
-        ngx_log_error(NGX_LOG_ALERT, c-&gt;log, ngx_errno,
-                      ngx_close_file_n &quot; \&quot;%s\&quot; failed&quot;, c-&gt;name);
-    }
-}</code></pre>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">ngx_close_file</span><span class="token punctuation">(</span>c<span class="token operator">-></span>fd<span class="token punctuation">)</span> <span class="token operator">==</span> NGX_FILE_ERROR<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">ngx_log_error</span><span class="token punctuation">(</span>NGX_LOG_ALERT<span class="token punctuation">,</span> c<span class="token operator">-></span>log<span class="token punctuation">,</span> ngx_errno<span class="token punctuation">,</span>
+                      ngx_close_file_n <span class="token string">" \"%s\" failed"</span><span class="token punctuation">,</span> c<span class="token operator">-></span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 </ol>
 <h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><ol>
@@ -1424,46 +1423,46 @@ ngx_pool_delete_file(void *data)
 <h5 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h5><ol>
 <li><p>关于current指针</p>
 <p>current在内存池初始化时时指向父节点本身的，但是随着内存的不断分配出去其指向会不断的从small链表的头结点向尾结点方向移动。在分配小块内存时，会遍历small链表的结点，然后判断结点上是否有足够的空间满足申请者的需求，如果有则在已存在的结点上分配内存，如果没有则添加新的结点并在新结点上分配内存。随着内存不断的分配，结点上的内存空间可能会被分配完或者接近分配完(只剩下小块的内存，无法满足申请者的需求，类似内存碎片)，因此就要去扩容了，随着结点个数不断增加链表越来越长，遍历结点的效率会越来越低，而且链表中很多结点上的空间可能已经被分配完了，重复的遍历时没有任何意义的。nginx巧妙的借助current指针来解决这个问题，</p>
-<pre><code class="c">static void *
-ngx_palloc_block(ngx_pool_t *pool, size_t size)
-{
-    u_char      *m;
-    size_t       psize;
-    ngx_pool_t  *p, *new;
+<pre class=" language-c"><code class="language-c"><span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token operator">*</span>
+<span class="token function">ngx_palloc_block</span><span class="token punctuation">(</span>ngx_pool_t <span class="token operator">*</span>pool<span class="token punctuation">,</span> size_t size<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    u_char      <span class="token operator">*</span>m<span class="token punctuation">;</span>
+    size_t       psize<span class="token punctuation">;</span>
+    ngx_pool_t  <span class="token operator">*</span>p<span class="token punctuation">,</span> <span class="token operator">*</span>new<span class="token punctuation">;</span>
 
-    psize = (size_t) (pool-&gt;d.end - (u_char *) pool);
+    psize <span class="token operator">=</span> <span class="token punctuation">(</span>size_t<span class="token punctuation">)</span> <span class="token punctuation">(</span>pool<span class="token operator">-></span>d<span class="token punctuation">.</span>end <span class="token operator">-</span> <span class="token punctuation">(</span>u_char <span class="token operator">*</span><span class="token punctuation">)</span> pool<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    m = ngx_memalign(NGX_POOL_ALIGNMENT, psize, pool-&gt;log);
+    m <span class="token operator">=</span> <span class="token function">ngx_memalign</span><span class="token punctuation">(</span>NGX_POOL_ALIGNMENT<span class="token punctuation">,</span> psize<span class="token punctuation">,</span> pool<span class="token operator">-></span>log<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    if (m == NULL) {
-        return NULL;
-    }
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>m <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    new = (ngx_pool_t *) m;
+    new <span class="token operator">=</span> <span class="token punctuation">(</span>ngx_pool_t <span class="token operator">*</span><span class="token punctuation">)</span> m<span class="token punctuation">;</span>
 
-    new-&gt;d.end = m + psize;
+    new<span class="token operator">-></span>d<span class="token punctuation">.</span>end <span class="token operator">=</span> m <span class="token operator">+</span> psize<span class="token punctuation">;</span>
 
-    new-&gt;d.next = NULL;
+    new<span class="token operator">-></span>d<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
 
-    new-&gt;d.failed = 0;
+    new<span class="token operator">-></span>d<span class="token punctuation">.</span>failed <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-    m += sizeof(ngx_pool_data_t);
+    m <span class="token operator">+</span><span class="token operator">=</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>ngx_pool_data_t<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    m = ngx_align_ptr(m, NGX_ALIGNMENT);
+    m <span class="token operator">=</span> <span class="token function">ngx_align_ptr</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span> NGX_ALIGNMENT<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    new-&gt;d.last = m + size;
+    new<span class="token operator">-></span>d<span class="token punctuation">.</span>last <span class="token operator">=</span> m <span class="token operator">+</span> size<span class="token punctuation">;</span>
 
-    // 重点部分
-    for (p = pool-&gt;current; p-&gt;d.next; p = p-&gt;d.next) {
-        if (p-&gt;d.failed++ &gt; 4) {
-            pool-&gt;current = p-&gt;d.next;
-        }
-    }
+    <span class="token comment" spellcheck="true">// 重点部分</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>p <span class="token operator">=</span> pool<span class="token operator">-></span>current<span class="token punctuation">;</span> p<span class="token operator">-></span>d<span class="token punctuation">.</span>next<span class="token punctuation">;</span> p <span class="token operator">=</span> p<span class="token operator">-></span>d<span class="token punctuation">.</span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token operator">-></span>d<span class="token punctuation">.</span>failed<span class="token operator">++</span> <span class="token operator">></span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            pool<span class="token operator">-></span>current <span class="token operator">=</span> p<span class="token operator">-></span>d<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
-    p-&gt;d.next = new;
+    p<span class="token operator">-></span>d<span class="token punctuation">.</span>next <span class="token operator">=</span> new<span class="token punctuation">;</span>
 
-    return m;
-}</code></pre>
+    <span class="token keyword">return</span> m<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>这部分代码是nginx扩容small链表的逻辑，关于current指针的部分我已经标出。根据代码得知：在链表上已存在的结点上的空间都无法满足分配内存的需求时就会新建一个结点然后分配内存，新结点采用的是尾插，因此要遍历链表拿到尾结点，但是如果链表过长就会导致效率低下。因此每增加一个结点时，就会从current指向的结点开始遍历(最开始时指向父节点本身的)，对其结点的failed字段进行判断(还要增加1，因为扩容就意味着此前的所有结点不能满足分配需求)，如果某个结点四次以上不满足分配内存的需求，就将current指向这个结点的下一个结点(找你这个结点要了四次内存都要不到，我就认为你没有可分配的内存了，下次再找内存池要内存，直接跳过你，从你后面的结点开始要内存)。这样就可以避免每次都遍历整个链表以及其中空间已经分配完的结点。</p>
 <p><img src="source/image/ngx_current_1-20210327225636357.png" alt="内存池结构"></p>
 </li>
@@ -1478,7 +1477,7 @@ ngx_palloc_block(ngx_pool_t *pool, size_t size)
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>nginx内存池</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">3.9k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">3.7k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-03-18, 15:14:01</p>
     <p><span class="copy-title">最后更新:</span>2021-03-27, 22:58:18</p>
@@ -1526,7 +1525,7 @@ ngx_palloc_block(ngx_pool_t *pool, size_t size)
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#内存','#queue','#list','#hashtable','#缓冲区','#信号','#c++','#线程','#thread_pool','#net',],
+            'data': ['#Dockerfile','#Nginx','#sql_base','#ecs','#zabbix','#Jenkinsfile','#linux性能优化实战笔记','#kubectl','#book','#c','#c primer plus','#cicd','#c语言基础','#jenkins','#mongodb','#数据结构','#sonar','#操作系统','#排序','#进程','#c++','#list','#缓冲区','#信号','#queue','#net','#内存','#no','#hashtable','#thread_pool','#线程','#array','#mem_pool',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

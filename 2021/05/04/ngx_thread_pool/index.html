@@ -6,17 +6,16 @@
   <meta name="keywords" content=" thread_pool ">
   <meta name="description" content="nginx线程池 | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="网络字节序内存分为大端存储和小端存储，网络数据同样有大小端之分。  发送主机通常将发送缓冲区中的数据按照内存地址从低到高的顺序发出。 接收主机把从网络上收到的字节依次保存在接收缓冲区中，也是按照内存从低到高的顺序保存。 因此，网络数据流的地址应该规定：先发出的数据是低地址，后发出的数据是高地址。 TCP&#x2F;IP协议规定，网络数据流应采用大端字节序，即低地址高字节。 不管是大端机还是小端机，都会按照T">
-<meta property="og:type" content="article">
-<meta property="og:title" content="socket">
-<meta property="og:url" content="https://duwei19961021.github.io/2021/05/12/socket/index.html">
+<meta name="description" content="gitlabBranch gitlabSourceBranch gitlabActionType gitlabUserName gitlabUserUsername gitlabUserEmail gitlabSourceRepoHomepage gitlabSourceRepoName gitlabSourceNamespace gitlabSourceRepoURL gitlabSourceR">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BLOG">
+<meta property="og:url" content="https://duwei19961021.github.io/file/sonar.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="网络字节序内存分为大端存储和小端存储，网络数据同样有大小端之分。  发送主机通常将发送缓冲区中的数据按照内存地址从低到高的顺序发出。 接收主机把从网络上收到的字节依次保存在接收缓冲区中，也是按照内存从低到高的顺序保存。 因此，网络数据流的地址应该规定：先发出的数据是低地址，后发出的数据是高地址。 TCP&#x2F;IP协议规定，网络数据流应采用大端字节序，即低地址高字节。 不管是大端机还是小端机，都会按照T">
+<meta property="og:description" content="gitlabBranch gitlabSourceBranch gitlabActionType gitlabUserName gitlabUserUsername gitlabUserEmail gitlabSourceRepoHomepage gitlabSourceRepoName gitlabSourceNamespace gitlabSourceRepoURL gitlabSourceR">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-12T05:44:40.000Z">
-<meta property="article:modified_time" content="2021-05-20T05:56:40.085Z">
+<meta property="article:published_time" content="2021-05-23T01:21:25.624Z">
+<meta property="article:modified_time" content="2021-03-18T03:09:52.073Z">
 <meta property="article:author" content="拦云">
-<meta property="article:tag" content="net">
 <meta name="twitter:card" content="summary">
 
 
@@ -44,7 +43,7 @@
 <script src="/js/iconfont.js?v=1.0.1" ></script>
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="BLOG" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 <div style="display: none">
   <input class="theme_disqus_on" value="false">
   <input class="theme_preload_comment" value="true">
@@ -69,31 +68,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(53)</small></div></li>
-    
-        
-            
-            <li><div data-rel="C语言">C语言<small>(17)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="运维">运维<small>(10)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="k8s">k8s<small>(2)</small></div>
-                
-            </li>
-            
-        
+    <li><div class="all active">全部文章<small>(52)</small></div></li>
     
         
             
@@ -121,6 +96,30 @@
     
         
             
+            <li><div data-rel="运维">运维<small>(11)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="k8s">k8s<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="C语言">C语言<small>(18)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
             <li><div data-rel="操作系统">操作系统<small>(4)</small></div>
                 
             </li>
@@ -137,8 +136,8 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="53">
-<input type="hidden" id="yelog_site_word_count" value="82k">
+<input type="hidden" id="yelog_site_posts_number" value="52">
+<input type="hidden" id="yelog_site_word_count" value="77.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -172,15 +171,7 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a class="color2">c</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">ecs</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color2">Jenkinsfile</a>
+        <a class="color1">Dockerfile</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -188,23 +179,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">sonar</a>
+        <a class="color4">sql_base</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">kubectl</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">jenkins</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">linux性能优化实战笔记</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">mongodb</a>
+        <a class="color4">ecs</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -212,15 +191,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">cicd</a>
+        <a class="color2">Jenkinsfile</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">数据结构</a>
+        <a class="color4">linux性能优化实战笔记</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">c语言基础</a>
+        <a class="color3">kubectl</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -228,7 +207,39 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">Dockerfile</a>
+        <a class="color2">c</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">c primer plus</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">cicd</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">c语言基础</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">jenkins</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">mongodb</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">数据结构</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">sonar</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">操作系统</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -240,35 +251,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">c primer plus</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">sql_base</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color1">array</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">mem_pool</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">内存</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color1">queue</a>
+        <a class="color4">c++</a>
     </li>
     
     <li class="article-tag-list-item">
         <a class="color5">list</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color5">hashtable</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -280,11 +267,23 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">c++</a>
+        <a class="color1">queue</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">线程</a>
+        <a class="color4">net</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">内存</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">no</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">hashtable</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -292,7 +291,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">net</a>
+        <a class="color3">线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">array</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">mem_pool</a>
     </li>
     
     <div class="clearfix"></div>
@@ -305,6 +312,30 @@
     
     <nav id="title-list-nav">
         
+        <a  class="运维 "
+           href="/2021/03/16/Nginx%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96header/"
+           data-tag="Nginx"
+           data-author="" >
+            <span class="post-title" title="Nginx日志获取header">Nginx日志获取header</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/03/16/make/"
+           data-tag="c"
+           data-author="" >
+            <span class="post-title" title="make">make</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/c++%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="c++构造函数">c++构造函数</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
         <a  class="C语言 "
            href="/2021/04/13/CppPrimer/"
            data-tag="book"
@@ -314,75 +345,67 @@
         </a>
         
         <a  class=""
-           href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0linux%E5%91%BD%E4%BB%A4/"
+           href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0linux%E5%91%BD%E4%BB%A4/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="C语言实现linux命令">C语言实现linux命令</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E9%A2%84%E5%A4%84%E7%90%86/"
+           href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E9%A2%84%E5%A4%84%E7%90%86/"
            data-tag="c"
            data-author="" >
             <span class="post-title" title="C语言预处理">C语言预处理</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/ECS%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9/"
+           href="/2021/03/16/ECS%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9/"
            data-tag="ecs"
            data-author="" >
             <span class="post-title" title="ECS磁盘扩容">ECS磁盘扩容</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/Jenkinsfile/"
+           href="/2021/03/16/Jenkinsfile/"
            data-tag="Jenkinsfile"
            data-author="" >
             <span class="post-title" title="Jenkinsfile">Jenkinsfile</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/Nginx%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96header/"
-           data-tag="Nginx"
-           data-author="" >
-            <span class="post-title" title="Nginx日志获取header">Nginx日志获取header</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="运维 "
-           href="/2021/03/18/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/"
+           href="/2021/03/16/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/"
            data-tag="sonar"
            data-author="" >
             <span class="post-title" title="Jenkins结合sonar代码检测流水线">Jenkins结合sonar代码检测流水线</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/c++%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="c++构造函数">c++构造函数</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/Nginx/"
+           href="/2021/03/16/Nginx/"
            data-tag="Nginx"
            data-author="" >
             <span class="post-title" title="Nginx">Nginx</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class=""
-           href="/2021/03/18/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B7/"
+           href="/2021/03/16/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B7/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="c陷阱与缺陷">c陷阱与缺陷</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2021/03/16/jenkins%E7%BB%93%E5%90%88rsync%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81/"
+           data-tag="jenkins"
+           data-author="" >
+            <span class="post-title" title="jenkins结合rsync同步代码">jenkins结合rsync同步代码</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="k8s "
@@ -394,203 +417,155 @@
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/jenkins%E7%BB%93%E5%90%88rsync%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81/"
-           data-tag="jenkins"
-           data-author="" >
-            <span class="post-title" title="jenkins结合rsync同步代码">jenkins结合rsync同步代码</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="运维 "
-           href="/2021/03/18/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"
+           href="/2021/03/16/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"
            data-tag="linux性能优化实战笔记"
            data-author="" >
             <span class="post-title" title="linux性能优化实战笔记">linux性能优化实战笔记</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="C语言 "
-           href="/2021/03/18/make/"
-           data-tag="c"
-           data-author="" >
-            <span class="post-title" title="make">make</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/mongo/"
+           href="/2021/03/16/mongo/"
            data-tag="mongodb"
            data-author="" >
             <span class="post-title" title="mongo">mongo</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="Nginx "
-           href="/2021/03/17/ngx_array/"
-           data-tag="array"
-           data-author="" >
-            <span class="post-title" title="nginx数组">nginx数组</span>
-            <span class="post-date" title="2021-03-17 11:26:01">2021/03/17</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/sonar/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="sonar">sonar</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/sql/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="sql">sql</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/zabbix_dingdingAlert/"
+           href="/2021/03/16/zabbix_dingdingAlert/"
            data-tag="zabbix"
            data-author="" >
             <span class="post-title" title="zabbix_dingdingAlert">zabbix_dingdingAlert</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="k8s "
-           href="/2021/03/18/%E4%B8%80%E6%AC%A1%E6%B5%B7%E5%A4%96k8s%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5/"
-           data-tag="cicd"
-           data-author="" >
-            <span class="post-title" title="一次海外k8s集群代码发布实践">一次海外k8s集群代码发布实践</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/%E4%BA%8C%E5%8F%89%E6%A0%91/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="二叉树">二叉树</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="运维 "
-           href="/2021/03/18/zabbix_key/"
+           href="/2021/03/16/zabbix_key/"
            data-tag="zabbix"
            data-author="" >
             <span class="post-title" title="zabbix_key">zabbix_key</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="k8s "
+           href="/2021/03/16/%E4%B8%80%E6%AC%A1%E6%B5%B7%E5%A4%96k8s%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5/"
+           data-tag="cicd"
+           data-author="" >
+            <span class="post-title" title="一次海外k8s集群代码发布实践">一次海外k8s集群代码发布实践</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class=""
-           href="/2021/03/18/%E4%BA%8C%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/"
+           href="/2021/03/16/%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="二叉树">二叉树</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/%E4%BA%8C%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="二级计算机">二级计算机</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E5%B8%A6%E7%8E%AF%E9%93%BE%E8%A1%A8/"
+           href="/2021/03/16/%E5%B8%A6%E7%8E%AF%E9%93%BE%E8%A1%A8/"
            data-tag="数据结构"
            data-author="" >
             <span class="post-title" title="带环链表">带环链表</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/%E6%B1%87%E7%BC%96%E7%AC%94%E8%AE%B0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="汇编笔记">汇编笔记</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="操作系统 "
-           href="/2021/03/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="操作系统">操作系统</span>
-            <span class="post-date" title="2021-03-20 11:54:29">2021/03/20</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/"
+           href="/2021/03/16/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/"
            data-tag="c语言基础"
            data-author="" >
             <span class="post-title" title="数据的存储">数据的存储</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class=""
-           href="/2021/03/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
+           href="/2021/03/16/%E6%B1%87%E7%BC%96%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="汇编笔记">汇编笔记</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/05/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"
+           data-tag="no"
+           data-author="" >
+            <span class="post-title" title="操作系统">操作系统</span>
+            <span class="post-date" title="2021-05-23 09:25:50">2021/05/23</span>
+        </a>
+        
+        <a  class=""
+           href="/2021/03/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="计算机网络">计算机网络</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E4%B8%93%E5%AE%B6%E7%BC%96%E7%A8%8B/"
+           href="/2021/03/16/C%E4%B8%93%E5%AE%B6%E7%BC%96%E7%A8%8B/"
            data-tag="book"
            data-author="" >
             <span class="post-title" title="C专家编程">C专家编程</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E5%92%8C%E6%8C%87%E9%92%88/"
+           href="/2021/03/16/C%E5%92%8C%E6%8C%87%E9%92%88/"
            data-tag="book"
            data-author="" >
             <span class="post-title" title="C和指针">C和指针</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="Docker "
-           href="/2021/03/18/Dockerfile/"
-           data-tag="Dockerfile"
-           data-author="" >
-            <span class="post-title" title="Dockerfile">Dockerfile</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/C%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90/"
+           href="/2021/03/16/C%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90/"
            data-tag="book"
            data-author="" >
             <span class="post-title" title="C深入剖析">C深入剖析</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
-        <a  class="Nginx "
-           href="/2021/03/18/ngx_mem_pool/"
-           data-tag="mem_pool"
+        <a  class="Docker "
+           href="/2021/03/16/Dockerfile/"
+           data-tag="Dockerfile"
            data-author="" >
-            <span class="post-title" title="nginx内存池">nginx内存池</span>
-            <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+            <span class="post-title" title="Dockerfile">Dockerfile</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           href="/2021/03/16/c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
            data-tag="c"
            data-author="" >
             <span class="post-title" title="c学习笔记">c学习笔记</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E6%8C%87%E9%92%88/"
+           href="/2021/03/16/%E6%8C%87%E9%92%88/"
            data-tag="c语言基础"
            data-author="" >
             <span class="post-title" title="指针">指针</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
-           href="/2021/03/18/%E6%8E%92%E5%BA%8F/"
+           href="/2021/03/16/%E6%8E%92%E5%BA%8F/"
            data-tag="排序"
            data-author="" >
             <span class="post-title" title="排序">排序</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="C语言 "
@@ -601,44 +576,52 @@
             <span class="post-date" title="2021-03-18 11:09:00">2021/03/18</span>
         </a>
         
+        <a  class="运维 "
+           href="/2020/09/10/tcp:ip/"
+           data-tag="操作系统"
+           data-author="" >
+            <span class="post-title" title="tcp-ip">tcp-ip</span>
+            <span class="post-date" title="2020-09-10 10:09:00">2020/09/10</span>
+        </a>
+        
         <a  class="C语言 "
-           href="/2021/03/18/C%20Primer%20Plus/"
+           href="/2021/03/16/C%20Primer%20Plus/"
            data-tag="c primer plus"
            data-author="" >
             <span class="post-title" title="C Primer Plus">C Primer Plus</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2021/03/18/tcp:ip/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="tcp:ip">tcp:ip</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="mysql "
-           href="/2021/03/18/PracticeSql/"
+           href="/2021/03/16/PracticeSql/"
            data-tag="sql_base"
            data-author="" >
             <span class="post-title" title="PracticeSql">PracticeSql</span>
-            <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
-        </a>
-        
-        <a  class="操作系统 "
-           href="/2021/03/20/virtual_memory/"
-           data-tag="内存"
-           data-author="" >
-            <span class="post-title" title="虚拟内存">虚拟内存</span>
-            <span class="post-date" title="2021-03-20 11:51:57">2021/03/20</span>
+            <span class="post-date" title="2021-03-16 00:33:59">2021/03/16</span>
         </a>
         
         <a  class="Nginx "
-           href="/2021/03/18/ngx_buf/"
-           data-tag="缓冲区"
+           href="/2021/03/18/ngx_mem_pool/"
+           data-tag="mem_pool"
            data-author="" >
-            <span class="post-title" title="nginx缓冲区">nginx缓冲区</span>
+            <span class="post-title" title="nginx内存池">nginx内存池</span>
             <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/17/ngx_array/"
+           data-tag="array"
+           data-author="" >
+            <span class="post-title" title="nginx数组">nginx数组</span>
+            <span class="post-date" title="2021-03-17 11:26:01">2021/03/17</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/05/22/BSTree/"
+           data-tag="c++"
+           data-author="" >
+            <span class="post-title" title="二叉搜索树">二叉搜索树</span>
+            <span class="post-date" title="2021-05-22 20:47:06">2021/05/22</span>
         </a>
         
         <a  class="操作系统 "
@@ -649,60 +632,12 @@
             <span class="post-date" title="2021-03-20 11:55:12">2021/03/20</span>
         </a>
         
-        <a  class="Nginx "
-           href="/2021/03/21/ngx_queue/"
-           data-tag="queue"
-           data-author="" >
-            <span class="post-title" title="nginx双向链表">nginx双向链表</span>
-            <span class="post-date" title="2021-03-21 19:02:44">2021/03/21</span>
-        </a>
-        
-        <a  class="Nginx "
-           href="/2021/03/22/ngx_list/"
-           data-tag="list"
-           data-author="" >
-            <span class="post-title" title="nginx单向链表">nginx单向链表</span>
-            <span class="post-date" title="2021-03-22 11:15:43">2021/03/22</span>
-        </a>
-        
         <a  class=""
            href="/2021/03/22/ngx_align/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="ngx_align">ngx_align</span>
             <span class="post-date" title="2021-03-22 15:44:36">2021/03/22</span>
-        </a>
-        
-        <a  class="Nginx "
-           href="/2021/03/23/ngx_hash/"
-           data-tag="hashtable"
-           data-author="" >
-            <span class="post-title" title="nginx散列表">nginx散列表</span>
-            <span class="post-date" title="2021-03-23 18:21:27">2021/03/23</span>
-        </a>
-        
-        <a  class="操作系统 "
-           href="/2021/04/12/signal/"
-           data-tag="信号"
-           data-author="" >
-            <span class="post-title" title="信号">信号</span>
-            <span class="post-date" title="2021-04-12 19:57:55">2021/04/12</span>
-        </a>
-        
-        <a  class="C语言 "
-           href="/2021/04/25/c++inheritance/"
-           data-tag="c++"
-           data-author="" >
-            <span class="post-title" title="c++继承">c++继承</span>
-            <span class="post-date" title="2021-04-25 22:55:23">2021/04/25</span>
-        </a>
-        
-        <a  class="C语言 "
-           href="/2021/04/20/thread/"
-           data-tag="线程"
-           data-author="" >
-            <span class="post-title" title="thread">thread</span>
-            <span class="post-date" title="2021-04-20 17:02:24">2021/04/20</span>
         </a>
         
         <a  class="C语言 "
@@ -714,11 +649,43 @@
         </a>
         
         <a  class="Nginx "
-           href="/2021/05/04/ngx_thread_pool/"
-           data-tag="thread_pool"
+           href="/2021/03/22/ngx_list/"
+           data-tag="list"
            data-author="" >
-            <span class="post-title" title="nginx线程池">nginx线程池</span>
-            <span class="post-date" title="2021-05-04 00:43:27">2021/05/04</span>
+            <span class="post-title" title="nginx单向链表">nginx单向链表</span>
+            <span class="post-date" title="2021-03-22 11:15:43">2021/03/22</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/18/ngx_buf/"
+           data-tag="缓冲区"
+           data-author="" >
+            <span class="post-title" title="nginx缓冲区">nginx缓冲区</span>
+            <span class="post-date" title="2021-03-18 15:14:01">2021/03/18</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/04/25/c++inheritance/"
+           data-tag="c++"
+           data-author="" >
+            <span class="post-title" title="c++继承">c++继承</span>
+            <span class="post-date" title="2021-04-25 22:55:23">2021/04/25</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/04/12/signal/"
+           data-tag="信号"
+           data-author="" >
+            <span class="post-title" title="信号">信号</span>
+            <span class="post-date" title="2021-04-12 19:57:55">2021/04/12</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/21/ngx_queue/"
+           data-tag="queue"
+           data-author="" >
+            <span class="post-title" title="nginx双向链表">nginx双向链表</span>
+            <span class="post-date" title="2021-03-21 19:02:44">2021/03/21</span>
         </a>
         
         <a  class="C语言 "
@@ -727,6 +694,38 @@
            data-author="" >
             <span class="post-title" title="socket">socket</span>
             <span class="post-date" title="2021-05-12 13:44:40">2021/05/12</span>
+        </a>
+        
+        <a  class="操作系统 "
+           href="/2021/03/20/virtual_memory/"
+           data-tag="内存"
+           data-author="" >
+            <span class="post-title" title="虚拟内存">虚拟内存</span>
+            <span class="post-date" title="2021-03-20 11:51:57">2021/03/20</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/03/23/ngx_hash/"
+           data-tag="hashtable"
+           data-author="" >
+            <span class="post-title" title="nginx散列表">nginx散列表</span>
+            <span class="post-date" title="2021-03-23 18:21:27">2021/03/23</span>
+        </a>
+        
+        <a  class="Nginx "
+           href="/2021/05/04/ngx_thread_pool/"
+           data-tag="thread_pool"
+           data-author="" >
+            <span class="post-title" title="nginx线程池">nginx线程池</span>
+            <span class="post-date" title="2021-05-04 00:43:27">2021/05/04</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2021/04/20/thread/"
+           data-tag="线程"
+           data-author="" >
+            <span class="post-title" title="thread">thread</span>
+            <span class="post-date" title="2021-04-20 17:02:24">2021/04/20</span>
         </a>
         
     </nav>
@@ -770,7 +769,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:2.8k</span>
+        <span>字数:2.7k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -805,7 +804,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="nginx线程池"><a href="#nginx线程池" class="headerlink" title="nginx线程池"></a>nginx线程池</h4><pre><code class="c++">// task链表
+        <h4 id="nginx线程池"><a href="#nginx线程池" class="headerlink" title="nginx线程池"></a>nginx线程池</h4><pre class=" language-c++"><code class="language-c++">// task链表
 struct ngx_thread_task_s {
     ngx_thread_task_t   *next; // 指向下一个task结构
     ngx_uint_t          id; // 起标识作用的id
@@ -837,33 +836,33 @@ struct ngx_thread_pool_s {
 };</code></pre>
 <h5 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h5><ol>
 <li><p>static ngx_int_t ngx_thread_pool_init(ngx_thread_pool_t *tp, ngx_log_t *log, ngx_pool_t *pool): 初始化线程池</p>
-<pre><code class="c">static ngx_int_t  ngx_thread_pool_init(ngx_thread_pool_t *tp, ngx_log_t *log, ngx_pool_t *pool)
-{
-    int             err;
-    pthread_t       tid; // 线程id
- ngx_uint_t      n; // 线程个数
-    pthread_attr_t  attr; // 设置线程属性的对象
+<pre class=" language-c"><code class="language-c"><span class="token keyword">static</span> ngx_int_t  <span class="token function">ngx_thread_pool_init</span><span class="token punctuation">(</span>ngx_thread_pool_t <span class="token operator">*</span>tp<span class="token punctuation">,</span> ngx_log_t <span class="token operator">*</span>log<span class="token punctuation">,</span> ngx_pool_t <span class="token operator">*</span>pool<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span>             err<span class="token punctuation">;</span>
+    pthread_t       tid<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 线程id</span>
+ ngx_uint_t      n<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 线程个数</span>
+    pthread_attr_t  attr<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 设置线程属性的对象</span>
 
-    if (ngx_notify == NULL) {
-        ngx_log_error(NGX_LOG_ALERT, log, 0,
-               &quot;the configured event method cannot be used with thread pools&quot;);
-        return NGX_ERROR;
-    }
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>ngx_notify <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">ngx_log_error</span><span class="token punctuation">(</span>NGX_LOG_ALERT<span class="token punctuation">,</span> log<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+               <span class="token string">"the configured event method cannot be used with thread pools"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> NGX_ERROR<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    ngx_thread_pool_queue_init(&amp;tp-&gt;queue);
- /*
+    <span class="token function">ngx_thread_pool_queue_init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tp<span class="token operator">-></span>queue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token comment" spellcheck="true">/*
         #define ngx_thread_pool_queue_init(q)                                         \
-          (q)-&gt;first = NULL;                                                        \
-          (q)-&gt;last = &amp;(q)-&gt;first
+          (q)->first = NULL;                                                        \
+          (q)->last = &amp;(q)->first
 
       初始化ngx_thread_pool_queue_t：空队列
-    */
+    */</span>
 
-    if (ngx_thread_mutex_create(&amp;tp-&gt;mtx, log) != NGX_OK) {
-        return NGX_ERROR;
-    }
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">ngx_thread_mutex_create</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tp<span class="token operator">-></span>mtx<span class="token punctuation">,</span> log<span class="token punctuation">)</span> <span class="token operator">!=</span> NGX_OK<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> NGX_ERROR<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    /*
+    <span class="token comment" spellcheck="true">/*
         ngx_int_t ngx_thread_mutex_create(ngx_thread_mutex_t *mtx, ngx_log_t *log)
         {
             ngx_err_t            err;
@@ -872,7 +871,7 @@ struct ngx_thread_pool_s {
             err = pthread_mutexattr_init(&amp;attr); // 初始化锁属性结构
             if (err != 0) {
                 ngx_log_error(NGX_LOG_EMERG, log, err,
-                              &quot;pthread_mutexattr_init() failed&quot;);
+                              "pthread_mutexattr_init() failed");
                 return NGX_ERROR;
             }
 
@@ -889,33 +888,33 @@ struct ngx_thread_pool_s {
 
             if (err != 0) {
                 ngx_log_error(NGX_LOG_EMERG, log, err,
-                              &quot;pthread_mutexattr_settype&quot;
-                              &quot;(PTHREAD_MUTEX_ERRORCHECK) failed&quot;);
+                              "pthread_mutexattr_settype"
+                              "(PTHREAD_MUTEX_ERRORCHECK) failed");
                 return NGX_ERROR;
             }
 
             err = pthread_mutex_init(mtx, &amp;attr); // 这一步才是真正的初始化锁并给锁设置属性
             if (err != 0) {
                 ngx_log_error(NGX_LOG_EMERG, log, err,
-                              &quot;pthread_mutex_init() failed&quot;);
+                              "pthread_mutex_init() failed");
                 return NGX_ERROR;
             }
 
             err = pthread_mutexattr_destroy(&amp;attr); // 销毁attr，属性已经设置完，可以释放，避免内存泄露
             if (err != 0) {
                 ngx_log_error(NGX_LOG_ALERT, log, err,
-                              &quot;pthread_mutexattr_destroy() failed&quot;);
+                              "pthread_mutexattr_destroy() failed");
             }
 
             return NGX_OK;
         }
-    */
+    */</span>
 
-    if (ngx_thread_cond_create(&amp;tp-&gt;cond, log) != NGX_OK) { // 初始条件变量，如果初始化失败则线程池的初始化就是有问题的，之前创建的互斥锁资源需要释放
-        (void) ngx_thread_mutex_destroy(&amp;tp-&gt;mtx, log);
-        return NGX_ERROR;
-    }
-    /*
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">ngx_thread_cond_create</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tp<span class="token operator">-></span>cond<span class="token punctuation">,</span> log<span class="token punctuation">)</span> <span class="token operator">!=</span> NGX_OK<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 初始条件变量，如果初始化失败则线程池的初始化就是有问题的，之前创建的互斥锁资源需要释放</span>
+        <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token function">ngx_thread_mutex_destroy</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tp<span class="token operator">-></span>mtx<span class="token punctuation">,</span> log<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> NGX_ERROR<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">/*
       ngx_int_t ngx_thread_cond_create(ngx_thread_cond_t *cond, ngx_log_t *log)
       {
           ngx_err_t  err;
@@ -925,324 +924,324 @@ struct ngx_thread_pool_s {
               return NGX_OK;
           }
 
-          ngx_log_error(NGX_LOG_EMERG, log, err, &quot;pthread_cond_init() failed&quot;);
+          ngx_log_error(NGX_LOG_EMERG, log, err, "pthread_cond_init() failed");
           return NGX_ERROR;
       }
-    */
+    */</span>
 
-    tp-&gt;log = log;
+    tp<span class="token operator">-></span>log <span class="token operator">=</span> log<span class="token punctuation">;</span>
 
-    err = pthread_attr_init(&amp;attr); // 初始化给线程设置属性的结构
-    if (err) {
-        ngx_log_error(NGX_LOG_ALERT, log, err,
-                      &quot;pthread_attr_init() failed&quot;);
-        return NGX_ERROR;
-    }
+    err <span class="token operator">=</span> <span class="token function">pthread_attr_init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>attr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 初始化给线程设置属性的结构</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">ngx_log_error</span><span class="token punctuation">(</span>NGX_LOG_ALERT<span class="token punctuation">,</span> log<span class="token punctuation">,</span> err<span class="token punctuation">,</span>
+                      <span class="token string">"pthread_attr_init() failed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> NGX_ERROR<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    err = pthread_attr_setdetachstate(&amp;attr, PTHREAD_CREATE_DETACHED); // 线程分离，这种属性的线程在运行结束后会自动释放所有资源，无需等待，而无需使用pthread_join进行回收，避免阻塞主线程。这里仅仅初始化attr结构，并未真正意义上给线程设置属性。
-    if (err) {
-        ngx_log_error(NGX_LOG_ALERT, log, err,
-                      &quot;pthread_attr_setdetachstate() failed&quot;);
-        return NGX_ERROR;
-    }
+    err <span class="token operator">=</span> <span class="token function">pthread_attr_setdetachstate</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>attr<span class="token punctuation">,</span> PTHREAD_CREATE_DETACHED<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 线程分离，这种属性的线程在运行结束后会自动释放所有资源，无需等待，而无需使用pthread_join进行回收，避免阻塞主线程。这里仅仅初始化attr结构，并未真正意义上给线程设置属性。</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">ngx_log_error</span><span class="token punctuation">(</span>NGX_LOG_ALERT<span class="token punctuation">,</span> log<span class="token punctuation">,</span> err<span class="token punctuation">,</span>
+                      <span class="token string">"pthread_attr_setdetachstate() failed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> NGX_ERROR<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-#if 0
-    err = pthread_attr_setstacksize(&amp;attr, PTHREAD_STACK_MIN);
-    if (err) {
-        ngx_log_error(NGX_LOG_ALERT, log, err,
-                      &quot;pthread_attr_setstacksize() failed&quot;);
-        return NGX_ERROR;
-    }
-#endif
+<span class="token macro property">#<span class="token directive keyword">if</span> 0</span>
+    err <span class="token operator">=</span> <span class="token function">pthread_attr_setstacksize</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>attr<span class="token punctuation">,</span> PTHREAD_STACK_MIN<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">ngx_log_error</span><span class="token punctuation">(</span>NGX_LOG_ALERT<span class="token punctuation">,</span> log<span class="token punctuation">,</span> err<span class="token punctuation">,</span>
+                      <span class="token string">"pthread_attr_setstacksize() failed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> NGX_ERROR<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
 
-    for (n = 0; n &lt; tp-&gt;threads; n++) { // 创建n个线程
-        err = pthread_create(&amp;tid, &amp;attr, ngx_thread_pool_cycle, tp); // 线程执行的函数是ngx_thread_pool_cycle，给ngx_thread_pool_cycle函数的参数是tp(线程池本身)
-        if (err) {
-            ngx_log_error(NGX_LOG_ALERT, log, err,
-                          &quot;pthread_create() failed&quot;);
-            return NGX_ERROR;
-        }
-    }
-      // 此时n个线程已经创建完毕，它们都执行同一个工作：执行ngx_thread_pool_cycle函数（获取任务，执行任务）
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> n <span class="token operator">&lt;</span> tp<span class="token operator">-></span>threads<span class="token punctuation">;</span> n<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 创建n个线程</span>
+        err <span class="token operator">=</span> <span class="token function">pthread_create</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tid<span class="token punctuation">,</span> <span class="token operator">&amp;</span>attr<span class="token punctuation">,</span> ngx_thread_pool_cycle<span class="token punctuation">,</span> tp<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 线程执行的函数是ngx_thread_pool_cycle，给ngx_thread_pool_cycle函数的参数是tp(线程池本身)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">ngx_log_error</span><span class="token punctuation">(</span>NGX_LOG_ALERT<span class="token punctuation">,</span> log<span class="token punctuation">,</span> err<span class="token punctuation">,</span>
+                          <span class="token string">"pthread_create() failed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> NGX_ERROR<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+      <span class="token comment" spellcheck="true">// 此时n个线程已经创建完毕，它们都执行同一个工作：执行ngx_thread_pool_cycle函数（获取任务，执行任务）</span>
 
-    (void) pthread_attr_destroy(&amp;attr); // 销毁设置线程属性的结构，避免内存泄露
+    <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token function">pthread_attr_destroy</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>attr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 销毁设置线程属性的结构，避免内存泄露</span>
 
-    return NGX_OK;
-}</code></pre>
+    <span class="token keyword">return</span> NGX_OK<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>static void * ngx_thread_pool_cycle(void *data)</p>
-<pre><code class="c">static void *
-ngx_thread_pool_cycle(void *data)
-{
-    ngx_thread_pool_t *tp = data; // 线程池指针
+<pre class=" language-c"><code class="language-c"><span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token operator">*</span>
+<span class="token function">ngx_thread_pool_cycle</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span>data<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ngx_thread_pool_t <span class="token operator">*</span>tp <span class="token operator">=</span> data<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 线程池指针</span>
 
-    int                 err;
-    sigset_t            set; // 线程的信号集
-    ngx_thread_task_t  *task; // task组成队列（叫链表也行）中的元素，元素结构中有个函数指针，也就是要执行的任务函数的指针
+    <span class="token keyword">int</span>                 err<span class="token punctuation">;</span>
+    sigset_t            set<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 线程的信号集</span>
+    ngx_thread_task_t  <span class="token operator">*</span>task<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// task组成队列（叫链表也行）中的元素，元素结构中有个函数指针，也就是要执行的任务函数的指针</span>
 
-#if 0
-    ngx_time_update();
-#endif
+<span class="token macro property">#<span class="token directive keyword">if</span> 0</span>
+    <span class="token function">ngx_time_update</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
 
-    ngx_log_debug1(NGX_LOG_DEBUG_CORE, tp-&gt;log, 0,
-                   &quot;thread in pool \&quot;%V\&quot; started&quot;, &amp;tp-&gt;name);
+    <span class="token function">ngx_log_debug1</span><span class="token punctuation">(</span>NGX_LOG_DEBUG_CORE<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                   <span class="token string">"thread in pool \"%V\" started"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>tp<span class="token operator">-></span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    sigfillset(&amp;set); // 所有信号对应的bitmap上都设置为1
+    <span class="token function">sigfillset</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>set<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 所有信号对应的bitmap上都设置为1</span>
 
-    sigdelset(&amp;set, SIGILL); // 执行了非法指令
-    sigdelset(&amp;set, SIGFPE); // 发生致命的算数运算错误 
-    sigdelset(&amp;set, SIGSEGV); // 段错误
-    sigdelset(&amp;set, SIGBUS); // 非法地址
+    <span class="token function">sigdelset</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>set<span class="token punctuation">,</span> SIGILL<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 执行了非法指令</span>
+    <span class="token function">sigdelset</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>set<span class="token punctuation">,</span> SIGFPE<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 发生致命的算数运算错误 </span>
+    <span class="token function">sigdelset</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>set<span class="token punctuation">,</span> SIGSEGV<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 段错误</span>
+    <span class="token function">sigdelset</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>set<span class="token punctuation">,</span> SIGBUS<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 非法地址</span>
 
-    err = pthread_sigmask(SIG_BLOCK, &amp;set, NULL); // 除了以上四个信号，其它信号都会被阻塞（block）
-    if (err) {
-        ngx_log_error(NGX_LOG_ALERT, tp-&gt;log, err, &quot;pthread_sigmask() failed&quot;);
-        return NULL;
-    }
+    err <span class="token operator">=</span> <span class="token function">pthread_sigmask</span><span class="token punctuation">(</span>SIG_BLOCK<span class="token punctuation">,</span> <span class="token operator">&amp;</span>set<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 除了以上四个信号，其它信号都会被阻塞（block）</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">ngx_log_error</span><span class="token punctuation">(</span>NGX_LOG_ALERT<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">,</span> err<span class="token punctuation">,</span> <span class="token string">"pthread_sigmask() failed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    for ( ;; ) {
-        if (ngx_thread_mutex_lock(&amp;tp-&gt;mtx, tp-&gt;log) != NGX_OK) {
-            // 给mtx上锁，如果mtx已经被锁了则会报错（因为之前设置过锁属性--PTHREAD_MUTEX_ERRORCHECK），这个线程执行结束，走到
-            // 这一步链表上的task并没有被取下来。如果线程获取task时发现task队列正有其它线程在从中获取任务则直接结束，不进行阻塞。
-            return NULL;
-            // 有一点没想明白：如果return那么这个线程就结束了，线程池里的线程数量会减少
+    <span class="token keyword">for</span> <span class="token punctuation">(</span> <span class="token punctuation">;</span><span class="token punctuation">;</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">ngx_thread_mutex_lock</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tp<span class="token operator">-></span>mtx<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">)</span> <span class="token operator">!=</span> NGX_OK<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 给mtx上锁，如果mtx已经被锁了则会报错（因为之前设置过锁属性--PTHREAD_MUTEX_ERRORCHECK），这个线程执行结束，走到</span>
+            <span class="token comment" spellcheck="true">// 这一步链表上的task并没有被取下来。如果线程获取task时发现task队列正有其它线程在从中获取任务则直接结束，不进行阻塞。</span>
+            <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 有一点没想明白：如果return那么这个线程就结束了，线程池里的线程数量会减少</span>
 
-              // 在线程们刚启动的时候可能会出现多个线程争抢一把锁的问题，ngx这里是直接将争抢锁的线程结束掉而不是阻塞，虽然可能会造成某些线程退出，
-              // 造成线程池中线程数量减少，但是这里不阻塞选择结束，带来了性能上的提升，且并不是会持续减少，当所有线程都在cond条件变量下等待时，
-              // 线程的运行就是有序的了，就不会出现争抢锁导致锁退出的情况了。虽然线程数量会减少，但是也并不是会一直减少，在所有线程进入cond条件变量下
-              // 时，便不会再发生争抢锁的情况，且效率比互斥锁要更高。
-              // 在此过程中生产者是worker进程，生产者只有一个！！！，线程多个，所以消费起来，消费者必然比生产者快。
-        }
+              <span class="token comment" spellcheck="true">// 在线程们刚启动的时候可能会出现多个线程争抢一把锁的问题，ngx这里是直接将争抢锁的线程结束掉而不是阻塞，虽然可能会造成某些线程退出，</span>
+              <span class="token comment" spellcheck="true">// 造成线程池中线程数量减少，但是这里不阻塞选择结束，带来了性能上的提升，且并不是会持续减少，当所有线程都在cond条件变量下等待时，</span>
+              <span class="token comment" spellcheck="true">// 线程的运行就是有序的了，就不会出现争抢锁导致锁退出的情况了。虽然线程数量会减少，但是也并不是会一直减少，在所有线程进入cond条件变量下</span>
+              <span class="token comment" spellcheck="true">// 时，便不会再发生争抢锁的情况，且效率比互斥锁要更高。</span>
+              <span class="token comment" spellcheck="true">// 在此过程中生产者是worker进程，生产者只有一个！！！，线程多个，所以消费起来，消费者必然比生产者快。</span>
+        <span class="token punctuation">}</span>
 
-          // 上锁成功，进入临界区！！！
+          <span class="token comment" spellcheck="true">// 上锁成功，进入临界区！！！</span>
 
-        /* the number may become negative */
-        tp-&gt;waiting--; // 未知
+        <span class="token comment" spellcheck="true">/* the number may become negative */</span>
+        tp<span class="token operator">-></span>waiting<span class="token operator">--</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 未知</span>
 
-        while (tp-&gt;queue.first == NULL) { // 如果task队列空（没有任务取），则线程在cond条件变量下休眠，直到被唤醒。使用while：如果醒来发现任务队列还是为空继续休眠
-            if (ngx_thread_cond_wait(&amp;tp-&gt;cond, &amp;tp-&gt;mtx, tp-&gt;log) // 阻塞在当前位置
-                != NGX_OK)
-               // pthread_cond_wait函数在进入休眠时会将锁释放，重新被唤醒时再加锁。如果wait失败则锁不会被释放，所以在这里是用while而不是if，ngx_thread_cond_wait执行失败会释放锁
-            {
-                (void) ngx_thread_mutex_unlock(&amp;tp-&gt;mtx, tp-&gt;log); // 解锁
-                return NULL;
-            }
-        }
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>tp<span class="token operator">-></span>queue<span class="token punctuation">.</span>first <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 如果task队列空（没有任务取），则线程在cond条件变量下休眠，直到被唤醒。使用while：如果醒来发现任务队列还是为空继续休眠</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">ngx_thread_cond_wait</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tp<span class="token operator">-></span>cond<span class="token punctuation">,</span> <span class="token operator">&amp;</span>tp<span class="token operator">-></span>mtx<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 阻塞在当前位置</span>
+                <span class="token operator">!=</span> NGX_OK<span class="token punctuation">)</span>
+               <span class="token comment" spellcheck="true">// pthread_cond_wait函数在进入休眠时会将锁释放，重新被唤醒时再加锁。如果wait失败则锁不会被释放，所以在这里是用while而不是if，ngx_thread_cond_wait执行失败会释放锁</span>
+            <span class="token punctuation">{</span>
+                <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token function">ngx_thread_mutex_unlock</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tp<span class="token operator">-></span>mtx<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 解锁</span>
+                <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
 
-        task = tp-&gt;queue.first; 
-        tp-&gt;queue.first = task-&gt;next; // 取出一个task
+        task <span class="token operator">=</span> tp<span class="token operator">-></span>queue<span class="token punctuation">.</span>first<span class="token punctuation">;</span> 
+        tp<span class="token operator">-></span>queue<span class="token punctuation">.</span>first <span class="token operator">=</span> task<span class="token operator">-></span>next<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 取出一个task</span>
 
-        if (tp-&gt;queue.first == NULL) { // 判断是否取完，取完则将task队列恢复至初始状态
-            tp-&gt;queue.last = &amp;tp-&gt;queue.first;
-        }
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>tp<span class="token operator">-></span>queue<span class="token punctuation">.</span>first <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 判断是否取完，取完则将task队列恢复至初始状态</span>
+            tp<span class="token operator">-></span>queue<span class="token punctuation">.</span>last <span class="token operator">=</span> <span class="token operator">&amp;</span>tp<span class="token operator">-></span>queue<span class="token punctuation">.</span>first<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        if (ngx_thread_mutex_unlock(&amp;tp-&gt;mtx, tp-&gt;log) != NGX_OK) { // 取到task之后是没必要等task中的任务执行完毕之后再释放锁，取出之后就可以立马释放锁了，让其它线程取，提高线程协作的效率。
-            return NULL;
-        }
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">ngx_thread_mutex_unlock</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tp<span class="token operator">-></span>mtx<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">)</span> <span class="token operator">!=</span> NGX_OK<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 取到task之后是没必要等task中的任务执行完毕之后再释放锁，取出之后就可以立马释放锁了，让其它线程取，提高线程协作的效率。</span>
+            <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-#if 0
-        ngx_time_update();
-#endif
+<span class="token macro property">#<span class="token directive keyword">if</span> 0</span>
+        <span class="token function">ngx_time_update</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
 
-        ngx_log_debug2(NGX_LOG_DEBUG_CORE, tp-&gt;log, 0,
-                       &quot;run task #%ui in thread pool \&quot;%V\&quot;&quot;,
-                       task-&gt;id, &amp;tp-&gt;name);
+        <span class="token function">ngx_log_debug2</span><span class="token punctuation">(</span>NGX_LOG_DEBUG_CORE<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                       <span class="token string">"run task #%ui in thread pool \"%V\""</span><span class="token punctuation">,</span>
+                       task<span class="token operator">-></span>id<span class="token punctuation">,</span> <span class="token operator">&amp;</span>tp<span class="token operator">-></span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        task-&gt;handler(task-&gt;ctx, tp-&gt;log); // 此时可以执行task中的任务了
+        task<span class="token operator">-></span><span class="token function">handler</span><span class="token punctuation">(</span>task<span class="token operator">-></span>ctx<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 此时可以执行task中的任务了</span>
 
-        ngx_log_debug2(NGX_LOG_DEBUG_CORE, tp-&gt;log, 0,
-                       &quot;complete task #%ui in thread pool \&quot;%V\&quot;&quot;,
-                       task-&gt;id, &amp;tp-&gt;name);
+        <span class="token function">ngx_log_debug2</span><span class="token punctuation">(</span>NGX_LOG_DEBUG_CORE<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                       <span class="token string">"complete task #%ui in thread pool \"%V\""</span><span class="token punctuation">,</span>
+                       task<span class="token operator">-></span>id<span class="token punctuation">,</span> <span class="token operator">&amp;</span>tp<span class="token operator">-></span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        task-&gt;next = NULL;
+        task<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
 
-        ngx_spinlock(&amp;ngx_thread_pool_done_lock, 1, 2048); // task执行完需要将task添加到done链表上去，添加这个操作执行的时间非常短，所以这里采用的自旋锁，提高效率，减少线程切换带来的开销。
+        <span class="token function">ngx_spinlock</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>ngx_thread_pool_done_lock<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2048</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// task执行完需要将task添加到done链表上去，添加这个操作执行的时间非常短，所以这里采用的自旋锁，提高效率，减少线程切换带来的开销。</span>
 
-        *ngx_thread_pool_done.last = task; // 将task添加到链表末尾
-        ngx_thread_pool_done.last = &amp;task-&gt;next;
+        <span class="token operator">*</span>ngx_thread_pool_done<span class="token punctuation">.</span>last <span class="token operator">=</span> task<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 将task添加到链表末尾</span>
+        ngx_thread_pool_done<span class="token punctuation">.</span>last <span class="token operator">=</span> <span class="token operator">&amp;</span>task<span class="token operator">-></span>next<span class="token punctuation">;</span>
 
-        ngx_memory_barrier();
+        <span class="token function">ngx_memory_barrier</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        ngx_unlock(&amp;ngx_thread_pool_done_lock); // 解锁队列
+        <span class="token function">ngx_unlock</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>ngx_thread_pool_done_lock<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 解锁队列</span>
 
-        (void) ngx_notify(ngx_thread_pool_handler); // 暂时没看懂，貌似和事件驱动模型有关
-    }
-}
+        <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token function">ngx_notify</span><span class="token punctuation">(</span>ngx_thread_pool_handler<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 暂时没看懂，貌似和事件驱动模型有关</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-static void
-ngx_thread_pool_handler(ngx_event_t *ev)
-{
-    ngx_event_t        *event;
-    ngx_thread_task_t  *task;
+<span class="token keyword">static</span> <span class="token keyword">void</span>
+<span class="token function">ngx_thread_pool_handler</span><span class="token punctuation">(</span>ngx_event_t <span class="token operator">*</span>ev<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ngx_event_t        <span class="token operator">*</span>event<span class="token punctuation">;</span>
+    ngx_thread_task_t  <span class="token operator">*</span>task<span class="token punctuation">;</span>
 
-    ngx_log_debug0(NGX_LOG_DEBUG_CORE, ev-&gt;log, 0, &quot;thread pool handler&quot;);
+    <span class="token function">ngx_log_debug0</span><span class="token punctuation">(</span>NGX_LOG_DEBUG_CORE<span class="token punctuation">,</span> ev<span class="token operator">-></span>log<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"thread pool handler"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    ngx_spinlock(&amp;ngx_thread_pool_done_lock, 1, 2048); // 使用的自旋锁，将已完成的task加入至ngx_thread_pool_done链表，操作步骤少，需要的时间也少，使用自旋锁是最合适的，避免进入阻塞，线程切换带来的开销
+    <span class="token function">ngx_spinlock</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>ngx_thread_pool_done_lock<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2048</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 使用的自旋锁，将已完成的task加入至ngx_thread_pool_done链表，操作步骤少，需要的时间也少，使用自旋锁是最合适的，避免进入阻塞，线程切换带来的开销</span>
 
-    task = ngx_thread_pool_done.first; // task保存头结点，这一段代码：一次取出done链表上的多个task
-    ngx_thread_pool_done.first = NULL;
-    ngx_thread_pool_done.last = &amp;ngx_thread_pool_done.first;
+    task <span class="token operator">=</span> ngx_thread_pool_done<span class="token punctuation">.</span>first<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// task保存头结点，这一段代码：一次取出done链表上的多个task</span>
+    ngx_thread_pool_done<span class="token punctuation">.</span>first <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    ngx_thread_pool_done<span class="token punctuation">.</span>last <span class="token operator">=</span> <span class="token operator">&amp;</span>ngx_thread_pool_done<span class="token punctuation">.</span>first<span class="token punctuation">;</span>
 
-    ngx_memory_barrier();
+    <span class="token function">ngx_memory_barrier</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    ngx_unlock(&amp;ngx_thread_pool_done_lock);
+    <span class="token function">ngx_unlock</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>ngx_thread_pool_done_lock<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    while (task) { // 遍历从done链表上取下来的多个结点
-        ngx_log_debug1(NGX_LOG_DEBUG_CORE, ev-&gt;log, 0,
-                       &quot;run completion handler for task #%ui&quot;, task-&gt;id);
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>task<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 遍历从done链表上取下来的多个结点</span>
+        <span class="token function">ngx_log_debug1</span><span class="token punctuation">(</span>NGX_LOG_DEBUG_CORE<span class="token punctuation">,</span> ev<span class="token operator">-></span>log<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                       <span class="token string">"run completion handler for task #%ui"</span><span class="token punctuation">,</span> task<span class="token operator">-></span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        event = &amp;task-&gt;event;
-        task = task-&gt;next;
+        event <span class="token operator">=</span> <span class="token operator">&amp;</span>task<span class="token operator">-></span>event<span class="token punctuation">;</span>
+        task <span class="token operator">=</span> task<span class="token operator">-></span>next<span class="token punctuation">;</span>
 
-        event-&gt;complete = 1; // 标记为已经完成
-        event-&gt;active = 0;
+        event<span class="token operator">-></span>complete <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 标记为已经完成</span>
+        event<span class="token operator">-></span>active <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-        event-&gt;handler(event);
-    }
-}</code></pre>
+        event<span class="token operator">-></span><span class="token function">handler</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>ngx_thread_pool_t <strong>***ngx_thread_pool_add</strong>(<strong>ngx_conf_t ***</strong>cf<strong>,</strong> ngx_str_t *****name)：添加一个内存池</p>
-<pre><code class="c">ngx_thread_pool_t *
-ngx_thread_pool_add(ngx_conf_t *cf, ngx_str_t *name)
-{
-    ngx_thread_pool_t       *tp, **tpp;
-    ngx_thread_pool_conf_t  *tcf;
+<pre class=" language-c"><code class="language-c">ngx_thread_pool_t <span class="token operator">*</span>
+<span class="token function">ngx_thread_pool_add</span><span class="token punctuation">(</span>ngx_conf_t <span class="token operator">*</span>cf<span class="token punctuation">,</span> ngx_str_t <span class="token operator">*</span>name<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ngx_thread_pool_t       <span class="token operator">*</span>tp<span class="token punctuation">,</span> <span class="token operator">*</span><span class="token operator">*</span>tpp<span class="token punctuation">;</span>
+    ngx_thread_pool_conf_t  <span class="token operator">*</span>tcf<span class="token punctuation">;</span>
 
-    if (name == NULL) { // 如果没定义线程池的名字默认为 &quot;default&quot;
-        name = &amp;ngx_thread_pool_default;
-    }
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>name <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 如果没定义线程池的名字默认为 "default"</span>
+        name <span class="token operator">=</span> <span class="token operator">&amp;</span>ngx_thread_pool_default<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    tp = ngx_thread_pool_get(cf-&gt;cycle, name); // 先查找线程池的集合，判断其中是否已经创建过，有则直接返回其指针
+    tp <span class="token operator">=</span> <span class="token function">ngx_thread_pool_get</span><span class="token punctuation">(</span>cf<span class="token operator">-></span>cycle<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 先查找线程池的集合，判断其中是否已经创建过，有则直接返回其指针</span>
 
-    if (tp) {
-        return tp;
-    }
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>tp<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> tp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    tp = ngx_pcalloc(cf-&gt;pool, sizeof(ngx_thread_pool_t)); // 在内存池上给线程池的结构申请内存
-    if (tp == NULL) {
-        return NULL;
-    }
+    tp <span class="token operator">=</span> <span class="token function">ngx_pcalloc</span><span class="token punctuation">(</span>cf<span class="token operator">-></span>pool<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>ngx_thread_pool_t<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 在内存池上给线程池的结构申请内存</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>tp <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    tp-&gt;name = *name;
-    tp-&gt;file = cf-&gt;conf_file-&gt;file.name.data;
-    tp-&gt;line = cf-&gt;conf_file-&gt;line;
+    tp<span class="token operator">-></span>name <span class="token operator">=</span> <span class="token operator">*</span>name<span class="token punctuation">;</span>
+    tp<span class="token operator">-></span>file <span class="token operator">=</span> cf<span class="token operator">-></span>conf_file<span class="token operator">-></span>file<span class="token punctuation">.</span>name<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
+    tp<span class="token operator">-></span>line <span class="token operator">=</span> cf<span class="token operator">-></span>conf_file<span class="token operator">-></span>line<span class="token punctuation">;</span>
 
-    tcf = (ngx_thread_pool_conf_t *) ngx_get_conf(cf-&gt;cycle-&gt;conf_ctx,
-                                                  ngx_thread_pool_module);
+    tcf <span class="token operator">=</span> <span class="token punctuation">(</span>ngx_thread_pool_conf_t <span class="token operator">*</span><span class="token punctuation">)</span> <span class="token function">ngx_get_conf</span><span class="token punctuation">(</span>cf<span class="token operator">-></span>cycle<span class="token operator">-></span>conf_ctx<span class="token punctuation">,</span>
+                                                  ngx_thread_pool_module<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    tpp = ngx_array_push(&amp;tcf-&gt;pools);
-    if (tpp == NULL) {
-        return NULL;
-    }
+    tpp <span class="token operator">=</span> <span class="token function">ngx_array_push</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tcf<span class="token operator">-></span>pools<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>tpp <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    *tpp = tp;
+    <span class="token operator">*</span>tpp <span class="token operator">=</span> tp<span class="token punctuation">;</span>
 
-    return tp;
-}</code></pre>
+    <span class="token keyword">return</span> tp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>ngx_thread_pool_t <strong>***ngx_thread_pool_get</strong>(<strong>ngx_cycle_t ***</strong>cycle<strong>,</strong> ngx_str_t *****name)：通过name获取内存池指针</p>
-<pre><code class="c">ngx_thread_pool_t *
-ngx_thread_pool_get(ngx_cycle_t *cycle, ngx_str_t *name)
-{
-    ngx_uint_t                i;
-    ngx_thread_pool_t       **tpp;
-    ngx_thread_pool_conf_t   *tcf;
+<pre class=" language-c"><code class="language-c">ngx_thread_pool_t <span class="token operator">*</span>
+<span class="token function">ngx_thread_pool_get</span><span class="token punctuation">(</span>ngx_cycle_t <span class="token operator">*</span>cycle<span class="token punctuation">,</span> ngx_str_t <span class="token operator">*</span>name<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ngx_uint_t                i<span class="token punctuation">;</span>
+    ngx_thread_pool_t       <span class="token operator">*</span><span class="token operator">*</span>tpp<span class="token punctuation">;</span>
+    ngx_thread_pool_conf_t   <span class="token operator">*</span>tcf<span class="token punctuation">;</span>
 
-    tcf = (ngx_thread_pool_conf_t *) ngx_get_conf(cycle-&gt;conf_ctx,
-                                                  ngx_thread_pool_module);
+    tcf <span class="token operator">=</span> <span class="token punctuation">(</span>ngx_thread_pool_conf_t <span class="token operator">*</span><span class="token punctuation">)</span> <span class="token function">ngx_get_conf</span><span class="token punctuation">(</span>cycle<span class="token operator">-></span>conf_ctx<span class="token punctuation">,</span>
+                                                  ngx_thread_pool_module<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    tpp = tcf-&gt;pools.elts;
+    tpp <span class="token operator">=</span> tcf<span class="token operator">-></span>pools<span class="token punctuation">.</span>elts<span class="token punctuation">;</span>
 
-    for (i = 0; i &lt; tcf-&gt;pools.nelts; i++) {
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> tcf<span class="token operator">-></span>pools<span class="token punctuation">.</span>nelts<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-        if (tpp[i]-&gt;name.len == name-&gt;len
-            &amp;&amp; ngx_strncmp(tpp[i]-&gt;name.data, name-&gt;data, name-&gt;len) == 0)
-        {
-            return tpp[i];
-        }
-    }
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>tpp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">-></span>name<span class="token punctuation">.</span>len <span class="token operator">==</span> name<span class="token operator">-></span>len
+            <span class="token operator">&amp;&amp;</span> <span class="token function">ngx_strncmp</span><span class="token punctuation">(</span>tpp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">-></span>name<span class="token punctuation">.</span>data<span class="token punctuation">,</span> name<span class="token operator">-></span>data<span class="token punctuation">,</span> name<span class="token operator">-></span>len<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> tpp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
-    return NULL;
-}</code></pre>
+    <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>static void ngx_thread_pool_destroy<strong>(</strong>ngx_thread_pool_t *****tp)：销毁线程池</p>
-<pre><code class="c">static void
-ngx_thread_pool_destroy(ngx_thread_pool_t *tp)
-{
-    ngx_uint_t           n;
-    ngx_thread_task_t    task;
-    volatile ngx_uint_t  lock;
+<pre class=" language-c"><code class="language-c"><span class="token keyword">static</span> <span class="token keyword">void</span>
+<span class="token function">ngx_thread_pool_destroy</span><span class="token punctuation">(</span>ngx_thread_pool_t <span class="token operator">*</span>tp<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ngx_uint_t           n<span class="token punctuation">;</span>
+    ngx_thread_task_t    task<span class="token punctuation">;</span>
+    <span class="token keyword">volatile</span> ngx_uint_t  lock<span class="token punctuation">;</span>
 
-    ngx_memzero(&amp;task, sizeof(ngx_thread_task_t));
+    <span class="token function">ngx_memzero</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>task<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>ngx_thread_task_t<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    task.handler = ngx_thread_pool_exit_handler; // 修改task的handler指针，指向退出线程的函数
-    task.ctx = (void *) &amp;lock;
+    task<span class="token punctuation">.</span>handler <span class="token operator">=</span> ngx_thread_pool_exit_handler<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 修改task的handler指针，指向退出线程的函数</span>
+    task<span class="token punctuation">.</span>ctx <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>lock<span class="token punctuation">;</span>
 
-    for (n = 0; n &lt; tp-&gt;threads; n++) {
-        lock = 1;
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> n <span class="token operator">&lt;</span> tp<span class="token operator">-></span>threads<span class="token punctuation">;</span> n<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        lock <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
 
-        if (ngx_thread_task_post(tp, &amp;task) != NGX_OK) { // 判断当前task是否能退出，能退出则会解锁lock
-            return;
-        }
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">ngx_thread_task_post</span><span class="token punctuation">(</span>tp<span class="token punctuation">,</span> <span class="token operator">&amp;</span>task<span class="token punctuation">)</span> <span class="token operator">!=</span> NGX_OK<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 判断当前task是否能退出，能退出则会解锁lock</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        while (lock) {
-            ngx_sched_yield();
-        }
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>lock<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">ngx_sched_yield</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        task.event.active = 0;
-    }
+        task<span class="token punctuation">.</span>event<span class="token punctuation">.</span>active <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    (void) ngx_thread_cond_destroy(&amp;tp-&gt;cond, tp-&gt;log); // 销毁条件变量
+    <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token function">ngx_thread_cond_destroy</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tp<span class="token operator">-></span>cond<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 销毁条件变量</span>
 
-    (void) ngx_thread_mutex_destroy(&amp;tp-&gt;mtx, tp-&gt;log); // 销毁互斥锁
-}</code></pre>
+    <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token function">ngx_thread_mutex_destroy</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tp<span class="token operator">-></span>mtx<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 销毁互斥锁</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p>ngx_int_t ngx_thread_task_post(ngx_thread_pool_t *tp, ngx_thread_task_t *task)：添加task进入task队列</p>
-<pre><code class="c">ngx_int_t
-ngx_thread_task_post(ngx_thread_pool_t *tp, ngx_thread_task_t *task)
-{
-   if (task-&gt;event.active) {
-       ngx_log_error(NGX_LOG_ALERT, tp-&gt;log, 0,
-                     &quot;task #%ui already active&quot;, task-&gt;id);
-       return NGX_ERROR;
-   }
+<pre class=" language-c"><code class="language-c">ngx_int_t
+<span class="token function">ngx_thread_task_post</span><span class="token punctuation">(</span>ngx_thread_pool_t <span class="token operator">*</span>tp<span class="token punctuation">,</span> ngx_thread_task_t <span class="token operator">*</span>task<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>task<span class="token operator">-></span>event<span class="token punctuation">.</span>active<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token function">ngx_log_error</span><span class="token punctuation">(</span>NGX_LOG_ALERT<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                     <span class="token string">"task #%ui already active"</span><span class="token punctuation">,</span> task<span class="token operator">-></span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token keyword">return</span> NGX_ERROR<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
 
-   if (ngx_thread_mutex_lock(&amp;tp-&gt;mtx, tp-&gt;log) != NGX_OK) {
-       return NGX_ERROR;
-   }
+   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">ngx_thread_mutex_lock</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tp<span class="token operator">-></span>mtx<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">)</span> <span class="token operator">!=</span> NGX_OK<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">return</span> NGX_ERROR<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
 
-   if (tp-&gt;waiting &gt;= tp-&gt;max_queue) {
-       (void) ngx_thread_mutex_unlock(&amp;tp-&gt;mtx, tp-&gt;log);
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>tp<span class="token operator">-></span>waiting <span class="token operator">>=</span> tp<span class="token operator">-></span>max_queue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token function">ngx_thread_mutex_unlock</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tp<span class="token operator">-></span>mtx<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-       ngx_log_error(NGX_LOG_ERR, tp-&gt;log, 0,
-                     &quot;thread pool \&quot;%V\&quot; queue overflow: %i tasks waiting&quot;,
-                     &amp;tp-&gt;name, tp-&gt;waiting);
-       return NGX_ERROR;
-   }
+       <span class="token function">ngx_log_error</span><span class="token punctuation">(</span>NGX_LOG_ERR<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                     <span class="token string">"thread pool \"%V\" queue overflow: %i tasks waiting"</span><span class="token punctuation">,</span>
+                     <span class="token operator">&amp;</span>tp<span class="token operator">-></span>name<span class="token punctuation">,</span> tp<span class="token operator">-></span>waiting<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token keyword">return</span> NGX_ERROR<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
 
-   task-&gt;event.active = 1;
+   task<span class="token operator">-></span>event<span class="token punctuation">.</span>active <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
 
-   task-&gt;id = ngx_thread_pool_task_id++;
-   task-&gt;next = NULL;
+   task<span class="token operator">-></span>id <span class="token operator">=</span> ngx_thread_pool_task_id<span class="token operator">++</span><span class="token punctuation">;</span>
+   task<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
 
-   if (ngx_thread_cond_signal(&amp;tp-&gt;cond, tp-&gt;log) != NGX_OK) { // 有task进队事件发生，唤醒线程处理，奇怪的是为什么是先唤醒消费者线程，再把task放入队列
-       (void) ngx_thread_mutex_unlock(&amp;tp-&gt;mtx, tp-&gt;log);
-       return NGX_ERROR;
-   }
+   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">ngx_thread_cond_signal</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tp<span class="token operator">-></span>cond<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">)</span> <span class="token operator">!=</span> NGX_OK<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 有task进队事件发生，唤醒线程处理，奇怪的是为什么是先唤醒消费者线程，再把task放入队列</span>
+       <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token function">ngx_thread_mutex_unlock</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tp<span class="token operator">-></span>mtx<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token keyword">return</span> NGX_ERROR<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
 
-   *tp-&gt;queue.last = task;
-   tp-&gt;queue.last = &amp;task-&gt;next;
+   <span class="token operator">*</span>tp<span class="token operator">-></span>queue<span class="token punctuation">.</span>last <span class="token operator">=</span> task<span class="token punctuation">;</span>
+   tp<span class="token operator">-></span>queue<span class="token punctuation">.</span>last <span class="token operator">=</span> <span class="token operator">&amp;</span>task<span class="token operator">-></span>next<span class="token punctuation">;</span>
 
-   tp-&gt;waiting++;
+   tp<span class="token operator">-></span>waiting<span class="token operator">++</span><span class="token punctuation">;</span>
 
-   (void) ngx_thread_mutex_unlock(&amp;tp-&gt;mtx, tp-&gt;log);
+   <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token function">ngx_thread_mutex_unlock</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tp<span class="token operator">-></span>mtx<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-   ngx_log_debug2(NGX_LOG_DEBUG_CORE, tp-&gt;log, 0,
-                  &quot;task #%ui added to thread pool \&quot;%V\&quot;&quot;,
-                  task-&gt;id, &amp;tp-&gt;name);
+   <span class="token function">ngx_log_debug2</span><span class="token punctuation">(</span>NGX_LOG_DEBUG_CORE<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                  <span class="token string">"task #%ui added to thread pool \"%V\""</span><span class="token punctuation">,</span>
+                  task<span class="token operator">-></span>id<span class="token punctuation">,</span> <span class="token operator">&amp;</span>tp<span class="token operator">-></span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-   return NGX_OK;
-}</code></pre>
+   <span class="token keyword">return</span> NGX_OK<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 </ol>
 <h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p><img src="../../../Desktop/source/image/ngx_task_queue.png" alt="ngx_task_queue"></p>
@@ -1257,7 +1256,7 @@ ngx_thread_task_post(ngx_thread_pool_t *tp, ngx_thread_task_t *task)
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>nginx线程池</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">2.8k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">2.7k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-05-04, 00:43:27</p>
     <p><span class="copy-title">最后更新:</span>2021-05-07, 00:28:37</p>
@@ -1305,7 +1304,7 @@ ngx_thread_task_post(ngx_thread_pool_t *tp, ngx_thread_task_t *task)
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#c','#ecs','#Jenkinsfile','#Nginx','#sonar','#kubectl','#jenkins','#linux性能优化实战笔记','#mongodb','#zabbix','#cicd','#数据结构','#c语言基础','#book','#Dockerfile','#排序','#进程','#c primer plus','#sql_base','#array','#mem_pool','#内存','#queue','#list','#hashtable','#缓冲区','#信号','#c++','#线程','#thread_pool','#net',],
+            'data': ['#Dockerfile','#Nginx','#sql_base','#ecs','#zabbix','#Jenkinsfile','#linux性能优化实战笔记','#kubectl','#book','#c','#c primer plus','#cicd','#c语言基础','#jenkins','#mongodb','#数据结构','#sonar','#操作系统','#排序','#进程','#c++','#list','#缓冲区','#信号','#queue','#net','#内存','#no','#hashtable','#thread_pool','#线程','#array','#mem_pool',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

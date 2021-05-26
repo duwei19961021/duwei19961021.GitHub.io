@@ -137,7 +137,7 @@
     <div><a  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="52">
-<input type="hidden" id="yelog_site_word_count" value="75.4k">
+<input type="hidden" id="yelog_site_word_count" value="75.8k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -764,12 +764,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-05-06 14:18:56'>2021-03-18 11:09</time>
+        创建时间:<time class="date" title='更新时间: 2021-05-26 11:14:57'>2021-03-18 11:09</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:189</span>
+        <span>字数:602</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -788,7 +788,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#kubectl命令技巧"><span class="toc-text">kubectl命令技巧:</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#平滑更新部署（滚动更新）。相当于阿里云的容器服务里的触发器，触发更新。"><span class="toc-text">平滑更新部署（滚动更新）。相当于阿里云的容器服务里的触发器，触发更新。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基于header头的ingress流量转发"><span class="toc-text">基于header头的ingress流量转发</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#kubectl命令技巧"><span class="toc-text">kubectl命令技巧:</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#平滑更新部署（滚动更新）。相当于阿里云的容器服务里的触发器，触发更新。"><span class="toc-text">平滑更新部署（滚动更新）。相当于阿里云的容器服务里的触发器，触发更新。</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#kubectl-创建https-secret"><span class="toc-text">kubectl 创建https secret</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#基于header头的ingress流量转发"><span class="toc-text">基于header头的ingress流量转发</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#外部服务service"><span class="toc-text">外部服务service</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#优雅终止pod"><span class="toc-text">优雅终止pod</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#生产中遇见的问题："><span class="toc-text">生产中遇见的问题：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#pod更新过程："><span class="toc-text">pod更新过程：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#实验："><span class="toc-text">实验：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#分析出现502的原因："><span class="toc-text">分析出现502的原因：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#解决"><span class="toc-text">解决</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -804,8 +804,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="kubectl命令技巧"><a href="#kubectl命令技巧" class="headerlink" title="kubectl命令技巧:"></a>kubectl命令技巧:</h4><h6 id="平滑更新部署（滚动更新）。相当于阿里云的容器服务里的触发器，触发更新。"><a href="#平滑更新部署（滚动更新）。相当于阿里云的容器服务里的触发器，触发更新。" class="headerlink" title="平滑更新部署（滚动更新）。相当于阿里云的容器服务里的触发器，触发更新。"></a>平滑更新部署（滚动更新）。相当于阿里云的容器服务里的触发器，触发更新。</h6><pre class=" language-shell"><code class="language-shell">kubectl -n vk rollout restart deployment workerman</code></pre>
-<h4 id="基于header头的ingress流量转发"><a href="#基于header头的ingress流量转发" class="headerlink" title="基于header头的ingress流量转发"></a>基于header头的ingress流量转发</h4><p>通过设置ingress配置的注解：匹配请求的header（service-match），version: 3.6.* 则转发值service: abroadapitestservice，否则转发到leshuapiservice。在此基础上还可以设置权重（service-weight），在包含匹配header头的请求中，一定比例的请求转发至两个版本的service。</p>
+        <h5 id="kubectl命令技巧"><a href="#kubectl命令技巧" class="headerlink" title="kubectl命令技巧:"></a>kubectl命令技巧:</h5><h6 id="平滑更新部署（滚动更新）。相当于阿里云的容器服务里的触发器，触发更新。"><a href="#平滑更新部署（滚动更新）。相当于阿里云的容器服务里的触发器，触发更新。" class="headerlink" title="平滑更新部署（滚动更新）。相当于阿里云的容器服务里的触发器，触发更新。"></a>平滑更新部署（滚动更新）。相当于阿里云的容器服务里的触发器，触发更新。</h6><pre class=" language-shell"><code class="language-shell">kubectl -n vk rollout restart deployment workerman</code></pre>
+<h6 id="kubectl-创建https-secret"><a href="#kubectl-创建https-secret" class="headerlink" title="kubectl 创建https secret"></a>kubectl 创建https secret</h6><pre><code>kubectl create secret tls buygoodread.com --cert=5676553_buygoodread.com.pem --key=5676553_buygoodread.com.key -n test</code></pre><h5 id="基于header头的ingress流量转发"><a href="#基于header头的ingress流量转发" class="headerlink" title="基于header头的ingress流量转发"></a>基于header头的ingress流量转发</h5><p>通过设置ingress配置的注解：匹配请求的header（service-match），version: 3.6.* 则转发值service: abroadapitestservice，否则转发到leshuapiservice。在此基础上还可以设置权重（service-weight），在包含匹配header头的请求中，一定比例的请求转发至两个版本的service。</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> extensions/v1beta1
 <span class="token key atrule">kind</span><span class="token punctuation">:</span> Ingress
 <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
@@ -834,6 +834,77 @@
   <span class="token punctuation">-</span> <span class="token key atrule">hosts</span><span class="token punctuation">:</span>
     <span class="token punctuation">-</span> hk.ad6755.com
     <span class="token key atrule">secretName</span><span class="token punctuation">:</span> leshuingress<span class="token punctuation">-</span>secret0</code></pre>
+<h5 id="外部服务service"><a href="#外部服务service" class="headerlink" title="外部服务service"></a>外部服务service</h5><p>在某些环境里，需要将一个外部数据库作为后端服务进行连接，或者将另一个集群或者namespace中的服务作为后端。</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> test<span class="token punctuation">-</span>service
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">80</span>
+    <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">3306</span></code></pre>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Endpoints
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> test<span class="token punctuation">-</span>service
+<span class="token key atrule">subsets</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">addresses</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">ip</span><span class="token punctuation">:</span> 172.16.45.68
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">3306</span></code></pre>
+<pre class=" language-shell"><code class="language-shell">[root@iZbp1e0rt8tskkutxmaijbZ testService]# kubectl get svc
+NAME           TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE
+kubernetes     ClusterIP   10.0.0.1      <none>        443/TCP   257d
+test-service   ClusterIP   10.0.154.24   <none>        80/TCP    14m
+[root@iZbp1e0rt8tskkutxmaijbZ testService]# cd
+[root@iZbp1e0rt8tskkutxmaijbZ ~]# kubectl get svc
+NAME           TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE
+kubernetes     ClusterIP   10.0.0.1      <none>        443/TCP   257d
+test-service   ClusterIP   10.0.154.24   <none>        80/TCP    14m
+[root@iZbp1e0rt8tskkutxmaijbZ ~]# curl 10.0.154.24
+5.6.16-log�;A*N,.A;F��!�/WIGiYa^4&^-mysql_native_password!��#08S01Got packets out of order[root@iZbp1e0rt8tskkutxmaijbZ ~]#    </code></pre>
+<p>这种方式也有弊端，只能写ip不能写域名，例如阿里云上的数据库连接地址都是域名。此时需要用到另一种service：ExternalName</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> test<span class="token punctuation">-</span>service
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> ExternalName
+  <span class="token key atrule">externalName</span><span class="token punctuation">:</span> rm<span class="token punctuation">-</span>bp1768cgx1e2an6w0.mysql.rds.aliyuncs.com</code></pre>
+<pre class=" language-shell"><code class="language-shell">[root@yanxiangbookapi-test-d8f8c8cfb-s58zm data]# ping test-service.default
+PING rm-bp1768cgx1e2an6w0.mysql.rds.aliyuncs.com (172.16.45.68) 56(84) bytes of data.
+64 bytes from 172.16.45.68 (172.16.45.68): icmp_seq=1 ttl=101 time=0.769 ms
+64 bytes from 172.16.45.68 (172.16.45.68): icmp_seq=2 ttl=101 time=0.783 ms
+64 bytes from 172.16.45.68 (172.16.45.68): icmp_seq=3 ttl=101 time=0.736 ms
+64 bytes from 172.16.45.68 (172.16.45.68): icmp_seq=4 ttl=101 time=0.768 ms
+^C
+--- rm-bp1768cgx1e2an6w0.mysql.rds.aliyuncs.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3001ms
+rtt min/avg/max/mdev = 0.736/0.764/0.783/0.017 ms
+[root@yanxiangbookapi-test-d8f8c8cfb-s58zm data]# curl test-service.default:3306
+5.6.16-log�<\55GEeN4��!�XA{gt/.9qOv&mysql_native_password!��#08S01Got packets out of order[root@yanxiangbookapi-test-d8f8c8cfb-s58zm data]#</code></pre>
+<p>原理：创建ExternalName类型的service时会向coredns组件注册一条cname类型的记录：test-service.default — rm-bp1768cgx1e2an6w0.mysql.rds.aliyuncs.com</p>
+<p>关于coredns：之前公司有爬虫业务，爬取数据时经常会报域名解析失败之类的错误，后来得知，在容器里解析域名时首先会向coredns服务查询，如果没查到，则会向宿主机设置的dns服务器查询。爬虫业务频繁使用coredns服务，导致cordns不断重启，因此有了业务上的报错。所以一般情况下，如果容器不需要使用service调用服务时，建议将容器的dnsPolicy设置为default。</p>
+<h5 id="优雅终止pod"><a href="#优雅终止pod" class="headerlink" title="优雅终止pod"></a>优雅终止pod</h5><h6 id="生产中遇见的问题："><a href="#生产中遇见的问题：" class="headerlink" title="生产中遇见的问题："></a>生产中遇见的问题：</h6><p>web服务，由ingress代理到pod。ingress日志报了502，对比时间节点，502的时刻刚好是一次滚动更新，据此得知：ingress将流量代理到了已经被删除的pod（对比pod ip地址）。</p>
+<h6 id="pod更新过程："><a href="#pod更新过程：" class="headerlink" title="pod更新过程："></a>pod更新过程：</h6><p>启动新pod =&gt; 等待新pod进入RUNNING状态 =&gt; 创建endpoint，将新服务纳入负载均衡 =&gt;  设置旧pod为Terminating状态 =&gt; preStop Hook执行 &amp; 从负载均衡器移除旧pod的endpoint =&gt; 等待preStop Hook执行结束 =&gt; 给旧pod中的容器一号进程发送一个sigterm信号 =&gt; 等待旧pod终止，如果超过了terminationGracePeriodSeconds所设置的时间则发送sigkill信号，并删除pod。<a href="https://kubernetes.io/zh/docs/concepts/workloads/pods/pod-lifecycle/#termination-of-pods" target="_blank" rel="noopener">参考</a></p>
+<h6 id="实验："><a href="#实验：" class="headerlink" title="实验："></a>实验：</h6><p>给pod增加以下配置</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">lifecycle</span><span class="token punctuation">:</span>
+  <span class="token key atrule">preStop</span><span class="token punctuation">:</span>
+    <span class="token key atrule">exec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">command</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> sleep
+      <span class="token punctuation">-</span> <span class="token string">"30"</span></code></pre>
+<p>在增加prestop hook之后，手动触发pod滚动更新deployment，新pod进入running之后，旧pod进入Terminating状态的同时容器内部开始执行sleep（进入容器执行了一个监控脚本，监控是否有sleep进程），同时修改负载均衡器的endpoint（移除旧pod的endpoint）。</p>
+<h6 id="分析出现502的原因："><a href="#分析出现502的原因：" class="headerlink" title="分析出现502的原因："></a>分析出现502的原因：</h6><p>旧pod首先被设置成Terminating状态，由于没有设置pre stop hook，这一步直接跳过，同时容器收到sigterm信号，容器内部的服务停止了。但是旧pod的endpoint并没有及时的从负载均衡后端移除（发送sigterm信号和修改负载均衡器的endpoint是同步执行的），流量依然被转发至旧pod，而旧pod中的服务已经终止，so 导致了502。</p>
+<h6 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h6><pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">lifecycle</span><span class="token punctuation">:</span>
+  <span class="token key atrule">preStop</span><span class="token punctuation">:</span>
+    <span class="token key atrule">exec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">command</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> sleep
+      <span class="token punctuation">-</span> <span class="token string">"30"</span>
+terminationGracePeriodSeconds： 60</code></pre>
+<p>增加preStop Hook —- 回调，在pod被设置为terminating状态之后，不要立马发送sigterm信号，而是执行preStop Hook，我这里执行sleep 30，也就是在pod被设置为Terminating状态之后什么也不做，等待30秒，里面的服务依旧运行，给负载均衡更新endpoint留时间，30s之后负载均衡器的endpoint必然更新完了，此时再给pod发送终止信号，服务优雅停止，更新。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
@@ -844,10 +915,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>kubectl</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">189</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">602</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-03-18, 11:09:52</p>
-    <p><span class="copy-title">最后更新:</span>2021-05-06, 14:18:56</p>
+    <p><span class="copy-title">最后更新:</span>2021-05-26, 11:14:57</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/18/kubectl/" title="kubectl">https://duwei19961021.github.io/2021/03/18/kubectl/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

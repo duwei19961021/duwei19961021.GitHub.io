@@ -137,7 +137,7 @@
     <div><a  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="52">
-<input type="hidden" id="yelog_site_word_count" value="75.4k">
+<input type="hidden" id="yelog_site_word_count" value="75.8k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -764,7 +764,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-05-07 00:28:37'>2021-05-04 00:43</time>
+        创建时间:<time class="date" title='更新时间: 2021-05-24 15:04:49'>2021-05-04 00:43</time>
         
     </div>
     <div class="article-meta">
@@ -993,7 +993,7 @@ struct ngx_thread_pool_s {
     <span class="token function">sigdelset</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>set<span class="token punctuation">,</span> SIGSEGV<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 段错误</span>
     <span class="token function">sigdelset</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>set<span class="token punctuation">,</span> SIGBUS<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 非法地址</span>
 
-    err <span class="token operator">=</span> <span class="token function">pthread_sigmask</span><span class="token punctuation">(</span>SIG_BLOCK<span class="token punctuation">,</span> <span class="token operator">&amp;</span>set<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 除了以上四个信号，其它信号都会被阻塞（block）</span>
+    err <span class="token operator">=</span> <span class="token function">pthread_sigmask</span><span class="token punctuation">(</span>SIG_BLOCK<span class="token punctuation">,</span> <span class="token operator">&amp;</span>set<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 除去以上四个信号加上SIGKILL信号(SIGKILL不可被阻塞)，其它信号都会被阻塞（block）</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token function">ngx_log_error</span><span class="token punctuation">(</span>NGX_LOG_ALERT<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">,</span> err<span class="token punctuation">,</span> <span class="token string">"pthread_sigmask() failed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
@@ -1055,7 +1055,7 @@ struct ngx_thread_pool_s {
 
         task<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
 
-        <span class="token function">ngx_spinlock</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>ngx_thread_pool_done_lock<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2048</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// task执行完需要将task添加到done链表上去，添加这个操作执行的时间非常短，所以这里采用的自旋锁，提高效率，减少线程切换带来的开销。</span>
+        <span class="token function">ngx_spinlock</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>ngx_thread_pool_done_lock<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2048</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// task执行完需要将task添加到done链表上去，添加这个操作执行的时间非常短，所以这里采用的自旋锁而不是互斥锁，提高效率，减少线程切换带来的开销。</span>
 
         <span class="token operator">*</span>ngx_thread_pool_done<span class="token punctuation">.</span>last <span class="token operator">=</span> task<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 将task添加到链表末尾</span>
         ngx_thread_pool_done<span class="token punctuation">.</span>last <span class="token operator">=</span> <span class="token operator">&amp;</span>task<span class="token operator">-></span>next<span class="token punctuation">;</span>
@@ -1100,7 +1100,7 @@ struct ngx_thread_pool_s {
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 </li>
-<li><p>ngx_thread_pool_t <strong>***ngx_thread_pool_add</strong>(<strong>ngx_conf_t ***</strong>cf<strong>,</strong> ngx_str_t *****name)：添加一个内存池</p>
+<li><p>ngx_thread_pool_t <em>ngx_thread_pool_add*</em>(<strong>ngx_conf_t *cf</strong>,** ngx_str_t *name)：添加一个内存池</p>
 <pre class=" language-c"><code class="language-c">ngx_thread_pool_t <span class="token operator">*</span>
 <span class="token function">ngx_thread_pool_add</span><span class="token punctuation">(</span>ngx_conf_t <span class="token operator">*</span>cf<span class="token punctuation">,</span> ngx_str_t <span class="token operator">*</span>name<span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -1139,7 +1139,7 @@ struct ngx_thread_pool_s {
     <span class="token keyword">return</span> tp<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 </li>
-<li><p>ngx_thread_pool_t <strong>***ngx_thread_pool_get</strong>(<strong>ngx_cycle_t ***</strong>cycle<strong>,</strong> ngx_str_t *****name)：通过name获取内存池指针</p>
+<li><p>ngx_thread_pool_t <em>ngx_thread_pool_get*</em>(<strong>ngx_cycle_t *cycle</strong>,** ngx_str_t *name)：通过name获取内存池指针</p>
 <pre class=" language-c"><code class="language-c">ngx_thread_pool_t <span class="token operator">*</span>
 <span class="token function">ngx_thread_pool_get</span><span class="token punctuation">(</span>ngx_cycle_t <span class="token operator">*</span>cycle<span class="token punctuation">,</span> ngx_str_t <span class="token operator">*</span>name<span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -1164,7 +1164,7 @@ struct ngx_thread_pool_s {
     <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 </li>
-<li><p>static void ngx_thread_pool_destroy<strong>(</strong>ngx_thread_pool_t *****tp)：销毁线程池</p>
+<li><p>static void ngx_thread_pool_destroy<strong>(</strong>ngx_thread_pool_t *tp)：销毁线程池</p>
 <pre class=" language-c"><code class="language-c"><span class="token keyword">static</span> <span class="token keyword">void</span>
 <span class="token function">ngx_thread_pool_destroy</span><span class="token punctuation">(</span>ngx_thread_pool_t <span class="token operator">*</span>tp<span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -1224,7 +1224,7 @@ struct ngx_thread_pool_s {
    task<span class="token operator">-></span>id <span class="token operator">=</span> ngx_thread_pool_task_id<span class="token operator">++</span><span class="token punctuation">;</span>
    task<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
 
-   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">ngx_thread_cond_signal</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tp<span class="token operator">-></span>cond<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">)</span> <span class="token operator">!=</span> NGX_OK<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 有task进队事件发生，唤醒线程处理，奇怪的是为什么是先唤醒消费者线程，再把task放入队列</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">ngx_thread_cond_signal</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tp<span class="token operator">-></span>cond<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">)</span> <span class="token operator">!=</span> NGX_OK<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 有task入队事件发生，唤醒线程处理，奇怪的是为什么是先唤醒消费者线程，再把task放入队列</span>
        <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token function">ngx_thread_mutex_unlock</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tp<span class="token operator">-></span>mtx<span class="token punctuation">,</span> tp<span class="token operator">-></span>log<span class="token punctuation">)</span><span class="token punctuation">;</span>
        <span class="token keyword">return</span> NGX_ERROR<span class="token punctuation">;</span>
    <span class="token punctuation">}</span>
@@ -1259,7 +1259,7 @@ struct ngx_thread_pool_s {
     <p><span class="copy-title">文章字数:</span><span class="post-count">2.7k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-05-04, 00:43:27</p>
-    <p><span class="copy-title">最后更新:</span>2021-05-07, 00:28:37</p>
+    <p><span class="copy-title">最后更新:</span>2021-05-24, 15:04:49</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/05/04/ngx_thread_pool/" title="nginx线程池">https://duwei19961021.github.io/2021/05/04/ngx_thread_pool/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

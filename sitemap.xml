@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://duwei19961021.github.io/2021/05/03/c++polymorphic/</loc>
+    
+    <lastmod>2021-05-26</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://duwei19961021.github.io/2021/03/18/kubectl/</loc>
     
     <lastmod>2021-05-26</lastmod>
@@ -68,13 +75,6 @@
     <loc>https://duwei19961021.github.io/2021/04/12/signal/</loc>
     
     <lastmod>2021-05-04</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duwei19961021.github.io/2021/05/03/c++polymorphic/</loc>
-    
-    <lastmod>2021-05-03</lastmod>
     
   </url>
   

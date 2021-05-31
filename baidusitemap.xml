@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://duwei19961021.github.io/2020/09/10/tcp:ip/</loc>
+    <lastmod>2021-05-30</lastmod>
+  </url>
+  <url>
+    <loc>https://duwei19961021.github.io/2021/03/18/PracticeSql/</loc>
+    <lastmod>2021-05-28</lastmod>
+  </url>
+  <url>
+    <loc>https://duwei19961021.github.io/2021/03/18/Nginx%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96header/</loc>
+    <lastmod>2021-05-26</lastmod>
+  </url>
+  <url>
+    <loc>https://duwei19961021.github.io/2021/04/25/c++inheritance/</loc>
+    <lastmod>2021-05-26</lastmod>
+  </url>
+  <url>
+    <loc>https://duwei19961021.github.io/2021/01/16/kubectl/</loc>
+    <lastmod>2021-05-26</lastmod>
+  </url>
+  <url>
     <loc>https://duwei19961021.github.io/2021/05/03/c++polymorphic/</loc>
     <lastmod>2021-05-26</lastmod>
   </url>
   <url>
-    <loc>https://duwei19961021.github.io/2021/03/18/kubectl/</loc>
-    <lastmod>2021-05-26</lastmod>
-  </url>
-  <url>
     <loc>https://duwei19961021.github.io/2021/05/04/ngx_thread_pool/</loc>
-    <lastmod>2021-05-24</lastmod>
-  </url>
-  <url>
-    <loc>https://duwei19961021.github.io/2020/09/10/tcp:ip/</loc>
     <lastmod>2021-05-24</lastmod>
   </url>
   <url>
@@ -43,10 +55,6 @@
   <url>
     <loc>https://duwei19961021.github.io/2021/04/12/signal/</loc>
     <lastmod>2021-05-04</lastmod>
-  </url>
-  <url>
-    <loc>https://duwei19961021.github.io/2021/04/25/c++inheritance/</loc>
-    <lastmod>2021-05-03</lastmod>
   </url>
   <url>
     <loc>https://duwei19961021.github.io/2021/04/13/CppPrimer/</loc>
@@ -149,10 +157,6 @@
     <lastmod>2021-03-18</lastmod>
   </url>
   <url>
-    <loc>https://duwei19961021.github.io/2021/03/18/PracticeSql/</loc>
-    <lastmod>2021-03-18</lastmod>
-  </url>
-  <url>
     <loc>https://duwei19961021.github.io/2021/03/18/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B7/</loc>
     <lastmod>2021-03-18</lastmod>
   </url>
@@ -161,11 +165,11 @@
     <lastmod>2021-03-18</lastmod>
   </url>
   <url>
-    <loc>https://duwei19961021.github.io/2021/03/18/zabbix_dingdingAlert/</loc>
+    <loc>https://duwei19961021.github.io/2021/03/18/c++%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2021-03-18</lastmod>
   </url>
   <url>
-    <loc>https://duwei19961021.github.io/2021/03/18/c++%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/</loc>
+    <loc>https://duwei19961021.github.io/2021/03/18/zabbix_dingdingAlert/</loc>
     <lastmod>2021-03-18</lastmod>
   </url>
   <url>
@@ -174,10 +178,6 @@
   </url>
   <url>
     <loc>https://duwei19961021.github.io/2021/03/18/c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2021-03-18</lastmod>
-  </url>
-  <url>
-    <loc>https://duwei19961021.github.io/2021/03/18/%E4%BA%8C%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/</loc>
     <lastmod>2021-03-18</lastmod>
   </url>
   <url>
@@ -206,10 +206,6 @@
   </url>
   <url>
     <loc>https://duwei19961021.github.io/2021/03/18/Jenkinsfile/</loc>
-    <lastmod>2021-03-18</lastmod>
-  </url>
-  <url>
-    <loc>https://duwei19961021.github.io/2021/03/18/Nginx%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96header/</loc>
     <lastmod>2021-03-18</lastmod>
   </url>
 </urlset> 

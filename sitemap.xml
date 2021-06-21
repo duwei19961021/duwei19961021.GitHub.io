@@ -2,9 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://duwei19961021.github.io/2021/06/21/ServiceAccount/</loc>
+    
+    <lastmod>2021-06-21</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duwei19961021.github.io/2021/01/16/kubectl/</loc>
+    
+    <lastmod>2021-06-17</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duwei19961021.github.io/2021/03/18/%E4%B8%80%E6%AC%A1%E6%B5%B7%E5%A4%96k8s%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5/</loc>
+    
+    <lastmod>2021-06-15</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://duwei19961021.github.io/2020/09/10/tcp:ip/</loc>
     
-    <lastmod>2021-05-30</lastmod>
+    <lastmod>2021-06-15</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duwei19961021.github.io/2021/03/18/Dockerfile/</loc>
+    
+    <lastmod>2021-06-15</lastmod>
     
   </url>
   
@@ -24,13 +52,6 @@
   
   <url>
     <loc>https://duwei19961021.github.io/2021/04/25/c++inheritance/</loc>
-    
-    <lastmod>2021-05-26</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duwei19961021.github.io/2021/01/16/kubectl/</loc>
     
     <lastmod>2021-05-26</lastmod>
     
@@ -170,14 +191,14 @@
   </url>
   
   <url>
-    <loc>https://duwei19961021.github.io/2021/03/18/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/</loc>
+    <loc>https://duwei19961021.github.io/2021/03/18/%E6%8E%92%E5%BA%8F/</loc>
     
     <lastmod>2021-03-18</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duwei19961021.github.io/2021/03/18/%E6%8E%92%E5%BA%8F/</loc>
+    <loc>https://duwei19961021.github.io/2021/03/18/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/</loc>
     
     <lastmod>2021-03-18</lastmod>
     
@@ -199,13 +220,6 @@
   
   <url>
     <loc>https://duwei19961021.github.io/2021/03/18/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2021-03-18</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duwei19961021.github.io/2021/03/18/%E4%B8%80%E6%AC%A1%E6%B5%B7%E5%A4%96k8s%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%AE%9E%E8%B7%B5/</loc>
     
     <lastmod>2021-03-18</lastmod>
     
@@ -338,13 +352,6 @@
   </url>
   
   <url>
-    <loc>https://duwei19961021.github.io/2021/03/18/Dockerfile/</loc>
-    
-    <lastmod>2021-03-18</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://duwei19961021.github.io/2021/03/18/make/</loc>
     
     <lastmod>2021-03-18</lastmod>
@@ -382,7 +389,7 @@
 
   <url>
     <loc>https://duwei19961021.github.io/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -390,231 +397,231 @@
   
   <url>
     <loc>https://duwei19961021.github.io/tags/c/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/c/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/ecs/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/sonar/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/Jenkinsfile/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/Nginx/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/jenkins/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/mongodb/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/%E7%BC%93%E5%86%B2%E5%8C%BA/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/list/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/cicd/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/zabbix/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/no/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/book/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/Dockerfile/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/array/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/queue/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/net/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/%E4%BF%A1%E5%8F%B7/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/%E5%86%85%E5%AD%98/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/%E6%8E%92%E5%BA%8F/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/c-primer-plus/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/hashtable/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/mem-pool/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/thread-pool/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/%E7%BA%BF%E7%A8%8B/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/%E8%BF%9B%E7%A8%8B/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/sql-base/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/tags/kubenetes/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -623,49 +630,49 @@
   
   <url>
     <loc>https://duwei19961021.github.io/categories/C%E8%AF%AD%E8%A8%80/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/categories/%E8%BF%90%E7%BB%B4/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/categories/k8s/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/categories/Nginx/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/categories/Docker/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://duwei19961021.github.io/categories/mysql/</loc>
-    <lastmod>2021-05-31</lastmod>
+    <lastmod>2021-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

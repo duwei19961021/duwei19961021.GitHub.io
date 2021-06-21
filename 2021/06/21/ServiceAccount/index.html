@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Jenkins结合sonar代码检测流水线 | BLOG</title>
-  <meta name="keywords" content=" sonar ">
-  <meta name="description" content="Jenkins结合sonar代码检测流水线 | BLOG">
+  <title>ServiceAccount使用 | BLOG</title>
+  <meta name="keywords" content=" kubenetes ">
+  <meta name="description" content="ServiceAccount使用 | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="SELECT count(*) AS aggregate FROM bookrack WHERE book_id &#x3D; ? AND created_at BETWEEN ? AND ? SELECT sum(price) AS aggregate FROM kuai_order_relation WHERE app_type &#x3D; ? AND status &#x3D; ? AND link_id !&#x3D; ? A">
 <meta property="og:type" content="website">
@@ -740,9 +740,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Jenkins结合sonar代码检测流水线" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-ServiceAccount" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Jenkins结合sonar代码检测流水线</h1>
+        <h1 class="article-title">ServiceAccount使用</h1>
     
     <div class="article-meta">
         
@@ -750,26 +750,26 @@
         
         <span class="book">
             
-                <a  data-rel="运维">运维</a>
+                <a  data-rel="k8s">k8s</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a class="color1">sonar</a>
+            <a class="color5">kubenetes</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-03-18 11:09:52'>2021-03-18 11:09</time>
+        创建时间:<time class="date" title='更新时间: 2021-06-21 12:35:27'>2021-06-21 12:31</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:613</span>
+        <span>字数:259</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -788,7 +788,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、jenkins所需插件"><span class="toc-text">1、jenkins所需插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、jenkins配置"><span class="toc-text">2、jenkins配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3、pipiline脚本"><span class="toc-text">3、pipiline脚本</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#项目背景"><span class="toc-text">项目背景</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#yaml"><span class="toc-text">yaml</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#ServiceAccount"><span class="toc-text">ServiceAccount</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Role"><span class="toc-text">Role</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#RoleBinding"><span class="toc-text">RoleBinding</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#kubeconfig生成"><span class="toc-text">kubeconfig生成</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -804,101 +804,61 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="1、jenkins所需插件"><a href="#1、jenkins所需插件" class="headerlink" title="1、jenkins所需插件"></a>1、jenkins所需插件</h5><p><a href="https://plugins.jenkins.io/workflow-aggregator" target="_blank" rel="noopener">Pipeline</a>、<a href="https://plugins.jenkins.io/sonar-quality-gates" target="_blank" rel="noopener">Sonar Quality Gates Plugin</a>、<a href="https://plugins.jenkins.io/sonar" target="_blank" rel="noopener">SonarQube Scanner</a>、<a href="https://plugins.jenkins.io/generic-webhook-trigger" target="_blank" rel="noopener">Generic Webhook Trigger Plugin</a></p>
-<h5 id="2、jenkins配置"><a href="#2、jenkins配置" class="headerlink" title="2、jenkins配置"></a>2、jenkins配置</h5><ul>
-<li><p>Dashboard =&gt; 系统管理 =&gt; 全局工具配置</p>
-<p><img src="/image/image-20201227165338711.png" alt="sonar scanner安装"></p>
-</li>
-<li><p>Dashboard =&gt; 系统管理 =&gt; 系统配置</p>
-<p><img src="/image/image-20201227165501679.png" alt="sonarqube servers配置"></p>
-</li>
-</ul>
-<p>  <img src="/image/image-20201227165627390.png" alt="token配置"></p>
-<p>  这个token是在sonar web上生成的，然后在jenkins上创建一个secret text类型凭据。</p>
-<p>  <img src="/image/image-20201227165828644.png" alt="gitlab"></p>
-<p>  配置连接gitlab，要生成gitlab api token</p>
-<p>  <img src="/image/image-20201227165956042.png" alt="获取gitlab Private token"></p>
-<p>  生成private token。在sonar检测代码所有条件都通过时，要通过这个private token去操作gitlab的api来自动接受合并请求。</p>
-<p>  <img src="/image/image-20201227170513752.png" alt="private token 凭据"></p>
-<p>  生成凭据，记住这里的id 为12，一会pipeline脚本要用</p>
-<ul>
-<li><p>在gitlab项目下配置触发器，只勾选Merge Request Events (这个token随机生成一个就好了)</p>
-<p><img src="/image/image-20201227170841973.png" alt="gitlab webhook"></p>
-</li>
-</ul>
-<h5 id="3、pipiline脚本"><a href="#3、pipiline脚本" class="headerlink" title="3、pipiline脚本"></a>3、pipiline脚本</h5><pre class=" language-pipeline"><code class="language-pipeline">pipeline {
-   agent any
-   environment {
-        PrivateToken= credentials('12') // 获取private token，之前在凭据里配置过，这样比较安全，不需要在脚本里明文使用token
-    }
-   options {
-      gitLabConnection('gitlab')
-    }
-       triggers {
-        GenericTrigger(
-            genericVariables: [
-            [key: 'source_branch', value: '$.object_attributes.source_branch'], // 获取merge的源分支,只检测源分支，源分支的代码检测成功才能合并到目标分支
-            [key: 'url', value: '$.object_attributes.url'], // 获取gitlab merge请求的url
-            [key: 'action', value: '$.object_attributes.action'], // 获取merge动作 [reopen,close,open],只在reopen和open时才出发流水线检测
-            [key: 'source_project_id', value: '$.object_attributes.source_project_id'],
-            [key: 'iid', value: '$.object_attributes.iid'],
-            [key: 'name', value: '$.user.name'], // 获取合并请求的发起人
-            [key: 'project_name', value: '$.project.name'], // 或者项目名
-            [key: 'target_branch', value: '$.object_attributes.target_branch'], // 获取目标分支，我这里的需求是：合并到release.test分支的请求才进行质检、自动合并，所以我需要拿到这个变量
-            [key: 'object_kind', value: '$.object_kind']
-            ],
-            token: 'fc161920aa6f1886e7417416edc85500' , // 这是webhook上填写的token
-            causeString: ' Triggered on $ref' ,
-            printContributedVariables: true,
-            printPostContent: true
-        )
-    }
-   stages {
-    stage("select branch"){
-        steps{
-                script{
-                    if((env.source_branch =~ 'release.*').matches() || (env.action!="open"  && env.action!="update") || env.target_branch != "release.test"){ // 触发流水线检测代码的条件
-                        stage("exit with 0"){
-                            ansiColor('gnome-terminal') {
-                                echo "\033[32m Jump Sonar\n user:$name\nproject_name:$project_name\nobject_kind:$object_kind\naction:$action\nsource_branch:$source_branch\n target_branch:$target_branch \033[0m"
-                            }           
-                        }
-                    }else{
-                        stage('pull branch') {
-                            checkout([$class: 'GitSCM', branches: [[name: "*/$source_branch"]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '11', url: 'http://gitlab.xxxxxx.com:8888/xubin/xxxxxxxx.git']]])
-                        }
-                        stage('SonarQubeanalysis') {
-                                script {
-                                    scannerHome = tool 'sonar-scanner'
-                                }
-                            withSonarQubeEnv('sonar') {
-                            sh "echo ${scannerHome}"
-                            sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=$JOB_BASE_NAME -Dsonar.sources=./app"
-                            }
-                    }
-                       stage("SonarQube Quality Gate") {
-                                    timeout(time: 1, unit: 'HOURS') {
-                                    def qg = waitForQualityGate('sonar')
-                                    if (qg.status != 'OK') {
-                                    echo "Status: ${qg.status}"
-                                    error "Pipeline aborted due to quality gate failure: ${qg.status}" // 质检没通过直接让流水线失败退出
-                                    }
-                                }
-                                ansiColor('gnome-terminal') {
-                                echo "\033[32m Jump Sonar\n user:$name\nproject_name:$project_name\nobject_kind:$object_kind\naction:$action\nsource_branch:$source_branch\n target_branch:$target_branch \033[0m"
-                            }
-                    } 
-                        stage("Merge"){ // 如果检测通过自动合并请求
-                                script{
-                                    httpRequest authentication: '11', customHeaders: [[maskValue: false, name: 'PRIVATE-TOKEN', value: "$PrivateToken"]], httpMode: 'PUT', responseHandle: 'NONE', url: "http://gitlab.xxxxxx.com:8888/api/v4/projects/$source_project_id/merge_requests/$iid/merge"
-                                }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}</code></pre>
+        <h5 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h5><p>项目之初，所有镜像没有打版本号，统一使用的latest，后决定给镜像打上tag方便回滚。</p>
+<p>在jenkins机器上安装了kubectl命令，使用kubectl set image方式修改版镜像版本号达到更新的目的。</p>
+<p>起初kubect使用的是admin角色的config，为了安全起见，将jenkins端的kubectl权限缩到最小。</p>
+<h5 id="yaml"><a href="#yaml" class="headerlink" title="yaml"></a>yaml</h5><h6 id="ServiceAccount"><a href="#ServiceAccount" class="headerlink" title="ServiceAccount"></a>ServiceAccount</h6><pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ServiceAccount
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> jenkins
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> test</code></pre>
+<h6 id="Role"><a href="#Role" class="headerlink" title="Role"></a>Role</h6><pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> rbac.authorization.k8s.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Role
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> jenkins<span class="token punctuation">-</span>for<span class="token punctuation">-</span>test
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> test
+<span class="token key atrule">rules</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">apiGroups</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'apps'</span><span class="token punctuation">]</span>
+  <span class="token key atrule">resources</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'deployments'</span><span class="token punctuation">]</span>
+  <span class="token key atrule">verbs</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'get'</span><span class="token punctuation">,</span><span class="token string">'patch'</span><span class="token punctuation">]</span></code></pre>
+<h6 id="RoleBinding"><a href="#RoleBinding" class="headerlink" title="RoleBinding"></a>RoleBinding</h6><pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> rbac.authorization.k8s.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> RoleBinding
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> jenkins<span class="token punctuation">-</span>for<span class="token punctuation">-</span>test
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> test
+<span class="token key atrule">subjects</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">kind</span><span class="token punctuation">:</span> ServiceAccount
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> jenkins
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> test
+<span class="token key atrule">roleRef</span><span class="token punctuation">:</span>
+  <span class="token key atrule">apiGroup</span><span class="token punctuation">:</span> rbac.authorization.k8s.io
+  <span class="token key atrule">kind</span><span class="token punctuation">:</span> Role
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> jenkins<span class="token punctuation">-</span>for<span class="token punctuation">-</span>test</code></pre>
+<h6 id="kubeconfig生成"><a href="#kubeconfig生成" class="headerlink" title="kubeconfig生成"></a>kubeconfig生成</h6><pre class=" language-shell"><code class="language-shell">tokenName=$(kubectl get sa jenkins -n test -o "jsonpath={.secrets[0].name}")
+token=$(kubectl get secret $tokenName -n test -o "jsonpath={.data.token}" | base64 --decode)
+certificate=$(kubectl get secret $tokenName -n test -o "jsonpath={.data['ca\.crt']}")
+apiserver="https://172.30.118.218:6443"
+echo "apiVersion: v1
+kind: Config
+preferences: {}
+clusters:
+- cluster:
+    certificate-authority-data: $certificate
+    server: $apiserver
+  name: jenkins-for-test
+users:
+- name: jenkins-for-test
+  user:
+    as-user-extra: {}
+    client-key-data: $certificate
+    token: $token
+contexts:
+- context:
+    cluster: jenkins-for-test
+    namespace: test
+    user: jenkins-for-test
+  name: test
+current-context: test" > jenkins.config</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
@@ -908,12 +868,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Jenkins结合sonar代码检测流水线</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">613</span></p>
+    <p><span class="copy-title">文章标题:</span>ServiceAccount使用</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">259</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
-    <p><span class="copy-title">发布时间:</span>2021-03-18, 11:09:52</p>
-    <p><span class="copy-title">最后更新:</span>2021-03-18, 11:09:52</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/18/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/" title="Jenkins结合sonar代码检测流水线">https://duwei19961021.github.io/2021/03/18/Jenkins%E7%BB%93%E5%90%88sonar%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E6%B5%81%E6%B0%B4%E7%BA%BF/</a>
+    <p><span class="copy-title">发布时间:</span>2021-06-21, 12:31:14</p>
+    <p><span class="copy-title">最后更新:</span>2021-06-21, 12:35:27</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/06/21/ServiceAccount/" title="ServiceAccount使用">https://duwei19961021.github.io/2021/06/21/ServiceAccount/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

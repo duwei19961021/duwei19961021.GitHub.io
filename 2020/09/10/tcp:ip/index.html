@@ -6,15 +6,15 @@
   <meta name="keywords" content=" 操作系统 ">
   <meta name="description" content="tcp-ip | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="gitlabBranch gitlabSourceBranch gitlabActionType gitlabUserName gitlabUserUsername gitlabUserEmail gitlabSourceRepoHomepage gitlabSourceRepoName gitlabSourceNamespace gitlabSourceRepoURL gitlabSourceR">
+<meta name="description" content="SELECT count(*) AS aggregate FROM bookrack WHERE book_id &#x3D; ? AND created_at BETWEEN ? AND ? SELECT sum(price) AS aggregate FROM kuai_order_relation WHERE app_type &#x3D; ? AND status &#x3D; ? AND link_id !&#x3D; ? A">
 <meta property="og:type" content="website">
 <meta property="og:title" content="BLOG">
-<meta property="og:url" content="https://duwei19961021.github.io/file/sonar.html">
+<meta property="og:url" content="https://duwei19961021.github.io/file/sql.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="gitlabBranch gitlabSourceBranch gitlabActionType gitlabUserName gitlabUserUsername gitlabUserEmail gitlabSourceRepoHomepage gitlabSourceRepoName gitlabSourceNamespace gitlabSourceRepoURL gitlabSourceR">
+<meta property="og:description" content="SELECT count(*) AS aggregate FROM bookrack WHERE book_id &#x3D; ? AND created_at BETWEEN ? AND ? SELECT sum(price) AS aggregate FROM kuai_order_relation WHERE app_type &#x3D; ? AND status &#x3D; ? AND link_id !&#x3D; ? A">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-23T01:21:25.624Z">
-<meta property="article:modified_time" content="2021-03-18T03:09:52.073Z">
+<meta property="article:published_time" content="2021-05-23T01:21:41.600Z">
+<meta property="article:modified_time" content="2021-03-18T03:09:52.061Z">
 <meta property="article:author" content="拦云">
 <meta name="twitter:card" content="summary">
 
@@ -68,7 +68,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(51)</small></div></li>
+    <li><div class="all active">全部文章<small>(52)</small></div></li>
     
         
             
@@ -96,7 +96,7 @@
     
         
             
-            <li><div data-rel="k8s">k8s<small>(2)</small></div>
+            <li><div data-rel="k8s">k8s<small>(3)</small></div>
                 
             </li>
             
@@ -136,8 +136,8 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="51">
-<input type="hidden" id="yelog_site_word_count" value="76.7k">
+<input type="hidden" id="yelog_site_posts_number" value="52">
+<input type="hidden" id="yelog_site_word_count" value="77.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -720,6 +720,14 @@
             <span class="post-date" title="2021-03-18 11:09:52">2021/03/18</span>
         </a>
         
+        <a  class="k8s "
+           href="/2021/06/21/ServiceAccount/"
+           data-tag="kubenetes"
+           data-author="" >
+            <span class="post-title" title="ServiceAccount使用">ServiceAccount使用</span>
+            <span class="post-date" title="2021-06-21 12:31:14">2021/06/21</span>
+        </a>
+        
     </nav>
 </div>
     </div>
@@ -756,12 +764,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-05-30 16:14:47'>2020-09-10 10:09</time>
+        创建时间:<time class="date" title='更新时间: 2021-06-15 15:59:13'>2020-09-10 10:09</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:6.4k</span>
+        <span>字数:6.8k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -871,6 +879,7 @@
 <li>本网络中其它子网上的主机</li>
 <li>其它网络上的主机</li>
 </ol>
+<p>如果知道本机的ip地址那么就可以知道它是A类或者B类或者C类，也就知道了网络号和子网号的分界线，而根据子网掩码就可知道子网号和主机号之间的分界线。</p>
 <h4 id="第六章-ICMP"><a href="#第六章-ICMP" class="headerlink" title="第六章 ICMP"></a>第六章 ICMP</h4><p>ICMP报文是在IP数据报内部被传输的。</p>
 <p><img src="https://img.3amupupup.online/image/image-20210208204348894.png" alt="image-20210208204348894"></p>
 <p><img src="../../../Desktop/source/image/image-20210208204543776.png" alt="image-20210208204543776"></p>
@@ -969,7 +978,7 @@
 <p>Nagle算法要求一个tcp连接上最多只能有一个未被确认的小分组（数据报发出去，必须得到远端的ack回复，最多只能有一个报文未被回复），在该分组的确认到达之前不能发送其它小分组。在等待确认到达的这段时间内，tcp会收集小分组并在ack确认到达的时候将收集的小分组一次性发出去。Nagle算法的优越之处在于：确认到达的越快，数据发送的越快。在希望减少分组的广域网中，则会发送更少的分组。</p>
 <h4 id="第二十章-TCP的成块数据流"><a href="#第二十章-TCP的成块数据流" class="headerlink" title="第二十章 TCP的成块数据流"></a>第二十章 TCP的成块数据流</h4><h5 id="20-6-慢启动"><a href="#20-6-慢启动" class="headerlink" title="20.6 慢启动"></a>20.6 慢启动</h5><p>在局域网络中，发送方一开始便向网络中发送多个报文段，直到达到接收方通告的窗口大小为止，这种方式是没有问题的。但是当发送端和接收端之间存在多个路由器和速率较慢的链路时，就有可能出现一些问题：一些中间路由器必须缓存分组(报文)，并有可能耗尽存储器的空间(存储器耗尽之后路由器会丢弃新收到的分组)。</p>
 <p>tcp支持慢启动算法，该算法通过观察到新分组进入网络的速率应该和另一端返回确认的速率相同而进行工作。</p>
-<p>慢启动为发送方tcp增加了另一个新窗口：拥塞窗口(cwnd)。当与另一个网络的主机建立tcp连接时，拥塞窗口被初始化为一个报文段大小(另一端通告的窗口大小)。每收到一个ack，拥塞窗口就增加一个报文段(cwnd以字节为单位，但是慢启动以报文段大小为单位进行增加)。发送方取拥塞窗口与通告窗口中的最小值作为发送上限(报文长度)。拥塞窗口是发送发使用的流量控制，通告窗口是接收方使用的流量控制。</p>
+<p>慢启动为发送方tcp增加了另一个新窗口：拥塞窗口(cwnd)。当与另一个网络的主机建立tcp连接时，拥塞窗口被初始化为一个报文段大小(另一端通告的mss大小)。每收到一个ack，拥塞窗口就增加一个报文段(cwnd以字节为单位，但是慢启动以报文段大小为单位进行增加)。发送方取拥塞窗口与通告窗口中的最小值作为发送上限(报文长度)。拥塞窗口是发送发使用的流量控制，通告窗口是接收方使用的流量控制。</p>
 <p>拥塞窗口也不可能无限增大，在网络传输中，当某些点上的路由器网络容量达到了上限，于是中间路由器开始丢弃分组并通知发送方。</p>
 <h4 id="第二十一章-TCP的超时与重传"><a href="#第二十一章-TCP的超时与重传" class="headerlink" title="第二十一章 TCP的超时与重传"></a>第二十一章 TCP的超时与重传</h4><p>tcp提供可靠的运输层：确认从另一端收到的数据(ack)，但数据和确认都可能会发生丢失。tcp通过在发送时设置一个定时器解决数据和确认丢失的问题，当定时器发生溢出时还没有收到该数据的确认就重传该数据。</p>
 <p>对于每个连接，tcp管理四个定时器：</p>
@@ -989,6 +998,16 @@
 <li>当拥塞发生时（超时或收到重复确认），ssthresh被设置为当前窗口大小的一半（cwnd和接收方通告窗口大小的最小值，但最少为2个报文段。min(cwnd, win)/2）。此外，如果是超时引起了拥塞，则cwnd被设置为1个报文段。</li>
 <li>当新的数据被对方确认时，就增加cwnd，但增加的方法依赖于是否正在进行慢启动或拥塞避免。如果小于cwnd小于或者等于ssthresh，则正在进行慢启动，否则正在进行拥塞避免。</li>
 </ol>
+<blockquote>
+<p>对于上面这段话的解释：</p>
+<p>cwnd：建立连接时会初始化的一个变量，为一个报文段大小(对端告知的mss)。每收到一个ack，cwnd就增加一个大小(1 =&gt; 2 =&gt; 4 =&gt; 8…….)。</p>
+<p>ssthresh：慢启动门限，65535字节。</p>
+<p>发送方取拥塞窗口cwnd和对端通告窗口中的最小值作为发送上限。建立连接开始发送数据，cwnd此时一直增长增长（但是也不是无限增长）。当发生超时或者收到重复的ack确认时，说明发生了拥塞。将ssthresh设置为当前发送窗口（此时的发送窗口大小造成了拥塞）大小的一半（cwnd和接收方通告窗口二者中值较小的）。如果时超时引起的拥塞（超时：发送端发送出去的数据迟迟没有被对端恢复，因此认为发送端发送速度大于接收方接收速度），将cwnd设置为一个报文段大小。</p>
+<p>当新的数据被确认时就增加cwnd，但是要分两种情况：</p>
+<p>① cwnd小于等于ssthresh，则正在进行慢启动，每收到一个ack，就将cwnd增加一个当前cwnd大小。</p>
+<p>② cwnd大于ssthresh，则正在进行拥塞避免，每收到一个ack，就增加1/cwnd。</p>
+<p>上面两种方式，①的增长速率远大于②。</p>
+</blockquote>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
@@ -999,10 +1018,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>tcp-ip</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">6.4k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">6.8k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2020-09-10, 10:09:00</p>
-    <p><span class="copy-title">最后更新:</span>2021-05-30, 16:14:47</p>
+    <p><span class="copy-title">最后更新:</span>2021-06-15, 15:59:13</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/09/10/tcp:ip/" title="tcp-ip">https://duwei19961021.github.io/2020/09/10/tcp:ip/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

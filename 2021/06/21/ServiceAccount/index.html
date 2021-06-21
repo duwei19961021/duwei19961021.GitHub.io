@@ -6,15 +6,15 @@
   <meta name="keywords" content=" kubenetes ">
   <meta name="description" content="ServiceAccount使用 | BLOG">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="SELECT count(*) AS aggregate FROM bookrack WHERE book_id &#x3D; ? AND created_at BETWEEN ? AND ? SELECT sum(price) AS aggregate FROM kuai_order_relation WHERE app_type &#x3D; ? AND status &#x3D; ? AND link_id !&#x3D; ? A">
+<meta name="description" content="gitlabBranch gitlabSourceBranch gitlabActionType gitlabUserName gitlabUserUsername gitlabUserEmail gitlabSourceRepoHomepage gitlabSourceRepoName gitlabSourceNamespace gitlabSourceRepoURL gitlabSourceR">
 <meta property="og:type" content="website">
 <meta property="og:title" content="BLOG">
-<meta property="og:url" content="https://duwei19961021.github.io/file/sql.html">
+<meta property="og:url" content="https://duwei19961021.github.io/file/sonar.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="SELECT count(*) AS aggregate FROM bookrack WHERE book_id &#x3D; ? AND created_at BETWEEN ? AND ? SELECT sum(price) AS aggregate FROM kuai_order_relation WHERE app_type &#x3D; ? AND status &#x3D; ? AND link_id !&#x3D; ? A">
+<meta property="og:description" content="gitlabBranch gitlabSourceBranch gitlabActionType gitlabUserName gitlabUserUsername gitlabUserEmail gitlabSourceRepoHomepage gitlabSourceRepoName gitlabSourceNamespace gitlabSourceRepoURL gitlabSourceR">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-23T01:21:41.600Z">
-<meta property="article:modified_time" content="2021-03-18T03:09:52.061Z">
+<meta property="article:published_time" content="2021-05-23T01:21:25.624Z">
+<meta property="article:modified_time" content="2021-03-18T03:09:52.073Z">
 <meta property="article:author" content="拦云">
 <meta name="twitter:card" content="summary">
 
@@ -137,7 +137,7 @@
     <div><a  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="52">
-<input type="hidden" id="yelog_site_word_count" value="77.5k">
+<input type="hidden" id="yelog_site_word_count" value="77.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -764,12 +764,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-06-21 12:35:27'>2021-06-21 12:31</time>
+        创建时间:<time class="date" title='更新时间: 2021-06-21 12:43:14'>2021-06-21 12:31</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:259</span>
+        <span>字数:284</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -834,11 +834,13 @@
   <span class="token key atrule">apiGroup</span><span class="token punctuation">:</span> rbac.authorization.k8s.io
   <span class="token key atrule">kind</span><span class="token punctuation">:</span> Role
   <span class="token key atrule">name</span><span class="token punctuation">:</span> jenkins<span class="token punctuation">-</span>for<span class="token punctuation">-</span>test</code></pre>
-<h6 id="kubeconfig生成"><a href="#kubeconfig生成" class="headerlink" title="kubeconfig生成"></a>kubeconfig生成</h6><pre class=" language-shell"><code class="language-shell">tokenName=$(kubectl get sa jenkins -n test -o "jsonpath={.secrets[0].name}")
-token=$(kubectl get secret $tokenName -n test -o "jsonpath={.data.token}" | base64 --decode)
-certificate=$(kubectl get secret $tokenName -n test -o "jsonpath={.data['ca\.crt']}")
-apiserver="https://172.30.118.218:6443"
-echo "apiVersion: v1
+<h6 id="kubeconfig生成"><a href="#kubeconfig生成" class="headerlink" title="kubeconfig生成"></a>kubeconfig生成</h6><pre class=" language-shell"><code class="language-shell">[root@k8s-master1 ~]# kubectl apply -f .
+[root@k8s-master1 ~]# tokenName=$(kubectl get sa jenkins -n test -o "jsonpath={.secrets[0].name}")
+[root@k8s-master1 ~]# token=$(kubectl get secret $tokenName -n test -o "jsonpath={.data.token}" | base64 --decode)
+[root@k8s-master1 ~]# certificate=$(kubectl get secret $tokenName -n test -o "jsonpath={.data['ca\.crt']}")
+[root@k8s-master1 ~]# apiserver="https://172.30.118.218:6443"
+
+[root@k8s-master1 ~]# echo "apiVersion: v1
 kind: Config
 preferences: {}
 clusters:
@@ -858,7 +860,8 @@ contexts:
     namespace: test
     user: jenkins-for-test
   name: test
-current-context: test" > jenkins.config</code></pre>
+current-context: test" > jenkins.config
+[root@k8s-master1 ~]# </code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
@@ -869,10 +872,10 @@ current-context: test" > jenkins.config</code></pre>
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>ServiceAccount使用</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">259</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">284</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-06-21, 12:31:14</p>
-    <p><span class="copy-title">最后更新:</span>2021-06-21, 12:35:27</p>
+    <p><span class="copy-title">最后更新:</span>2021-06-21, 12:43:14</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/06/21/ServiceAccount/" title="ServiceAccount使用">https://duwei19961021.github.io/2021/06/21/ServiceAccount/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

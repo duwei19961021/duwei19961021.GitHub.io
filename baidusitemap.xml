@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://duwei19961021.github.io/2021/06/21/prometheus/</loc>
+    <lastmod>2021-06-23</lastmod>
+  </url>
+  <url>
+    <loc>https://duwei19961021.github.io/2021/03/18/Nginx%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96header/</loc>
+    <lastmod>2021-06-22</lastmod>
+  </url>
+  <url>
     <loc>https://duwei19961021.github.io/2021/06/21/ServiceAccount/</loc>
     <lastmod>2021-06-21</lastmod>
   </url>
@@ -23,10 +31,6 @@
   <url>
     <loc>https://duwei19961021.github.io/2021/03/18/PracticeSql/</loc>
     <lastmod>2021-05-28</lastmod>
-  </url>
-  <url>
-    <loc>https://duwei19961021.github.io/2021/03/18/Nginx%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96header/</loc>
-    <lastmod>2021-05-26</lastmod>
   </url>
   <url>
     <loc>https://duwei19961021.github.io/2021/04/25/c++inheritance/</loc>

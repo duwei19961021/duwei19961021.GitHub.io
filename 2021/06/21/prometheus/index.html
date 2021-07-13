@@ -68,7 +68,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(53)</small></div></li>
+    <li><div class="all active">全部文章<small>(54)</small></div></li>
     
         
             
@@ -104,7 +104,7 @@
     
         
             
-            <li><div data-rel="Nginx">Nginx<small>(7)</small></div>
+            <li><div data-rel="Nginx">Nginx<small>(8)</small></div>
                 
             </li>
             
@@ -136,8 +136,8 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="53">
-<input type="hidden" id="yelog_site_word_count" value="79.5k">
+<input type="hidden" id="yelog_site_posts_number" value="54">
+<input type="hidden" id="yelog_site_word_count" value="82.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -304,6 +304,10 @@
     
     <li class="article-tag-list-item">
         <a class="color1">prometheus</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">conf</a>
     </li>
     
     <div class="clearfix"></div>
@@ -740,6 +744,14 @@
             <span class="post-date" title="2021-06-21 12:03:02">2021/06/21</span>
         </a>
         
+        <a  class="Nginx "
+           href="/2021/06/27/nginx_config/"
+           data-tag="conf"
+           data-author="" >
+            <span class="post-title" title="nginx配置">nginx配置</span>
+            <span class="post-date" title="2021-06-27 23:06:01">2021/06/27</span>
+        </a>
+        
     </nav>
 </div>
     </div>
@@ -776,12 +788,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-06-23 17:06:59'>2021-06-21 12:03</time>
+        创建时间:<time class="date" title='更新时间: 2021-07-13 10:44:09'>2021-06-21 12:03</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.6k</span>
+        <span>字数:1.8k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -800,7 +812,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#部署"><span class="toc-text">部署</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#监控集群外部服务"><span class="toc-text">监控集群外部服务</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#监控redis"><span class="toc-text">监控redis</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#部署redis-exporter"><span class="toc-text">部署redis_exporter</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#给外部服务创建service"><span class="toc-text">给外部服务创建service</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#编写serviceMonitor"><span class="toc-text">编写serviceMonitor</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二进制k8s集群"><span class="toc-text">二进制k8s集群</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Controller-mamager"><span class="toc-text">Controller-mamager</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#需要调整的某些yaml"><span class="toc-text">需要调整的某些yaml</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#prometheus数据保存时长"><span class="toc-text">prometheus数据保存时长</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#prometheus-prometheus-yaml"><span class="toc-text">prometheus-prometheus.yaml</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#prometheus持久化存储数据"><span class="toc-text">prometheus持久化存储数据</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#prometheus-prometheus-yaml-1"><span class="toc-text">prometheus-prometheus.yaml</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#grafana持久化数据"><span class="toc-text">grafana持久化数据</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#创建一块pvc"><span class="toc-text">创建一块pvc</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#grafana-deployment-yaml"><span class="toc-text">grafana-deployment.yaml</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#grafana添加持久化的自定义dashboard"><span class="toc-text">grafana添加持久化的自定义dashboard</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#dashboardDefinitions-yaml"><span class="toc-text">dashboardDefinitions.yaml</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#grafana-deployment-yaml-1"><span class="toc-text">grafana-deployment.yaml</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#grafana、prometheus开启nodeport"><span class="toc-text">grafana、prometheus开启nodeport</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#grafana时间修改"><span class="toc-text">grafana时间修改</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#dashboardDefinitions-yaml-1"><span class="toc-text">dashboardDefinitions.yaml</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#alertmanager结合钉钉进行告警"><span class="toc-text">alertmanager结合钉钉进行告警</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#配置alertmanager"><span class="toc-text">配置alertmanager</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#go脚本"><span class="toc-text">go脚本</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#dockerfile"><span class="toc-text">dockerfile</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#部署到k8s"><span class="toc-text">部署到k8s</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#部署"><span class="toc-text">部署</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#监控集群外部服务"><span class="toc-text">监控集群外部服务</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#部署redis-exporter"><span class="toc-text">部署redis_exporter</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#给外部服务创建service"><span class="toc-text">给外部服务创建service</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#serviceMonitor"><span class="toc-text">serviceMonitor</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二进制k8s集群"><span class="toc-text">二进制k8s集群</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#调整的yaml"><span class="toc-text">调整的yaml</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#prometheus数据保存时长"><span class="toc-text">prometheus数据保存时长</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#prometheus持久化存储数据"><span class="toc-text">prometheus持久化存储数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#grafana持久化数据"><span class="toc-text">grafana持久化数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#grafana添加持久化的自定义dashboard"><span class="toc-text">grafana添加持久化的自定义dashboard</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#grafana、prometheus开启nodeport"><span class="toc-text">grafana、prometheus开启nodeport</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#grafana时间修改"><span class="toc-text">grafana时间修改</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#alertmanager结合钉钉进行告警"><span class="toc-text">alertmanager结合钉钉进行告警</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#谈下serviceMonitor工作原理"><span class="toc-text">谈下serviceMonitor工作原理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#示例"><span class="toc-text">示例</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -820,7 +832,7 @@
 [root@iZj6cbyftexodnjrn2gt3aZ ~]# cd kube-prometheus/manifests/
 [root@iZj6cbyftexodnjrn2gt3aZ manifests]# kubectl apply  -f  setup/
 [root@iZj6cbyftexodnjrn2gt3aZ manifests]# kubectl apply  -f  .</code></pre>
-<h4 id="监控集群外部服务"><a href="#监控集群外部服务" class="headerlink" title="监控集群外部服务"></a>监控集群外部服务</h4><h5 id="监控redis"><a href="#监控redis" class="headerlink" title="监控redis"></a>监控redis</h5><h6 id="部署redis-exporter"><a href="#部署redis-exporter" class="headerlink" title="部署redis_exporter"></a>部署redis_exporter</h6><p>redis_exporter部署机器无限制，可以容器部署，只要能连接redis就可以。</p>
+<h4 id="监控集群外部服务"><a href="#监控集群外部服务" class="headerlink" title="监控集群外部服务"></a>监控集群外部服务</h4><h5 id="部署redis-exporter"><a href="#部署redis-exporter" class="headerlink" title="部署redis_exporter"></a>部署redis_exporter</h5><p>redis_exporter部署机器无限制，可以容器部署，只要能连接redis就可以。</p>
 <pre class=" language-shell"><code class="language-shell">[root@iZj6cbyftexodnjrn2gt3aZ manifests]# wget https://github.com/oliver006/redis_exporter/releases/download/v1.24.0/redis_exporter-v1.24.0.linux-amd64.tar.gz
 [root@iZj6cbyftexodnjrn2gt3aZ manifests]# tar xf redis_exporter-v1.24.0.linux-amd64.tar.gz -C /usr/local/
 [root@iZj6cbyftexodnjrn2gt3aZ manifests]# cd /usr/local/redis_exporter-v1.24.0.linux-amd64/
@@ -830,7 +842,7 @@ LICENSE  README.md  redis_exporter
 INFO[0000] Redis Metrics Exporter v1.24.0    build date: 2021-06-09-01:40:46    sha1: b95cf3b5ce7543119b303766662d1f0400caea94    Go: go1.16.5    GOOS: linux    GOARCH: amd64
 INFO[0000] Providing metrics at :9121/metrics
 [root@k8s-master1 redis_exporter-v1.24.0.linux-amd64]#</code></pre>
-<h6 id="给外部服务创建service"><a href="#给外部服务创建service" class="headerlink" title="给外部服务创建service"></a>给外部服务创建service</h6><pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">[</span>root@iZj6cbyftexodnjrn2gt3aZ redis<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cat redis-svc.yaml</span>
+<h5 id="给外部服务创建service"><a href="#给外部服务创建service" class="headerlink" title="给外部服务创建service"></a>给外部服务创建service</h5><pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">[</span>root@iZj6cbyftexodnjrn2gt3aZ redis<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cat redis-svc.yaml</span>
 <span class="token punctuation">---</span>
 <span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
 <span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
@@ -862,7 +874,7 @@ INFO[0000] Providing metrics at :9121/metrics
   <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>metrics
     <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9121 </span><span class="token comment" spellcheck="true"># redis_exporter服务的端口</span>
     <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP</code></pre>
-<h6 id="编写serviceMonitor"><a href="#编写serviceMonitor" class="headerlink" title="编写serviceMonitor"></a>编写serviceMonitor</h6><pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">[</span>root@iZj6cbyftexodnjrn2gt3aZ manifests<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cat kubernetes-serviceMonitorRedis.yaml</span>
+<h5 id="serviceMonitor"><a href="#serviceMonitor" class="headerlink" title="serviceMonitor"></a>serviceMonitor</h5><pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">[</span>root@iZj6cbyftexodnjrn2gt3aZ manifests<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cat kubernetes-serviceMonitorRedis.yaml</span>
 <span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> monitoring.coreos.com/v1
 <span class="token key atrule">kind</span><span class="token punctuation">:</span> ServiceMonitor
 <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
@@ -882,8 +894,26 @@ INFO[0000] Providing metrics at :9121/metrics
   <span class="token key atrule">selector</span><span class="token punctuation">:</span>
     <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
       <span class="token key atrule">app</span><span class="token punctuation">:</span> kube<span class="token punctuation">-</span>redis<span class="token punctuation">-</span>exporter <span class="token comment" spellcheck="true"># 通过这个label匹配service，以达到动态发现的目的。</span></code></pre>
-<h5 id="二进制k8s集群"><a href="#二进制k8s集群" class="headerlink" title="二进制k8s集群"></a>二进制k8s集群</h5><p>如果是二进制部署的k8s集群，也可以采用上述方式监控controller-manager、etcd、scheduler等</p>
-<h6 id="Controller-mamager"><a href="#Controller-mamager" class="headerlink" title="Controller-mamager"></a>Controller-mamager</h6><pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">[</span>root@k8s<span class="token punctuation">-</span>master1 scheduler<span class="token punctuation">-</span>controllermanager<span class="token punctuation">-</span>service<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cat controller-manager-svc.yaml</span>
+<p>grafana上使用的是<a href="https://github.com/oliver006/redis_exporter" target="_blank" rel="noopener">redis_exporter</a>项目上推荐的一个<a href="https://grafana.com/grafana/dashboards/763" target="_blank" rel="noopener">面板</a>，另外参考 <a href="https://redis.io/commands/info" target="_blank" rel="noopener">redis</a> 文档，关于上面监控项的解释：</p>
+<ol>
+<li>Uptime：redis启动时长</li>
+<li>Clients：客户端数量，也就是当前redis的客户端连接数</li>
+<li>Commands Executed / sec：redis服务器每秒处理的命令数量</li>
+<li>Hits / Misses per Sec：每秒成功查找次数 / 每秒失败查找次数</li>
+<li>Total Memory Usage：redis内存使用量</li>
+<li>Network I/O：redis入口流量带宽 / 出口带宽</li>
+<li>Total Items per DB：各个库key的数量</li>
+<li>Expiring vs Not-Expiring Keys：过期key数量 vs 未过期key数量</li>
+<li>Expired / Evicted：过期key数量/被驱逐key数量，被驱逐意思就是因为redis内存使用量达到了maxmemory设定的值而被删除的key</li>
+<li>Command Calls / sec：topk图表，redis每秒处理命令数量的排名。</li>
+</ol>
+<p>告警规则设置：</p>
+<ol>
+<li><h5 id="二进制k8s集群"><a href="#二进制k8s集群" class="headerlink" title="二进制k8s集群"></a>二进制k8s集群</h5></li>
+</ol>
+<p>如果是二进制部署的k8s集群，也可以采用上述方式监控controller-manager、etcd、scheduler等</p>
+<p>Controller-mamager</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">[</span>root@k8s<span class="token punctuation">-</span>master1 scheduler<span class="token punctuation">-</span>controllermanager<span class="token punctuation">-</span>service<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cat controller-manager-svc.yaml</span>
 <span class="token punctuation">---</span>
 <span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
 <span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
@@ -976,7 +1006,8 @@ INFO[0000] Providing metrics at :9121/metrics
   <span class="token key atrule">selector</span><span class="token punctuation">:</span>
     <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
       <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> kube<span class="token punctuation">-</span>controller<span class="token punctuation">-</span>manager <span class="token comment" spellcheck="true"># 标签选择</span></code></pre>
-<h4 id="需要调整的某些yaml"><a href="#需要调整的某些yaml" class="headerlink" title="需要调整的某些yaml"></a>需要调整的某些yaml</h4><h5 id="prometheus数据保存时长"><a href="#prometheus数据保存时长" class="headerlink" title="prometheus数据保存时长"></a>prometheus数据保存时长</h5><h6 id="prometheus-prometheus-yaml"><a href="#prometheus-prometheus-yaml" class="headerlink" title="prometheus-prometheus.yaml"></a>prometheus-prometheus.yaml</h6><pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> monitoring.coreos.com/v1
+<h4 id="调整的yaml"><a href="#调整的yaml" class="headerlink" title="调整的yaml"></a>调整的yaml</h4><h5 id="prometheus数据保存时长"><a href="#prometheus数据保存时长" class="headerlink" title="prometheus数据保存时长"></a>prometheus数据保存时长</h5><p>prometheus-prometheus.yaml</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> monitoring.coreos.com/v1
 <span class="token key atrule">kind</span><span class="token punctuation">:</span> Prometheus
 <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
   <span class="token key atrule">labels</span><span class="token punctuation">:</span>
@@ -997,7 +1028,8 @@ INFO[0000] Providing metrics at :9121/metrics
       <span class="token key atrule">port</span><span class="token punctuation">:</span> web
 <span class="token punctuation">...</span>
 <span class="token punctuation">...</span></code></pre>
-<h5 id="prometheus持久化存储数据"><a href="#prometheus持久化存储数据" class="headerlink" title="prometheus持久化存储数据"></a>prometheus持久化存储数据</h5><h6 id="prometheus-prometheus-yaml-1"><a href="#prometheus-prometheus-yaml-1" class="headerlink" title="prometheus-prometheus.yaml"></a>prometheus-prometheus.yaml</h6><p>在最后添加即可</p>
+<h5 id="prometheus持久化存储数据"><a href="#prometheus持久化存储数据" class="headerlink" title="prometheus持久化存储数据"></a>prometheus持久化存储数据</h5><p>prometheus-prometheus.yaml</p>
+<p>在最后添加即可</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">...</span>
 <span class="token punctuation">...</span>
     <span class="token key atrule">runAsUser</span><span class="token punctuation">:</span> <span class="token number">1000</span>
@@ -1013,7 +1045,8 @@ INFO[0000] Providing metrics at :9121/metrics
         <span class="token key atrule">resources</span><span class="token punctuation">:</span>
           <span class="token key atrule">requests</span><span class="token punctuation">:</span>
             <span class="token key atrule">storage</span><span class="token punctuation">:</span> 50Gi</code></pre>
-<h5 id="grafana持久化数据"><a href="#grafana持久化数据" class="headerlink" title="grafana持久化数据"></a>grafana持久化数据</h5><h6 id="创建一块pvc"><a href="#创建一块pvc" class="headerlink" title="创建一块pvc"></a>创建一块pvc</h6><pre class=" language-shell"><code class="language-shell">[root@iZj6cbyftexodnjrn2gt3aZ manifests]# cat grafana-pvc.yaml
+<h5 id="grafana持久化数据"><a href="#grafana持久化数据" class="headerlink" title="grafana持久化数据"></a>grafana持久化数据</h5><p>创建一块pvc</p>
+<pre class=" language-shell"><code class="language-shell">[root@iZj6cbyftexodnjrn2gt3aZ manifests]# cat grafana-pvc.yaml
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
@@ -1026,14 +1059,16 @@ spec:
   resources:
     requests:
       storage: 20Gi</code></pre>
-<h6 id="grafana-deployment-yaml"><a href="#grafana-deployment-yaml" class="headerlink" title="grafana-deployment.yaml"></a>grafana-deployment.yaml</h6><pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">-</span> <span class="token key atrule">emptyDir</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment" spellcheck="true"># 这两行替换即可</span>
+<p>grafana-deployment.yaml</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">-</span> <span class="token key atrule">emptyDir</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment" spellcheck="true"># 这两行替换即可</span>
 <span class="token key atrule">name</span><span class="token punctuation">:</span> grafana<span class="token punctuation">-</span>storage
 
 <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> grafana<span class="token punctuation">-</span>storage
 <span class="token key atrule">persistentVolumeClaim</span><span class="token punctuation">:</span>
 <span class="token key atrule">claimName</span><span class="token punctuation">:</span> grafana</code></pre>
 <h5 id="grafana添加持久化的自定义dashboard"><a href="#grafana添加持久化的自定义dashboard" class="headerlink" title="grafana添加持久化的自定义dashboard"></a>grafana添加持久化的自定义dashboard</h5><p>创建grafana之后，在web端添加dashboard，如果grafana的pod发生重启，那么这些dashboard也随之丢失。直接编辑grafana-dashboardDefinitions.yaml文件添加一段即可。</p>
-<h6 id="dashboardDefinitions-yaml"><a href="#dashboardDefinitions-yaml" class="headerlink" title="dashboardDefinitions.yaml"></a>dashboardDefinitions.yaml</h6><pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">-</span> <span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<p>dashboardDefinitions.yaml</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">-</span> <span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
   <span class="token key atrule">data</span><span class="token punctuation">:</span>
     <span class="token key atrule">redis.json</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token punctuation">-</span>
        <span class="token punctuation">{</span>
@@ -1060,7 +1095,8 @@ spec:
     <span class="token key atrule">name</span><span class="token punctuation">:</span> grafana<span class="token punctuation">-</span>dashboard<span class="token punctuation">-</span>redis <span class="token comment" spellcheck="true"># 这个名字要记住，一会挂载到grafana-deployment中去</span>
     <span class="token key atrule">namespace</span><span class="token punctuation">:</span> monitoring
     <span class="token key atrule">kind</span><span class="token punctuation">:</span> ConfigMapList <span class="token comment" spellcheck="true"># 这条要放在文件最后</span></code></pre>
-<h6 id="grafana-deployment-yaml-1"><a href="#grafana-deployment-yaml-1" class="headerlink" title="grafana-deployment.yaml"></a>grafana-deployment.yaml</h6><pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">...</span>
+<p>grafana-deployment.yaml</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">...</span>
 <span class="token punctuation">...</span>
 <span class="token key atrule">resources</span><span class="token punctuation">:</span>
   <span class="token key atrule">limits</span><span class="token punctuation">:</span>
@@ -1086,10 +1122,12 @@ spec:
 <p>如果在web端修改了dashboard之后，想要持久化保存，一样的道理，保存json文件，然后通过dashboard名字在dashboardDefinitions.yaml替换对应的json部分。</p>
 <h5 id="grafana、prometheus开启nodeport"><a href="#grafana、prometheus开启nodeport" class="headerlink" title="grafana、prometheus开启nodeport"></a>grafana、prometheus开启nodeport</h5><p>部署prometheus operator之后，grafana和prometheus默认的service类型都是clusterip，需要将其修改为nodeport类型。修改比较简单，不赘述。</p>
 <h5 id="grafana时间修改"><a href="#grafana时间修改" class="headerlink" title="grafana时间修改"></a>grafana时间修改</h5><p>对于prometheus operator自带的某些dashboard，数据显示的时间可能不是你本地时间，所以需要修改时间。</p>
-<h6 id="dashboardDefinitions-yaml-1"><a href="#dashboardDefinitions-yaml-1" class="headerlink" title="dashboardDefinitions.yaml"></a>dashboardDefinitions.yaml</h6><pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># "timezone": "utc",</span>
+<p>dashboardDefinitions.yaml</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># "timezone": "utc",</span>
 <span class="token key atrule">"timezone"</span><span class="token punctuation">:</span> <span class="token string">"browser"</span><span class="token punctuation">,</span></code></pre>
 <h5 id="alertmanager结合钉钉进行告警"><a href="#alertmanager结合钉钉进行告警" class="headerlink" title="alertmanager结合钉钉进行告警"></a>alertmanager结合钉钉进行告警</h5><p>alertmanager发送的信息是json格式不便于阅读，且很多字段是不需要的，有点多余，于是自己写了个中间程序，过滤下数据再转发</p>
-<h6 id="配置alertmanager"><a href="#配置alertmanager" class="headerlink" title="配置alertmanager"></a>配置alertmanager</h6><p>修改alertmanager-secret.yaml文件</p>
+<p>配置alertmanager</p>
+<p>修改alertmanager-secret.yaml文件</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
 <span class="token key atrule">kind</span><span class="token punctuation">:</span> Secret
 <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
@@ -1122,7 +1160,8 @@ spec:
       <span class="token punctuation">-</span> <span class="token key atrule">url</span><span class="token punctuation">:</span> <span class="token string">'http://dingalert/'</span> <span class="token comment" spellcheck="true"># 这是清洗alertmanager告警信息数据的pod的service</span>
         <span class="token key atrule">send_resolved</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
 <span class="token key atrule">type</span><span class="token punctuation">:</span> Opaque</code></pre>
-<h6 id="go脚本"><a href="#go脚本" class="headerlink" title="go脚本"></a>go脚本</h6><pre class=" language-golang"><code class="language-golang">package main
+<p>go脚本</p>
+<pre class=" language-golang"><code class="language-golang">package main
 
 import (
     "encoding/json"
@@ -1211,11 +1250,13 @@ func main() {
     http.HandleFunc("/", MessageHandler)
     http.ListenAndServe(":80", nil)
 }</code></pre>
-<h6 id="dockerfile"><a href="#dockerfile" class="headerlink" title="dockerfile"></a>dockerfile</h6><p>需要提前编译生成可执行文件，也可以使用dokcer的多阶段构建去编译脚本。</p>
+<p>dockerfile</p>
+<p>需要提前编译生成可执行文件，也可以使用dokcer的多阶段构建去编译脚本。</p>
 <pre class=" language-dockerfile"><code class="language-dockerfile">FROM centos:centos7
 RUN /usr/bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ADD run /usr/bin/</code></pre>
-<h6 id="部署到k8s"><a href="#部署到k8s" class="headerlink" title="部署到k8s"></a>部署到k8s</h6><pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<p>部署到k8s</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
 <span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
 <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
@@ -1267,6 +1308,26 @@ ADD run /usr/bin/</code></pre>
     <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">80</span>
   <span class="token key atrule">selector</span><span class="token punctuation">:</span>
     <span class="token key atrule">app</span><span class="token punctuation">:</span> dingalert</code></pre>
+<h4 id="谈下serviceMonitor工作原理"><a href="#谈下serviceMonitor工作原理" class="headerlink" title="谈下serviceMonitor工作原理"></a>谈下serviceMonitor工作原理</h4><h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h5><pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> monitoring.coreos.com/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ServiceMonitor
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>exporter
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>exporter<span class="token punctuation">-</span>scraping
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> kube<span class="token punctuation">-</span>system
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">endpoints</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">interval</span><span class="token punctuation">:</span> 30s
+    <span class="token key atrule">path</span><span class="token punctuation">:</span> /metrics <span class="token comment" spellcheck="true"># 获取数据的接口</span>
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>metrics <span class="token comment" spellcheck="true"># 和之前service里定义的名字要一致</span>
+  <span class="token key atrule">jobLabel</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>exporter
+  <span class="token key atrule">namespaceSelector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchNames</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> kube<span class="token punctuation">-</span>system
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> kube<span class="token punctuation">-</span>redis<span class="token punctuation">-</span>exporter <span class="token comment" spellcheck="true"># 通过这个label匹配service，以达到动态发现的目的。</span></code></pre>
+<p>prometheus创建了自定义资源—serviceMonitor，通过labels去匹配service，获取service的endpoint。最终prometheus会有个容器负责通过拿到的endpoint去动态更新prometheus的配置文件达到动态监控的目的。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
@@ -1277,10 +1338,10 @@ ADD run /usr/bin/</code></pre>
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>普罗米修斯</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">1.6k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.8k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-06-21, 12:03:02</p>
-    <p><span class="copy-title">最后更新:</span>2021-06-23, 17:06:59</p>
+    <p><span class="copy-title">最后更新:</span>2021-07-13, 10:44:09</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/06/21/prometheus/" title="普罗米修斯">https://duwei19961021.github.io/2021/06/21/prometheus/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -1325,7 +1386,7 @@ ADD run /usr/bin/</code></pre>
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#c++','#c','#ecs','#sonar','#Jenkinsfile','#Nginx','#linux性能优化实战笔记','#jenkins','#mongodb','#缓冲区','#list','#cicd','#zabbix','#c语言基础','#数据结构','#no','#book','#Dockerfile','#array','#queue','#net','#信号','#内存','#排序','#c primer plus','#hashtable','#mem_pool','#thread_pool','#操作系统','#线程','#进程','#sql_base','#kubenetes','#prometheus',],
+            'data': ['#c++','#c','#ecs','#sonar','#Jenkinsfile','#Nginx','#linux性能优化实战笔记','#jenkins','#mongodb','#缓冲区','#list','#cicd','#zabbix','#c语言基础','#数据结构','#no','#book','#Dockerfile','#array','#queue','#net','#信号','#内存','#排序','#c primer plus','#hashtable','#mem_pool','#thread_pool','#操作系统','#线程','#进程','#sql_base','#kubenetes','#prometheus','#conf',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

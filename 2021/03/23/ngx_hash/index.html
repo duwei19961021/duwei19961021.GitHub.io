@@ -68,7 +68,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(53)</small></div></li>
+    <li><div class="all active">全部文章<small>(54)</small></div></li>
     
         
             
@@ -104,7 +104,7 @@
     
         
             
-            <li><div data-rel="Nginx">Nginx<small>(7)</small></div>
+            <li><div data-rel="Nginx">Nginx<small>(8)</small></div>
                 
             </li>
             
@@ -136,8 +136,8 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="53">
-<input type="hidden" id="yelog_site_word_count" value="79.5k">
+<input type="hidden" id="yelog_site_posts_number" value="54">
+<input type="hidden" id="yelog_site_word_count" value="82.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -304,6 +304,10 @@
     
     <li class="article-tag-list-item">
         <a class="color1">prometheus</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">conf</a>
     </li>
     
     <div class="clearfix"></div>
@@ -740,6 +744,14 @@
             <span class="post-date" title="2021-06-21 12:03:02">2021/06/21</span>
         </a>
         
+        <a  class="Nginx "
+           href="/2021/06/27/nginx_config/"
+           data-tag="conf"
+           data-author="" >
+            <span class="post-title" title="nginx配置">nginx配置</span>
+            <span class="post-date" title="2021-06-27 23:06:01">2021/06/27</span>
+        </a>
+        
     </nav>
 </div>
     </div>
@@ -776,7 +788,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-04-01 10:08:45'>2021-03-23 18:21</time>
+        创建时间:<time class="date" title='更新时间: 2021-06-30 10:11:24'>2021-03-23 18:21</time>
         
     </div>
     <div class="article-meta">
@@ -842,7 +854,7 @@
     ngx_hash_t       <span class="token operator">*</span>hash<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 指向hash表的指针</span>
     ngx_hash_key_pt   key<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// hash函数</span>
 
-    ngx_uint_t        max_size<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 最多能有多少个桶</span>
+    ngx_uint_t        max_size<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// hash的最大size</span>
     ngx_uint_t        bucket_size<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 桶的大小(桶的内存空间size，单位是字节)</span>
 
     <span class="token keyword">char</span>             <span class="token operator">*</span>name<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// hash表名称</span>
@@ -872,7 +884,7 @@ typedef struct {
 
 <span class="token comment" spellcheck="true">/*
     出现的参数说明：
-                        max_size: 桶的最大数量(这个hash表桶的最大个数)
+                        max_size: hash表的最大size(这个hash表桶的最大个数)
                         bucket_size: 桶的内存空间大小(不能超过65535)
                         elt: ngx_hash_elt_t类型，桶中存储的元素    
 */</span>
@@ -1360,7 +1372,7 @@ found<span class="token punctuation">:</span>
     <p><span class="copy-title">文章字数:</span><span class="post-count">3.8k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="拦云">拦云</a></p>
     <p><span class="copy-title">发布时间:</span>2021-03-23, 18:21:27</p>
-    <p><span class="copy-title">最后更新:</span>2021-04-01, 10:08:45</p>
+    <p><span class="copy-title">最后更新:</span>2021-06-30, 10:11:24</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/03/23/ngx_hash/" title="nginx散列表">https://duwei19961021.github.io/2021/03/23/ngx_hash/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -1405,7 +1417,7 @@ found<span class="token punctuation">:</span>
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#c++','#c','#ecs','#sonar','#Jenkinsfile','#Nginx','#linux性能优化实战笔记','#jenkins','#mongodb','#缓冲区','#list','#cicd','#zabbix','#c语言基础','#数据结构','#no','#book','#Dockerfile','#array','#queue','#net','#信号','#内存','#排序','#c primer plus','#hashtable','#mem_pool','#thread_pool','#操作系统','#线程','#进程','#sql_base','#kubenetes','#prometheus',],
+            'data': ['#c++','#c','#ecs','#sonar','#Jenkinsfile','#Nginx','#linux性能优化实战笔记','#jenkins','#mongodb','#缓冲区','#list','#cicd','#zabbix','#c语言基础','#数据结构','#no','#book','#Dockerfile','#array','#queue','#net','#信号','#内存','#排序','#c primer plus','#hashtable','#mem_pool','#thread_pool','#操作系统','#线程','#进程','#sql_base','#kubenetes','#prometheus','#conf',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
